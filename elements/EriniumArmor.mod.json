@@ -1,0 +1,74 @@
+{
+  "_fv": 24,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "erinium_armor_head",
+    "enableBody": true,
+    "textureBody": "erinium_armor_body",
+    "enableLeggings": true,
+    "textureLeggings": "erinium_armor_leggings",
+    "enableBoots": true,
+    "textureBoots": "erinium_armor_boots",
+    "onHelmetTick": {
+      "name": "EriniumArmorHelmetTickEvent"
+    },
+    "onBodyTick": {
+      "name": "EriniumArmorBodyTickEvent"
+    },
+    "onLeggingsTick": {
+      "name": "EriniumArmorLeggingsTickEvent"
+    },
+    "onBootsTick": {
+      "name": "EriniumArmorBootsTickEvent"
+    },
+    "creativeTab": {
+      "value": "CUSTOM:EriniumTab"
+    },
+    "armorTextureFile": "erinium_armor_",
+    "helmetName": "Erinium Helmet",
+    "bodyName": "Erinium Body",
+    "leggingsName": "Erinium Leggings",
+    "bootsName": "Erinium Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 40,
+    "damageValueHelmet": 12,
+    "damageValueBody": 16,
+    "damageValueLeggings": 16,
+    "damageValueBoots": 12,
+    "enchantability": 30,
+    "toughness": 3.0,
+    "knockbackResistance": 0.30000000000000004,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EriniumIngot"
+      }
+    ]
+  }
+}
