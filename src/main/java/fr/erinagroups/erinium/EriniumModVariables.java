@@ -74,6 +74,8 @@ public class EriniumModVariables {
 			nbt.putDouble("Lvl", instance.Lvl);
 			nbt.putDouble("xp", instance.xp);
 			nbt.putDouble("Credit", instance.Credit);
+			nbt.putDouble("percent", instance.percent);
+			nbt.putString("playerList", instance.playerList);
 			return nbt;
 		}
 
@@ -83,6 +85,8 @@ public class EriniumModVariables {
 			instance.Lvl = nbt.getDouble("Lvl");
 			instance.xp = nbt.getDouble("xp");
 			instance.Credit = nbt.getDouble("Credit");
+			instance.percent = nbt.getDouble("percent");
+			instance.playerList = nbt.getString("playerList");
 		}
 	}
 
@@ -90,6 +94,8 @@ public class EriniumModVariables {
 		public double Lvl = 0;
 		public double xp = 0;
 		public double Credit = 500.0;
+		public double percent = 0;
+		public String playerList = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -127,6 +133,8 @@ public class EriniumModVariables {
 		clone.Lvl = original.Lvl;
 		clone.xp = original.xp;
 		clone.Credit = original.Credit;
+		clone.percent = original.percent;
+		clone.playerList = original.playerList;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -156,6 +164,8 @@ public class EriniumModVariables {
 					variables.Lvl = message.data.Lvl;
 					variables.xp = message.data.xp;
 					variables.Credit = message.data.Credit;
+					variables.percent = message.data.percent;
+					variables.playerList = message.data.playerList;
 				}
 			});
 			context.setPacketHandled(true);
