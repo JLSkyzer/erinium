@@ -23,13 +23,13 @@ fov:0.275
 screenEffectScale:1.0
 fovEffectScale:1.0
 gamma:0.8468309640884399
-renderDistance:8
+renderDistance:10
 entityDistanceScaling:1.0
 guiScale:0
 particles:0
 maxFps:260
 difficulty:2
-graphicsMode:0
+graphicsMode:1
 ao:0
 biomeBlendRadius:2
 renderClouds:false
@@ -62,9 +62,9 @@ tutorialStep:none
 mouseWheelSensitivity:1.0
 rawMouseInput:true
 glDebugVerbosity:1
-skipMultiplayerWarning:false
+skipMultiplayerWarning:true
 hideMatchedNames:true
-joinedFirstServer:false
+joinedFirstServer:true
 syncChunkWrites:true
 key_key.attack:key.mouse.left
 key_key.use:key.mouse.right

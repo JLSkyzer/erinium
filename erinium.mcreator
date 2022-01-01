@@ -431,6 +431,42 @@
       "locked_code": false,
       "registry_name": "magicblock_stick",
       "path": "~/Base finder and pvp/Magicblock system"
+    },
+    {
+      "name": "CraftEriniumHelme",
+      "type": "recipe",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_helme",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftEriniumChestplate",
+      "type": "recipe",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_chestplate",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftEriniumLeggings",
+      "type": "recipe",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_leggings",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftEriniumBoots",
+      "type": "recipe",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_boots",
+      "path": "~/Erinium"
     }
   ],
   "variable_elements": [

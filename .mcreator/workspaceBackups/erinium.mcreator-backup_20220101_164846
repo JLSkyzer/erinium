@@ -355,7 +355,7 @@
           }
         ]
       },
-      "path": "~/Base finder and pvp"
+      "path": "~/Base finder and pvp/ChestFinder"
     },
     {
       "name": "ChestFinder",
@@ -364,7 +364,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_finder",
-      "path": "~/Base finder and pvp"
+      "path": "~/Base finder and pvp/ChestFinder"
     },
     {
       "name": "OverlayChestFinderDisplayOverlayIngame",
@@ -382,7 +382,7 @@
           }
         ]
       },
-      "path": "~/Base finder and pvp"
+      "path": "~/Base finder and pvp/ChestFinder"
     },
     {
       "name": "OverlayChestFinder",
@@ -391,7 +391,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "overlay_chest_finder",
-      "path": "~/Base finder and pvp"
+      "path": "~/Base finder and pvp/ChestFinder"
     },
     {
       "name": "Magicblockwl",
@@ -400,7 +400,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "magicblockwl",
-      "path": "~/Base finder and pvp"
+      "path": "~/Base finder and pvp/Magicblock system"
     },
     {
       "name": "MagicblockwlCommandExecuted",
@@ -421,7 +421,16 @@
           }
         ]
       },
-      "path": "~/Base finder and pvp"
+      "path": "~/Base finder and pvp/Magicblock system"
+    },
+    {
+      "name": "MagicblockStick",
+      "type": "item",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magicblock_stick",
+      "path": "~/Base finder and pvp/Magicblock system"
     }
   ],
   "variable_elements": [
@@ -494,6 +503,7 @@
     "en_us": {
       "item.erinium.scar_h": "§5§lScarH",
       "item.erinium_pickaxe.name": "§1Erinium Pickaxe",
+      "item.erinium.magicblock_stick": "Magicblock Stick",
       "item.erinium_ingot.name": "Erinium Ingot",
       "subtitles.magazine_reload": "The sound when you reload magazine",
       "item.erinium.chest_finder": "Chest Finder",
@@ -565,7 +575,16 @@
       },
       {
         "name": "Base finder and pvp",
-        "children": []
+        "children": [
+          {
+            "name": "ChestFinder",
+            "children": []
+          },
+          {
+            "name": "Magicblock system",
+            "children": []
+          }
+        ]
       }
     ]
   },
