@@ -195,84 +195,6 @@
       "path": "~/Server side/AdminTool"
     },
     {
-      "name": "Bullet",
-      "type": "item",
-      "sortid": 25,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bullet",
-      "path": "~/Gun"
-    },
-    {
-      "name": "BulletTexture",
-      "type": "item",
-      "sortid": 29,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bullet_texture",
-      "path": "~/Gun"
-    },
-    {
-      "name": "ScarH",
-      "type": "rangeditem",
-      "sortid": 29,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "scar_h",
-      "path": "~/Gun"
-    },
-    {
-      "name": "ScarHCanUseRangedItem",
-      "type": "procedure",
-      "sortid": 31,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "scar_h_can_use_ranged_item",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Gun"
-    },
-    {
-      "name": "ScarHProjectileHitsPlayer",
-      "type": "procedure",
-      "sortid": 32,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "scar_h_projectile_hits_player",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Gun"
-    },
-    {
       "name": "G",
       "type": "procedure",
       "sortid": 33,
@@ -336,45 +258,6 @@
       "locked_code": false,
       "registry_name": "overlay_chest_finder",
       "path": "~/Misc System/ChestFinder"
-    },
-    {
-      "name": "Magicblockwl",
-      "type": "command",
-      "sortid": 36,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magicblockwl",
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicblockwlCommandExecuted",
-      "type": "procedure",
-      "sortid": 37,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magicblockwl_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicblockStick",
-      "type": "item",
-      "sortid": 38,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magicblock_stick",
-      "path": "~/Misc System/Magicblock system"
     },
     {
       "name": "CraftEriniumHelme",
@@ -465,135 +348,6 @@
       "path": "~/Server side/TestSide"
     },
     {
-      "name": "MagicBlockLava",
-      "type": "block",
-      "sortid": 46,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magic_block_lava",
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicBlockTab",
-      "type": "tab",
-      "sortid": 47,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magic_block_tab",
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicBlockWater",
-      "type": "block",
-      "sortid": 48,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magic_block_water",
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicBlockExplosion",
-      "type": "block",
-      "sortid": 49,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magic_block_explosion",
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicBlockSlowness",
-      "type": "block",
-      "sortid": 50,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magic_block_slowness",
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicBlockAlarm",
-      "type": "block",
-      "sortid": 51,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magic_block_alarm",
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicBlockMessage",
-      "type": "block",
-      "sortid": 52,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magic_block_message",
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "MagicblockStickRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 53,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magicblock_stick_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
-      "name": "BlockIsPlaced",
-      "type": "procedure",
-      "sortid": 54,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "block_is_placed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Misc System/Magicblock system"
-    },
-    {
       "name": "AdminStick",
       "type": "item",
       "sortid": 55,
@@ -634,15 +388,6 @@
         ]
       },
       "path": "~/Server side/AdminTool"
-    },
-    {
-      "name": "JobMenuFr",
-      "type": "gui",
-      "sortid": 56,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "job_menu_fr",
-      "path": "~/Server side/systeme de lvl"
     },
     {
       "name": "ServerLanguageCommandExecuted",
@@ -692,48 +437,6 @@
       "path": "~/Server side"
     },
     {
-      "name": "JobCommandExecuted",
-      "type": "procedure",
-      "sortid": 59,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "job_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Server side/systeme de lvl"
-    },
-    {
-      "name": "Job",
-      "type": "command",
-      "sortid": 59,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "job",
-      "path": "~/Server side/systeme de lvl"
-    },
-    {
       "name": "Cutoutblock",
       "type": "block",
       "sortid": 60,
@@ -741,40 +444,6 @@
       "locked_code": false,
       "registry_name": "cutoutblock",
       "path": "~/Server side/TestSide/block"
-    },
-    {
-      "name": "JobMenuOpen",
-      "type": "procedure",
-      "sortid": 61,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "job_menu_open",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Server side/systeme de lvl"
-    },
-    {
-      "name": "UpgradeLvl",
-      "type": "procedure",
-      "sortid": 62,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "upgrade_lvl",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Server side/systeme de lvl/UpgradeLvl"
     },
     {
       "name": "TestDim",
@@ -850,14 +519,6 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "gomy"
-    },
-    {
-      "name": "Tets",
-      "type": "overlay",
-      "sortid": 68,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "tets"
     }
   ],
   "variable_elements": [
@@ -994,31 +655,24 @@
   ],
   "language_map": {
     "en_us": {
-      "item.erinium.scar_h": "§5§lScarH",
       "item.erinium_pickaxe.name": "§1Erinium Pickaxe",
       "block.erinium.cutoutblock": "Cutoutblock",
-      "item.erinium.magicblock_stick": "Magicblock Stick",
       "item.erinium_ingot.name": "Erinium Ingot",
       "subtitles.magazine_reload": "The sound when you reload magazine",
       "item.erinium.chest_finder": "Chest Finder",
       "item.erinium_armorhelmet.name": "Erinium Helmet",
       "subtitles.scarh_shoot": "",
-      "block.erinium.magic_block_message": "§5Magic Block §a§l§o§nMessage",
       "block.erinium.erinium_ore": "Erinium Ore",
       "item.erinium.erinium_armor_boots": "Erinium Boots",
       "item.erinium_armorboots.name": "Erinium Boots",
       "tile.erinium_ore.name": "Erinium Ore",
-      "block.erinium.magic_block_slowness": "§5Magic Block §8Slowness",
-      "item.erinium.bullet": "§6Bullet",
       "item.erinium.gomy_spawn_egg": "Gomy Spawn Egg",
       "item.erinium.erinium_axe": "§1Erinium Axe",
-      "block.erinium.magic_block_alarm": "§5Magic Block §4§lAlarm !",
       "item.erinium.erinium_armor_chestplate": "Erinium Body",
       "entity.erinium.gomy": "Gomy",
       "subtitles.hitmarker": "",
       "item.erinium.erinium_armor_leggings": "Erinium Leggings",
       "itemGroup.taberinium_tab": "Erinium | §1Erinium",
-      "block.erinium.magic_block_water": "§5Magic Block §3Water",
       "item.erinium.admin_stick": "Admin Stick",
       "block.erinium.erinium_block": "Erinium Block",
       "item.erinium.test_dim": "Test Dim Portal Igniter",
@@ -1029,13 +683,9 @@
       "item.erinium_sword.name": "§1Erinium Sword",
       "item.erinium.erinium_armor_helmet": "Erinium Helmet",
       "tile.erinium_block.name": "Erinium Block",
-      "item.erinium.bullet_texture": "Bullet Texture",
       "item.erinium.erinium_pickaxe": "§1Erinium Pickaxe",
-      "block.erinium.magic_block_lava": "§5Magic Block §6Lava",
       "item.erinium_armorbody.name": "Erinium Body",
       "item.erinium.op_tool": "Op Tool",
-      "itemGroup.tabmagic_block_tab": "§1Erinium - §6Magic§5blocks",
-      "block.erinium.magic_block_explosion": "§5Magic Block §4Explo§csion",
       "item.erinium.erinium_ingot": "Erinium Ingot",
       "itemGroup.tabadmin_zone": "§4§lErinium - Admin Zone",
       "item.erinium.warning_logo": "Warning Logo"
@@ -1054,15 +704,6 @@
           {
             "name": "systeme de magie",
             "children": []
-          },
-          {
-            "name": "systeme de lvl",
-            "children": [
-              {
-                "name": "UpgradeLvl",
-                "children": []
-              }
-            ]
           },
           {
             "name": "Credit",
@@ -1093,15 +734,6 @@
           {
             "name": "ChestFinder",
             "children": []
-          },
-          {
-            "name": "Magicblock system",
-            "children": [
-              {
-                "name": "Broke",
-                "children": []
-              }
-            ]
           },
           {
             "name": "Magic stone system",

@@ -844,26 +844,6 @@
       "path": "~/Server side/TestSide"
     },
     {
-      "name": "Hghg",
-      "type": "procedure",
-      "sortid": 66,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hghg",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "text",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    {
       "name": "Gomy",
       "type": "livingentity",
       "sortid": 67,
@@ -878,26 +858,6 @@
       "compiles": true,
       "locked_code": true,
       "registry_name": "tets"
-    },
-    {
-      "name": "SssProjectileHitsLivingEntity",
-      "type": "procedure",
-      "sortid": 69,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "sss_projectile_hits_living_entity",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          }
-        ]
-      }
     }
   ],
   "variable_elements": [
@@ -1173,5 +1133,5 @@
     "modElementsPackage": "fr.erinagroups.erinium",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100353117
+  "mcreatorVersion": 202100354000
 }

@@ -1,7 +1,0 @@
-{
-  "parent": "erinium:custom/scarh",
-  "textures": {
-    "0": "erinium:blocks/scarh",
-    "particle": "erinium:items/scarh"
-  }
-}
