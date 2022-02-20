@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "tab",
+  "definition": {
+    "name": "§1Erinium - §6Magic§5blocks",
+    "icon": {
+      "value": "CUSTOM:MagicBlockLava"
+    },
+    "showSearch": false
+  }
+}

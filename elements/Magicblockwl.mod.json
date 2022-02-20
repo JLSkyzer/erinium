@@ -3,9 +3,6 @@
   "_type": "command",
   "definition": {
     "commandName": "magicblockWL",
-    "permissionLevel": "No requirement",
-    "onCommandExecuted": {
-      "name": "MagicblockwlCommandExecuted"
-    }
+    "permissionLevel": "No requirement"
   }
 }

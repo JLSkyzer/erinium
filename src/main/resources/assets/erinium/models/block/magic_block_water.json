@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/magic_block_water",
+    "up": "erinium:blocks/magic_block_water",
+    "north": "erinium:blocks/magic_block_water",
+    "east": "erinium:blocks/magic_block_water",
+    "south": "erinium:blocks/magic_block_water",
+    "west": "erinium:blocks/magic_block_water",
+    "particle": "erinium:blocks/magic_block_water"
+  }
+}

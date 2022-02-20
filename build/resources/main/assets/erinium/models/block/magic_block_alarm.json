@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/magic_block_alarm",
+    "up": "erinium:blocks/magic_block_alarm",
+    "north": "erinium:blocks/magic_block_alarm",
+    "east": "erinium:blocks/magic_block_alarm",
+    "south": "erinium:blocks/magic_block_alarm",
+    "west": "erinium:blocks/magic_block_alarm",
+    "particle": "erinium:blocks/magic_block_alarm"
+  }
+}

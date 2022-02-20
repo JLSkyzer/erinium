@@ -11,13 +11,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.command.Commands;
 import net.minecraft.command.CommandSource;
 
-import java.util.stream.Stream;
-import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
-import java.util.AbstractMap;
-
-import fr.erinagroups.erinium.procedures.MagicblockwlCommandExecutedProcedure;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
@@ -29,8 +24,7 @@ public class MagicblockwlCommand {
 	public static void registerCommands(RegisterCommandsEvent event) {
 		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("magicblockWL")
 
-				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(MagicblockwlCommand::execute))
-				.executes(MagicblockwlCommand::execute));
+				.then(Commands.argument("arguments", StringArgumentType.greedyString())));
 	}
 
 	private static int execute(CommandContext<CommandSource> ctx) {
@@ -48,10 +42,6 @@ public class MagicblockwlCommand {
 				cmdparams.put(Integer.toString(index[0]), param);
 			index[0]++;
 		});
-
-		MagicblockwlCommandExecutedProcedure
-				.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("cmdparams", cmdparams))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		return 0;
 	}
 }

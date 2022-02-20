@@ -71,31 +71,64 @@ public class EriniumModVariables {
 		@Override
 		public INBT writeNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side) {
 			CompoundNBT nbt = new CompoundNBT();
-			nbt.putDouble("Lvl", instance.Lvl);
-			nbt.putDouble("xp", instance.xp);
 			nbt.putDouble("Credit", instance.Credit);
 			nbt.putDouble("percent", instance.percent);
 			nbt.putString("playerList", instance.playerList);
+			nbt.putDouble("lvlFarmer", instance.lvlFarmer);
+			nbt.putDouble("xpFarmer", instance.xpFarmer);
+			nbt.putDouble("lvlHunter", instance.lvlHunter);
+			nbt.putDouble("xpHunter", instance.xpHunter);
+			nbt.putDouble("lvlMiner", instance.lvlMiner);
+			nbt.putDouble("xpMiner", instance.xpMiner);
+			nbt.putDouble("lvlAlchimiste", instance.lvlAlchimiste);
+			nbt.putDouble("xpAlchimiste", instance.xpAlchimiste);
+			nbt.putString("serverLanguage", instance.serverLanguage);
+			nbt.putString("stringFarmerXp", instance.stringFarmerXp);
+			nbt.putString("stringMinerXp", instance.stringMinerXp);
+			nbt.putString("stringHunterXp", instance.stringHunterXp);
+			nbt.putString("stringAlchimiste", instance.stringAlchimiste);
 			return nbt;
 		}
 
 		@Override
 		public void readNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side, INBT inbt) {
 			CompoundNBT nbt = (CompoundNBT) inbt;
-			instance.Lvl = nbt.getDouble("Lvl");
-			instance.xp = nbt.getDouble("xp");
 			instance.Credit = nbt.getDouble("Credit");
 			instance.percent = nbt.getDouble("percent");
 			instance.playerList = nbt.getString("playerList");
+			instance.lvlFarmer = nbt.getDouble("lvlFarmer");
+			instance.xpFarmer = nbt.getDouble("xpFarmer");
+			instance.lvlHunter = nbt.getDouble("lvlHunter");
+			instance.xpHunter = nbt.getDouble("xpHunter");
+			instance.lvlMiner = nbt.getDouble("lvlMiner");
+			instance.xpMiner = nbt.getDouble("xpMiner");
+			instance.lvlAlchimiste = nbt.getDouble("lvlAlchimiste");
+			instance.xpAlchimiste = nbt.getDouble("xpAlchimiste");
+			instance.serverLanguage = nbt.getString("serverLanguage");
+			instance.stringFarmerXp = nbt.getString("stringFarmerXp");
+			instance.stringMinerXp = nbt.getString("stringMinerXp");
+			instance.stringHunterXp = nbt.getString("stringHunterXp");
+			instance.stringAlchimiste = nbt.getString("stringAlchimiste");
 		}
 	}
 
 	public static class PlayerVariables {
-		public double Lvl = 0;
-		public double xp = 0;
 		public double Credit = 500.0;
 		public double percent = 0;
 		public String playerList = "\"\"";
+		public double lvlFarmer = 0;
+		public double xpFarmer = 0;
+		public double lvlHunter = 0;
+		public double xpHunter = 0;
+		public double lvlMiner = 0;
+		public double xpMiner = 0;
+		public double lvlAlchimiste = 0;
+		public double xpAlchimiste = 0;
+		public String serverLanguage = "FR";
+		public String stringFarmerXp = "\"\"";
+		public String stringMinerXp = "\"\"";
+		public String stringHunterXp = "\"\"";
+		public String stringAlchimiste = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -130,11 +163,22 @@ public class EriniumModVariables {
 		PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new PlayerVariables()));
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-		clone.Lvl = original.Lvl;
-		clone.xp = original.xp;
 		clone.Credit = original.Credit;
 		clone.percent = original.percent;
 		clone.playerList = original.playerList;
+		clone.lvlFarmer = original.lvlFarmer;
+		clone.xpFarmer = original.xpFarmer;
+		clone.lvlHunter = original.lvlHunter;
+		clone.xpHunter = original.xpHunter;
+		clone.lvlMiner = original.lvlMiner;
+		clone.xpMiner = original.xpMiner;
+		clone.lvlAlchimiste = original.lvlAlchimiste;
+		clone.xpAlchimiste = original.xpAlchimiste;
+		clone.serverLanguage = original.serverLanguage;
+		clone.stringFarmerXp = original.stringFarmerXp;
+		clone.stringMinerXp = original.stringMinerXp;
+		clone.stringHunterXp = original.stringHunterXp;
+		clone.stringAlchimiste = original.stringAlchimiste;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -161,11 +205,22 @@ public class EriniumModVariables {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new PlayerVariables()));
-					variables.Lvl = message.data.Lvl;
-					variables.xp = message.data.xp;
 					variables.Credit = message.data.Credit;
 					variables.percent = message.data.percent;
 					variables.playerList = message.data.playerList;
+					variables.lvlFarmer = message.data.lvlFarmer;
+					variables.xpFarmer = message.data.xpFarmer;
+					variables.lvlHunter = message.data.lvlHunter;
+					variables.xpHunter = message.data.xpHunter;
+					variables.lvlMiner = message.data.lvlMiner;
+					variables.xpMiner = message.data.xpMiner;
+					variables.lvlAlchimiste = message.data.lvlAlchimiste;
+					variables.xpAlchimiste = message.data.xpAlchimiste;
+					variables.serverLanguage = message.data.serverLanguage;
+					variables.stringFarmerXp = message.data.stringFarmerXp;
+					variables.stringMinerXp = message.data.stringMinerXp;
+					variables.stringHunterXp = message.data.stringHunterXp;
+					variables.stringAlchimiste = message.data.stringAlchimiste;
 				}
 			});
 			context.setPacketHandled(true);

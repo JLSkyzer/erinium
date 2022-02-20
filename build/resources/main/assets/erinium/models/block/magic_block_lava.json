@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/magic_block_lava",
+    "up": "erinium:blocks/magic_block_lava",
+    "north": "erinium:blocks/magic_block_lava",
+    "east": "erinium:blocks/magic_block_lava",
+    "south": "erinium:blocks/magic_block_lava",
+    "west": "erinium:blocks/magic_block_lava",
+    "particle": "erinium:blocks/magic_block_lava"
+  }
+}

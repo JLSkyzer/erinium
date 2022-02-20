@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/magic_block_message",
+    "up": "erinium:blocks/magic_block_message",
+    "north": "erinium:blocks/magic_block_message",
+    "east": "erinium:blocks/magic_block_message",
+    "south": "erinium:blocks/magic_block_message",
+    "west": "erinium:blocks/magic_block_message",
+    "particle": "erinium:blocks/magic_block_message"
+  }
+}
