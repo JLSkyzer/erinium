@@ -35,5 +35,15 @@
         "stream": false
       }
     ]
+  },
+  "printer": {
+    "category": "neutral",
+    "subtitle": "subtitles.printer",
+    "sounds": [
+      {
+        "name": "erinium:printer",
+        "stream": false
+      }
+    ]
   }
 }

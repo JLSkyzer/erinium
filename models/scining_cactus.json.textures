@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "scining cactus_side": "scining_cactus_side",
+        "scining cactus_top": "scining_cactus_top",
+        "scining cactus_bottom": "scining_cactus_bottom"
+      },
+      "name": "default"
+    }
+  }
+}
