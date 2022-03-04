@@ -87,6 +87,7 @@ public class EriniumModVariables {
 			nbt.putString("stringMinerXp", instance.stringMinerXp);
 			nbt.putString("stringHunterXp", instance.stringHunterXp);
 			nbt.putString("stringAlchimiste", instance.stringAlchimiste);
+			nbt.putDouble("PlayerHealth", instance.PlayerHealth);
 			return nbt;
 		}
 
@@ -109,6 +110,7 @@ public class EriniumModVariables {
 			instance.stringMinerXp = nbt.getString("stringMinerXp");
 			instance.stringHunterXp = nbt.getString("stringHunterXp");
 			instance.stringAlchimiste = nbt.getString("stringAlchimiste");
+			instance.PlayerHealth = nbt.getDouble("PlayerHealth");
 		}
 	}
 
@@ -129,6 +131,7 @@ public class EriniumModVariables {
 		public String stringMinerXp = "\"\"";
 		public String stringHunterXp = "\"\"";
 		public String stringAlchimiste = "\"\"";
+		public double PlayerHealth = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -180,6 +183,7 @@ public class EriniumModVariables {
 		clone.stringHunterXp = original.stringHunterXp;
 		clone.stringAlchimiste = original.stringAlchimiste;
 		if (!event.isWasDeath()) {
+			clone.PlayerHealth = original.PlayerHealth;
 		}
 	}
 
@@ -221,6 +225,7 @@ public class EriniumModVariables {
 					variables.stringMinerXp = message.data.stringMinerXp;
 					variables.stringHunterXp = message.data.stringHunterXp;
 					variables.stringAlchimiste = message.data.stringAlchimiste;
+					variables.PlayerHealth = message.data.PlayerHealth;
 				}
 			});
 			context.setPacketHandled(true);

@@ -1,0 +1,9 @@
+{
+  "parent": "erinium:custom/xp_bush",
+  "textures": {
+    "all": "erinium:blocks/xp_berry_texture",
+    "particle": "erinium:blocks/xp_berry_texture",
+    "berry_texture.png": "erinium:blocks/xp_bush_texture",
+    "xp_berry_texture.png": "erinium:blocks/xp_berry_texture"
+  }
+}

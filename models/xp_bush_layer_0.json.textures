@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "berry_texture.png": "xp_bush_texture"
+      },
+      "name": "default"
+    }
+  }
+}

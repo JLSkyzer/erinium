@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "blood_berry_texture.png": "blood_berry_texture",
+        "berry_texture.png": "blood_bush_texture"
+      },
+      "name": "default"
+    }
+  }
+}

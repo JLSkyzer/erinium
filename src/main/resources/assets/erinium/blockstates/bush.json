@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "erinium:block/bush"
+    },
+    "facing=east": {
+      "model": "erinium:block/bush",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "erinium:block/bush",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "erinium:block/bush",
+      "y": 270
+    }
+  }
+}

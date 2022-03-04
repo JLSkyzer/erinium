@@ -41,7 +41,7 @@ public class KnifeItem extends EriniumModElements.ModElement {
 			}
 
 			public float getAttackDamage() {
-				return 2f;
+				return 4f;
 			}
 
 			public int getHarvestLevel() {
@@ -55,7 +55,7 @@ public class KnifeItem extends EriniumModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, -3f, new Item.Properties().group(ItemGroup.TOOLS)) {
+		}, 3, 96f, new Item.Properties().group(ItemGroup.TOOLS)) {
 			@Override
 			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 				boolean retval = super.hitEntity(itemstack, entity, sourceentity);

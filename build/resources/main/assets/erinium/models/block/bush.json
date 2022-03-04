@@ -1,0 +1,8 @@
+{
+  "parent": "erinium:custom/bush",
+  "textures": {
+    "all": "erinium:blocks/berry_texture",
+    "particle": "erinium:blocks/berry_texture",
+    "berry_texture.png": "erinium:blocks/berry_texture"
+  }
+}
