@@ -8,7 +8,7 @@ Mod crée par @JLSkyzer
 **Erinium** est un mod survie et aventure qui ajoute plusieur fonctionnalité est choses inédites !
 
 ### Erinium
-Le minerais principal est l'erinium ça couleur principal est le bleu.
+Le minerais principal est l'erinium ça couleur principal est le <p style="color: blue;">bleu </p>.
 
 le voici :
 
