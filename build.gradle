@@ -25,8 +25,6 @@ minecraft {
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            //property 'mixin.env.remapRefMap', 'true'
-			//property 'mixin.env.refMapRemappingFile', "C:/Users/killi/MCreatorWorkspaces/erinium/build/createSrgToMcp/output.srg"
 
             jvmArgs = [
                     "--add-exports=java.base/sun.security.util=ALL-UNNAMED",
@@ -60,21 +58,8 @@ minecraft {
     }
 }
 
-repositories {
-    maven {
-        url "https://www.cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
-    
-	mavenCentral()
-}
-
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.20'
-
-    //compile fg.deobf ('curse.maven:obfuscate-289380:3043369')
 
     // Apply for https://github.com/McModLauncher/modlauncher/issues/91
     implementation 'cpw.mods:modlauncher:8.1.3'

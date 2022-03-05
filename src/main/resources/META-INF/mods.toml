@@ -1,14 +1,17 @@
 modLoader="javafml"
 loaderVersion="[36,)"
-license="Academic Free License v3.0"
+license="Copyright © 2021 - 2022 Erinium - All Rights Reserved."
 
 [[mods]]
 modId="erinium"
 version="1.0.0"
 displayName="Erinium"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
+displayURL="https://discord.gg/26DzRJCTQs"
 authors="killi, MCreator"
+description='''
+Mod crée par JLSkyzer
+'''
 
 [[dependencies.erinium]]
     modId="minecraft"

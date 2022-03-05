@@ -1,0 +1,46 @@
+{
+  "_fv": 24,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:XpEssence"
+      },
+      {
+        "value": "CUSTOM:XpEssence"
+      },
+      {
+        "value": "CUSTOM:XpEssence"
+      },
+      {
+        "value": "CUSTOM:XpEssence"
+      },
+      {
+        "value": "Items.GLASS_BOTTLE"
+      },
+      {
+        "value": "CUSTOM:XpEssence"
+      },
+      {
+        "value": "CUSTOM:XpEssence"
+      },
+      {
+        "value": "CUSTOM:XpEssence"
+      },
+      {
+        "value": "CUSTOM:XpEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "Items.EXPERIENCE_BOTTLE"
+    },
+    "name": "craft_xp_bottle",
+    "namespace": "mod"
+  }
+}

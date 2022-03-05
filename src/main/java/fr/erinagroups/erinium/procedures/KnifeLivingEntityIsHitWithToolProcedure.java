@@ -15,22 +15,24 @@ import fr.erinagroups.erinium.EriniumMod;
 public class KnifeLivingEntityIsHitWithToolProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure KnifeLivingEntityIsHitWithTool!");
+		if (dependencies.get("sourceentity") == null) {
+			if (!dependencies.containsKey("sourceentity"))
+				EriniumMod.LOGGER.warn("Failed to load dependency sourceentity for procedure KnifeLivingEntityIsHitWithTool!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(EmptyLargeBottleItem.block)) : false) {
-			if (entity instanceof PlayerEntity) {
+		Entity sourceentity = (Entity) dependencies.get("sourceentity");
+		if ((sourceentity instanceof PlayerEntity)
+				? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(EmptyLargeBottleItem.block))
+				: false) {
+			if (sourceentity instanceof PlayerEntity) {
 				ItemStack _stktoremove = new ItemStack(EmptyLargeBottleItem.block);
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+						((PlayerEntity) sourceentity).container.func_234641_j_());
 			}
-			if (entity instanceof PlayerEntity) {
+			if (sourceentity instanceof PlayerEntity) {
 				ItemStack _setstack = new ItemStack(BloodLargeBottleItem.block);
 				_setstack.setCount((int) 1);
-				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
 			}
 		}
 	}

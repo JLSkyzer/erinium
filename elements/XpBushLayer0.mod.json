@@ -54,7 +54,7 @@
     "material": {
       "value": "LEAVES"
     },
-    "tickRate": 10,
+    "tickRate": 2400,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -123,6 +123,9 @@
     "fluidRestrictions": [],
     "onNeighbourBlockChanges": {
       "name": "BushNeighbourBlockChanges"
+    },
+    "onTickUpdate": {
+      "name": "BushLayer0Tick"
     },
     "onEntityCollides": {
       "name": "BushCollidesBlock"

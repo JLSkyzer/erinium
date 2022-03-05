@@ -1,0 +1,9 @@
+{
+  "parent": "erinium:custom/blood_bush",
+  "textures": {
+    "all": "erinium:blocks/blood_berry_texture",
+    "particle": "erinium:blocks/blood_berry_texture",
+    "blood_berry_texture.png": "erinium:blocks/blood_berry_texture",
+    "berry_texture.png": "erinium:blocks/blood_bush_texture"
+  }
+}
