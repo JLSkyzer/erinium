@@ -1243,6 +1243,23 @@
       "locked_code": false,
       "registry_name": "craft_erinium_axe",
       "path": "~/Erinium"
+    },
+    {
+      "name": "PlayerTick",
+      "type": "procedure",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
     }
   ],
   "variable_elements": [
@@ -1526,6 +1543,10 @@
           {
             "name": "Xp System",
             "children": []
+          },
+          {
+            "name": "Presentation",
+            "children": []
           }
         ]
       },
@@ -1555,9 +1576,10 @@
     "modid": "erinium",
     "modName": "Erinium",
     "version": "1.0.0",
+    "description": "Mod crée par JLSkyzer",
     "author": "killi, MCreator",
-    "websiteURL": "https://mcreator.net",
-    "license": "Academic Free License v3.0",
+    "websiteURL": "https://discord.gg/26DzRJCTQs",
+    "license": "Copyright © 2021 - 2022 Erinium - All Rights Reserved.",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],

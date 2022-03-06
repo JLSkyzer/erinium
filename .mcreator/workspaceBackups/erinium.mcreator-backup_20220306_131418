@@ -1180,6 +1180,86 @@
       "locked_code": false,
       "registry_name": "craft_xp_large_bottle",
       "path": "~/Recipes"
+    },
+    {
+      "name": "XpBush",
+      "type": "recipe",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "xp_bush",
+      "path": "~/Recipes"
+    },
+    {
+      "name": "CraftEriniumBlock",
+      "type": "recipe",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_block",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "SmeltEriniumOre",
+      "type": "recipe",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "smelt_erinium_ore",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftEriniumIngot",
+      "type": "recipe",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_ingot",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftEriniumSword",
+      "type": "recipe",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_sword",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftEriniumPickaxe",
+      "type": "recipe",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_pickaxe",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftEriniumAxe",
+      "type": "recipe",
+      "sortid": 113,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_axe",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "PlayerTick",
+      "type": "procedure",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
     }
   ],
   "variable_elements": [
@@ -1335,8 +1415,8 @@
       "itemGroup.tabscining_tab": "§bScining",
       "item.erinium.empty_large_bottle": "Empty Large Bottle",
       "block.erinium.blood_bush_layer_0": "Xp bush",
-      "item.erinium.blood_large_bottle": "Blood Large Bottle",
       "block.erinium.blood_bush_layer_1": "Xp bush",
+      "item.erinium.blood_large_bottle": "Blood Large Bottle",
       "item.erinium.xp_essence": "Xp Essence",
       "entity.erinium.gomy": "Gomy",
       "subtitles.hitmarker": "",
@@ -1492,9 +1572,10 @@
     "modid": "erinium",
     "modName": "Erinium",
     "version": "1.0.0",
+    "description": "Mod crée par JLSkyzer",
     "author": "killi, MCreator",
-    "websiteURL": "https://mcreator.net",
-    "license": "Academic Free License v3.0",
+    "websiteURL": "https://discord.gg/26DzRJCTQs",
+    "license": "Copyright © 2021 - 2022 Erinium - All Rights Reserved.",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],

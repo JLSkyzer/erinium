@@ -12,11 +12,13 @@ import net.minecraft.util.text.ChatType;
 import net.minecraft.util.Util;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
 import java.util.HashMap;
 
+import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
 public class QqfProcedure {
@@ -59,6 +61,7 @@ public class QqfProcedure {
 		IWorld world = (IWorld) dependencies.get("world");
 		Entity entity = (Entity) dependencies.get("entity");
 		String text = (String) dependencies.get("text");
+		String temp = "";
 		if (dependencies.get("event") != null) {
 			Object _obj = dependencies.get("event");
 			if (_obj instanceof Event) {
@@ -67,12 +70,35 @@ public class QqfProcedure {
 					_evt.setCanceled(true);
 			}
 		}
-		if (!world.isRemote()) {
-			MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
-			if (mcserv != null)
-				mcserv.getPlayerList().func_232641_a_(
-						new StringTextComponent(("<[\u00A7eMembre\u00A7f] \u00A7b" + entity.getDisplayName().getString() + "\u00A7f>" + text)),
-						ChatType.SYSTEM, Util.DUMMY_UUID);
+		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).PresentationToggle) {
+			temp = (text);
+			temp = (temp.replace("&", "\u00A7"));
+			{
+				String _setval = temp;
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.presentationGui = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				boolean _setval = (false);
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.PresentationToggle = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aDone !"), (false));
+			}
+		} else {
+			if (!world.isRemote()) {
+				MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
+				if (mcserv != null)
+					mcserv.getPlayerList().func_232641_a_(
+							new StringTextComponent(("<[\u00A7eMembre\u00A7f] \u00A7b" + entity.getDisplayName().getString() + "\u00A7f>" + text)),
+							ChatType.SYSTEM, Util.DUMMY_UUID);
+			}
 		}
 	}
 }

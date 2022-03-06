@@ -1260,6 +1260,83 @@
         ]
       },
       "path": "~/Global trigger"
+    },
+    {
+      "name": "PresentationGui",
+      "type": "gui",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "presentation_gui",
+      "path": "~/Misc System/Presentation"
+    },
+    {
+      "name": "PresentationCmdCommandExecuted",
+      "type": "procedure",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "presentation_cmd_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Presentation"
+    },
+    {
+      "name": "PresentationCmd",
+      "type": "command",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "presentation_cmd",
+      "path": "~/Misc System/Presentation"
+    },
+    {
+      "name": "SetPresentationCommandExecuted",
+      "type": "procedure",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_presentation_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/Presentation"
+    },
+    {
+      "name": "SetPresentation",
+      "type": "command",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_presentation",
+      "path": "~/Misc System/Presentation"
     }
   ],
   "variable_elements": [
@@ -1364,6 +1441,18 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
+    },
+    {
+      "name": "PresentationToggle",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "presentationGui",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [
@@ -1543,6 +1632,10 @@
           {
             "name": "Xp System",
             "children": []
+          },
+          {
+            "name": "Presentation",
+            "children": []
           }
         ]
       },
@@ -1571,7 +1664,7 @@
   "workspaceSettings": {
     "modid": "erinium",
     "modName": "Erinium",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Mod crée par JLSkyzer",
     "author": "killi, MCreator",
     "websiteURL": "https://discord.gg/26DzRJCTQs",
