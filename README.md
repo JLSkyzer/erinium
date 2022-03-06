@@ -6,7 +6,7 @@ Mod crée par @JLSkyzer
 
 <h2>Information</h2>
 
-<img src="https://media.forgecdn.net/attachments/438/701/all-items.png" width="500" height="300" />
-<img src="https://media.forgecdn.net/attachments/438/698/all-blocks.png" width="500" height="300" />
-<img src="https://media.forgecdn.net/attachments/438/697/all-armors.png" width="500" height="300" />
-<img src="https://media.forgecdn.net/attachments/438/702/scining-biomes.png" width="500" height="300" />
+<img src="https://i.imgur.com/uu3BrwV.png" width="500" height="300" />
+<img src="https://i.imgur.com/9l3450w.png" width="500" height="300" />
+<img src="https://i.imgur.com/4yiKHua.png" width="500" height="300" />
+<img src="https://i.imgur.com/mQLKyAW.png" width="500" height="300" />
