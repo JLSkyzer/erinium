@@ -31,7 +31,7 @@ public class BloodOrbItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public BloodOrbItem(EriniumModElements instance) {
-		super(instance, 99);
+		super(instance, 30);
 	}
 
 	@Override

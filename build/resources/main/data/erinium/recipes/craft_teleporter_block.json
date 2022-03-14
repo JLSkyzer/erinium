@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:dranite_gem"
+    },
+    "1": {
+      "item": "erinium:wiring_kit"
+    },
+    "2": {
+      "item": "erinium:dranite_gem"
+    },
+    "3": {
+      "item": "erinium:wiring_kit"
+    },
+    "4": {
+      "item": "erinium:printed_circuit_board"
+    },
+    "5": {
+      "item": "erinium:wiring_kit"
+    },
+    "6": {
+      "item": "erinium:dranite_gem"
+    },
+    "7": {
+      "item": "erinium:wiring_kit"
+    },
+    "8": {
+      "item": "erinium:dranite_gem"
+    }
+  },
+  "result": {
+    "item": "erinium:spatial_teleporter_block",
+    "count": 1
+  }
+}

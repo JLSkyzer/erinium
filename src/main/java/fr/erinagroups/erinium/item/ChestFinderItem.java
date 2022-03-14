@@ -25,7 +25,7 @@ public class ChestFinderItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public ChestFinderItem(EriniumModElements instance) {
-		super(instance, 34);
+		super(instance, 11);
 	}
 
 	@Override

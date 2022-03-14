@@ -13,7 +13,7 @@ import fr.erinagroups.erinium.EriniumModElements;
 @EriniumModElements.ModElement.Tag
 public class AdminZoneItemGroup extends EriniumModElements.ModElement {
 	public AdminZoneItemGroup(EriniumModElements instance) {
-		super(instance, 21);
+		super(instance, 48);
 	}
 
 	@Override

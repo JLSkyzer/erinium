@@ -26,7 +26,7 @@ public class EriniumBlockBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public EriniumBlockBlock(EriniumModElements instance) {
-		super(instance, 9);
+		super(instance, 4);
 	}
 
 	@Override

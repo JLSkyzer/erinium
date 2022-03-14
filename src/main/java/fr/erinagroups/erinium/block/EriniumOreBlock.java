@@ -47,7 +47,7 @@ public class EriniumOreBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public EriniumOreBlock(EriniumModElements instance) {
-		super(instance, 8);
+		super(instance, 3);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

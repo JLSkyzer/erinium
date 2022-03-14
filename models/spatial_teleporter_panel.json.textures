@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "panel_structure.png": "panel_structure"
+      },
+      "name": "default"
+    }
+  }
+}

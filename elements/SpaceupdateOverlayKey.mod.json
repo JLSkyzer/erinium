@@ -1,0 +1,12 @@
+{
+  "_fv": 24,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "K",
+    "keyBindingName": "Space Update Overlay Info",
+    "keyBindingCategoryKey": "ui",
+    "onKeyPressed": {
+      "name": "SpaceupdateOverlayKeyOnKeyPressed"
+    }
+  }
+}

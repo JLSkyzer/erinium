@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/home_seter",
+    "up": "erinium:blocks/home_seter",
+    "north": "erinium:blocks/home_seter",
+    "east": "erinium:blocks/home_seter",
+    "south": "erinium:blocks/home_seter",
+    "west": "erinium:blocks/home_seter",
+    "particle": "erinium:blocks/home_seter"
+  }
+}

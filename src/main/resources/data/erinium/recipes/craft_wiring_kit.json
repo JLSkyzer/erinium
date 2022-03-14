@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:rubber"
+    },
+    "1": {
+      "item": "erinium:rubber"
+    },
+    "2": {
+      "item": "erinium:rubber"
+    },
+    "3": {
+      "item": "erinium:silver_ingot"
+    },
+    "4": {
+      "item": "erinium:copper_ingot"
+    },
+    "5": {
+      "item": "erinium:silver_ingot"
+    },
+    "6": {
+      "item": "erinium:rubber"
+    },
+    "7": {
+      "item": "erinium:rubber"
+    },
+    "8": {
+      "item": "erinium:rubber"
+    }
+  },
+  "result": {
+    "item": "erinium:wiring_kit",
+    "count": 1
+  }
+}

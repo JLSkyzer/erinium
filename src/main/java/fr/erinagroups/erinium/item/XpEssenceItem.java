@@ -17,7 +17,7 @@ public class XpEssenceItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public XpEssenceItem(EriniumModElements instance) {
-		super(instance, 104);
+		super(instance, 15);
 	}
 
 	@Override

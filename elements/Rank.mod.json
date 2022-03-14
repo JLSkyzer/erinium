@@ -1,0 +1,87 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 120,
+    "height": 150,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Your Rank",
+          "color": {
+            "value": -16737997,
+            "falpha": 0.0
+          },
+          "name": "Your Rank",
+          "x": 190,
+          "y": 46
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Level : ",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Level : ",
+          "x": 163,
+          "y": 64
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:integer:playerLvl>",
+          "color": {
+            "value": -16724941,
+            "falpha": 0.0
+          },
+          "name": "<VAR:integer:playerLvl>",
+          "x": 163,
+          "y": 82
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Xp :",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Xp :",
+          "x": 163,
+          "y": 100
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:integer:playerXp> / 100.000",
+          "color": {
+            "value": -6750208,
+            "falpha": 0.0
+          },
+          "name": "<VAR:integer:playerXp> / 100.000",
+          "x": 163,
+          "y": 118
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 18,
+      "oy": 18,
+      "snapOnGrid": true
+    }
+  }
+}

@@ -13,7 +13,7 @@ import fr.erinagroups.erinium.EriniumModElements;
 @EriniumModElements.ModElement.Tag
 public class SciningTabItemGroup extends EriniumModElements.ModElement {
 	public SciningTabItemGroup(EriniumModElements instance) {
-		super(instance, 69);
+		super(instance, 67);
 	}
 
 	@Override

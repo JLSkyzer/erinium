@@ -26,7 +26,7 @@ public class KnifeItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public KnifeItem(EriniumModElements instance) {
-		super(instance, 77);
+		super(instance, 17);
 	}
 
 	@Override

@@ -17,7 +17,7 @@ public class XpLargeBottleItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public XpLargeBottleItem(EriniumModElements instance) {
-		super(instance, 102);
+		super(instance, 14);
 	}
 
 	@Override

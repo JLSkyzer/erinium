@@ -7,13 +7,13 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 
-import fr.erinagroups.erinium.item.EriniumArmorItem;
+import fr.erinagroups.erinium.item.EriniumTabAnimationItem;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
 public class EriniumTabItemGroup extends EriniumModElements.ModElement {
 	public EriniumTabItemGroup(EriniumModElements instance) {
-		super(instance, 7);
+		super(instance, 44);
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class EriniumTabItemGroup extends EriniumModElements.ModElement {
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(EriniumArmorItem.body);
+				return new ItemStack(EriniumTabAnimationItem.block);
 			}
 
 			@OnlyIn(Dist.CLIENT)

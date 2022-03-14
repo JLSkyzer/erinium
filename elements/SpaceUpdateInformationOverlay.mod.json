@@ -1,0 +1,57 @@
+{
+  "_fv": 24,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "planet_overlay_background.png",
+          "use1Xscale": true,
+          "name": "planet_overlay_background.png",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Planete : ",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Planete : ",
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "§a<VAR:planete>",
+          "color": {
+            "value": -13641472,
+            "falpha": 0.0
+          },
+          "name": "§a<VAR:planete>",
+          "x": 1,
+          "y": 10
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "SpaceOverlayCondition"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 1,
+      "oy": 1,
+      "snapOnGrid": true
+    }
+  }
+}

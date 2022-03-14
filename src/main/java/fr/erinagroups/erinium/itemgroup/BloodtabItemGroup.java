@@ -13,7 +13,7 @@ import fr.erinagroups.erinium.EriniumModElements;
 @EriniumModElements.ModElement.Tag
 public class BloodtabItemGroup extends EriniumModElements.ModElement {
 	public BloodtabItemGroup(EriniumModElements instance) {
-		super(instance, 80);
+		super(instance, 74);
 	}
 
 	@Override

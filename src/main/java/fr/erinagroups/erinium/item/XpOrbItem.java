@@ -33,7 +33,7 @@ public class XpOrbItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public XpOrbItem(EriniumModElements instance) {
-		super(instance, 96);
+		super(instance, 29);
 	}
 
 	@Override

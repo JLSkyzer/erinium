@@ -63,7 +63,7 @@ public class XpBushLayer1Block extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public XpBushLayer1Block(EriniumModElements instance) {
-		super(instance, 91);
+		super(instance, 26);
 	}
 
 	@Override

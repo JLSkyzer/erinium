@@ -67,7 +67,7 @@ public class SciningCactusBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public SciningCactusBlock(EriniumModElements instance) {
-		super(instance, 70);
+		super(instance, 20);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

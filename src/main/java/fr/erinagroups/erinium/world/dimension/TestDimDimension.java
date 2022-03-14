@@ -40,7 +40,7 @@ import com.google.common.collect.ImmutableSet;
 @EriniumModElements.ModElement.Tag
 public class TestDimDimension extends EriniumModElements.ModElement {
 	public TestDimDimension(EriniumModElements instance) {
-		super(instance, 63);
+		super(instance, 16);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

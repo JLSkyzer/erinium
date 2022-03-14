@@ -17,7 +17,7 @@ public class BloodLargeBottleItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public BloodLargeBottleItem(EriniumModElements instance) {
-		super(instance, 79);
+		super(instance, 22);
 	}
 
 	@Override

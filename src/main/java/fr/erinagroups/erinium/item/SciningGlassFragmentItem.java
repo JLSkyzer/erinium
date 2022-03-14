@@ -17,7 +17,7 @@ public class SciningGlassFragmentItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public SciningGlassFragmentItem(EriniumModElements instance) {
-		super(instance, 76);
+		super(instance, 21);
 	}
 
 	@Override

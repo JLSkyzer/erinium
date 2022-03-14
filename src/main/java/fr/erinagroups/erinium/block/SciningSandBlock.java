@@ -29,7 +29,7 @@ public class SciningSandBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public SciningSandBlock(EriniumModElements instance) {
-		super(instance, 68);
+		super(instance, 18);
 	}
 
 	@Override

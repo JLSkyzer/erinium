@@ -4,7 +4,7 @@
   "definition": {
     "name": "Erinium | §1Erinium",
     "icon": {
-      "value": "CUSTOM:EriniumArmor.body"
+      "value": "CUSTOM:EriniumTabAnimation"
     },
     "showSearch": false
   }

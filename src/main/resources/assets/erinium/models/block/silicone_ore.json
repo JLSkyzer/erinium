@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/silicone_ore",
+    "up": "erinium:blocks/silicone_ore",
+    "north": "erinium:blocks/silicone_ore",
+    "east": "erinium:blocks/silicone_ore",
+    "south": "erinium:blocks/silicone_ore",
+    "west": "erinium:blocks/silicone_ore",
+    "particle": "erinium:blocks/silicone_ore"
+  }
+}

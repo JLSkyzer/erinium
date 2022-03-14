@@ -18,7 +18,7 @@ public class EriniumSwordItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public EriniumSwordItem(EriniumModElements instance) {
-		super(instance, 10);
+		super(instance, 5);
 	}
 
 	@Override

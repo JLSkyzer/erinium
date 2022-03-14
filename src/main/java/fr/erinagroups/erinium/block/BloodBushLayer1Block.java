@@ -63,7 +63,7 @@ public class BloodBushLayer1Block extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public BloodBushLayer1Block(EriniumModElements instance) {
-		super(instance, 98);
+		super(instance, 28);
 	}
 
 	@Override

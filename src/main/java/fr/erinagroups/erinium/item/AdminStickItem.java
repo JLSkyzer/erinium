@@ -17,7 +17,7 @@ public class AdminStickItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public AdminStickItem(EriniumModElements instance) {
-		super(instance, 55);
+		super(instance, 9);
 	}
 
 	@Override

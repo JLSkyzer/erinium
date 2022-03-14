@@ -1,0 +1,34 @@
+{
+  "_fv": 24,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "erinium_hammer",
+    "customModelName": "Normal",
+    "name": "§1Erinium Hammer",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:EriniumTab"
+    },
+    "toolType": "Pickaxe",
+    "harvestLevel": 4,
+    "efficiency": 13.0,
+    "attackSpeed": 1.0,
+    "enchantability": 30,
+    "damageVsEntity": 4.0,
+    "usageCount": 2600,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:EriniumIngot"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onBlockDestroyedWithTool": {
+      "name": "BasicHammer"
+    }
+  }
+}

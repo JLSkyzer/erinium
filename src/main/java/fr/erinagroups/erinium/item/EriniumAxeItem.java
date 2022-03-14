@@ -18,7 +18,7 @@ public class EriniumAxeItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public EriniumAxeItem(EriniumModElements instance) {
-		super(instance, 11);
+		super(instance, 6);
 	}
 
 	@Override

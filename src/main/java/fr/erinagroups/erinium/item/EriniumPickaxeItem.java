@@ -18,7 +18,7 @@ public class EriniumPickaxeItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public EriniumPickaxeItem(EriniumModElements instance) {
-		super(instance, 12);
+		super(instance, 7);
 	}
 
 	@Override

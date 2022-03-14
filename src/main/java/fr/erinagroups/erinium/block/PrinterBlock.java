@@ -42,7 +42,7 @@ public class PrinterBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public PrinterBlock(EriniumModElements instance) {
-		super(instance, 87);
+		super(instance, 23);
 	}
 
 	@Override

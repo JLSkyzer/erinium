@@ -74,14 +74,6 @@ public class EriniumModVariables {
 			nbt.putDouble("Credit", instance.Credit);
 			nbt.putDouble("percent", instance.percent);
 			nbt.putString("playerList", instance.playerList);
-			nbt.putDouble("lvlFarmer", instance.lvlFarmer);
-			nbt.putDouble("xpFarmer", instance.xpFarmer);
-			nbt.putDouble("lvlHunter", instance.lvlHunter);
-			nbt.putDouble("xpHunter", instance.xpHunter);
-			nbt.putDouble("lvlMiner", instance.lvlMiner);
-			nbt.putDouble("xpMiner", instance.xpMiner);
-			nbt.putDouble("lvlAlchimiste", instance.lvlAlchimiste);
-			nbt.putDouble("xpAlchimiste", instance.xpAlchimiste);
 			nbt.putString("serverLanguage", instance.serverLanguage);
 			nbt.putString("stringFarmerXp", instance.stringFarmerXp);
 			nbt.putString("stringMinerXp", instance.stringMinerXp);
@@ -90,6 +82,21 @@ public class EriniumModVariables {
 			nbt.putDouble("PlayerHealth", instance.PlayerHealth);
 			nbt.putBoolean("PresentationToggle", instance.PresentationToggle);
 			nbt.putString("presentationGui", instance.presentationGui);
+			nbt.putBoolean("togglePlanetOverlay", instance.togglePlanetOverlay);
+			nbt.putString("planete", instance.planete);
+			nbt.putDouble("h_x", instance.h_x);
+			nbt.putDouble("h_y", instance.h_y);
+			nbt.putDouble("h_z", instance.h_z);
+			nbt.putString("Home_dim", instance.Home_dim);
+			nbt.putDouble("HomeCmdCooldown", instance.HomeCmdCooldown);
+			nbt.putBoolean("inPvpMode", instance.inPvpMode);
+			nbt.putDouble("pvpModeTimer", instance.pvpModeTimer);
+			nbt.putDouble("playerLvl", instance.playerLvl);
+			nbt.putDouble("playerXp", instance.playerXp);
+			nbt.putDouble("wonXp", instance.wonXp);
+			nbt.putBoolean("toggle_wonxp_overlay", instance.toggle_wonxp_overlay);
+			nbt.putString("won_xp_message", instance.won_xp_message);
+			nbt.putString("won_xp_message_2", instance.won_xp_message_2);
 			return nbt;
 		}
 
@@ -99,14 +106,6 @@ public class EriniumModVariables {
 			instance.Credit = nbt.getDouble("Credit");
 			instance.percent = nbt.getDouble("percent");
 			instance.playerList = nbt.getString("playerList");
-			instance.lvlFarmer = nbt.getDouble("lvlFarmer");
-			instance.xpFarmer = nbt.getDouble("xpFarmer");
-			instance.lvlHunter = nbt.getDouble("lvlHunter");
-			instance.xpHunter = nbt.getDouble("xpHunter");
-			instance.lvlMiner = nbt.getDouble("lvlMiner");
-			instance.xpMiner = nbt.getDouble("xpMiner");
-			instance.lvlAlchimiste = nbt.getDouble("lvlAlchimiste");
-			instance.xpAlchimiste = nbt.getDouble("xpAlchimiste");
 			instance.serverLanguage = nbt.getString("serverLanguage");
 			instance.stringFarmerXp = nbt.getString("stringFarmerXp");
 			instance.stringMinerXp = nbt.getString("stringMinerXp");
@@ -115,6 +114,21 @@ public class EriniumModVariables {
 			instance.PlayerHealth = nbt.getDouble("PlayerHealth");
 			instance.PresentationToggle = nbt.getBoolean("PresentationToggle");
 			instance.presentationGui = nbt.getString("presentationGui");
+			instance.togglePlanetOverlay = nbt.getBoolean("togglePlanetOverlay");
+			instance.planete = nbt.getString("planete");
+			instance.h_x = nbt.getDouble("h_x");
+			instance.h_y = nbt.getDouble("h_y");
+			instance.h_z = nbt.getDouble("h_z");
+			instance.Home_dim = nbt.getString("Home_dim");
+			instance.HomeCmdCooldown = nbt.getDouble("HomeCmdCooldown");
+			instance.inPvpMode = nbt.getBoolean("inPvpMode");
+			instance.pvpModeTimer = nbt.getDouble("pvpModeTimer");
+			instance.playerLvl = nbt.getDouble("playerLvl");
+			instance.playerXp = nbt.getDouble("playerXp");
+			instance.wonXp = nbt.getDouble("wonXp");
+			instance.toggle_wonxp_overlay = nbt.getBoolean("toggle_wonxp_overlay");
+			instance.won_xp_message = nbt.getString("won_xp_message");
+			instance.won_xp_message_2 = nbt.getString("won_xp_message_2");
 		}
 	}
 
@@ -122,14 +136,6 @@ public class EriniumModVariables {
 		public double Credit = 500.0;
 		public double percent = 0;
 		public String playerList = "\"\"";
-		public double lvlFarmer = 0;
-		public double xpFarmer = 0;
-		public double lvlHunter = 0;
-		public double xpHunter = 0;
-		public double lvlMiner = 0;
-		public double xpMiner = 0;
-		public double lvlAlchimiste = 0;
-		public double xpAlchimiste = 0;
 		public String serverLanguage = "FR";
 		public String stringFarmerXp = "\"\"";
 		public String stringMinerXp = "\"\"";
@@ -138,6 +144,21 @@ public class EriniumModVariables {
 		public double PlayerHealth = 0;
 		public boolean PresentationToggle = false;
 		public String presentationGui = "\"\"";
+		public boolean togglePlanetOverlay = false;
+		public String planete = "\"\"";
+		public double h_x = 0;
+		public double h_y = 0;
+		public double h_z = 0;
+		public String Home_dim = "\"\"";
+		public double HomeCmdCooldown = 0;
+		public boolean inPvpMode = false;
+		public double pvpModeTimer = 0;
+		public double playerLvl = 0;
+		public double playerXp = 0;
+		public double wonXp = 0;
+		public boolean toggle_wonxp_overlay = true;
+		public String won_xp_message = "\"\"";
+		public String won_xp_message_2 = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -175,23 +196,30 @@ public class EriniumModVariables {
 		clone.Credit = original.Credit;
 		clone.percent = original.percent;
 		clone.playerList = original.playerList;
-		clone.lvlFarmer = original.lvlFarmer;
-		clone.xpFarmer = original.xpFarmer;
-		clone.lvlHunter = original.lvlHunter;
-		clone.xpHunter = original.xpHunter;
-		clone.lvlMiner = original.lvlMiner;
-		clone.xpMiner = original.xpMiner;
-		clone.lvlAlchimiste = original.lvlAlchimiste;
-		clone.xpAlchimiste = original.xpAlchimiste;
 		clone.serverLanguage = original.serverLanguage;
 		clone.stringFarmerXp = original.stringFarmerXp;
 		clone.stringMinerXp = original.stringMinerXp;
 		clone.stringHunterXp = original.stringHunterXp;
 		clone.stringAlchimiste = original.stringAlchimiste;
 		clone.presentationGui = original.presentationGui;
+		clone.togglePlanetOverlay = original.togglePlanetOverlay;
+		clone.planete = original.planete;
+		clone.h_x = original.h_x;
+		clone.h_y = original.h_y;
+		clone.h_z = original.h_z;
+		clone.Home_dim = original.Home_dim;
+		clone.HomeCmdCooldown = original.HomeCmdCooldown;
+		clone.inPvpMode = original.inPvpMode;
+		clone.pvpModeTimer = original.pvpModeTimer;
+		clone.playerLvl = original.playerLvl;
+		clone.playerXp = original.playerXp;
+		clone.toggle_wonxp_overlay = original.toggle_wonxp_overlay;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
+			clone.wonXp = original.wonXp;
+			clone.won_xp_message = original.won_xp_message;
+			clone.won_xp_message_2 = original.won_xp_message_2;
 		}
 	}
 
@@ -220,14 +248,6 @@ public class EriniumModVariables {
 					variables.Credit = message.data.Credit;
 					variables.percent = message.data.percent;
 					variables.playerList = message.data.playerList;
-					variables.lvlFarmer = message.data.lvlFarmer;
-					variables.xpFarmer = message.data.xpFarmer;
-					variables.lvlHunter = message.data.lvlHunter;
-					variables.xpHunter = message.data.xpHunter;
-					variables.lvlMiner = message.data.lvlMiner;
-					variables.xpMiner = message.data.xpMiner;
-					variables.lvlAlchimiste = message.data.lvlAlchimiste;
-					variables.xpAlchimiste = message.data.xpAlchimiste;
 					variables.serverLanguage = message.data.serverLanguage;
 					variables.stringFarmerXp = message.data.stringFarmerXp;
 					variables.stringMinerXp = message.data.stringMinerXp;
@@ -236,6 +256,21 @@ public class EriniumModVariables {
 					variables.PlayerHealth = message.data.PlayerHealth;
 					variables.PresentationToggle = message.data.PresentationToggle;
 					variables.presentationGui = message.data.presentationGui;
+					variables.togglePlanetOverlay = message.data.togglePlanetOverlay;
+					variables.planete = message.data.planete;
+					variables.h_x = message.data.h_x;
+					variables.h_y = message.data.h_y;
+					variables.h_z = message.data.h_z;
+					variables.Home_dim = message.data.Home_dim;
+					variables.HomeCmdCooldown = message.data.HomeCmdCooldown;
+					variables.inPvpMode = message.data.inPvpMode;
+					variables.pvpModeTimer = message.data.pvpModeTimer;
+					variables.playerLvl = message.data.playerLvl;
+					variables.playerXp = message.data.playerXp;
+					variables.wonXp = message.data.wonXp;
+					variables.toggle_wonxp_overlay = message.data.toggle_wonxp_overlay;
+					variables.won_xp_message = message.data.won_xp_message;
+					variables.won_xp_message_2 = message.data.won_xp_message_2;
 				}
 			});
 			context.setPacketHandled(true);

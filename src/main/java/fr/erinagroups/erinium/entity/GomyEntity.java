@@ -55,7 +55,7 @@ public class GomyEntity extends EriniumModElements.ModElement {
 			.size(0.6f, 1.8f)).build("gomy").setRegistryName("gomy");
 
 	public GomyEntity(EriniumModElements instance) {
-		super(instance, 67);
+		super(instance, 12);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new GomyRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);
