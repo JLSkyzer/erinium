@@ -2229,6 +2229,67 @@
         ]
       },
       "path": "~/Server side"
+    },
+    {
+      "name": "WonXpOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 170,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "won_xp_overlay_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "WonXpOverlay",
+      "type": "overlay",
+      "sortid": 170,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "won_xp_overlay",
+      "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "WonXpTimer",
+      "type": "procedure",
+      "sortid": 171,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "won_xp_timer",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "Temp",
+      "type": "procedure",
+      "sortid": 172,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "temp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Won Xp"
     }
   ],
   "variable_elements": [
@@ -2363,6 +2424,30 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "wonXp",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "toggle_wonxp_overlay",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "true"
+    },
+    {
+      "name": "won_xp_message",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "\"\""
+    },
+    {
+      "name": "won_xp_message_2",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "\"\""
     }
   ],
   "sound_elements": [
@@ -2585,7 +2670,12 @@
           },
           {
             "name": "RankSystem",
-            "children": []
+            "children": [
+              {
+                "name": "Won Xp",
+                "children": []
+              }
+            ]
           }
         ]
       },
