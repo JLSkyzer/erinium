@@ -167,6 +167,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "cmdparams",
+            "type": "map"
           }
         ]
       },
@@ -2275,17 +2279,138 @@
       "path": "~/Misc System/RankSystem/Won Xp"
     },
     {
-      "name": "Temp",
+      "name": "ToggleXpOverlayCommandExecuted",
       "type": "procedure",
-      "sortid": 172,
+      "sortid": 173,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "temp",
+      "registry_name": "toggle_xp_overlay_command_executed",
       "metadata": {
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "ToggleXpOverlay",
+      "type": "command",
+      "sortid": 173,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toggle_xp_overlay",
+      "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "Farming",
+      "type": "procedure",
+      "sortid": 174,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "Crafting",
+      "type": "procedure",
+      "sortid": 175,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crafting",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "Smelting",
+      "type": "procedure",
+      "sortid": 176,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "smelting",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "Mine",
+      "type": "procedure",
+      "sortid": 177,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mine",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -2673,6 +2798,10 @@
             "children": [
               {
                 "name": "Won Xp",
+                "children": []
+              },
+              {
+                "name": "Unlocked",
                 "children": []
               }
             ]

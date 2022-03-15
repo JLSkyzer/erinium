@@ -13,6 +13,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.Minecraft;
 
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
+
+import fr.erinagroups.erinium.procedures.WonXpOverlayDisplayOverlayIngameProcedure;
 import fr.erinagroups.erinium.EriniumModVariables;
 
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -26,8 +32,8 @@ public class WonXpOverlayOverlay {
 		if (event.getType() == RenderGameOverlayEvent.ElementType.HELMET) {
 			int w = event.getWindow().getScaledWidth();
 			int h = event.getWindow().getScaledHeight();
-			int posX = w;
-			int posY = h;
+			int posX = w / 2;
+			int posY = h / 2;
 			World _world = null;
 			double _x = 0;
 			double _y = 0;
@@ -49,18 +55,19 @@ public class WonXpOverlayOverlay {
 					GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 			RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 			RenderSystem.disableAlphaTest();
-			if (true) {
+			if (WonXpOverlayDisplayOverlayIngameProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/won_xp_bg.png"));
 				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), /*posX + 81 */ 300, /*posY + 14*/ 150, 0, 0, 120, 64, 120, 64);
 
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
 						"" + ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).won_xp_message) + "",
-						posX + 90, posY + 23, -1);
+						304, 162, -1);
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
 						"" + ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).won_xp_message_2) + "",
-						posX + 90, posY + 41, -1);
+						304, 182, -1);
 			}
 			RenderSystem.depthMask(true);
 			RenderSystem.enableDepthTest();

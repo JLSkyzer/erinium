@@ -66,7 +66,7 @@ public class RankLevelUpProcedure {
 					});
 				}
 				if (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new EriniumModVariables.PlayerVariables())).playerList).equals("FR")) {
+						.orElse(new EriniumModVariables.PlayerVariables())).serverLanguage).equals("FR")) {
 					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
 								("\u00A72[\u00A7aRank\u00A72] \u00A7eVous avez augmenter de un niveau ! Vous \u00EAtes niveau \u00A7b\u00A7l"
@@ -75,7 +75,7 @@ public class RankLevelUpProcedure {
 								(false));
 					}
 				} else if (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new EriniumModVariables.PlayerVariables())).playerList).equals("EN")) {
+						.orElse(new EriniumModVariables.PlayerVariables())).serverLanguage).equals("EN")) {
 					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 						((PlayerEntity) entity).sendStatusMessage(
 								new StringTextComponent(("\u00A72[\u00A7aRank\u00A72] \u00A7eYou are level up ! You are level \u00A7b\u00A7l"
