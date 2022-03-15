@@ -74,6 +74,20 @@
           "x": 163,
           "y": 118
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "§bWiki",
+          "onClick": {
+            "name": "WikiBtnClick"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "§bWiki",
+          "x": 190,
+          "y": 145
+        }
       }
     ],
     "gridSettings": {

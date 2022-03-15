@@ -2415,6 +2415,39 @@
         ]
       },
       "path": "~/Misc System/RankSystem/Won Xp"
+    },
+    {
+      "name": "WikiBtnClick",
+      "type": "procedure",
+      "sortid": 178,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wiki_btn_click",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem"
     }
   ],
   "variable_elements": [
