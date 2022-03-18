@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "erinium:items/erinium_ingot"
-  }
-}
