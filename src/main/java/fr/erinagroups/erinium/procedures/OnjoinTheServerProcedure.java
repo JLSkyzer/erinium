@@ -45,5 +45,10 @@ public class OnjoinTheServerProcedure {
 					"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/serverlanguage \u00A7epour changer la langue du serveur !"),
 					(false));
 		}
+		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+					"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/rank \u00A7epour en savoir plus sur le syst\u00E8me de niveau !"),
+					(false));
+		}
 	}
 }

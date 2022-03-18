@@ -5,7 +5,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BlockEvent;
 
 import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
@@ -79,27 +81,11 @@ public class MineProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			{
-				double _setval = 60;
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.wonXp = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				String _setval = "\u00A7e+1 xp";
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.won_xp_message = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.won_xp_message_2 = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "1" + " xp " + "\u00A7f| " + "\u00A72"
+						+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+						+ " / 100.000")), (true));
 			}
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -113,27 +99,15 @@ public class MineProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.wonXp = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = "\u00A7e+30 xp";
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + "30" + " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIAMOND_ORE) {
 					{
@@ -144,27 +118,15 @@ public class MineProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.wonXp = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = "\u00A7e+320 xp";
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + "320" + " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				}
 			} else {
@@ -179,27 +141,15 @@ public class MineProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.wonXp = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = "\u00A7e+8 xp";
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + "8" + " xp " + "\u00A7f| " + "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIAMOND_ORE) {
 						{
@@ -210,27 +160,15 @@ public class MineProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.wonXp = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = "\u00A7e+170 xp";
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + "170" + " xp " + "\u00A7f| " + "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == DraniteOreBlock.block) {
 						{
@@ -241,27 +179,15 @@ public class MineProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.wonXp = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = "\u00A7e+240 xp";
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + "240" + " xp " + "\u00A7f| " + "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					}
 				} else {
@@ -276,27 +202,14 @@ public class MineProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							{
-								double _setval = 60;
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.wonXp = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = "\u00A7e+65 xp";
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message_2 = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + "65" + " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
 							}
 						} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == DraniteOreBlock.block) {
 							{
@@ -307,27 +220,14 @@ public class MineProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							{
-								double _setval = 60;
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.wonXp = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = "\u00A7e+120 xp";
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message_2 = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + "120" + " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
 							}
 						}
 					} else {
@@ -342,27 +242,14 @@ public class MineProcedure {
 										capability.syncPlayerVariables(entity);
 									});
 								}
-								{
-									double _setval = 60;
-									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.wonXp = _setval;
-										capability.syncPlayerVariables(entity);
-									});
-								}
-								{
-									String _setval = "\u00A7e+45 xp";
-									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.won_xp_message = _setval;
-										capability.syncPlayerVariables(entity);
-									});
-								}
-								{
-									String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.won_xp_message_2 = _setval;
-										capability.syncPlayerVariables(entity);
-									});
+								if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+									((PlayerEntity) entity)
+											.sendStatusMessage(
+													new StringTextComponent(("\u00A7a+" + "45" + " xp " + "\u00A7f| " + "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+													(true));
 								}
 							}
 						}

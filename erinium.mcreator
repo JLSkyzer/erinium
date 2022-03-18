@@ -2235,76 +2235,6 @@
       "path": "~/Server side"
     },
     {
-      "name": "WonXpOverlayDisplayOverlayIngame",
-      "type": "procedure",
-      "sortid": 170,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "won_xp_overlay_display_overlay_ingame",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Misc System/RankSystem/Won Xp"
-    },
-    {
-      "name": "WonXpOverlay",
-      "type": "overlay",
-      "sortid": 170,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "won_xp_overlay",
-      "path": "~/Misc System/RankSystem/Won Xp"
-    },
-    {
-      "name": "WonXpTimer",
-      "type": "procedure",
-      "sortid": 171,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "won_xp_timer",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Misc System/RankSystem/Won Xp"
-    },
-    {
-      "name": "ToggleXpOverlayCommandExecuted",
-      "type": "procedure",
-      "sortid": 173,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "toggle_xp_overlay_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Misc System/RankSystem/Won Xp"
-    },
-    {
-      "name": "ToggleXpOverlay",
-      "type": "command",
-      "sortid": 173,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "toggle_xp_overlay",
-      "path": "~/Misc System/RankSystem/Won Xp"
-    },
-    {
       "name": "Farming",
       "type": "procedure",
       "sortid": 174,
@@ -2448,6 +2378,49 @@
         ]
       },
       "path": "~/Misc System/RankSystem"
+    },
+    {
+      "name": "ErrorLangMessage",
+      "type": "procedure",
+      "sortid": 179,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "error_lang_message",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Unlocked"
+    },
+    {
+      "name": "OnCraft",
+      "type": "procedure",
+      "sortid": 179,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_craft",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/RankSystem/Unlocked"
+    },
+    {
+      "name": "PlanetTeleporterPanel",
+      "type": "gui",
+      "sortid": 180,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "planet_teleporter_panel",
+      "path": "~/Space update/Gui"
     }
   ],
   "variable_elements": [
@@ -2891,6 +2864,10 @@
           {
             "name": "Trigger",
             "children": []
+          },
+          {
+            "name": "Gui",
+            "children": []
           }
         ]
       },
@@ -2903,7 +2880,7 @@
   "workspaceSettings": {
     "modid": "erinium",
     "modName": "Erinium",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Mod crée par JLSkyzer",
     "author": "killi, MCreator",
     "websiteURL": "https://discord.gg/26DzRJCTQs",

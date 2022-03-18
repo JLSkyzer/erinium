@@ -5,8 +5,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
 import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
@@ -62,27 +64,11 @@ public class CraftingProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				{
-					double _setval = 60;
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.wonXp = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					String _setval = ("\u00A7e+" + (itemstack).getCount() * 150 + " xp");
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message_2 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 150 + " xp "
+							+ "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+							+ " / 100.000")), (true));
 				}
 			}
 		} else {
@@ -97,27 +83,15 @@ public class CraftingProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.wonXp = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = ("\u00A7e+" + (itemstack).getCount() * 60 + " xp");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (itemstack).getCount() * 60 + " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				}
 			} else {
@@ -132,27 +106,15 @@ public class CraftingProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.wonXp = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = ("\u00A7e+" + (itemstack).getCount() * 15 + " xp");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = ("\u00A7a" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + " / 100.000");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (itemstack).getCount() * 15 + " xp " + "\u00A7f| " + "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					}
 				}
