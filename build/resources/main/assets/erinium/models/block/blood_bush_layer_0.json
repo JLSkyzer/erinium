@@ -1,8 +1,0 @@
-{
-  "parent": "erinium:custom/blood_bush_layer_0",
-  "textures": {
-    "all": "erinium:blocks/blood_bush_texture",
-    "particle": "erinium:blocks/blood_bush_texture",
-    "berry_texture.png": "erinium:blocks/blood_bush_texture"
-  }
-}
