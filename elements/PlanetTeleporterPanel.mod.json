@@ -32,6 +32,20 @@
           "x": 167,
           "y": 41
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "§e\\uE000 Moon \\uE000",
+          "onClick": {
+            "name": "GoMoon"
+          },
+          "width": 81,
+          "height": 20,
+          "name": "§e\\uE000 Moon \\uE000",
+          "x": 122,
+          "y": 59
+        }
       }
     ],
     "gridSettings": {

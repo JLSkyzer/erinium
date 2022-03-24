@@ -96,7 +96,7 @@ public class QqfProcedure {
 				MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
 				if (mcserv != null)
 					mcserv.getPlayerList().func_232641_a_(
-							new StringTextComponent(("<[\u00A7eMembre\u00A7f] \u00A7b" + entity.getDisplayName().getString() + "\u00A7f>" + text)),
+							new StringTextComponent(("< [\u00A7eMembre\u00A7f] \u00A7b" + entity.getDisplayName().getString() + " \u00A7f> " + text)),
 							ChatType.SYSTEM, Util.DUMMY_UUID);
 			}
 		}

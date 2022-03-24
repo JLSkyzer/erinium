@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/moon_stone",
+    "up": "erinium:blocks/moon_stone",
+    "north": "erinium:blocks/moon_stone",
+    "east": "erinium:blocks/moon_stone",
+    "south": "erinium:blocks/moon_stone",
+    "west": "erinium:blocks/moon_stone",
+    "particle": "erinium:blocks/moon_stone"
+  }
+}

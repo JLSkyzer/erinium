@@ -5,14 +5,18 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.Minecraft;
 
 import java.util.HashMap;
+
+import fr.erinagroups.erinium.EriniumMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -89,5 +93,11 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
+		this.addButton(new Button(this.guiLeft + 8, this.guiTop + 9, 81, 20, new StringTextComponent("§e\uE000 Moon \uE000"), e -> {
+			if (true) {
+				EriniumMod.PACKET_HANDLER.sendToServer(new PlanetTeleporterPanelGui.ButtonPressedMessage(0, x, y, z));
+				PlanetTeleporterPanelGui.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
 	}
 }
