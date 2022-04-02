@@ -29,7 +29,7 @@ public class EriniumPickaxeItem extends EriniumModElements.ModElement {
 			}
 
 			public float getEfficiency() {
-				return 12f;
+				return 14f;
 			}
 
 			public float getAttackDamage() {

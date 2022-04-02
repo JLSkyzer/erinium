@@ -4,7 +4,7 @@ license="Copyright © 2021 - 2022 Erinium - All Rights Reserved."
 
 [[mods]]
 modId="erinium"
-version="1.0.4"
+version="1.0.6"
 displayName="Erinium"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://discord.gg/26DzRJCTQs"
@@ -21,5 +21,11 @@ Mod crée par JLSkyzer
     side="BOTH"
 
 
+[[dependencies.erinium]]
+    modId="cgm"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
 

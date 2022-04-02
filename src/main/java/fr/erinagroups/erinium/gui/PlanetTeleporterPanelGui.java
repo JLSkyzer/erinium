@@ -187,8 +187,9 @@ public class PlanetTeleporterPanelGui extends EriniumModElements.ModElement {
 			return;
 		if (buttonID == 0) {
 
-			GoMoonProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			GoMoonProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 

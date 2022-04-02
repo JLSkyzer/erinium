@@ -49,17 +49,17 @@ public class EriniumArmorItem extends EriniumModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 40;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 38;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{12, 16, 16, 12}[slot.getIndex()];
+				return new int[]{5, 8, 10, 5}[slot.getIndex()];
 			}
 
 			@Override
 			public int getEnchantability() {
-				return 30;
+				return 18;
 			}
 
 			@Override
@@ -85,7 +85,7 @@ public class EriniumArmorItem extends EriniumModElements.ModElement {
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.3f;
+				return 0.1f;
 			}
 		};
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumTabItemGroup.tab)) {

@@ -97,6 +97,9 @@ public class EriniumModVariables {
 			nbt.putBoolean("toggle_wonxp_overlay", instance.toggle_wonxp_overlay);
 			nbt.putString("won_xp_message", instance.won_xp_message);
 			nbt.putString("won_xp_message_2", instance.won_xp_message_2);
+			nbt.putDouble("calc_x", instance.calc_x);
+			nbt.putDouble("calc_y", instance.calc_y);
+			nbt.putDouble("calc_z", instance.calc_z);
 			return nbt;
 		}
 
@@ -129,6 +132,9 @@ public class EriniumModVariables {
 			instance.toggle_wonxp_overlay = nbt.getBoolean("toggle_wonxp_overlay");
 			instance.won_xp_message = nbt.getString("won_xp_message");
 			instance.won_xp_message_2 = nbt.getString("won_xp_message_2");
+			instance.calc_x = nbt.getDouble("calc_x");
+			instance.calc_y = nbt.getDouble("calc_y");
+			instance.calc_z = nbt.getDouble("calc_z");
 		}
 	}
 
@@ -159,6 +165,9 @@ public class EriniumModVariables {
 		public boolean toggle_wonxp_overlay = true;
 		public String won_xp_message = "\"\"";
 		public String won_xp_message_2 = "\"\"";
+		public double calc_x = 0;
+		public double calc_y = 0;
+		public double calc_z = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -214,6 +223,9 @@ public class EriniumModVariables {
 		clone.playerLvl = original.playerLvl;
 		clone.playerXp = original.playerXp;
 		clone.toggle_wonxp_overlay = original.toggle_wonxp_overlay;
+		clone.calc_x = original.calc_x;
+		clone.calc_y = original.calc_y;
+		clone.calc_z = original.calc_z;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
@@ -271,6 +283,9 @@ public class EriniumModVariables {
 					variables.toggle_wonxp_overlay = message.data.toggle_wonxp_overlay;
 					variables.won_xp_message = message.data.won_xp_message;
 					variables.won_xp_message_2 = message.data.won_xp_message_2;
+					variables.calc_x = message.data.calc_x;
+					variables.calc_y = message.data.calc_y;
+					variables.calc_z = message.data.calc_z;
 				}
 			});
 			context.setPacketHandled(true);

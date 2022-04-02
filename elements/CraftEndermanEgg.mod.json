@@ -1,0 +1,46 @@
+{
+  "_fv": 24,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:XpOrb"
+      },
+      {
+        "value": "CUSTOM:BloodLargeBottle"
+      },
+      {
+        "value": "CUSTOM:XpOrb"
+      },
+      {
+        "value": "CUSTOM:BloodLargeBottle"
+      },
+      {
+        "value": "Items.ENDER_PEARL"
+      },
+      {
+        "value": "CUSTOM:BloodLargeBottle"
+      },
+      {
+        "value": "CUSTOM:XpOrb"
+      },
+      {
+        "value": "CUSTOM:BloodLargeBottle"
+      },
+      {
+        "value": "CUSTOM:XpOrb"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "Items.SPAWN_EGG#58"
+    },
+    "name": "craft_enderman_egg",
+    "namespace": "mod"
+  }
+}

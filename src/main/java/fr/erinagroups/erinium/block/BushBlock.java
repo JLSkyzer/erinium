@@ -254,6 +254,8 @@ public class BushBlock extends EriniumModElements.ModElement {
 			boolean blockCriteria = false;
 			if (blockAt.getBlock() == Blocks.STONE)
 				blockCriteria = true;
+			if (blockAt.getBlock() == Blocks.DIRT)
+				blockCriteria = true;
 			return blockCriteria;
 		}
 
@@ -279,7 +281,7 @@ public class BushBlock extends EriniumModElements.ModElement {
 				}
 			};
 			configuredFeature = feature.withConfiguration(new OreFeatureConfig(CustomRuleTest.INSTANCE, block.getDefaultState(), 2)).range(64)
-					.square().func_242731_b(2);
+					.square().func_242731_b(6);
 			event.getRegistry().register(feature.setRegistryName("bush"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("erinium:bush"), configuredFeature);
 		}

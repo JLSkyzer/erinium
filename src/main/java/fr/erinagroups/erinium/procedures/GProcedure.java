@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 
 import java.util.Map;
 
+import fr.erinagroups.erinium.block.NetherStarGenBlock;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
@@ -57,7 +58,8 @@ public class GProcedure {
 				sz = (-16);
 				for (int index2 = 0; index2 < (int) (32); index2++) {
 					if ((world.getBlockState(new BlockPos((int) (x + sx), (int) sy, (int) (z + sz)))).getBlock() == Blocks.CHEST
-							|| (world.getBlockState(new BlockPos((int) (x + sx), (int) sy, (int) (z + sz)))).getBlock() == Blocks.FURNACE) {
+							|| (world.getBlockState(new BlockPos((int) (x + sx), (int) sy, (int) (z + sz)))).getBlock() == Blocks.FURNACE
+							|| (world.getBlockState(new BlockPos((int) (x + sx), (int) sy, (int) (z + sz)))).getBlock() == NetherStarGenBlock.block) {
 						found = (true);
 						NumCoffre = (NumCoffre + 1);
 					}

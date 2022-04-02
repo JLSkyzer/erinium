@@ -53,6 +53,9 @@ public class EriniumModElements {
 		sounds.put(new ResourceLocation("erinium", "no_ammo"), new net.minecraft.util.SoundEvent(new ResourceLocation("erinium", "no_ammo")));
 		sounds.put(new ResourceLocation("erinium", "hitmarker"), new net.minecraft.util.SoundEvent(new ResourceLocation("erinium", "hitmarker")));
 		sounds.put(new ResourceLocation("erinium", "printer"), new net.minecraft.util.SoundEvent(new ResourceLocation("erinium", "printer")));
+		sounds.put(new ResourceLocation("erinium", "explosion"), new net.minecraft.util.SoundEvent(new ResourceLocation("erinium", "explosion")));
+		sounds.put(new ResourceLocation("erinium", "erinium_boss_dead_1"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("erinium", "erinium_boss_dead_1")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("erinium").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

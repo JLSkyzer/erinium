@@ -33,7 +33,7 @@ public class EriniumSwordItem extends EriniumModElements.ModElement {
 			}
 
 			public float getAttackDamage() {
-				return 2f;
+				return 6.5f;
 			}
 
 			public int getHarvestLevel() {
@@ -41,7 +41,7 @@ public class EriniumSwordItem extends EriniumModElements.ModElement {
 			}
 
 			public int getEnchantability() {
-				return 30;
+				return 50;
 			}
 
 			public Ingredient getRepairMaterial() {

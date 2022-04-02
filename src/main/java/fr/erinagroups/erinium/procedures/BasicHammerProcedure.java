@@ -45,13 +45,13 @@ public class BasicHammerProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getHorizontalFacing()) == Direction.UP || (entity.getHorizontalFacing()) == Direction.DOWN) {
-			if ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getMaterial() == net.minecraft.block.material.Material.ROCK
-					&& !((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.BEDROCK)) {
+		if (entity.rotationPitch > 45 || entity.rotationPitch < -45) {
+			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getMaterial() == net.minecraft.block.material.Material.ROCK
+					&& !((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.BEDROCK)) {
 				if (world instanceof World) {
-					Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z)), (World) world,
+					Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
 							new BlockPos((int) x, (int) y, (int) z));
-					world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) z), false);
+					world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 				}
 			}
 			if ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getMaterial() == net.minecraft.block.material.Material.ROCK
@@ -62,20 +62,28 @@ public class BasicHammerProcedure {
 					world.destroyBlock(new BlockPos((int) (x - 1), (int) y, (int) z), false);
 				}
 			}
-			if ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
-					&& !((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1)))).getBlock() == Blocks.BEDROCK)) {
+			if ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getMaterial() == net.minecraft.block.material.Material.ROCK
+					&& !((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.BEDROCK)) {
 				if (world instanceof World) {
-					Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1))), (World) world,
+					Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z)), (World) world,
 							new BlockPos((int) x, (int) y, (int) z));
-					world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) (z + 1)), false);
+					world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) z), false);
 				}
 			}
-			if ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
-					&& !((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)))).getBlock() == Blocks.BEDROCK)) {
+			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
+					&& !((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.BEDROCK)) {
 				if (world instanceof World) {
-					Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1))), (World) world,
+					Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1))), (World) world,
 							new BlockPos((int) x, (int) y, (int) z));
-					world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)), false);
+					world.destroyBlock(new BlockPos((int) x, (int) y, (int) (z - 1)), false);
+				}
+			}
+			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
+					&& !((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.BEDROCK)) {
+				if (world instanceof World) {
+					Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))), (World) world,
+							new BlockPos((int) x, (int) y, (int) z));
+					world.destroyBlock(new BlockPos((int) x, (int) y, (int) (z + 1)), false);
 				}
 			}
 			if ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) (z - 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
@@ -94,20 +102,20 @@ public class BasicHammerProcedure {
 					world.destroyBlock(new BlockPos((int) (x - 1), (int) y, (int) (z + 1)), false);
 				}
 			}
-			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
-					&& !((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.BEDROCK)) {
+			if ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
+					&& !((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)))).getBlock() == Blocks.BEDROCK)) {
 				if (world instanceof World) {
-					Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))), (World) world,
+					Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1))), (World) world,
 							new BlockPos((int) x, (int) y, (int) z));
-					world.destroyBlock(new BlockPos((int) x, (int) y, (int) (z + 1)), false);
+					world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)), false);
 				}
 			}
-			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
-					&& !((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.BEDROCK)) {
+			if ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1)))).getMaterial() == net.minecraft.block.material.Material.ROCK
+					&& !((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1)))).getBlock() == Blocks.BEDROCK)) {
 				if (world instanceof World) {
-					Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1))), (World) world,
+					Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1))), (World) world,
 							new BlockPos((int) x, (int) y, (int) z));
-					world.destroyBlock(new BlockPos((int) x, (int) y, (int) (z - 1)), false);
+					world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) (z + 1)), false);
 				}
 			}
 		} else if ((entity.getHorizontalFacing()) == Direction.NORTH || (entity.getHorizontalFacing()) == Direction.SOUTH) {

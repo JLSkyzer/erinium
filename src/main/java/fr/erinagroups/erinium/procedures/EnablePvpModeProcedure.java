@@ -59,14 +59,14 @@ public class EnablePvpModeProcedure {
 		Entity imediatesourceentity = (Entity) dependencies.get("imediatesourceentity");
 		if (entity instanceof PlayerEntity && imediatesourceentity instanceof PlayerEntity) {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false
-					&& (imediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
+					.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 					((PlayerEntity) entity).sendStatusMessage(
 							new StringTextComponent("\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
 							(false));
 				}
+			} else if ((imediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
 				if (imediatesourceentity instanceof PlayerEntity && !imediatesourceentity.world.isRemote()) {
 					((PlayerEntity) imediatesourceentity).sendStatusMessage(
 							new StringTextComponent("\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),

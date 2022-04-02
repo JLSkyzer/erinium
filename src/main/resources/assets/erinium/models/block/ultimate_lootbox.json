@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/yellow",
+    "up": "erinium:blocks/ultimate_lootbox_top",
+    "north": "erinium:blocks/ultimate_lootbox_side",
+    "east": "erinium:blocks/ultimate_lootbox_side",
+    "south": "erinium:blocks/ultimate_lootbox_side",
+    "west": "erinium:blocks/ultimate_lootbox_side",
+    "particle": "erinium:blocks/yellow"
+  }
+}

@@ -45,5 +45,24 @@
         "stream": false
       }
     ]
+  },
+  "explosion": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "erinium:mixkit-explosion-spell-1685",
+        "stream": false
+      }
+    ]
+  },
+  "erinium_boss_dead_1": {
+    "category": "master",
+    "subtitle": "subtitles.erinium_boss_dead_1",
+    "sounds": [
+      {
+        "name": "erinium:mixkit-laser-gun-impact-destruction-782",
+        "stream": false
+      }
+    ]
   }
 }

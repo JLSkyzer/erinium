@@ -39,7 +39,7 @@ public class EriniumHammerItem extends EriniumModElements.ModElement {
 			}
 
 			public float getEfficiency() {
-				return 13f;
+				return 14f;
 			}
 
 			public float getAttackDamage() {

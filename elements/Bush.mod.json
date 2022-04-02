@@ -140,9 +140,12 @@
     "blocksToReplace": [
       {
         "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.DIRT#0"
       }
     ],
-    "frequencyPerChunks": 2,
+    "frequencyPerChunks": 6,
     "frequencyOnChunk": 2,
     "minGenerateHeight": 0,
     "maxGenerateHeight": 64

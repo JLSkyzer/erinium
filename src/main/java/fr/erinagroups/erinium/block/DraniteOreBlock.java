@@ -118,7 +118,7 @@ public class DraniteOreBlock extends EriniumModElements.ModElement {
 				}
 			};
 			configuredFeature = feature.withConfiguration(new OreFeatureConfig(CustomRuleTest.INSTANCE, block.getDefaultState(), 3)).range(12)
-					.square().func_242731_b(3);
+					.square().func_242731_b(5);
 			event.getRegistry().register(feature.setRegistryName("dranite_ore"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("erinium:dranite_ore"), configuredFeature);
 		}

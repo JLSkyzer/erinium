@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "tab",
+  "definition": {
+    "name": "§5Loot Box",
+    "icon": {
+      "value": "CUSTOM:ClassicLootbox"
+    },
+    "showSearch": false
+  }
+}

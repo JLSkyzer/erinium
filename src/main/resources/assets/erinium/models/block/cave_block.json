@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/cave_block",
+    "up": "erinium:blocks/cave_block",
+    "north": "erinium:blocks/cave_block",
+    "east": "erinium:blocks/cave_block",
+    "south": "erinium:blocks/cave_block",
+    "west": "erinium:blocks/cave_block",
+    "particle": "erinium:blocks/cave_block"
+  }
+}

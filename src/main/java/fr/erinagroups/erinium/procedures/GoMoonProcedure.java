@@ -18,6 +18,7 @@ import net.minecraft.entity.Entity;
 import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Collections;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.EriniumModVariables;
@@ -26,11 +27,23 @@ import fr.erinagroups.erinium.EriniumMod;
 public class GoMoonProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("x") == null) {
+			if (!dependencies.containsKey("x"))
+				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure GoMoon!");
+			return;
+		}
+		if (dependencies.get("z") == null) {
+			if (!dependencies.containsKey("z"))
+				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure GoMoon!");
+			return;
+		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
 				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure GoMoon!");
 			return;
 		}
+		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
+		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 5) {
@@ -49,6 +62,13 @@ public class GoMoonProcedure {
 						}
 						((ServerPlayerEntity) _ent).connection.sendPacket(new SPlaySoundEventPacket(1032, BlockPos.ZERO, 0, false));
 					}
+				}
+			}
+			{
+				Entity _ent = entity;
+				_ent.setPositionAndUpdate(x, 100, z);
+				if (_ent instanceof ServerPlayerEntity) {
+					((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, 100, z, _ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
 				}
 			}
 		} else {

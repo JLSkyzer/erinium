@@ -1,0 +1,339 @@
+package fr.erinagroups.erinium.procedures;
+
+import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector2f;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.item.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.command.ICommandSource;
+import net.minecraft.command.CommandSource;
+import net.minecraft.block.Blocks;
+
+import java.util.Map;
+
+import fr.erinagroups.erinium.item.XpOrbItem;
+import fr.erinagroups.erinium.item.EriniumIngotItem;
+import fr.erinagroups.erinium.block.UltimateLootboxBlock;
+import fr.erinagroups.erinium.block.ClassicLootboxBlock;
+import fr.erinagroups.erinium.EriniumModVariables;
+import fr.erinagroups.erinium.EriniumMod;
+
+public class UltimateLootboxBlockDestroyedByPlayerProcedure {
+
+	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure UltimateLootboxBlockDestroyedByPlayer!");
+			return;
+		}
+		if (dependencies.get("x") == null) {
+			if (!dependencies.containsKey("x"))
+				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure UltimateLootboxBlockDestroyedByPlayer!");
+			return;
+		}
+		if (dependencies.get("y") == null) {
+			if (!dependencies.containsKey("y"))
+				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure UltimateLootboxBlockDestroyedByPlayer!");
+			return;
+		}
+		if (dependencies.get("z") == null) {
+			if (!dependencies.containsKey("z"))
+				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure UltimateLootboxBlockDestroyedByPlayer!");
+			return;
+		}
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure UltimateLootboxBlockDestroyedByPlayer!");
+			return;
+		}
+		IWorld world = (IWorld) dependencies.get("world");
+		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
+		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
+		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
+		Entity entity = (Entity) dependencies.get("entity");
+		ItemStack tempItem = ItemStack.EMPTY;
+		double random = 0;
+		double random2 = 0;
+		double multiple = 0;
+		random = Math.round(Math.random() * 100);
+		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		if (random <= 1) {
+			random2 = Math.round(Math.random() * 3);
+			for (int index0 = 0; index0 < (int) (random2); index0++) {
+				if (world instanceof World && !world.isRemote()) {
+					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(UltimateLootboxBlock.block));
+					entityToSpawn.setPickupDelay((int) 10);
+					world.addEntity(entityToSpawn);
+				}
+			}
+		} else {
+			if (random <= 3) {
+				random2 = Math.round(Math.random() * 5);
+				for (int index1 = 0; index1 < (int) (random2); index1++) {
+					if (world instanceof World && !world.isRemote()) {
+						ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(ClassicLootboxBlock.block));
+						entityToSpawn.setPickupDelay((int) 10);
+						world.addEntity(entityToSpawn);
+					}
+				}
+			} else {
+				if (random <= 8) {
+					random2 = Math.round(Math.random() * 16);
+					for (int index2 = 0; index2 < (int) (random2); index2++) {
+						if (world instanceof World && !world.isRemote()) {
+							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(EriniumIngotItem.block));
+							entityToSpawn.setPickupDelay((int) 10);
+							world.addEntity(entityToSpawn);
+						}
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity).sendStatusMessage(
+								new StringTextComponent(("" + new TranslationTextComponent("lootbox.event.drop_erinium").getString())), (false));
+					}
+				} else {
+					if (random <= 10) {
+						multiple = Math.round(Math.random() * 4);
+						if (multiple <= 1) {
+							if (world instanceof ServerWorld) {
+								((World) world).getServer().getCommandManager().handleCommand(
+										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:bazooka\",Count:1}}");
+							}
+							if (world instanceof ServerWorld) {
+								((World) world).getServer().getCommandManager().handleCommand(
+										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:missile\",Count:4}}");
+							}
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7ekaboooom"), (false));
+							}
+						} else {
+							if (multiple <= 2) {
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(
+											new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+													new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:mini_gun\",Count:1}}");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(
+											new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+													new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:64}}");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(
+											new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+													new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:64}}");
+								}
+								if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+									((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7eRATATATATATATATA"), (false));
+								}
+							} else {
+								if (multiple < 3) {
+									if (world instanceof ServerWorld) {
+										((World) world).getServer().getCommandManager().handleCommand(
+												new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4,
+														"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+												"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:heavy_rifle\",Count:1}}");
+									}
+									if (world instanceof ServerWorld) {
+										((World) world).getServer().getCommandManager().handleCommand(
+												new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4,
+														"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+												"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:advanced_bullet\",Count:16}}");
+									}
+									if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+										((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7etchik paaaaan"), (false));
+									}
+								} else {
+									if (multiple < 4) {
+										if (world instanceof ServerWorld) {
+											((World) world).getServer().getCommandManager().handleCommand(
+													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
+															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+																	.withFeedbackDisabled(),
+													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:assault_rifle\",Count:1}}");
+										}
+										if (world instanceof ServerWorld) {
+											((World) world).getServer().getCommandManager().handleCommand(
+													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
+															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+																	.withFeedbackDisabled(),
+													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
+										}
+										if (world instanceof ServerWorld) {
+											((World) world).getServer().getCommandManager().handleCommand(
+													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
+															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+																	.withFeedbackDisabled(),
+													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
+										}
+										if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+											((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7egood luck soldier"), (false));
+										}
+									}
+								}
+							}
+						}
+					} else {
+						if (random <= 20) {
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity).sendStatusMessage(
+										new StringTextComponent(("" + new TranslationTextComponent("lootbox.event.oregen_1").getString())), (false));
+							}
+							for (int index3 = 0; index3 < (int) (32); index3++) {
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.GOLD_ORE));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
+								}
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.IRON_ORE));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
+								}
+							}
+							for (int index4 = 0; index4 < (int) (16); index4++) {
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.COAL_ORE));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
+								}
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.DIAMOND_ORE));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
+								}
+							}
+						} else {
+							if (random <= 25) {
+								multiple = Math.round(Math.random() * 3);
+								if (multiple <= 1) {
+									if (world instanceof World && !world.isRemote()) {
+										ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.ZOMBIE_SPAWN_EGG));
+										entityToSpawn.setPickupDelay((int) 10);
+										world.addEntity(entityToSpawn);
+									}
+								} else {
+									if (multiple <= 2) {
+										if (world instanceof World && !world.isRemote()) {
+											ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.SPIDER_SPAWN_EGG));
+											entityToSpawn.setPickupDelay((int) 10);
+											world.addEntity(entityToSpawn);
+										}
+									} else {
+										if (multiple <= 3) {
+											if (world instanceof World && !world.isRemote()) {
+												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+														new ItemStack(Items.SKELETON_SPAWN_EGG));
+												entityToSpawn.setPickupDelay((int) 10);
+												world.addEntity(entityToSpawn);
+											}
+										}
+									}
+								}
+							} else {
+								if (random <= 40) {
+									random2 = Math.round(Math.random() * 1500);
+									{
+										double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).Credit + random2);
+										entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+											capability.Credit = _setval;
+											capability.syncPlayerVariables(entity);
+										});
+									}
+									if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+										((PlayerEntity) entity).sendStatusMessage(
+												new StringTextComponent(("\u00A7c+ " + new java.text.DecimalFormat("##.##").format(random2) + " $")),
+												(false));
+									}
+								} else {
+									if (random <= 50) {
+										if (world instanceof ServerWorld) {
+											((World) world).getServer().getCommandManager().handleCommand(
+													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
+															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+																	.withFeedbackDisabled(),
+													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:pistol\",Count:1}}");
+										}
+									} else {
+										if (random <= 55) {
+											tempItem = new ItemStack(Items.ENCHANTED_BOOK);
+											((tempItem)).addEnchantment(Enchantments.PROTECTION, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.RESPIRATION, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.SHARPNESS, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.FIRE_ASPECT, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.LOOTING, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.UNBREAKING, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.FORTUNE, (int) 3);
+											((tempItem)).addEnchantment(Enchantments.POWER, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.FLAME, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.MENDING, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.FIRE_ASPECT, (int) 5);
+											((tempItem)).addEnchantment(Enchantments.EFFICIENCY, (int) 5);
+											((tempItem)).setDisplayName(new StringTextComponent("All for five"));
+											if (world instanceof World && !world.isRemote()) {
+												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, (tempItem));
+												entityToSpawn.setPickupDelay((int) 10);
+												world.addEntity(entityToSpawn);
+											}
+										} else {
+											if (random <= 65) {
+												world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.DIAMOND_BLOCK.getDefaultState(),
+														3);
+												world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z),
+														Blocks.GOLD_BLOCK.getDefaultState(), 3);
+												world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z),
+														Blocks.EMERALD_BLOCK.getDefaultState(), 3);
+											} else {
+												if (random <= 90) {
+													if (world instanceof World && !world.isRemote()) {
+														ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+																new ItemStack(XpOrbItem.block));
+														entityToSpawn.setPickupDelay((int) 10);
+														world.addEntity(entityToSpawn);
+													}
+												} else {
+													random2 = Math.round(Math.random() * 30000);
+													{
+														double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp + random2);
+														entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.ifPresent(capability -> {
+																	capability.playerXp = _setval;
+																	capability.syncPlayerVariables(entity);
+																});
+													}
+													if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+														((PlayerEntity) entity).sendStatusMessage(
+																new StringTextComponent(
+																		("\u00A7c+ " + new java.text.DecimalFormat("##").format(random2) + " xp")),
+																(false));
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

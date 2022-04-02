@@ -114,8 +114,8 @@ public class EriniumOreBlock extends EriniumModElements.ModElement {
 					return super.generate(world, generator, rand, pos, config);
 				}
 			};
-			configuredFeature = feature.withConfiguration(new OreFeatureConfig(CustomRuleTest.INSTANCE, block.getDefaultState(), 6)).range(10)
-					.square().func_242731_b(1);
+			configuredFeature = feature.withConfiguration(new OreFeatureConfig(CustomRuleTest.INSTANCE, block.getDefaultState(), 6)).range(12)
+					.square().func_242731_b(3);
 			event.getRegistry().register(feature.setRegistryName("erinium_ore"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("erinium:erinium_ore"), configuredFeature);
 		}
