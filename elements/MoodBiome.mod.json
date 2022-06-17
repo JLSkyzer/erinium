@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "biome",
   "definition": {
     "name": "Mood Biome",
@@ -48,15 +48,13 @@
     },
     "particlesProbability": 0.5,
     "biomeCategory": "PLAINS",
-    "parent": {
-      "value": "CUSTOM:SciningBiome"
-    },
     "rainingPossibility": 0.5,
     "temperature": 0.5,
     "baseHeight": 0.0,
     "heightVariation": 0.1,
-    "biomeType": "WARM",
     "spawnBiome": false,
+    "spawnBiomeNether": false,
+    "spawnInCaves": false,
     "biomeWeight": 10,
     "biomeDictionaryTypes": [
       "FOREST"

@@ -50,24 +50,24 @@ public class EriniumSkeletonBossEntityDiesProcedure {
 		random = Math.round(Math.random() * 5);
 		if (world instanceof ServerWorld) {
 			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos((int) x, (int) y, (int) z)));
+			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x, y, z)));
 			_ent.setEffectOnly(true);
 			((World) world).addEntity(_ent);
 		}
 		if (world instanceof ServerWorld) {
 			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos((int) x, (int) y, (int) z)));
+			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x, y, z)));
 			_ent.setEffectOnly(true);
 			((World) world).addEntity(_ent);
 		}
 		if (world instanceof ServerWorld) {
 			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos((int) x, (int) y, (int) z)));
+			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x, y, z)));
 			_ent.setEffectOnly(true);
 			((World) world).addEntity(_ent);
 		}
 		if (world instanceof World && !world.isRemote()) {
-			((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+			((World) world).playSound(null, new BlockPos(x, y, z),
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("erinium:erinium_boss_dead_1")),
 					SoundCategory.NEUTRAL, (float) 1, (float) 1);
 		} else {

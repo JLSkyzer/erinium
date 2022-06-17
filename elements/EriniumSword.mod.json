@@ -1,11 +1,11 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "tool",
   "definition": {
     "renderType": 0,
     "texture": "erinium_sword",
     "customModelName": "Normal",
-    "name": "ง1Erinium Sword",
+    "name": "ยง1Erinium Sword",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:EriniumTab"

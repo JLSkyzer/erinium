@@ -63,7 +63,7 @@ public class PlanetVarUpdateProcedure {
 			}
 		} else if ((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (World.THE_NETHER)) {
 			{
-				String _setval = "\u00A7cNether";
+				String _setval = "\uFFFDcNether";
 				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.planete = _setval;
 					capability.syncPlayerVariables(entity);
@@ -80,7 +80,7 @@ public class PlanetVarUpdateProcedure {
 		} else if ((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
 				new ResourceLocation("erinium:test_dim")))) {
 			{
-				String _setval = "\u00A74\u00A7lStaff dim";
+				String _setval = "\uFFFD4\uFFFDlStaff dim";
 				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.planete = _setval;
 					capability.syncPlayerVariables(entity);

@@ -348,7 +348,7 @@ public class EriniumCommandExecutedProcedure {
 							}
 						} else {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7c/erinium <rank>"), (false));
+								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7erinium <rank>"), (false));
 							}
 						}
 					} else {

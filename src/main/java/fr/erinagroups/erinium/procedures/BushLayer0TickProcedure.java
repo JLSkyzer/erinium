@@ -44,9 +44,9 @@ public class BushLayer0TickProcedure {
 		double temp = 0;
 		temp = ((new Random()).nextInt((int) 3 + 1));
 		if (temp == 2) {
-			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == XpBushLayer0Block.block) {
+			if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == XpBushLayer0Block.block) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					BlockPos _bp = new BlockPos(x, y, z);
 					BlockState _bs = XpBushLayer1Block.block.getDefaultState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
@@ -59,9 +59,9 @@ public class BushLayer0TickProcedure {
 					}
 					world.setBlockState(_bp, _bs, 3);
 				}
-			} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == BloodBushLayer0Block.block) {
+			} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == BloodBushLayer0Block.block) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					BlockPos _bp = new BlockPos(x, y, z);
 					BlockState _bs = BloodBushLayer1Block.block.getDefaultState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {

@@ -42,11 +42,11 @@ public class House1OnClickProcedure {
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 		if (world instanceof ServerWorld) {
 			Template template = ((ServerWorld) world).getStructureTemplateManager().getTemplateDefaulted(new ResourceLocation("erinium", "house_1"));
 			if (template != null) {
-				template.func_237144_a_((ServerWorld) world, new BlockPos((int) x, (int) y, (int) z),
+				template.func_237144_a_((ServerWorld) world, new BlockPos(x, y, z),
 						new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
 						((World) world).rand);
 			}

@@ -89,7 +89,7 @@ public class RankGuiWindow extends ContainerScreen<RankGui.GuiContainerMod> {
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 36, this.guiTop + 100, 45, 20, new StringTextComponent("§bWiki"), e -> {
+		this.addButton(new Button(this.guiLeft + 36, this.guiTop + 100, 45, 16, new StringTextComponent("ï¿½bWiki"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new RankGui.ButtonPressedMessage(0, x, y, z));
 				RankGui.handleButtonAction(entity, 0, x, y, z);

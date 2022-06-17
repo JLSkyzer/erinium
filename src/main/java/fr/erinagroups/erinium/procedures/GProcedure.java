@@ -57,9 +57,9 @@ public class GProcedure {
 			for (int index1 = 0; index1 < (int) (254); index1++) {
 				sz = (-16);
 				for (int index2 = 0; index2 < (int) (32); index2++) {
-					if ((world.getBlockState(new BlockPos((int) (x + sx), (int) sy, (int) (z + sz)))).getBlock() == Blocks.CHEST
-							|| (world.getBlockState(new BlockPos((int) (x + sx), (int) sy, (int) (z + sz)))).getBlock() == Blocks.FURNACE
-							|| (world.getBlockState(new BlockPos((int) (x + sx), (int) sy, (int) (z + sz)))).getBlock() == NetherStarGenBlock.block) {
+					if ((world.getBlockState(new BlockPos(x + sx, sy, z + sz))).getBlock() == Blocks.CHEST
+							|| (world.getBlockState(new BlockPos(x + sx, sy, z + sz))).getBlock() == Blocks.FURNACE
+							|| (world.getBlockState(new BlockPos(x + sx, sy, z + sz))).getBlock() == NetherStarGenBlock.block) {
 						found = (true);
 						NumCoffre = (NumCoffre + 1);
 					}

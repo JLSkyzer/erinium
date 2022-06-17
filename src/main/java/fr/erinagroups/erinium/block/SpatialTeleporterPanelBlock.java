@@ -197,7 +197,7 @@ public class SpatialTeleporterPanelBlock extends EriniumModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("§2§lSpatial Teleporter Panel");
+						return new StringTextComponent("Â§2Â§lSpatial Teleporter Panel");
 					}
 
 					@Override
@@ -331,7 +331,7 @@ public class SpatialTeleporterPanelBlock extends EriniumModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("§2§lSpatial Teleporter Panel");
+			return new StringTextComponent("Â§2Â§lSpatial Teleporter Panel");
 		}
 
 		@Override

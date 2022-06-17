@@ -187,7 +187,7 @@ public class GoHomeCmdProcedure {
 		} else {
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity).sendStatusMessage(
-						new StringTextComponent("\u00A7cError: Vous ne pouvez pas faire cela car vous \u00EAtes en mode \u00A7acombat."), (false));
+						new StringTextComponent("\u00A7cError: Vous ne pouvez pas faire cela car vous \u00EAtes en mode &acombat."), (false));
 			}
 		}
 	}

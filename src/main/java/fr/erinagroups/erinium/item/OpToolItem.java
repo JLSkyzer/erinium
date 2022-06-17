@@ -8,6 +8,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -40,6 +41,11 @@ public class OpToolItem extends EriniumModElements.ModElement {
 		}
 
 		@Override
+		public UseAction getUseAction(ItemStack itemstack) {
+			return UseAction.EAT;
+		}
+
+		@Override
 		public int getItemEnchantability() {
 			return 0;
 		}
@@ -63,7 +69,7 @@ public class OpToolItem extends EriniumModElements.ModElement {
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("\u00A74\u00A7lR\u00E9serv\u00E9e au admins !!!"));
+			list.add(new StringTextComponent("\uFFFD4\uFFFDlR\uFFFDserv\uFFFDe au admins !!!"));
 		}
 	}
 }

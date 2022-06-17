@@ -88,7 +88,7 @@ public class TestGuiGuiWindow extends ContainerScreen<TestGuiGui.GuiContainerMod
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 60, this.guiTop + 25, 18, 20, new StringTextComponent("\uE002"), e -> {
+		this.addButton(new Button(this.guiLeft + 60, this.guiTop + 25, 18, 16, new StringTextComponent("\uE002"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new TestGuiGui.ButtonPressedMessage(0, x, y, z));
 				TestGuiGui.handleButtonAction(entity, 0, x, y, z);

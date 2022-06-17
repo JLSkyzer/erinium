@@ -73,7 +73,7 @@ public class QqfProcedure {
 		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new EriniumModVariables.PlayerVariables())).PresentationToggle) {
 			temp = (text);
-			temp = (temp.replace("&", "\u00A7"));
+			temp = (temp.replace("&", "\uFFFD"));
 			{
 				String _setval = temp;
 				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -89,14 +89,14 @@ public class QqfProcedure {
 				});
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aDone !"), (false));
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDaDone !"), (false));
 			}
 		} else {
 			if (!world.isRemote()) {
 				MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
 				if (mcserv != null)
 					mcserv.getPlayerList().func_232641_a_(
-							new StringTextComponent(("< [\u00A7eMembre\u00A7f] \u00A7b" + entity.getDisplayName().getString() + " \u00A7f> " + text)),
+							new StringTextComponent(("< [\uFFFDeMembre\uFFFDf] \uFFFDb" + entity.getDisplayName().getString() + " \uFFFDf> " + text)),
 							ChatType.SYSTEM, Util.DUMMY_UUID);
 			}
 		}

@@ -46,7 +46,7 @@ public class HomeTeleporterClickOnBlockProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == BlockSetterBlock.block) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == BlockSetterBlock.block) {
 			if (x != 0 && y != 0 && z != 0) {
 				if ((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (World.OVERWORLD)) {
 					{
@@ -78,17 +78,17 @@ public class HomeTeleporterClickOnBlockProcedure {
 						});
 					}
 					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aHome is set, do \u00A7e/gohome"), (false));
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDaHome is set, do \uFFFDe/gohome"), (false));
 					}
 				} else {
 					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cError : Dimension interdite"), (false));
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDcError : Dimension interdite"), (false));
 					}
 				}
 			} else {
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 					((PlayerEntity) entity)
-							.sendStatusMessage(new StringTextComponent("\u00A7c Error : you cannot set a home setter in x 0 / y 0 / z 0"), (false));
+							.sendStatusMessage(new StringTextComponent("\uFFFDc Error : you cannot set a home setter in x 0 / y 0 / z 0"), (false));
 				}
 			}
 		}

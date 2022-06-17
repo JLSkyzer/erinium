@@ -82,7 +82,7 @@ public class FarmingProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 5) {
-			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.WHEAT && (new Object() {
+			if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WHEAT && (new Object() {
 				public int get(BlockState _bs, String property) {
 					Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 					return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
@@ -97,7 +97,7 @@ public class FarmingProcedure {
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "450" + " xp " + "\u00A7f| " + "\u00A72"
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\uFFFDa+" + "450" + " xp " + "\uFFFDf| " + "\uFFFD2"
 							+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
@@ -106,7 +106,7 @@ public class FarmingProcedure {
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 10) {
-				if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.WHEAT && (new Object() {
+				if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WHEAT && (new Object() {
 					public int get(BlockState _bs, String property) {
 						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 						return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
@@ -124,13 +124,13 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + "150" + " xp " + "\u00A7f| " + "\u00A72"
+												("\uFFFDa+" + "150" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
 					}
-				} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.CARROTS && (new Object() {
+				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS && (new Object() {
 					public int get(BlockState _bs, String property) {
 						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 						return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
@@ -148,13 +148,13 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + "280" + " xp " + "\u00A7f| " + "\u00A72"
+												("\uFFFDa+" + "280" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
 					}
-				} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.POTATOES && (new Object() {
+				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
 					public int get(BlockState _bs, String property) {
 						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 						return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
@@ -172,7 +172,7 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + "285" + " xp " + "\u00A7f| " + "\u00A72"
+												("\uFFFDa+" + "285" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -182,7 +182,7 @@ public class FarmingProcedure {
 			} else {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 15) {
-					if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.CARROTS && (new Object() {
+					if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS && (new Object() {
 						public int get(BlockState _bs, String property) {
 							Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 							return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
@@ -200,13 +200,13 @@ public class FarmingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + "180" + " xp " + "\u00A7f| " + "\u00A72"
+													("\uFFFDa+" + "180" + " xp " + "\uFFFDf| " + "\uFFFD2"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
 						}
-					} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.POTATOES && (new Object() {
+					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
 						public int get(BlockState _bs, String property) {
 							Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 							return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
@@ -224,13 +224,13 @@ public class FarmingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + "200" + " xp " + "\u00A7f| " + "\u00A72"
+													("\uFFFDa+" + "200" + " xp " + "\uFFFDf| " + "\uFFFD2"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
 						}
-					} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.MELON) {
+					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.MELON) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 225);
@@ -243,7 +243,7 @@ public class FarmingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + "225" + " xp " + "\u00A7f| " + "\u00A72"
+													("\uFFFDa+" + "225" + " xp " + "\uFFFDf| " + "\uFFFD2"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -253,7 +253,7 @@ public class FarmingProcedure {
 				} else {
 					if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 20) {
-						if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.CARROTS && (new Object() {
+						if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS && (new Object() {
 							public int get(BlockState _bs, String property) {
 								Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 								return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
@@ -270,13 +270,13 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + "90" + " xp " + "\u00A7f| " + "\u00A72"
+												new StringTextComponent(("\uFFFDa+" + "90" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
 							}
-						} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.POTATOES && (new Object() {
+						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
 							public int get(BlockState _bs, String property) {
 								Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 								return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
@@ -293,13 +293,13 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + "105" + " xp " + "\u00A7f| " + "\u00A72"
+												new StringTextComponent(("\uFFFDa+" + "105" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
 							}
-						} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.MELON) {
+						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.MELON) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 140);
@@ -311,7 +311,7 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + "140" + " xp " + "\u00A7f| " + "\u00A72"
+												new StringTextComponent(("\uFFFDa+" + "140" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),

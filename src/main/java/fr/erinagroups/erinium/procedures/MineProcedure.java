@@ -72,7 +72,7 @@ public class MineProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STONE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STONE) {
 			{
 				double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 1);
@@ -82,7 +82,7 @@ public class MineProcedure {
 				});
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "1" + " xp " + "\u00A7f| " + "\u00A72"
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\uFFFDa+" + "1" + " xp " + "\uFFFDf| " + "\uFFFD2"
 						+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 						+ " / 100.000")), (true));
@@ -90,7 +90,7 @@ public class MineProcedure {
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 5) {
-				if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.COAL_ORE) {
+				if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.COAL_ORE) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 30);
@@ -103,13 +103,13 @@ public class MineProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + "30" + " xp " + "\u00A7f| " + "\u00A72"
+												("\uFFFDa+" + "30" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
 					}
-				} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIAMOND_ORE) {
+				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 320);
@@ -122,7 +122,7 @@ public class MineProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + "320" + " xp " + "\u00A7f| " + "\u00A72"
+												("\uFFFDa+" + "320" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -132,7 +132,7 @@ public class MineProcedure {
 			} else {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 10) {
-					if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.COAL_ORE) {
+					if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.COAL_ORE) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 8);
@@ -145,13 +145,13 @@ public class MineProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + "8" + " xp " + "\u00A7f| " + "\u00A72"
+													("\uFFFDa+" + "8" + " xp " + "\uFFFDf| " + "\uFFFD2"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
 						}
-					} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIAMOND_ORE) {
+					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 170);
@@ -164,13 +164,13 @@ public class MineProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + "170" + " xp " + "\u00A7f| " + "\u00A72"
+													("\uFFFDa+" + "170" + " xp " + "\uFFFDf| " + "\uFFFD2"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
 						}
-					} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == DraniteOreBlock.block) {
+					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == DraniteOreBlock.block) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 240);
@@ -183,7 +183,7 @@ public class MineProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + "240" + " xp " + "\u00A7f| " + "\u00A72"
+													("\uFFFDa+" + "240" + " xp " + "\uFFFDf| " + "\uFFFD2"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -193,7 +193,7 @@ public class MineProcedure {
 				} else {
 					if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 15) {
-						if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIAMOND_ORE) {
+						if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 65);
@@ -205,13 +205,13 @@ public class MineProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + "65" + " xp " + "\u00A7f| " + "\u00A72"
+												new StringTextComponent(("\uFFFDa+" + "65" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
 							}
-						} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == DraniteOreBlock.block) {
+						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == DraniteOreBlock.block) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 120);
@@ -223,7 +223,7 @@ public class MineProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + "120" + " xp " + "\u00A7f| " + "\u00A72"
+												new StringTextComponent(("\uFFFDa+" + "120" + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -233,7 +233,7 @@ public class MineProcedure {
 					} else {
 						if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 20) {
-							if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == DraniteOreBlock.block) {
+							if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == DraniteOreBlock.block) {
 								{
 									double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 45);
@@ -245,7 +245,7 @@ public class MineProcedure {
 								if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 									((PlayerEntity) entity)
 											.sendStatusMessage(
-													new StringTextComponent(("\u00A7a+" + "45" + " xp " + "\u00A7f| " + "\u00A72"
+													new StringTextComponent(("\uFFFDa+" + "45" + " xp " + "\uFFFDf| " + "\uFFFD2"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),

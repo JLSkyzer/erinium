@@ -45,7 +45,7 @@ public class ItemPosRightClickedOnBlockProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == CalculatorBlock.block) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == CalculatorBlock.block) {
 			{
 				double _setval = x;
 				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -68,7 +68,7 @@ public class ItemPosRightClickedOnBlockProcedure {
 				});
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aBlock pos set !"), (false));
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDaBlock pos set !"), (false));
 			}
 		} else {
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {

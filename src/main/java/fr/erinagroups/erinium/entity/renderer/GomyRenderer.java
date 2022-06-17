@@ -1,3 +1,4 @@
+
 package fr.erinagroups.erinium.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;

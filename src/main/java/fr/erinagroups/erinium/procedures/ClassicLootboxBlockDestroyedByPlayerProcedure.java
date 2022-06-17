@@ -58,7 +58,7 @@ public class ClassicLootboxBlockDestroyedByPlayerProcedure {
 		double random = 0;
 		double random2 = 0;
 		random = Math.round(Math.random() * 100);
-		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 		if (random <= 1) {
 			random2 = Math.round(Math.random() * 10);
 			if (world instanceof World && !world.isRemote()) {

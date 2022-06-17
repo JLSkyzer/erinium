@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -36,13 +36,13 @@
       {
         "type": "button",
         "data": {
-          "text": "§e\\uE000 Moon \\uE000",
+          "text": "Â§e\\uE000 Moon \\uE000",
           "onClick": {
             "name": "GoMoon"
           },
           "width": 81,
           "height": 20,
-          "name": "§e\\uE000 Moon \\uE000",
+          "name": "Â§e\\uE000 Moon \\uE000",
           "x": 122,
           "y": 59
         }

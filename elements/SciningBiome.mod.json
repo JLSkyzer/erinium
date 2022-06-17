@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "biome",
   "definition": {
     "name": "Scining Biome",
@@ -48,15 +48,13 @@
     },
     "particlesProbability": 0.5,
     "biomeCategory": "DESERT",
-    "parent": {
-      "value": "desert"
-    },
     "rainingPossibility": 0.01,
     "temperature": 1.25,
     "baseHeight": 0.1,
     "heightVariation": 0.2,
-    "biomeType": "DESERT",
     "spawnBiome": true,
+    "spawnBiomeNether": false,
+    "spawnInCaves": false,
     "biomeWeight": 16,
     "biomeDictionaryTypes": [
       "MESA",

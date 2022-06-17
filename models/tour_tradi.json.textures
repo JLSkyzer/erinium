@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "black",
+        "35": "dark_metal",
+        "36": "white_metal",
+        "4": "dark_gray",
+        "37": "orange_metal",
+        "38": "black_metal",
+        "27": "light_red",
+        "19": "light_gray",
+        "9": "metal",
+        "logo": "512_x_512",
+        "31": "white"
+      },
+      "name": "default"
+    }
+  }
+}

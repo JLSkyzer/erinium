@@ -3,6 +3,7 @@ package fr.erinagroups.erinium.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -29,6 +30,11 @@ public class AdminStickItem extends EriniumModElements.ModElement {
 		public ItemCustom() {
 			super(new Item.Properties().group(AdminZoneItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
 			setRegistryName("admin_stick");
+		}
+
+		@Override
+		public UseAction getUseAction(ItemStack itemstack) {
+			return UseAction.EAT;
 		}
 
 		@Override

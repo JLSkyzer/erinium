@@ -1,11 +1,11 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "tool",
   "definition": {
     "renderType": 0,
     "texture": "erinium_axe",
     "customModelName": "Normal",
-    "name": "ง1Erinium Axe",
+    "name": "ยง1Erinium Axe",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:EriniumTab"

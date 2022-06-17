@@ -53,9 +53,9 @@ public class BushLayer1RightClickProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == XpBushLayer1Block.block) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == XpBushLayer1Block.block) {
 			{
-				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				BlockPos _bp = new BlockPos(x, y, z);
 				BlockState _bs = XpBushLayer0Block.block.getDefaultState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
@@ -73,9 +73,9 @@ public class BushLayer1RightClickProcedure {
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}
-		} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == BloodBushLayer1Block.block) {
+		} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == BloodBushLayer1Block.block) {
 			{
-				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				BlockPos _bp = new BlockPos(x, y, z);
 				BlockState _bs = BloodBushLayer0Block.block.getDefaultState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {

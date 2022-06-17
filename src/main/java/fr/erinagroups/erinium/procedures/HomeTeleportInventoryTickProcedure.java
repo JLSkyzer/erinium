@@ -31,10 +31,10 @@ public class HomeTeleportInventoryTickProcedure {
 				&& (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new EriniumModVariables.PlayerVariables())).h_z == 0) {
 			(itemstack).setDisplayName(
-					new StringTextComponent(("\u00A7cNo home \u00A7a" + new ItemStack(HomeTeleporterItem.block).getDisplayName().getString())));
+					new StringTextComponent(("\uFFFDcNo home \uFFFDa" + new ItemStack(HomeTeleporterItem.block).getDisplayName().getString())));
 		} else {
 			(itemstack).setDisplayName(
-					new StringTextComponent(("\u00A7cHome set \u00A7a" + new ItemStack(HomeTeleporterItem.block).getDisplayName().getString())));
+					new StringTextComponent(("\uFFFDcHome set \uFFFDa" + new ItemStack(HomeTeleporterItem.block).getDisplayName().getString())));
 		}
 	}
 }

@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[36,)"
-license="Copyright © 2021 - 2022 Erinium - All Rights Reserved."
+license="Copyright ï¿½ 2021 - 2022 Erinium - All Rights Reserved."
 
 [[mods]]
 modId="erinium"
@@ -10,7 +10,7 @@ credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://discord.gg/26DzRJCTQs"
 authors="killi, MCreator"
 description='''
-Mod crée par JLSkyzer
+Mod crï¿½e par JLSkyzer
 '''
 
 [[dependencies.erinium]]
@@ -21,6 +21,12 @@ Mod crée par JLSkyzer
     side="BOTH"
 
 
+[[dependencies.erinium]]
+    modId="mekanism"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 [[dependencies.erinium]]
     modId="cgm"
     mandatory=true

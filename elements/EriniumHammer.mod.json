@@ -1,11 +1,11 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "tool",
   "definition": {
     "renderType": 0,
     "texture": "erinium_hammer",
     "customModelName": "Normal",
-    "name": "ง1Erinium Hammer",
+    "name": "ยง1Erinium Hammer",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:EriniumTab"

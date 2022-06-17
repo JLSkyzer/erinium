@@ -45,7 +45,7 @@ public class BloodOrbRightClickedInAirProcedure {
 			}
 		} else {
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cVous avez atteint la limite !"), (false));
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDcVous avez atteint la limite !"), (false));
 			}
 		}
 	}

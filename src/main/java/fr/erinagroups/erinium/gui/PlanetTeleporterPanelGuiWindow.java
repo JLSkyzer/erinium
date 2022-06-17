@@ -93,7 +93,7 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 8, this.guiTop + 9, 81, 20, new StringTextComponent("§e\uE000 Moon \uE000"), e -> {
+		this.addButton(new Button(this.guiLeft + 8, this.guiTop + 9, 81, 16, new StringTextComponent("Â§e\uE000 Moon \uE000"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new PlanetTeleporterPanelGui.ButtonPressedMessage(0, x, y, z));
 				PlanetTeleporterPanelGui.handleButtonAction(entity, 0, x, y, z);

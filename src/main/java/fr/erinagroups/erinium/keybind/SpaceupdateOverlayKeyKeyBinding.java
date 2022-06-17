@@ -42,7 +42,7 @@ public class SpaceupdateOverlayKeyKeyBinding extends EriniumModElements.ModEleme
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.erinium.spaceupdate_overlay_key", GLFW.GLFW_KEY_K, "key.categories.ui");
+		keys = new KeyBinding("key.erinium.spaceupdate_overlay_key", GLFW.GLFW_KEY_K, "key.categories.eriniumcontrols");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1",
+    "2 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:blaze_powder"
+    },
+    "2": {
+      "item": "erinium:magic_stick"
+    }
+  },
+  "result": {
+    "item": "erinium:magic_wand",
+    "count": 1
+  }
+}

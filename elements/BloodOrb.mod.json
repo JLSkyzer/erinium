@@ -1,11 +1,11 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "blood_orb",
     "customModelName": "Normal",
-    "name": "§cBlood Orb",
+    "name": "Â§cBlood Orb",
     "rarity": "RARE",
     "creativeTab": {
       "value": "FOOD"
@@ -35,6 +35,15 @@
     "onRightClickedOnBlock": {
       "name": "BloodOrbRightClickedInAir"
     },
-    "hasDispenseBehavior": false
+    "hasDispenseBehavior": false,
+    "isFood": false,
+    "nutritionalValue": 0,
+    "saturation": 0.30000001192092896,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "eat"
   }
 }

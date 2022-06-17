@@ -23,7 +23,7 @@ public class EnablePvpModeProcedure {
 			if (event != null && event.getEntity() != null) {
 				Entity entity = event.getEntity();
 				Entity sourceentity = event.getSource().getTrueSource();
-				Entity imediatesourceentity = event.getSource().getImmediateSource();
+				Entity immediatesourceentity = event.getSource().getImmediateSource();
 				double i = entity.getPosX();
 				double j = entity.getPosY();
 				double k = entity.getPosZ();
@@ -37,7 +37,7 @@ public class EnablePvpModeProcedure {
 				dependencies.put("world", world);
 				dependencies.put("entity", entity);
 				dependencies.put("sourceentity", sourceentity);
-				dependencies.put("imediatesourceentity", imediatesourceentity);
+				dependencies.put("immediatesourceentity", immediatesourceentity);
 				dependencies.put("event", event);
 				executeProcedure(dependencies);
 			}
@@ -50,26 +50,26 @@ public class EnablePvpModeProcedure {
 				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure EnablePvpMode!");
 			return;
 		}
-		if (dependencies.get("imediatesourceentity") == null) {
-			if (!dependencies.containsKey("imediatesourceentity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency imediatesourceentity for procedure EnablePvpMode!");
+		if (dependencies.get("immediatesourceentity") == null) {
+			if (!dependencies.containsKey("immediatesourceentity"))
+				EriniumMod.LOGGER.warn("Failed to load dependency immediatesourceentity for procedure EnablePvpMode!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		Entity imediatesourceentity = (Entity) dependencies.get("imediatesourceentity");
-		if (entity instanceof PlayerEntity && imediatesourceentity instanceof PlayerEntity) {
+		Entity immediatesourceentity = (Entity) dependencies.get("immediatesourceentity");
+		if (entity instanceof PlayerEntity && immediatesourceentity instanceof PlayerEntity) {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 					((PlayerEntity) entity).sendStatusMessage(
-							new StringTextComponent("\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
+							new StringTextComponent("\uFFFDc\uFFFDlVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
 							(false));
 				}
-			} else if ((imediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+			} else if ((immediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
-				if (imediatesourceentity instanceof PlayerEntity && !imediatesourceentity.world.isRemote()) {
-					((PlayerEntity) imediatesourceentity).sendStatusMessage(
-							new StringTextComponent("\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
+				if (immediatesourceentity instanceof PlayerEntity && !immediatesourceentity.world.isRemote()) {
+					((PlayerEntity) immediatesourceentity).sendStatusMessage(
+							new StringTextComponent("\uFFFDc\uFFFDlVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
 							(false));
 				}
 			}
@@ -82,9 +82,9 @@ public class EnablePvpModeProcedure {
 			}
 			{
 				double _setval = 400;
-				imediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				immediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.pvpModeTimer = _setval;
-					capability.syncPlayerVariables(imediatesourceentity);
+					capability.syncPlayerVariables(immediatesourceentity);
 				});
 			}
 		}

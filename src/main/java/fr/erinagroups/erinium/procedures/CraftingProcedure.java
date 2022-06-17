@@ -65,8 +65,8 @@ public class CraftingProcedure {
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 150 + " xp "
-							+ "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\uFFFDa+" + (itemstack).getCount() * 150 + " xp "
+							+ "\uFFFDf| " + "\uFFFD2" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
 				}
@@ -87,7 +87,7 @@ public class CraftingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + (itemstack).getCount() * 60 + " xp " + "\u00A7f| " + "\u00A72"
+												("\uFFFDa+" + (itemstack).getCount() * 60 + " xp " + "\uFFFDf| " + "\uFFFD2"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -110,7 +110,7 @@ public class CraftingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + (itemstack).getCount() * 15 + " xp " + "\u00A7f| " + "\u00A72"
+													("\uFFFDa+" + (itemstack).getCount() * 15 + " xp " + "\uFFFDf| " + "\uFFFD2"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),

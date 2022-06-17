@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "overlay",
   "definition": {
     "priority": "HIGHEST",
@@ -30,12 +30,12 @@
       {
         "type": "label",
         "data": {
-          "text": "§a<VAR:planete>",
+          "text": "ï¿½a<VAR:planete>",
           "color": {
             "value": -13641472,
             "falpha": 0.0
           },
-          "name": "§a<VAR:planete>",
+          "name": "ï¿½a<VAR:planete>",
           "x": 1,
           "y": 10
         }

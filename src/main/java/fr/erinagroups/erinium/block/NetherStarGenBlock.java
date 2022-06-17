@@ -117,7 +117,7 @@ public class NetherStarGenBlock extends EriniumModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(pos, this, 12000);
+			world.getPendingBlockTicks().scheduleTick(pos, this, 6000);
 		}
 
 		@Override
@@ -131,7 +131,7 @@ public class NetherStarGenBlock extends EriniumModElements.ModElement {
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			world.getPendingBlockTicks().scheduleTick(pos, this, 12000);
+			world.getPendingBlockTicks().scheduleTick(pos, this, 6000);
 		}
 
 		@Override
@@ -145,7 +145,7 @@ public class NetherStarGenBlock extends EriniumModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("§2Nether Star Gen");
+						return new StringTextComponent("ï¿½2Nether Star Gen");
 					}
 
 					@Override
@@ -279,7 +279,7 @@ public class NetherStarGenBlock extends EriniumModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("§2Nether Star Gen");
+			return new StringTextComponent("ï¿½2Nether Star Gen");
 		}
 
 		@Override

@@ -52,9 +52,9 @@ public class NetherStarGenUpdateTickProcedure {
 				}
 				return _retval.get();
 			}
-		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (0)) < 64) {
+		}.getAmount(world, new BlockPos(x, y, z), (int) (0)) < 64) {
 			{
-				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+				TileEntity _ent = world.getTileEntity(new BlockPos(x, y, z));
 				if (_ent != null) {
 					final int _sltid = (int) (0);
 					final ItemStack _setstack = new ItemStack(Items.NETHER_STAR);
@@ -69,7 +69,7 @@ public class NetherStarGenUpdateTickProcedure {
 							}
 							return _retval.get();
 						}
-					}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (0)) + 1));
+					}.getAmount(world, new BlockPos(x, y, z), (int) (0)) + 1));
 					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						if (capability instanceof IItemHandlerModifiable) {
 							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);

@@ -65,7 +65,7 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 		double random2 = 0;
 		double multiple = 0;
 		random = Math.round(Math.random() * 100);
-		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 		if (random <= 1) {
 			random2 = Math.round(Math.random() * 3);
 			for (int index0 = 0; index0 < (int) (random2); index0++) {
@@ -164,21 +164,21 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 											((World) world).getServer().getCommandManager().handleCommand(
 													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
 															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-																	.withFeedbackDisabled(),
+															.withFeedbackDisabled(),
 													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:assault_rifle\",Count:1}}");
 										}
 										if (world instanceof ServerWorld) {
 											((World) world).getServer().getCommandManager().handleCommand(
 													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
 															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-																	.withFeedbackDisabled(),
+															.withFeedbackDisabled(),
 													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
 										}
 										if (world instanceof ServerWorld) {
 											((World) world).getServer().getCommandManager().handleCommand(
 													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
 															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-																	.withFeedbackDisabled(),
+															.withFeedbackDisabled(),
 													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
 										}
 										if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
@@ -267,7 +267,7 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 											((World) world).getServer().getCommandManager().handleCommand(
 													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
 															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-																	.withFeedbackDisabled(),
+															.withFeedbackDisabled(),
 													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:pistol\",Count:1}}");
 										}
 									} else {
@@ -293,12 +293,9 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 											}
 										} else {
 											if (random <= 65) {
-												world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.DIAMOND_BLOCK.getDefaultState(),
-														3);
-												world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z),
-														Blocks.GOLD_BLOCK.getDefaultState(), 3);
-												world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z),
-														Blocks.EMERALD_BLOCK.getDefaultState(), 3);
+												world.setBlockState(new BlockPos(x, y, z), Blocks.DIAMOND_BLOCK.getDefaultState(), 3);
+												world.setBlockState(new BlockPos(x, y + 1, z), Blocks.GOLD_BLOCK.getDefaultState(), 3);
+												world.setBlockState(new BlockPos(x, y + 2, z), Blocks.EMERALD_BLOCK.getDefaultState(), 3);
 											} else {
 												if (random <= 90) {
 													if (world instanceof World && !world.isRemote()) {

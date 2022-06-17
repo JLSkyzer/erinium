@@ -35,6 +35,6 @@ public class TestDimPlayerEntersDimensionProcedure {
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		world.setBlockState(new BlockPos((int) x, (int) (y + 4), (int) z), Blocks.SLIME_BLOCK.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y + 4, z), Blocks.SLIME_BLOCK.getDefaultState(), 3);
 	}
 }

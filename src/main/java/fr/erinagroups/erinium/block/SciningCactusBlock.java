@@ -86,8 +86,8 @@ public class SciningCactusBlock extends EriniumModElements.ModElement {
 
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.CACTUS).sound(SoundType.SNOW).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid()
-					.tickRandomly().setOpaque((bs, br, bp) -> false));
+			super(Block.Properties.create(Material.CACTUS, MaterialColor.CYAN).sound(SoundType.SNOW).hardnessAndResistance(1f, 10f)
+					.setLightLevel(s -> 0).notSolid().tickRandomly().setOpaque((bs, br, bp) -> false));
 			setRegistryName("scining_cactus");
 		}
 
