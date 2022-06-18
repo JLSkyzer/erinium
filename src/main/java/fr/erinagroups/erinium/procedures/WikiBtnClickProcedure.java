@@ -55,7 +55,7 @@ public class WikiBtnClickProcedure {
 					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					("/tellraw " + entity.getDisplayName().getString() + " "
-							+ "[\"\",{\"text\":\"\uFFFD4\uFFFDn> Rank Wiki <\",\"underlined\":true,\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://erinium-wiki.netlify.app/rank/index.html\"}}]"));
+							+ "[\"\",{\"text\":\"\u00A74\u00A7n> Rank Wiki <\",\"underlined\":true,\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://erinium-wiki.netlify.app/rank/index.html\"}}]"));
 		}
 	}
 }

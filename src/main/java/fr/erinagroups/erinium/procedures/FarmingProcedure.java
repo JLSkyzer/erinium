@@ -97,7 +97,7 @@ public class FarmingProcedure {
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\uFFFDa+" + "450" + " xp " + "\uFFFDf| " + "\uFFFD2"
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "450" + " xp " + "\u00A7f| " + "\u00A72"
 							+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
@@ -124,7 +124,7 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + "150" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + "150" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -148,7 +148,7 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + "280" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + "280" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -172,7 +172,7 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + "285" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + "285" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -200,7 +200,7 @@ public class FarmingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + "180" + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + "180" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -224,7 +224,7 @@ public class FarmingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + "200" + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + "200" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -243,7 +243,7 @@ public class FarmingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + "225" + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + "225" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -270,7 +270,7 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + "90" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + "90" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -293,7 +293,7 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + "105" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + "105" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -311,7 +311,7 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + "140" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + "140" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),

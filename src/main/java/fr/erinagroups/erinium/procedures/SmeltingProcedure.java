@@ -69,8 +69,8 @@ public class SmeltingProcedure {
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\uFFFDa+" + (itemstack).getCount() * 110 + " xp "
-							+ "\uFFFDf| " + "\uFFFD2" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 110 + " xp "
+							+ "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
 				}
@@ -84,8 +84,8 @@ public class SmeltingProcedure {
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\uFFFDa+" + (itemstack).getCount() * 200 + " xp "
-							+ "\uFFFDf| " + "\uFFFD2" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 200 + " xp "
+							+ "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
 				}
@@ -106,7 +106,7 @@ public class SmeltingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + (itemstack).getCount() * 60 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + (itemstack).getCount() * 60 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -125,7 +125,7 @@ public class SmeltingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + (itemstack).getCount() * 170 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + (itemstack).getCount() * 170 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -144,7 +144,7 @@ public class SmeltingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + (itemstack).getCount() * 125 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + (itemstack).getCount() * 125 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -163,7 +163,7 @@ public class SmeltingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + (itemstack).getCount() * 125 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + (itemstack).getCount() * 125 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -186,7 +186,7 @@ public class SmeltingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + (itemstack).getCount() * 15 + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + (itemstack).getCount() * 15 + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -205,7 +205,7 @@ public class SmeltingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + (itemstack).getCount() * 95 + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + (itemstack).getCount() * 95 + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -224,7 +224,7 @@ public class SmeltingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + (itemstack).getCount() * 105 + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + (itemstack).getCount() * 105 + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -243,7 +243,7 @@ public class SmeltingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + (itemstack).getCount() * 105 + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + (itemstack).getCount() * 105 + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -262,7 +262,7 @@ public class SmeltingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + (itemstack).getCount() * 105 + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + (itemstack).getCount() * 105 + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -284,7 +284,7 @@ public class SmeltingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + (itemstack).getCount() * 38 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 38 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -302,7 +302,7 @@ public class SmeltingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + (itemstack).getCount() * 28 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 28 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -320,7 +320,7 @@ public class SmeltingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + (itemstack).getCount() * 45 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 45 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -338,7 +338,7 @@ public class SmeltingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + (itemstack).getCount() * 26 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 26 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -356,7 +356,7 @@ public class SmeltingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + (itemstack).getCount() * 26 + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 26 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),

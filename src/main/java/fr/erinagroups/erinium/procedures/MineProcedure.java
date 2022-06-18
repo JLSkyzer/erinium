@@ -82,7 +82,7 @@ public class MineProcedure {
 				});
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\uFFFDa+" + "1" + " xp " + "\uFFFDf| " + "\uFFFD2"
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "1" + " xp " + "\u00A7f| " + "\u00A72"
 						+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 						+ " / 100.000")), (true));
@@ -103,7 +103,7 @@ public class MineProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + "30" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + "30" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -122,7 +122,7 @@ public class MineProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\uFFFDa+" + "320" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												("\u00A7a+" + "320" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -145,7 +145,7 @@ public class MineProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + "8" + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + "8" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -164,7 +164,7 @@ public class MineProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + "170" + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + "170" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -183,7 +183,7 @@ public class MineProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\uFFFDa+" + "240" + " xp " + "\uFFFDf| " + "\uFFFD2"
+													("\u00A7a+" + "240" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
@@ -205,7 +205,7 @@ public class MineProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + "65" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + "65" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -223,7 +223,7 @@ public class MineProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\uFFFDa+" + "120" + " xp " + "\uFFFDf| " + "\uFFFD2"
+												new StringTextComponent(("\u00A7a+" + "120" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
@@ -245,7 +245,7 @@ public class MineProcedure {
 								if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 									((PlayerEntity) entity)
 											.sendStatusMessage(
-													new StringTextComponent(("\uFFFDa+" + "45" + " xp " + "\uFFFDf| " + "\uFFFD2"
+													new StringTextComponent(("\u00A7a+" + "45" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
