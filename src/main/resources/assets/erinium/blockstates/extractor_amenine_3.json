@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "erinium:block/extractor_amenine_3"
+    },
+    "facing=east": {
+      "model": "erinium:block/extractor_amenine_3",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "erinium:block/extractor_amenine_3",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "erinium:block/extractor_amenine_3",
+      "y": 270
+    }
+  }
+}

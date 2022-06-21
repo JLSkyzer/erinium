@@ -51,7 +51,7 @@ public class BlockSetterBlock extends EriniumModElements.ModElement {
 		@OnlyIn(Dist.CLIENT)
 		public void addInformation(ItemStack itemstack, IBlockReader world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("\uFFFDaSet your home for use the Home teleporter"));
+			list.add(new StringTextComponent("\u00A7aSet your home for use the Home teleporter"));
 		}
 
 		@Override

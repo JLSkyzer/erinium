@@ -78,17 +78,17 @@ public class HomeTeleporterClickOnBlockProcedure {
 						});
 					}
 					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDaHome is set, do \uFFFDe/gohome"), (false));
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aHome is set, do \u00A7e/gohome"), (false));
 					}
 				} else {
 					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDcError : Dimension interdite"), (false));
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cError : Dimension interdite"), (false));
 					}
 				}
 			} else {
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 					((PlayerEntity) entity)
-							.sendStatusMessage(new StringTextComponent("\uFFFDc Error : you cannot set a home setter in x 0 / y 0 / z 0"), (false));
+							.sendStatusMessage(new StringTextComponent("\u00A7c Error : you cannot set a home setter in x 0 / y 0 / z 0"), (false));
 				}
 			}
 		}

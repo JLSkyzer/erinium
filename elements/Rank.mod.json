@@ -78,13 +78,13 @@
       {
         "type": "button",
         "data": {
-          "text": "�bWiki",
+          "text": "§bWiki",
           "onClick": {
             "name": "WikiBtnClick"
           },
           "width": 45,
           "height": 20,
-          "name": "�bWiki",
+          "name": "§bWiki",
           "x": 190,
           "y": 145
         }

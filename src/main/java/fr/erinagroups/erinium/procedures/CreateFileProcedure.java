@@ -68,8 +68,29 @@ public class CreateFileProcedure {
 				}
 			}
 		}
+		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "settings.json");
+		if (!file.exists()) {
+			try {
+				file.getParentFile().mkdirs();
+				file.createNewFile();
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+			MainJsonObject.addProperty("toggle.tpdim", (false));
+			{
+				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				try {
+					FileWriter fileWriter = new FileWriter(file);
+					fileWriter.write(mainGSONBuilderVariable.toJson(MainJsonObject));
+					fileWriter.close();
+				} catch (IOException exception) {
+					exception.printStackTrace();
+				}
+			}
+		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(FMLPaths.GAMEDIR.get().toString()), (false));
+			((PlayerEntity) entity)
+					.sendStatusMessage(new StringTextComponent(("\u00A7b\u00A7lErinium directory : " + FMLPaths.GAMEDIR.get().toString())), (false));
 		}
 	}
 }

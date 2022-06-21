@@ -83,7 +83,7 @@ public class UnifyItemBlockProcedure {
 							ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 						}
 						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDaUnification termin\uFFFDe"), (true));
+							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aUnification termin\u00A7e"), (true));
 						}
 					} else if (ItemTags.getCollection().getTagByID(new ResourceLocation("forge:ingots/copper")).contains(itemstackiterator.getItem())
 							&& !(itemstackiterator.getItem() == CopperIngotItem.block)) {
@@ -99,7 +99,7 @@ public class UnifyItemBlockProcedure {
 							ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 						}
 						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDaUnification termin\uFFFDe"), (true));
+							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aUnification termin\u00A7e"), (true));
 						}
 					} else if (ItemTags.getCollection().getTagByID(new ResourceLocation("forge:ores/lead")).contains(itemstackiterator.getItem())
 							&& !(itemstackiterator.getItem() == LeadOreBlock.block.asItem())) {
@@ -115,7 +115,7 @@ public class UnifyItemBlockProcedure {
 							ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 						}
 						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDaUnification termin\uFFFDe"), (true));
+							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aUnification termin\u00A7e"), (true));
 						}
 					} else if (ItemTags.getCollection().getTagByID(new ResourceLocation("forge:ingots/lead")).contains(itemstackiterator.getItem())
 							&& !(itemstackiterator.getItem() == LeadIngotItem.block)) {
@@ -131,7 +131,7 @@ public class UnifyItemBlockProcedure {
 							ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 						}
 						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDaUnification termin\uFFFDe"), (true));
+							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aUnification termin\u00A7e"), (true));
 						}
 					}
 				}

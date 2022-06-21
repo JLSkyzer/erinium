@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/amenine_leaves",
+    "up": "erinium:blocks/amenine_leaves",
+    "north": "erinium:blocks/amenine_leaves",
+    "east": "erinium:blocks/amenine_leaves",
+    "south": "erinium:blocks/amenine_leaves",
+    "west": "erinium:blocks/amenine_leaves",
+    "particle": "erinium:blocks/amenine_leaves"
+  }
+}

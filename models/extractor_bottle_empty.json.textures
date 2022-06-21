@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "light_bleu-green.png": "light_bleu-green",
+        "White": "white",
+        "light_gray.png": "light_gray",
+        "dark_gray": "dark_gray",
+        "gradient_gray": "gradient_gray"
+      },
+      "name": "default"
+    }
+  }
+}
