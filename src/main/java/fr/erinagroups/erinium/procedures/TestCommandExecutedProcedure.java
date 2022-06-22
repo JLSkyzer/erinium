@@ -1,13 +1,10 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
 
-import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
 public class TestCommandExecutedProcedure {
@@ -20,16 +17,6 @@ public class TestCommandExecutedProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack Item_1 = ItemStack.EMPTY;
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("" + (entity
-					.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).Credit)),
-					(false));
-		}
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(
-					new StringTextComponent(("" + Math.round((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new EriniumModVariables.PlayerVariables())).Credit))),
-					(false));
-		}
+		entity.setMotion(0, 1, 0);
 	}
 }

@@ -8,7 +8,7 @@
     "name": "Empty Bottle",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "MISC"
+      "value": "CUSTOM:Alchemist"
     },
     "stackSize": 64,
     "enchantability": 0,

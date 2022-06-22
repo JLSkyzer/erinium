@@ -2,12 +2,15 @@
   "_fv": 28,
   "_type": "biome",
   "definition": {
-    "name": "Mood Biome",
+    "name": "Moon Biome",
     "groundBlock": {
       "value": "CUSTOM:MoonSand"
     },
     "undergroundBlock": {
       "value": "CUSTOM:MoonStone"
+    },
+    "underwaterBlock": {
+      "value": ""
     },
     "airColor": {
       "value": -16777216,

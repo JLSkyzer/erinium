@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:scining_glass_fragment"
+    },
+    "1": {
+      "tag": "minecraft:planks"
+    },
+    "2": {
+      "item": "erinium:scining_glass_fragment"
+    },
+    "3": {
+      "item": "erinium:scining_glass_fragment"
+    },
+    "5": {
+      "item": "erinium:scining_glass_fragment"
+    },
+    "6": {
+      "item": "erinium:scining_glass_fragment"
+    },
+    "7": {
+      "item": "erinium:scining_glass_fragment"
+    },
+    "8": {
+      "item": "erinium:scining_glass_fragment"
+    }
+  },
+  "result": {
+    "item": "erinium:empty_bottle",
+    "count": 3
+  }
+}

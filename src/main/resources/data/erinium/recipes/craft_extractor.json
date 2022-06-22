@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:erinium_ingot"
+    },
+    "1": {
+      "item": "erinium:dranite_gem"
+    },
+    "2": {
+      "item": "erinium:erinium_ingot"
+    },
+    "3": {
+      "item": "erinium:erinium_ingot"
+    },
+    "4": {
+      "item": "erinium:silver_ingot"
+    },
+    "5": {
+      "item": "erinium:erinium_ingot"
+    },
+    "6": {
+      "item": "minecraft:obsidian"
+    },
+    "7": {
+      "item": "minecraft:obsidian"
+    },
+    "8": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "erinium:extractor_empty",
+    "count": 1
+  }
+}

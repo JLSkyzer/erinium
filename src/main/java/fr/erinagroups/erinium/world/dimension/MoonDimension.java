@@ -35,9 +35,9 @@ public class MoonDimension extends EriniumModElements.ModElement {
 	public void init(FMLCommonSetupEvent event) {
 		Set<Block> replaceableBlocks = new HashSet<>();
 		replaceableBlocks.add(MoonStoneBlock.block);
-		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:mood_biome")).getGenerationSettings().getSurfaceBuilder()
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:moon_biome")).getGenerationSettings().getSurfaceBuilder()
 				.get().getConfig().getTop().getBlock());
-		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:mood_biome")).getGenerationSettings().getSurfaceBuilder()
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:moon_biome")).getGenerationSettings().getSurfaceBuilder()
 				.get().getConfig().getUnder().getBlock());
 		DeferredWorkQueue.runLater(() -> {
 			try {

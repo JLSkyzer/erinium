@@ -38,12 +38,12 @@ public class SpacesuitArmorItem extends EriniumModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 50;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 34;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{14, 18, 18, 14}[slot.getIndex()];
+				return new int[]{4, 8, 10, 4}[slot.getIndex()];
 			}
 
 			@Override

@@ -54,7 +54,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 40,
+    "tickRate": 1800,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -121,6 +121,12 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "ExtractorBottleEmptyOnBlockRightClicked"
+    },
+    "onTickUpdate": {
+      "name": "ExtractorBottleEmptyUpdateTick"
+    },
     "onDestroyedByPlayer": {
       "name": "ExtractorBottleEmptyBlockDestroyedByPlayer"
     },

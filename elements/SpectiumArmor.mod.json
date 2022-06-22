@@ -1,0 +1,74 @@
+{
+  "_fv": 28,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "spectrium_helmet",
+    "enableBody": true,
+    "textureBody": "spectrium_chestplate",
+    "enableLeggings": true,
+    "textureLeggings": "spectrium_leggings",
+    "enableBoots": true,
+    "textureBoots": "spectrium_boots",
+    "onHelmetTick": {
+      "name": "SpectiumArmorHelmetTickEvent"
+    },
+    "onBodyTick": {
+      "name": "SpectiumArmorBodyTickEvent"
+    },
+    "onLeggingsTick": {
+      "name": "SpectiumArmorLeggingsTickEvent"
+    },
+    "onBootsTick": {
+      "name": "SpectiumArmorBootsTickEvent"
+    },
+    "creativeTab": {
+      "value": "CUSTOM:SpaceUpdateItems"
+    },
+    "armorTextureFile": "spectrium_",
+    "helmetName": "Spectium Helmet",
+    "bodyName": "Spectium Body",
+    "leggingsName": "Spectium Leggings",
+    "bootsName": "Spectium Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 39,
+    "damageValueHelmet": 8,
+    "damageValueBody": 12,
+    "damageValueLeggings": 10,
+    "damageValueBoots": 8,
+    "enchantability": 20,
+    "toughness": 3.0,
+    "knockbackResistance": 0.2,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:SpectriumGem"
+      }
+    ]
+  }
+}

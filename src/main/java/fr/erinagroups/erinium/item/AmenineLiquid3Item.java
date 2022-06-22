@@ -44,6 +44,16 @@ public class AmenineLiquid3Item extends EriniumModElements.ModElement {
 		}
 
 		@Override
+		public boolean hasContainerItem() {
+			return true;
+		}
+
+		@Override
+		public ItemStack getContainerItem(ItemStack itemstack) {
+			return new ItemStack(AmenineLiquid2Item.block);
+		}
+
+		@Override
 		public int getItemEnchantability() {
 			return 0;
 		}

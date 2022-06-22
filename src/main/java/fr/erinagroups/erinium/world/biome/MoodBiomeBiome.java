@@ -76,7 +76,7 @@ public class MoodBiomeBiome extends EriniumModElements.ModElement {
 				biome = new Biome.Builder().precipitation(Biome.RainType.RAIN).category(Biome.Category.PLAINS).depth(0f).scale(0.1f).temperature(0.5f)
 						.downfall(0.5f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();
-				event.getRegistry().register(biome.setRegistryName("erinium:mood_biome"));
+				event.getRegistry().register(biome.setRegistryName("erinium:moon_biome"));
 			}
 		}
 	}
@@ -93,7 +93,7 @@ public class MoodBiomeBiome extends EriniumModElements.ModElement {
 		static {
 			codec = com.mojang.serialization.Codec.unit(() -> instance);
 			tdt = new TreeDecoratorType(codec);
-			tdt.setRegistryName("mood_biome_lvtd");
+			tdt.setRegistryName("moon_biome_lvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 
@@ -115,7 +115,7 @@ public class MoodBiomeBiome extends EriniumModElements.ModElement {
 		static {
 			codec = com.mojang.serialization.Codec.unit(() -> instance);
 			tdt = new TreeDecoratorType(codec);
-			tdt.setRegistryName("mood_biome_tvtd");
+			tdt.setRegistryName("moon_biome_tvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 
@@ -137,7 +137,7 @@ public class MoodBiomeBiome extends EriniumModElements.ModElement {
 		static {
 			codec = com.mojang.serialization.Codec.unit(() -> instance);
 			tdt = new TreeDecoratorType(codec);
-			tdt.setRegistryName("mood_biome_ctd");
+			tdt.setRegistryName("moon_biome_ctd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 

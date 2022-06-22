@@ -1,0 +1,29 @@
+{
+  "_fv": 28,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:AmenineLiquid4"
+      },
+      {
+        "value": "CUSTOM:AmenineLiquid5"
+      },
+      {
+        "value": "CUSTOM:AmenineLiquid3"
+      },
+      {
+        "value": "CUSTOM:AmenineLiquid2"
+      },
+      {
+        "value": "CUSTOM:AmenineLiquid1"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "amenine_liquid",
+    "namespace": "mod"
+  }
+}
