@@ -1,5 +1,7 @@
 package fr.erinagroups.erinium.procedures;
 
+import net.minecraftforge.items.ItemHandlerHelper;
+
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
@@ -13,7 +15,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 import net.minecraft.block.Blocks;
@@ -272,24 +273,15 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 										}
 									} else {
 										if (random <= 55) {
-											tempItem = new ItemStack(Items.ENCHANTED_BOOK);
-											((tempItem)).addEnchantment(Enchantments.PROTECTION, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.RESPIRATION, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.SHARPNESS, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.FIRE_ASPECT, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.LOOTING, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.UNBREAKING, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.FORTUNE, (int) 3);
-											((tempItem)).addEnchantment(Enchantments.POWER, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.FLAME, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.MENDING, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.FIRE_ASPECT, (int) 5);
-											((tempItem)).addEnchantment(Enchantments.EFFICIENCY, (int) 5);
-											((tempItem)).setDisplayName(new StringTextComponent("All for five"));
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, (tempItem));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (entity instanceof PlayerEntity) {
+												ItemStack _setstack = new ItemStack(Blocks.BOOKSHELF);
+												_setstack.setCount((int) 6);
+												ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+											}
+											if (entity instanceof PlayerEntity) {
+												ItemStack _setstack = new ItemStack(Blocks.ANCIENT_DEBRIS);
+												_setstack.setCount((int) 1);
+												ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 											}
 										} else {
 											if (random <= 65) {
