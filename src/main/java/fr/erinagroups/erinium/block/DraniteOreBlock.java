@@ -40,6 +40,7 @@ import java.util.List;
 import java.util.Collections;
 
 import fr.erinagroups.erinium.itemgroup.SpaceUpdateBlocksTabItemGroup;
+import fr.erinagroups.erinium.item.DraniteGemItem;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -77,7 +78,7 @@ public class DraniteOreBlock extends EriniumModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(this, 1));
+			return Collections.singletonList(new ItemStack(DraniteGemItem.block));
 		}
 	}
 

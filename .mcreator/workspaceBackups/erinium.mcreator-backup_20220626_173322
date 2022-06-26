@@ -4305,6 +4305,14 @@
       "locked_code": false,
       "registry_name": "craft_amenine_stick",
       "path": "~/Misc System/alchemist/Recipes"
+    },
+    {
+      "name": "DisableGunModWorkbench",
+      "type": "recipe",
+      "sortid": 310,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disable_gun_mod_workbench"
     }
   ],
   "variable_elements": [
@@ -4561,8 +4569,8 @@
       "itemGroup.tabscining_tab": "§bScining",
       "block.erinium.dranite_ore": "§6Dranite Ore",
       "block.erinium.erinium_ore_moon": "Erinium Ore Moon",
-      "block.erinium.lead_ore": "§9§lLead Ore",
       "item.erinium.fabric_roll": "Fabric Roll",
+      "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.extractor_empty": "§aExtractor",
       "item.erinium.wiring_kit": "Wiring Kit",
       "entity.erinium.gomy": "Gomy",
@@ -4574,9 +4582,9 @@
       "block.erinium.scining_cactus": "Scining Cactus",
       "item.erinium.magic_wand": "Magic Wand",
       "block.erinium.scining_sand": "Scining Sand",
-      "item.erinium_sword.name": "§1Erinium Sword",
-      "item.erinium.knife": "Knife",
       "itemGroup.tabspace_update_blocks_tab": "§eErinium space update §8| §cBlocks",
+      "item.erinium.knife": "Knife",
+      "item.erinium_sword.name": "§1Erinium Sword",
       "tile.erinium_block.name": "Erinium Block",
       "item.erinium.dranite_gem": "§6Dranite Gem",
       "item.erinium_armorbody.name": "Erinium Body",

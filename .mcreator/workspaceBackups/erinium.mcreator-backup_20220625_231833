@@ -4305,6 +4305,14 @@
       "locked_code": false,
       "registry_name": "craft_amenine_stick",
       "path": "~/Misc System/alchemist/Recipes"
+    },
+    {
+      "name": "DisableGunModWorkbench",
+      "type": "recipe",
+      "sortid": 310,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disable_gun_mod_workbench"
     }
   ],
   "variable_elements": [
