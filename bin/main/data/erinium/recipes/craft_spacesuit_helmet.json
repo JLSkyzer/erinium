@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:lead_ingot"
+    },
+    "1": {
+      "item": "erinium:dranite_gem"
+    },
+    "2": {
+      "item": "erinium:lead_ingot"
+    },
+    "3": {
+      "item": "erinium:fabric_roll"
+    },
+    "4": {
+      "item": "minecraft:leather_helmet"
+    },
+    "5": {
+      "item": "erinium:fabric_roll"
+    },
+    "6": {
+      "item": "erinium:lead_ingot"
+    },
+    "7": {
+      "item": "erinium:dranite_gem"
+    },
+    "8": {
+      "item": "erinium:lead_ingot"
+    }
+  },
+  "result": {
+    "item": "erinium:spacesuit_armor_helmet",
+    "count": 1
+  }
+}

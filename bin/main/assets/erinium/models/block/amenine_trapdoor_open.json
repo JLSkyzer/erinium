@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_orientable_trapdoor_open",
+  "textures": {
+    "texture": "erinium:blocks/amenine_planks",
+    "particle": "erinium:blocks/amenine_planks"
+  }
+}

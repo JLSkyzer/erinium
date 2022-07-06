@@ -1,0 +1,83 @@
+newmtl m_0
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/black
+Ns 100.0
+d 1.0
+newmtl m_4
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/dark_gray
+Ns 100.0
+d 1.0
+newmtl m_9
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/metal
+Ns 100.0
+d 1.0
+newmtl m_19
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/light_gray
+Ns 100.0
+d 1.0
+newmtl m_27
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/light_red
+Ns 100.0
+d 1.0
+newmtl m_31
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/white
+Ns 100.0
+d 1.0
+newmtl m_35
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/dark_metal
+Ns 100.0
+d 1.0
+newmtl m_36
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/white_metal
+Ns 100.0
+d 1.0
+newmtl m_37
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/orange_metal
+Ns 100.0
+d 1.0
+newmtl m_38
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/black_metal
+Ns 100.0
+d 1.0
+newmtl m_erina logo 512 x 512
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd erinium:blocks/512_x_512
+Ns 100.0
+d 1.0
+newmtl none
+Ka 0.0 0.0 0.0
+Kd 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+Ns 100.0
+d 1.0

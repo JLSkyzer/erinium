@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/spatial_teleporter_block",
+    "up": "erinium:blocks/spatial_teleporter_block",
+    "north": "erinium:blocks/spatial_teleporter_block",
+    "east": "erinium:blocks/spatial_teleporter_block",
+    "south": "erinium:blocks/spatial_teleporter_block",
+    "west": "erinium:blocks/spatial_teleporter_block",
+    "particle": "erinium:blocks/spatial_teleporter_block"
+  }
+}

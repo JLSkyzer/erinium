@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/amenine_planks",
+    "up": "erinium:blocks/amenine_planks",
+    "north": "erinium:blocks/amenine_planks",
+    "east": "erinium:blocks/amenine_planks",
+    "south": "erinium:blocks/amenine_planks",
+    "west": "erinium:blocks/amenine_planks",
+    "particle": "erinium:blocks/amenine_planks"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:erinium_ingot"
+    },
+    "2": {
+      "item": "erinium:erinium_ingot"
+    },
+    "3": {
+      "item": "erinium:erinium_ingot"
+    },
+    "5": {
+      "item": "erinium:erinium_ingot"
+    }
+  },
+  "result": {
+    "item": "erinium:erinium_armor_boots",
+    "count": 1
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "magazine_reload": {
+    "category": "master",
+    "subtitle": "subtitles.magazine_reload",
+    "sounds": [
+      {
+        "name": "erinium:reloading_magazine",
+        "stream": false
+      }
+    ]
+  },
+  "scarh_shoot": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "erinium:scarh_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "no_ammo": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "erinium:no_ammo",
+        "stream": false
+      }
+    ]
+  },
+  "hitmarker": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "erinium:hitmarker",
+        "stream": false
+      }
+    ]
+  },
+  "printer": {
+    "category": "neutral",
+    "subtitle": "subtitles.printer",
+    "sounds": [
+      {
+        "name": "erinium:printer",
+        "stream": false
+      }
+    ]
+  },
+  "explosion": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "erinium:mixkit-explosion-spell-1685",
+        "stream": false
+      }
+    ]
+  },
+  "erinium_boss_dead_1": {
+    "category": "master",
+    "subtitle": "subtitles.erinium_boss_dead_1",
+    "sounds": [
+      {
+        "name": "erinium:mixkit-laser-gun-impact-destruction-782",
+        "stream": false
+      }
+    ]
+  }
+}

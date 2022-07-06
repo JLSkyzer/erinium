@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:redstone_torch"
+    },
+    "3": {
+      "item": "erinium:erinium_block"
+    },
+    "4": {
+      "item": "minecraft:redstone_block"
+    },
+    "5": {
+      "item": "erinium:erinium_ingot"
+    },
+    "7": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "result": {
+    "item": "erinium:home_teleporter",
+    "count": 1
+  }
+}

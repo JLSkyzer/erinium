@@ -1,0 +1,18 @@
+{
+  "parent": "erinium:custom/tour_tradi",
+  "textures": {
+    "all": "erinium:blocks/moon_sand",
+    "particle": "erinium:blocks/moon_sand",
+    "0": "erinium:blocks/black",
+    "35": "erinium:blocks/dark_metal",
+    "36": "erinium:blocks/white_metal",
+    "4": "erinium:blocks/dark_gray",
+    "37": "erinium:blocks/orange_metal",
+    "38": "erinium:blocks/black_metal",
+    "27": "erinium:blocks/light_red",
+    "19": "erinium:blocks/light_gray",
+    "9": "erinium:blocks/metal",
+    "logo": "erinium:blocks/512_x_512",
+    "31": "erinium:blocks/white"
+  }
+}

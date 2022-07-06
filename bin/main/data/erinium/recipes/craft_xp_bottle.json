@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:xp_essence"
+    },
+    "1": {
+      "item": "erinium:xp_essence"
+    },
+    "2": {
+      "item": "erinium:xp_essence"
+    },
+    "3": {
+      "item": "erinium:xp_essence"
+    },
+    "4": {
+      "item": "minecraft:glass_bottle"
+    },
+    "5": {
+      "item": "erinium:xp_essence"
+    },
+    "6": {
+      "item": "erinium:xp_essence"
+    },
+    "7": {
+      "item": "erinium:xp_essence"
+    },
+    "8": {
+      "item": "erinium:xp_essence"
+    }
+  },
+  "result": {
+    "item": "minecraft:experience_bottle",
+    "count": 1
+  }
+}

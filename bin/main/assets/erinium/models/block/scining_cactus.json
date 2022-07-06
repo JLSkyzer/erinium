@@ -1,0 +1,10 @@
+{
+  "parent": "erinium:custom/scining_cactus",
+  "textures": {
+    "all": "erinium:blocks/scining_cactus_bottom",
+    "particle": "erinium:blocks/scining_cactus_bottom",
+    "scining cactus_side": "erinium:blocks/scining_cactus_side",
+    "scining cactus_top": "erinium:blocks/scining_cactus_top",
+    "scining cactus_bottom": "erinium:blocks/scining_cactus_bottom"
+  }
+}

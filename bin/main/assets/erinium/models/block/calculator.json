@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/calculator_pos",
+    "up": "erinium:blocks/calculator_pos",
+    "north": "erinium:blocks/calculator_pos",
+    "east": "erinium:blocks/calculator_pos",
+    "south": "erinium:blocks/calculator_pos",
+    "west": "erinium:blocks/calculator_pos",
+    "particle": "erinium:blocks/calculator_pos"
+  }
+}
