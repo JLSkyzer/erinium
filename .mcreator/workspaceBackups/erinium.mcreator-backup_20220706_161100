@@ -4313,6 +4313,42 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "disable_gun_mod_workbench"
+    },
+    {
+      "name": "Fraisage",
+      "type": "item",
+      "sortid": 311,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fraisage",
+      "path": "~/Misc System/Usinage"
+    },
+    {
+      "name": "FraisageNumerique",
+      "type": "block",
+      "sortid": 312,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fraisage_numerique",
+      "path": "~/Misc System/Usinage"
+    },
+    {
+      "name": "Fonderie",
+      "type": "block",
+      "sortid": 313,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fonderie",
+      "path": "~/Misc System/Usinage"
+    },
+    {
+      "name": "TourTradiGui",
+      "type": "gui",
+      "sortid": 314,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tour_tradi_gui",
+      "path": "~/Misc System/Usinage"
     }
   ],
   "variable_elements": [
@@ -4568,11 +4604,13 @@
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "itemGroup.tabscining_tab": "§bScining",
       "block.erinium.dranite_ore": "§6Dranite Ore",
+      "item.erinium.fraisage": "Fraisage",
       "block.erinium.erinium_ore_moon": "Erinium Ore Moon",
-      "item.erinium.fabric_roll": "Fabric Roll",
       "block.erinium.lead_ore": "§9§lLead Ore",
+      "item.erinium.fabric_roll": "Fabric Roll",
       "block.erinium.extractor_empty": "§aExtractor",
       "item.erinium.wiring_kit": "Wiring Kit",
+      "block.erinium.fonderie": "Fonderie",
       "entity.erinium.gomy": "Gomy",
       "block.erinium.block_setter": "Block Setter",
       "subtitles.printer": "Printer en marche",
@@ -4582,9 +4620,10 @@
       "block.erinium.scining_cactus": "Scining Cactus",
       "item.erinium.magic_wand": "Magic Wand",
       "block.erinium.scining_sand": "Scining Sand",
-      "itemGroup.tabspace_update_blocks_tab": "§eErinium space update §8| §cBlocks",
-      "item.erinium.knife": "Knife",
+      "block.erinium.fraisage_numerique": "Fraisage Numérique",
       "item.erinium_sword.name": "§1Erinium Sword",
+      "item.erinium.knife": "Knife",
+      "itemGroup.tabspace_update_blocks_tab": "§eErinium space update §8| §cBlocks",
       "tile.erinium_block.name": "Erinium Block",
       "item.erinium.dranite_gem": "§6Dranite Gem",
       "item.erinium_armorbody.name": "Erinium Body",

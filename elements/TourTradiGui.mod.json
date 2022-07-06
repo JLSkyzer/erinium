@@ -1,0 +1,104 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 395,
+    "height": 220,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 31,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "preset_gui_transparent.png",
+          "use1Xscale": false,
+          "name": "preset_gui_transparent.png",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 99,
+          "y": 135
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 153,
+          "y": 81
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow_right.png",
+          "use1Xscale": false,
+          "name": "arrow_right.png",
+          "x": 189,
+          "y": 81
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -16777012,
+            "falpha": 0.0
+          },
+          "id": 2,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #2",
+          "x": 225,
+          "y": 81
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "§aCraft",
+          "width": 90,
+          "height": 20,
+          "name": "§aCraft",
+          "x": 153,
+          "y": 108
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 17,
+      "oy": 17,
+      "snapOnGrid": true
+    }
+  }
+}

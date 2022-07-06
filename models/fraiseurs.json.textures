@@ -1,0 +1,19 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "glass_32.png": "glass_32",
+        "black.png": "black",
+        "white metal.png": "white_metal",
+        "white.png": "white",
+        "dark_gray.png": "dark_gray",
+        "cnc panel.png": "cnc_panel",
+        "métal.png": "metal",
+        "black metal.png": "black_metal",
+        "dark metal.png": "dark_metal",
+        "inox.png": "inox"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -9,11 +9,11 @@
     "textureRight": "moon_sand",
     "textureBack": "moon_sand",
     "renderType": 2,
-    "customModelName": "tour_tradi:default",
+    "customModelName": "fraiseurs:default",
     "rotationMode": 1,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "itemTexture": "usinage",
+    "itemTexture": "fraisage",
     "particleTexture": "",
     "tintType": "No tint",
     "isItemTinted": false,
@@ -27,12 +27,12 @@
         "my": 0.0,
         "mz": 0.0,
         "Mx": -16.0,
-        "My": 28.0,
-        "Mz": 24.0,
+        "My": 31.0,
+        "Mz": 31.0,
         "subtract": false
       }
     ],
-    "name": "Tour Tradi",
+    "name": "Fraisage Numérique",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
@@ -54,7 +54,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 20,
+    "tickRate": 10,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,

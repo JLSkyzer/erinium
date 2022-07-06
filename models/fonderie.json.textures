@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "custom_lava.png": "custom_lava",
+        "dark metal.png": "dark_metal"
+      },
+      "name": "default"
+    }
+  }
+}

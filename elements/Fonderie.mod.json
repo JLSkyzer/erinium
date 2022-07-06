@@ -2,19 +2,19 @@
   "_fv": 28,
   "_type": "block",
   "definition": {
-    "texture": "moon_sand",
-    "textureTop": "moon_sand",
-    "textureLeft": "moon_sand",
-    "textureFront": "moon_sand",
-    "textureRight": "moon_sand",
-    "textureBack": "moon_sand",
+    "texture": "custom_lava",
+    "textureTop": "",
+    "textureLeft": "",
+    "textureFront": "",
+    "textureRight": "",
+    "textureBack": "",
     "renderType": 2,
-    "customModelName": "tour_tradi:default",
+    "customModelName": "fonderie:default",
     "rotationMode": 1,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "itemTexture": "usinage",
-    "particleTexture": "",
+    "itemTexture": "",
+    "particleTexture": "dark_metal",
     "tintType": "No tint",
     "isItemTinted": false,
     "hasTransparency": true,
@@ -23,16 +23,16 @@
     "disableOffset": false,
     "boundingBoxes": [
       {
-        "mx": 32.0,
+        "mx": 0.0,
         "my": 0.0,
         "mz": 0.0,
-        "Mx": -16.0,
-        "My": 28.0,
-        "Mz": 24.0,
+        "Mx": 16.0,
+        "My": 16.0,
+        "Mz": 16.0,
         "subtract": false
       }
     ],
-    "name": "Tour Tradi",
+    "name": "Fonderie",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
@@ -41,7 +41,7 @@
     "creativeTab": {
       "value": "CUSTOM:UsinageTab"
     },
-    "destroyTool": "pickaxe",
+    "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
     },
@@ -54,7 +54,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 20,
+    "tickRate": 10,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -96,7 +96,7 @@
     },
     "luminance": 0,
     "unbreakable": false,
-    "breakHarvestLevel": 1,
+    "breakHarvestLevel": 0,
     "spawnParticles": false,
     "particleToSpawn": {
       "value": "EXPLOSION_NORMAL"
@@ -104,7 +104,7 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": false,
+    "hasInventory": true,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
