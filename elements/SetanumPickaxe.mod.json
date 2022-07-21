@@ -1,0 +1,31 @@
+{
+  "_fv": 28,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "setanum_pickaxe",
+    "customModelName": "Normal",
+    "name": "Setanum Pickaxe",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:SetanumTab"
+    },
+    "toolType": "Pickaxe",
+    "harvestLevel": 4,
+    "efficiency": 15.0,
+    "attackSpeed": 1.0,
+    "enchantability": 32,
+    "damageVsEntity": 4.0,
+    "usageCount": 2500,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:SetanumIngot"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

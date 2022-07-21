@@ -1,0 +1,42 @@
+{
+  "name": "minecraft:moon_village_road",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 50,
+      "element": {
+        "location": "minecraft:moon_village/road/moon_road_1",
+        "processors": "minecraft:empty",
+		"projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+	{	
+      "weight": 50,
+      "element": {
+        "location": "minecraft:moon_village/road/moon_road_2",
+        "processors": "minecraft:empty",
+		"projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    { 
+      "weight": 50,
+      "element": {
+        "location": "minecraft:moon_village/road/moon_road_3",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    { 
+      "weight": 50,
+      "element": {
+        "location": "minecraft:moon_village/road/moon_road_4",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

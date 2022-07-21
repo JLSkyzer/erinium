@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "erinium:blocks/setanum_stage_2",
+    "particle": "erinium:blocks/setanum_stage_2"
+  }
+}

@@ -35,11 +35,9 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.xSize = 200;
-		this.ySize = 140;
+		this.xSize = 395;
+		this.ySize = 220;
 	}
-
-	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/planet_teleporter_panel.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -53,13 +51,9 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 		RenderSystem.color4f(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		Minecraft.getInstance().getTextureManager().bindTexture(texture);
-		int k = (this.width - this.xSize) / 2;
-		int l = (this.height - this.ySize) / 2;
-		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/planetteleporter_panel_bg.png"));
-		this.blit(ms, this.guiLeft + 0, this.guiTop + 0, 0, 0, 200, 140, 200, 140);
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/planet_teleporter.png"));
+		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.disableBlend();
 	}
@@ -80,7 +74,6 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Planet Teleporter", 53, -9, -1);
 	}
 
 	@Override
@@ -93,7 +86,7 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 8, this.guiTop + 9, 81, 16, new StringTextComponent("§e\uE000 Moon \uE000"), e -> {
+		this.addButton(new Button(this.guiLeft + 11, this.guiTop + 53, 81, 16, new StringTextComponent("§e\uE000 Moon \uE000"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new PlanetTeleporterPanelGui.ButtonPressedMessage(0, x, y, z));
 				PlanetTeleporterPanelGui.handleButtonAction(entity, 0, x, y, z);

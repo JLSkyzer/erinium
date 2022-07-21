@@ -10,9 +10,7 @@ import net.minecraftforge.fml.network.IContainerFactory;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -38,7 +36,6 @@ import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.TestGuiThisGUIIsOpenedProcedure;
 import fr.erinagroups.erinium.procedures.Slot0takenProcedure;
-import fr.erinagroups.erinium.item.WarningLogoItem;
 import fr.erinagroups.erinium.EriniumModElements;
 import fr.erinagroups.erinium.EriniumMod;
 
@@ -48,14 +45,13 @@ public class TestGuiGui extends EriniumModElements.ModElement {
 	private static ContainerType<GuiContainerMod> containerType = null;
 
 	public TestGuiGui(EriniumModElements instance) {
-		super(instance, 76);
+		super(instance, 326);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
 				GUISlotChangedMessage::handler);
 		containerType = new ContainerType<>(new GuiContainerModFactory());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ContainerRegisterHandler());
-		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	private static class ContainerRegisterHandler {
@@ -68,20 +64,6 @@ public class TestGuiGui extends EriniumModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
 		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, TestGuiGuiWindow::new));
-	}
-
-	@SubscribeEvent
-	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		PlayerEntity entity = event.player;
-		if (event.phase == TickEvent.Phase.END && entity.openContainer instanceof GuiContainerMod) {
-			World world = entity.world;
-			double x = entity.getPosX();
-			double y = entity.getPosY();
-			double z = entity.getPosZ();
-
-			TestGuiThisGUIIsOpenedProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-		}
 	}
 
 	public static class GuiContainerModFactory implements IContainerFactory {
@@ -140,7 +122,12 @@ public class TestGuiGui extends EriniumModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 201, 90) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 177, 69) {
+				@Override
+				public boolean canTakeStack(PlayerEntity player) {
+					return false;
+				}
+
 				@Override
 				public ItemStack onTake(PlayerEntity entity, ItemStack stack) {
 					ItemStack retval = super.onTake(entity, stack);
@@ -150,16 +137,19 @@ public class TestGuiGui extends EriniumModElements.ModElement {
 
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (WarningLogoItem.block == stack.getItem());
+					return false;
 				}
 			}));
 			int si;
 			int sj;
 			for (si = 0; si < 3; ++si)
 				for (sj = 0; sj < 9; ++sj)
-					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 109 + 8 + sj * 18, 58 + 84 + si * 18));
+					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 115 + 8 + sj * 18, 72 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
-				this.addSlot(new Slot(inv, si, 109 + 8 + si * 18, 58 + 142));
+				this.addSlot(new Slot(inv, si, 115 + 8 + si * 18, 72 + 142));
+
+			TestGuiThisGUIIsOpenedProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		public Map<Integer, Slot> get() {

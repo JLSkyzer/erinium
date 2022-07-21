@@ -1,0 +1,74 @@
+{
+  "_fv": 28,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "setanum_helmet",
+    "enableBody": true,
+    "textureBody": "setanum_chestplate",
+    "enableLeggings": true,
+    "textureLeggings": "setanum_leggings",
+    "enableBoots": true,
+    "textureBoots": "setanum_boots",
+    "onHelmetTick": {
+      "name": "SetanumHelmetTickEvent"
+    },
+    "onBodyTick": {
+      "name": "SetanumBodyTickEvent"
+    },
+    "onLeggingsTick": {
+      "name": "SetanumLeggingsTickEvent"
+    },
+    "onBootsTick": {
+      "name": "SetanumBootsTickEvent"
+    },
+    "creativeTab": {
+      "value": "CUSTOM:SetanumTab"
+    },
+    "armorTextureFile": "setanum_",
+    "helmetName": "Setanum Helmet",
+    "bodyName": "Setanum Chestplate",
+    "leggingsName": "Setanum Leggings",
+    "bootsName": "Setanum Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 42,
+    "damageValueHelmet": 10,
+    "damageValueBody": 14,
+    "damageValueLeggings": 12,
+    "damageValueBoots": 10,
+    "enchantability": 25,
+    "toughness": 3.0,
+    "knockbackResistance": 0.30000000000000004,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:SetanumIngot"
+      }
+    ]
+  }
+}

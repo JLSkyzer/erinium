@@ -1,0 +1,31 @@
+{
+  "_fv": 28,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "setanum_sword",
+    "customModelName": "Normal",
+    "name": "Setanum Sword",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:SetanumTab"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 4,
+    "efficiency": 13.0,
+    "attackSpeed": 100.0,
+    "enchantability": 32,
+    "damageVsEntity": 8.8,
+    "usageCount": 2500,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:SetanumIngot"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

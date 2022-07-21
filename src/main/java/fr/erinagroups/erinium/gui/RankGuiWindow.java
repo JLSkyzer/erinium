@@ -7,6 +7,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.widget.button.Button;
@@ -35,8 +36,8 @@ public class RankGuiWindow extends ContainerScreen<RankGui.GuiContainerMod> {
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.xSize = 120;
-		this.ySize = 150;
+		this.xSize = 395;
+		this.ySize = 220;
 	}
 
 	@Override
@@ -51,6 +52,10 @@ public class RankGuiWindow extends ContainerScreen<RankGui.GuiContainerMod> {
 		RenderSystem.color4f(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
+
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/gui_rank.png"));
+		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, 427, 240, 427, 240);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -70,13 +75,12 @@ public class RankGuiWindow extends ContainerScreen<RankGui.GuiContainerMod> {
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Your Rank", 36, 1, -16737997);
-		this.font.drawString(ms, "Level : ", 9, 19, -1);
+		this.font.drawString(ms, "Level : ", 155, 53, -1);
 		this.font.drawString(ms, "" + (int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl) + "", 9, 37, -16724941);
-		this.font.drawString(ms, "Xp :", 9, 55, -1);
+				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl) + "", 155, 71, -16724941);
+		this.font.drawString(ms, "Xp :", 155, 89, -1);
 		this.font.drawString(ms, "" + (int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new EriniumModVariables.PlayerVariables())).playerXp) + " / 100.000", 9, 73, -6750208);
+				.orElse(new EriniumModVariables.PlayerVariables())).playerXp) + " / 100.000", 155, 107, -6750208);
 	}
 
 	@Override
@@ -89,7 +93,7 @@ public class RankGuiWindow extends ContainerScreen<RankGui.GuiContainerMod> {
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 36, this.guiTop + 100, 45, 16, new StringTextComponent("§bWiki"), e -> {
+		this.addButton(new Button(this.guiLeft + 155, this.guiTop + 125, 45, 16, new StringTextComponent("§bWiki"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new RankGui.ButtonPressedMessage(0, x, y, z));
 				RankGui.handleButtonAction(entity, 0, x, y, z);

@@ -3,26 +3,13 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 120,
-    "height": 150,
+    "width": 395,
+    "height": 220,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": false,
     "doesPauseGame": false,
     "components": [
-      {
-        "type": "label",
-        "data": {
-          "text": "Your Rank",
-          "color": {
-            "value": -16737997,
-            "falpha": 0.0
-          },
-          "name": "Your Rank",
-          "x": 190,
-          "y": 46
-        }
-      },
       {
         "type": "label",
         "data": {
@@ -32,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "Level : ",
-          "x": 163,
-          "y": 64
+          "x": 171,
+          "y": 63
         }
       },
       {
@@ -45,8 +32,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:integer:playerLvl>",
-          "x": 163,
-          "y": 82
+          "x": 171,
+          "y": 81
         }
       },
       {
@@ -58,8 +45,8 @@
             "falpha": 0.0
           },
           "name": "Xp :",
-          "x": 163,
-          "y": 100
+          "x": 171,
+          "y": 99
         }
       },
       {
@@ -71,8 +58,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:integer:playerXp> / 100.000",
-          "x": 163,
-          "y": 118
+          "x": 171,
+          "y": 117
         }
       },
       {
@@ -85,16 +72,26 @@
           "width": 45,
           "height": 20,
           "name": "§bWiki",
-          "x": 190,
-          "y": 145
+          "x": 171,
+          "y": 135
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "gui_rank.png",
+          "use1Xscale": false,
+          "name": "gui_rank.png",
+          "x": 0,
+          "y": 0
         }
       }
     ],
     "gridSettings": {
       "sx": 18,
       "sy": 18,
-      "ox": 18,
-      "oy": 18,
+      "ox": 17,
+      "oy": 17,
       "snapOnGrid": true
     }
   }

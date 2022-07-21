@@ -3,34 +3,21 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 200,
-    "height": 140,
+    "width": 395,
+    "height": 220,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
-    "renderBgLayer": true,
+    "renderBgLayer": false,
     "doesPauseGame": false,
     "components": [
       {
         "type": "image",
         "data": {
-          "image": "planetteleporter_panel_bg.png",
+          "image": "planet_teleporter.png",
           "use1Xscale": false,
-          "name": "planetteleporter_panel_bg.png",
-          "x": 113,
-          "y": 50
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Planet Teleporter",
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "name": "Planet Teleporter",
-          "x": 167,
-          "y": 41
+          "name": "planet_teleporter.png",
+          "x": 0,
+          "y": 0
         }
       },
       {
@@ -43,16 +30,16 @@
           "width": 81,
           "height": 20,
           "name": "§e\\uE000 Moon \\uE000",
-          "x": 122,
-          "y": 59
+          "x": 27,
+          "y": 63
         }
       }
     ],
     "gridSettings": {
       "sx": 18,
       "sy": 18,
-      "ox": 9,
-      "oy": 9,
+      "ox": 17,
+      "oy": 17,
       "snapOnGrid": true
     }
   }

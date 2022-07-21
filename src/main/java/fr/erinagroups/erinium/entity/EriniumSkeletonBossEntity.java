@@ -52,7 +52,7 @@ import fr.erinagroups.erinium.EriniumModElements;
 @EriniumModElements.ModElement.Tag
 public class EriniumSkeletonBossEntity extends EriniumModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
 			.size(0.6f, 1.8f)).build("erinium_skeleton_boss").setRegistryName("erinium_skeleton_boss");
 
 	public EriniumSkeletonBossEntity(EriniumModElements instance) {

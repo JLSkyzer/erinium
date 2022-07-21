@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:setanum_nuggets"
+    },
+    "1": {
+      "item": "erinium:setanum_nuggets"
+    },
+    "2": {
+      "item": "erinium:setanum_nuggets"
+    },
+    "3": {
+      "item": "erinium:setanum_nuggets"
+    },
+    "4": {
+      "item": "erinium:setanum_nuggets"
+    },
+    "5": {
+      "item": "erinium:setanum_nuggets"
+    },
+    "6": {
+      "item": "erinium:setanum_nuggets"
+    },
+    "7": {
+      "item": "erinium:setanum_nuggets"
+    },
+    "8": {
+      "item": "erinium:setanum_nuggets"
+    }
+  },
+  "result": {
+    "item": "erinium:setanum_ingot",
+    "count": 1
+  }
+}
