@@ -84,6 +84,11 @@ public class OnjoinTheServerProcedure {
 		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+					"\u00A74[&bErinium\u00A74] \u00A7eFaite la commande \u00A7a/wiki \u00A7epour voir le wiki du mods (tr\u00E8s important !)"),
+					(false));
+		}
+		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
 					"\u00A7bLe mod a \u00E9t\u00E9 cr\u00E9\u00E9 avec le logiciel MCreator, en raison de changement de version tous les signes pour changer de couleur ou les caract\u00E8res sp\u00E9ciaux ont \u00E9t\u00E9 modifi\u00E9s par des caract\u00E8res \u00E9tranges, si vous en trouvez, aller le report sur le github ! Et pr\u00E9ciser ce que vous avez fait si c'est un message sur le tchat. Merci ! Et bon jeu"),
 					(false));
 		}

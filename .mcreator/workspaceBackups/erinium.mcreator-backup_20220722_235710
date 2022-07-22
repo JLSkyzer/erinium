@@ -4813,6 +4813,180 @@
         ]
       },
       "path": "~/Setanum"
+    },
+    {
+      "name": "SetanumBodyTickEvent",
+      "type": "procedure",
+      "sortid": 341,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum_body_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Setanum"
+    },
+    {
+      "name": "SetanumLeggingsTickEvent",
+      "type": "procedure",
+      "sortid": 342,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum_leggings_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Setanum"
+    },
+    {
+      "name": "SetanumBootsTickEvent",
+      "type": "procedure",
+      "sortid": 343,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum_boots_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Setanum"
+    },
+    {
+      "name": "Setanum",
+      "type": "armor",
+      "sortid": 340,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/Setanum"
+    },
+    {
+      "name": "SetanumSword",
+      "type": "tool",
+      "sortid": 344,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum_sword",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "SetanumPickaxe",
+      "type": "tool",
+      "sortid": 345,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum_pickaxe",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "SetanumAxe",
+      "type": "tool",
+      "sortid": 346,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum_axe",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "SetanumShovel",
+      "type": "tool",
+      "sortid": 347,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum_shovel",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumHelmet",
+      "type": "recipe",
+      "sortid": 348,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_helmet",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumChestplate",
+      "type": "recipe",
+      "sortid": 349,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_chestplate",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumLeggings",
+      "type": "recipe",
+      "sortid": 350,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_leggings",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumBoots",
+      "type": "recipe",
+      "sortid": 351,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_boots",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumSword",
+      "type": "recipe",
+      "sortid": 352,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_sword",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumPickaxe",
+      "type": "recipe",
+      "sortid": 353,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_pickaxe",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumAxe",
+      "type": "recipe",
+      "sortid": 354,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_axe",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumShovel",
+      "type": "recipe",
+      "sortid": 355,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_shovel",
+      "path": "~/Setanum"
     }
   ],
   "variable_elements": [
@@ -5067,11 +5241,11 @@
       "block.erinium.line_1_block": "Line 1 Block",
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "itemGroup.tabscining_tab": "§bScining",
-      "block.erinium.dranite_ore": "§6Dranite Ore",
       "item.erinium.fraisage": "Fraisage",
+      "block.erinium.dranite_ore": "§6Dranite Ore",
       "block.erinium.erinium_ore_moon": "Erinium Ore Moon",
-      "block.erinium.lead_ore": "§9§lLead Ore",
       "item.erinium.fabric_roll": "Fabric Roll",
+      "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.extractor_empty": "§aExtractor",
       "item.erinium.wiring_kit": "Wiring Kit",
       "block.erinium.fonderie": "Fonderie",
@@ -5103,6 +5277,7 @@
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "subtitles.explosion": "",
+      "item.erinium.setanum_pickaxe": "Setanum Pickaxe",
       "item.erinium.chest_finder": "Chest Finder",
       "block.erinium.amenine_pressure_plate": "§5§lAmenine Pressure Plate",
       "item.erinium_armorhelmet.name": "Erinium Helmet",
@@ -5110,6 +5285,7 @@
       "item.erinium.spacesuit_armor_chestplate": "Spacesuit Chestplate",
       "item.erinium.erinium_armor_boots": "Erinium Boots",
       "item.erinium_armorboots.name": "Erinium Boots",
+      "item.erinium.setanum_leggings": "Setanum Leggings",
       "item.erinium.erinium_axe": "§1Erinium Axe",
       "item.erinium.erinium_armor_chestplate": "Erinium Body",
       "entity.erinium.erinium_skeleton_boss": "Erinium Skeleton Boss",
@@ -5131,16 +5307,19 @@
       "block.erinium.setanum_stage_0": "Setanum Stage 0",
       "item.erinium.wizard_spawn_egg": "Wizard Spawn Egg",
       "block.erinium.amenine_logs": "§5Amenine Logs",
+      "item.erinium.setanum_helmet": "Setanum Helmet",
       "item.erinium.xp_orb": "§aXp Orb",
       "lootbox.event.drop_erinium": "Good stuff \u003d true :)",
       "itemGroup.tabadmin_zone": "§4§lErinium - Admin Zone",
       "block.erinium.ultimate_lootbox": "§6Ultimate Lootbox",
       "key.erinium.spaceupdate_overlay_key": "Space Update Overlay Info",
       "item.erinium.usinage": "Usinage",
+      "item.erinium.setanum_sword": "Setanum Sword",
       "item.erinium.spacesuit_armor_helmet": "Spacesuit Helmet",
       "block.erinium.cutoutblock": "Cutoutblock",
       "subtitles.magazine_reload": "The sound when you reload magazine",
       "item.erinium.erinium_skeleton_boss_spawn_egg": "Erinium Skeleton Boss Spawn Egg",
+      "item.erinium.setanum_shovel": "Setanum Shovel",
       "item.erinium.screen": "Screen",
       "block.erinium.amenine_stairs": "§5§lAmenine Stairs",
       "block.erinium.nether_star_gen": "�2Nether Star Gen",
@@ -5162,6 +5341,7 @@
       "block.erinium.erinium_block": "Erinium Block",
       "item.erinium.erinium_tab_animation": "Erinium Tab Animation",
       "item.erinium.knife_tool": "Knife",
+      "item.erinium.setanum_axe": "Setanum Axe",
       "item.erinium.printed_circuit_board": "Printed Circuit Board",
       "item.erinium.erinium_armor_helmet": "Erinium Helmet",
       "item.erinium.silicone_fragment": "§9Silicone Fragment",
@@ -5169,6 +5349,7 @@
       "biome.erinium.scining_biome": "Scining Biome",
       "item.erinium.erinium_pickaxe": "§1Erinium Pickaxe",
       "item.erinium.setanum_ingot": "§eSetanum Ingot",
+      "item.erinium.setanum_chestplate": "Setanum Chestplate",
       "item.erinium.setanum_seeds": "§eSetanum Seeds",
       "item.erinium.erinium_hammer": "§1Erinium Hammer",
       "item.erinium.empty_bottle": "Empty Bottle",
@@ -5194,6 +5375,7 @@
       "item.erinium.gomy_spawn_egg": "Gomy Spawn Egg",
       "block.erinium.silver_ore": "§7Silver Ore",
       "item.erinium.amenine_liquid_5": "§b§lLiquid Bottle",
+      "item.erinium.setanum_boots": "Setanum Boots",
       "block.erinium.erinium_cobweb": "Erinium Cobweb",
       "biome.erinium.amenine_biome": "Amenine Biome",
       "itemGroup.tabspace_update_items": "§eErinium space update §8| §cItems",
