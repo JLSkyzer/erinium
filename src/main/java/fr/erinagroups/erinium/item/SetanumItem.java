@@ -80,7 +80,7 @@ public class SetanumItem extends EriniumModElements.ModElement {
 
 			@Override
 			public float getToughness() {
-				return 3f;
+				return 3.5f;
 			}
 
 			@Override

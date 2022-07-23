@@ -4924,6 +4924,111 @@
       "locked_code": false,
       "registry_name": "craft_setanum_helmet",
       "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumChestplate",
+      "type": "recipe",
+      "sortid": 349,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_chestplate",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumLeggings",
+      "type": "recipe",
+      "sortid": 350,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_leggings",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumBoots",
+      "type": "recipe",
+      "sortid": 351,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_boots",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumSword",
+      "type": "recipe",
+      "sortid": 352,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_sword",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumPickaxe",
+      "type": "recipe",
+      "sortid": 353,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_pickaxe",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumAxe",
+      "type": "recipe",
+      "sortid": 354,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_axe",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumShovel",
+      "type": "recipe",
+      "sortid": 355,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_shovel",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "EriniumWikiCommandExecuted",
+      "type": "procedure",
+      "sortid": 356,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_wiki_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side"
+    },
+    {
+      "name": "EriniumWiki",
+      "type": "command",
+      "sortid": 356,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_wiki",
+      "path": "~/Server side"
     }
   ],
   "variable_elements": [
