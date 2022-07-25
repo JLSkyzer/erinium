@@ -161,7 +161,7 @@ public class ExtractorAmenine3Block extends EriniumModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(pos, this, 1800);
+			world.getPendingBlockTicks().scheduleTick(pos, this, 15);
 		}
 
 		@Override
@@ -175,7 +175,7 @@ public class ExtractorAmenine3Block extends EriniumModElements.ModElement {
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			world.getPendingBlockTicks().scheduleTick(pos, this, 1800);
+			world.getPendingBlockTicks().scheduleTick(pos, this, 15);
 		}
 
 		@Override

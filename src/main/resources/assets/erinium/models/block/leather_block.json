@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/leather_block",
+    "up": "erinium:blocks/leather_block",
+    "north": "erinium:blocks/leather_block",
+    "east": "erinium:blocks/leather_block",
+    "south": "erinium:blocks/leather_block",
+    "west": "erinium:blocks/leather_block",
+    "particle": "erinium:blocks/leather_block"
+  }
+}

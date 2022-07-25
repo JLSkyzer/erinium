@@ -77,6 +77,7 @@ public class CreateFileProcedure {
 				exception.printStackTrace();
 			}
 			MainJsonObject.addProperty("toggle.tpdim", (false));
+			MainJsonObject.addProperty("block.egg_factory.ranklvl", Math.round(15));
 			{
 				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 				try {

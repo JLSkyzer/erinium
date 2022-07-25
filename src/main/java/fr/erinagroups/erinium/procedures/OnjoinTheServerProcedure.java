@@ -72,19 +72,18 @@ public class OnjoinTheServerProcedure {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A71===== \u00A76Bienvenue sur Erinium \u00A71====="), (false));
 		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(
-					new StringTextComponent(
-							"\u00A74[&bErinium\u00A74] \u00A7eFaite la commande \u00A7a/serverlanguage \u00A7epour changer la langue du serveur !"),
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+					"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/serverlanguage \u00A7epour changer la langue du serveur !"),
 					(false));
 		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-					"\u00A74[&bErinium\u00A74] \u00A7eFaite la commande \u00A7a/rank \u00A7epour en savoir plus sur le syst\u00E8me de niveau !"),
+					"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/rank \u00A7epour en savoir plus sur le syst\u00E8me de niveau !"),
 					(false));
 		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-					"\u00A74[&bErinium\u00A74] \u00A7eFaite la commande \u00A7a/wiki \u00A7epour voir le wiki du mods (tr\u00E8s important !)"),
+					"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/wiki \u00A7epour voir le wiki du mods (tr\u00E8s important !)"),
 					(false));
 		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
@@ -101,7 +100,7 @@ public class OnjoinTheServerProcedure {
 			((World) world).getServer().getCommandManager().handleCommand(
 					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-					"/tellraw @p {\"text\":\"\u00A71Github\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://github.com/JLSkyzer/erinium\"}}");
+					"tellraw @p {\"text\":\"\u00A71Github\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://github.com/JLSkyzer/erinium\"}}");
 		}
 	}
 }

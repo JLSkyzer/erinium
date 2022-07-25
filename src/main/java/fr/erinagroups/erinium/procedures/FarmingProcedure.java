@@ -17,6 +17,7 @@ import net.minecraft.block.BlockState;
 import java.util.Map;
 import java.util.HashMap;
 
+import fr.erinagroups.erinium.block.SetanumStage3Block;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
@@ -102,6 +103,23 @@ public class FarmingProcedure {
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
 				}
+			} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block
+					&& (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 3) {
+				{
+					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 1100);
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.playerXp = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "1100" + " xp " + "\u00A7f| " + "\u00A72"
+							+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+							+ " / 100.000")), (true));
+				}
 			}
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -178,6 +196,25 @@ public class FarmingProcedure {
 														+ " / 100.000")),
 										(true));
 					}
+				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
+					{
+						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 825);
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.playerXp = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + "825" + " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
+					}
 				}
 			} else {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -249,6 +286,25 @@ public class FarmingProcedure {
 															+ " / 100.000")),
 											(true));
 						}
+					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
+						{
+							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 650);
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.playerXp = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + "650" + " xp " + "\u00A7f| " + "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
+						}
 					}
 				} else {
 					if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -312,6 +368,24 @@ public class FarmingProcedure {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
 												new StringTextComponent(("\u00A7a+" + "140" + " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
+							}
+						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
+							{
+								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 400);
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.playerXp = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + "400" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),

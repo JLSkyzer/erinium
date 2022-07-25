@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/egg_factory_bottom",
+    "up": "erinium:blocks/egg_factory_top",
+    "north": "erinium:blocks/egg_factory_side",
+    "east": "erinium:blocks/egg_factory_side",
+    "south": "erinium:blocks/egg_factory_side",
+    "west": "erinium:blocks/egg_factory_side",
+    "particle": "erinium:blocks/egg_factory_bottom"
+  }
+}

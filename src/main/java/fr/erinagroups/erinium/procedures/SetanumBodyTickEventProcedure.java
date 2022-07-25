@@ -6,7 +6,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
-import java.util.Collection;
 
 import fr.erinagroups.erinium.EriniumMod;
 
@@ -23,31 +22,5 @@ public class SetanumBodyTickEventProcedure {
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, (int) 600, (int) 1, (false), (false)));
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 600, (int) 1, (false), (false)));
-		if (!(new Object() {
-			boolean check(Entity _entity) {
-				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == Effects.HEALTH_BOOST)
-							return true;
-					}
-				}
-				return false;
-			}
-		}.check(entity)) || new Object() {
-			int check(Entity _entity) {
-				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == Effects.HEALTH_BOOST)
-							return effect.getAmplifier();
-					}
-				}
-				return 0;
-			}
-		}.check(entity) < 1) {
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HEALTH_BOOST, (int) 600, (int) 1, (false), (false)));
-		}
 	}
 }

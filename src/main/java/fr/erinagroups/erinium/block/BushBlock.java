@@ -256,6 +256,14 @@ public class BushBlock extends EriniumModElements.ModElement {
 				blockCriteria = true;
 			if (blockAt.getBlock() == Blocks.DIRT)
 				blockCriteria = true;
+			if (blockAt.getBlock() == Blocks.GRAVEL)
+				blockCriteria = true;
+			if (blockAt.getBlock() == Blocks.GRANITE)
+				blockCriteria = true;
+			if (blockAt.getBlock() == Blocks.DIORITE)
+				blockCriteria = true;
+			if (blockAt.getBlock() == Blocks.ANDESITE)
+				blockCriteria = true;
 			return blockCriteria;
 		}
 
@@ -280,7 +288,7 @@ public class BushBlock extends EriniumModElements.ModElement {
 					return super.generate(world, generator, rand, pos, config);
 				}
 			};
-			configuredFeature = feature.withConfiguration(new OreFeatureConfig(CustomRuleTest.INSTANCE, block.getDefaultState(), 2)).range(64)
+			configuredFeature = feature.withConfiguration(new OreFeatureConfig(CustomRuleTest.INSTANCE, block.getDefaultState(), 2)).range(20)
 					.square().func_242731_b(6);
 			event.getRegistry().register(feature.setRegistryName("bush"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("erinium:bush"), configuredFeature);
