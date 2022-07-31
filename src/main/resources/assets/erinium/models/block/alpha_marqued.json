@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/alpha_marqued",
+    "up": "erinium:blocks/alpha_marqued",
+    "north": "erinium:blocks/alpha_marqued",
+    "east": "erinium:blocks/alpha_marqued",
+    "south": "erinium:blocks/alpha_marqued",
+    "west": "erinium:blocks/alpha_marqued",
+    "particle": "erinium:blocks/alpha_marqued"
+  }
+}

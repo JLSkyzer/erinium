@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/delta_marqued",
+    "up": "erinium:blocks/delta_marqued",
+    "north": "erinium:blocks/delta_marqued",
+    "east": "erinium:blocks/delta_marqued",
+    "south": "erinium:blocks/delta_marqued",
+    "west": "erinium:blocks/delta_marqued",
+    "particle": "erinium:blocks/delta_marqued"
+  }
+}

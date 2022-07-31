@@ -1,0 +1,12 @@
+{
+  "parent": "erinium:custom/erinium_fusion_station_base",
+  "textures": {
+    "all": "erinium:blocks/center",
+    "particle": "erinium:blocks/center",
+    "magic_liquid.png": "erinium:blocks/magic_liquid",
+    "light_red.png": "erinium:blocks/light_red",
+    "dark_gray.png": "erinium:blocks/dark_gray",
+    "gem color": "erinium:blocks/center",
+    "inox.png": "erinium:blocks/inox"
+  }
+}

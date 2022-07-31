@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "erinium:copper_ingot",
+    "minecraft:gold_ingot",
+    "erinium:setanum_ingot",
+    "minecraft:netherite_ingot",
+    "minecraft:iron_ingot",
+    "erinium:lead_ingot",
+    "erinium:silver_ingot",
+    "erinium:erinium_ingot"
+  ]
+}

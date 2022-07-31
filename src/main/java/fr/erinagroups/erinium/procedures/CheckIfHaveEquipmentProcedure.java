@@ -14,11 +14,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.EnchantmentHelper;
 
 import java.util.Map;
 import java.util.HashMap;
 
 import fr.erinagroups.erinium.item.SpacesuitArmorItem;
+import fr.erinagroups.erinium.enchantment.SpaceBreathingEnchantment;
 import fr.erinagroups.erinium.EriniumMod;
 
 public class CheckIfHaveEquipmentProcedure {
@@ -66,7 +68,11 @@ public class CheckIfHaveEquipmentProcedure {
 					|| !(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
 							.getItem() == SpacesuitArmorItem.body)
 					|| !(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
-							.getItem() == SpacesuitArmorItem.helmet)) {
+							.getItem() == SpacesuitArmorItem.helmet)
+					|| (EnchantmentHelper.getEnchantmentLevel(SpaceBreathingEnchantment.enchantment,
+							((entity instanceof LivingEntity)
+									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
+									: ItemStack.EMPTY)) != 0)) {
 				entity.attackEntityFrom(DamageSource.DROWN, (float) 1);
 			}
 		}

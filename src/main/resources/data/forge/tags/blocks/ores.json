@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "erinium:lead_ore",
+    "erinium:bush",
+    "erinium:silicone_ore",
+    "erinium:erinium_ore",
+    "erinium:copper_ore",
+    "erinium:silver_ore",
+    "erinium:dranite_ore",
+    "erinium:spectrium_ore",
+    "erinium:erinium_ore_moon"
+  ]
+}

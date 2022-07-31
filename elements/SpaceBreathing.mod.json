@@ -1,0 +1,19 @@
+{
+  "_fv": 28,
+  "_type": "enchantment",
+  "definition": {
+    "name": "Space Breathing",
+    "type": "ARMOR_HEAD",
+    "rarity": "VERY_RARE",
+    "minLevel": 0,
+    "maxLevel": 0,
+    "damageModifier": 0,
+    "compatibleEnchantments": [],
+    "compatibleItems": [],
+    "isTreasureEnchantment": true,
+    "isCurse": false,
+    "isAllowedOnBooks": true,
+    "canGenerateInLootTables": true,
+    "canVillagerTrade": true
+  }
+}

@@ -28,12 +28,12 @@
           {
             "type": "item",
             "item": {
-              "value": "Items.ENCHANTED_BOOK"
+              "value": "Items.BOOK"
             },
             "weight": 1,
             "minCount": 1,
             "maxCount": 2,
-            "minEnchantmentLevel": 10,
+            "minEnchantmentLevel": 30,
             "maxEnchantmentLevel": 40,
             "affectedByFortune": false,
             "explosionDecay": false,

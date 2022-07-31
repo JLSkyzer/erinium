@@ -1,0 +1,54 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "magic_liquid.png": "magic_liquid",
+        "light_red.png": "light_red",
+        "dark_gray.png": "dark_gray",
+        "gem color": "center",
+        "inox.png": "inox"
+      },
+      "name": "default"
+    },
+    "alpha": {
+      "map": {
+        "magic_liquid.png": "magic_liquid",
+        "light_red.png": "light_red",
+        "dark_gray.png": "dark_gray",
+        "gem color": "alpha",
+        "inox.png": "inox"
+      },
+      "name": "alpha"
+    },
+    "delta": {
+      "map": {
+        "magic_liquid.png": "magic_liquid",
+        "light_red.png": "light_red",
+        "dark_gray.png": "dark_gray",
+        "gem color": "delta",
+        "inox.png": "inox"
+      },
+      "name": "delta"
+    },
+    "beta": {
+      "map": {
+        "magic_liquid.png": "magic_liquid",
+        "light_red.png": "light_red",
+        "dark_gray.png": "dark_gray",
+        "gem color": "beta",
+        "inox.png": "inox"
+      },
+      "name": "beta"
+    },
+    "charlie": {
+      "map": {
+        "magic_liquid.png": "magic_liquid",
+        "light_red.png": "light_red",
+        "dark_gray.png": "dark_gray",
+        "gem color": "charlie",
+        "inox.png": "inox"
+      },
+      "name": "charlie"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/charlie_marqued",
+    "up": "erinium:blocks/charlie_marqued",
+    "north": "erinium:blocks/charlie_marqued",
+    "east": "erinium:blocks/charlie_marqued",
+    "south": "erinium:blocks/charlie_marqued",
+    "west": "erinium:blocks/charlie_marqued",
+    "particle": "erinium:blocks/charlie_marqued"
+  }
+}

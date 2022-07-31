@@ -1,0 +1,38 @@
+{
+  "_fv": 28,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:EriniumOre"
+      },
+      {
+        "value": "CUSTOM:SiliconeOre"
+      },
+      {
+        "value": "CUSTOM:DraniteOre"
+      },
+      {
+        "value": "CUSTOM:CopperOre"
+      },
+      {
+        "value": "CUSTOM:LeadOre"
+      },
+      {
+        "value": "CUSTOM:SilverOre"
+      },
+      {
+        "value": "CUSTOM:EriniumOreMoon"
+      },
+      {
+        "value": "CUSTOM:SpectriumOre"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "ores",
+    "namespace": "forge"
+  }
+}

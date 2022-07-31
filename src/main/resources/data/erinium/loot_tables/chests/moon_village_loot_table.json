@@ -27,7 +27,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:enchanted_book",
+          "name": "minecraft:book",
           "weight": 1,
           "functions": [
             {
@@ -41,7 +41,7 @@
               "function": "enchant_with_levels",
               "treasure": true,
               "levels": {
-                "min": 10,
+                "min": 30,
                 "max": 40
               }
             }

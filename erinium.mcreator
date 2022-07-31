@@ -5274,6 +5274,416 @@
         ]
       },
       "path": "~/Misc System/Spawner"
+    },
+    {
+      "name": "SpaceBreathing",
+      "type": "enchantment",
+      "sortid": 376,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "space_breathing",
+      "path": "~/Space update"
+    },
+    {
+      "name": "ForgeOres",
+      "type": "tag",
+      "sortid": 377,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forge_ores"
+    },
+    {
+      "name": "ForgeIngots",
+      "type": "tag",
+      "sortid": 378,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forge_ingots"
+    },
+    {
+      "name": "ForgeOresItem",
+      "type": "tag",
+      "sortid": 379,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forge_ores_item"
+    },
+    {
+      "name": "FusionStationBase",
+      "type": "block",
+      "sortid": 380,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_station_base",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "FusionStationAlpha",
+      "type": "block",
+      "sortid": 381,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_station_alpha",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "FusionStationBeta",
+      "type": "block",
+      "sortid": 382,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_station_beta",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "FusionStationCharlie",
+      "type": "block",
+      "sortid": 383,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_station_charlie",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "FusionStationDelta",
+      "type": "block",
+      "sortid": 384,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_station_delta",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "AlphaMarqued",
+      "type": "block",
+      "sortid": 385,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "alpha_marqued",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "BetaMarqued",
+      "type": "block",
+      "sortid": 386,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "beta_marqued",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "CharlieMarqued",
+      "type": "block",
+      "sortid": 387,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "charlie_marqued",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "DeltaMarqued",
+      "type": "block",
+      "sortid": 388,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "delta_marqued",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "FusionStationBaseUpdateTick",
+      "type": "procedure",
+      "sortid": 389,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_station_base_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "ColorMarquedRightClick",
+      "type": "procedure",
+      "sortid": 390,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "color_marqued_right_click",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "ConditionShowBarFill",
+      "type": "procedure",
+      "sortid": 391,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_show_bar_fill",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "GuiFusionStationAlpha",
+      "type": "gui",
+      "sortid": 391,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "gui_fusion_station_alpha",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "FusionStationAlphaOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 393,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_station_alpha_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "FusionStationAlphaUpdateTick",
+      "type": "procedure",
+      "sortid": 394,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_station_alpha_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "BedrockStickRightclickedOnBlock",
+      "type": "procedure",
+      "sortid": 395,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bedrock_stick_rightclicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/bedrock"
+    },
+    {
+      "name": "BedrockStick",
+      "type": "item",
+      "sortid": 395,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bedrock_stick",
+      "path": "~/Misc System/bedrock"
+    },
+    {
+      "name": "CraftBedrockStick",
+      "type": "recipe",
+      "sortid": 396,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_bedrock_stick",
+      "path": "~/Misc System/bedrock"
+    },
+    {
+      "name": "DuplicatePickaxe",
+      "type": "tool",
+      "sortid": 397,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "duplicate_pickaxe",
+      "path": "~/Misc System/DuplicatePickaxe"
+    },
+    {
+      "name": "BreakBlock",
+      "type": "procedure",
+      "sortid": 398,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "break_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/DuplicatePickaxe"
+    },
+    {
+      "name": "FortuneModifier",
+      "type": "item",
+      "sortid": 399,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fortune_modifier",
+      "path": "~/Misc System/DuplicatePickaxe"
+    },
+    {
+      "name": "EriniumStick",
+      "type": "item",
+      "sortid": 400,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_stick",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftEriniumStick",
+      "type": "recipe",
+      "sortid": 401,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_erinium_stick",
+      "path": "~/Erinium"
+    },
+    {
+      "name": "CraftFortuneModifier",
+      "type": "recipe",
+      "sortid": 400,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_fortune_modifier",
+      "path": "~/Misc System/DuplicatePickaxe"
     }
   ],
   "variable_elements": [
@@ -5524,144 +5934,73 @@
   ],
   "language_map": {
     "en_us": {
-      "item.erinium.cardboard_roll": "Cardboard Roll",
       "block.erinium.line_1_block": "Line 1 Block",
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "itemGroup.tabscining_tab": "§bScining",
       "item.erinium.fraisage": "Fraisage",
       "block.erinium.dranite_ore": "§6Dranite Ore",
-      "block.erinium.erinium_ore_moon": "Erinium Ore Moon",
-      "item.erinium.fabric_roll": "Fabric Roll",
       "block.erinium.lead_ore": "§9§lLead Ore",
-      "block.erinium.extractor_empty": "§aExtractor",
+      "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.wiring_kit": "Wiring Kit",
       "block.erinium.fonderie": "Fonderie",
-      "entity.erinium.gomy": "Gomy",
-      "block.erinium.block_setter": "Block Setter",
       "subtitles.printer": "Printer en marche",
-      "block.erinium.amenine_fence_gate": "§5§lAmenine Fence Gate",
       "item.erinium.amenine_stick": "Amenine Stick",
-      "block.erinium.spectrium_block": "Spectrium Block",
+      "block.erinium.fusion_station_base": "§8Fusion Station §7Base",
       "block.erinium.scining_cactus": "Scining Cactus",
-      "item.erinium.magic_wand": "Magic Wand",
-      "block.erinium.scining_sand": "Scining Sand",
       "block.erinium.fraisage_numerique": "Fraisage Numérique",
-      "item.erinium_sword.name": "§1Erinium Sword",
-      "item.erinium.knife": "Knife",
-      "itemGroup.tabspace_update_blocks_tab": "§eErinium space update §8| §cBlocks",
-      "tile.erinium_block.name": "Erinium Block",
-      "item.erinium.dranite_gem": "§6Dranite Gem",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
+      "block.erinium.charlie_marqued": "Charlie Marqued",
+      "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
       "key.categories.eriniumcontrols": "§1Erinium",
-      "item.erinium.empty_board": "Empty Board",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
-      "block.erinium.house_1_block": "House 1 Block",
-      "item.erinium.erinium_ingot": "Erinium Ingot",
-      "block.erinium.amenine_fence": "§5§lAmenine Fence",
-      "item.erinium.spectium_armor_leggings": "Spectium Leggings",
       "block.erinium.xp_bush_layer_1": "Xp bush",
-      "item.erinium.soul_bottle": "§9Soul Bottle",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
-      "subtitles.explosion": "",
-      "item.erinium.setanum_pickaxe": "Setanum Pickaxe",
-      "item.erinium.chest_finder": "Chest Finder",
-      "block.erinium.amenine_pressure_plate": "§5§lAmenine Pressure Plate",
       "item.erinium_armorhelmet.name": "Erinium Helmet",
-      "block.erinium.printer": "Printer",
-      "item.erinium.spacesuit_armor_chestplate": "Spacesuit Chestplate",
-      "item.erinium.erinium_armor_boots": "Erinium Boots",
-      "item.erinium_armorboots.name": "Erinium Boots",
-      "item.erinium.setanum_leggings": "Setanum Leggings",
-      "item.erinium.erinium_axe": "§1Erinium Axe",
-      "item.erinium.erinium_armor_chestplate": "Erinium Body",
+      "item.erinium.bedrock_stick": "Bedrock Stick",
       "entity.erinium.erinium_skeleton_boss": "Erinium Skeleton Boss",
       "block.erinium.erinium_boss_spawner": "Erinium Boss Spawner",
-      "item.erinium.item_pos": "Item Pos",
       "itemGroup.tabsetanum_tab": "§e§lSetanum",
-      "block.erinium.leather_block": "Leather Block",
-      "block.erinium.amenine_button": "§5§lAmenine Button",
       "block.erinium.setanum_stage_2": "Setanum Stage 2",
       "block.erinium.setanum_stage_1": "Setanum Stage 1",
-      "block.erinium.extractor_bottle_empty": "§aExtractor",
       "block.erinium.setanum_stage_3": "Setanum Stage 3",
-      "item.erinium.erinium_sword": "§1Erinium Sword",
       "block.erinium.scining_sandstone": "Scining Sandstone",
-      "item.erinium.blood_orb": "§cBlood Orb",
       "subtitles.erinium_boss_dead_1": "Erinium boss dead",
       "item.erinium.setanum_nuggets": "Setanum Nuggets",
       "item.erinium.cardboard": "Cardboard",
       "block.erinium.amenine_trapdoor": "§5§lAmenine Trapdoor",
       "block.erinium.setanum_stage_0": "Setanum Stage 0",
-      "item.erinium.wizard_spawn_egg": "Wizard Spawn Egg",
-      "block.erinium.amenine_logs": "§5Amenine Logs",
       "item.erinium.setanum_helmet": "Setanum Helmet",
-      "item.erinium.xp_orb": "§aXp Orb",
-      "lootbox.event.drop_erinium": "Good stuff \u003d true :)",
-      "itemGroup.tabadmin_zone": "§4§lErinium - Admin Zone",
-      "block.erinium.ultimate_lootbox": "§6Ultimate Lootbox",
       "key.erinium.spaceupdate_overlay_key": "Space Update Overlay Info",
       "item.erinium.usinage": "Usinage",
-      "item.erinium.setanum_sword": "Setanum Sword",
       "item.erinium.spacesuit_armor_helmet": "Spacesuit Helmet",
       "block.erinium.cutoutblock": "Cutoutblock",
       "subtitles.magazine_reload": "The sound when you reload magazine",
       "item.erinium.erinium_skeleton_boss_spawn_egg": "Erinium Skeleton Boss Spawn Egg",
       "item.erinium.setanum_shovel": "Setanum Shovel",
-      "item.erinium.screen": "Screen",
       "block.erinium.amenine_stairs": "§5§lAmenine Stairs",
-      "block.erinium.nether_star_gen": "�2Nether Star Gen",
-      "item.erinium.moon": "Moon Portal Igniter",
-      "item.erinium.empty_large_bottle": "Empty Large Bottle",
-      "block.erinium.blood_bush_layer_0": "Blood bush",
-      "item.erinium.blood_large_bottle": "Blood Large Bottle",
-      "block.erinium.blood_bush_layer_1": "Blood bush",
-      "block.erinium.calculator": "Calculator",
       "item.erinium.xp_essence": "Xp Essence",
       "item.erinium.silver_ingot": "§7Silver Ingot",
-      "item.erinium.rubber": "§0Rubber",
-      "block.erinium.amenine_rod": "§5§lAmenine Rod",
       "subtitles.hitmarker": "",
-      "block.erinium.classic_lootbox": "§eClassic Lootbox",
+      "item.erinium.duplicate_pickaxe": "§4Smelting Pickaxe",
       "item.erinium.magic_orb": "Magic Orb",
-      "itemGroup.taberinium_tab": "Erinium | §1Erinium",
-      "block.erinium.spatial_teleporter_panel": "§2§lSpatial Teleporter Panel",
-      "block.erinium.erinium_block": "Erinium Block",
+      "block.erinium.classic_lootbox": "§eClassic Lootbox",
       "item.erinium.erinium_tab_animation": "Erinium Tab Animation",
       "item.erinium.knife_tool": "Knife",
-      "item.erinium.setanum_axe": "Setanum Axe",
       "item.erinium.printed_circuit_board": "Printed Circuit Board",
       "item.erinium.erinium_armor_helmet": "Erinium Helmet",
-      "item.erinium.silicone_fragment": "§9Silicone Fragment",
-      "itemGroup.tabalchemist": "§1Erinium §f- §2Alchemist",
-      "biome.erinium.scining_biome": "Scining Biome",
-      "item.erinium.erinium_pickaxe": "§1Erinium Pickaxe",
       "item.erinium.setanum_ingot": "§eSetanum Ingot",
       "item.erinium.setanum_chestplate": "Setanum Chestplate",
-      "item.erinium.setanum_seeds": "§eSetanum Seeds",
-      "block.erinium.egg_factory": "Egg Factory",
       "item.erinium.erinium_hammer": "§1Erinium Hammer",
       "item.erinium.empty_bottle": "Empty Bottle",
-      "item.erinium.lead_ingot": "§9§lLead Ingot",
-      "item.erinium.copper_ingot": "§6§lCopper Ingot",
       "item.erinium.home_teleporter": "�aHome Teleporter",
+      "block.erinium.fusion_station_beta": "§8Fusion Station §aBeta",
       "lootbox.event.oregen_1": "§aGo to mine and smelt !",
-      "block.erinium.tour_tradi": "Tour Tradi",
-      "item.erinium_pickaxe.name": "§1Erinium Pickaxe",
-      "item.erinium.spectium_armor_helmet": "Spectium Helmet",
       "itemGroup.tabbloodtab": "§cBlood",
-      "block.erinium.wizard_boss_spawner": "Wizard Boss Spawner",
-      "item.erinium_ingot.name": "Erinium Ingot",
-      "subtitles.scarh_shoot": "",
       "block.erinium.cave_block": "Cave Block",
-      "block.erinium.erinium_ore": "Erinium Ore",
       "tile.erinium_ore.name": "Erinium Ore",
-      "block.erinium.bush": "Bush",
-      "itemGroup.tabloot_box_tab": "§5Loot Box",
-      "item.erinium.magic_stick": "Magic Stick",
       "item.erinium.soul_bottle_2": "§9Soul Bottle",
-      "biome.erinium.moon_biome": "Moon Biome",
       "item.erinium.soul_bottle_1": "§9Soul Bottle",
       "item.erinium.scining_glass_fragment": "Scining Glass Fragment",
       "item.erinium.soul_bottle_4": "§9Soul Bottle",
@@ -5669,14 +6008,9 @@
       "item.erinium.soul_bottle_3": "§9Soul Bottle",
       "item.erinium.soul_bottle_5": "§9Soul Bottle",
       "block.erinium.silver_ore": "§7Silver Ore",
-      "item.erinium.amenine_liquid_5": "§b§lLiquid Bottle",
       "item.erinium.setanum_boots": "Setanum Boots",
-      "block.erinium.erinium_cobweb": "Erinium Cobweb",
       "biome.erinium.amenine_biome": "Amenine Biome",
       "itemGroup.tabspace_update_items": "§eErinium space update §8| §cItems",
-      "item.erinium.cobble_void": "Cobble Void",
-      "item.erinium.erinium_armor_leggings": "Erinium Leggings",
-      "item.erinium.admin_stick": "Admin Stick",
       "item.erinium.xp_large_bottle": "Xp Large Bottle",
       "block.erinium.extractor_amenine_3": "§aExtractor",
       "block.erinium.extractor_amenine_4": "§aExtractor",
@@ -5684,29 +6018,119 @@
       "item.erinium.spectium_armor_boots": "Spectium Boots",
       "block.erinium.moon_sand": "§7? Moon Sand ?",
       "itemGroup.tabusinage_tab": "§6Usinage",
+      "item.erinium_armorlegs.name": "Erinium Leggings",
+      "block.erinium.extractor_amenine_1": "§aExtractor",
+      "block.erinium.extractor_amenine_2": "§aExtractor",
+      "item.erinium.spacesuit_armor_leggings": "Spacesuit Leggings",
+      "item.erinium.fortune_modifier": "§a§l§o§nFortune Modifier",
+      "block.erinium.amenine_slab": "§5§lAmenine Slab",
+      "item.erinium.magical_wand": "Magical Wand",
+      "block.erinium.amenine_leaves": "§5Amenine Leaves",
+      "item.erinium.cardboard_roll": "Cardboard Roll",
+      "block.erinium.erinium_ore_moon": "Erinium Ore Moon",
+      "item.erinium.fabric_roll": "Fabric Roll",
+      "block.erinium.extractor_empty": "§aExtractor",
+      "entity.erinium.gomy": "Gomy",
+      "block.erinium.block_setter": "Block Setter",
+      "block.erinium.amenine_fence_gate": "§5§lAmenine Fence Gate",
+      "block.erinium.spectrium_block": "Spectrium Block",
+      "item.erinium.magic_wand": "Magic Wand",
+      "block.erinium.scining_sand": "Scining Sand",
+      "item.erinium_sword.name": "§1Erinium Sword",
+      "item.erinium.knife": "Knife",
+      "itemGroup.tabspace_update_blocks_tab": "§eErinium space update §8| §cBlocks",
+      "tile.erinium_block.name": "Erinium Block",
+      "item.erinium.dranite_gem": "§6Dranite Gem",
+      "item.erinium.empty_board": "Empty Board",
+      "block.erinium.house_1_block": "House 1 Block",
+      "item.erinium.erinium_ingot": "Erinium Ingot",
+      "block.erinium.amenine_fence": "§5§lAmenine Fence",
+      "item.erinium.spectium_armor_leggings": "Spectium Leggings",
+      "item.erinium.soul_bottle": "§9Soul Bottle",
+      "block.erinium.alpha_marqued": "Alpha Marqued",
+      "subtitles.explosion": "",
+      "item.erinium.setanum_pickaxe": "Setanum Pickaxe",
+      "item.erinium.chest_finder": "Chest Finder",
+      "block.erinium.beta_marqued": "Beta Marqued",
+      "block.erinium.amenine_pressure_plate": "§5§lAmenine Pressure Plate",
+      "block.erinium.printer": "Printer",
+      "item.erinium.spacesuit_armor_chestplate": "Spacesuit Chestplate",
+      "item.erinium.erinium_armor_boots": "Erinium Boots",
+      "item.erinium_armorboots.name": "Erinium Boots",
+      "item.erinium.setanum_leggings": "Setanum Leggings",
+      "item.erinium.erinium_axe": "§1Erinium Axe",
+      "item.erinium.erinium_armor_chestplate": "Erinium Body",
+      "item.erinium.item_pos": "Item Pos",
+      "block.erinium.leather_block": "Leather Block",
+      "block.erinium.amenine_button": "§5§lAmenine Button",
+      "block.erinium.extractor_bottle_empty": "§aExtractor",
+      "block.erinium.fusion_station_charlie": "§8Fusion Station §cCharlie",
+      "item.erinium.erinium_sword": "§1Erinium Sword",
+      "item.erinium.blood_orb": "§cBlood Orb",
+      "item.erinium.wizard_spawn_egg": "Wizard Spawn Egg",
+      "block.erinium.amenine_logs": "§5Amenine Logs",
+      "item.erinium.xp_orb": "§aXp Orb",
+      "lootbox.event.drop_erinium": "Good stuff \u003d true :)",
+      "enchantment.erinium.space_breathing": "Space Breathing",
+      "itemGroup.tabadmin_zone": "§4§lErinium - Admin Zone",
+      "block.erinium.ultimate_lootbox": "§6Ultimate Lootbox",
+      "item.erinium.setanum_sword": "Setanum Sword",
+      "item.erinium.screen": "Screen",
+      "block.erinium.nether_star_gen": "�2Nether Star Gen",
+      "item.erinium.moon": "Moon Portal Igniter",
+      "item.erinium.empty_large_bottle": "Empty Large Bottle",
+      "block.erinium.blood_bush_layer_0": "Blood bush",
+      "item.erinium.blood_large_bottle": "Blood Large Bottle",
+      "block.erinium.blood_bush_layer_1": "Blood bush",
+      "block.erinium.calculator": "Calculator",
+      "item.erinium.rubber": "§0Rubber",
+      "block.erinium.amenine_rod": "§5§lAmenine Rod",
+      "itemGroup.taberinium_tab": "Erinium | §1Erinium",
+      "block.erinium.spatial_teleporter_panel": "§2§lSpatial Teleporter Panel",
+      "block.erinium.erinium_block": "Erinium Block",
+      "block.erinium.fusion_station_delta": "§8Fusion Station §eDelta",
+      "item.erinium.setanum_axe": "Setanum Axe",
+      "item.erinium.silicone_fragment": "§9Silicone Fragment",
+      "itemGroup.tabalchemist": "§1Erinium §f- §2Alchemist",
+      "biome.erinium.scining_biome": "Scining Biome",
+      "item.erinium.erinium_pickaxe": "§1Erinium Pickaxe",
+      "item.erinium.setanum_seeds": "§eSetanum Seeds",
+      "block.erinium.egg_factory": "Egg Factory",
+      "item.erinium.lead_ingot": "§9§lLead Ingot",
+      "item.erinium.copper_ingot": "§6§lCopper Ingot",
+      "block.erinium.tour_tradi": "Tour Tradi",
+      "item.erinium_pickaxe.name": "§1Erinium Pickaxe",
+      "item.erinium.spectium_armor_helmet": "Spectium Helmet",
+      "block.erinium.wizard_boss_spawner": "Wizard Boss Spawner",
+      "item.erinium_ingot.name": "Erinium Ingot",
+      "subtitles.scarh_shoot": "",
+      "block.erinium.erinium_ore": "Erinium Ore",
+      "item.erinium.magic_stick": "Magic Stick",
+      "itemGroup.tabloot_box_tab": "§5Loot Box",
+      "block.erinium.bush": "Bush",
+      "item.erinium.erinium_stick": "§1Erinium Stick",
+      "biome.erinium.moon_biome": "Moon Biome",
+      "item.erinium.amenine_liquid_5": "§b§lLiquid Bottle",
+      "block.erinium.erinium_cobweb": "Erinium Cobweb",
+      "item.erinium.cobble_void": "Cobble Void",
+      "item.erinium.erinium_armor_leggings": "Erinium Leggings",
+      "item.erinium.admin_stick": "Admin Stick",
       "item.erinium.test_dim": "Test Dim Portal Igniter",
       "item.erinium.amenine_liquid_2": "§b§lLiquid Bottle",
       "item.erinium_axe.name": "§1Erinium Axe",
       "subtitles.no_ammo": "",
       "item.erinium.amenine_liquid_1": "§b§lLiquid Bottle",
-      "item.erinium_armorlegs.name": "Erinium Leggings",
-      "block.erinium.spatial_teleporter_block": "Spatial Teleporter Block",
       "item.erinium.amenine_liquid_4": "§b§lLiquid Bottle",
-      "block.erinium.extractor_amenine_1": "§aExtractor",
+      "block.erinium.spatial_teleporter_block": "Spatial Teleporter Block",
       "block.erinium.amenine_planks": "§5§lAmenine Planks",
-      "item.erinium.spacesuit_armor_leggings": "Spacesuit Leggings",
       "item.erinium.amenine_liquid_3": "§b§lLiquid Bottle",
-      "block.erinium.extractor_amenine_2": "§aExtractor",
       "item.erinium.spectium_armor_chestplate": "Spectium Body",
       "block.erinium.moon_stone": "§7? Moon Stone ?",
       "item.erinium.dungeon_finder": "Dungeon Finder",
       "item.erinium.spacesuit_armor_boots": "Spacesuit Boots",
       "block.erinium.copper_ore": "§6§lCopper Ore",
-      "block.erinium.amenine_slab": "§5§lAmenine Slab",
-      "item.erinium.magical_wand": "Magical Wand",
       "item.erinium.magic_wand_cobweb": "Magic Wand Cobweb",
       "item.erinium.warning_logo": "Warning Logo",
-      "block.erinium.amenine_leaves": "§5Amenine Leaves",
       "item.erinium.spectrium_gem": "§0Spectrium §rGem"
     }
   },
@@ -5912,6 +6336,18 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Fusion Station",
+            "children": []
+          },
+          {
+            "name": "bedrock",
+            "children": []
+          },
+          {
+            "name": "DuplicatePickaxe",
+            "children": []
           }
         ]
       },

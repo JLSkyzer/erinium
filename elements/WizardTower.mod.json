@@ -5,7 +5,7 @@
     "structure": "wizard_tower",
     "randomlyRotateStructure": true,
     "surfaceDetectionType": "First motion blocking block",
-    "spawnProbability": 3250,
+    "spawnProbability": 1500,
     "minCountPerChunk": 1,
     "maxCountPerChunk": 1,
     "spawnLocation": "Ground",
