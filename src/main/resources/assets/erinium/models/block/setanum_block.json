@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/setanum_block",
+    "up": "erinium:blocks/setanum_block",
+    "north": "erinium:blocks/setanum_block",
+    "east": "erinium:blocks/setanum_block",
+    "south": "erinium:blocks/setanum_block",
+    "west": "erinium:blocks/setanum_block",
+    "particle": "erinium:blocks/setanum_block"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:erinium_pickaxe"
+    },
+    "1": {
+      "item": "erinium:setanum_pickaxe"
+    },
+    "2": {
+      "item": "erinium:erinium_pickaxe"
+    },
+    "3": {
+      "item": "minecraft:emerald"
+    },
+    "4": {
+      "item": "erinium:erinium_stick"
+    },
+    "5": {
+      "item": "minecraft:emerald"
+    },
+    "7": {
+      "item": "erinium:erinium_stick"
+    }
+  },
+  "result": {
+    "item": "erinium:duplicate_pickaxe",
+    "count": 1
+  }
+}

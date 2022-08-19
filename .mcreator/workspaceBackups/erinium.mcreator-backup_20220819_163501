@@ -5321,7 +5321,7 @@
       "name": "FusionStationAlpha",
       "type": "block",
       "sortid": 381,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "fusion_station_alpha",
       "path": "~/Misc System/Fusion Station"
@@ -5533,10 +5533,6 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -5684,6 +5680,102 @@
       "locked_code": false,
       "registry_name": "craft_fortune_modifier",
       "path": "~/Misc System/DuplicatePickaxe"
+    },
+    {
+      "name": "CraftDuplicatePickaxe",
+      "type": "recipe",
+      "sortid": 402,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_duplicate_pickaxe",
+      "path": "~/Misc System/DuplicatePickaxe"
+    },
+    {
+      "name": "SetanumBlock",
+      "type": "block",
+      "sortid": 403,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setanum_block",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumBlock",
+      "type": "recipe",
+      "sortid": 404,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_block",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "CraftSetanumIngot2",
+      "type": "recipe",
+      "sortid": 405,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_setanum_ingot_2",
+      "path": "~/Setanum"
+    },
+    {
+      "name": "WikiFusionStationAlpha",
+      "type": "gui",
+      "sortid": 406,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wiki_fusion_station_alpha",
+      "path": "~/Misc System/Fusion Station/AlphaWiki"
+    },
+    {
+      "name": "OpenAlphaWiki",
+      "type": "procedure",
+      "sortid": 408,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_alpha_wiki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Fusion Station/AlphaWiki"
+    },
+    {
+      "name": "Tttt",
+      "type": "gui",
+      "sortid": 409,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tttt",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "CraftFusionStationAlpha",
+      "type": "recipe",
+      "sortid": 410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_fusion_station_alpha",
+      "path": "~/Misc System/Fusion Station"
     }
   ],
   "variable_elements": [
@@ -5997,6 +6089,7 @@
       "item.erinium.home_teleporter": "�aHome Teleporter",
       "block.erinium.fusion_station_beta": "§8Fusion Station §aBeta",
       "lootbox.event.oregen_1": "§aGo to mine and smelt !",
+      "block.erinium.setanum_block": "§eSetanum Block",
       "itemGroup.tabbloodtab": "§cBlood",
       "block.erinium.cave_block": "Cave Block",
       "tile.erinium_ore.name": "Erinium Ore",
@@ -6339,7 +6432,12 @@
           },
           {
             "name": "Fusion Station",
-            "children": []
+            "children": [
+              {
+                "name": "AlphaWiki",
+                "children": []
+              }
+            ]
           },
           {
             "name": "bedrock",

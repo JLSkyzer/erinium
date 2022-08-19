@@ -5,45 +5,39 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.Minecraft;
 
-import java.util.stream.Stream;
-import java.util.Map;
 import java.util.HashMap;
-import java.util.AbstractMap;
-
-import fr.erinagroups.erinium.procedures.ConditionShowBarFillProcedure;
-import fr.erinagroups.erinium.EriniumMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class GuiFusionStationAlphaGuiWindow extends ContainerScreen<GuiFusionStationAlphaGui.GuiContainerMod> {
+public class TtttGuiWindow extends ContainerScreen<TtttGui.GuiContainerMod> {
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	private final static HashMap guistate = GuiFusionStationAlphaGui.guistate;
+	private final static HashMap guistate = TtttGui.guistate;
 
-	public GuiFusionStationAlphaGuiWindow(GuiFusionStationAlphaGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
+	public TtttGuiWindow(TtttGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.xSize = 395;
-		this.ySize = 220;
+		this.xSize = 176;
+		this.ySize = 166;
 	}
+
+	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/tttt.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -57,22 +51,10 @@ public class GuiFusionStationAlphaGuiWindow extends ContainerScreen<GuiFusionSta
 		RenderSystem.color4f(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-
-		TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-
-		double barre = 0.45 * tileEntity.getTileData().getDouble("process");
-
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/fusion_station_alpha.png"));
-		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, 427, 240, 427, 240);
-
-		if (ConditionShowBarFillProcedure
-				.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/barre_180_x_18_rempli.png"));
-			this.blit(ms, this.guiLeft + 173, this.guiTop + 112, 0, 0, (int) barre, 9, 90, 9);
-		}
+		Minecraft.getInstance().getTextureManager().bindTexture(texture);
+		int k = (this.width - this.xSize) / 2;
+		int l = (this.height - this.ySize) / 2;
+		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 		RenderSystem.disableBlend();
 	}
 
@@ -92,6 +74,14 @@ public class GuiFusionStationAlphaGuiWindow extends ContainerScreen<GuiFusionSta
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
+		this.font.drawString(ms, "" + (new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return 0;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "process")) + "", 27, 19, -12829636);
 	}
 
 	@Override
@@ -104,11 +94,5 @@ public class GuiFusionStationAlphaGuiWindow extends ContainerScreen<GuiFusionSta
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 281, this.guiTop + 161, 54, 16, new StringTextComponent("Wiki"), e -> {
-			if (true) {
-				EriniumMod.PACKET_HANDLER.sendToServer(new GuiFusionStationAlphaGui.ButtonPressedMessage(0, x, y, z));
-				GuiFusionStationAlphaGui.handleButtonAction(entity, 0, x, y, z);
-			}
-		}));
 	}
 }
