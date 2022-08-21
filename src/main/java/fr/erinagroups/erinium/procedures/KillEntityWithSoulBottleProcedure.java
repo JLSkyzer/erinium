@@ -84,7 +84,8 @@ public class KillEntityWithSoulBottleProcedure {
 					if (_iitemhandlerref.get() != null) {
 						for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 							ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-							if (itemstackiterator.getItem() == SoulBottle4Item.block) {
+							if (itemstackiterator.getItem() == SoulBottle4Item.block
+									&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
 								if (sourceentity instanceof PlayerEntity) {
 									ItemStack _stktoremove = itemstackiterator;
 									((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
@@ -113,7 +114,8 @@ public class KillEntityWithSoulBottleProcedure {
 						if (_iitemhandlerref.get() != null) {
 							for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 								ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-								if (itemstackiterator.getItem() == SoulBottle3Item.block) {
+								if (itemstackiterator.getItem() == SoulBottle3Item.block
+										&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
 									if (sourceentity instanceof PlayerEntity) {
 										ItemStack _stktoremove = itemstackiterator;
 										((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
@@ -142,7 +144,8 @@ public class KillEntityWithSoulBottleProcedure {
 							if (_iitemhandlerref.get() != null) {
 								for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-									if (itemstackiterator.getItem() == SoulBottle2Item.block) {
+									if (itemstackiterator.getItem() == SoulBottle2Item.block
+											&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
 										if (sourceentity instanceof PlayerEntity) {
 											ItemStack _stktoremove = itemstackiterator;
 											((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
@@ -171,7 +174,8 @@ public class KillEntityWithSoulBottleProcedure {
 								if (_iitemhandlerref.get() != null) {
 									for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 										ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-										if (itemstackiterator.getItem() == SoulBottle1Item.block) {
+										if (itemstackiterator.getItem() == SoulBottle1Item.block
+												&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
 											if (sourceentity instanceof PlayerEntity) {
 												ItemStack _stktoremove = itemstackiterator;
 												((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
@@ -234,7 +238,8 @@ public class KillEntityWithSoulBottleProcedure {
 					if (_iitemhandlerref.get() != null) {
 						for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 							ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-							if (itemstackiterator.getItem() == SoulBottle4Item.block) {
+							if (itemstackiterator.getItem() == SoulBottle4Item.block
+									&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
 								if (sourceentity instanceof PlayerEntity) {
 									ItemStack _stktoremove = itemstackiterator;
 									((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
@@ -263,7 +268,8 @@ public class KillEntityWithSoulBottleProcedure {
 						if (_iitemhandlerref.get() != null) {
 							for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 								ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-								if (itemstackiterator.getItem() == SoulBottle3Item.block) {
+								if (itemstackiterator.getItem() == SoulBottle3Item.block
+										&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
 									if (sourceentity instanceof PlayerEntity) {
 										ItemStack _stktoremove = itemstackiterator;
 										((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
@@ -292,7 +298,8 @@ public class KillEntityWithSoulBottleProcedure {
 							if (_iitemhandlerref.get() != null) {
 								for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-									if (itemstackiterator.getItem() == SoulBottle2Item.block) {
+									if (itemstackiterator.getItem() == SoulBottle2Item.block
+											&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
 										if (sourceentity instanceof PlayerEntity) {
 											ItemStack _stktoremove = itemstackiterator;
 											((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
@@ -321,7 +328,8 @@ public class KillEntityWithSoulBottleProcedure {
 								if (_iitemhandlerref.get() != null) {
 									for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 										ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-										if (itemstackiterator.getItem() == SoulBottle1Item.block) {
+										if (itemstackiterator.getItem() == SoulBottle1Item.block
+												&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
 											if (sourceentity instanceof PlayerEntity) {
 												ItemStack _stktoremove = itemstackiterator;
 												((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
@@ -384,7 +392,8 @@ public class KillEntityWithSoulBottleProcedure {
 					if (_iitemhandlerref.get() != null) {
 						for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 							ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-							if (itemstackiterator.getItem() == SoulBottle4Item.block) {
+							if (itemstackiterator.getItem() == SoulBottle4Item.block
+									&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
 								if (sourceentity instanceof PlayerEntity) {
 									ItemStack _stktoremove = itemstackiterator;
 									((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
@@ -413,7 +422,8 @@ public class KillEntityWithSoulBottleProcedure {
 						if (_iitemhandlerref.get() != null) {
 							for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 								ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-								if (itemstackiterator.getItem() == SoulBottle3Item.block) {
+								if (itemstackiterator.getItem() == SoulBottle3Item.block
+										&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
 									if (sourceentity instanceof PlayerEntity) {
 										ItemStack _stktoremove = itemstackiterator;
 										((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
@@ -442,7 +452,8 @@ public class KillEntityWithSoulBottleProcedure {
 							if (_iitemhandlerref.get() != null) {
 								for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-									if (itemstackiterator.getItem() == SoulBottle2Item.block) {
+									if (itemstackiterator.getItem() == SoulBottle2Item.block
+											&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
 										if (sourceentity instanceof PlayerEntity) {
 											ItemStack _stktoremove = itemstackiterator;
 											((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
@@ -471,7 +482,8 @@ public class KillEntityWithSoulBottleProcedure {
 								if (_iitemhandlerref.get() != null) {
 									for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 										ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-										if (itemstackiterator.getItem() == SoulBottle1Item.block) {
+										if (itemstackiterator.getItem() == SoulBottle1Item.block
+												&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
 											if (sourceentity instanceof PlayerEntity) {
 												ItemStack _stktoremove = itemstackiterator;
 												((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),

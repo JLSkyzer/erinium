@@ -5776,6 +5776,75 @@
       "locked_code": false,
       "registry_name": "craft_fusion_station_alpha",
       "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "SkeletonNuggets",
+      "type": "item",
+      "sortid": 411,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_nuggets",
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
+    },
+    {
+      "name": "SkeletonShard",
+      "type": "item",
+      "sortid": 412,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_shard",
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
+    },
+    {
+      "name": "SkeletonDie",
+      "type": "procedure",
+      "sortid": 413,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_die",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
+    },
+    {
+      "name": "CraftSkeletonShard",
+      "type": "recipe",
+      "sortid": 414,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_skeleton_shard",
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
+    },
+    {
+      "name": "CraftSkeletonHeal",
+      "type": "recipe",
+      "sortid": 415,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_skeleton_heal",
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
     }
   ],
   "variable_elements": [
@@ -6029,8 +6098,8 @@
       "block.erinium.line_1_block": "Line 1 Block",
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "itemGroup.tabscining_tab": "§bScining",
-      "block.erinium.dranite_ore": "§6Dranite Ore",
       "item.erinium.fraisage": "Fraisage",
+      "block.erinium.dranite_ore": "§6Dranite Ore",
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.wiring_kit": "Wiring Kit",
@@ -6042,9 +6111,9 @@
       "block.erinium.fraisage_numerique": "Fraisage Numérique",
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
@@ -6063,6 +6132,7 @@
       "item.erinium.cardboard": "Cardboard",
       "block.erinium.amenine_trapdoor": "§5§lAmenine Trapdoor",
       "block.erinium.setanum_stage_0": "Setanum Stage 0",
+      "item.erinium.skeleton_shard": "Skeleton Shard",
       "item.erinium.setanum_helmet": "Setanum Helmet",
       "key.erinium.spaceupdate_overlay_key": "Space Update Overlay Info",
       "item.erinium.usinage": "Usinage",
@@ -6088,8 +6158,8 @@
       "item.erinium.empty_bottle": "Empty Bottle",
       "item.erinium.home_teleporter": "�aHome Teleporter",
       "block.erinium.fusion_station_beta": "§8Fusion Station §aBeta",
-      "block.erinium.setanum_block": "§eSetanum Block",
       "lootbox.event.oregen_1": "§aGo to mine and smelt !",
+      "block.erinium.setanum_block": "§eSetanum Block",
       "itemGroup.tabbloodtab": "§cBlood",
       "block.erinium.cave_block": "Cave Block",
       "tile.erinium_ore.name": "Erinium Ore",
@@ -6097,6 +6167,7 @@
       "item.erinium.soul_bottle_1": "§9Soul Bottle",
       "item.erinium.scining_glass_fragment": "Scining Glass Fragment",
       "item.erinium.soul_bottle_4": "§9Soul Bottle",
+      "item.erinium.skeleton_nuggets": "Skeleton Nuggets",
       "item.erinium.gomy_spawn_egg": "Gomy Spawn Egg",
       "item.erinium.soul_bottle_3": "§9Soul Bottle",
       "item.erinium.soul_bottle_5": "§9Soul Bottle",
@@ -6111,10 +6182,10 @@
       "item.erinium.spectium_armor_boots": "Spectium Boots",
       "block.erinium.moon_sand": "§7? Moon Sand ?",
       "itemGroup.tabusinage_tab": "§6Usinage",
-      "block.erinium.extractor_amenine_1": "§aExtractor",
       "item.erinium_armorlegs.name": "Erinium Leggings",
-      "item.erinium.spacesuit_armor_leggings": "Spacesuit Leggings",
+      "block.erinium.extractor_amenine_1": "§aExtractor",
       "block.erinium.extractor_amenine_2": "§aExtractor",
+      "item.erinium.spacesuit_armor_leggings": "Spacesuit Leggings",
       "item.erinium.fortune_modifier": "§a§l§o§nFortune Modifier",
       "block.erinium.amenine_slab": "§5§lAmenine Slab",
       "item.erinium.magical_wand": "Magical Wand",
@@ -6396,6 +6467,15 @@
               {
                 "name": "recipe",
                 "children": []
+              },
+              {
+                "name": "entity",
+                "children": [
+                  {
+                    "name": "Skeleton",
+                    "children": []
+                  }
+                ]
               }
             ]
           },
