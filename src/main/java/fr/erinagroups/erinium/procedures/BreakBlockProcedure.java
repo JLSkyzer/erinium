@@ -239,6 +239,25 @@ public class BreakBlockProcedure {
 											.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 									+ " / 100.000")), (true));
 				}
+			} else {
+				for (int index4 = 0; index4 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index4++) {
+					if (world instanceof World && !world.isRemote()) {
+						ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
+								.getRecipeManager()
+								.getRecipe(IRecipeType.SMELTING,
+										new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
+								.isPresent())
+										? ((World) world).getRecipeManager()
+												.getRecipe(IRecipeType.SMELTING,
+														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+														(World) world)
+												.get().getRecipeOutput().copy()
+										: ItemStack.EMPTY));
+						entityToSpawn.setPickupDelay((int) 10);
+						world.addEntity(entityToSpawn);
+					}
+				}
+				world.destroyBlock(new BlockPos(x, y, z), false);
 			}
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -254,7 +273,7 @@ public class BreakBlockProcedure {
 										.get().getRecipeOutput().copy()
 								: ItemStack.EMPTY)
 						.getItem() == Items.IRON_INGOT) {
-					for (int index4 = 0; index4 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index4++) {
+					for (int index5 = 0; index5 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index5++) {
 						if (world instanceof World && !world.isRemote()) {
 							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
 									.getRecipeManager()
@@ -303,7 +322,7 @@ public class BreakBlockProcedure {
 										.get().getRecipeOutput().copy()
 								: ItemStack.EMPTY)
 						.getItem() == Items.GOLD_INGOT) {
-					for (int index5 = 0; index5 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index5++) {
+					for (int index6 = 0; index6 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index6++) {
 						if (world instanceof World && !world.isRemote()) {
 							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
 									.getRecipeManager()
@@ -352,55 +371,6 @@ public class BreakBlockProcedure {
 										.get().getRecipeOutput().copy()
 								: ItemStack.EMPTY)
 						.getItem() == SilverIngotItem.block) {
-					for (int index6 = 0; index6 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index6++) {
-						if (world instanceof World && !world.isRemote()) {
-							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
-									.getRecipeManager()
-									.getRecipe(IRecipeType.SMELTING,
-											new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
-									.isPresent())
-											? ((World) world).getRecipeManager()
-													.getRecipe(IRecipeType.SMELTING,
-															new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-															(World) world)
-													.get().getRecipeOutput().copy()
-											: ItemStack.EMPTY));
-							entityToSpawn.setPickupDelay((int) 10);
-							world.addEntity(entityToSpawn);
-						}
-					}
-					world.destroyBlock(new BlockPos(x, y, z), false);
-					{
-						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125);
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.playerXp = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity)
-								.sendStatusMessage(
-										new StringTextComponent(
-												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125 + " xp " + "\u00A7f| "
-														+ "\u00A72"
-														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-														+ " / 100.000")),
-										(true));
-					}
-				} else if (((world instanceof World && ((World) world).getRecipeManager()
-						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-								((World) world))
-						.isPresent())
-								? ((World) world).getRecipeManager()
-										.getRecipe(IRecipeType.SMELTING,
-												new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-												(World) world)
-										.get().getRecipeOutput().copy()
-								: ItemStack.EMPTY)
-						.getItem() == SiliconeFragmentItem.block) {
 					for (int index7 = 0; index7 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index7++) {
 						if (world instanceof World && !world.isRemote()) {
 							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
@@ -449,8 +419,57 @@ public class BreakBlockProcedure {
 												(World) world)
 										.get().getRecipeOutput().copy()
 								: ItemStack.EMPTY)
-						.getItem() == Items.COAL) {
+						.getItem() == SiliconeFragmentItem.block) {
 					for (int index8 = 0; index8 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index8++) {
+						if (world instanceof World && !world.isRemote()) {
+							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
+									.getRecipeManager()
+									.getRecipe(IRecipeType.SMELTING,
+											new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
+									.isPresent())
+											? ((World) world).getRecipeManager()
+													.getRecipe(IRecipeType.SMELTING,
+															new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+															(World) world)
+													.get().getRecipeOutput().copy()
+											: ItemStack.EMPTY));
+							entityToSpawn.setPickupDelay((int) 10);
+							world.addEntity(entityToSpawn);
+						}
+					}
+					world.destroyBlock(new BlockPos(x, y, z), false);
+					{
+						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125);
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.playerXp = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125 + " xp " + "\u00A7f| "
+														+ "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
+					}
+				} else if (((world instanceof World && ((World) world).getRecipeManager()
+						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+								((World) world))
+						.isPresent())
+								? ((World) world).getRecipeManager()
+										.getRecipe(IRecipeType.SMELTING,
+												new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+												(World) world)
+										.get().getRecipeOutput().copy()
+								: ItemStack.EMPTY)
+						.getItem() == Items.COAL) {
+					for (int index9 = 0; index9 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index9++) {
 						if (world instanceof World && !world.isRemote()) {
 							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
 									.getRecipeManager()
@@ -499,7 +518,7 @@ public class BreakBlockProcedure {
 										.get().getRecipeOutput().copy()
 								: ItemStack.EMPTY)
 						.getItem() == Items.DIAMOND) {
-					for (int index9 = 0; index9 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index9++) {
+					for (int index10 = 0; index10 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index10++) {
 						if (world instanceof World && !world.isRemote()) {
 							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
 									.getRecipeManager()
@@ -548,7 +567,7 @@ public class BreakBlockProcedure {
 										.get().getRecipeOutput().copy()
 								: ItemStack.EMPTY)
 						.getItem() == DraniteGemItem.block) {
-					for (int index10 = 0; index10 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index10++) {
+					for (int index11 = 0; index11 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index11++) {
 						if (world instanceof World && !world.isRemote()) {
 							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
 									.getRecipeManager()
@@ -586,6 +605,25 @@ public class BreakBlockProcedure {
 														+ " / 100.000")),
 										(true));
 					}
+				} else {
+					for (int index12 = 0; index12 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index12++) {
+						if (world instanceof World && !world.isRemote()) {
+							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
+									.getRecipeManager()
+									.getRecipe(IRecipeType.SMELTING,
+											new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
+									.isPresent())
+											? ((World) world).getRecipeManager()
+													.getRecipe(IRecipeType.SMELTING,
+															new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+															(World) world)
+													.get().getRecipeOutput().copy()
+											: ItemStack.EMPTY));
+							entityToSpawn.setPickupDelay((int) 10);
+							world.addEntity(entityToSpawn);
+						}
+					}
+					world.destroyBlock(new BlockPos(x, y, z), false);
 				}
 			} else {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -601,7 +639,7 @@ public class BreakBlockProcedure {
 											.get().getRecipeOutput().copy()
 									: ItemStack.EMPTY)
 							.getItem() == Items.IRON_INGOT) {
-						for (int index11 = 0; index11 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index11++) {
+						for (int index13 = 0; index13 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index13++) {
 							if (world instanceof World && !world.isRemote()) {
 								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 										((world instanceof World && ((World) world).getRecipeManager()
@@ -651,7 +689,7 @@ public class BreakBlockProcedure {
 											.get().getRecipeOutput().copy()
 									: ItemStack.EMPTY)
 							.getItem() == Items.GOLD_INGOT) {
-						for (int index12 = 0; index12 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index12++) {
+						for (int index14 = 0; index14 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index14++) {
 							if (world instanceof World && !world.isRemote()) {
 								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 										((world instanceof World && ((World) world).getRecipeManager()
@@ -701,106 +739,6 @@ public class BreakBlockProcedure {
 											.get().getRecipeOutput().copy()
 									: ItemStack.EMPTY)
 							.getItem() == CopperIngotItem.block) {
-						for (int index13 = 0; index13 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index13++) {
-							if (world instanceof World && !world.isRemote()) {
-								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
-										((world instanceof World && ((World) world).getRecipeManager()
-												.getRecipe(IRecipeType.SMELTING,
-														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-														((World) world))
-												.isPresent())
-														? ((World) world).getRecipeManager()
-																.getRecipe(IRecipeType.SMELTING, new Inventory(
-																		(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-																		(World) world)
-																.get().getRecipeOutput().copy()
-														: ItemStack.EMPTY));
-								entityToSpawn.setPickupDelay((int) 10);
-								world.addEntity(entityToSpawn);
-							}
-						}
-						world.destroyBlock(new BlockPos(x, y, z), false);
-						{
-							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.playerXp = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity)
-									.sendStatusMessage(
-											new StringTextComponent(
-													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp " + "\u00A7f| "
-															+ "\u00A72"
-															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-															+ " / 100.000")),
-											(true));
-						}
-					} else if (((world instanceof World && ((World) world).getRecipeManager()
-							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-									((World) world))
-							.isPresent())
-									? ((World) world).getRecipeManager()
-											.getRecipe(IRecipeType.SMELTING,
-													new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-													(World) world)
-											.get().getRecipeOutput().copy()
-									: ItemStack.EMPTY)
-							.getItem() == SilverIngotItem.block) {
-						for (int index14 = 0; index14 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index14++) {
-							if (world instanceof World && !world.isRemote()) {
-								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
-										((world instanceof World && ((World) world).getRecipeManager()
-												.getRecipe(IRecipeType.SMELTING,
-														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-														((World) world))
-												.isPresent())
-														? ((World) world).getRecipeManager()
-																.getRecipe(IRecipeType.SMELTING, new Inventory(
-																		(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-																		(World) world)
-																.get().getRecipeOutput().copy()
-														: ItemStack.EMPTY));
-								entityToSpawn.setPickupDelay((int) 10);
-								world.addEntity(entityToSpawn);
-							}
-						}
-						world.destroyBlock(new BlockPos(x, y, z), false);
-						{
-							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.playerXp = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity)
-									.sendStatusMessage(
-											new StringTextComponent(
-													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp " + "\u00A7f| "
-															+ "\u00A72"
-															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-															+ " / 100.000")),
-											(true));
-						}
-					} else if (((world instanceof World && ((World) world).getRecipeManager()
-							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-									((World) world))
-							.isPresent())
-									? ((World) world).getRecipeManager()
-											.getRecipe(IRecipeType.SMELTING,
-													new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-													(World) world)
-											.get().getRecipeOutput().copy()
-									: ItemStack.EMPTY)
-							.getItem() == SiliconeFragmentItem.block) {
 						for (int index15 = 0; index15 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index15++) {
 							if (world instanceof World && !world.isRemote()) {
 								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
@@ -850,8 +788,108 @@ public class BreakBlockProcedure {
 													(World) world)
 											.get().getRecipeOutput().copy()
 									: ItemStack.EMPTY)
-							.getItem() == Items.DIAMOND) {
+							.getItem() == SilverIngotItem.block) {
 						for (int index16 = 0; index16 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index16++) {
+							if (world instanceof World && !world.isRemote()) {
+								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+										((world instanceof World && ((World) world).getRecipeManager()
+												.getRecipe(IRecipeType.SMELTING,
+														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+														((World) world))
+												.isPresent())
+														? ((World) world).getRecipeManager()
+																.getRecipe(IRecipeType.SMELTING, new Inventory(
+																		(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+																		(World) world)
+																.get().getRecipeOutput().copy()
+														: ItemStack.EMPTY));
+								entityToSpawn.setPickupDelay((int) 10);
+								world.addEntity(entityToSpawn);
+							}
+						}
+						world.destroyBlock(new BlockPos(x, y, z), false);
+						{
+							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105);
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.playerXp = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
+						}
+					} else if (((world instanceof World && ((World) world).getRecipeManager()
+							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+									((World) world))
+							.isPresent())
+									? ((World) world).getRecipeManager()
+											.getRecipe(IRecipeType.SMELTING,
+													new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+													(World) world)
+											.get().getRecipeOutput().copy()
+									: ItemStack.EMPTY)
+							.getItem() == SiliconeFragmentItem.block) {
+						for (int index17 = 0; index17 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index17++) {
+							if (world instanceof World && !world.isRemote()) {
+								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+										((world instanceof World && ((World) world).getRecipeManager()
+												.getRecipe(IRecipeType.SMELTING,
+														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+														((World) world))
+												.isPresent())
+														? ((World) world).getRecipeManager()
+																.getRecipe(IRecipeType.SMELTING, new Inventory(
+																		(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+																		(World) world)
+																.get().getRecipeOutput().copy()
+														: ItemStack.EMPTY));
+								entityToSpawn.setPickupDelay((int) 10);
+								world.addEntity(entityToSpawn);
+							}
+						}
+						world.destroyBlock(new BlockPos(x, y, z), false);
+						{
+							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105);
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.playerXp = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
+						}
+					} else if (((world instanceof World && ((World) world).getRecipeManager()
+							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+									((World) world))
+							.isPresent())
+									? ((World) world).getRecipeManager()
+											.getRecipe(IRecipeType.SMELTING,
+													new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+													(World) world)
+											.get().getRecipeOutput().copy()
+									: ItemStack.EMPTY)
+							.getItem() == Items.DIAMOND) {
+						for (int index18 = 0; index18 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index18++) {
 							if (world instanceof World && !world.isRemote()) {
 								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 										((world instanceof World && ((World) world).getRecipeManager()
@@ -901,7 +939,7 @@ public class BreakBlockProcedure {
 											.get().getRecipeOutput().copy()
 									: ItemStack.EMPTY)
 							.getItem() == DraniteGemItem.block) {
-						for (int index17 = 0; index17 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index17++) {
+						for (int index19 = 0; index19 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index19++) {
 							if (world instanceof World && !world.isRemote()) {
 								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 										((world instanceof World && ((World) world).getRecipeManager()
@@ -940,6 +978,26 @@ public class BreakBlockProcedure {
 															+ " / 100.000")),
 											(true));
 						}
+					} else {
+						for (int index20 = 0; index20 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index20++) {
+							if (world instanceof World && !world.isRemote()) {
+								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+										((world instanceof World && ((World) world).getRecipeManager()
+												.getRecipe(IRecipeType.SMELTING,
+														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+														((World) world))
+												.isPresent())
+														? ((World) world).getRecipeManager()
+																.getRecipe(IRecipeType.SMELTING, new Inventory(
+																		(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+																		(World) world)
+																.get().getRecipeOutput().copy()
+														: ItemStack.EMPTY));
+								entityToSpawn.setPickupDelay((int) 10);
+								world.addEntity(entityToSpawn);
+							}
+						}
+						world.destroyBlock(new BlockPos(x, y, z), false);
 					}
 				} else {
 					if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -955,7 +1013,7 @@ public class BreakBlockProcedure {
 												.get().getRecipeOutput().copy()
 										: ItemStack.EMPTY)
 								.getItem() == Items.GOLD_INGOT) {
-							for (int index18 = 0; index18 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index18++) {
+							for (int index21 = 0; index21 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index21++) {
 								if (world instanceof World && !world.isRemote()) {
 									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 											((world instanceof World && ((World) world).getRecipeManager()
@@ -1004,7 +1062,7 @@ public class BreakBlockProcedure {
 												.get().getRecipeOutput().copy()
 										: ItemStack.EMPTY)
 								.getItem() == CopperIngotItem.block) {
-							for (int index19 = 0; index19 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index19++) {
+							for (int index22 = 0; index22 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index22++) {
 								if (world instanceof World && !world.isRemote()) {
 									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 											((world instanceof World && ((World) world).getRecipeManager()
@@ -1053,7 +1111,7 @@ public class BreakBlockProcedure {
 												.get().getRecipeOutput().copy()
 										: ItemStack.EMPTY)
 								.getItem() == EriniumIngotItem.block) {
-							for (int index20 = 0; index20 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index20++) {
+							for (int index23 = 0; index23 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index23++) {
 								if (world instanceof World && !world.isRemote()) {
 									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 											((world instanceof World && ((World) world).getRecipeManager()
@@ -1102,7 +1160,7 @@ public class BreakBlockProcedure {
 												.get().getRecipeOutput().copy()
 										: ItemStack.EMPTY)
 								.getItem() == SilverIngotItem.block) {
-							for (int index21 = 0; index21 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index21++) {
+							for (int index24 = 0; index24 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index24++) {
 								if (world instanceof World && !world.isRemote()) {
 									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 											((world instanceof World && ((World) world).getRecipeManager()
@@ -1151,7 +1209,7 @@ public class BreakBlockProcedure {
 												.get().getRecipeOutput().copy()
 										: ItemStack.EMPTY)
 								.getItem() == SiliconeFragmentItem.block) {
-							for (int index22 = 0; index22 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index22++) {
+							for (int index25 = 0; index25 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index25++) {
 								if (world instanceof World && !world.isRemote()) {
 									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 											((world instanceof World && ((World) world).getRecipeManager()
@@ -1200,7 +1258,7 @@ public class BreakBlockProcedure {
 												.get().getRecipeOutput().copy()
 										: ItemStack.EMPTY)
 								.getItem() == DraniteGemItem.block) {
-							for (int index23 = 0; index23 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index23++) {
+							for (int index26 = 0; index26 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index26++) {
 								if (world instanceof World && !world.isRemote()) {
 									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
 											((world instanceof World && ((World) world).getRecipeManager()
@@ -1238,6 +1296,26 @@ public class BreakBlockProcedure {
 														+ " / 100.000")),
 												(true));
 							}
+						} else {
+							for (int index27 = 0; index27 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index27++) {
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+											((world instanceof World && ((World) world).getRecipeManager()
+													.getRecipe(IRecipeType.SMELTING,
+															new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+															((World) world))
+													.isPresent())
+															? ((World) world).getRecipeManager()
+																	.getRecipe(IRecipeType.SMELTING, new Inventory(
+																			(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+																			(World) world)
+																	.get().getRecipeOutput().copy()
+															: ItemStack.EMPTY));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
+								}
+							}
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
 				}

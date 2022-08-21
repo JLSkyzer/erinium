@@ -12,6 +12,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.passive.CowEntity;
+import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.Entity;
 
@@ -357,6 +358,156 @@ public class KillEntityWithSoulBottleProcedure {
 												}
 												temp = new ItemStack(SoulBottle1Item.block);
 												(temp).getOrCreateTag().putString("type", "Enderman");
+												if (sourceentity instanceof PlayerEntity) {
+													ItemStack _setstack = (temp);
+													_setstack.setCount((int) 1);
+													ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+												}
+												break;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		} else if (entity instanceof SkeletonEntity) {
+			if ((sourceentity instanceof PlayerEntity)
+					? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle4Item.block))
+					: false) {
+				{
+					AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
+					sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+							.ifPresent(capability -> _iitemhandlerref.set(capability));
+					if (_iitemhandlerref.get() != null) {
+						for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
+							ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
+							if (itemstackiterator.getItem() == SoulBottle4Item.block) {
+								if (sourceentity instanceof PlayerEntity) {
+									ItemStack _stktoremove = itemstackiterator;
+									((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+											((PlayerEntity) sourceentity).container.func_234641_j_());
+								}
+								temp = new ItemStack(SoulBottle5Item.block);
+								(temp).getOrCreateTag().putString("type", "Skeleton");
+								if (sourceentity instanceof PlayerEntity) {
+									ItemStack _setstack = (temp);
+									_setstack.setCount((int) 1);
+									ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+								}
+								break;
+							}
+						}
+					}
+				}
+			} else {
+				if ((sourceentity instanceof PlayerEntity)
+						? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle3Item.block))
+						: false) {
+					{
+						AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
+						sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+								.ifPresent(capability -> _iitemhandlerref.set(capability));
+						if (_iitemhandlerref.get() != null) {
+							for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
+								ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
+								if (itemstackiterator.getItem() == SoulBottle3Item.block) {
+									if (sourceentity instanceof PlayerEntity) {
+										ItemStack _stktoremove = itemstackiterator;
+										((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+												((PlayerEntity) sourceentity).container.func_234641_j_());
+									}
+									temp = new ItemStack(SoulBottle4Item.block);
+									(temp).getOrCreateTag().putString("type", "Skeleton");
+									if (sourceentity instanceof PlayerEntity) {
+										ItemStack _setstack = (temp);
+										_setstack.setCount((int) 1);
+										ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+									}
+									break;
+								}
+							}
+						}
+					}
+				} else {
+					if ((sourceentity instanceof PlayerEntity)
+							? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle2Item.block))
+							: false) {
+						{
+							AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
+							sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+									.ifPresent(capability -> _iitemhandlerref.set(capability));
+							if (_iitemhandlerref.get() != null) {
+								for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
+									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
+									if (itemstackiterator.getItem() == SoulBottle2Item.block) {
+										if (sourceentity instanceof PlayerEntity) {
+											ItemStack _stktoremove = itemstackiterator;
+											((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
+													(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+										}
+										temp = new ItemStack(SoulBottle3Item.block);
+										(temp).getOrCreateTag().putString("type", "Skeleton");
+										if (sourceentity instanceof PlayerEntity) {
+											ItemStack _setstack = (temp);
+											_setstack.setCount((int) 1);
+											ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+										}
+										break;
+									}
+								}
+							}
+						}
+					} else {
+						if ((sourceentity instanceof PlayerEntity)
+								? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle1Item.block))
+								: false) {
+							{
+								AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
+								sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+										.ifPresent(capability -> _iitemhandlerref.set(capability));
+								if (_iitemhandlerref.get() != null) {
+									for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
+										ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
+										if (itemstackiterator.getItem() == SoulBottle1Item.block) {
+											if (sourceentity instanceof PlayerEntity) {
+												ItemStack _stktoremove = itemstackiterator;
+												((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
+														(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+											}
+											temp = new ItemStack(SoulBottle2Item.block);
+											(temp).getOrCreateTag().putString("type", "Skeleton");
+											if (sourceentity instanceof PlayerEntity) {
+												ItemStack _setstack = (temp);
+												_setstack.setCount((int) 1);
+												ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+											}
+											break;
+										}
+									}
+								}
+							}
+						} else {
+							if ((sourceentity instanceof PlayerEntity)
+									? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottleItem.block))
+									: false) {
+								{
+									AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
+									sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+											.ifPresent(capability -> _iitemhandlerref.set(capability));
+									if (_iitemhandlerref.get() != null) {
+										for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
+											ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
+											if (itemstackiterator.getItem() == SoulBottleItem.block) {
+												if (sourceentity instanceof PlayerEntity) {
+													ItemStack _stktoremove = itemstackiterator;
+													((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
+															(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+												}
+												temp = new ItemStack(SoulBottle1Item.block);
+												(temp).getOrCreateTag().putString("type", "Skeleton");
 												if (sourceentity instanceof PlayerEntity) {
 													ItemStack _setstack = (temp);
 													_setstack.setCount((int) 1);

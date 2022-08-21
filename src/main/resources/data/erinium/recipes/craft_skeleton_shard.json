@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:skeleton_nuggets"
+    },
+    "1": {
+      "item": "erinium:skeleton_nuggets"
+    },
+    "2": {
+      "item": "erinium:skeleton_nuggets"
+    },
+    "3": {
+      "item": "erinium:skeleton_nuggets"
+    },
+    "4": {
+      "item": "erinium:skeleton_nuggets"
+    },
+    "5": {
+      "item": "erinium:skeleton_nuggets"
+    },
+    "6": {
+      "item": "erinium:skeleton_nuggets"
+    },
+    "7": {
+      "item": "erinium:skeleton_nuggets"
+    },
+    "8": {
+      "item": "erinium:skeleton_nuggets"
+    }
+  },
+  "result": {
+    "item": "erinium:skeleton_shard",
+    "count": 1
+  }
+}

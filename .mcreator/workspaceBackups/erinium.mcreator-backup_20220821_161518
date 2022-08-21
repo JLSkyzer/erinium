@@ -5740,6 +5740,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -5754,6 +5766,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "tttt",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "CraftFusionStationAlpha",
+      "type": "recipe",
+      "sortid": 410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_fusion_station_alpha",
       "path": "~/Misc System/Fusion Station"
     }
   ],
@@ -6008,8 +6029,8 @@
       "block.erinium.line_1_block": "Line 1 Block",
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "itemGroup.tabscining_tab": "§bScining",
-      "block.erinium.dranite_ore": "§6Dranite Ore",
       "item.erinium.fraisage": "Fraisage",
+      "block.erinium.dranite_ore": "§6Dranite Ore",
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.wiring_kit": "Wiring Kit",
@@ -6021,9 +6042,9 @@
       "block.erinium.fraisage_numerique": "Fraisage Numérique",
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
@@ -6067,8 +6088,8 @@
       "item.erinium.empty_bottle": "Empty Bottle",
       "item.erinium.home_teleporter": "�aHome Teleporter",
       "block.erinium.fusion_station_beta": "§8Fusion Station §aBeta",
-      "block.erinium.setanum_block": "§eSetanum Block",
       "lootbox.event.oregen_1": "§aGo to mine and smelt !",
+      "block.erinium.setanum_block": "§eSetanum Block",
       "itemGroup.tabbloodtab": "§cBlood",
       "block.erinium.cave_block": "Cave Block",
       "tile.erinium_ore.name": "Erinium Ore",
@@ -6090,10 +6111,10 @@
       "item.erinium.spectium_armor_boots": "Spectium Boots",
       "block.erinium.moon_sand": "§7? Moon Sand ?",
       "itemGroup.tabusinage_tab": "§6Usinage",
-      "block.erinium.extractor_amenine_1": "§aExtractor",
       "item.erinium_armorlegs.name": "Erinium Leggings",
-      "item.erinium.spacesuit_armor_leggings": "Spacesuit Leggings",
+      "block.erinium.extractor_amenine_1": "§aExtractor",
       "block.erinium.extractor_amenine_2": "§aExtractor",
+      "item.erinium.spacesuit_armor_leggings": "Spacesuit Leggings",
       "item.erinium.fortune_modifier": "§a§l§o§nFortune Modifier",
       "block.erinium.amenine_slab": "§5§lAmenine Slab",
       "item.erinium.magical_wand": "Magical Wand",

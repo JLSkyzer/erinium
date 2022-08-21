@@ -5740,6 +5740,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -5755,6 +5767,75 @@
       "locked_code": false,
       "registry_name": "tttt",
       "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "CraftFusionStationAlpha",
+      "type": "recipe",
+      "sortid": 410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_fusion_station_alpha",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "SkeletonNuggets",
+      "type": "item",
+      "sortid": 411,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_nuggets",
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
+    },
+    {
+      "name": "SkeletonShard",
+      "type": "item",
+      "sortid": 412,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_shard",
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
+    },
+    {
+      "name": "SkeletonDie",
+      "type": "procedure",
+      "sortid": 413,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_die",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
+    },
+    {
+      "name": "CraftSkeletonShard",
+      "type": "recipe",
+      "sortid": 414,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_skeleton_shard",
+      "path": "~/Misc System/BetterVanilla/entity/Skeleton"
     }
   ],
   "variable_elements": [
@@ -6042,6 +6123,7 @@
       "item.erinium.cardboard": "Cardboard",
       "block.erinium.amenine_trapdoor": "§5§lAmenine Trapdoor",
       "block.erinium.setanum_stage_0": "Setanum Stage 0",
+      "item.erinium.skeleton_shard": "Skeleton Shard",
       "item.erinium.setanum_helmet": "Setanum Helmet",
       "key.erinium.spaceupdate_overlay_key": "Space Update Overlay Info",
       "item.erinium.usinage": "Usinage",
@@ -6076,6 +6158,7 @@
       "item.erinium.soul_bottle_1": "§9Soul Bottle",
       "item.erinium.scining_glass_fragment": "Scining Glass Fragment",
       "item.erinium.soul_bottle_4": "§9Soul Bottle",
+      "item.erinium.skeleton_nuggets": "Skeleton Nuggets",
       "item.erinium.gomy_spawn_egg": "Gomy Spawn Egg",
       "item.erinium.soul_bottle_3": "§9Soul Bottle",
       "item.erinium.soul_bottle_5": "§9Soul Bottle",
@@ -6375,6 +6458,15 @@
               {
                 "name": "recipe",
                 "children": []
+              },
+              {
+                "name": "entity",
+                "children": [
+                  {
+                    "name": "Skeleton",
+                    "children": []
+                  }
+                ]
               }
             ]
           },

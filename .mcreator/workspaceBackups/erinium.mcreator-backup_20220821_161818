@@ -5738,6 +5738,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -5750,6 +5766,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "tttt",
+      "path": "~/Misc System/Fusion Station"
+    },
+    {
+      "name": "CraftFusionStationAlpha",
+      "type": "recipe",
+      "sortid": 410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_fusion_station_alpha",
       "path": "~/Misc System/Fusion Station"
     }
   ],
@@ -6371,6 +6396,15 @@
               {
                 "name": "recipe",
                 "children": []
+              },
+              {
+                "name": "entity",
+                "children": [
+                  {
+                    "name": "Skeleton",
+                    "children": []
+                  }
+                ]
               }
             ]
           },

@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:skeleton_shard"
+    },
+    "1": {
+      "item": "erinium:skeleton_shard"
+    },
+    "2": {
+      "item": "erinium:skeleton_shard"
+    },
+    "3": {
+      "item": "erinium:skeleton_shard"
+    },
+    "4": {
+      "item": "minecraft:bone_block"
+    },
+    "5": {
+      "item": "erinium:skeleton_shard"
+    },
+    "6": {
+      "item": "erinium:skeleton_shard"
+    },
+    "7": {
+      "item": "erinium:skeleton_shard"
+    },
+    "8": {
+      "item": "erinium:skeleton_shard"
+    }
+  },
+  "result": {
+    "item": "minecraft:skeleton_skull",
+    "count": 1
+  }
+}
