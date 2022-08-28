@@ -104,9 +104,7 @@ public class SciningCactusBlock extends EriniumModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(1, 0, 1, 15, 16, 15)
-
-			)
+			return VoxelShapes.or(makeCuboidShape(1, 0, 1, 15, 16, 15))
 
 					.withOffset(offset.x, offset.y, offset.z);
 		}

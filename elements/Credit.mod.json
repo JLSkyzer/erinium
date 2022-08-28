@@ -1,11 +1,9 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "command",
   "definition": {
     "commandName": "credit",
     "permissionLevel": "No requirement",
-    "onCommandExecuted": {
-      "name": "CreditCommandExecuted"
-    }
+    "argsxml": "<xml><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"old_command\"><field name=\"procedure\">CreditCommandExecuted</field></block></next></block></xml>"
   }
 }

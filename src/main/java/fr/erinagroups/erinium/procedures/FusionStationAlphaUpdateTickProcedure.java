@@ -83,7 +83,7 @@ public class FusionStationAlphaUpdateTickProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos(x, y, z), (int) (0))).getOrCreateTag().getDouble("fortune") < 3) {
+			}.getItemStack(new BlockPos(x, y, z), (int) (0))).getOrCreateTag().getDouble("fortune") < 16) {
 				if ((new Object() {
 					public ItemStack getItemStack(BlockPos pos, int sltid) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);

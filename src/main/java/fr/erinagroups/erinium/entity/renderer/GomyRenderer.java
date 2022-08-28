@@ -25,7 +25,7 @@ public class GomyRenderer {
 
 						@Override
 						public ResourceLocation getEntityTexture(Entity entity) {
-							return new ResourceLocation("erinium:textures/telecharge.png");
+							return new ResourceLocation("erinium:textures/entities/telecharge.png");
 						}
 					});
 		}

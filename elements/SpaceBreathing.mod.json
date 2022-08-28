@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "enchantment",
   "definition": {
     "name": "Space Breathing",
@@ -10,7 +10,7 @@
     "damageModifier": 0,
     "compatibleEnchantments": [],
     "compatibleItems": [],
-    "isTreasureEnchantment": true,
+    "isTreasureEnchantment": false,
     "isCurse": false,
     "isAllowedOnBooks": true,
     "canGenerateInLootTables": true,

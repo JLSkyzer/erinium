@@ -39,7 +39,7 @@ public class TourTradiGuiGuiWindow extends ContainerScreen<TourTradiGuiGui.GuiCo
 		this.ySize = 220;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/tour_tradi_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/screens/tour_tradi_gui.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -58,10 +58,10 @@ public class TourTradiGuiGuiWindow extends ContainerScreen<TourTradiGuiGui.GuiCo
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/preset_gui_transparent.png"));
-		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, 427, 240, 427, 240);
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/preset_gui_transparent.png"));
+		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, -1, -1, -1, -1);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/arrow_right.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/arrow_right.png"));
 		this.blit(ms, this.guiLeft + 173, this.guiTop + 71, 0, 0, 16, 16, 16, 16);
 
 		RenderSystem.disableBlend();
@@ -95,7 +95,7 @@ public class TourTradiGuiGuiWindow extends ContainerScreen<TourTradiGuiGui.GuiCo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 137, this.guiTop + 98, 90, 16, new StringTextComponent("§aCraft"), e -> {
+		this.addButton(new Button(this.guiLeft + 137, this.guiTop + 98, 90, 20, new StringTextComponent("§aCraft"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new TourTradiGuiGui.ButtonPressedMessage(0, x, y, z));
 				TourTradiGuiGui.handleButtonAction(entity, 0, x, y, z);

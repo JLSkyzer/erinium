@@ -80,25 +80,25 @@ public class SpacesuitArmorItem extends EriniumModElements.ModElement {
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(SpaceUpdateItemsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/space_layer_1.png";
+				return "erinium:textures/entities/space_layer_1.png";
 			}
 		}.setRegistryName("spacesuit_armor_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(SpaceUpdateItemsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/space_layer_1.png";
+				return "erinium:textures/entities/space_layer_1.png";
 			}
 		}.setRegistryName("spacesuit_armor_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(SpaceUpdateItemsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/space_layer_1.png";
+				return "erinium:textures/entities/space_layer_1.png";
 			}
 		}.setRegistryName("spacesuit_armor_leggings"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(SpaceUpdateItemsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/space_layer_1.png";
+				return "erinium:textures/entities/space_layer_1.png";
 			}
 		}.setRegistryName("spacesuit_armor_boots"));
 	}

@@ -105,27 +105,19 @@ public class XpBushLayer1Block extends EriniumModElements.ModElement {
 			switch ((Direction) state.get(FACING)) {
 				case SOUTH :
 				default :
-					return VoxelShapes.or(makeCuboidShape(13, 0, 13, 3, 11, 3)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(13, 0, 13, 3, 11, 3))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case NORTH :
-					return VoxelShapes.or(makeCuboidShape(3, 0, 3, 13, 11, 13)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(3, 0, 3, 13, 11, 13))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case EAST :
-					return VoxelShapes.or(makeCuboidShape(13, 0, 3, 3, 11, 13)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(13, 0, 3, 3, 11, 13))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case WEST :
-					return VoxelShapes.or(makeCuboidShape(3, 0, 13, 13, 11, 3)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(3, 0, 13, 13, 11, 3))
 
 							.withOffset(offset.x, offset.y, offset.z);
 			}
@@ -136,18 +128,18 @@ public class XpBushLayer1Block extends EriniumModElements.ModElement {
 			builder.add(FACING, WATERLOGGED);
 		}
 
+		@Override
+		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			boolean flag = context.getWorld().getFluidState(context.getPos()).getFluid() == Fluids.WATER;
+			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite()).with(WATERLOGGED, flag);
+		}
+
 		public BlockState rotate(BlockState state, Rotation rot) {
 			return state.with(FACING, rot.rotate(state.get(FACING)));
 		}
 
 		public BlockState mirror(BlockState state, Mirror mirrorIn) {
 			return state.rotate(mirrorIn.toRotation(state.get(FACING)));
-		}
-
-		@Override
-		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			boolean flag = context.getWorld().getFluidState(context.getPos()).getFluid() == Fluids.WATER;;
-			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite()).with(WATERLOGGED, flag);
 		}
 
 		@Override

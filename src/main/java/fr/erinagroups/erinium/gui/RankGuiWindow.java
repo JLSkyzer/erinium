@@ -53,7 +53,7 @@ public class RankGuiWindow extends ContainerScreen<RankGui.GuiContainerMod> {
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/gui_rank.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/gui_rank.png"));
 		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.disableBlend();
@@ -93,7 +93,7 @@ public class RankGuiWindow extends ContainerScreen<RankGui.GuiContainerMod> {
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 155, this.guiTop + 125, 45, 16, new StringTextComponent("§bWiki"), e -> {
+		this.addButton(new Button(this.guiLeft + 155, this.guiTop + 125, 45, 20, new StringTextComponent("§bWiki"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new RankGui.ButtonPressedMessage(0, x, y, z));
 				RankGui.handleButtonAction(entity, 0, x, y, z);

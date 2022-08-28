@@ -57,7 +57,7 @@ public class OverlayChestFinderOverlay {
 			RenderSystem.disableAlphaTest();
 			if (OverlayChestFinderDisplayOverlayIngameProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/chest_finder.png"));
+				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/chest_finder.png"));
 				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -211, posY + -118, 0, 0, 64, 64, 64, 64);
 
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),

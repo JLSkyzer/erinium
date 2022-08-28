@@ -40,7 +40,7 @@ public class SpaceBreathingEnchantment extends EriniumModElements.ModElement {
 
 		@Override
 		public boolean isTreasureEnchantment() {
-			return true;
+			return false;
 		}
 
 		@Override

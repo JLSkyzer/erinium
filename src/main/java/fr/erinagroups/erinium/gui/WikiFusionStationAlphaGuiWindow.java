@@ -48,7 +48,7 @@ public class WikiFusionStationAlphaGuiWindow extends ContainerScreen<WikiFusionS
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/wiki_fusion_station_alpha_menu.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/wiki_fusion_station_alpha_menu.png"));
 		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.disableBlend();

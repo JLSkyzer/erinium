@@ -48,7 +48,7 @@ public class TestGuiGuiWindow extends ContainerScreen<TestGuiGui.GuiContainerMod
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/preset_gui.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/preset_gui.png"));
 		this.blit(ms, this.guiLeft + -5, this.guiTop + -2, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.disableBlend();

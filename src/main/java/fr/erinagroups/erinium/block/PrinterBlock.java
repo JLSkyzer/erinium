@@ -83,27 +83,19 @@ public class PrinterBlock extends EriniumModElements.ModElement {
 			switch ((Direction) state.get(FACING)) {
 				case SOUTH :
 				default :
-					return VoxelShapes.or(makeCuboidShape(14, 0, 15, 2, 5, 0)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(14, 0, 15, 2, 5, 0))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case NORTH :
-					return VoxelShapes.or(makeCuboidShape(2, 0, 1, 14, 5, 16)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(2, 0, 1, 14, 5, 16))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case EAST :
-					return VoxelShapes.or(makeCuboidShape(15, 0, 2, 0, 5, 14)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(15, 0, 2, 0, 5, 14))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case WEST :
-					return VoxelShapes.or(makeCuboidShape(1, 0, 14, 16, 5, 2)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(1, 0, 14, 16, 5, 2))
 
 							.withOffset(offset.x, offset.y, offset.z);
 			}
@@ -114,18 +106,17 @@ public class PrinterBlock extends EriniumModElements.ModElement {
 			builder.add(FACING);
 		}
 
+		@Override
+		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+		}
+
 		public BlockState rotate(BlockState state, Rotation rot) {
 			return state.with(FACING, rot.rotate(state.get(FACING)));
 		}
 
 		public BlockState mirror(BlockState state, Mirror mirrorIn) {
 			return state.rotate(mirrorIn.toRotation(state.get(FACING)));
-		}
-
-		@Override
-		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
-			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 
 		@Override

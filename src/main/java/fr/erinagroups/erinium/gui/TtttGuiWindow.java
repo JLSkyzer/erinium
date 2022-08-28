@@ -37,7 +37,7 @@ public class TtttGuiWindow extends ContainerScreen<TtttGui.GuiContainerMod> {
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/tttt.png");
+	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/screens/tttt.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

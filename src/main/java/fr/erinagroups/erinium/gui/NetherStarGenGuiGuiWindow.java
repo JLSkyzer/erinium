@@ -35,7 +35,7 @@ public class NetherStarGenGuiGuiWindow extends ContainerScreen<NetherStarGenGuiG
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/nether_star_gen_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/screens/nether_star_gen_gui.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

@@ -34,7 +34,7 @@ public class EriniumSkeletonBossRenderer {
 				BipedRenderer customRender = new BipedRenderer(renderManager, new BipedModel(0), 0.5f) {
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("erinium:textures/erinium_skeleton.png");
+						return new ResourceLocation("erinium:textures/entities/erinium_skeleton.png");
 					}
 				};
 				customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));
@@ -53,7 +53,7 @@ public class EriniumSkeletonBossRenderer {
 		public void render(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn, T entitylivingbaseIn, float limbSwing,
 				float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 			IVertexBuilder ivertexbuilder = bufferIn
-					.getBuffer(RenderType.getEyes(new ResourceLocation("erinium:textures/erinium_skeleton_glow.png")));
+					.getBuffer(RenderType.getEyes(new ResourceLocation("erinium:textures/entities/erinium_skeleton_glow.png")));
 			this.getEntityModel().render(matrixStackIn, ivertexbuilder, 15728640, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 		}
 	}

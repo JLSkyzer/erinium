@@ -52,7 +52,7 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/planet_teleporter.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/planet_teleporter.png"));
 		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.disableBlend();
@@ -86,7 +86,7 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 11, this.guiTop + 53, 81, 16, new StringTextComponent("§e\uE000 Moon \uE000"), e -> {
+		this.addButton(new Button(this.guiLeft + 11, this.guiTop + 53, 81, 20, new StringTextComponent("§e\uE000 Moon \uE000"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new PlanetTeleporterPanelGui.ButtonPressedMessage(0, x, y, z));
 				PlanetTeleporterPanelGui.handleButtonAction(entity, 0, x, y, z);

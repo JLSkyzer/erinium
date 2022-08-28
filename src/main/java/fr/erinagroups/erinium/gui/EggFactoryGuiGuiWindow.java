@@ -54,7 +54,7 @@ public class EggFactoryGuiGuiWindow extends ContainerScreen<EggFactoryGuiGui.Gui
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/egg_factory.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/egg_factory.png"));
 		this.blit(ms, this.guiLeft + -16, this.guiTop + -10, 0, 0, 427, 240, 427, 240);
 
 		RenderSystem.disableBlend();
@@ -96,13 +96,13 @@ public class EggFactoryGuiGuiWindow extends ContainerScreen<EggFactoryGuiGui.Gui
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 245, this.guiTop + 89, 54, 16, new StringTextComponent("Fusion"), e -> {
+		this.addButton(new Button(this.guiLeft + 245, this.guiTop + 89, 54, 20, new StringTextComponent("Fusion"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new EggFactoryGuiGui.ButtonPressedMessage(0, x, y, z));
 				EggFactoryGuiGui.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 29, this.guiTop + 89, 36, 16, new StringTextComponent("Wiki"), e -> {
+		this.addButton(new Button(this.guiLeft + 29, this.guiTop + 89, 36, 20, new StringTextComponent("Wiki"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new EggFactoryGuiGui.ButtonPressedMessage(1, x, y, z));
 				EggFactoryGuiGui.handleButtonAction(entity, 1, x, y, z);

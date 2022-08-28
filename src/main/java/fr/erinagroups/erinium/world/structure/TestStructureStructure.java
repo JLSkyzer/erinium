@@ -50,7 +50,7 @@ public class TestStructureStructure {
 						dimensionCriteria = true;
 					if (!dimensionCriteria)
 						return false;
-					if ((random.nextInt(1000000) + 1) <= 10000) {
+					if ((random.nextInt(1000000) + 1) <= 850) {
 						int count = random.nextInt(1) + 1;
 						for (int a = 0; a < count; a++) {
 							int i = ci + random.nextInt(16);
@@ -64,7 +64,7 @@ public class TestStructureStructure {
 							int y = spawnTo.getY();
 							int z = spawnTo.getZ();
 							Template template = world.getWorld().getStructureTemplateManager()
-									.getTemplateDefaulted(new ResourceLocation("erinium", "test"));
+									.getTemplateDefaulted(new ResourceLocation("erinium", "dungeon_1"));
 							if (template == null)
 								return false;
 							template.func_237144_a_(world, spawnTo,

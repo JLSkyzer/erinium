@@ -5845,6 +5845,23 @@
       "locked_code": false,
       "registry_name": "craft_skeleton_heal",
       "path": "~/Misc System/BetterVanilla/entity/Skeleton"
+    },
+    {
+      "name": "DesenchantBook",
+      "type": "procedure",
+      "sortid": 416,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "desenchant_book",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/BetterVanilla"
     }
   ],
   "variable_elements": [
@@ -6098,8 +6115,8 @@
       "block.erinium.line_1_block": "Line 1 Block",
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "itemGroup.tabscining_tab": "§bScining",
-      "block.erinium.dranite_ore": "§6Dranite Ore",
       "item.erinium.fraisage": "Fraisage",
+      "block.erinium.dranite_ore": "§6Dranite Ore",
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.wiring_kit": "Wiring Kit",
@@ -6111,9 +6128,9 @@
       "block.erinium.fraisage_numerique": "Fraisage Numérique",
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
@@ -6158,8 +6175,8 @@
       "item.erinium.empty_bottle": "Empty Bottle",
       "item.erinium.home_teleporter": "�aHome Teleporter",
       "block.erinium.fusion_station_beta": "§8Fusion Station §aBeta",
-      "block.erinium.setanum_block": "§eSetanum Block",
       "lootbox.event.oregen_1": "§aGo to mine and smelt !",
+      "block.erinium.setanum_block": "§eSetanum Block",
       "itemGroup.tabbloodtab": "§cBlood",
       "block.erinium.cave_block": "Cave Block",
       "tile.erinium_ore.name": "Erinium Ore",
@@ -6182,8 +6199,8 @@
       "item.erinium.spectium_armor_boots": "Spectium Boots",
       "block.erinium.moon_sand": "§7? Moon Sand ?",
       "itemGroup.tabusinage_tab": "§6Usinage",
-      "block.erinium.extractor_amenine_1": "§aExtractor",
       "item.erinium_armorlegs.name": "Erinium Leggings",
+      "block.erinium.extractor_amenine_1": "§aExtractor",
       "block.erinium.extractor_amenine_2": "§aExtractor",
       "item.erinium.spacesuit_armor_leggings": "Spacesuit Leggings",
       "item.erinium.fortune_modifier": "§a§l§o§nFortune Modifier",
@@ -6648,5 +6665,5 @@
     "modElementsPackage": "fr.erinagroups.erinium",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200120510
+  "mcreatorVersion": 202200234517
 }
