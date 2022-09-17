@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 ",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:glowstone"
+    },
+    "2": {
+      "item": "minecraft:stone_bricks"
+    },
+    "3": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "result": {
+    "item": "erinium:black_brick",
+    "count": 4
+  }
+}

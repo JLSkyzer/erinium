@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "erinium:erinium_axe",
+    "erinium:erinium_armor_chestplate",
+    "erinium:erinium_armor_helmet",
+    "erinium:erinium_sword",
+    "erinium:erinium_pickaxe",
+    "erinium:erinium_armor_leggings",
+    "erinium:erinium_armor_boots"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/brickmooth2",
+    "up": "erinium:blocks/brickmooth2",
+    "north": "erinium:blocks/brickmooth2",
+    "east": "erinium:blocks/brickmooth2",
+    "south": "erinium:blocks/brickmooth2",
+    "west": "erinium:blocks/brickmooth2",
+    "particle": "erinium:blocks/brickmooth2"
+  }
+}

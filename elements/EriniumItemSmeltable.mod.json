@@ -1,0 +1,35 @@
+{
+  "_fv": 33,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:EriniumArmor.helmet"
+      },
+      {
+        "value": "CUSTOM:EriniumArmor.body"
+      },
+      {
+        "value": "CUSTOM:EriniumArmor.legs"
+      },
+      {
+        "value": "CUSTOM:EriniumArmor.boots"
+      },
+      {
+        "value": "CUSTOM:EriniumSword"
+      },
+      {
+        "value": "CUSTOM:EriniumAxe"
+      },
+      {
+        "value": "CUSTOM:EriniumPickaxe"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "erinium_item_smeltable",
+    "namespace": "mod"
+  }
+}

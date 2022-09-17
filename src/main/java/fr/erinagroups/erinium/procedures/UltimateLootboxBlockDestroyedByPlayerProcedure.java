@@ -102,22 +102,22 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 					}
 				} else {
 					if (random <= 10) {
-						multiple = Math.round(Math.random() * 4);
+						multiple = Math.round(Math.random() * 2);
 						if (multiple <= 1) {
 							if (world instanceof ServerWorld) {
 								((World) world).getServer().getCommandManager().handleCommand(
 										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:bazooka\",Count:1}}");
+										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:heavy_rifle\",Count:1}}");
 							}
 							if (world instanceof ServerWorld) {
 								((World) world).getServer().getCommandManager().handleCommand(
 										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:missile\",Count:4}}");
+										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:advanced_bullet\",Count:16}}");
 							}
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7ekaboooom"), (false));
+								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7etchik paaaaan"), (false));
 							}
 						} else {
 							if (multiple <= 2) {
@@ -125,67 +125,22 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 									((World) world).getServer().getCommandManager().handleCommand(
 											new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 													new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:mini_gun\",Count:1}}");
+											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:assault_rifle\",Count:1}}");
 								}
 								if (world instanceof ServerWorld) {
 									((World) world).getServer().getCommandManager().handleCommand(
 											new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 													new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:64}}");
+											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
 								}
 								if (world instanceof ServerWorld) {
 									((World) world).getServer().getCommandManager().handleCommand(
 											new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 													new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:64}}");
+											"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
 								}
 								if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-									((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7eRATATATATATATATA"), (false));
-								}
-							} else {
-								if (multiple < 3) {
-									if (world instanceof ServerWorld) {
-										((World) world).getServer().getCommandManager().handleCommand(
-												new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4,
-														"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-												"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:heavy_rifle\",Count:1}}");
-									}
-									if (world instanceof ServerWorld) {
-										((World) world).getServer().getCommandManager().handleCommand(
-												new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4,
-														"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-												"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:advanced_bullet\",Count:16}}");
-									}
-									if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-										((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7etchik paaaaan"), (false));
-									}
-								} else {
-									if (multiple < 4) {
-										if (world instanceof ServerWorld) {
-											((World) world).getServer().getCommandManager().handleCommand(
-													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
-															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-															.withFeedbackDisabled(),
-													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:assault_rifle\",Count:1}}");
-										}
-										if (world instanceof ServerWorld) {
-											((World) world).getServer().getCommandManager().handleCommand(
-													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
-															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-															.withFeedbackDisabled(),
-													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
-										}
-										if (world instanceof ServerWorld) {
-											((World) world).getServer().getCommandManager().handleCommand(
-													new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world,
-															4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-															.withFeedbackDisabled(),
-													"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
-										}
-										if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-											((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7egood luck soldier"), (false));
-										}
-									}
+									((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7egood luck soldier"), (false));
 								}
 							}
 						}

@@ -245,6 +245,7 @@ public class EriniumModVariables {
 			nbt.putDouble("calc_y", instance.calc_y);
 			nbt.putDouble("calc_z", instance.calc_z);
 			nbt.putDouble("testBarre", instance.testBarre);
+			nbt.putDouble("adminBombPuissance", instance.adminBombPuissance);
 			return nbt;
 		}
 
@@ -281,6 +282,7 @@ public class EriniumModVariables {
 			instance.calc_y = nbt.getDouble("calc_y");
 			instance.calc_z = nbt.getDouble("calc_z");
 			instance.testBarre = nbt.getDouble("testBarre");
+			instance.adminBombPuissance = nbt.getDouble("adminBombPuissance");
 		}
 	}
 
@@ -315,6 +317,7 @@ public class EriniumModVariables {
 		public double calc_y = 0;
 		public double calc_z = 0;
 		public double testBarre = 60.0;
+		public double adminBombPuissance = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -374,6 +377,7 @@ public class EriniumModVariables {
 		clone.calc_y = original.calc_y;
 		clone.calc_z = original.calc_z;
 		clone.testBarre = original.testBarre;
+		clone.adminBombPuissance = original.adminBombPuissance;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
@@ -435,6 +439,7 @@ public class EriniumModVariables {
 					variables.calc_y = message.data.calc_y;
 					variables.calc_z = message.data.calc_z;
 					variables.testBarre = message.data.testBarre;
+					variables.adminBombPuissance = message.data.adminBombPuissance;
 				}
 			});
 			context.setPacketHandled(true);

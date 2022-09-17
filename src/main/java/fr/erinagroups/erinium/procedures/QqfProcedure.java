@@ -1,16 +1,11 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraftforge.fml.server.ServerLifecycleHooks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.ServerChatEvent;
 
-import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ChatType;
-import net.minecraft.util.Util;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
@@ -43,11 +38,6 @@ public class QqfProcedure {
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure Qqf!");
-			return;
-		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
 				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure Qqf!");
@@ -58,20 +48,19 @@ public class QqfProcedure {
 				EriniumMod.LOGGER.warn("Failed to load dependency text for procedure Qqf!");
 			return;
 		}
-		IWorld world = (IWorld) dependencies.get("world");
 		Entity entity = (Entity) dependencies.get("entity");
 		String text = (String) dependencies.get("text");
 		String temp = "";
-		if (dependencies.get("event") != null) {
-			Object _obj = dependencies.get("event");
-			if (_obj instanceof Event) {
-				Event _evt = (Event) _obj;
-				if (_evt.isCancelable())
-					_evt.setCanceled(true);
-			}
-		}
 		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new EriniumModVariables.PlayerVariables())).PresentationToggle) {
+			if (dependencies.get("event") != null) {
+				Object _obj = dependencies.get("event");
+				if (_obj instanceof Event) {
+					Event _evt = (Event) _obj;
+					if (_evt.isCancelable())
+						_evt.setCanceled(true);
+				}
+			}
 			temp = (text);
 			temp = (temp.replace("&", "\u00A7"));
 			{
@@ -90,14 +79,6 @@ public class QqfProcedure {
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aDone !"), (false));
-			}
-		} else {
-			if (!world.isRemote()) {
-				MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
-				if (mcserv != null)
-					mcserv.getPlayerList().func_232641_a_(
-							new StringTextComponent(("< [\u00A7eMembre\u00A7f] \u00A7b" + entity.getDisplayName().getString() + " \u00A7f> " + text)),
-							ChatType.SYSTEM, Util.DUMMY_UUID);
 			}
 		}
 	}

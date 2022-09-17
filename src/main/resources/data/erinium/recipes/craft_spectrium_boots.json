@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:spectrium_gem"
+    },
+    "2": {
+      "item": "erinium:spectrium_gem"
+    },
+    "3": {
+      "item": "erinium:spectrium_gem"
+    },
+    "5": {
+      "item": "erinium:spectrium_gem"
+    }
+  },
+  "result": {
+    "item": "erinium:spectium_armor_boots",
+    "count": 1
+  }
+}
