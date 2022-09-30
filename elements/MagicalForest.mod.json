@@ -1,0 +1,123 @@
+{
+  "_fv": 33,
+  "_type": "biome",
+  "definition": {
+    "name": "Magical Forest",
+    "groundBlock": {
+      "value": "Blocks.GRASS"
+    },
+    "undergroundBlock": {
+      "value": "Blocks.DIRT#0"
+    },
+    "underwaterBlock": {
+      "value": ""
+    },
+    "airColor": {
+      "value": -3342337,
+      "falpha": 0.0
+    },
+    "grassColor": {
+      "value": -16724992,
+      "falpha": 0.0
+    },
+    "foliageColor": {
+      "value": -16737997,
+      "falpha": 0.0
+    },
+    "waterColor": {
+      "value": -16737946,
+      "falpha": 0.0
+    },
+    "waterFogColor": {
+      "value": -3342388,
+      "falpha": 0.0
+    },
+    "ambientSound": {
+      "value": ""
+    },
+    "additionsSound": {
+      "value": ""
+    },
+    "music": {
+      "value": ""
+    },
+    "moodSound": {
+      "value": ""
+    },
+    "moodSoundDelay": 6000,
+    "spawnParticles": false,
+    "particleToSpawn": {
+      "value": "EXPLOSION_NORMAL"
+    },
+    "particlesProbability": 0.5,
+    "biomeCategory": "JUNGLE",
+    "rainingPossibility": 0.7000000000000001,
+    "temperature": 0.5,
+    "baseHeight": 0.19999999999999998,
+    "heightVariation": 0.30000000000000004,
+    "spawnBiome": true,
+    "spawnBiomeNether": false,
+    "spawnInCaves": false,
+    "biomeWeight": 8,
+    "biomeDictionaryTypes": [
+      "FOREST",
+      "PLAINS",
+      "MESA",
+      "JUNGLE",
+      "HILLS"
+    ],
+    "grassPerChunk": 10,
+    "seagrassPerChunk": 5,
+    "flowersPerChunk": 3,
+    "mushroomsPerChunk": 4,
+    "bigMushroomsChunk": 4,
+    "sandPatchesPerChunk": 0,
+    "gravelPatchesPerChunk": 0,
+    "reedsPerChunk": 2,
+    "cactiPerChunk": 0,
+    "treesPerChunk": 20,
+    "vanillaTreeType": "Big trees",
+    "treeType": 1,
+    "minHeight": 10,
+    "treeStem": {
+      "value": "Blocks.LOG#0"
+    },
+    "treeBranch": {
+      "value": "Blocks.LEAVES#0"
+    },
+    "treeVines": {
+      "value": "Blocks.VINE"
+    },
+    "treeFruits": {
+      "value": "Blocks.AIR"
+    },
+    "spawnStronghold": true,
+    "spawnMineshaft": true,
+    "spawnMineshaftMesa": false,
+    "spawnPillagerOutpost": false,
+    "villageType": "plains",
+    "spawnWoodlandMansion": true,
+    "spawnJungleTemple": true,
+    "spawnDesertPyramid": false,
+    "spawnSwampHut": true,
+    "spawnIgloo": false,
+    "spawnOceanMonument": false,
+    "spawnShipwreck": true,
+    "spawnShipwreckBeached": true,
+    "spawnBuriedTreasure": false,
+    "oceanRuinType": "NONE",
+    "spawnNetherBridge": false,
+    "spawnNetherFossil": false,
+    "spawnBastionRemnant": false,
+    "spawnEndCity": false,
+    "spawnRuinedPortal": "JUNGLE",
+    "defaultFeatures": [
+      "Caves",
+      "Ores",
+      "ExtraEmeraldOre",
+      "ExtraGoldOre",
+      "JungleTreeForest"
+    ],
+    "spawnEntries": []
+  }
+}

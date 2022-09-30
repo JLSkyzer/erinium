@@ -1,0 +1,41 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "block_replacer",
+    "customModelName": "Normal",
+    "name": "Block Replacer",
+    "specialInfo": [
+      "§b-----",
+      "§e- ctrl + shift + Right Click on block to set the block to replace",
+      "§e- Right Click on a block to break the block and set the selected block §a(You need the block in your inventory)",
+      "§b-----"
+    ],
+    "creativeTab": {
+      "value": "TOOLS"
+    },
+    "toolType": "Special",
+    "harvestLevel": 1,
+    "efficiency": 0.0,
+    "attackSpeed": 100.0,
+    "enchantability": 0,
+    "damageVsEntity": 4.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedOnBlock": {
+      "name": "BlockReplacerRightclickedOnBlock"
+    },
+    "onCrafted": {
+      "name": "BlockReplacerItemIsCraftedsmelted"
+    },
+    "onItemInInventoryTick": {
+      "name": "BlockReplacerToolInInventoryTick"
+    }
+  }
+}

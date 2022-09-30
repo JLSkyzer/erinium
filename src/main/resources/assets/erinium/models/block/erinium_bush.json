@@ -1,0 +1,10 @@
+{
+  "parent": "block/grass_block",
+  "textures": {
+    "bottom": "erinium:blocks/leaves_custom",
+    "top": "erinium:blocks/leaves_custom",
+    "side": "erinium:blocks/leaves_custom",
+    "overlay": "erinium:blocks/leaves_custom",
+    "particle": "erinium:blocks/leaves_custom"
+  }
+}

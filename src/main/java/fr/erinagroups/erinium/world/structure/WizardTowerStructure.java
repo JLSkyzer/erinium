@@ -27,8 +27,12 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.Mirror;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.BlockState;
 
 import java.util.Random;
+
+import fr.erinagroups.erinium.block.SciningSandBlock;
 
 @Mod.EventBusSubscriber
 public class WizardTowerStructure {
@@ -55,8 +59,18 @@ public class WizardTowerStructure {
 						for (int a = 0; a < count; a++) {
 							int i = ci + random.nextInt(16);
 							int k = ck + random.nextInt(16);
-							int j = world.getHeight(Heightmap.Type.OCEAN_FLOOR_WG, i, k);
+							int j = world.getHeight(Heightmap.Type.WORLD_SURFACE_WG, i, k);
 							j -= 1;
+							BlockState blockAt = world.getBlockState(new BlockPos(i, j, k));
+							boolean blockCriteria = false;
+							if (blockAt.getBlock() == SciningSandBlock.block)
+								blockCriteria = true;
+							if (blockAt.getBlock() == Blocks.GRASS_BLOCK)
+								blockCriteria = true;
+							if (blockAt.getBlock() == Blocks.DIRT)
+								blockCriteria = true;
+							if (!blockCriteria)
+								continue;
 							Rotation rotation = Rotation.values()[random.nextInt(3)];
 							Mirror mirror = Mirror.values()[random.nextInt(2)];
 							BlockPos spawnTo = new BlockPos(i + 0, j + 0, k + 0);

@@ -4,7 +4,7 @@
   "definition": {
     "structure": "wizard_tower",
     "randomlyRotateStructure": true,
-    "surfaceDetectionType": "First motion blocking block",
+    "surfaceDetectionType": "First block",
     "spawnProbability": 1000,
     "minCountPerChunk": 1,
     "maxCountPerChunk": 1,
@@ -15,7 +15,17 @@
     "spawnWorldTypes": [
       "Surface"
     ],
-    "restrictionBlocks": [],
+    "restrictionBlocks": [
+      {
+        "value": "CUSTOM:SciningSand"
+      },
+      {
+        "value": "Blocks.GRASS"
+      },
+      {
+        "value": "Blocks.DIRT#0"
+      }
+    ],
     "restrictionBiomes": [],
     "ignoreBlocks": "STRUCTURE_BLOCK"
   }

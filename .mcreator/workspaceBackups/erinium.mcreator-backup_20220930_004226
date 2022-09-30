@@ -40,12 +40,7 @@
       "locked_code": false,
       "registry_name": "erinium_armor_body_tick_event",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Erinium"
     },
@@ -74,12 +69,7 @@
       "locked_code": false,
       "registry_name": "erinium_armor_boots_tick_event",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Erinium"
     },
@@ -5963,6 +5953,249 @@
       "locked_code": false,
       "registry_name": "moon_cave",
       "path": "~/Space update/Structures"
+    },
+    {
+      "name": "BlackBrick",
+      "type": "block",
+      "sortid": 427,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_brick",
+      "path": "~/Misc System/LightBlock"
+    },
+    {
+      "name": "BlackMetal",
+      "type": "block",
+      "sortid": 428,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_metal",
+      "path": "~/Misc System/LightBlock"
+    },
+    {
+      "name": "BlackMetal2",
+      "type": "block",
+      "sortid": 429,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_metal_2",
+      "path": "~/Misc System/LightBlock"
+    },
+    {
+      "name": "RecipeBlackBrick",
+      "type": "recipe",
+      "sortid": 430,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_black_brick",
+      "path": "~/Misc System/LightBlock"
+    },
+    {
+      "name": "RecipeBlackMetal",
+      "type": "recipe",
+      "sortid": 431,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_black_metal",
+      "path": "~/Misc System/LightBlock"
+    },
+    {
+      "name": "RecipeBlackMetal2",
+      "type": "recipe",
+      "sortid": 432,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_black_metal_2",
+      "path": "~/Misc System/LightBlock"
+    },
+    {
+      "name": "CreditToFtbMoney",
+      "type": "command",
+      "sortid": 433,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "credit_to_ftb_money",
+      "path": "~/Server side/Credit"
+    },
+    {
+      "name": "CreditToFtbMoneyProcedures",
+      "type": "procedure",
+      "sortid": 434,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "credit_to_ftb_money_procedures",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Credit"
+    },
+    {
+      "name": "BlockReplacer",
+      "type": "tool",
+      "sortid": 435,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "block_replacer",
+      "path": "~/Misc System/Block Replacer"
+    },
+    {
+      "name": "BlockReplacerItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 436,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "block_replacer_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Misc System/Block Replacer"
+    },
+    {
+      "name": "BlockReplacerToolInInventoryTick",
+      "type": "procedure",
+      "sortid": 437,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "block_replacer_tool_in_inventory_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Misc System/Block Replacer"
+    },
+    {
+      "name": "BlockReplacerRightclickedOnBlock",
+      "type": "procedure",
+      "sortid": 438,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "block_replacer_rightclicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Block Replacer"
+    },
+    {
+      "name": "CraftBlockReplacer",
+      "type": "recipe",
+      "sortid": 439,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_block_replacer",
+      "path": "~/Misc System/Block Replacer"
+    },
+    {
+      "name": "FakeEriniumIngot",
+      "type": "item",
+      "sortid": 440,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fake_erinium_ingot",
+      "path": "~/Misc System/LootBox/Items"
+    },
+    {
+      "name": "MagicalForest",
+      "type": "biome",
+      "sortid": 441,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magical_forest",
+      "path": "~/Biome"
+    },
+    {
+      "name": "JungleStonePillar",
+      "type": "structure",
+      "sortid": 442,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_stone_pillar",
+      "path": "~/Structures/Magical Forest"
+    },
+    {
+      "name": "JungleBush1",
+      "type": "structure",
+      "sortid": 443,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_bush_1",
+      "path": "~/Structures/Magical Forest"
+    },
+    {
+      "name": "JungleBush2",
+      "type": "structure",
+      "sortid": 444,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_bush_2",
+      "path": "~/Structures/Magical Forest"
+    },
+    {
+      "name": "EriniumBush",
+      "type": "block",
+      "sortid": 445,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_bush",
+      "path": "~/blocks"
     }
   ],
   "variable_elements": [
@@ -6157,6 +6390,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "blockReplacerSelectedBlock",
+      "type": "blockstate",
+      "scope": "player_persistent",
+      "value": "Blocks.AIR.getDefaultState()"
     }
   ],
   "sound_elements": [
@@ -6222,16 +6461,18 @@
       "block.erinium.line_1_block": "Line 1 Block",
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "itemGroup.tabscining_tab": "§bScining",
-      "item.erinium.fraisage": "Fraisage",
       "block.erinium.dranite_ore": "§6Dranite Ore",
+      "item.erinium.fraisage": "Fraisage",
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.wiring_kit": "Wiring Kit",
       "block.erinium.fonderie": "Fonderie",
+      "biome.erinium.magical_forest": "Magical Forest",
       "subtitles.printer": "Printer en marche",
       "item.erinium.amenine_stick": "Amenine Stick",
       "block.erinium.fusion_station_base": "§8Fusion Station §7Base",
       "block.erinium.scining_cactus": "Scining Cactus",
+      "item.erinium.block_replacer": "Block Replacer",
       "block.erinium.fraisage_numerique": "Fraisage Numérique",
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
@@ -6255,6 +6496,7 @@
       "item.erinium.setanum_nuggets": "Setanum Nuggets",
       "item.erinium.cardboard": "Cardboard",
       "block.erinium.amenine_trapdoor": "§5§lAmenine Trapdoor",
+      "block.erinium.black_metal": "Black Metal",
       "block.erinium.setanum_stage_0": "Setanum Stage 0",
       "item.erinium.skeleton_shard": "Skeleton Shard",
       "item.erinium.setanum_helmet": "Setanum Helmet",
@@ -6282,8 +6524,8 @@
       "item.erinium.empty_bottle": "Empty Bottle",
       "item.erinium.home_teleporter": "�aHome Teleporter",
       "block.erinium.fusion_station_beta": "§8Fusion Station §aBeta",
-      "lootbox.event.oregen_1": "§aGo to mine and smelt !",
       "block.erinium.setanum_block": "§eSetanum Block",
+      "lootbox.event.oregen_1": "§aGo to mine and smelt !",
       "itemGroup.tabbloodtab": "§cBlood",
       "block.erinium.cave_block": "Cave Block",
       "tile.erinium_ore.name": "Erinium Ore",
@@ -6294,6 +6536,7 @@
       "item.erinium.skeleton_nuggets": "Skeleton Nuggets",
       "item.erinium.gomy_spawn_egg": "Gomy Spawn Egg",
       "item.erinium.soul_bottle_3": "§9Soul Bottle",
+      "block.erinium.black_brick": "Black Brick",
       "item.erinium.soul_bottle_5": "§9Soul Bottle",
       "block.erinium.silver_ore": "§7Silver Ore",
       "item.erinium.setanum_boots": "Setanum Boots",
@@ -6306,8 +6549,8 @@
       "item.erinium.spectium_armor_boots": "Spectium Boots",
       "block.erinium.moon_sand": "§7? Moon Sand ?",
       "itemGroup.tabusinage_tab": "§6Usinage",
-      "item.erinium_armorlegs.name": "Erinium Leggings",
       "block.erinium.extractor_amenine_1": "§aExtractor",
+      "item.erinium_armorlegs.name": "Erinium Leggings",
       "item.erinium.spacesuit_armor_leggings": "Spacesuit Leggings",
       "block.erinium.extractor_amenine_2": "§aExtractor",
       "item.erinium.fortune_modifier": "§a§l§o§nFortune Modifier",
@@ -6340,6 +6583,7 @@
       "subtitles.explosion": "",
       "item.erinium.setanum_pickaxe": "Setanum Pickaxe",
       "item.erinium.chest_finder": "Chest Finder",
+      "item.erinium.fake_erinium_ingot": "§1Erinium Ingot",
       "block.erinium.beta_marqued": "Beta Marqued",
       "block.erinium.amenine_pressure_plate": "§5§lAmenine Pressure Plate",
       "block.erinium.printer": "Printer",
@@ -6362,6 +6606,7 @@
       "lootbox.event.drop_erinium": "Good stuff \u003d true :)",
       "itemGroup.tabadmin_zone": "§4§lErinium - Admin Zone",
       "block.erinium.ultimate_lootbox": "§6Ultimate Lootbox",
+      "block.erinium.erinium_bush": "Erinium Bush",
       "item.erinium.setanum_sword": "Setanum Sword",
       "item.erinium.screen": "Screen",
       "block.erinium.nether_star_gen": "�2Nether Star Gen",
@@ -6384,6 +6629,7 @@
       "item.erinium.erinium_pickaxe": "§1Erinium Pickaxe",
       "item.erinium.setanum_seeds": "§eSetanum Seeds",
       "block.erinium.egg_factory": "Egg Factory",
+      "block.erinium.black_metal_2": "Black Metal 2",
       "item.erinium.lead_ingot": "§9§lLead Ingot",
       "item.erinium.copper_ingot": "§6§lCopper Ingot",
       "block.erinium.tour_tradi": "Tour Tradi",
@@ -6538,6 +6784,10 @@
               {
                 "name": "Recipes",
                 "children": []
+              },
+              {
+                "name": "Items",
+                "children": []
               }
             ]
           },
@@ -6650,6 +6900,14 @@
           {
             "name": "DuplicatePickaxe",
             "children": []
+          },
+          {
+            "name": "LightBlock",
+            "children": []
+          },
+          {
+            "name": "Block Replacer",
+            "children": []
           }
         ]
       },
@@ -6746,6 +7004,19 @@
       },
       {
         "name": "Setanum",
+        "children": []
+      },
+      {
+        "name": "Structures",
+        "children": [
+          {
+            "name": "Magical Forest",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "blocks",
         "children": []
       }
     ]

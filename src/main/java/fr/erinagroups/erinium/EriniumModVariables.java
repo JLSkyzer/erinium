@@ -22,12 +22,15 @@ import net.minecraft.world.IServerWorld;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Direction;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.Minecraft;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.BlockState;
 
 import java.util.function.Supplier;
 
@@ -246,6 +249,7 @@ public class EriniumModVariables {
 			nbt.putDouble("calc_z", instance.calc_z);
 			nbt.putDouble("testBarre", instance.testBarre);
 			nbt.putDouble("adminBombPuissance", instance.adminBombPuissance);
+			nbt.put("blockReplacerSelectedBlock", NBTUtil.writeBlockState(instance.blockReplacerSelectedBlock));
 			return nbt;
 		}
 
@@ -283,6 +287,7 @@ public class EriniumModVariables {
 			instance.calc_z = nbt.getDouble("calc_z");
 			instance.testBarre = nbt.getDouble("testBarre");
 			instance.adminBombPuissance = nbt.getDouble("adminBombPuissance");
+			instance.blockReplacerSelectedBlock = NBTUtil.readBlockState(nbt.getCompound("blockReplacerSelectedBlock"));
 		}
 	}
 
@@ -318,6 +323,7 @@ public class EriniumModVariables {
 		public double calc_z = 0;
 		public double testBarre = 60.0;
 		public double adminBombPuissance = 0;
+		public BlockState blockReplacerSelectedBlock = Blocks.AIR.getDefaultState();
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -378,6 +384,7 @@ public class EriniumModVariables {
 		clone.calc_z = original.calc_z;
 		clone.testBarre = original.testBarre;
 		clone.adminBombPuissance = original.adminBombPuissance;
+		clone.blockReplacerSelectedBlock = original.blockReplacerSelectedBlock;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
@@ -440,6 +447,7 @@ public class EriniumModVariables {
 					variables.calc_z = message.data.calc_z;
 					variables.testBarre = message.data.testBarre;
 					variables.adminBombPuissance = message.data.adminBombPuissance;
+					variables.blockReplacerSelectedBlock = message.data.blockReplacerSelectedBlock;
 				}
 			});
 			context.setPacketHandled(true);

@@ -20,6 +20,7 @@ import net.minecraft.entity.Entity;
 import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Collections;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.EriniumArmorLeggingsTickEventProcedure;
@@ -117,8 +118,7 @@ public class EriniumArmorItem extends EriniumModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				EriniumArmorBodyTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				EriniumArmorBodyTickEventProcedure.executeProcedure(Collections.emptyMap());
 			}
 		}.setRegistryName("erinium_armor_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumTabItemGroup.tab)) {
@@ -149,8 +149,7 @@ public class EriniumArmorItem extends EriniumModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				EriniumArmorBootsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				EriniumArmorBootsTickEventProcedure.executeProcedure(Collections.emptyMap());
 			}
 		}.setRegistryName("erinium_armor_boots"));
 	}

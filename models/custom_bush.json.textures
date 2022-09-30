@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "leaves_custom"
+      },
+      "name": "default"
+    }
+  }
+}
