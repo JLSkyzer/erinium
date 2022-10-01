@@ -18,6 +18,7 @@ import net.minecraft.command.CommandSource;
 import java.util.Map;
 import java.util.HashMap;
 
+import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
 public class OnjoinTheServerProcedure {
@@ -69,31 +70,11 @@ public class OnjoinTheServerProcedure {
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A71===== \u00A76Bienvenue sur Erinium \u00A71====="), (false));
+			((PlayerEntity) entity).sendStatusMessage(
+					new StringTextComponent("\u00A7bSi vous apercevez un probl\u00E8me, allez signaler le probl\u00E8me sur le github"), (false));
 		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-					"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/serverlanguage \u00A7epour changer la langue du serveur !"),
-					(false));
-		}
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-					"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/rank \u00A7epour en savoir plus sur le syst\u00E8me de niveau !"),
-					(false));
-		}
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-					"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/wiki \u00A7epour voir le wiki du mods (tr\u00E8s important !)"),
-					(false));
-		}
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-					"\u00A7bLe mod a \u00E9t\u00E9 cr\u00E9\u00E9 avec le logiciel MCreator, en raison de changement de version tous les signes pour changer de couleur ou les caract\u00E8res sp\u00E9ciaux ont \u00E9t\u00E9 modifi\u00E9s par des caract\u00E8res \u00E9tranges, si vous en trouvez, aller le report sur le github ! Et pr\u00E9ciser ce que vous avez fait si c'est un message sur le tchat. Merci ! Et bon jeu"),
-					(false));
-		}
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-					"\u00A74The mod was created with the MCreator software, due to version change all the signs to change color or the special characters have been modified by strange characters, if you find any, go to the report on the github! and specify what you did if it's a chat message. Thanks ! and good game"),
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A74If you see a problem, report the problem on the github"),
 					(false));
 		}
 		if (world instanceof ServerWorld) {
@@ -101,6 +82,60 @@ public class OnjoinTheServerProcedure {
 					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"tellraw @p {\"text\":\"\u00A71Github\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://github.com/JLSkyzer/erinium\"}}");
+		}
+		if (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).serverLanguage).equals("FR")) {
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A71===== \u00A76Bienvenue sur Erinium \u00A71====="), (false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+						"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/serverlanguage \u00A7epour changer la langue du serveur !"),
+						(false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+						"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/rank \u00A7epour en savoir plus sur le syst\u00E8me de niveau !"),
+						(false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+						"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/wiki \u00A7epour voir le wiki du mods (tr\u00E8s important !)"),
+						(false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+						"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/rankoverlaysettings \u00A7epour changer la position du overlay \"won xp\" qui est utilis\u00E9 quand vous gagner de l'xp pour le syst\u00E8me de rank"),
+						(false));
+			}
+		} else if (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).serverLanguage).equals("EN")) {
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A71===== \u00A76Welcome to Erinium \u00A71====="), (false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(
+						new StringTextComponent(
+								"\u00A74[\u00A7bErinium\u00A74] \u00A7eDo the command \u00A7a/serverlanguage \u00A7eto change the server language !"),
+						(false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(
+						new StringTextComponent(
+								"\u00A74[\u00A7bErinium\u00A74] \u00A7eDo the command \u00A7a/rank \u00A7eto learn more about the level system !"),
+						(false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(
+						new StringTextComponent(
+								"\u00A74[\u00A7bErinium\u00A74] \u00A7eDo the command \u00A7a/wiki \u00A7eto see the mod wiki (very important !)"),
+						(false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+						"\u00A74[\u00A7bErinium\u00A74] \u00A7eDo the command \u00A7a/rankoverlaysettings \u00A7eto change the position of the \"won xp\" overlay which is used when you gain xp for the rank system"),
+						(false));
+			}
 		}
 	}
 }

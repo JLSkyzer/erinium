@@ -6681,23 +6681,6 @@
         ]
       },
       "path": "~/Misc System/Rank System/Won Xp"
-    },
-    {
-      "name": "Temp",
-      "type": "procedure",
-      "sortid": 477,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "temp",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Misc System/Rank System/Won Xp"
     }
   ],
   "variable_elements": [
