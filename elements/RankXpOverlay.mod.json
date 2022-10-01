@@ -1,0 +1,93 @@
+{
+  "_fv": 33,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "won_xp_overlay_screen.png",
+          "use1Xscale": false,
+          "name": "won_xp_overlay_screen.png",
+          "x": 285,
+          "y": 22
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "barre_3_seconds.png",
+          "use1Xscale": false,
+          "name": "barre_3_seconds.png",
+          "x": 285,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:won_xp_message>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<VAR:won_xp_message>",
+          "x": 287,
+          "y": 35
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:rank_overlay_x>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:rank_overlay_x>",
+          "x": 30,
+          "y": 38
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:rank_overlay_y>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:rank_overlay_y>",
+          "x": 31,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:won_xp_overlay_cooldown>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:won_xp_overlay_cooldown>",
+          "x": 31,
+          "y": 67
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "RankXpOverlayDisplayOverlayIngame"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

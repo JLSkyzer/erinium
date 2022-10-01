@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "2": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "3": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "5": {
+      "item": "erinium:tree_boss_shard"
+    }
+  },
+  "result": {
+    "item": "erinium:tree_boss_armor_boots",
+    "count": 1
+  }
+}

@@ -250,6 +250,9 @@ public class EriniumModVariables {
 			nbt.putDouble("testBarre", instance.testBarre);
 			nbt.putDouble("adminBombPuissance", instance.adminBombPuissance);
 			nbt.put("blockReplacerSelectedBlock", NBTUtil.writeBlockState(instance.blockReplacerSelectedBlock));
+			nbt.putDouble("rank_overlay_x", instance.rank_overlay_x);
+			nbt.putDouble("rank_overlay_y", instance.rank_overlay_y);
+			nbt.putDouble("won_xp_overlay_cooldown", instance.won_xp_overlay_cooldown);
 			return nbt;
 		}
 
@@ -288,6 +291,9 @@ public class EriniumModVariables {
 			instance.testBarre = nbt.getDouble("testBarre");
 			instance.adminBombPuissance = nbt.getDouble("adminBombPuissance");
 			instance.blockReplacerSelectedBlock = NBTUtil.readBlockState(nbt.getCompound("blockReplacerSelectedBlock"));
+			instance.rank_overlay_x = nbt.getDouble("rank_overlay_x");
+			instance.rank_overlay_y = nbt.getDouble("rank_overlay_y");
+			instance.won_xp_overlay_cooldown = nbt.getDouble("won_xp_overlay_cooldown");
 		}
 	}
 
@@ -324,6 +330,9 @@ public class EriniumModVariables {
 		public double testBarre = 60.0;
 		public double adminBombPuissance = 0;
 		public BlockState blockReplacerSelectedBlock = Blocks.AIR.getDefaultState();
+		public double rank_overlay_x = 72.0;
+		public double rank_overlay_y = -98.0;
+		public double won_xp_overlay_cooldown = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -385,6 +394,9 @@ public class EriniumModVariables {
 		clone.testBarre = original.testBarre;
 		clone.adminBombPuissance = original.adminBombPuissance;
 		clone.blockReplacerSelectedBlock = original.blockReplacerSelectedBlock;
+		clone.rank_overlay_x = original.rank_overlay_x;
+		clone.rank_overlay_y = original.rank_overlay_y;
+		clone.won_xp_overlay_cooldown = original.won_xp_overlay_cooldown;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
@@ -448,6 +460,9 @@ public class EriniumModVariables {
 					variables.testBarre = message.data.testBarre;
 					variables.adminBombPuissance = message.data.adminBombPuissance;
 					variables.blockReplacerSelectedBlock = message.data.blockReplacerSelectedBlock;
+					variables.rank_overlay_x = message.data.rank_overlay_x;
+					variables.rank_overlay_y = message.data.rank_overlay_y;
+					variables.won_xp_overlay_cooldown = message.data.won_xp_overlay_cooldown;
 				}
 			});
 			context.setPacketHandled(true);

@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "2": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "3": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "4": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "5": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "6": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "7": {
+      "item": "erinium:tree_boss_shard"
+    },
+    "8": {
+      "item": "erinium:tree_boss_shard"
+    }
+  },
+  "result": {
+    "item": "erinium:tree_boss_armor_chestplate",
+    "count": 1
+  }
+}
