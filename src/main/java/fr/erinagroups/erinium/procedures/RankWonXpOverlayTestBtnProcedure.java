@@ -33,5 +33,12 @@ public class RankWonXpOverlayTestBtnProcedure {
 				capability.syncPlayerVariables(entity);
 			});
 		}
+		{
+			String _setval = "\u00A74Test overlay ! (2)";
+			entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.won_xp_message_2 = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
 	}
 }

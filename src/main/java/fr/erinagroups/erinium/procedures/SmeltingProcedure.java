@@ -74,6 +74,30 @@ public class SmeltingProcedure {
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
 				}
+				{
+					String _setval = ("\u00A7a+" + (itemstack).getCount() * 110 + " xp ");
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_message = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					String _setval = (new java.text.DecimalFormat("### ###")
+							.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+							+ " / \u00A74100 000");
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_message_2 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = 60;
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_overlay_cooldown = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			} else if (itemstack.getItem() == Items.GOLD_INGOT) {
 				{
 					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -88,6 +112,30 @@ public class SmeltingProcedure {
 							+ "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
+				}
+				{
+					String _setval = ("\u00A7a+" + (itemstack).getCount() * 200 + " xp ");
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_message = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					String _setval = (new java.text.DecimalFormat("### ###")
+							.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+							+ " / \u00A74100 000");
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_message_2 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = 60;
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_overlay_cooldown = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		} else {
@@ -112,6 +160,30 @@ public class SmeltingProcedure {
 														+ " / 100.000")),
 										(true));
 					}
+					{
+						String _setval = ("\u00A7a+" + (itemstack).getCount() * 60 + " xp ");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = (new java.text.DecimalFormat("### ###")
+								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+								+ " / \u00A74100 000");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message_2 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 60;
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_overlay_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 				} else if (itemstack.getItem() == Items.GOLD_INGOT) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -130,6 +202,30 @@ public class SmeltingProcedure {
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
+					}
+					{
+						String _setval = ("\u00A7a+" + (itemstack).getCount() * 170 + " xp ");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = (new java.text.DecimalFormat("### ###")
+								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+								+ " / \u00A74100 000");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message_2 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 60;
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_overlay_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				} else if (itemstack.getItem() == SilverIngotItem.block) {
 					{
@@ -150,6 +246,30 @@ public class SmeltingProcedure {
 														+ " / 100.000")),
 										(true));
 					}
+					{
+						String _setval = ("\u00A7a+" + (itemstack).getCount() * 125 + " xp ");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = (new java.text.DecimalFormat("### ###")
+								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+								+ " / \u00A74100 000");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message_2 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 60;
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_overlay_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 				} else if (itemstack.getItem() == SiliconeFragmentItem.block) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -168,6 +288,30 @@ public class SmeltingProcedure {
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
+					}
+					{
+						String _setval = ("\u00A7a+" + (itemstack).getCount() * 125 + " xp ");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = (new java.text.DecimalFormat("### ###")
+								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+								+ " / \u00A74100 000");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message_2 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 60;
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_overlay_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 			} else {
@@ -192,6 +336,30 @@ public class SmeltingProcedure {
 															+ " / 100.000")),
 											(true));
 						}
+						{
+							String _setval = ("\u00A7a+" + (itemstack).getCount() * 15 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					} else if (itemstack.getItem() == Items.GOLD_INGOT) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -210,6 +378,30 @@ public class SmeltingProcedure {
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
+						}
+						{
+							String _setval = ("\u00A7a+" + (itemstack).getCount() * 95 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
 						}
 					} else if (itemstack.getItem() == CopperIngotItem.block) {
 						{
@@ -230,6 +422,30 @@ public class SmeltingProcedure {
 															+ " / 100.000")),
 											(true));
 						}
+						{
+							String _setval = ("\u00A7a+" + (itemstack).getCount() * 105 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					} else if (itemstack.getItem() == SilverIngotItem.block) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -249,6 +465,30 @@ public class SmeltingProcedure {
 															+ " / 100.000")),
 											(true));
 						}
+						{
+							String _setval = ("\u00A7a+" + (itemstack).getCount() * 105 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					} else if (itemstack.getItem() == SiliconeFragmentItem.block) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -267,6 +507,30 @@ public class SmeltingProcedure {
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
+						}
+						{
+							String _setval = ("\u00A7a+" + (itemstack).getCount() * 105 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
 						}
 					}
 				} else {
@@ -290,6 +554,30 @@ public class SmeltingProcedure {
 														+ " / 100.000")),
 												(true));
 							}
+							{
+								String _setval = ("\u00A7a+" + (itemstack).getCount() * 38 + " xp ");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								String _setval = (new java.text.DecimalFormat("### ###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / \u00A74100 000");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message_2 = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 60;
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_overlay_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
 						} else if (itemstack.getItem() == CopperIngotItem.block) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -307,6 +595,30 @@ public class SmeltingProcedure {
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
+							}
+							{
+								String _setval = ("\u00A7a+" + (itemstack).getCount() * 28 + " xp ");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								String _setval = (new java.text.DecimalFormat("### ###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / \u00A74100 000");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message_2 = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 60;
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_overlay_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
 							}
 						} else if (itemstack.getItem() == EriniumIngotItem.block) {
 							{
@@ -326,6 +638,30 @@ public class SmeltingProcedure {
 														+ " / 100.000")),
 												(true));
 							}
+							{
+								String _setval = ("\u00A7a+" + (itemstack).getCount() * 45 + " xp ");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								String _setval = (new java.text.DecimalFormat("### ###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / \u00A74100 000");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message_2 = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 60;
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_overlay_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
 						} else if (itemstack.getItem() == SilverIngotItem.block) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -344,6 +680,30 @@ public class SmeltingProcedure {
 														+ " / 100.000")),
 												(true));
 							}
+							{
+								String _setval = ("\u00A7a+" + (itemstack).getCount() * 26 + " xp ");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								String _setval = (new java.text.DecimalFormat("### ###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / \u00A74100 000");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message_2 = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 60;
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_overlay_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
 						} else if (itemstack.getItem() == SiliconeFragmentItem.block) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -361,6 +721,30 @@ public class SmeltingProcedure {
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
+							}
+							{
+								String _setval = ("\u00A7a+" + (itemstack).getCount() * 26 + " xp ");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								String _setval = (new java.text.DecimalFormat("### ###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / \u00A74100 000");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message_2 = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 60;
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_overlay_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
 							}
 						}
 					}

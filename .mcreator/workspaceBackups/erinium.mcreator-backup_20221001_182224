@@ -6532,7 +6532,7 @@
       "name": "RankXpOverlay",
       "type": "overlay",
       "sortid": 469,
-      "compiles": false,
+      "compiles": true,
       "locked_code": true,
       "registry_name": "rank_xp_overlay",
       "path": "~/Misc System/Rank System/Won Xp"
@@ -6613,6 +6613,65 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "won_xp_toggle_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/Rank System/Won Xp"
+    },
+    {
+      "name": "SetXProcedures",
+      "type": "procedure",
+      "sortid": 474,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_x_procedures",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Misc System/Rank System/Won Xp"
+    },
+    {
+      "name": "SetYProcedures",
+      "type": "procedure",
+      "sortid": 475,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_y_procedures",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Misc System/Rank System/Won Xp"
+    },
+    {
+      "name": "RankWonXpOverlayTestBtn",
+      "type": "procedure",
+      "sortid": 476,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rank_won_xp_overlay_test_btn",
       "metadata": {
         "dependencies": [
           {

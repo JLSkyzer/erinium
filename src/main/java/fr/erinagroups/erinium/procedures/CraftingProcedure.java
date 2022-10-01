@@ -53,6 +53,8 @@ public class CraftingProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
+		double crafted = 0;
+		crafted = ((itemstack).getCount());
 		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 5) {
 			if (itemstack.getItem() == Items.BREAD) {
@@ -65,10 +67,34 @@ public class CraftingProcedure {
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + (itemstack).getCount() * 150 + " xp "
-							+ "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + crafted * 150 + " xp " + "\u00A7f| " + "\u00A72"
+							+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
+				}
+				{
+					String _setval = ("\u00A7a+" + crafted * 150 + " xp ");
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_message = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					String _setval = (new java.text.DecimalFormat("### ###")
+							.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+							+ " / \u00A74100 000");
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_message_2 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = 60;
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_overlay_cooldown = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		} else {
@@ -87,11 +113,35 @@ public class CraftingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + (itemstack).getCount() * 60 + " xp " + "\u00A7f| " + "\u00A72"
+												("\u00A7a+" + crafted * 60 + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
+					}
+					{
+						String _setval = ("\u00A7a+" + crafted * 60 + " xp ");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = (new java.text.DecimalFormat("### ###")
+								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+								+ " / \u00A74100 000");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message_2 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 60;
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_overlay_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 			} else {
@@ -110,11 +160,35 @@ public class CraftingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + (itemstack).getCount() * 15 + " xp " + "\u00A7f| " + "\u00A72"
+													("\u00A7a+" + crafted * 15 + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
+						}
+						{
+							String _setval = ("\u00A7a+" + crafted * 15 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
 						}
 					}
 				}

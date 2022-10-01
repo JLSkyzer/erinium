@@ -87,6 +87,30 @@ public class MineProcedure {
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 						+ " / 100.000")), (true));
 			}
+			{
+				String _setval = ("\u00A7a+" + 1 + " xp ");
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.won_xp_message = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				String _setval = (new java.text.DecimalFormat("### ###")
+						.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+						+ " / \u00A74100 000");
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.won_xp_message_2 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				double _setval = 60;
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.won_xp_overlay_cooldown = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 5) {
@@ -109,6 +133,30 @@ public class MineProcedure {
 														+ " / 100.000")),
 										(true));
 					}
+					{
+						String _setval = ("\u00A7a+" + 30 + " xp ");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = (new java.text.DecimalFormat("### ###")
+								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+								+ " / \u00A74100 000");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message_2 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 60;
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_overlay_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -127,6 +175,30 @@ public class MineProcedure {
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
+					}
+					{
+						String _setval = ("\u00A7a+" + 320 + " xp ");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = (new java.text.DecimalFormat("### ###")
+								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+								+ " / \u00A74100 000");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message_2 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 60;
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_overlay_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 			} else {
@@ -151,6 +223,30 @@ public class MineProcedure {
 															+ " / 100.000")),
 											(true));
 						}
+						{
+							String _setval = ("\u00A7a+" + 8 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -170,6 +266,30 @@ public class MineProcedure {
 															+ " / 100.000")),
 											(true));
 						}
+						{
+							String _setval = ("\u00A7a+" + 170 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == DraniteOreBlock.block) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -188,6 +308,30 @@ public class MineProcedure {
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
+						}
+						{
+							String _setval = ("\u00A7a+" + 240 + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("### ###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74100 000");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
 						}
 					}
 				} else {
@@ -211,6 +355,30 @@ public class MineProcedure {
 														+ " / 100.000")),
 												(true));
 							}
+							{
+								String _setval = ("\u00A7a+" + 65 + " xp ");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								String _setval = (new java.text.DecimalFormat("### ###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / \u00A74100 000");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message_2 = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 60;
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_overlay_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
 						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == DraniteOreBlock.block) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -228,6 +396,30 @@ public class MineProcedure {
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
+							}
+							{
+								String _setval = ("\u00A7a+" + 120 + " xp ");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								String _setval = (new java.text.DecimalFormat("### ###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / \u00A74100 000");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message_2 = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 60;
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_overlay_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
 							}
 						}
 					} else {
@@ -250,6 +442,30 @@ public class MineProcedure {
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 													(true));
+								}
+								{
+									String _setval = ("\u00A7a+" + 20 + " xp ");
+									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.won_xp_message = _setval;
+										capability.syncPlayerVariables(entity);
+									});
+								}
+								{
+									String _setval = (new java.text.DecimalFormat("### ###")
+											.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+											+ " / \u00A74100 000");
+									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.won_xp_message_2 = _setval;
+										capability.syncPlayerVariables(entity);
+									});
+								}
+								{
+									double _setval = 60;
+									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.won_xp_overlay_cooldown = _setval;
+										capability.syncPlayerVariables(entity);
+									});
 								}
 							}
 						}

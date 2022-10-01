@@ -74,7 +74,11 @@ public class RankXpOverlayOverlay {
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
 						"" + ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).won_xp_message) + "",
-						(int) screenX + 2, (int) screenY + 19, -1);
+						(int) screenX + 2, (int) screenY + 2, -1);
+				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
+						"" + ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new EriniumModVariables.PlayerVariables())).won_xp_message_2) + "",
+						(int) screenX + 2, (int) screenY + 16, -1);
 			}
 			RenderSystem.depthMask(true);
 			RenderSystem.enableDepthTest();
