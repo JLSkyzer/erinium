@@ -31,6 +31,10 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.procedures.GoMoonProcedure;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 @EriniumModElements.ModElement.Tag
 public class PlanetTeleporterPanelGui extends EriniumModElements.ModElement {
 	public static HashMap guistate = new HashMap();

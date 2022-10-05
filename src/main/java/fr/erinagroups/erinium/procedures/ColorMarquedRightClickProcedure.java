@@ -28,6 +28,15 @@ import fr.erinagroups.erinium.block.AlphaMarquedBlock;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.p;
+import com.github.hexomod.worldeditcuife3.k;
+import com.github.hexomod.worldeditcuife3.j;
+import com.github.hexomod.worldeditcuife3.i;
+import com.github.hexomod.worldeditcuife3.e;
+
 public class ColorMarquedRightClickProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

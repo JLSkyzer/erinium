@@ -61,6 +61,14 @@ import fr.erinagroups.erinium.procedures.SciningCactusAdditionalGenerationCondit
 import fr.erinagroups.erinium.itemgroup.SciningTabItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.s;
+import com.github.hexomod.worldeditcuife3.bs;
+import com.github.hexomod.worldeditcuife3.br;
+import com.github.hexomod.worldeditcuife3.bp;
+
 @EriniumModElements.ModElement.Tag
 public class SciningCactusBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:scining_cactus")

@@ -24,6 +24,10 @@ import fr.erinagroups.erinium.entity.EriniumSkeletonBossEntity;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
+import com.github.hexomod.worldeditcuife3.er;
+import com.github.hexomod.worldeditcuife3.T;
+import com.github.hexomod.worldeditcuife3.M;
+
 @OnlyIn(Dist.CLIENT)
 public class EriniumSkeletonBossRenderer {
 	public static class ModelRegisterHandler {

@@ -22,6 +22,13 @@ import fr.erinagroups.erinium.EriniumMod;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.e;
+import com.github.hexomod.worldeditcuife3.c;
+import com.github.hexomod.worldeditcuife3.b;
+
 @OnlyIn(Dist.CLIENT)
 public class RankGuiWindow extends ContainerScreen<RankGui.GuiContainerMod> {
 	private World world;

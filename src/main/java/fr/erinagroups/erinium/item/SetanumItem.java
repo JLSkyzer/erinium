@@ -29,6 +29,10 @@ import fr.erinagroups.erinium.procedures.SetanumBodyTickEventProcedure;
 import fr.erinagroups.erinium.itemgroup.SetanumTabItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 @EriniumModElements.ModElement.Tag
 public class SetanumItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:setanum_helmet")

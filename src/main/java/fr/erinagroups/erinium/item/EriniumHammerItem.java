@@ -22,6 +22,10 @@ import fr.erinagroups.erinium.procedures.BasicHammerProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumTabItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 @EriniumModElements.ModElement.Tag
 public class EriniumHammerItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:erinium_hammer")

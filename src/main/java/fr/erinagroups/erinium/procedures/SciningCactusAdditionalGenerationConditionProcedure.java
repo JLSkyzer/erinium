@@ -9,6 +9,10 @@ import fr.erinagroups.erinium.block.SciningSandBlock;
 import fr.erinagroups.erinium.block.SciningCactusBlock;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 public class SciningCactusAdditionalGenerationConditionProcedure {
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

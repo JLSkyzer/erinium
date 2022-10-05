@@ -28,6 +28,11 @@ import fr.erinagroups.erinium.item.SoulBottle2Item;
 import fr.erinagroups.erinium.item.SoulBottle1Item;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.p;
+import com.github.hexomod.worldeditcuife3.k;
+import com.github.hexomod.worldeditcuife3.j;
+import com.github.hexomod.worldeditcuife3.i;
+
 public class KillEntityWithSoulBottleProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

@@ -61,6 +61,12 @@ import fr.erinagroups.erinium.procedures.EggFactoryOnBlockRightClickedProcedure;
 import fr.erinagroups.erinium.gui.EggFactoryGuiGui;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.s;
+import com.github.hexomod.worldeditcuife3.T;
+
 @EriniumModElements.ModElement.Tag
 public class EggFactoryBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:egg_factory")

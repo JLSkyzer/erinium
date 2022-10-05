@@ -43,6 +43,8 @@ import fr.erinagroups.erinium.itemgroup.SpaceUpdateBlocksTabItemGroup;
 import fr.erinagroups.erinium.item.DraniteGemItem;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.s;
+
 @EriniumModElements.ModElement.Tag
 public class DraniteOreBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:dranite_ore")

@@ -12,6 +12,10 @@ import java.util.HashMap;
 
 import com.mojang.brigadier.context.CommandContext;
 
+import com.github.hexomod.worldeditcuife3.k;
+import com.github.hexomod.worldeditcuife3.j;
+import com.github.hexomod.worldeditcuife3.i;
+
 public class ExecuteCommandProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

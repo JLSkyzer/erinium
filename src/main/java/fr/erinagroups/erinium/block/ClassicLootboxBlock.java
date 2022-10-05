@@ -30,6 +30,11 @@ import fr.erinagroups.erinium.procedures.ClassicLootboxBlockDestroyedByPlayerPro
 import fr.erinagroups.erinium.itemgroup.LootBoxTabItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.s;
+
 @EriniumModElements.ModElement.Tag
 public class ClassicLootboxBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:classic_lootbox")

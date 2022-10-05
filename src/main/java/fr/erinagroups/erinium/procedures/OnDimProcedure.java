@@ -27,6 +27,10 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.k;
+import com.github.hexomod.worldeditcuife3.j;
+import com.github.hexomod.worldeditcuife3.i;
+
 public class OnDimProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

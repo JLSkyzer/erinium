@@ -13,6 +13,10 @@ import java.util.Comparator;
 import fr.erinagroups.erinium.entity.TreeBossEntity;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 public class TreeBossNaturalEntitySpawningConditionProcedure {
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

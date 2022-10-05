@@ -14,6 +14,10 @@ import fr.erinagroups.erinium.item.SetanumNuggetsItem;
 import fr.erinagroups.erinium.item.SetanumIngotItem;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 public class SetanumStage3BlockDestroyedByPlayerProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

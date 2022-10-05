@@ -20,6 +20,8 @@ import java.util.Collections;
 
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.s;
+
 @EriniumModElements.ModElement.Tag
 public class LeatherBlockBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:leather_block")

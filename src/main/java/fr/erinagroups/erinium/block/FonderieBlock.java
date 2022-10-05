@@ -60,6 +60,12 @@ import java.util.Collections;
 import fr.erinagroups.erinium.itemgroup.UsinageTabItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.s;
+import com.github.hexomod.worldeditcuife3.bs;
+import com.github.hexomod.worldeditcuife3.br;
+import com.github.hexomod.worldeditcuife3.bp;
+import com.github.hexomod.worldeditcuife3.T;
+
 @EriniumModElements.ModElement.Tag
 public class FonderieBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:fonderie")

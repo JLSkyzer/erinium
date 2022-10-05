@@ -29,6 +29,10 @@ import fr.erinagroups.erinium.procedures.SpectiumArmorBodyTickEventProcedure;
 import fr.erinagroups.erinium.itemgroup.SpaceUpdateItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 @EriniumModElements.ModElement.Tag
 public class SpectiumArmorItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:spectium_armor_helmet")

@@ -23,6 +23,8 @@ import java.util.Collections;
 import fr.erinagroups.erinium.itemgroup.SciningTabItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.s;
+
 @EriniumModElements.ModElement.Tag
 public class SciningSandBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:scining_sand")

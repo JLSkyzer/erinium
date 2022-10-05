@@ -37,6 +37,11 @@ import fr.erinagroups.erinium.EriniumModElements;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.i;
+
 @EriniumModElements.ModElement.Tag
 public class BlockReplacerItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:block_replacer")

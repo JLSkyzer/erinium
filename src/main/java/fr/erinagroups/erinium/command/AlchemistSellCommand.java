@@ -22,6 +22,10 @@ import fr.erinagroups.erinium.procedures.AlchemistSellCommandExecutedProcedure;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 @Mod.EventBusSubscriber
 public class AlchemistSellCommand {
 	@SubscribeEvent

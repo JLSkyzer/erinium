@@ -18,6 +18,10 @@ import fr.erinagroups.erinium.entity.TreeBossEntity;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 @OnlyIn(Dist.CLIENT)
 public class TreeBossRenderer {
 	public static class ModelRegisterHandler {

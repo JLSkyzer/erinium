@@ -35,6 +35,14 @@ import fr.erinagroups.erinium.procedures.EriniumCobwebUpdateTickProcedure;
 import fr.erinagroups.erinium.procedures.EriniumCobwebEntityCollidesInTheBlockProcedure;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.s;
+import com.github.hexomod.worldeditcuife3.bs;
+import com.github.hexomod.worldeditcuife3.br;
+import com.github.hexomod.worldeditcuife3.bp;
+
 @EriniumModElements.ModElement.Tag
 public class EriniumCobwebBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:erinium_cobweb")

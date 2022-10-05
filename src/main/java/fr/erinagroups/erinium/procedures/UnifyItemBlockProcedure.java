@@ -26,6 +26,11 @@ import fr.erinagroups.erinium.block.LeadOreBlock;
 import fr.erinagroups.erinium.block.CopperOreBlock;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.p;
+import com.github.hexomod.worldeditcuife3.k;
+import com.github.hexomod.worldeditcuife3.j;
+import com.github.hexomod.worldeditcuife3.i;
+
 public class UnifyItemBlockProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

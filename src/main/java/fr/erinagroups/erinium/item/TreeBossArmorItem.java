@@ -29,6 +29,10 @@ import fr.erinagroups.erinium.procedures.TreeBossBootsProcedure;
 import fr.erinagroups.erinium.procedures.TreeBossBodyProcedure;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 @EriniumModElements.ModElement.Tag
 public class TreeBossArmorItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:tree_boss_armor_helmet")

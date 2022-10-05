@@ -20,6 +20,8 @@ import java.util.Collections;
 
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.s;
+
 @EriniumModElements.ModElement.Tag
 public class BlackBrickBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:black_brick")

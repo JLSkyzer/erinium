@@ -15,6 +15,11 @@ import fr.erinagroups.erinium.block.SetanumStage1Block;
 import fr.erinagroups.erinium.block.SetanumStage0Block;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.e;
+
 public class SetanumPlantsGrowProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -9,6 +9,9 @@ import java.util.HashMap;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.s;
+import com.github.hexomod.worldeditcuife3.e;
+
 public class SetXProceduresProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

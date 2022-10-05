@@ -13,6 +13,10 @@ import java.util.Map;
 
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 public class WizardEntityDiesProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

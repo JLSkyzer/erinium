@@ -74,6 +74,15 @@ import fr.erinagroups.erinium.itemgroup.SpaceUpdateBlocksTabItemGroup;
 import fr.erinagroups.erinium.gui.PlanetTeleporterPanelGui;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.s;
+import com.github.hexomod.worldeditcuife3.bs;
+import com.github.hexomod.worldeditcuife3.br;
+import com.github.hexomod.worldeditcuife3.bp;
+import com.github.hexomod.worldeditcuife3.T;
+
 @EriniumModElements.ModElement.Tag
 public class SpatialTeleporterPanelBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:spatial_teleporter_panel")

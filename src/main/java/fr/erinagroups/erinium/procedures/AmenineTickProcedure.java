@@ -17,6 +17,11 @@ import fr.erinagroups.erinium.block.ExtractorAmenine1Block;
 import fr.erinagroups.erinium.block.AmenineLogsBlock;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.e;
+
 public class AmenineTickProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

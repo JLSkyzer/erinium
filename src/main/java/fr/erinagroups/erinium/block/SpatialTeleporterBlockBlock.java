@@ -20,6 +20,8 @@ import java.util.Collections;
 import fr.erinagroups.erinium.itemgroup.SpaceUpdateBlocksTabItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.s;
+
 @EriniumModElements.ModElement.Tag
 public class SpatialTeleporterBlockBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:spatial_teleporter_block")

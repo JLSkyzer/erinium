@@ -30,6 +30,16 @@ import net.minecraft.util.Mirror;
 
 import java.util.Random;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+import com.github.hexomod.worldeditcuife3.k;
+import com.github.hexomod.worldeditcuife3.j;
+import com.github.hexomod.worldeditcuife3.i;
+import com.github.hexomod.worldeditcuife3.ck;
+import com.github.hexomod.worldeditcuife3.ci;
+import com.github.hexomod.worldeditcuife3.a;
+
 @Mod.EventBusSubscriber
 public class MoonVillageStructure {
 	private static Feature<NoFeatureConfig> feature = null;

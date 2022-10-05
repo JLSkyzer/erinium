@@ -24,6 +24,10 @@ import fr.erinagroups.erinium.procedures.ItemPosRightClickedOnBlockProcedure;
 import fr.erinagroups.erinium.itemgroup.AdminZoneItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
+
 @EriniumModElements.ModElement.Tag
 public class ItemPosItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:item_pos")

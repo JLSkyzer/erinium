@@ -21,6 +21,10 @@ import fr.erinagroups.erinium.item.CopperIngotItem;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
+import com.github.hexomod.worldeditcuife3.k;
+import com.github.hexomod.worldeditcuife3.j;
+import com.github.hexomod.worldeditcuife3.i;
+
 public class SmeltingProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
