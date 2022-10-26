@@ -35,7 +35,7 @@ public class DeltaMarquedBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public DeltaMarquedBlock(EriniumModElements instance) {
-		super(instance, 388);
+		super(instance, 442);
 	}
 
 	@Override

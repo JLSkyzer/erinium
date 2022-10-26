@@ -35,7 +35,7 @@ public class BetaMarquedBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public BetaMarquedBlock(EriniumModElements instance) {
-		super(instance, 386);
+		super(instance, 440);
 	}
 
 	@Override

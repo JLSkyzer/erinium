@@ -8,7 +8,7 @@
     "name": "§7Silver Ingot",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "CUSTOM:SpaceUpdateItems"
+      "value": "CUSTOM:EriniumItems"
     },
     "stackSize": 64,
     "enchantability": 0,

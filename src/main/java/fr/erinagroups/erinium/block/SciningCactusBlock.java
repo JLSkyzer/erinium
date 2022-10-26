@@ -58,7 +58,7 @@ import fr.erinagroups.erinium.procedures.SciningCactusUpdateTickProcedure;
 import fr.erinagroups.erinium.procedures.SciningCactusNeighbourBlockChangesProcedure;
 import fr.erinagroups.erinium.procedures.SciningCactusEntityCollidesInTheBlockProcedure;
 import fr.erinagroups.erinium.procedures.SciningCactusAdditionalGenerationConditionProcedure;
-import fr.erinagroups.erinium.itemgroup.SciningTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -75,7 +75,7 @@ public class SciningCactusBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public SciningCactusBlock(EriniumModElements instance) {
-		super(instance, 20);
+		super(instance, 108);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -83,7 +83,8 @@ public class SciningCactusBlock extends EriniumModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(SciningTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

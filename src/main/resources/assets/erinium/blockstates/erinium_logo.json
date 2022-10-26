@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "erinium:block/erinium_logo"
+    },
+    "facing=east": {
+      "model": "erinium:block/erinium_logo",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "erinium:block/erinium_logo",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "erinium:block/erinium_logo",
+      "y": 270
+    }
+  }
+}

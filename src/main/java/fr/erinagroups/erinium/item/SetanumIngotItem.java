@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
 
-import fr.erinagroups.erinium.itemgroup.SetanumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -18,7 +18,7 @@ public class SetanumIngotItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public SetanumIngotItem(EriniumModElements instance) {
-		super(instance, 335);
+		super(instance, 26);
 	}
 
 	@Override
@@ -28,7 +28,7 @@ public class SetanumIngotItem extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(SetanumTabItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("setanum_ingot");
 		}
 

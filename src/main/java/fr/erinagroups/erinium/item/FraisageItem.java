@@ -24,7 +24,7 @@ public class FraisageItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public FraisageItem(EriniumModElements instance) {
-		super(instance, 311);
+		super(instance, 160);
 	}
 
 	@Override

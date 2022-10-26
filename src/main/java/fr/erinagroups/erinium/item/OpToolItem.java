@@ -26,7 +26,7 @@ public class OpToolItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public OpToolItem(EriniumModElements instance) {
-		super(instance, 8);
+		super(instance, 148);
 	}
 
 	@Override

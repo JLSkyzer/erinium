@@ -27,7 +27,7 @@ import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.HomeTeleporterClickOnBlockProcedure;
 import fr.erinagroups.erinium.procedures.HomeTeleportInventoryTickProcedure;
-import fr.erinagroups.erinium.itemgroup.SpaceUpdateItemsItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -40,7 +40,7 @@ public class HomeTeleporterItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public HomeTeleporterItem(EriniumModElements instance) {
-		super(instance, 155);
+		super(instance, 23);
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class HomeTeleporterItem extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(SpaceUpdateItemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(EriniumToolsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
 			setRegistryName("home_teleporter");
 		}
 

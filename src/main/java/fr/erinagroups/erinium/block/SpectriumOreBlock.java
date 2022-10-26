@@ -38,7 +38,7 @@ import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
-import fr.erinagroups.erinium.itemgroup.SpaceUpdateBlocksTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.item.SpectriumGemItem;
 import fr.erinagroups.erinium.EriniumModElements;
 
@@ -50,7 +50,7 @@ public class SpectriumOreBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public SpectriumOreBlock(EriniumModElements instance) {
-		super(instance, 226);
+		super(instance, 90);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -58,8 +58,8 @@ public class SpectriumOreBlock extends EriniumModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(
-				() -> new BlockItem(block, new Item.Properties().group(SpaceUpdateBlocksTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	public static class CustomBlock extends Block {

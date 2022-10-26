@@ -47,7 +47,7 @@ public class PresentationGuiGui extends EriniumModElements.ModElement {
 	private static ContainerType<GuiContainerMod> containerType = null;
 
 	public PresentationGuiGui(EriniumModElements instance) {
-		super(instance, 102);
+		super(instance, 248);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,

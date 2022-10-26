@@ -11,7 +11,6 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,6 +31,7 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.procedures.BlockReplacerToolInInventoryTickProcedure;
 import fr.erinagroups.erinium.procedures.BlockReplacerRightclickedOnBlockProcedure;
 import fr.erinagroups.erinium.procedures.BlockReplacerItemIsCraftedsmeltedProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.google.common.collect.Multimap;
@@ -48,7 +48,7 @@ public class BlockReplacerItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public BlockReplacerItem(EriniumModElements instance) {
-		super(instance, 435);
+		super(instance, 19);
 	}
 
 	@Override
@@ -111,7 +111,7 @@ public class BlockReplacerItem extends EriniumModElements.ModElement {
 
 	private static class ItemToolCustom extends Item {
 		protected ItemToolCustom() {
-			super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(0).isImmuneToFire());
+			super(new Item.Properties().group(EriniumToolsItemGroup.tab).maxDamage(0).isImmuneToFire());
 		}
 
 		@Override

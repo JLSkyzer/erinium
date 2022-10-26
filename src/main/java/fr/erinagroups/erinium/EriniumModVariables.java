@@ -34,6 +34,8 @@ import net.minecraft.block.BlockState;
 
 import java.util.function.Supplier;
 
+import java.io.File;
+
 import com.github.hexomod.worldeditcuife3.s;
 import com.github.hexomod.worldeditcuife3.T;
 
@@ -49,6 +51,8 @@ public class EriniumModVariables {
 	private void init(FMLCommonSetupEvent event) {
 		CapabilityManager.INSTANCE.register(PlayerVariables.class, new PlayerVariablesStorage(), PlayerVariables::new);
 	}
+
+	public static File config = new File("");
 
 	@SubscribeEvent
 	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
@@ -77,6 +81,15 @@ public class EriniumModVariables {
 	public static class WorldVariables extends WorldSavedData {
 		public static final String DATA_NAME = "erinium_worldvars";
 		public boolean tpdim_toggle = false;
+		public double duplicatePickaxeMaxFortune = 3.0;
+		public boolean use_planet_spawn = false;
+		public double moon_x = 0;
+		public double moon_y = 120.0;
+		public double moon_z = 0;
+		public double candy_x = 0;
+		public double candy_y = 120.0;
+		public double candy_z = 0.0;
+		public boolean rtpdim_toggle = false;
 
 		public WorldVariables() {
 			super(DATA_NAME);
@@ -89,11 +102,29 @@ public class EriniumModVariables {
 		@Override
 		public void read(CompoundNBT nbt) {
 			tpdim_toggle = nbt.getBoolean("tpdim_toggle");
+			duplicatePickaxeMaxFortune = nbt.getDouble("duplicatePickaxeMaxFortune");
+			use_planet_spawn = nbt.getBoolean("use_planet_spawn");
+			moon_x = nbt.getDouble("moon_x");
+			moon_y = nbt.getDouble("moon_y");
+			moon_z = nbt.getDouble("moon_z");
+			candy_x = nbt.getDouble("candy_x");
+			candy_y = nbt.getDouble("candy_y");
+			candy_z = nbt.getDouble("candy_z");
+			rtpdim_toggle = nbt.getBoolean("rtpdim_toggle");
 		}
 
 		@Override
 		public CompoundNBT write(CompoundNBT nbt) {
 			nbt.putBoolean("tpdim_toggle", tpdim_toggle);
+			nbt.putDouble("duplicatePickaxeMaxFortune", duplicatePickaxeMaxFortune);
+			nbt.putBoolean("use_planet_spawn", use_planet_spawn);
+			nbt.putDouble("moon_x", moon_x);
+			nbt.putDouble("moon_y", moon_y);
+			nbt.putDouble("moon_z", moon_z);
+			nbt.putDouble("candy_x", candy_x);
+			nbt.putDouble("candy_y", candy_y);
+			nbt.putDouble("candy_z", candy_z);
+			nbt.putBoolean("rtpdim_toggle", rtpdim_toggle);
 			return nbt;
 		}
 
@@ -225,10 +256,6 @@ public class EriniumModVariables {
 			nbt.putDouble("percent", instance.percent);
 			nbt.putString("playerList", instance.playerList);
 			nbt.putString("serverLanguage", instance.serverLanguage);
-			nbt.putString("stringFarmerXp", instance.stringFarmerXp);
-			nbt.putString("stringMinerXp", instance.stringMinerXp);
-			nbt.putString("stringHunterXp", instance.stringHunterXp);
-			nbt.putString("stringAlchimiste", instance.stringAlchimiste);
 			nbt.putDouble("PlayerHealth", instance.PlayerHealth);
 			nbt.putBoolean("PresentationToggle", instance.PresentationToggle);
 			nbt.putString("presentationGui", instance.presentationGui);
@@ -266,10 +293,6 @@ public class EriniumModVariables {
 			instance.percent = nbt.getDouble("percent");
 			instance.playerList = nbt.getString("playerList");
 			instance.serverLanguage = nbt.getString("serverLanguage");
-			instance.stringFarmerXp = nbt.getString("stringFarmerXp");
-			instance.stringMinerXp = nbt.getString("stringMinerXp");
-			instance.stringHunterXp = nbt.getString("stringHunterXp");
-			instance.stringAlchimiste = nbt.getString("stringAlchimiste");
 			instance.PlayerHealth = nbt.getDouble("PlayerHealth");
 			instance.PresentationToggle = nbt.getBoolean("PresentationToggle");
 			instance.presentationGui = nbt.getString("presentationGui");
@@ -305,10 +328,6 @@ public class EriniumModVariables {
 		public double percent = 0;
 		public String playerList = "\"\"";
 		public String serverLanguage = "FR";
-		public String stringFarmerXp = "\"\"";
-		public String stringMinerXp = "\"\"";
-		public String stringHunterXp = "\"\"";
-		public String stringAlchimiste = "\"\"";
 		public double PlayerHealth = 0;
 		public boolean PresentationToggle = false;
 		public String presentationGui = "\"\"";
@@ -374,10 +393,6 @@ public class EriniumModVariables {
 		clone.percent = original.percent;
 		clone.playerList = original.playerList;
 		clone.serverLanguage = original.serverLanguage;
-		clone.stringFarmerXp = original.stringFarmerXp;
-		clone.stringMinerXp = original.stringMinerXp;
-		clone.stringHunterXp = original.stringHunterXp;
-		clone.stringAlchimiste = original.stringAlchimiste;
 		clone.presentationGui = original.presentationGui;
 		clone.togglePlanetOverlay = original.togglePlanetOverlay;
 		clone.planete = original.planete;
@@ -435,10 +450,6 @@ public class EriniumModVariables {
 					variables.percent = message.data.percent;
 					variables.playerList = message.data.playerList;
 					variables.serverLanguage = message.data.serverLanguage;
-					variables.stringFarmerXp = message.data.stringFarmerXp;
-					variables.stringMinerXp = message.data.stringMinerXp;
-					variables.stringHunterXp = message.data.stringHunterXp;
-					variables.stringAlchimiste = message.data.stringAlchimiste;
 					variables.PlayerHealth = message.data.PlayerHealth;
 					variables.PresentationToggle = message.data.PresentationToggle;
 					variables.presentationGui = message.data.presentationGui;

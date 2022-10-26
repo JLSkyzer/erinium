@@ -10,7 +10,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.entity.LivingEntity;
@@ -24,7 +23,12 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.BreakBlockProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
+
+import com.github.hexomod.worldeditcuife3.z;
+import com.github.hexomod.worldeditcuife3.y;
+import com.github.hexomod.worldeditcuife3.x;
 
 @EriniumModElements.ModElement.Tag
 public class DuplicatePickaxeItem extends EriniumModElements.ModElement {
@@ -32,7 +36,7 @@ public class DuplicatePickaxeItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public DuplicatePickaxeItem(EriniumModElements instance) {
-		super(instance, 397);
+		super(instance, 135);
 	}
 
 	@Override
@@ -61,7 +65,7 @@ public class DuplicatePickaxeItem extends EriniumModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
-		}, 1, -3f, new Item.Properties().group(ItemGroup.TOOLS)) {
+		}, 1, -3f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
 			@Override
 			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 				super.addInformation(itemstack, world, list, flag);

@@ -26,7 +26,7 @@ import fr.erinagroups.erinium.procedures.SpectiumArmorLeggingsTickEventProcedure
 import fr.erinagroups.erinium.procedures.SpectiumArmorHelmetTickEventProcedure;
 import fr.erinagroups.erinium.procedures.SpectiumArmorBootsTickEventProcedure;
 import fr.erinagroups.erinium.procedures.SpectiumArmorBodyTickEventProcedure;
-import fr.erinagroups.erinium.itemgroup.SpaceUpdateItemsItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -45,7 +45,7 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 	public static final Item boots = null;
 
 	public SpectiumArmorItem(EriniumModElements instance) {
-		super(instance, 289);
+		super(instance, 5);
 	}
 
 	@Override
@@ -53,17 +53,17 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 39;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 42;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{8, 10, 12, 8}[slot.getIndex()];
+				return new int[]{10, 12, 14, 10}[slot.getIndex()];
 			}
 
 			@Override
 			public int getEnchantability() {
-				return 20;
+				return 25;
 			}
 
 			@Override
@@ -84,15 +84,15 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 
 			@Override
 			public float getToughness() {
-				return 3f;
+				return 6.5f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.2f;
+				return 0.3f;
 			}
 		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(SpaceUpdateItemsItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -109,7 +109,7 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("spectium_armor_helmet"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(SpaceUpdateItemsItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -125,7 +125,7 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("spectium_armor_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(SpaceUpdateItemsItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -141,7 +141,7 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("spectium_armor_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(SpaceUpdateItemsItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";

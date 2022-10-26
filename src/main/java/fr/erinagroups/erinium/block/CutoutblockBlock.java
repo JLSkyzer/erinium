@@ -33,7 +33,7 @@ public class CutoutblockBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public CutoutblockBlock(EriniumModElements instance) {
-		super(instance, 10);
+		super(instance, 150);
 	}
 
 	@Override

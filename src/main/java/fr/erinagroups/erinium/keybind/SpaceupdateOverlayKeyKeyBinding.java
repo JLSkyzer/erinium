@@ -38,7 +38,7 @@ public class SpaceupdateOverlayKeyKeyBinding extends EriniumModElements.ModEleme
 	private KeyBinding keys;
 
 	public SpaceupdateOverlayKeyKeyBinding(EriniumModElements instance) {
-		super(instance, 133);
+		super(instance, 274);
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
 				KeyBindingPressedMessage::handler);
 	}

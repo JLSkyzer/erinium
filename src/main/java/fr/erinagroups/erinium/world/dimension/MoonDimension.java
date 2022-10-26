@@ -32,7 +32,7 @@ import com.github.hexomod.worldeditcuife3.e;
 @EriniumModElements.ModElement.Tag
 public class MoonDimension extends EriniumModElements.ModElement {
 	public MoonDimension(EriniumModElements instance) {
-		super(instance, 184);
+		super(instance, 164);
 	}
 
 	@Override

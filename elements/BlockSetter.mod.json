@@ -42,7 +42,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:SpaceUpdateBlocksTab"
+      "value": "CUSTOM:EriniumBlocks"
     },
     "destroyTool": "Not specified",
     "customDrop": {

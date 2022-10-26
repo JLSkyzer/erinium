@@ -1,0 +1,8 @@
+{
+  "parent": "erinium:custom/candy_bar",
+  "textures": {
+    "all": "erinium:blocks/candy_bar_text",
+    "particle": "erinium:blocks/candy_bar_text",
+    "0": "erinium:blocks/candy_bar_text"
+  }
+}

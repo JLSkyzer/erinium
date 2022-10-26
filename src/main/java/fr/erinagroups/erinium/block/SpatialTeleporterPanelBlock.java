@@ -70,7 +70,7 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-import fr.erinagroups.erinium.itemgroup.SpaceUpdateBlocksTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.gui.PlanetTeleporterPanelGui;
 import fr.erinagroups.erinium.EriniumModElements;
 
@@ -91,15 +91,15 @@ public class SpatialTeleporterPanelBlock extends EriniumModElements.ModElement {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public SpatialTeleporterPanelBlock(EriniumModElements instance) {
-		super(instance, 135);
+		super(instance, 167);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(
-				() -> new BlockItem(block, new Item.Properties().group(SpaceUpdateBlocksTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumMachinesItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	private static class TileEntityRegisterHandler {

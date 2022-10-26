@@ -17,12 +17,12 @@
       {
         "type": "label",
         "data": {
-          "text": "�c�l<VAR:percent> %",
+          "text": "§c§l<VAR:percent> %",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "�c�l<VAR:percent> %",
+          "name": "§c§l<VAR:percent> %",
           "x": 21,
           "y": 63
         }

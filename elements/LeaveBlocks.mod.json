@@ -1,0 +1,23 @@
+{
+  "_fv": 33,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:AmenineLeaves"
+      },
+      {
+        "value": "CUSTOM:EriniumBush"
+      },
+      {
+        "value": "CUSTOM:CandyLeaves"
+      }
+    ],
+    "functions": [],
+    "entities": [],
+    "name": "leaves",
+    "namespace": "minecraft"
+  }
+}

@@ -42,7 +42,7 @@ public class Line1BlockBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public Line1BlockBlock(EriniumModElements instance) {
-		super(instance, 193);
+		super(instance, 151);
 	}
 
 	@Override

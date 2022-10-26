@@ -8,7 +8,7 @@
     "name": "Magic Wand",
     "rarity": "RARE",
     "creativeTab": {
-      "value": "MISC"
+      "value": "CUSTOM:EriniumTools"
     },
     "stackSize": 1,
     "enchantability": 0,

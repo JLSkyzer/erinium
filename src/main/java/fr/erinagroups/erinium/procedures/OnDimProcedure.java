@@ -92,6 +92,31 @@ public class OnDimProcedure {
 				ErrorDonthaveLevelProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
+		} else if ((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
+				new ResourceLocation("erinium:candy_dimension")))) {
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 10)) {
+				{
+					Entity _ent = entity;
+					if (!_ent.world.isRemote && _ent instanceof ServerPlayerEntity) {
+						RegistryKey<World> destinationType = World.OVERWORLD;
+						ServerWorld nextWorld = _ent.getServer().getWorld(destinationType);
+						if (nextWorld != null) {
+							((ServerPlayerEntity) _ent).connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field_241768_e_, 0));
+							((ServerPlayerEntity) _ent).teleport(nextWorld, nextWorld.getSpawnPoint().getX(), nextWorld.getSpawnPoint().getY() + 1,
+									nextWorld.getSpawnPoint().getZ(), _ent.rotationYaw, _ent.rotationPitch);
+							((ServerPlayerEntity) _ent).connection.sendPacket(new SPlayerAbilitiesPacket(((ServerPlayerEntity) _ent).abilities));
+							for (EffectInstance effectinstance : ((ServerPlayerEntity) _ent).getActivePotionEffects()) {
+								((ServerPlayerEntity) _ent).connection.sendPacket(new SPlayEntityEffectPacket(_ent.getEntityId(), effectinstance));
+							}
+							((ServerPlayerEntity) _ent).connection.sendPacket(new SPlaySoundEventPacket(1032, BlockPos.ZERO, 0, false));
+						}
+					}
+				}
+
+				ErrorDonthaveLevelProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			}
 		}
 	}
 }

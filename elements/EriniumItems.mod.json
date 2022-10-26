@@ -1,0 +1,11 @@
+{
+  "_fv": 33,
+  "_type": "tab",
+  "definition": {
+    "name": "§1Erinium §f- §eItems",
+    "icon": {
+      "value": "CUSTOM:EriniumIngot"
+    },
+    "showSearch": false
+  }
+}

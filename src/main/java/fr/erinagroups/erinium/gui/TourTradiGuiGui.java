@@ -47,7 +47,7 @@ public class TourTradiGuiGui extends EriniumModElements.ModElement {
 	private static ContainerType<GuiContainerMod> containerType = null;
 
 	public TourTradiGuiGui(EriniumModElements instance) {
-		super(instance, 314);
+		super(instance, 389);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,

@@ -75,7 +75,7 @@ public class EggFactoryOnBlockRightClickedProcedure {
 		String temp = "";
 		File file = new File("");
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
-		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "settings.json");
+		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "config.json");
 		if (file.exists()) {
 			{
 				try {

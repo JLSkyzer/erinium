@@ -57,7 +57,7 @@ import java.util.stream.IntStream;
 import java.util.List;
 import java.util.Collections;
 
-import fr.erinagroups.erinium.itemgroup.UsinageTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.s;
@@ -74,14 +74,15 @@ public class FonderieBlock extends EriniumModElements.ModElement {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public FonderieBlock(EriniumModElements instance) {
-		super(instance, 313);
+		super(instance, 178);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(UsinageTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumMachinesItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	private static class TileEntityRegisterHandler {

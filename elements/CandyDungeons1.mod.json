@@ -1,0 +1,33 @@
+{
+  "_fv": 33,
+  "_type": "structure",
+  "definition": {
+    "structure": "candy_dungeons1_new",
+    "randomlyRotateStructure": false,
+    "surfaceDetectionType": "First block",
+    "spawnProbability": 500,
+    "minCountPerChunk": 1,
+    "maxCountPerChunk": 1,
+    "spawnLocation": "Ground",
+    "spawnHeightOffset": -19,
+    "spawnXOffset": 0,
+    "spawnZOffset": 0,
+    "spawnWorldTypes": [
+      "CUSTOM:CandyDimension"
+    ],
+    "restrictionBlocks": [
+      {
+        "value": "CUSTOM:CandyGrass"
+      },
+      {
+        "value": "Blocks.GRASS"
+      }
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:CandyBiome"
+      }
+    ],
+    "ignoreBlocks": "STRUCTURE_BLOCK"
+  }
+}

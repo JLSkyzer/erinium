@@ -51,7 +51,7 @@ public class EggFactoryGuiGui extends EriniumModElements.ModElement {
 	private static ContainerType<GuiContainerMod> containerType = null;
 
 	public EggFactoryGuiGui(EriniumModElements instance) {
-		super(instance, 369);
+		super(instance, 430);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,

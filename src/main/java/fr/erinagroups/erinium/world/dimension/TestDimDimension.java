@@ -45,7 +45,7 @@ import com.github.hexomod.worldeditcuife3.e;
 @EriniumModElements.ModElement.Tag
 public class TestDimDimension extends EriniumModElements.ModElement {
 	public TestDimDimension(EriniumModElements instance) {
-		super(instance, 16);
+		super(instance, 163);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

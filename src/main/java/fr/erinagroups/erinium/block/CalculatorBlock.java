@@ -28,7 +28,7 @@ public class CalculatorBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public CalculatorBlock(EriniumModElements instance) {
-		super(instance, 197);
+		super(instance, 153);
 	}
 
 	@Override

@@ -132,7 +132,7 @@ key_key.jei.previousCategory:key.keyboard.page.up:SHIFT
 key_key.jei.nextCategory:key.keyboard.page.down:SHIFT
 key_key.jei.bookmark:key.keyboard.a
 key_key.jei.toggleBookmarkOverlay:key.keyboard.unknown
-soundCategory_master:0.094370864
+soundCategory_master:0.18543047
 soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0

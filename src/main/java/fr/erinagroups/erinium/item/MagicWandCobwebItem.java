@@ -57,7 +57,7 @@ public class MagicWandCobwebItem extends EriniumModElements.ModElement {
 			.size(0.5f, 0.5f)).build("projectile_magic_wand_cobweb").setRegistryName("projectile_magic_wand_cobweb");
 
 	public MagicWandCobwebItem(EriniumModElements instance) {
-		super(instance, 248);
+		super(instance, 188);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new MagicWandCobwebRenderer.ModelRegisterHandler());
 	}
 

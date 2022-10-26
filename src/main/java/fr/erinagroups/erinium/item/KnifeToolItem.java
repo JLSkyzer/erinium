@@ -6,10 +6,10 @@ import net.minecraftforge.registries.ObjectHolder;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -18,7 +18,7 @@ public class KnifeToolItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public KnifeToolItem(EriniumModElements instance) {
-		super(instance, 118);
+		super(instance, 18);
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class KnifeToolItem extends EriniumModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, 1f, new Item.Properties().group(ItemGroup.TOOLS)) {
+		}, 3, 1f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
 			@Override
 			public boolean hasContainerItem() {
 				return true;

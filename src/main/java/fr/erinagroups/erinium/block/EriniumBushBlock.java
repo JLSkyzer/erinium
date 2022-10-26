@@ -68,7 +68,7 @@ public class EriniumBushBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public EriniumBushBlock(EriniumModElements instance) {
-		super(instance, 445);
+		super(instance, 189);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BlockColorRegisterHandler());

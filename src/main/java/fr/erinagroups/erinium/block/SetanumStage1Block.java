@@ -56,7 +56,7 @@ public class SetanumStage1Block extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public SetanumStage1Block(EriniumModElements instance) {
-		super(instance, 329);
+		super(instance, 403);
 	}
 
 	@Override

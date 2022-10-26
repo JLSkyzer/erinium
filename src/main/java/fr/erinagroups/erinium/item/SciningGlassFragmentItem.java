@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
 
-import fr.erinagroups.erinium.itemgroup.SciningTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -18,7 +18,7 @@ public class SciningGlassFragmentItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public SciningGlassFragmentItem(EriniumModElements instance) {
-		super(instance, 21);
+		super(instance, 38);
 	}
 
 	@Override
@@ -28,7 +28,7 @@ public class SciningGlassFragmentItem extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(SciningTabItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("scining_glass_fragment");
 		}
 

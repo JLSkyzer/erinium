@@ -10,7 +10,6 @@ import net.minecraft.world.World;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ArmorItem;
@@ -27,6 +26,7 @@ import fr.erinagroups.erinium.procedures.TreeBossLeggingsProcedure;
 import fr.erinagroups.erinium.procedures.TreeBossHelmetProcedure;
 import fr.erinagroups.erinium.procedures.TreeBossBootsProcedure;
 import fr.erinagroups.erinium.procedures.TreeBossBodyProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -45,7 +45,7 @@ public class TreeBossArmorItem extends EriniumModElements.ModElement {
 	public static final Item boots = null;
 
 	public TreeBossArmorItem(EriniumModElements instance) {
-		super(instance, 457);
+		super(instance, 3);
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public class TreeBossArmorItem extends EriniumModElements.ModElement {
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{10, 12, 14, 10}[slot.getIndex()];
+				return new int[]{6, 10, 10, 6}[slot.getIndex()];
 			}
 
 			@Override
@@ -92,7 +92,7 @@ public class TreeBossArmorItem extends EriniumModElements.ModElement {
 				return 0.3f;
 			}
 		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/tree_boss_armor_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -109,7 +109,7 @@ public class TreeBossArmorItem extends EriniumModElements.ModElement {
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("tree_boss_armor_helmet"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/tree_boss_armor_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -125,7 +125,7 @@ public class TreeBossArmorItem extends EriniumModElements.ModElement {
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("tree_boss_armor_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/tree_boss_armor_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -141,7 +141,7 @@ public class TreeBossArmorItem extends EriniumModElements.ModElement {
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("tree_boss_armor_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/tree_boss_armor_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";

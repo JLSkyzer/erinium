@@ -38,7 +38,6 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.inventory.container.INamedContainerProvider;
@@ -70,6 +69,7 @@ import io.netty.buffer.Unpooled;
 
 import fr.erinagroups.erinium.procedures.FusionStationAlphaUpdateTickProcedure;
 import fr.erinagroups.erinium.procedures.FusionStationAlphaOnBlockRightClickedProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.gui.GuiFusionStationAlphaGui;
 import fr.erinagroups.erinium.EriniumModElements;
 
@@ -90,14 +90,15 @@ public class FusionStationAlphaBlock extends EriniumModElements.ModElement {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public FusionStationAlphaBlock(EriniumModElements instance) {
-		super(instance, 381);
+		super(instance, 181);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.REDSTONE)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumMachinesItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	private static class TileEntityRegisterHandler {

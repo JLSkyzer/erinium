@@ -27,7 +27,7 @@ import fr.erinagroups.erinium.procedures.EriniumArmorLeggingsTickEventProcedure;
 import fr.erinagroups.erinium.procedures.EriniumArmorHelmetTickEventProcedure;
 import fr.erinagroups.erinium.procedures.EriniumArmorBootsTickEventProcedure;
 import fr.erinagroups.erinium.procedures.EriniumArmorBodyTickEventProcedure;
-import fr.erinagroups.erinium.itemgroup.EriniumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -93,7 +93,7 @@ public class EriniumArmorItem extends EriniumModElements.ModElement {
 				return 0.1f;
 			}
 		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumTabItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/erinium_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -110,7 +110,7 @@ public class EriniumArmorItem extends EriniumModElements.ModElement {
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("erinium_armor_helmet"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EriniumTabItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/erinium_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -125,7 +125,7 @@ public class EriniumArmorItem extends EriniumModElements.ModElement {
 				EriniumArmorBodyTickEventProcedure.executeProcedure(Collections.emptyMap());
 			}
 		}.setRegistryName("erinium_armor_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumTabItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/erinium_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -141,7 +141,7 @@ public class EriniumArmorItem extends EriniumModElements.ModElement {
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("erinium_armor_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumTabItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/erinium_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";

@@ -34,7 +34,7 @@ public class ItemPosItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public ItemPosItem(EriniumModElements instance) {
-		super(instance, 198);
+		super(instance, 154);
 	}
 
 	@Override

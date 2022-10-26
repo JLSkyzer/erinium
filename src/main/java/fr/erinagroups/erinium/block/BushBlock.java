@@ -41,7 +41,6 @@ import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
@@ -70,6 +69,7 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.procedures.BushNeighbourBlockChangesProcedure;
 import fr.erinagroups.erinium.procedures.BushCollidesBlockProcedure;
 import fr.erinagroups.erinium.procedures.BushBlockIsPlacedByProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -86,7 +86,7 @@ public class BushBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public BushBlock(EriniumModElements instance) {
-		super(instance, 24);
+		super(instance, 109);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -94,7 +94,8 @@ public class BushBlock extends EriniumModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

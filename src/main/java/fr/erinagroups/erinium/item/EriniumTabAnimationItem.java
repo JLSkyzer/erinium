@@ -17,7 +17,7 @@ public class EriniumTabAnimationItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public EriniumTabAnimationItem(EriniumModElements instance) {
-		super(instance, 108);
+		super(instance, 253);
 	}
 
 	@Override

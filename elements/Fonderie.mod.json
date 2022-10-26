@@ -40,7 +40,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:UsinageTab"
+      "value": "CUSTOM:EriniumMachines"
     },
     "destroyTool": "Not specified",
     "customDrop": {

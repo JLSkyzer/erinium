@@ -8,7 +8,7 @@
     "name": "Tree Boss Shard",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "MISC"
+      "value": "CUSTOM:EriniumItems"
     },
     "stackSize": 64,
     "enchantability": 0,

@@ -15,7 +15,7 @@ import net.minecraft.block.BlockState;
 
 import java.util.List;
 
-import fr.erinagroups.erinium.itemgroup.AlchemistItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -24,7 +24,7 @@ public class AmenineLiquid2Item extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public AmenineLiquid2Item(EriniumModElements instance) {
-		super(instance, 267);
+		super(instance, 52);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class AmenineLiquid2Item extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(AlchemistItemGroup.tab).maxStackSize(8).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxStackSize(8).rarity(Rarity.COMMON));
 			setRegistryName("amenine_liquid_2");
 		}
 

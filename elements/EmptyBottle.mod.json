@@ -8,7 +8,7 @@
     "name": "Empty Bottle",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "CUSTOM:Alchemist"
+      "value": "CUSTOM:EriniumItems"
     },
     "stackSize": 64,
     "enchantability": 0,

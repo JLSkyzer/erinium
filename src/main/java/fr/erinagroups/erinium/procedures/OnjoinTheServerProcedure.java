@@ -18,6 +18,8 @@ import net.minecraft.command.CommandSource;
 import java.util.Map;
 import java.util.HashMap;
 
+import java.io.File;
+
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
@@ -73,6 +75,7 @@ public class OnjoinTheServerProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
+		File file = new File("");
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 			((PlayerEntity) entity).sendStatusMessage(
 					new StringTextComponent("\u00A7bSi vous apercevez un probl\u00E8me, allez signaler le probl\u00E8me sur le github"), (false));
@@ -112,6 +115,11 @@ public class OnjoinTheServerProcedure {
 						"\u00A74[\u00A7bErinium\u00A74] \u00A7eFaite la commande \u00A7a/rankoverlaysettings \u00A7epour changer la position du overlay \"won xp\" qui est utilis\u00E9 quand vous gagner de l'xp pour le syst\u00E8me de rank"),
 						(false));
 			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+						"\u00A74[\u00A7bErinium\u00A74] \u00A7eAstuce, \u00A7aRester appuyer sur \"CTRL\" en cassant une lootbox pour la r\u00E9cuperer"),
+						(false));
+			}
 		} else if (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new EriniumModVariables.PlayerVariables())).serverLanguage).equals("EN")) {
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
@@ -138,6 +146,12 @@ public class OnjoinTheServerProcedure {
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
 						"\u00A74[\u00A7bErinium\u00A74] \u00A7eDo the command \u00A7a/rankoverlaysettings \u00A7eto change the position of the \"won xp\" overlay which is used when you gain xp for the rank system"),
+						(false));
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(
+						new StringTextComponent(
+								"\u00A74[\u00A7bErinium\u00A74] \u00A7eTip, \u00A7aKeep pressing \"CTRL\" when breaking a lootbox to recover it"),
 						(false));
 			}
 		}

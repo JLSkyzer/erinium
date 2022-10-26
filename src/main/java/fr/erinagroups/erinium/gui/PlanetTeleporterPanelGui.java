@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.GoMoonProcedure;
+import fr.erinagroups.erinium.procedures.GoCandyProcedure;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -41,7 +42,7 @@ public class PlanetTeleporterPanelGui extends EriniumModElements.ModElement {
 	private static ContainerType<GuiContainerMod> containerType = null;
 
 	public PlanetTeleporterPanelGui(EriniumModElements instance) {
-		super(instance, 180);
+		super(instance, 306);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -191,9 +192,13 @@ public class PlanetTeleporterPanelGui extends EriniumModElements.ModElement {
 			return;
 		if (buttonID == 0) {
 
-			GoMoonProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			GoMoonProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+		if (buttonID == 1) {
+
+			GoCandyProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 

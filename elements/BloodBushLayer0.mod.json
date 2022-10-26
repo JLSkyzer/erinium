@@ -40,7 +40,7 @@
     "hasGravity": false,
     "isWaterloggable": true,
     "creativeTab": {
-      "value": "DECORATIONS"
+      "value": "CUSTOM:EriniumBlocks"
     },
     "destroyTool": "Not specified",
     "customDrop": {

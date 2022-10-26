@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.AxeItem;
 
-import fr.erinagroups.erinium.itemgroup.EriniumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -18,7 +18,7 @@ public class EriniumAxeItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public EriniumAxeItem(EriniumModElements instance) {
-		super(instance, 6);
+		super(instance, 7);
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class EriniumAxeItem extends EriniumModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.fromStacks(new ItemStack(EriniumIngotItem.block));
 			}
-		}, 1, -3.2999999999999999f, new Item.Properties().group(EriniumTabItemGroup.tab)) {
+		}, 1, -3.2999999999999999f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
 		}.setRegistryName("erinium_axe"));
 	}
 }

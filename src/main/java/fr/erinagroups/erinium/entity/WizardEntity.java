@@ -63,7 +63,7 @@ public class WizardEntity extends EriniumModElements.ModElement {
 			.size(0.6f, 1.8f)).build("wizard").setRegistryName("wizard");
 
 	public WizardEntity(EriniumModElements instance) {
-		super(instance, 319);
+		super(instance, 161);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new WizardRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

@@ -46,7 +46,6 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.procedures.EriniumSkeletonBossEntityDiesProcedure;
 import fr.erinagroups.erinium.item.EriniumArmorItem;
 import fr.erinagroups.erinium.entity.renderer.EriniumSkeletonBossRenderer;
-import fr.erinagroups.erinium.block.EriniumBlockBlock;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -61,7 +60,7 @@ public class EriniumSkeletonBossEntity extends EriniumModElements.ModElement {
 			.size(0.6f, 1.8f)).build("erinium_skeleton_boss").setRegistryName("erinium_skeleton_boss");
 
 	public EriniumSkeletonBossEntity(EriniumModElements instance) {
-		super(instance, 221);
+		super(instance, 158);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EriniumSkeletonBossRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}
@@ -138,11 +137,6 @@ public class EriniumSkeletonBossEntity extends EriniumModElements.ModElement {
 		@Override
 		public boolean canDespawn(double distanceToClosestPlayer) {
 			return false;
-		}
-
-		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
-			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(EriniumBlockBlock.block));
 		}
 
 		@Override

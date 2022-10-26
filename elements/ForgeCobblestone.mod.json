@@ -1,0 +1,17 @@
+{
+  "_fv": 33,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:CandyCobblestone"
+      }
+    ],
+    "functions": [],
+    "entities": [],
+    "name": "cobblestone",
+    "namespace": "forge"
+  }
+}

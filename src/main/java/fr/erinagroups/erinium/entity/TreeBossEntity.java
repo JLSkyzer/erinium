@@ -65,7 +65,7 @@ public class TreeBossEntity extends EriniumModElements.ModElement {
 			.build("tree_boss").setRegistryName("tree_boss");
 
 	public TreeBossEntity(EriniumModElements instance) {
-		super(instance, 453);
+		super(instance, 162);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TreeBossRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

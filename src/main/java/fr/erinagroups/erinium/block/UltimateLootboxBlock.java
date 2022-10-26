@@ -27,7 +27,7 @@ import java.util.Collections;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.UltimateLootboxBlockDestroyedByPlayerProcedure;
-import fr.erinagroups.erinium.itemgroup.LootBoxTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -41,18 +41,19 @@ public class UltimateLootboxBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public UltimateLootboxBlock(EriniumModElements instance) {
-		super(instance, 223);
+		super(instance, 118);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(LootBoxTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1.2f, 1f).setLightLevel(s -> 0).harvestLevel(0)
+			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(5f, 3f).setLightLevel(s -> 0).harvestLevel(0)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool());
 			setRegistryName("ultimate_lootbox");
 		}

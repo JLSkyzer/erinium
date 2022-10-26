@@ -1,0 +1,25 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "image": "2022-10-14_22.08.05",
+        "bois": "bois"
+      },
+      "name": "default"
+    },
+    "jlskyzer_2": {
+      "map": {
+        "image": "2022-07-19_23.17.56",
+        "bois": "bois"
+      },
+      "name": "jlskyzer_2"
+    },
+    "erinium_bg": {
+      "map": {
+        "image": "erinium_background",
+        "bois": "bois"
+      },
+      "name": "erinium_bg"
+    }
+  }
+}

@@ -15,7 +15,7 @@ import net.minecraft.block.BlockState;
 
 import java.util.List;
 
-import fr.erinagroups.erinium.itemgroup.SpaceUpdateItemsItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -24,7 +24,7 @@ public class SpectriumGemItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public SpectriumGemItem(EriniumModElements instance) {
-		super(instance, 225);
+		super(instance, 32);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class SpectriumGemItem extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(SpaceUpdateItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.EPIC));
+			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.EPIC));
 			setRegistryName("spectrium_gem");
 		}
 

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/candy_planks",
+    "up": "erinium:blocks/candy_planks",
+    "north": "erinium:blocks/candy_planks",
+    "east": "erinium:blocks/candy_planks",
+    "south": "erinium:blocks/candy_planks",
+    "west": "erinium:blocks/candy_planks",
+    "particle": "erinium:blocks/candy_planks"
+  }
+}

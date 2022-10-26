@@ -42,7 +42,7 @@ public class House1BlockBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public House1BlockBlock(EriniumModElements instance) {
-		super(instance, 196);
+		super(instance, 152);
 	}
 
 	@Override

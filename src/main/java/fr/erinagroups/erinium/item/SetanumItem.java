@@ -26,7 +26,7 @@ import fr.erinagroups.erinium.procedures.SetanumLeggingsTickEventProcedure;
 import fr.erinagroups.erinium.procedures.SetanumHelmetTickEventProcedure;
 import fr.erinagroups.erinium.procedures.SetanumBootsTickEventProcedure;
 import fr.erinagroups.erinium.procedures.SetanumBodyTickEventProcedure;
-import fr.erinagroups.erinium.itemgroup.SetanumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -45,7 +45,7 @@ public class SetanumItem extends EriniumModElements.ModElement {
 	public static final Item boots = null;
 
 	public SetanumItem(EriniumModElements instance) {
-		super(instance, 340);
+		super(instance, 2);
 	}
 
 	@Override
@@ -53,17 +53,17 @@ public class SetanumItem extends EriniumModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 42;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 39;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{10, 12, 14, 10}[slot.getIndex()];
+				return new int[]{8, 10, 12, 8}[slot.getIndex()];
 			}
 
 			@Override
 			public int getEnchantability() {
-				return 25;
+				return 20;
 			}
 
 			@Override
@@ -84,15 +84,15 @@ public class SetanumItem extends EriniumModElements.ModElement {
 
 			@Override
 			public float getToughness() {
-				return 3.5f;
+				return 5f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.3f;
+				return 0.2f;
 			}
 		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(SetanumTabItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/setanum__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -109,7 +109,7 @@ public class SetanumItem extends EriniumModElements.ModElement {
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("setanum_helmet"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(SetanumTabItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/setanum__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -125,7 +125,7 @@ public class SetanumItem extends EriniumModElements.ModElement {
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("setanum_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(SetanumTabItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/setanum__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
@@ -141,7 +141,7 @@ public class SetanumItem extends EriniumModElements.ModElement {
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("setanum_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(SetanumTabItemGroup.tab)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/setanum__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";

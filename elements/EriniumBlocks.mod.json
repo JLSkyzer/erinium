@@ -1,0 +1,11 @@
+{
+  "_fv": 33,
+  "_type": "tab",
+  "definition": {
+    "name": "§1Erinium §f- §eBlocks",
+    "icon": {
+      "value": "CUSTOM:EriniumBlock"
+    },
+    "showSearch": false
+  }
+}

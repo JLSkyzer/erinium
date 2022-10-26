@@ -8,7 +8,7 @@
     "name": "Setanum Pickaxe",
     "specialInfo": [],
     "creativeTab": {
-      "value": "CUSTOM:SetanumTab"
+      "value": "CUSTOM:EriniumTools"
     },
     "toolType": "Pickaxe",
     "harvestLevel": 4,

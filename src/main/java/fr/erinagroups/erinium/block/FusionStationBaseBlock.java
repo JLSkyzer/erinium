@@ -16,7 +16,6 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -35,6 +34,7 @@ import java.util.Collections;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.FusionStationBaseUpdateTickProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -51,13 +51,14 @@ public class FusionStationBaseBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public FusionStationBaseBlock(EriniumModElements instance) {
-		super(instance, 380);
+		super(instance, 180);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.REDSTONE)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumMachinesItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

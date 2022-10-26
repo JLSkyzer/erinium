@@ -66,7 +66,7 @@ public class MagicalForestBiome extends EriniumModElements.ModElement {
 	public static Biome biome;
 
 	public MagicalForestBiome(EriniumModElements instance) {
-		super(instance, 441);
+		super(instance, 484);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

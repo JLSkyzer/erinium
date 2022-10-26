@@ -9,7 +9,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.util.ITooltipFlag;
@@ -22,6 +21,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.SoulBottle1ItemInInventoryTickProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -34,7 +34,7 @@ public class SoulBottle1Item extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public SoulBottle1Item(EriniumModElements instance) {
-		super(instance, 362);
+		super(instance, 46);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class SoulBottle1Item extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(8).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxStackSize(8).rarity(Rarity.COMMON));
 			setRegistryName("soul_bottle_1");
 		}
 

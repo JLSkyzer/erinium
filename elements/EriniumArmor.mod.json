@@ -23,7 +23,7 @@
       "name": "EriniumArmorBootsTickEvent"
     },
     "creativeTab": {
-      "value": "CUSTOM:EriniumTab"
+      "value": "CUSTOM:EriniumArmors"
     },
     "armorTextureFile": "erinium_armor_",
     "helmetName": "Erinium Helmet",

@@ -59,7 +59,7 @@ public class BombItem extends EriniumModElements.ModElement {
 			.size(0.5f, 0.5f)).build("projectile_bomb").setRegistryName("projectile_bomb");
 
 	public BombItem(EriniumModElements instance) {
-		super(instance, 417);
+		super(instance, 155);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BombRenderer.ModelRegisterHandler());
 	}
 

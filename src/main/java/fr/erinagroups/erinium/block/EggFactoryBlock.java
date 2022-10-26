@@ -30,7 +30,6 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.inventory.container.INamedContainerProvider;
@@ -58,6 +57,7 @@ import java.util.AbstractMap;
 import io.netty.buffer.Unpooled;
 
 import fr.erinagroups.erinium.procedures.EggFactoryOnBlockRightClickedProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.gui.EggFactoryGuiGui;
 import fr.erinagroups.erinium.EriniumModElements;
 
@@ -75,14 +75,15 @@ public class EggFactoryBlock extends EriniumModElements.ModElement {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public EggFactoryBlock(EriniumModElements instance) {
-		super(instance, 370);
+		super(instance, 179);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.REDSTONE)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumMachinesItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	private static class TileEntityRegisterHandler {

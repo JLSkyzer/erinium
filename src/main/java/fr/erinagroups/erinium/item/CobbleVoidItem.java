@@ -9,7 +9,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.util.ITooltipFlag;
@@ -22,6 +21,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.CobbleVoidItemInInventoryTickProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -34,7 +34,7 @@ public class CobbleVoidItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public CobbleVoidItem(EriniumModElements instance) {
-		super(instance, 207);
+		super(instance, 22);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class CobbleVoidItem extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.TOOLS).maxStackSize(1).rarity(Rarity.RARE));
+			super(new Item.Properties().group(EriniumToolsItemGroup.tab).maxStackSize(1).rarity(Rarity.RARE));
 			setRegistryName("cobble_void");
 		}
 

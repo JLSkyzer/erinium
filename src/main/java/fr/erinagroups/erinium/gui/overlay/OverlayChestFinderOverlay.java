@@ -67,7 +67,7 @@ public class OverlayChestFinderOverlay {
 				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -211, posY + -118, 0, 0, 64, 64, 64, 64);
 
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
-						"\uFFFDc\uFFFDl" + ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						"\u00A7c\u00A7l" + ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).percent) + " %",
 						posX + -192, posY + -57, -12829636);
 			}

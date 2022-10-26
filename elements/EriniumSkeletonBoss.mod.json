@@ -78,7 +78,7 @@
     "immuneToWither": true,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "CUSTOM:EriniumBlock"
+      "value": ""
     },
     "livingSound": {
       "value": ""

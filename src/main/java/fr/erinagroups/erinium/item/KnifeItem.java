@@ -7,7 +7,6 @@ import net.minecraft.world.World;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.entity.LivingEntity;
@@ -18,6 +17,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.KnifeLivingEntityIsHitWithToolProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -59,7 +59,7 @@ public class KnifeItem extends EriniumModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, 96f, new Item.Properties().group(ItemGroup.TOOLS)) {
+		}, 3, 96f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
 			@Override
 			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 				boolean retval = super.hitEntity(itemstack, entity, sourceentity);

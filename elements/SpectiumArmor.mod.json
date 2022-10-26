@@ -23,7 +23,7 @@
       "name": "SpectiumArmorBootsTickEvent"
     },
     "creativeTab": {
-      "value": "CUSTOM:SpaceUpdateItems"
+      "value": "CUSTOM:EriniumArmors"
     },
     "armorTextureFile": "spectrium_",
     "helmetName": "Spectium Helmet",
@@ -54,14 +54,14 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 39,
-    "damageValueHelmet": 8,
-    "damageValueBody": 12,
-    "damageValueLeggings": 10,
-    "damageValueBoots": 8,
-    "enchantability": 20,
-    "toughness": 3.0,
-    "knockbackResistance": 0.2,
+    "maxDamage": 42,
+    "damageValueHelmet": 10,
+    "damageValueBody": 14,
+    "damageValueLeggings": 12,
+    "damageValueBoots": 10,
+    "enchantability": 25,
+    "toughness": 6.5,
+    "knockbackResistance": 0.30000000000000004,
     "equipSound": {
       "value": ""
     },

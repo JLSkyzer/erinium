@@ -49,7 +49,7 @@ public class TreeBossProjectileItem extends EriniumModElements.ModElement {
 			.size(0.5f, 0.5f)).build("projectile_tree_boss_projectile").setRegistryName("projectile_tree_boss_projectile");
 
 	public TreeBossProjectileItem(EriniumModElements instance) {
-		super(instance, 456);
+		super(instance, 497);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TreeBossProjectileRenderer.ModelRegisterHandler());
 	}
 

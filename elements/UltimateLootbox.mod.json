@@ -35,12 +35,12 @@
     ],
     "name": "§6Ultimate Lootbox",
     "specialInfo": [],
-    "hardness": 1.2,
-    "resistance": 1.0,
+    "hardness": 5.0,
+    "resistance": 3.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:LootBoxTab"
+      "value": "CUSTOM:EriniumBlocks"
     },
     "destroyTool": "pickaxe",
     "customDrop": {

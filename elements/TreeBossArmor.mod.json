@@ -23,7 +23,7 @@
       "name": "TreeBossBoots"
     },
     "creativeTab": {
-      "value": "COMBAT"
+      "value": "CUSTOM:EriniumArmors"
     },
     "armorTextureFile": "tree_boss_armor",
     "helmetName": "Tree Boss Helmet",
@@ -55,10 +55,10 @@
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
     "maxDamage": 42,
-    "damageValueHelmet": 10,
-    "damageValueBody": 14,
-    "damageValueLeggings": 12,
-    "damageValueBoots": 10,
+    "damageValueHelmet": 6,
+    "damageValueBody": 10,
+    "damageValueLeggings": 10,
+    "damageValueBoots": 6,
     "enchantability": 25,
     "toughness": 3.5,
     "knockbackResistance": 0.30000000000000004,

@@ -54,7 +54,7 @@ public class MoodBiomeBiome extends EriniumModElements.ModElement {
 	public static Biome biome;
 
 	public MoodBiomeBiome(EriniumModElements instance) {
-		super(instance, 183);
+		super(instance, 307);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

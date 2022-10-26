@@ -22,7 +22,6 @@ import java.io.BufferedReader;
 
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.google.gson.JsonObject;
 import com.google.gson.Gson;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -64,8 +63,9 @@ public class RtpdimCommandExecutedProcedure {
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
 		File file = new File("");
-		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
-		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "settings.json");
+		boolean Toggled = false;
+		com.google.gson.JsonObject MainJsonObject = new com.google.gson.JsonObject();
+		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "config.json");
 		if (file.exists()) {
 			{
 				try {
@@ -76,8 +76,8 @@ public class RtpdimCommandExecutedProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-					if (JsonObject.get("toggle.tpdim").getAsBoolean() == true) {
+					MainJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					if (MainJsonObject.get("toggle.tpdim").getAsBoolean() == true) {
 						if (world instanceof ServerWorld) {
 							((World) world).getServer().getCommandManager().handleCommand(
 									new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",

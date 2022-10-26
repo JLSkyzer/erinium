@@ -5,15 +5,13 @@ import net.minecraftforge.registries.ObjectHolder;
 
 import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.Explosion;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ActionResultType;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
@@ -29,13 +27,15 @@ import java.util.Collections;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.EriniumBossSpawnerOnBlockRightClickedProcedure;
-import fr.erinagroups.erinium.itemgroup.SpaceUpdateBlocksTabItemGroup;
+import fr.erinagroups.erinium.procedures.EriniumArmorBodyTickEventProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
 import com.github.hexomod.worldeditcuife3.y;
 import com.github.hexomod.worldeditcuife3.x;
 import com.github.hexomod.worldeditcuife3.s;
+import com.github.hexomod.worldeditcuife3.e;
 
 @EriniumModElements.ModElement.Tag
 public class EriniumBossSpawnerBlock extends EriniumModElements.ModElement {
@@ -43,14 +43,14 @@ public class EriniumBossSpawnerBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public EriniumBossSpawnerBlock(EriniumModElements instance) {
-		super(instance, 230);
+		super(instance, 131);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(
-				() -> new BlockItem(block, new Item.Properties().group(SpaceUpdateBlocksTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	public static class CustomBlock extends Block {
@@ -73,22 +73,40 @@ public class EriniumBossSpawnerBlock extends EriniumModElements.ModElement {
 		}
 
 		@Override
-		public ActionResultType onBlockActivated(BlockState blockstate, World world, BlockPos pos, PlayerEntity entity, Hand hand,
-				BlockRayTraceResult hit) {
-			super.onBlockActivated(blockstate, world, pos, entity, hand, hit);
+		public boolean removedByPlayer(BlockState blockstate, World world, BlockPos pos, PlayerEntity entity, boolean willHarvest, FluidState fluid) {
+			boolean retval = super.removedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			double hitX = hit.getHitVec().x;
-			double hitY = hit.getHitVec().y;
-			double hitZ = hit.getHitVec().z;
-			Direction direction = hit.getFace();
 
 			EriniumBossSpawnerOnBlockRightClickedProcedure.executeProcedure(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			return ActionResultType.SUCCESS;
+			return retval;
+		}
+
+		@Override
+		public void onExplosionDestroy(World world, BlockPos pos, Explosion e) {
+			super.onExplosionDestroy(world, pos, e);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+
+			EriniumArmorBodyTickEventProcedure.executeProcedure(Collections.emptyMap());
+		}
+
+		@Override
+		public void onBlockClicked(BlockState blockstate, World world, BlockPos pos, PlayerEntity entity) {
+			super.onBlockClicked(blockstate, world, pos, entity);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+
+			EriniumBossSpawnerOnBlockRightClickedProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

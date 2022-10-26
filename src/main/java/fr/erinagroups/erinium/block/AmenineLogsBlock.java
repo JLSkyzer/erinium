@@ -47,7 +47,7 @@ import java.util.stream.IntStream;
 import java.util.List;
 import java.util.Collections;
 
-import fr.erinagroups.erinium.itemgroup.AlchemistItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.s;
@@ -61,14 +61,15 @@ public class AmenineLogsBlock extends EriniumModElements.ModElement {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public AmenineLogsBlock(EriniumModElements instance) {
-		super(instance, 263);
+		super(instance, 120);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(AlchemistItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	private static class TileEntityRegisterHandler {

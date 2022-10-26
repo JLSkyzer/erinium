@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
 
-import fr.erinagroups.erinium.itemgroup.EriniumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -18,7 +18,7 @@ public class EriniumStickItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public EriniumStickItem(EriniumModElements instance) {
-		super(instance, 400);
+		super(instance, 57);
 	}
 
 	@Override
@@ -28,7 +28,7 @@ public class EriniumStickItem extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(EriniumTabItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("erinium_stick");
 		}
 

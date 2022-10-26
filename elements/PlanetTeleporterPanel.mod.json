@@ -33,6 +33,20 @@
           "x": 27,
           "y": 63
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "§5Candy Dimension",
+          "onClick": {
+            "name": "GoCandy"
+          },
+          "width": 81,
+          "height": 20,
+          "name": "§5Candy Dimension",
+          "x": 27,
+          "y": 99
+        }
       }
     ],
     "gridSettings": {

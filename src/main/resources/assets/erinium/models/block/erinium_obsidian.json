@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/erinium_obsidian",
+    "up": "erinium:blocks/erinium_obsidian",
+    "north": "erinium:blocks/erinium_obsidian",
+    "east": "erinium:blocks/erinium_obsidian",
+    "south": "erinium:blocks/erinium_obsidian",
+    "west": "erinium:blocks/erinium_obsidian",
+    "particle": "erinium:blocks/erinium_obsidian"
+  }
+}

@@ -61,7 +61,7 @@ public class SciningBiomeBiome extends EriniumModElements.ModElement {
 	public static Biome biome;
 
 	public SciningBiomeBiome(EriniumModElements instance) {
-		super(instance, 70);
+		super(instance, 218);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

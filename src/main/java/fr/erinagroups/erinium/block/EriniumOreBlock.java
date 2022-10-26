@@ -38,7 +38,7 @@ import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
-import fr.erinagroups.erinium.itemgroup.EriniumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.s;
@@ -49,7 +49,7 @@ public class EriniumOreBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public EriniumOreBlock(EriniumModElements instance) {
-		super(instance, 3);
+		super(instance, 83);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -57,7 +57,8 @@ public class EriniumOreBlock extends EriniumModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(EriniumTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	public static class CustomBlock extends Block {

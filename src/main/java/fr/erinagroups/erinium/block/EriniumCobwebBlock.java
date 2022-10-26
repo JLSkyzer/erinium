@@ -12,7 +12,6 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.entity.Entity;
@@ -33,6 +32,7 @@ import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.EriniumCobwebUpdateTickProcedure;
 import fr.erinagroups.erinium.procedures.EriniumCobwebEntityCollidesInTheBlockProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -49,14 +49,14 @@ public class EriniumCobwebBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public EriniumCobwebBlock(EriniumModElements instance) {
-		super(instance, 245);
+		super(instance, 147);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

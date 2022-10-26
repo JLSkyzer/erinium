@@ -35,7 +35,7 @@ public class AlphaMarquedBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public AlphaMarquedBlock(EriniumModElements instance) {
-		super(instance, 385);
+		super(instance, 439);
 	}
 
 	@Override

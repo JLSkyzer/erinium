@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "erinium:block/candy_planks",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "erinium:block/candy_planks"
+    },
+    "axis=z": {
+      "model": "erinium:block/candy_planks",
+      "x": 90
+    }
+  }
+}

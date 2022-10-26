@@ -35,7 +35,7 @@ public class CharlieMarquedBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public CharlieMarquedBlock(EriniumModElements instance) {
-		super(instance, 387);
+		super(instance, 441);
 	}
 
 	@Override

@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "image": "512_x_512",
+        "bois": "bois"
+      },
+      "name": "default"
+    }
+  }
+}

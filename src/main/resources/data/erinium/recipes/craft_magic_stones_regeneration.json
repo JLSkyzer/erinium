@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:erinium_obsidian"
+    },
+    "1": {
+      "item": "erinium:gem_regeneration"
+    },
+    "2": {
+      "item": "erinium:erinium_obsidian"
+    },
+    "3": {
+      "item": "erinium:erinium_obsidian"
+    },
+    "4": {
+      "item": "erinium:erinium_obsidian"
+    },
+    "5": {
+      "item": "erinium:erinium_obsidian"
+    }
+  },
+  "result": {
+    "item": "erinium:magic_stones_regeneration",
+    "count": 1
+  }
+}

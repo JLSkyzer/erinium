@@ -1,0 +1,20 @@
+{
+  "_fv": 33,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:MoonStone"
+      },
+      {
+        "value": "CUSTOM:CandyStone"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "stone",
+    "namespace": "forge"
+  }
+}

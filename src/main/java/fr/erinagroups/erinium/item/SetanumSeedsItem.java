@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.SetanumSeedsRightclickedOnBlockProcedure;
-import fr.erinagroups.erinium.itemgroup.SetanumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -34,7 +34,7 @@ public class SetanumSeedsItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public SetanumSeedsItem(EriniumModElements instance) {
-		super(instance, 327);
+		super(instance, 39);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class SetanumSeedsItem extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(SetanumTabItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("setanum_seeds");
 		}
 

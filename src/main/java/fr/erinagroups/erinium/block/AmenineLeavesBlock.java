@@ -23,7 +23,7 @@ import net.minecraft.block.Block;
 import java.util.List;
 import java.util.Collections;
 
-import fr.erinagroups.erinium.itemgroup.AlchemistItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.s;
@@ -37,13 +37,14 @@ public class AmenineLeavesBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public AmenineLeavesBlock(EriniumModElements instance) {
-		super(instance, 265);
+		super(instance, 121);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(AlchemistItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

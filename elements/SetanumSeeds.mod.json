@@ -8,7 +8,7 @@
     "name": "§eSetanum Seeds",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "CUSTOM:SetanumTab"
+      "value": "CUSTOM:EriniumItems"
     },
     "stackSize": 64,
     "enchantability": 0,

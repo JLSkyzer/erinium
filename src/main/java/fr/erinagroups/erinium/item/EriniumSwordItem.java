@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 
-import fr.erinagroups.erinium.itemgroup.EriniumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 @EriniumModElements.ModElement.Tag
@@ -18,7 +18,7 @@ public class EriniumSwordItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public EriniumSwordItem(EriniumModElements instance) {
-		super(instance, 5);
+		super(instance, 6);
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class EriniumSwordItem extends EriniumModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.fromStacks(new ItemStack(EriniumIngotItem.block));
 			}
-		}, 3, 96f, new Item.Properties().group(EriniumTabItemGroup.tab)) {
+		}, 3, 96f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
 		}.setRegistryName("erinium_sword"));
 	}
 }

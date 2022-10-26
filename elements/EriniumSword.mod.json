@@ -8,7 +8,7 @@
     "name": "§1Erinium Sword",
     "specialInfo": [],
     "creativeTab": {
-      "value": "CUSTOM:EriniumTab"
+      "value": "CUSTOM:EriniumTools"
     },
     "toolType": "Sword",
     "harvestLevel": 4,

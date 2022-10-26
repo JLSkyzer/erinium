@@ -51,7 +51,6 @@ public class EriniumSkeletonBossEntityDiesProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		double random = 0;
-		random = Math.round(Math.random() * 5);
 		if (world instanceof ServerWorld) {
 			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
 			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x, y, z)));
@@ -79,12 +78,10 @@ public class EriniumSkeletonBossEntityDiesProcedure {
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("erinium:erinium_boss_dead_1")),
 					SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 		}
-		for (int index0 = 0; index0 < (int) (random); index0++) {
-			if (world instanceof World && !world.isRemote()) {
-				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(UltimateLootboxBlock.block));
-				entityToSpawn.setPickupDelay((int) 10);
-				world.addEntity(entityToSpawn);
-			}
+		if (world instanceof World && !world.isRemote()) {
+			ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(UltimateLootboxBlock.block));
+			entityToSpawn.setPickupDelay((int) 10);
+			world.addEntity(entityToSpawn);
 		}
 	}
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/chocolate",
+    "up": "erinium:blocks/candy_grass_top",
+    "north": "erinium:blocks/candy_grass",
+    "east": "erinium:blocks/candy_grass",
+    "south": "erinium:blocks/candy_grass",
+    "west": "erinium:blocks/candy_grass",
+    "particle": "erinium:blocks/chocolate"
+  }
+}

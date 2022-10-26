@@ -23,7 +23,7 @@ public class WarningLogoItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public WarningLogoItem(EriniumModElements instance) {
-		super(instance, 47);
+		super(instance, 196);
 	}
 
 	@Override

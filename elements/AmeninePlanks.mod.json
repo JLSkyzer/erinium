@@ -40,7 +40,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:Alchemist"
+      "value": "CUSTOM:EriniumBlocks"
     },
     "destroyTool": "axe",
     "customDrop": {

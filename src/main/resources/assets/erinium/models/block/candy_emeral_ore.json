@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/candy_stones_emeral_ore",
+    "up": "erinium:blocks/candy_stones_emeral_ore",
+    "north": "erinium:blocks/candy_stones_emeral_ore",
+    "east": "erinium:blocks/candy_stones_emeral_ore",
+    "south": "erinium:blocks/candy_stones_emeral_ore",
+    "west": "erinium:blocks/candy_stones_emeral_ore",
+    "particle": "erinium:blocks/candy_stones_emeral_ore"
+  }
+}

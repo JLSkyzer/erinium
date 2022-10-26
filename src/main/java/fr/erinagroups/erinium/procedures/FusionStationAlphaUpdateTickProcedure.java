@@ -15,10 +15,15 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.Random;
 import java.util.Map;
 
+import java.io.File;
+
 import fr.erinagroups.erinium.item.FortuneModifierItem;
 import fr.erinagroups.erinium.item.DuplicatePickaxeItem;
 import fr.erinagroups.erinium.block.SetanumBlockBlock;
+import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
+
+import com.google.gson.JsonObject;
 
 import com.github.hexomod.worldeditcuife3.z;
 import com.github.hexomod.worldeditcuife3.y;
@@ -53,6 +58,8 @@ public class FusionStationAlphaUpdateTickProcedure {
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		double temp = 0;
 		ItemStack temp2 = ItemStack.EMPTY;
+		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
+		File file = new File("");
 		if ((new Object() {
 			public ItemStack getItemStack(BlockPos pos, int sltid) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
@@ -87,7 +94,8 @@ public class FusionStationAlphaUpdateTickProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos(x, y, z), (int) (0))).getOrCreateTag().getDouble("fortune") < 16) {
+			}.getItemStack(new BlockPos(x, y, z), (int) (0))).getOrCreateTag()
+					.getDouble("fortune") < EriniumModVariables.WorldVariables.get(world).duplicatePickaxeMaxFortune) {
 				if ((new Object() {
 					public ItemStack getItemStack(BlockPos pos, int sltid) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);

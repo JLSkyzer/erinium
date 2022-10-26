@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
+import java.util.HashMap;
 import java.util.Calendar;
 
 import fr.erinagroups.erinium.EriniumMod;
@@ -18,6 +19,7 @@ public class Test2CmdProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
+		Map<String, String> temp_map = new HashMap<>();
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 			((PlayerEntity) entity)
 					.sendStatusMessage(new StringTextComponent(("Demain : " + (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + 1))), (false));

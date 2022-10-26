@@ -57,7 +57,7 @@ public class MagicalWandItem extends EriniumModElements.ModElement {
 			.size(0.5f, 0.5f)).build("projectile_magical_wand").setRegistryName("projectile_magical_wand");
 
 	public MagicalWandItem(EriniumModElements instance) {
-		super(instance, 318);
+		super(instance, 394);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new MagicalWandRenderer.ModelRegisterHandler());
 	}
 

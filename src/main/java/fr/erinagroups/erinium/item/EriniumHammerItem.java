@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.BasicHammerProcedure;
-import fr.erinagroups.erinium.itemgroup.EriniumTabItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -32,7 +32,7 @@ public class EriniumHammerItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public EriniumHammerItem(EriniumModElements instance) {
-		super(instance, 138);
+		super(instance, 9);
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class EriniumHammerItem extends EriniumModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.fromStacks(new ItemStack(EriniumIngotItem.block));
 			}
-		}, 1, -3f, new Item.Properties().group(EriniumTabItemGroup.tab)) {
+		}, 1, -3f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
 			@Override
 			public boolean onBlockDestroyed(ItemStack itemstack, World world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
 				boolean retval = super.onBlockDestroyed(itemstack, world, blockstate, pos, entity);

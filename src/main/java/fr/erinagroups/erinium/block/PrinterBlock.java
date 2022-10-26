@@ -19,7 +19,6 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
@@ -34,6 +33,7 @@ import net.minecraft.block.Block;
 import java.util.List;
 import java.util.Collections;
 
+import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.s;
@@ -47,13 +47,14 @@ public class PrinterBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public PrinterBlock(EriniumModElements instance) {
-		super(instance, 23);
+		super(instance, 166);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.REDSTONE)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumMachinesItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

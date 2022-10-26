@@ -58,47 +58,49 @@ public class EriniumBossSpawnerOnBlockRightClickedProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
-		if (world instanceof ServerWorld) {
-			Entity entityToSpawn = new EriniumSkeletonBossEntity.CustomEntity(EriniumSkeletonBossEntity.entity, (World) world);
-			entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-			if (entityToSpawn instanceof MobEntity)
-				((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world, world.getDifficultyForLocation(entityToSpawn.getPosition()),
-						SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
-			world.addEntity(entityToSpawn);
-		}
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDcHeuuuuu warn warn warn warn waaaaaarn !"), (false));
-		}
-		if (world instanceof ServerWorld) {
-			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x, y, z)));
-			_ent.setEffectOnly(false);
-			((World) world).addEntity(_ent);
-		}
-		if (world instanceof ServerWorld) {
-			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x + 1, y, z + 1)));
-			_ent.setEffectOnly(false);
-			((World) world).addEntity(_ent);
-		}
-		if (world instanceof ServerWorld) {
-			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x + 1, y, z - 1)));
-			_ent.setEffectOnly(false);
-			((World) world).addEntity(_ent);
-		}
-		if (world instanceof ServerWorld) {
-			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x - 1, y, z + 1)));
-			_ent.setEffectOnly(false);
-			((World) world).addEntity(_ent);
-		}
-		if (world instanceof ServerWorld) {
-			LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-			_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x - 1, y, z - 1)));
-			_ent.setEffectOnly(false);
-			((World) world).addEntity(_ent);
+		if (!((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).abilities.isCreativeMode : false)) {
+			world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
+			if (world instanceof ServerWorld) {
+				Entity entityToSpawn = new EriniumSkeletonBossEntity.CustomEntity(EriniumSkeletonBossEntity.entity, (World) world);
+				entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
+				if (entityToSpawn instanceof MobEntity)
+					((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world, world.getDifficultyForLocation(entityToSpawn.getPosition()),
+							SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
+				world.addEntity(entityToSpawn);
+			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDcHeuuuuu warn warn warn warn waaaaaarn !"), (false));
+			}
+			if (world instanceof ServerWorld) {
+				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
+				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x, y, z)));
+				_ent.setEffectOnly(false);
+				((World) world).addEntity(_ent);
+			}
+			if (world instanceof ServerWorld) {
+				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
+				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x + 1, y, z + 1)));
+				_ent.setEffectOnly(false);
+				((World) world).addEntity(_ent);
+			}
+			if (world instanceof ServerWorld) {
+				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
+				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x + 1, y, z - 1)));
+				_ent.setEffectOnly(false);
+				((World) world).addEntity(_ent);
+			}
+			if (world instanceof ServerWorld) {
+				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
+				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x - 1, y, z + 1)));
+				_ent.setEffectOnly(false);
+				((World) world).addEntity(_ent);
+			}
+			if (world instanceof ServerWorld) {
+				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
+				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x - 1, y, z - 1)));
+				_ent.setEffectOnly(false);
+				((World) world).addEntity(_ent);
+			}
 		}
 	}
 }

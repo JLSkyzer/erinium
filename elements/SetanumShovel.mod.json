@@ -8,7 +8,7 @@
     "name": "Setanum Shovel",
     "specialInfo": [],
     "creativeTab": {
-      "value": "CUSTOM:SetanumTab"
+      "value": "CUSTOM:EriniumTools"
     },
     "toolType": "Spade",
     "harvestLevel": 4,

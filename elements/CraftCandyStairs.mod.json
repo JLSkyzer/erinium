@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 4,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:CandyPlanks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:CandyPlanks"
+      },
+      {
+        "value": "CUSTOM:CandyPlanks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:CandyPlanks"
+      },
+      {
+        "value": "CUSTOM:CandyPlanks"
+      },
+      {
+        "value": "CUSTOM:CandyPlanks"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CandyStairs"
+    },
+    "name": "craft_candy_stairs",
+    "namespace": "mod"
+  }
+}

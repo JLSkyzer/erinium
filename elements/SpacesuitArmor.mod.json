@@ -11,7 +11,7 @@
     "enableBoots": true,
     "textureBoots": "spacesuit_boot",
     "creativeTab": {
-      "value": "CUSTOM:SpaceUpdateItems"
+      "value": "CUSTOM:EriniumArmors"
     },
     "armorTextureFile": "erinium_armor_",
     "helmetName": "Spacesuit Helmet",

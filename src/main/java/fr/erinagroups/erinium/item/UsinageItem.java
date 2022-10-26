@@ -24,7 +24,7 @@ public class UsinageItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public UsinageItem(EriniumModElements instance) {
-		super(instance, 261);
+		super(instance, 159);
 	}
 
 	@Override

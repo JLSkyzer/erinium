@@ -99,5 +99,11 @@ public class PlanetTeleporterPanelGuiWindow extends ContainerScreen<PlanetTelepo
 				PlanetTeleporterPanelGui.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
+		this.addButton(new Button(this.guiLeft + 11, this.guiTop + 89, 81, 20, new StringTextComponent("§5Candy Dimension"), e -> {
+			if (true) {
+				EriniumMod.PACKET_HANDLER.sendToServer(new PlanetTeleporterPanelGui.ButtonPressedMessage(1, x, y, z));
+				PlanetTeleporterPanelGui.handleButtonAction(entity, 1, x, y, z);
+			}
+		}));
 	}
 }

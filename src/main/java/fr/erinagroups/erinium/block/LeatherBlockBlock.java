@@ -7,7 +7,6 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.block.material.Material;
@@ -18,6 +17,7 @@ import net.minecraft.block.Block;
 import java.util.List;
 import java.util.Collections;
 
+import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.s;
@@ -28,14 +28,14 @@ public class LeatherBlockBlock extends EriniumModElements.ModElement {
 	public static final Block block = null;
 
 	public LeatherBlockBlock(EriniumModElements instance) {
-		super(instance, 357);
+		super(instance, 133);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	public static class CustomBlock extends Block {

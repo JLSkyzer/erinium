@@ -47,6 +47,8 @@ public class CreateFileProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		File file = new File("");
 		com.google.gson.JsonObject MainJsonObject = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject SecJsonObject = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject ThirdJsonObject = new com.google.gson.JsonObject();
 		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/players/"),
 				File.separator + (entity.getDisplayName().getString() + ".json"));
 		if (!file.exists()) {
@@ -69,7 +71,7 @@ public class CreateFileProcedure {
 				}
 			}
 		}
-		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "settings.json");
+		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "config.json");
 		if (!file.exists()) {
 			try {
 				file.getParentFile().mkdirs();
@@ -77,13 +79,40 @@ public class CreateFileProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
-			MainJsonObject.addProperty("toggle.tpdim", (false));
-			MainJsonObject.addProperty("block.egg_factory.ranklvl", Math.round(15));
+			SecJsonObject.addProperty("toggle.tpdim", (false));
+			SecJsonObject.addProperty("block.egg_factory.ranklvl", Math.round(15));
+			SecJsonObject.addProperty("use.planetspawn", (false));
+			SecJsonObject.addProperty("duplication_pickaxe.maxfortune", Math.round(3));
 			{
 				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(file);
-					fileWriter.write(mainGSONBuilderVariable.toJson(MainJsonObject));
+					fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
+					fileWriter.close();
+				} catch (IOException exception) {
+					exception.printStackTrace();
+				}
+			}
+		}
+		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/Planet Spawn/"), File.separator + "config.json");
+		if (!file.exists()) {
+			try {
+				file.getParentFile().mkdirs();
+				file.createNewFile();
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+			ThirdJsonObject.addProperty("moon_x", Math.round(0));
+			ThirdJsonObject.addProperty("moon_y", Math.round(120));
+			ThirdJsonObject.addProperty("moon_z", Math.round(0));
+			ThirdJsonObject.addProperty("candy_x", Math.round(0));
+			ThirdJsonObject.addProperty("candy_y", Math.round(120));
+			ThirdJsonObject.addProperty("candy_z", Math.round(0));
+			{
+				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				try {
+					FileWriter fileWriter = new FileWriter(file);
+					fileWriter.write(mainGSONBuilderVariable.toJson(ThirdJsonObject));
 					fileWriter.close();
 				} catch (IOException exception) {
 					exception.printStackTrace();

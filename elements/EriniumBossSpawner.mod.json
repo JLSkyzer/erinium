@@ -36,11 +36,11 @@
     "name": "Erinium Boss Spawner",
     "specialInfo": [],
     "hardness": 1.0,
-    "resistance": 10.0,
+    "resistance": 20.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:SpaceUpdateBlocksTab"
+      "value": "CUSTOM:EriniumBlocks"
     },
     "destroyTool": "Not specified",
     "customDrop": {
@@ -123,7 +123,13 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onRightClicked": {
+    "onDestroyedByPlayer": {
+      "name": "EriniumBossSpawnerOnBlockRightClicked"
+    },
+    "onDestroyedByExplosion": {
+      "name": "EriniumArmorBodyTickEvent"
+    },
+    "onStartToDestroy": {
       "name": "EriniumBossSpawnerOnBlockRightClicked"
     },
     "spawnWorldTypes": [],

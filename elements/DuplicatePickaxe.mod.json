@@ -10,7 +10,7 @@
       "§aFortune Tier : §c<var>"
     ],
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "CUSTOM:EriniumTools"
     },
     "toolType": "Pickaxe",
     "harvestLevel": 5,

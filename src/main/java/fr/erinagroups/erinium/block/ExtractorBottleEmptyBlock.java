@@ -73,7 +73,7 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.procedures.ExtractorBottleEmptyUpdateTickProcedure;
 import fr.erinagroups.erinium.procedures.ExtractorBottleEmptyOnBlockRightClickedProcedure;
 import fr.erinagroups.erinium.procedures.ExtractorBottleEmptyBlockDestroyedByPlayerProcedure;
-import fr.erinagroups.erinium.itemgroup.AlchemistItemGroup;
+import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -94,14 +94,15 @@ public class ExtractorBottleEmptyBlock extends EriniumModElements.ModElement {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public ExtractorBottleEmptyBlock(EriniumModElements instance) {
-		super(instance, 273);
+		super(instance, 171);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(AlchemistItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumMachinesItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	private static class TileEntityRegisterHandler {

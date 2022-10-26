@@ -13,7 +13,6 @@ import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.util.ITooltipFlag;
@@ -26,6 +25,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.BedrockStickRightclickedOnBlockProcedure;
+import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -38,7 +38,7 @@ public class BedrockStickItem extends EriniumModElements.ModElement {
 	public static final Item block = null;
 
 	public BedrockStickItem(EriniumModElements instance) {
-		super(instance, 395);
+		super(instance, 16);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class BedrockStickItem extends EriniumModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.TOOLS).maxStackSize(1).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(EriniumToolsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
 			setRegistryName("bedrock_stick");
 		}
 

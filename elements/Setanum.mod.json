@@ -23,7 +23,7 @@
       "name": "SetanumBootsTickEvent"
     },
     "creativeTab": {
-      "value": "CUSTOM:SetanumTab"
+      "value": "CUSTOM:EriniumArmors"
     },
     "armorTextureFile": "setanum_",
     "helmetName": "Setanum Helmet",
@@ -54,14 +54,14 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 42,
-    "damageValueHelmet": 10,
-    "damageValueBody": 14,
-    "damageValueLeggings": 12,
-    "damageValueBoots": 10,
-    "enchantability": 25,
-    "toughness": 3.5,
-    "knockbackResistance": 0.30000000000000004,
+    "maxDamage": 39,
+    "damageValueHelmet": 8,
+    "damageValueBody": 12,
+    "damageValueLeggings": 10,
+    "damageValueBoots": 8,
+    "enchantability": 20,
+    "toughness": 5.0,
+    "knockbackResistance": 0.19999999999999998,
     "equipSound": {
       "value": ""
     },
