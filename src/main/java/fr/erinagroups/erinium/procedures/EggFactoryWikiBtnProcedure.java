@@ -58,7 +58,7 @@ public class EggFactoryWikiBtnProcedure {
 			((World) world).getServer().getCommandManager().handleCommand(
 					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-					"tellraw @p {\"text\":\"\u00A7bEgg Factory Wiki\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://erinium-wiki.netlify.app/wiki/egg%20factory.html\"}}");
+					"tellraw @p {\"text\":\"\u00A7bEgg Factory Wiki\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://jlskyzer-home.netlify.app/wiki/egg%20factory.html\"}}");
 		}
 	}
 }

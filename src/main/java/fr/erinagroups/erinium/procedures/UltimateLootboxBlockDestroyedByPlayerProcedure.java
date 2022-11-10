@@ -15,6 +15,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
@@ -95,49 +96,50 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 					multiple = Math.round(Math.random() * 2);
 					if (multiple <= 1) {
 						if (world instanceof ServerWorld) {
-							((World) world).getServer().getCommandManager().handleCommand(
-									new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-											new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-									"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:heavy_rifle\",Count:1}}");
+							FallingBlockEntity blockToSpawn = new FallingBlockEntity((World) world, x, y, z, Blocks.DIAMOND_BLOCK.getDefaultState());
+							blockToSpawn.fallTime = 1;
+							world.addEntity(blockToSpawn);
 						}
 						if (world instanceof ServerWorld) {
-							((World) world).getServer().getCommandManager().handleCommand(
-									new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-											new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-									"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:advanced_bullet\",Count:16}}");
+							FallingBlockEntity blockToSpawn = new FallingBlockEntity((World) world, x, y, z, Blocks.GOLD_BLOCK.getDefaultState());
+							blockToSpawn.fallTime = 1;
+							world.addEntity(blockToSpawn);
 						}
-						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7etchik paaaaan"), (false));
+						if (world instanceof ServerWorld) {
+							FallingBlockEntity blockToSpawn = new FallingBlockEntity((World) world, x, y, z, Blocks.IRON_BLOCK.getDefaultState());
+							blockToSpawn.fallTime = 1;
+							world.addEntity(blockToSpawn);
+						}
+						if (world instanceof ServerWorld) {
+							FallingBlockEntity blockToSpawn = new FallingBlockEntity((World) world, x, y, z, Blocks.EMERALD_BLOCK.getDefaultState());
+							blockToSpawn.fallTime = 1;
+							world.addEntity(blockToSpawn);
 						}
 					} else {
 						if (multiple <= 2) {
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:assault_rifle\",Count:1}}");
-							}
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
-							}
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-												new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"summon minecraft:item ~ ~ ~ {Item:{id:\"cgm:basic_bullet\",Count:40}}");
-							}
-							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7egood luck soldier"), (false));
+							for (int index1 = 0; index1 < (int) (16); index1++) {
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.DIAMOND));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
+								}
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.IRON_INGOT));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
+								}
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.GOLD_INGOT));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
+								}
 							}
 						}
 					}
 				} else {
 					if (random <= 8) {
 						random2 = Math.round(Math.random() * 5);
-						for (int index1 = 0; index1 < (int) (random2); index1++) {
+						for (int index2 = 0; index2 < (int) (random2); index2++) {
 							if (world instanceof World && !world.isRemote()) {
 								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(ClassicLootboxBlock.block));
 								entityToSpawn.setPickupDelay((int) 10);
@@ -147,7 +149,7 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 					} else {
 						if (random <= 10) {
 							random2 = Math.round(Math.random() * 16);
-							for (int index2 = 0; index2 < (int) (random2); index2++) {
+							for (int index3 = 0; index3 < (int) (random2); index3++) {
 								if (world instanceof World && !world.isRemote()) {
 									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(EriniumIngotItem.block));
 									entityToSpawn.setPickupDelay((int) 10);
@@ -166,7 +168,7 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 											new StringTextComponent(("" + new TranslationTextComponent("lootbox.event.oregen_1").getString())),
 											(false));
 								}
-								for (int index3 = 0; index3 < (int) (32); index3++) {
+								for (int index4 = 0; index4 < (int) (32); index4++) {
 									if (world instanceof World && !world.isRemote()) {
 										ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.GOLD_ORE));
 										entityToSpawn.setPickupDelay((int) 10);
@@ -178,7 +180,7 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 										world.addEntity(entityToSpawn);
 									}
 								}
-								for (int index4 = 0; index4 < (int) (16); index4++) {
+								for (int index5 = 0; index5 < (int) (16); index5++) {
 									if (world instanceof World && !world.isRemote()) {
 										ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.COAL_ORE));
 										entityToSpawn.setPickupDelay((int) 10);

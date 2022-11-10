@@ -86,7 +86,7 @@ public class EriniumModVariables {
 		public double moon_x = 0;
 		public double moon_y = 120.0;
 		public double moon_z = 0;
-		public double candy_x = 0;
+		public double candy_x = 0.0;
 		public double candy_y = 120.0;
 		public double candy_z = 0.0;
 		public boolean rtpdim_toggle = false;

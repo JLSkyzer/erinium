@@ -56,7 +56,7 @@ public class EriniumWikiCommandExecutedProcedure {
 					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					("/tellraw " + entity.getDisplayName().getString() + " "
-							+ "[\"\",{\"text\":\"\u00A7b\u00A7n> Erinium Wiki <\",\"underlined\":true,\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://erinium-wiki.netlify.app\"}}]"));
+							+ "[\"\",{\"text\":\"\u00A7b\u00A7n> Erinium Wiki <\",\"underlined\":true,\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://jlskyzer-home.netlify.app/wiki/\"}}]"));
 		}
 	}
 }

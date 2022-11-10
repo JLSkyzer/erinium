@@ -78,7 +78,7 @@ public class GoCandyProcedure {
 								bufferedReader2.close();
 								SecJsonObject = new Gson().fromJson(jsonstringbuilder2.toString(), com.google.gson.JsonObject.class);
 								if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 5) {
+										.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 10) {
 									{
 										Entity _ent = entity;
 										if (!_ent.world.isRemote && _ent instanceof ServerPlayerEntity) {
@@ -125,7 +125,7 @@ public class GoCandyProcedure {
 						}
 					} else {
 						if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 5) {
+								.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 10) {
 							{
 								Entity _ent = entity;
 								if (!_ent.world.isRemote && _ent instanceof ServerPlayerEntity) {

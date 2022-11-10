@@ -7874,6 +7874,24 @@
       "locked_code": false,
       "registry_name": "erinium_logo",
       "path": "~/Misc System/Paintings/Square"
+    },
+    {
+      "name": "SmeltMoonEriniumOre",
+      "type": "recipe",
+      "sortid": 595,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "smelt_moon_erinium_ore",
+      "path": "~/Space update/Recipes"
+    },
+    {
+      "name": "SmeltSpectriumOre",
+      "type": "recipe",
+      "sortid": 596,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "smelt_spectrium_ore",
+      "path": "~/Space update/Recipes"
     }
   ],
   "variable_elements": [
@@ -8103,7 +8121,7 @@
       "name": "candy_x",
       "type": "number",
       "scope": "world",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "candy_y",
@@ -8195,8 +8213,8 @@
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "block.erinium.jl_skyzer_painting": "JLSkyzer Painting 1",
       "block.erinium.candy_logs": "§5Candy Logs",
-      "block.erinium.dranite_ore": "§6Dranite Ore",
       "item.erinium.fraisage": "Fraisage",
+      "block.erinium.dranite_ore": "§6Dranite Ore",
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.magic_stones_regeneration": "§l§oMagic Stones §5§l§oRegeneration",
@@ -8212,9 +8230,9 @@
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "item.erinium.magic_stones_invisibility": "§l§oMagic Stones §3§l§oInvisibility",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
@@ -8227,8 +8245,8 @@
       "block.erinium.setanum_stage_2": "Setanum Stage 2",
       "block.erinium.setanum_stage_1": "Setanum Stage 1",
       "block.erinium.setanum_stage_3": "Setanum Stage 3",
-      "block.erinium.scining_sandstone": "Scining Sandstone",
       "item.erinium.magic_stones_xp": "§l§oMagic Stones §2§l§oXp",
+      "block.erinium.scining_sandstone": "Scining Sandstone",
       "subtitles.erinium_boss_dead_1": "Erinium boss dead",
       "block.erinium.candy_silver_ore": "Candy Silver Ore",
       "item.erinium.setanum_nuggets": "Setanum Nuggets",

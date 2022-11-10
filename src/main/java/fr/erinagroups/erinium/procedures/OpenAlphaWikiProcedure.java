@@ -58,7 +58,7 @@ public class OpenAlphaWikiProcedure {
 			((World) world).getServer().getCommandManager().handleCommand(
 					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-					"tellraw @p {\"text\":\"\u00A74> Fusion Station Wiki <\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://erinium-wiki.netlify.app/wiki/fusion_station.html\"}}");
+					"tellraw @p {\"text\":\"\u00A74> Fusion Station Wiki <\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://jlskyzer-home.netlify.app/wiki/fusion_station/alpha.html\"}}");
 		}
 	}
 }
