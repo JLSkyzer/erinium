@@ -2351,15 +2351,6 @@
       "path": "~/Space update/Blocks"
     },
     {
-      "name": "MoodBiome",
-      "type": "biome",
-      "sortid": 307,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "moon_biome",
-      "path": "~/Space update/Biome"
-    },
-    {
       "name": "Moon",
       "type": "dimension",
       "sortid": 164,
@@ -7892,6 +7883,15 @@
       "locked_code": false,
       "registry_name": "smelt_spectrium_ore",
       "path": "~/Space update/Recipes"
+    },
+    {
+      "name": "Moonbiome",
+      "type": "biome",
+      "sortid": 597,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moonbiome",
+      "path": "~/Space update/Biome"
     }
   ],
   "variable_elements": [
@@ -8218,6 +8218,7 @@
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.magic_stones_regeneration": "§l§oMagic Stones §5§l§oRegeneration",
+      "biome.erinium.moonbiome": "Moon Biome",
       "item.erinium.wiring_kit": "Wiring Kit",
       "block.erinium.fonderie": "Fonderie",
       "biome.erinium.magical_forest": "Magical Forest",
@@ -8438,7 +8439,6 @@
       "item.erinium.magic_stick": "Magic Stick",
       "block.erinium.bush": "Bush",
       "item.erinium.erinium_stick": "§1Erinium Stick",
-      "biome.erinium.moon_biome": "Moon Biome",
       "item.erinium.amenine_liquid_5": "§b§lLiquid Bottle",
       "block.erinium.erinium_cobweb": "Erinium Cobweb",
       "item.erinium.gem_teleport": "§l§oGem §l§o§1Teleportation",
@@ -8920,5 +8920,5 @@
     "modElementsPackage": "fr.erinagroups.erinium",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200234517
+  "mcreatorVersion": 202200346416
 }

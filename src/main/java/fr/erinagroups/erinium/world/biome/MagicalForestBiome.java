@@ -7,7 +7,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.BiomeDictionary;
 
 import net.minecraft.world.gen.trunkplacer.MegaJungleTrunkPlacer;
 import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
@@ -138,8 +137,8 @@ public class MagicalForestBiome extends EriniumModElements.ModElement {
 				DefaultBiomeFeatures.withExtraGoldOre(biomeGenerationSettings);
 				DefaultBiomeFeatures.withJungleTrees(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
-				biome = new Biome.Builder().precipitation(Biome.RainType.RAIN).category(Biome.Category.JUNGLE).depth(0.2f).scale(0.3f)
-						.temperature(0.5f).downfall(0.7000000000000001f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
+				biome = new Biome.Builder().precipitation(Biome.RainType.RAIN).category(Biome.Category.NONE).depth(0.2f).scale(0.3f).temperature(0.5f)
+						.downfall(0.7000000000000001f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();
 				event.getRegistry().register(biome.setRegistryName("erinium:magical_forest"));
 			}
@@ -148,8 +147,6 @@ public class MagicalForestBiome extends EriniumModElements.ModElement {
 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
-		BiomeDictionary.addTypes(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, WorldGenRegistries.BIOME.getKey(biome)), BiomeDictionary.Type.FOREST,
-				BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.MESA, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HILLS);
 		BiomeManager.addBiome(BiomeManager.BiomeType.WARM,
 				new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, WorldGenRegistries.BIOME.getKey(biome)), 8));
 	}

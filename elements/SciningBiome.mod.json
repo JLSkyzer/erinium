@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "Scining Biome",
@@ -47,7 +47,6 @@
       "value": "EXPLOSION_NORMAL"
     },
     "particlesProbability": 0.5,
-    "biomeCategory": "DESERT",
     "rainingPossibility": 0.01,
     "temperature": 1.25,
     "baseHeight": 0.1,
@@ -56,12 +55,6 @@
     "spawnBiomeNether": false,
     "spawnInCaves": false,
     "biomeWeight": 16,
-    "biomeDictionaryTypes": [
-      "MESA",
-      "PLAINS",
-      "SANDY",
-      "BEACH"
-    ],
     "grassPerChunk": 0,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,

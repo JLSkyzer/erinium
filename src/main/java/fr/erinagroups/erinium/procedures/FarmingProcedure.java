@@ -88,8 +88,8 @@ public class FarmingProcedure {
 		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 5) {
 			if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WHEAT && (new Object() {
-				public int get(BlockState _bs, String _property) {
-					Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(_property);
+				public int get(BlockState _bs, String property) {
+					Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 					return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
 				}
 			}.get(blockstate, "age")) == 7) {
@@ -177,8 +177,8 @@ public class FarmingProcedure {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 10) {
 				if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WHEAT && (new Object() {
-					public int get(BlockState _bs, String _property) {
-						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(_property);
+					public int get(BlockState _bs, String property) {
+						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 						return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
 					}
 				}.get(blockstate, "age")) == 7) {
@@ -225,8 +225,8 @@ public class FarmingProcedure {
 						});
 					}
 				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS && (new Object() {
-					public int get(BlockState _bs, String _property) {
-						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(_property);
+					public int get(BlockState _bs, String property) {
+						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 						return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
 					}
 				}.get(blockstate, "age")) == 7) {
@@ -273,8 +273,8 @@ public class FarmingProcedure {
 						});
 					}
 				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
-					public int get(BlockState _bs, String _property) {
-						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(_property);
+					public int get(BlockState _bs, String property) {
+						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 						return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
 					}
 				}.get(blockstate, "age")) == 7) {
@@ -368,8 +368,8 @@ public class FarmingProcedure {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 15) {
 					if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS && (new Object() {
-						public int get(BlockState _bs, String _property) {
-							Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(_property);
+						public int get(BlockState _bs, String property) {
+							Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 							return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
 						}
 					}.get(blockstate, "age")) == 7) {
@@ -416,8 +416,8 @@ public class FarmingProcedure {
 							});
 						}
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
-						public int get(BlockState _bs, String _property) {
-							Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(_property);
+						public int get(BlockState _bs, String property) {
+							Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 							return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
 						}
 					}.get(blockstate, "age")) == 7) {
@@ -554,8 +554,8 @@ public class FarmingProcedure {
 					if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 20) {
 						if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS && (new Object() {
-							public int get(BlockState _bs, String _property) {
-								Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(_property);
+							public int get(BlockState _bs, String property) {
+								Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 								return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
 							}
 						}.get(blockstate, "age")) == 7) {
@@ -601,8 +601,8 @@ public class FarmingProcedure {
 								});
 							}
 						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
-							public int get(BlockState _bs, String _property) {
-								Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(_property);
+							public int get(BlockState _bs, String property) {
+								Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
 								return _prop instanceof IntegerProperty ? _bs.get((IntegerProperty) _prop) : -1;
 							}
 						}.get(blockstate, "age")) == 7) {

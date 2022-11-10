@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "dimension",
   "definition": {
     "biomesInDimension": [
       {
-        "value": "CUSTOM:MoodBiome"
+        "value": "CUSTOM:Moonbiome"
       }
     ],
     "worldGenType": "Normal world gen",

@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "Magical Forest",
@@ -50,7 +50,6 @@
       "value": "EXPLOSION_NORMAL"
     },
     "particlesProbability": 0.5,
-    "biomeCategory": "JUNGLE",
     "rainingPossibility": 0.7000000000000001,
     "temperature": 0.5,
     "baseHeight": 0.19999999999999998,
@@ -59,13 +58,6 @@
     "spawnBiomeNether": false,
     "spawnInCaves": false,
     "biomeWeight": 8,
-    "biomeDictionaryTypes": [
-      "FOREST",
-      "PLAINS",
-      "MESA",
-      "JUNGLE",
-      "HILLS"
-    ],
     "grassPerChunk": 10,
     "seagrassPerChunk": 5,
     "flowersPerChunk": 3,

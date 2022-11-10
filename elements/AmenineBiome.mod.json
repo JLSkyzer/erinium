@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "Amenine Biome",
@@ -50,7 +50,6 @@
       "value": "EXPLOSION_NORMAL"
     },
     "particlesProbability": 0.5,
-    "biomeCategory": "SAVANNA",
     "rainingPossibility": 0.19999999999999998,
     "temperature": 1.25,
     "baseHeight": 0.19999999999999998,
@@ -59,11 +58,6 @@
     "spawnBiomeNether": false,
     "spawnInCaves": false,
     "biomeWeight": 10,
-    "biomeDictionaryTypes": [
-      "PLAINS",
-      "FOREST",
-      "SAVANNA"
-    ],
     "grassPerChunk": 3,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 1,
