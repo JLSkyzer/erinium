@@ -26,7 +26,12 @@ import java.util.Random;
 import java.util.Map;
 
 import fr.erinagroups.erinium.item.XpOrbItem;
+import fr.erinagroups.erinium.item.RainbowSwordItem;
+import fr.erinagroups.erinium.item.RainbowShovelItem;
+import fr.erinagroups.erinium.item.RainbowPickaxeItem;
+import fr.erinagroups.erinium.item.RainbowAxeItem;
 import fr.erinagroups.erinium.item.PureGemItem;
+import fr.erinagroups.erinium.item.MagicStonesInvisibilityItem;
 import fr.erinagroups.erinium.item.EriniumIngotItem;
 import fr.erinagroups.erinium.block.UltimateLootboxBlock;
 import fr.erinagroups.erinium.block.ClassicLootboxBlock;
@@ -270,21 +275,64 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 															world.addEntity(entityToSpawn);
 														}
 													} else {
-														random2 = Math.round(Math.random() * 30000);
-														{
-															double _setval = ((entity
-																	.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp + random2);
-															entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																	.ifPresent(capability -> {
-																		capability.playerXp = _setval;
-																		capability.syncPlayerVariables(entity);
-																	});
-														}
-														if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-															((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-																	("\u00A7c+ " + new java.text.DecimalFormat("##").format(random2) + " xp")),
-																	(false));
+														if (random <= 95) {
+															random2 = (MathHelper.nextInt(new Random(), 1, 4));
+															if (random2 == 1) {
+																if (world instanceof World && !world.isRemote()) {
+																	ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+																			new ItemStack(RainbowSwordItem.block));
+																	entityToSpawn.setPickupDelay((int) 10);
+																	world.addEntity(entityToSpawn);
+																}
+															} else if (random2 == 2) {
+																if (world instanceof World && !world.isRemote()) {
+																	ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+																			new ItemStack(RainbowPickaxeItem.block));
+																	entityToSpawn.setPickupDelay((int) 10);
+																	world.addEntity(entityToSpawn);
+																}
+															} else if (random2 == 3) {
+																if (world instanceof World && !world.isRemote()) {
+																	ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+																			new ItemStack(RainbowAxeItem.block));
+																	entityToSpawn.setPickupDelay((int) 10);
+																	world.addEntity(entityToSpawn);
+																}
+															} else if (random2 == 4) {
+																if (world instanceof World && !world.isRemote()) {
+																	ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+																			new ItemStack(RainbowShovelItem.block));
+																	entityToSpawn.setPickupDelay((int) 10);
+																	world.addEntity(entityToSpawn);
+																}
+															}
+														} else {
+															if (random <= 98) {
+																if (world instanceof World && !world.isRemote()) {
+																	ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+																			new ItemStack(MagicStonesInvisibilityItem.block));
+																	entityToSpawn.setPickupDelay((int) 10);
+																	world.addEntity(entityToSpawn);
+																}
+															} else {
+																random2 = Math.round(Math.random() * 30000);
+																{
+																	double _setval = ((entity
+																			.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																			.orElse(new EriniumModVariables.PlayerVariables())).playerXp + random2);
+																	entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																			.ifPresent(capability -> {
+																				capability.playerXp = _setval;
+																				capability.syncPlayerVariables(entity);
+																			});
+																}
+																if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+																	((PlayerEntity) entity).sendStatusMessage(
+																			new StringTextComponent(("\u00A7c+ "
+																					+ new java.text.DecimalFormat("##").format(random2) + " xp")),
+																			(false));
+																}
+															}
 														}
 													}
 												}

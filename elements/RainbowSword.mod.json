@@ -1,0 +1,27 @@
+{
+  "_fv": 34,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "rainbow_sword",
+    "customModelName": "Normal",
+    "name": "Rainbow Sword",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:EriniumTools"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 4,
+    "efficiency": 13.0,
+    "attackSpeed": 100.0,
+    "enchantability": 32,
+    "damageVsEntity": 8.8,
+    "usageCount": 2500,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

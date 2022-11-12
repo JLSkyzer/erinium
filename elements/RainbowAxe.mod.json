@@ -1,0 +1,27 @@
+{
+  "_fv": 34,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "rainbow_axe",
+    "customModelName": "Normal",
+    "name": "Rainbow Axe",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:EriniumTools"
+    },
+    "toolType": "Axe",
+    "harvestLevel": 4,
+    "efficiency": 15.0,
+    "attackSpeed": 1.0,
+    "enchantability": 32,
+    "damageVsEntity": 4.0,
+    "usageCount": 2500,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}
