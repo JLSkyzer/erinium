@@ -1,32 +1,60 @@
 {
     "providers": [
         {
+            "type": "ttf",
+            "file": "minecraft:negative_spaces.ttf",
+            "shift": [0.0, 0.0],
+            "size": 10.0,
+            "oversample": 1.0
+        },
+        {
             "type": "bitmap",
             "file": "minecraft:custom/moon.png",
-            "ascent": 9,
-            "height": 9,
+            "ascent": 10,
+            "height": 10,
             "chars": ["\uE000"]
         },
         {
             "type": "bitmap",
             "file": "minecraft:custom/erina_logo.png",
-            "ascent": 9,
-            "height": 9,
+            "ascent": 10,
+            "height": 10,
             "chars": ["\uE001"]
         },
         {
             "type": "bitmap",
-            "file": "minecraft:custom/power.png",
-            "ascent": 10,
-            "height": 10,
+            "file": "minecraft:custom/rank/member_1.png",
+            "ascent": 8,
+            "height": 8,
             "chars": ["\uE002"]
         },
         {
             "type": "bitmap",
-            "file": "minecraft:custom/fire.png",
-            "ascent": 9,
-            "height": 9,
+            "file": "minecraft:custom/rank/member_2.png",
+            "ascent": 8,
+            "height": 8,
             "chars": ["\uE003"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/rank/member_3.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": ["\uE004"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/rank/member_4.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": ["\uE005"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/test.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": ["\uE006"]
         }
     ]
 }

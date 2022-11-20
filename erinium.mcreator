@@ -7928,6 +7928,115 @@
       "locked_code": false,
       "registry_name": "rainbow_shovel",
       "path": "~/Misc System/LootBox/Items"
+    },
+    {
+      "name": "EnableCustomChatProced",
+      "type": "procedure",
+      "sortid": 602,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enable_custom_chat_proced",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side"
+    },
+    {
+      "name": "EnableCustomChat",
+      "type": "command",
+      "sortid": 603,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enable_custom_chat",
+      "path": "~/Server side"
+    },
+    {
+      "name": "OnSendChat",
+      "type": "procedure",
+      "sortid": 604,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_send_chat",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side"
+    },
+    {
+      "name": "EmojiList1",
+      "type": "procedure",
+      "sortid": 605,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emoji_list_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Emoji"
+    },
+    {
+      "name": "EmojiList",
+      "type": "command",
+      "sortid": 606,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emoji_list",
+      "path": "~/Server side/Emoji"
     }
   ],
   "variable_elements": [
@@ -8182,6 +8291,12 @@
       "type": "logic",
       "scope": "world",
       "value": "false"
+    },
+    {
+      "name": "enableCustomChat",
+      "type": "logic",
+      "scope": "world",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -8249,8 +8364,8 @@
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "block.erinium.jl_skyzer_painting": "JLSkyzer Painting 1",
       "block.erinium.candy_logs": "§5Candy Logs",
-      "block.erinium.dranite_ore": "§6Dranite Ore",
       "item.erinium.fraisage": "Fraisage",
+      "block.erinium.dranite_ore": "§6Dranite Ore",
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.magic_stones_regeneration": "§l§oMagic Stones §5§l§oRegeneration",
@@ -8267,9 +8382,9 @@
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "item.erinium.magic_stones_invisibility": "§l§oMagic Stones §3§l§oInvisibility",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
@@ -8283,8 +8398,8 @@
       "block.erinium.setanum_stage_2": "Setanum Stage 2",
       "block.erinium.setanum_stage_1": "Setanum Stage 1",
       "block.erinium.setanum_stage_3": "Setanum Stage 3",
-      "block.erinium.scining_sandstone": "Scining Sandstone",
       "item.erinium.magic_stones_xp": "§l§oMagic Stones §2§l§oXp",
+      "block.erinium.scining_sandstone": "Scining Sandstone",
       "subtitles.erinium_boss_dead_1": "Erinium boss dead",
       "block.erinium.candy_silver_ore": "Candy Silver Ore",
       "item.erinium.setanum_nuggets": "Setanum Nuggets",
@@ -8543,6 +8658,10 @@
           },
           {
             "name": "Variables",
+            "children": []
+          },
+          {
+            "name": "Emoji",
             "children": []
           }
         ]

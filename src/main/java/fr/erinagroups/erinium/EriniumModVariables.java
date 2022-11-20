@@ -90,6 +90,7 @@ public class EriniumModVariables {
 		public double candy_y = 120.0;
 		public double candy_z = 0.0;
 		public boolean rtpdim_toggle = false;
+		public boolean enableCustomChat = false;
 
 		public WorldVariables() {
 			super(DATA_NAME);
@@ -111,6 +112,7 @@ public class EriniumModVariables {
 			candy_y = nbt.getDouble("candy_y");
 			candy_z = nbt.getDouble("candy_z");
 			rtpdim_toggle = nbt.getBoolean("rtpdim_toggle");
+			enableCustomChat = nbt.getBoolean("enableCustomChat");
 		}
 
 		@Override
@@ -125,6 +127,7 @@ public class EriniumModVariables {
 			nbt.putDouble("candy_y", candy_y);
 			nbt.putDouble("candy_z", candy_z);
 			nbt.putBoolean("rtpdim_toggle", rtpdim_toggle);
+			nbt.putBoolean("enableCustomChat", enableCustomChat);
 			return nbt;
 		}
 
