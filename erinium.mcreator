@@ -144,16 +144,7 @@
       "locked_code": false,
       "registry_name": "erinium_command_executed",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Server side"
     },
@@ -8037,6 +8028,53 @@
       "locked_code": false,
       "registry_name": "emoji_list",
       "path": "~/Server side/Emoji"
+    },
+    {
+      "name": "EriniumRankCommand",
+      "type": "procedure",
+      "sortid": 607,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_rank_command",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Command"
+    },
+    {
+      "name": "EriniumRank",
+      "type": "command",
+      "sortid": 608,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_rank",
+      "path": "~/Server side/Command"
+    },
+    {
+      "name": "EriniumRankError",
+      "type": "procedure",
+      "sortid": 609,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_rank_error",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Command"
     }
   ],
   "variable_elements": [
@@ -8662,6 +8700,10 @@
           },
           {
             "name": "Emoji",
+            "children": []
+          },
+          {
+            "name": "Command",
             "children": []
           }
         ]

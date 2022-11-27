@@ -108,6 +108,11 @@ public class EggFactoryOnBlockRightClickedProcedure {
 							}
 						}
 					} else {
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+									("\u00A7a(\u00A7crequired level = " + JsonObject.get("block.egg_factory.ranklvl").getAsDouble() + "\u00A7a)")),
+									(false));
+						}
 						ErrorDonthaveLevelProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}

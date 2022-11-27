@@ -95,20 +95,20 @@ public class FarmingProcedure {
 			}.get(blockstate, "age")) == 7) {
 				{
 					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 450);
+							.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 220);
 					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.playerXp = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "450" + " xp " + "\u00A7f| " + "\u00A72"
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "220" + " xp " + "\u00A7f| " + "\u00A72"
 							+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
 				}
 				{
-					String _setval = ("\u00A7a+" + 450 + " xp ");
+					String _setval = ("\u00A7a+" + 220 + " xp ");
 					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.won_xp_message = _setval;
 						capability.syncPlayerVariables(entity);
@@ -136,20 +136,20 @@ public class FarmingProcedure {
 							.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 3) {
 				{
 					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 1100);
+							.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 410);
 					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.playerXp = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "1100" + " xp " + "\u00A7f| " + "\u00A72"
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + "410" + " xp " + "\u00A7f| " + "\u00A72"
 							+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 							+ " / 100.000")), (true));
 				}
 				{
-					String _setval = ("\u00A7a+" + 1100 + " xp ");
+					String _setval = ("\u00A7a+" + 410 + " xp ");
 					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.won_xp_message = _setval;
 						capability.syncPlayerVariables(entity);
@@ -232,7 +232,7 @@ public class FarmingProcedure {
 				}.get(blockstate, "age")) == 7) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 280);
+								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 260);
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.playerXp = _setval;
 							capability.syncPlayerVariables(entity);
@@ -242,14 +242,14 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + "280" + " xp " + "\u00A7f| " + "\u00A72"
+												("\u00A7a+" + "260" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
 					}
 					{
-						String _setval = ("\u00A7a+" + 280 + " xp ");
+						String _setval = ("\u00A7a+" + 260 + " xp ");
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.won_xp_message = _setval;
 							capability.syncPlayerVariables(entity);
@@ -280,7 +280,7 @@ public class FarmingProcedure {
 				}.get(blockstate, "age")) == 7) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 285);
+								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 260);
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.playerXp = _setval;
 							capability.syncPlayerVariables(entity);
@@ -290,14 +290,14 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + "285" + " xp " + "\u00A7f| " + "\u00A72"
+												("\u00A7a+" + "260" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
 					}
 					{
-						String _setval = ("\u00A7a+" + 285 + " xp ");
+						String _setval = ("\u00A7a+" + 260 + " xp ");
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.won_xp_message = _setval;
 							capability.syncPlayerVariables(entity);
@@ -323,7 +323,7 @@ public class FarmingProcedure {
 				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 825);
+								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 310);
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.playerXp = _setval;
 							capability.syncPlayerVariables(entity);
@@ -333,14 +333,14 @@ public class FarmingProcedure {
 						((PlayerEntity) entity)
 								.sendStatusMessage(
 										new StringTextComponent(
-												("\u00A7a+" + "825" + " xp " + "\u00A7f| " + "\u00A72"
+												("\u00A7a+" + "310" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 										(true));
 					}
 					{
-						String _setval = ("\u00A7a+" + 825 + " xp ");
+						String _setval = ("\u00A7a+" + 310 + " xp ");
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.won_xp_message = _setval;
 							capability.syncPlayerVariables(entity);
@@ -423,7 +423,7 @@ public class FarmingProcedure {
 					}.get(blockstate, "age")) == 7) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 200);
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 180);
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.playerXp = _setval;
 								capability.syncPlayerVariables(entity);
@@ -433,14 +433,14 @@ public class FarmingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + "200" + " xp " + "\u00A7f| " + "\u00A72"
+													("\u00A7a+" + "180" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
 						}
 						{
-							String _setval = ("\u00A7a+" + 200 + " xp ");
+							String _setval = ("\u00A7a+" + 180 + " xp ");
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.won_xp_message = _setval;
 								capability.syncPlayerVariables(entity);
@@ -509,7 +509,7 @@ public class FarmingProcedure {
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 650);
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 200);
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.playerXp = _setval;
 								capability.syncPlayerVariables(entity);
@@ -519,14 +519,14 @@ public class FarmingProcedure {
 							((PlayerEntity) entity)
 									.sendStatusMessage(
 											new StringTextComponent(
-													("\u00A7a+" + "650" + " xp " + "\u00A7f| " + "\u00A72"
+													("\u00A7a+" + "200" + " xp " + "\u00A7f| " + "\u00A72"
 															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 															+ " / 100.000")),
 											(true));
 						}
 						{
-							String _setval = ("\u00A7a+" + 650 + " xp ");
+							String _setval = ("\u00A7a+" + 200 + " xp ");
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.won_xp_message = _setval;
 								capability.syncPlayerVariables(entity);
@@ -608,7 +608,7 @@ public class FarmingProcedure {
 						}.get(blockstate, "age")) == 7) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 105);
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 90);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
@@ -617,14 +617,14 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + "105" + " xp " + "\u00A7f| " + "\u00A72"
+												new StringTextComponent(("\u00A7a+" + "90" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
 							}
 							{
-								String _setval = ("\u00A7a+" + 105 + " xp ");
+								String _setval = ("\u00A7a+" + 90 + " xp ");
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.won_xp_message = _setval;
 									capability.syncPlayerVariables(entity);
@@ -650,7 +650,7 @@ public class FarmingProcedure {
 						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.MELON) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 140);
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 100);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
@@ -659,14 +659,14 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + "140" + " xp " + "\u00A7f| " + "\u00A72"
+												new StringTextComponent(("\u00A7a+" + "100" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
 							}
 							{
-								String _setval = ("\u00A7a+" + 140 + " xp ");
+								String _setval = ("\u00A7a+" + 100 + " xp ");
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.won_xp_message = _setval;
 									capability.syncPlayerVariables(entity);
@@ -692,7 +692,7 @@ public class FarmingProcedure {
 						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 400);
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + 125);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
@@ -701,14 +701,14 @@ public class FarmingProcedure {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
 										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + "400" + " xp " + "\u00A7f| " + "\u00A72"
+												new StringTextComponent(("\u00A7a+" + "125" + " xp " + "\u00A7f| " + "\u00A72"
 														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
 														+ " / 100.000")),
 												(true));
 							}
 							{
-								String _setval = ("\u00A7a+" + 400 + " xp ");
+								String _setval = ("\u00A7a+" + 125 + " xp ");
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.won_xp_message = _setval;
 									capability.syncPlayerVariables(entity);

@@ -12,10 +12,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.command.Commands;
 import net.minecraft.command.CommandSource;
 
-import java.util.stream.Stream;
-import java.util.Map;
 import java.util.HashMap;
-import java.util.AbstractMap;
+import java.util.Collections;
 
 import fr.erinagroups.erinium.procedures.EriniumCommandExecutedProcedure;
 
@@ -49,9 +47,7 @@ public class EriniumCommand {
 						index++;
 					}
 
-					EriniumCommandExecutedProcedure.executeProcedure(
-							Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("cmdparams", cmdparams))
-									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					EriniumCommandExecutedProcedure.executeProcedure(Collections.emptyMap());
 					return 0;
 				})).executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();
@@ -70,9 +66,7 @@ public class EriniumCommand {
 						index++;
 					}
 
-					EriniumCommandExecutedProcedure.executeProcedure(
-							Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("cmdparams", cmdparams))
-									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					EriniumCommandExecutedProcedure.executeProcedure(Collections.emptyMap());
 					return 0;
 				}));
 	}
