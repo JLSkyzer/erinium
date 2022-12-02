@@ -2,14 +2,14 @@
   "mappings": {
     "default": {
       "map": {
-        "image": "2022-10-14_22.08.05",
+        "image": "jlskyzer_1",
         "bois": "bois"
       },
       "name": "default"
     },
     "jlskyzer_2": {
       "map": {
-        "image": "2022-07-19_23.17.56",
+        "image": "jlskyzer",
         "bois": "bois"
       },
       "name": "jlskyzer_2"

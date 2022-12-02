@@ -1,0 +1,9 @@
+{
+  "parent": "erinium:custom/erinium_workbench_tier_1",
+  "textures": {
+    "all": "erinium:blocks/erinium_workbench_tier_1_top",
+    "particle": "erinium:blocks/erinium_workbench_tier_1_top",
+    "spectrium_block.png": "erinium:blocks/spectrium_block",
+    "erinium_workbench_tier_1_top.png": "erinium:blocks/erinium_workbench_tier_1_top"
+  }
+}

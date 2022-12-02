@@ -550,6 +550,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/granite_wall_from_granite_stonecutting": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
+    },
+    "done": true
+  },
   "cgm:recipes/cgm/stun_grenade": {
     "criteria": {
       "has_gunpowder": "2022-07-08 00:40:54 +0200"
@@ -631,6 +637,12 @@
   "minecraft:recipes/food/cooked_porkchop_from_campfire_cooking": {
     "criteria": {
       "has_porkchop": "2022-01-12 22:31:25 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/granite_stairs": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
     },
     "done": true
   },
@@ -835,6 +847,12 @@
   "minecraft:recipes/redstone/oak_trapdoor": {
     "criteria": {
       "has_planks": "2022-03-05 18:59:30 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/granite_stairs_from_granite_stonecutting": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
     },
     "done": true
   },
@@ -1306,6 +1324,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/polished_granite_from_granite_stonecutting": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/misc/gold_nugget": {
     "criteria": {
       "has_gold_ingot": "2022-03-17 18:36:23 +0100"
@@ -1353,6 +1377,12 @@
   "minecraft:recipes/building_blocks/mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting": {
     "criteria": {
       "has_mossy_stone_bricks": "2022-03-27 19:19:48 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/granite_wall": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
     },
     "done": true
   },
@@ -1590,6 +1620,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/polished_granite_slab_from_granite_stonecutting": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/enchanting_table": {
     "criteria": {
       "has_obsidian": "2022-03-09 21:25:22 +0100"
@@ -1692,6 +1728,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/granite_slab": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
+    },
+    "done": true
+  },
   "minecraft:recipes/food/baked_potato": {
     "criteria": {
       "has_potato": "2022-03-15 18:26:25 +0100"
@@ -1767,6 +1809,12 @@
   "minecraft:recipes/combat/diamond_helmet": {
     "criteria": {
       "has_diamond": "2022-04-01 12:14:45 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_granite_stairs_from_granite_stonecutting": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
     },
     "done": true
   },
@@ -2004,6 +2052,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/granite_slab_from_granite_stonecutting": {
+    "criteria": {
+      "has_granite": "2022-11-28 20:25:16 +0100"
+    },
+    "done": true
+  },
   "cgm:recipes/cgm/workbench": {
     "criteria": {
       "has_iron": "2022-04-01 12:09:56 +0200"
@@ -2229,6 +2283,12 @@
   "minecraft:recipes/decorations/end_stone_brick_wall_from_end_stone_stonecutting": {
     "criteria": {
       "has_end_stone": "2022-01-09 02:30:24 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_granite": {
+    "criteria": {
+      "has_stone": "2022-11-28 20:25:16 +0100"
     },
     "done": true
   },

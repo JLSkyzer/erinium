@@ -1,0 +1,46 @@
+{
+  "_fv": 34,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EriniumMatrixIngot"
+      },
+      {
+        "value": "CUSTOM:EriniumMatrixIngot"
+      },
+      {
+        "value": "CUSTOM:EriniumMatrixIngot"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EriniumStick"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EriniumStick"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EriniumMatrixPickaxe"
+    },
+    "name": "craft_matrix_pickaxe",
+    "namespace": "mod"
+  }
+}

@@ -53,12 +53,12 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 42;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 40;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{10, 12, 14, 10}[slot.getIndex()];
+				return new int[]{9, 11, 13, 9}[slot.getIndex()];
 			}
 
 			@Override
@@ -84,12 +84,12 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 
 			@Override
 			public float getToughness() {
-				return 6.5f;
+				return 3.2f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.3f;
+				return 0.2f;
 			}
 		};
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {

@@ -1,0 +1,46 @@
+{
+  "_fv": 34,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Blocks.WOOL#10"
+      },
+      {
+        "value": "Blocks.WOOL#10"
+      },
+      {
+        "value": "Blocks.WOOL#10"
+      },
+      {
+        "value": "CUSTOM:AlmoniePaper"
+      },
+      {
+        "value": "CUSTOM:AlmonieCard"
+      },
+      {
+        "value": "CUSTOM:AlmoniePaper"
+      },
+      {
+        "value": "CUSTOM:SpectriumGem"
+      },
+      {
+        "value": "CUSTOM:SpectriumGem"
+      },
+      {
+        "value": "CUSTOM:SpectriumGem"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Tier1CraftingBench"
+    },
+    "name": "craft_tier_1_crafting_workbench",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 "
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:almonie_paper"
+    },
+    "1": {
+      "item": "erinium:almonie_paper"
+    },
+    "2": {
+      "item": "erinium:almonie_paper"
+    },
+    "4": {
+      "item": "erinium:printed_circuit_board"
+    }
+  },
+  "result": {
+    "item": "erinium:almonie_card",
+    "count": 1
+  }
+}

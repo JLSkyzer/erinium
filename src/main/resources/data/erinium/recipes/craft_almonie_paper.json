@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:almonie_gem"
+    },
+    "1": {
+      "item": "erinium:almonie_gem"
+    },
+    "2": {
+      "item": "erinium:almonie_gem"
+    },
+    "3": {
+      "item": "erinium:almonie_gem"
+    },
+    "4": {
+      "item": "minecraft:paper"
+    },
+    "5": {
+      "item": "erinium:almonie_gem"
+    },
+    "6": {
+      "item": "erinium:almonie_gem"
+    },
+    "7": {
+      "item": "erinium:almonie_gem"
+    },
+    "8": {
+      "item": "erinium:almonie_gem"
+    }
+  },
+  "result": {
+    "item": "erinium:almonie_paper",
+    "count": 1
+  }
+}

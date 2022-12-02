@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:spectrium_block"
+    },
+    "1": {
+      "item": "erinium:tier_1_crafting_bench"
+    },
+    "2": {
+      "item": "erinium:spectrium_block"
+    },
+    "4": {
+      "item": "erinium:spectrium_battery"
+    },
+    "6": {
+      "item": "erinium:spectrium_block"
+    },
+    "7": {
+      "item": "erinium:spectrium_block"
+    },
+    "8": {
+      "item": "erinium:spectrium_block"
+    }
+  },
+  "result": {
+    "item": "erinium:erinium_workbench_tier_1",
+    "count": 1
+  }
+}

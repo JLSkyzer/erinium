@@ -14,6 +14,10 @@
     "fluidBlock": {
       "value": "CUSTOM:MoonSand"
     },
+    "airColor": {
+      "value": -15395564,
+      "falpha": 0.0
+    },
     "canRespawnHere": false,
     "hasFog": false,
     "isDark": false,

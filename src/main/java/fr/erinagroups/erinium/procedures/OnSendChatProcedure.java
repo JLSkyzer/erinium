@@ -88,7 +88,7 @@ public class OnSendChatProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		String text = (String) dependencies.get("text");
 		String tempText = "";
-		if (EriniumModVariables.WorldVariables.get(world).enableCustomChat) {
+		if (EriniumModVariables.MapVariables.get(world).enableCustomChat) {
 			if (dependencies.get("event") != null) {
 				Object _obj = dependencies.get("event");
 				if (_obj instanceof Event) {

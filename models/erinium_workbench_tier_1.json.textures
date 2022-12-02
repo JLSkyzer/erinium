@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "spectrium_block.png": "spectrium_block",
+        "erinium_workbench_tier_1_top.png": "erinium_workbench_tier_1_top"
+      },
+      "name": "default"
+    }
+  }
+}

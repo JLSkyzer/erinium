@@ -1,0 +1,126 @@
+{
+	"credit": "Made by JLSkyzer",
+	"textures": {
+		"particle": "erinium:blocks/spectrium_block",
+		"spectrium_block.png": "erinium:blocks/spectrium_block",
+		"erinium_workbench_tier_1_top.png": "erinium:blocks/erinium_workbench_tier_1_top"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 2, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 2], "texture": "#spectrium_block.png"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#spectrium_block.png"},
+				"south": {"uv": [0, 0, 16, 2], "texture": "#spectrium_block.png"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#spectrium_block.png"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#spectrium_block.png"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#spectrium_block.png"}
+			}
+		},
+		{
+			"from": [6, 2, 6],
+			"to": [10, 14, 10],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 12], "texture": "#spectrium_block.png"},
+				"east": {"uv": [0, 0, 4, 12], "texture": "#spectrium_block.png"},
+				"south": {"uv": [0, 0, 4, 12], "texture": "#spectrium_block.png"},
+				"west": {"uv": [0, 0, 4, 12], "texture": "#spectrium_block.png"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#spectrium_block.png"},
+				"down": {"uv": [0, 0, 4, 4], "texture": "#spectrium_block.png"}
+			}
+		},
+		{
+			"from": [0, 14, 0],
+			"to": [16, 15, 16],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 15.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 1], "texture": "#spectrium_block.png"},
+				"east": {"uv": [0, 0, 16, 1], "texture": "#spectrium_block.png"},
+				"south": {"uv": [0, 0, 16, 1], "texture": "#spectrium_block.png"},
+				"west": {"uv": [0, 0, 16, 1], "texture": "#spectrium_block.png"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#erinium_workbench_tier_1_top.png"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#spectrium_block.png"}
+			}
+		},
+		{
+			"from": [0, 15, 0],
+			"to": [1, 15.5, 16],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 15.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 0.5], "texture": "#spectrium_block.png"},
+				"east": {"uv": [0, 0, 16, 0.5], "texture": "#spectrium_block.png"},
+				"south": {"uv": [0, 0, 1, 0.5], "texture": "#spectrium_block.png"},
+				"west": {"uv": [0, 0, 16, 0.5], "texture": "#spectrium_block.png"},
+				"up": {"uv": [0, 0, 1, 16], "texture": "#erinium_workbench_tier_1_top.png"},
+				"down": {"uv": [0, 0, 1, 16], "texture": "#spectrium_block.png"}
+			}
+		},
+		{
+			"from": [15, 15, 0],
+			"to": [16, 15.5, 16],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 15.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 0.5], "texture": "#spectrium_block.png"},
+				"east": {"uv": [0, 0, 16, 0.5], "texture": "#spectrium_block.png"},
+				"south": {"uv": [0, 0, 1, 0.5], "texture": "#spectrium_block.png"},
+				"west": {"uv": [0, 0, 16, 0.5], "texture": "#spectrium_block.png"},
+				"up": {"uv": [0, 0, 1, 16], "texture": "#erinium_workbench_tier_1_top.png"},
+				"down": {"uv": [0, 0, 1, 16], "texture": "#spectrium_block.png"}
+			}
+		},
+		{
+			"from": [1, 15, 15],
+			"to": [15, 15.5, 16],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 15.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 0.5], "texture": "#spectrium_block.png"},
+				"east": {"uv": [0, 0, 1, 0.5], "texture": "#spectrium_block.png"},
+				"south": {"uv": [0, 0, 14, 0.5], "texture": "#spectrium_block.png"},
+				"west": {"uv": [0, 0, 1, 0.5], "texture": "#spectrium_block.png"},
+				"up": {"uv": [0, 0, 14, 1], "texture": "#erinium_workbench_tier_1_top.png"},
+				"down": {"uv": [0, 0, 14, 1], "texture": "#spectrium_block.png"}
+			}
+		},
+		{
+			"from": [1, 15, 0],
+			"to": [15, 15.5, 1],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 15.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 0.5], "texture": "#spectrium_block.png"},
+				"east": {"uv": [0, 0, 1, 0.5], "texture": "#spectrium_block.png"},
+				"south": {"uv": [0, 0, 14, 0.5], "texture": "#spectrium_block.png"},
+				"west": {"uv": [0, 0, 1, 0.5], "texture": "#spectrium_block.png"},
+				"up": {"uv": [0, 0, 14, 1], "texture": "#erinium_workbench_tier_1_top.png"},
+				"down": {"uv": [0, 0, 14, 1], "texture": "#spectrium_block.png"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [37.5, 0, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [37.5, 0, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [37.5, 0, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [37.5, 0, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"rotation": [1, 0, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [-155.25, 0, -180],
+			"translation": [0, -0.5, 0],
+			"scale": [0.7, 0.7, 0.7]
+		}
+	}
+}

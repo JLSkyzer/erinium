@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "erinium:silver_ingot"
+    },
+    "3": {
+      "item": "erinium:spectrium_gem"
+    },
+    "4": {
+      "item": "erinium:printed_circuit_board"
+    },
+    "5": {
+      "item": "erinium:spectrium_gem"
+    },
+    "6": {
+      "item": "erinium:spectrium_gem"
+    },
+    "7": {
+      "item": "erinium:spectrium_gem"
+    },
+    "8": {
+      "item": "erinium:spectrium_gem"
+    }
+  },
+  "result": {
+    "item": "erinium:hacked_usb_key",
+    "count": 1
+  }
+}

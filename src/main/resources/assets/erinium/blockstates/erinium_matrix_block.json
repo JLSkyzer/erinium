@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "erinium:block/erinium_matrix_block"
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "image": "512_x_512",
+        "image": "erinium_logo",
         "bois": "bois"
       },
       "name": "default"

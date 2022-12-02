@@ -1,0 +1,31 @@
+{
+  "_fv": 34,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "erinium_matrix_pickaxe",
+    "customModelName": "Normal",
+    "name": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:EriniumTools"
+    },
+    "toolType": "Pickaxe",
+    "harvestLevel": 4,
+    "efficiency": 14.0,
+    "attackSpeed": 3.0,
+    "enchantability": 28,
+    "damageVsEntity": 3.0,
+    "usageCount": 3000,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:EriniumMatrixIngot"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

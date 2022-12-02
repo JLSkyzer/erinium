@@ -1,0 +1,46 @@
+{
+  "_fv": 34,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:SilverIngot"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:SpectriumGem"
+      },
+      {
+        "value": "CUSTOM:PrintedCircuitBoard"
+      },
+      {
+        "value": "CUSTOM:SpectriumGem"
+      },
+      {
+        "value": "CUSTOM:SpectriumGem"
+      },
+      {
+        "value": "CUSTOM:SpectriumGem"
+      },
+      {
+        "value": "CUSTOM:SpectriumGem"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:HackedUsbKey"
+    },
+    "name": "craft_usb_key",
+    "namespace": "mod"
+  }
+}

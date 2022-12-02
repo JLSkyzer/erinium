@@ -63,7 +63,7 @@ public class MoonDimension extends EriniumModElements.ModElement {
 		DimensionRenderInfo customEffect = new DimensionRenderInfo(Float.NaN, true, DimensionRenderInfo.FogType.NONE, false, false) {
 			@Override
 			public Vector3d func_230494_a_(Vector3d color, float sunHeight) {
-				return color;
+				return new Vector3d(0.082352941176, 0.082352941176, 0.078431372549);
 			}
 
 			@Override

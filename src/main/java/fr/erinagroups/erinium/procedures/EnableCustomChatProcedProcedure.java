@@ -53,15 +53,15 @@ public class EnableCustomChatProcedProcedure {
 					bufferedReader.close();
 					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					if (JsonObject.get("staff.erinium.command").getAsBoolean() == true) {
-						if (!EriniumModVariables.WorldVariables.get(world).enableCustomChat) {
-							EriniumModVariables.WorldVariables.get(world).enableCustomChat = (true);
-							EriniumModVariables.WorldVariables.get(world).syncData(world);
+						if (!EriniumModVariables.MapVariables.get(world).enableCustomChat) {
+							EriniumModVariables.MapVariables.get(world).enableCustomChat = (true);
+							EriniumModVariables.MapVariables.get(world).syncData(world);
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aSet custom chat to \u00A7btrue"), (false));
 							}
 						} else {
-							EriniumModVariables.WorldVariables.get(world).enableCustomChat = (false);
-							EriniumModVariables.WorldVariables.get(world).syncData(world);
+							EriniumModVariables.MapVariables.get(world).enableCustomChat = (false);
+							EriniumModVariables.MapVariables.get(world).syncData(world);
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aSet custom chat to \u00A7bfalse"), (false));
 							}
