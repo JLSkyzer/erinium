@@ -8543,6 +8543,42 @@
       "locked_code": false,
       "registry_name": "craft_matrix_block",
       "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "UncraftMatrixBlock",
+      "type": "recipe",
+      "sortid": 646,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uncraft_matrix_block",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixSword",
+      "type": "recipe",
+      "sortid": 647,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_sword",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixPickaxe",
+      "type": "recipe",
+      "sortid": 648,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_pickaxe",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixAxe",
+      "type": "recipe",
+      "sortid": 649,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_axe",
+      "path": "~/Erinium/Craft"
     }
   ],
   "variable_elements": [

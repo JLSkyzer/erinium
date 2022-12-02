@@ -8439,6 +8439,146 @@
       "locked_code": false,
       "registry_name": "craft_matrix_helmet",
       "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "ArmorHelmetHighEnd",
+      "type": "procedure",
+      "sortid": 638,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_helmet_high_end",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "ArmorChestplateHighEnd",
+      "type": "procedure",
+      "sortid": 639,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_chestplate_high_end",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "ArmorLeggingsHighEnd",
+      "type": "procedure",
+      "sortid": 640,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_leggings_high_end",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "ArmorBootsHighEnd",
+      "type": "procedure",
+      "sortid": 641,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_boots_high_end",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "CraftMatrixChestplate",
+      "type": "recipe",
+      "sortid": 642,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_chestplate",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixLeggings",
+      "type": "recipe",
+      "sortid": 643,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_leggings",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixBoots",
+      "type": "recipe",
+      "sortid": 644,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_boots",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixBlock",
+      "type": "recipe",
+      "sortid": 645,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_block",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "UncraftMatrixBlock",
+      "type": "recipe",
+      "sortid": 646,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uncraft_matrix_block",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixSword",
+      "type": "recipe",
+      "sortid": 647,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_sword",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixPickaxe",
+      "type": "recipe",
+      "sortid": 648,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_pickaxe",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixAxe",
+      "type": "recipe",
+      "sortid": 649,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_axe",
+      "path": "~/Erinium/Craft"
     }
   ],
   "variable_elements": [
