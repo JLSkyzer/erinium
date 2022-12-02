@@ -8430,6 +8430,155 @@
       "locked_code": false,
       "registry_name": "craft_usb_key",
       "path": "~/Space update/Recipes"
+    },
+    {
+      "name": "CraftMatrixHelmet",
+      "type": "recipe",
+      "sortid": 637,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_helmet",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "ArmorHelmetHighEnd",
+      "type": "procedure",
+      "sortid": 638,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_helmet_high_end",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "ArmorChestplateHighEnd",
+      "type": "procedure",
+      "sortid": 639,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_chestplate_high_end",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "ArmorLeggingsHighEnd",
+      "type": "procedure",
+      "sortid": 640,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_leggings_high_end",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "ArmorBootsHighEnd",
+      "type": "procedure",
+      "sortid": 641,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_boots_high_end",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "CraftMatrixChestplate",
+      "type": "recipe",
+      "sortid": 642,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_chestplate",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixLeggings",
+      "type": "recipe",
+      "sortid": 643,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_leggings",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixBoots",
+      "type": "recipe",
+      "sortid": 644,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_boots",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixBlock",
+      "type": "recipe",
+      "sortid": 645,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_block",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "UncraftMatrixBlock",
+      "type": "recipe",
+      "sortid": 646,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uncraft_matrix_block",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixSword",
+      "type": "recipe",
+      "sortid": 647,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_sword",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixPickaxe",
+      "type": "recipe",
+      "sortid": 648,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_pickaxe",
+      "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "CraftMatrixAxe",
+      "type": "recipe",
+      "sortid": 649,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_axe",
+      "path": "~/Erinium/Craft"
     }
   ],
   "variable_elements": [
@@ -8757,8 +8906,8 @@
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "block.erinium.jl_skyzer_painting": "JLSkyzer Painting 1",
       "block.erinium.candy_logs": "§5Candy Logs",
-      "block.erinium.dranite_ore": "§6Dranite Ore",
       "item.erinium.fraisage": "Fraisage",
+      "block.erinium.dranite_ore": "§6Dranite Ore",
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.magic_stones_regeneration": "§l§oMagic Stones §5§l§oRegeneration",
@@ -8775,13 +8924,13 @@
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "item.erinium.magic_stones_invisibility": "§l§oMagic Stones §3§l§oInvisibility",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
-      "block.erinium.xp_bush_layer_1": "Xp bush",
       "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
+      "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
@@ -8794,8 +8943,8 @@
       "block.erinium.setanum_stage_2": "Setanum Stage 2",
       "block.erinium.setanum_stage_1": "Setanum Stage 1",
       "block.erinium.setanum_stage_3": "Setanum Stage 3",
-      "block.erinium.scining_sandstone": "Scining Sandstone",
       "item.erinium.magic_stones_xp": "§l§oMagic Stones §2§l§oXp",
+      "block.erinium.scining_sandstone": "Scining Sandstone",
       "subtitles.erinium_boss_dead_1": "Erinium boss dead",
       "block.erinium.candy_silver_ore": "Candy Silver Ore",
       "item.erinium.setanum_nuggets": "Setanum Nuggets",
