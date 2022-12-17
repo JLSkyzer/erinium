@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
+import java.util.List;
 import java.util.ArrayList;
 
 import fr.erinagroups.erinium.EriniumMod;
@@ -18,7 +19,7 @@ public class TestListCommandExecutedProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		ArrayList test = new ArrayList();
+		List<Object> test = new ArrayList<>();
 		test.clear();
 		test.add("Alpha");
 		test.add("Beta");

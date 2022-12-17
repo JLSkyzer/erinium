@@ -8579,6 +8579,32 @@
       "locked_code": false,
       "registry_name": "craft_matrix_axe",
       "path": "~/Erinium/Craft"
+    },
+    {
+      "name": "GetDimProced",
+      "type": "procedure",
+      "sortid": 650,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_dim_proced",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Command"
+    },
+    {
+      "name": "GetDim",
+      "type": "command",
+      "sortid": 650,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_dim",
+      "path": "~/Server side/Command"
     }
   ],
   "variable_elements": [
@@ -9677,6 +9703,15 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Integration",
+        "children": [
+          {
+            "name": "Jei",
+            "children": []
+          }
+        ]
       }
     ]
   },
@@ -9691,8 +9726,7 @@
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [
-      "mekanism",
-      "cgm"
+      "mekanism"
     ],
     "dependencies": [],
     "dependants": [],
@@ -9702,5 +9736,5 @@
     "modElementsPackage": "fr.erinagroups.erinium",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200347418
+  "mcreatorVersion": 202200348217
 }

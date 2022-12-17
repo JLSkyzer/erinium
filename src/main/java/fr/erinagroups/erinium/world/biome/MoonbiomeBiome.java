@@ -58,8 +58,8 @@ public class MoonbiomeBiome extends EriniumModElements.ModElement {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
 			if (biome == null) {
-				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(12638463).setWaterColor(-12040120).setWaterFogColor(-8421505)
-						.withSkyColor(7972607).withFoliageColor(-12040120).withGrassColor(-12040120).build();
+				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-15395563).setWaterColor(-12040120).setWaterFogColor(-8421505)
+						.withSkyColor(-15395563).withFoliageColor(-12040120).withGrassColor(-12040120).build();
 				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
 						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(MoonSandBlock.block.getDefaultState(),
 								MoonStoneBlock.block.getDefaultState(), MoonStoneBlock.block.getDefaultState())));

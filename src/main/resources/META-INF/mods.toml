@@ -27,11 +27,5 @@ Mod cr�e par JLSkyzer
     versionRange="[0,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.erinium]]
-    modId="cgm"
-    mandatory=true
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 
 

@@ -65,12 +65,22 @@ minecraft {
 }
 
 repositories {
+	maven {
+	    url "https://cursemaven.com"
+	    content {
+	        includeGroup "curse.maven"
+	        }
+		}
     maven {
-        url "https://cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
+    // location of the maven that hosts JEI files
+    name = "Progwml6 maven"
+    url = "https://dvs1.progwml6.com/files/maven/"
+  }
+  maven {
+    // location of a maven mirror for JEI files, as a fallback
+    name = "ModMaven"
+    url = "https://modmaven.dev"
+  }
 }
 
 dependencies {
@@ -79,13 +89,16 @@ dependencies {
     // curse.maven:<descriptor>-<projectid>:<fileid>
     implementation fg.deobf("curse.maven:obfuscate-289380:3336021")
     implementation fg.deobf("curse.maven:mrcrayfishs-gun-mod-289479:3553336")
-    implementation fg.deobf("curse.maven:jei-238222:3681294")
     implementation fg.deobf("curse.maven:mekanism-268560:3659389")
     implementation fg.deobf("curse.maven:construction-wand-399558:3562328")
 
     implementation fg.deobf("curse.maven:structure-expansion-398430:3356703")
 
     implementation fg.deobf("curse.maven:journeymap-32274:4012858")
+
+    /*implementation fg.deobf("curse.maven:jei-238222:4060770")*/
+    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153")
 
     implementation fg.deobf("curse.maven:ftb-library-forge-404465:3553840")
     implementation fg.deobf("curse.maven:architectury-api-419699:3857643")
