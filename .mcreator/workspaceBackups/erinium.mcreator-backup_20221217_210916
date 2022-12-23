@@ -8607,22 +8607,12 @@
       "path": "~/Server side/Command"
     },
     {
-      "name": "EriniumJei",
+      "name": "JeiPlugin",
       "type": "code",
       "sortid": 651,
       "compiles": true,
       "locked_code": true,
-      "registry_name": "erinium_jei",
-      "path": "~/Integration/Jei"
-    },
-    {
-      "name": "EriniumWorkbenchTier1RecipeCategory",
-      "type": "code",
-      "sortid": 652,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "erinium_workbench_tier_1_recipe_category",
-      "path": "~/Integration/Jei"
+      "registry_name": "jei_plugin"
     }
   ],
   "variable_elements": [

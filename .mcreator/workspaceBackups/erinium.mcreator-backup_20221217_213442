@@ -8605,15 +8605,6 @@
       "locked_code": false,
       "registry_name": "get_dim",
       "path": "~/Server side/Command"
-    },
-    {
-      "name": "EriniumJei",
-      "type": "code",
-      "sortid": 651,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "erinium_jei",
-      "path": "~/Integration/Jei"
     }
   ],
   "variable_elements": [
