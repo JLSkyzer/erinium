@@ -8605,6 +8605,32 @@
       "locked_code": false,
       "registry_name": "get_dim",
       "path": "~/Server side/Command"
+    },
+    {
+      "name": "GetFactionName",
+      "type": "procedure",
+      "sortid": 651,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "get_faction_name",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Plugins/Saberfaction"
+    },
+    {
+      "name": "GetFaction",
+      "type": "command",
+      "sortid": 652,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction",
+      "path": "~/Server side/Plugins/Saberfaction"
     }
   ],
   "variable_elements": [
@@ -9252,6 +9278,15 @@
           {
             "name": "Command",
             "children": []
+          },
+          {
+            "name": "Plugins",
+            "children": [
+              {
+                "name": "Saberfaction",
+                "children": []
+              }
+            ]
           }
         ]
       },
@@ -9719,8 +9754,8 @@
     "modid": "erinium",
     "modName": "Erinium",
     "version": "1.0.6",
-    "description": "Mod cr�e par JLSkyzer",
-    "author": "killi, MCreator",
+    "description": "Mod créer par JLSkyzer",
+    "author": "JLSkyzer",
     "websiteURL": "https://discord.gg/26DzRJCTQs",
     "license": "Copyright � 2021 - 2022 Erinium - All Rights Reserved.",
     "disableForgeVersionCheck": true,
@@ -9732,7 +9767,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.16.5",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "credits": "pas de crédit",
     "modElementsPackage": "fr.erinagroups.erinium",
     "lockBaseModFiles": false
   },

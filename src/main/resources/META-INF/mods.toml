@@ -6,11 +6,11 @@ license="Copyright � 2021 - 2022 Erinium - All Rights Reserved."
 modId="erinium"
 version="1.0.6"
 displayName="Erinium"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
+credits="pas de crédit"
 displayURL="https://discord.gg/26DzRJCTQs"
-authors="killi, MCreator"
+authors="JLSkyzer"
 description='''
-Mod cr�e par JLSkyzer
+Mod créer par JLSkyzer
 '''
 
 [[dependencies.erinium]]
