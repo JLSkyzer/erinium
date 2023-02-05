@@ -5,6 +5,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.World;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
@@ -70,6 +73,66 @@ public class PlayerTickProcedure {
 							(int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).PlayerHealth - 1),
 							(false), (false)));
+			}
+		}
+		if ((entity.world.getDimensionKey()) == (World.OVERWORLD)) {
+			{
+				String _setval = "Lobby";
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.GetCurrentServer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
+				new ResourceLocation("erinium:faction_alpha")))) {
+			{
+				String _setval = "Alpha";
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.GetCurrentServer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
+				new ResourceLocation("erinium:faction_beta")))) {
+			{
+				String _setval = "Beta";
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.GetCurrentServer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
+				new ResourceLocation("erinium:faction_charlie")))) {
+			{
+				String _setval = "Charlie";
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.GetCurrentServer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_01")))) {
+			{
+				String _setval = "Minage01";
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.GetCurrentServer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_02")))) {
+			{
+				String _setval = "Minage02";
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.GetCurrentServer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_03")))) {
+			{
+				String _setval = "Minage03";
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.GetCurrentServer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

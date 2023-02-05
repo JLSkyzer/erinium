@@ -155,5 +155,25 @@ public class OnjoinTheServerProcedure {
 						(false));
 			}
 		}
+		if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).PlayerName).equals(entity.getDisplayName().getString())) {
+			{
+				String _setval = (entity.getDisplayName().getString());
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.PlayerName = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
+		if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).playerUUID).equals(entity.getCachedUniqueIdString())) {
+			{
+				String _setval = entity.getCachedUniqueIdString();
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.playerUUID = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
 	}
 }

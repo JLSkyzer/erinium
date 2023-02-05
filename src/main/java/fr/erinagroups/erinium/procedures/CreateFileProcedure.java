@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.io.File;
 
+import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
 import com.google.gson.GsonBuilder;
@@ -79,6 +80,7 @@ public class CreateFileProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
+			SecJsonObject.addProperty("server.maxplayer", 100);
 			SecJsonObject.addProperty("toggle.tpdim", (false));
 			SecJsonObject.addProperty("block.egg_factory.ranklvl", Math.round(15));
 			SecJsonObject.addProperty("use.planetspawn", (false));
@@ -118,6 +120,21 @@ public class CreateFileProcedure {
 					exception.printStackTrace();
 				}
 			}
+		}
+		{
+			String _setval = FMLPaths.GAMEDIR.get().toString();
+			entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.mcpath = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			String _setval = (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).mcpath).replace("\\", "/"));
+			entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.mcpath = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 			((PlayerEntity) entity)

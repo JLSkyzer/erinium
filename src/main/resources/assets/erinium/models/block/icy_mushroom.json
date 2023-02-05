@@ -1,0 +1,8 @@
+{
+  "parent": "erinium:custom/icy_mushroom",
+  "textures": {
+    "all": "erinium:blocks/icy_mushroom",
+    "particle": "erinium:blocks/icy_mushroom",
+    "texture": "erinium:blocks/icy_mushroom"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "_fv": 34,
+  "_type": "plant",
+  "definition": {
+    "renderType": 2,
+    "texture": "icy_mushroom",
+    "textureBottom": "",
+    "customModelName": "icy_mushroom:default",
+    "itemTexture": "warning",
+    "particleTexture": "icy_mushroom",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "plantType": "normal",
+    "staticPlantGenerationType": "Flower",
+    "suspiciousStewEffect": "HASTE",
+    "suspiciousStewDuration": 100,
+    "growapableSpawnType": "Plains",
+    "growapableMaxHeight": 3,
+    "doublePlantGenerationType": "Flower",
+    "customBoundingBox": true,
+    "disableOffset": true,
+    "boundingBoxes": [
+      {
+        "mx": 12.0,
+        "my": 0.0,
+        "mz": 2.0,
+        "Mx": 2.0,
+        "My": 8.0,
+        "Mz": 12.0,
+        "subtract": false
+      }
+    ],
+    "name": "Icy Mushroom",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:EriniumItems"
+    },
+    "hardness": 0.0,
+    "resistance": 0.0,
+    "luminance": 0,
+    "unbreakable": false,
+    "isSolid": false,
+    "isCustomSoundType": false,
+    "soundOnStep": {
+      "value": "PLANT"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "useLootTableForDrops": false,
+    "customDrop": {
+      "value": ""
+    },
+    "dropAmount": 1,
+    "forceTicking": false,
+    "emissiveRendering": false,
+    "hasTileEntity": false,
+    "isReplaceable": false,
+    "colorOnMap": "CYAN",
+    "creativePickItem": {
+      "value": ""
+    },
+    "offsetType": "XZ",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 100,
+    "fireSpreadSpeed": 60,
+    "jumpFactor": 1.0,
+    "speedFactor": 1.0,
+    "canBePlacedOn": [],
+    "frequencyOnChunks": 2,
+    "spawnWorldTypes": [
+      "CUSTOM:FactionAlpha",
+      "CUSTOM:FactionBeta",
+      "CUSTOM:FactionCharlie",
+      "CUSTOM:Minage01",
+      "CUSTOM:Minage02",
+      "CUSTOM:Minage03"
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:IcyForest"
+      }
+    ],
+    "patchSize": 2,
+    "generateAtAnyHeight": false
+  }
+}

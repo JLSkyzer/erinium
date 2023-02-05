@@ -4,8 +4,6 @@ package fr.erinagroups.erinium.block;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.common.ToolType;
 
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -42,16 +40,11 @@ public class AmenineStairsBlock extends EriniumModElements.ModElement {
 
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
-			super(() -> new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1.3f, 1f).setLightLevel(s -> 0)
+			super(() -> new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1.3f, 1f).setLightLevel(s -> 1)
 					.harvestLevel(0).harvestTool(ToolType.AXE).setRequiresTool()).getDefaultState(),
-					Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1.3f, 1f).setLightLevel(s -> 0).harvestLevel(0)
+					Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1.3f, 1f).setLightLevel(s -> 1).harvestLevel(0)
 							.harvestTool(ToolType.AXE).setRequiresTool());
 			setRegistryName("amenine_stairs");
-		}
-
-		@Override
-		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 15;
 		}
 
 		@Override

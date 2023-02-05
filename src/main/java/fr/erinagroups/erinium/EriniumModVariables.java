@@ -149,6 +149,13 @@ public class EriniumModVariables {
 	public static class MapVariables extends WorldSavedData {
 		public static final String DATA_NAME = "erinium_mapvars";
 		public boolean enableCustomChat = false;
+		public double PlayerCountFactionAlpha = 0;
+		public double PlayerCountFactionBeta = 0;
+		public double PlayerCountFactionCharlie = 0;
+		public double PlayerCountMinage01 = 0;
+		public double PlayerCountMinage02 = 0;
+		public double PlayerCountMinage03 = 0;
+		public double MaxPlayerPerServer = 0.0;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -161,11 +168,25 @@ public class EriniumModVariables {
 		@Override
 		public void read(CompoundNBT nbt) {
 			enableCustomChat = nbt.getBoolean("enableCustomChat");
+			PlayerCountFactionAlpha = nbt.getDouble("PlayerCountFactionAlpha");
+			PlayerCountFactionBeta = nbt.getDouble("PlayerCountFactionBeta");
+			PlayerCountFactionCharlie = nbt.getDouble("PlayerCountFactionCharlie");
+			PlayerCountMinage01 = nbt.getDouble("PlayerCountMinage01");
+			PlayerCountMinage02 = nbt.getDouble("PlayerCountMinage02");
+			PlayerCountMinage03 = nbt.getDouble("PlayerCountMinage03");
+			MaxPlayerPerServer = nbt.getDouble("MaxPlayerPerServer");
 		}
 
 		@Override
 		public CompoundNBT write(CompoundNBT nbt) {
 			nbt.putBoolean("enableCustomChat", enableCustomChat);
+			nbt.putDouble("PlayerCountFactionAlpha", PlayerCountFactionAlpha);
+			nbt.putDouble("PlayerCountFactionBeta", PlayerCountFactionBeta);
+			nbt.putDouble("PlayerCountFactionCharlie", PlayerCountFactionCharlie);
+			nbt.putDouble("PlayerCountMinage01", PlayerCountMinage01);
+			nbt.putDouble("PlayerCountMinage02", PlayerCountMinage02);
+			nbt.putDouble("PlayerCountMinage03", PlayerCountMinage03);
+			nbt.putDouble("MaxPlayerPerServer", MaxPlayerPerServer);
 			return nbt;
 		}
 
@@ -286,6 +307,11 @@ public class EriniumModVariables {
 			nbt.putDouble("rank_overlay_x", instance.rank_overlay_x);
 			nbt.putDouble("rank_overlay_y", instance.rank_overlay_y);
 			nbt.putDouble("won_xp_overlay_cooldown", instance.won_xp_overlay_cooldown);
+			nbt.putString("PlayerName", instance.PlayerName);
+			nbt.putString("GetCurrentServer", instance.GetCurrentServer);
+			nbt.putDouble("GetCurrentServerPlayerCount", instance.GetCurrentServerPlayerCount);
+			nbt.putString("mcpath", instance.mcpath);
+			nbt.putString("playerUUID", instance.playerUUID);
 			return nbt;
 		}
 
@@ -323,6 +349,11 @@ public class EriniumModVariables {
 			instance.rank_overlay_x = nbt.getDouble("rank_overlay_x");
 			instance.rank_overlay_y = nbt.getDouble("rank_overlay_y");
 			instance.won_xp_overlay_cooldown = nbt.getDouble("won_xp_overlay_cooldown");
+			instance.PlayerName = nbt.getString("PlayerName");
+			instance.GetCurrentServer = nbt.getString("GetCurrentServer");
+			instance.GetCurrentServerPlayerCount = nbt.getDouble("GetCurrentServerPlayerCount");
+			instance.mcpath = nbt.getString("mcpath");
+			instance.playerUUID = nbt.getString("playerUUID");
 		}
 	}
 
@@ -358,6 +389,11 @@ public class EriniumModVariables {
 		public double rank_overlay_x = 72.0;
 		public double rank_overlay_y = -98.0;
 		public double won_xp_overlay_cooldown = 0;
+		public String PlayerName = "\"\"";
+		public String GetCurrentServer = "\"\"";
+		public double GetCurrentServerPlayerCount = 0;
+		public String mcpath = "\"\"";
+		public String playerUUID = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -418,12 +454,17 @@ public class EriniumModVariables {
 		clone.rank_overlay_x = original.rank_overlay_x;
 		clone.rank_overlay_y = original.rank_overlay_y;
 		clone.won_xp_overlay_cooldown = original.won_xp_overlay_cooldown;
+		clone.PlayerName = original.PlayerName;
+		clone.GetCurrentServer = original.GetCurrentServer;
+		clone.mcpath = original.mcpath;
+		clone.playerUUID = original.playerUUID;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
 			clone.wonXp = original.wonXp;
 			clone.won_xp_message = original.won_xp_message;
 			clone.won_xp_message_2 = original.won_xp_message_2;
+			clone.GetCurrentServerPlayerCount = original.GetCurrentServerPlayerCount;
 		}
 	}
 
@@ -480,6 +521,11 @@ public class EriniumModVariables {
 					variables.rank_overlay_x = message.data.rank_overlay_x;
 					variables.rank_overlay_y = message.data.rank_overlay_y;
 					variables.won_xp_overlay_cooldown = message.data.won_xp_overlay_cooldown;
+					variables.PlayerName = message.data.PlayerName;
+					variables.GetCurrentServer = message.data.GetCurrentServer;
+					variables.GetCurrentServerPlayerCount = message.data.GetCurrentServerPlayerCount;
+					variables.mcpath = message.data.mcpath;
+					variables.playerUUID = message.data.playerUUID;
 				}
 			});
 			context.setPacketHandled(true);

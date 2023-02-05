@@ -1,0 +1,126 @@
+{
+  "_fv": 34,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 427,
+    "height": 240,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "main_menu_background.png",
+          "use1Xscale": false,
+          "name": "main_menu_background.png",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Bienvenue : §e<VAR:PlayerName>",
+          "color": {
+            "value": -13382656,
+            "falpha": 0.0
+          },
+          "name": "Bienvenue : §e<VAR:PlayerName>",
+          "x": 69,
+          "y": 4
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Serveur : §e<VAR:GetCurrentServer>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Serveur : §e<VAR:GetCurrentServer>",
+          "x": 69,
+          "y": 20
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Joueurs Connecté : §e<VAR:integer:GetCurrentServerPlayerCount> / <VAR:integer:MaxPlayerPerServer>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Joueurs Connecté : §e<VAR:integer:GetCurrentServerPlayerCount> / <VAR:integer:MaxPlayerPerServer>",
+          "x": 69,
+          "y": 35
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Main",
+          "onClick": {
+            "name": "OpenMain"
+          },
+          "width": 108,
+          "height": 20,
+          "name": "Main",
+          "x": 2,
+          "y": 72
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Rank",
+          "onClick": {
+            "name": "OpenRank"
+          },
+          "width": 108,
+          "height": 20,
+          "name": "Rank",
+          "x": 2,
+          "y": 94
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Stats",
+          "onClick": {
+            "name": "OpenStats"
+          },
+          "width": 108,
+          "height": 20,
+          "name": "Stats",
+          "x": 2,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "",
+          "x": 202,
+          "y": 79
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 17,
+      "oy": 17,
+      "snapOnGrid": false
+    }
+  }
+}

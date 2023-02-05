@@ -62,7 +62,7 @@ public class AmenineLeavesBlock extends EriniumModElements.ModElement {
 
 		@Override
 		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 15;
+			return 5;
 		}
 
 		@Override

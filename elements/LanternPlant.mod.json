@@ -1,0 +1,99 @@
+{
+  "_fv": 34,
+  "_type": "plant",
+  "definition": {
+    "renderType": 12,
+    "texture": "lantern_plant",
+    "textureBottom": "",
+    "customModelName": "Cross model",
+    "itemTexture": "lantern_plant",
+    "particleTexture": "lantern_plant",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "plantType": "normal",
+    "staticPlantGenerationType": "Flower",
+    "suspiciousStewEffect": "NIGHT_VISION",
+    "suspiciousStewDuration": 100,
+    "growapableSpawnType": "Plains",
+    "growapableMaxHeight": 3,
+    "doublePlantGenerationType": "Flower",
+    "customBoundingBox": true,
+    "disableOffset": true,
+    "boundingBoxes": [
+      {
+        "mx": 4.0,
+        "my": 0.0,
+        "mz": 2.0,
+        "Mx": 15.0,
+        "My": 11.0,
+        "Mz": 15.0,
+        "subtract": false
+      }
+    ],
+    "name": "Lantern Plant",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:EriniumItems"
+    },
+    "hardness": 0.0,
+    "resistance": 0.0,
+    "luminance": 0,
+    "unbreakable": false,
+    "isSolid": false,
+    "isCustomSoundType": false,
+    "soundOnStep": {
+      "value": "PLANT"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "useLootTableForDrops": false,
+    "customDrop": {
+      "value": ""
+    },
+    "dropAmount": 1,
+    "forceTicking": false,
+    "emissiveRendering": false,
+    "hasTileEntity": false,
+    "isReplaceable": false,
+    "colorOnMap": "CYAN",
+    "creativePickItem": {
+      "value": ""
+    },
+    "offsetType": "XZ",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 100,
+    "fireSpreadSpeed": 60,
+    "jumpFactor": 1.0,
+    "speedFactor": 1.0,
+    "canBePlacedOn": [],
+    "frequencyOnChunks": 1,
+    "spawnWorldTypes": [
+      "CUSTOM:FactionAlpha",
+      "CUSTOM:FactionBeta",
+      "CUSTOM:FactionCharlie",
+      "CUSTOM:Minage01",
+      "CUSTOM:Minage02",
+      "CUSTOM:Minage03"
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:IcyForest"
+      }
+    ],
+    "patchSize": 1,
+    "generateAtAnyHeight": false
+  }
+}

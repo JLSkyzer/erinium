@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "erinium:blocks/lantern_plant",
+    "particle": "erinium:blocks/lantern_plant"
+  }
+}
