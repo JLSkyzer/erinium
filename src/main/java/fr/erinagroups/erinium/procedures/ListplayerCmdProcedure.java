@@ -21,6 +21,7 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 
+import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
 import com.google.gson.JsonObject;
@@ -47,177 +48,200 @@ public class ListplayerCmdProcedure {
 		File file = new File("");
 		boolean allowed = false;
 		double List = 0;
-		allowed = (false);
-		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/players/"),
-				File.separator + (entity.getDisplayName().getString() + ".json"));
-		if (file.exists()) {
+		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).list_player_cooldown <= 0) {
 			{
-				try {
-					BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-					StringBuilder jsonstringbuilder = new StringBuilder();
-					String line;
-					while ((line = bufferedReader.readLine()) != null) {
-						jsonstringbuilder.append(line);
-					}
-					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-					if (JsonObject.get("staff.erinium.command").getAsBoolean() == true) {
-						allowed = (true);
-					} else {
-						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cVous n'avez pas la permission !"), (false));
+				double _setval = 600;
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.list_player_cooldown = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			allowed = (false);
+			file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/players/"),
+					File.separator + (entity.getDisplayName().getString() + ".json"));
+			if (file.exists()) {
+				{
+					try {
+						BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+						StringBuilder jsonstringbuilder = new StringBuilder();
+						String line;
+						while ((line = bufferedReader.readLine()) != null) {
+							jsonstringbuilder.append(line);
 						}
-					}
+						bufferedReader.close();
+						JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						if (JsonObject.get("staff.erinium.command").getAsBoolean() == true) {
+							allowed = (true);
+						} else {
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cVous n'avez pas la permission !"), (false));
+							}
+						}
 
-				} catch (IOException e) {
-					e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 			}
-		}
-		if (allowed) {
+			if (allowed) {
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7eListe des joueurs :"), (false));
+				}
+				if (world instanceof ServerWorld) {
+					IWorld _worldorig = world;
+					world = ((ServerWorld) world).getServer().getWorld(World.OVERWORLD);
+					if (world != null) {
+						List = 0;
+						{
+							List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
+							for (Entity entityiterator : _players) {
+								List = (List + 1);
+							}
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity).sendStatusMessage(
+									new StringTextComponent(
+											("\u00A77[\u260E] \u00A7aLobby : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
+									(false));
+						}
+					}
+					world = _worldorig;
+				}
+				if (world instanceof ServerWorld) {
+					IWorld _worldorig = world;
+					world = ((ServerWorld) world).getServer()
+							.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_alpha")));
+					if (world != null) {
+						List = 0;
+						{
+							List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
+							for (Entity entityiterator : _players) {
+								List = (List + 1);
+							}
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+									("\u00A77[\uD83C\uDFF9] \u00A7aFaction Alpha : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
+									(false));
+						}
+					}
+					world = _worldorig;
+				}
+				if (world instanceof ServerWorld) {
+					IWorld _worldorig = world;
+					world = ((ServerWorld) world).getServer()
+							.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_beta")));
+					if (world != null) {
+						List = 0;
+						{
+							List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
+							for (Entity entityiterator : _players) {
+								List = (List + 1);
+							}
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+									("\u00A77[\uD83C\uDFF9] \u00A7aFaction Beta : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
+									(false));
+						}
+					}
+					world = _worldorig;
+				}
+				if (world instanceof ServerWorld) {
+					IWorld _worldorig = world;
+					world = ((ServerWorld) world).getServer()
+							.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_charlie")));
+					if (world != null) {
+						List = 0;
+						{
+							List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
+							for (Entity entityiterator : _players) {
+								List = (List + 1);
+							}
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+									("\u00A77[\uD83C\uDFF9] \u00A7aFaction Charlie : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
+									(false));
+						}
+					}
+					world = _worldorig;
+				}
+				if (world instanceof ServerWorld) {
+					IWorld _worldorig = world;
+					world = ((ServerWorld) world).getServer()
+							.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_01")));
+					if (world != null) {
+						List = 0;
+						{
+							List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
+							for (Entity entityiterator : _players) {
+								List = (List + 1);
+							}
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity).sendStatusMessage(
+									new StringTextComponent(
+											("\u00A77[\u26CF] \u00A7aMinage01 : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
+									(false));
+						}
+					}
+					world = _worldorig;
+				}
+				if (world instanceof ServerWorld) {
+					IWorld _worldorig = world;
+					world = ((ServerWorld) world).getServer()
+							.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_02")));
+					if (world != null) {
+						List = 0;
+						{
+							List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
+							for (Entity entityiterator : _players) {
+								List = (List + 1);
+							}
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity).sendStatusMessage(
+									new StringTextComponent(
+											("\u00A77[\u26CF] \u00A7aMinage02 : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
+									(false));
+						}
+					}
+					world = _worldorig;
+				}
+				if (world instanceof ServerWorld) {
+					IWorld _worldorig = world;
+					world = ((ServerWorld) world).getServer()
+							.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_03")));
+					if (world != null) {
+						List = 0;
+						{
+							List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
+							for (Entity entityiterator : _players) {
+								List = (List + 1);
+							}
+						}
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity).sendStatusMessage(
+									new StringTextComponent(
+											("\u00A77[\u26CF] \u00A7aMinage03 : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
+									(false));
+						}
+					}
+					world = _worldorig;
+				}
+			}
+		} else {
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7eListe des joueurs :"), (false));
-			}
-			if (world instanceof ServerWorld) {
-				IWorld _worldorig = world;
-				world = ((ServerWorld) world).getServer().getWorld(World.OVERWORLD);
-				if (world != null) {
-					List = 0;
-					{
-						List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
-						for (Entity entityiterator : _players) {
-							List = (List + 1);
-						}
-					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-								("\u00A77[\u260E] \u00A7aLobby : \u00A76" + new java.text.DecimalFormat("### ###").format(List))), (false));
-					}
-				}
-				world = _worldorig;
-			}
-			if (world instanceof ServerWorld) {
-				IWorld _worldorig = world;
-				world = ((ServerWorld) world).getServer()
-						.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_alpha")));
-				if (world != null) {
-					List = 0;
-					{
-						List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
-						for (Entity entityiterator : _players) {
-							List = (List + 1);
-						}
-					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-								("\u00A77[\uD83C\uDFF9] \u00A7aFaction Alpha : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
-								(false));
-					}
-				}
-				world = _worldorig;
-			}
-			if (world instanceof ServerWorld) {
-				IWorld _worldorig = world;
-				world = ((ServerWorld) world).getServer()
-						.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_beta")));
-				if (world != null) {
-					List = 0;
-					{
-						List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
-						for (Entity entityiterator : _players) {
-							List = (List + 1);
-						}
-					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-								("\u00A77[\uD83C\uDFF9] \u00A7aFaction Beta : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
-								(false));
-					}
-				}
-				world = _worldorig;
-			}
-			if (world instanceof ServerWorld) {
-				IWorld _worldorig = world;
-				world = ((ServerWorld) world).getServer()
-						.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_charlie")));
-				if (world != null) {
-					List = 0;
-					{
-						List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
-						for (Entity entityiterator : _players) {
-							List = (List + 1);
-						}
-					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-								("\u00A77[\uD83C\uDFF9] \u00A7aFaction Charlie : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
-								(false));
-					}
-				}
-				world = _worldorig;
-			}
-			if (world instanceof ServerWorld) {
-				IWorld _worldorig = world;
-				world = ((ServerWorld) world).getServer()
-						.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_01")));
-				if (world != null) {
-					List = 0;
-					{
-						List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
-						for (Entity entityiterator : _players) {
-							List = (List + 1);
-						}
-					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(
+				((PlayerEntity) entity)
+						.sendStatusMessage(
 								new StringTextComponent(
-										("\u00A77[\u26CF] \u00A7aMinage01 : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
+										("\u00A7cVous ne pouvez executer cette commandes maintenant ! Vous pourrez l'executer dans : \u00A7e"
+												+ new java.text.DecimalFormat("##").format(
+														Math.round((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).list_player_cooldown / 20)))),
 								(false));
-					}
-				}
-				world = _worldorig;
-			}
-			if (world instanceof ServerWorld) {
-				IWorld _worldorig = world;
-				world = ((ServerWorld) world).getServer()
-						.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_02")));
-				if (world != null) {
-					List = 0;
-					{
-						List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
-						for (Entity entityiterator : _players) {
-							List = (List + 1);
-						}
-					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(
-								new StringTextComponent(
-										("\u00A77[\u26CF] \u00A7aMinage02 : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
-								(false));
-					}
-				}
-				world = _worldorig;
-			}
-			if (world instanceof ServerWorld) {
-				IWorld _worldorig = world;
-				world = ((ServerWorld) world).getServer()
-						.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_03")));
-				if (world != null) {
-					List = 0;
-					{
-						List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
-						for (Entity entityiterator : _players) {
-							List = (List + 1);
-						}
-					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(
-								new StringTextComponent(
-										("\u00A77[\u26CF] \u00A7aMinage03 : \u00A76" + new java.text.DecimalFormat("### ###").format(List))),
-								(false));
-					}
-				}
-				world = _worldorig;
 			}
 		}
 	}

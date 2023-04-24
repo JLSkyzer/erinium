@@ -6,7 +6,7 @@
     "texture": "icy_mushroom",
     "textureBottom": "",
     "customModelName": "icy_mushroom:default",
-    "itemTexture": "warning",
+    "itemTexture": "icy_mushroom",
     "particleTexture": "icy_mushroom",
     "tintType": "No tint",
     "isItemTinted": false,

@@ -9057,6 +9057,223 @@
       "locked_code": false,
       "registry_name": "lantern_plant",
       "path": "~/Biome/Icy Forest"
+    },
+    {
+      "name": "SetServerSpawn",
+      "type": "command",
+      "sortid": 682,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_server_spawn",
+      "path": "~/Server side/Serveur map"
+    },
+    {
+      "name": "SetServerSpawnProcedure",
+      "type": "procedure",
+      "sortid": 683,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_server_spawn_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map"
+    },
+    {
+      "name": "HotWater",
+      "type": "fluid",
+      "sortid": 684,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hot_water",
+      "metadata": {
+        "gb": true
+      },
+      "path": "~/Biome/Red Jungle"
+    },
+    {
+      "name": "HotWaterMobplayerCollidesBlock",
+      "type": "procedure",
+      "sortid": 685,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hot_water_mobplayer_collides_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Biome/Red Jungle"
+    },
+    {
+      "name": "MinageDisableDamage",
+      "type": "procedure",
+      "sortid": 686,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "minage_disable_damage",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Minage"
+    },
+    {
+      "name": "RedJungleDirt",
+      "type": "block",
+      "sortid": 687,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_jungle_dirt",
+      "path": "~/Biome/Red Jungle"
+    },
+    {
+      "name": "RedJungleGrass",
+      "type": "block",
+      "sortid": 688,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_jungle_grass",
+      "path": "~/Biome/Red Jungle"
+    },
+    {
+      "name": "RedJungleBiome",
+      "type": "biome",
+      "sortid": 689,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_jungle_biome",
+      "path": "~/Biome/Red Jungle"
+    },
+    {
+      "name": "GoMinage01",
+      "type": "procedure",
+      "sortid": 690,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_minage_01",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "GoMinage02",
+      "type": "procedure",
+      "sortid": 691,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_minage_02",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "GoMinage03",
+      "type": "procedure",
+      "sortid": 692,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_minage_03",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "GoFactionAlpha",
+      "type": "procedure",
+      "sortid": 693,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_faction_alpha",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "GoFactionBeta",
+      "type": "procedure",
+      "sortid": 694,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_faction_beta",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "GoFactionCharlie",
+      "type": "procedure",
+      "sortid": 695,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_faction_charlie",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Gui"
     }
   ],
   "variable_elements": [
@@ -9376,7 +9593,7 @@
       "name": "MaxPlayerPerServer",
       "type": "number",
       "scope": "map",
-      "value": "0.0"
+      "value": "100.0"
     },
     {
       "name": "mcpath",
@@ -9400,7 +9617,7 @@
       "name": "alpha_y",
       "type": "number",
       "scope": "map",
-      "value": "0"
+      "value": "120.0"
     },
     {
       "name": "alpha_z",
@@ -9418,7 +9635,7 @@
       "name": "beta_y",
       "type": "number",
       "scope": "map",
-      "value": "0"
+      "value": "120.0"
     },
     {
       "name": "beta_z",
@@ -9436,7 +9653,73 @@
       "name": "charlie_y",
       "type": "number",
       "scope": "map",
+      "value": "120.0"
+    },
+    {
+      "name": "charlie_z",
+      "type": "number",
+      "scope": "map",
       "value": "0"
+    },
+    {
+      "name": "minage01_x",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "minage01_y",
+      "type": "number",
+      "scope": "map",
+      "value": "120.0"
+    },
+    {
+      "name": "minage01_z",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "minage02_x",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "minage02_y",
+      "type": "number",
+      "scope": "map",
+      "value": "120.0"
+    },
+    {
+      "name": "minage02_z",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "minage03_x",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "minage03_y",
+      "type": "number",
+      "scope": "map",
+      "value": "120.0"
+    },
+    {
+      "name": "minage03_z",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "list_player_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
     }
   ],
   "sound_elements": [
@@ -9504,8 +9787,8 @@
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "block.erinium.jl_skyzer_painting": "JLSkyzer Painting 1",
       "block.erinium.candy_logs": "§5Candy Logs",
-      "item.erinium.fraisage": "Fraisage",
       "block.erinium.dranite_ore": "§6Dranite Ore",
+      "item.erinium.fraisage": "Fraisage",
       "block.erinium.lead_ore": "§9§lLead Ore",
       "block.erinium.delta_marqued": "Delta Marqued",
       "item.erinium.magic_stones_regeneration": "§l§oMagic Stones §5§l§oRegeneration",
@@ -9521,12 +9804,15 @@
       "block.erinium.fraisage_numerique": "Fraisage Numérique",
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "item.erinium.magic_stones_invisibility": "§l§oMagic Stones §3§l§oInvisibility",
+      "biome.erinium.red_jungle_biome": "Red Jungle Biome",
+      "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
       "key.categories.eriniumcontrols": "§1Erinium",
       "item.erinium.op_tool": "Op Tool",
       "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
+      "block.erinium.red_jungle_grass": "Red Jungle Grass",
       "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
       "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
@@ -9686,9 +9972,11 @@
       "item.erinium.erinium_axe": "§1Erinium Axe",
       "item.erinium.erinium_armor_chestplate": "Erinium Body",
       "item.erinium.tree_boss_armor_helmet": "Tree Boss Helmet",
+      "block.erinium.hot_water": "§3Hot Water",
       "item.erinium.item_pos": "Item Pos",
       "block.erinium.leather_block": "Leather Block",
       "block.erinium.amenine_button": "§5§lAmenine Button",
+      "death.attack.hotwater": "soak in §bhot water",
       "block.erinium.extractor_bottle_empty": "§aExtractor",
       "block.erinium.fusion_station_charlie": "§8Fusion Station §cCharlie",
       "item.erinium.erinium_sword": "§1Erinium Sword",
@@ -9753,6 +10041,8 @@
       "item.erinium.magic_stick": "Magic Stick",
       "block.erinium.bush": "Bush",
       "item.erinium.erinium_stick": "§1Erinium Stick",
+      "fluid.erinium.hot_water": "§3Hot Water",
+      "block.erinium.red_jungle_dirt": "Red Jungle Dirt",
       "item.erinium.amenine_liquid_5": "§b§lLiquid Bottle",
       "block.erinium.erinium_cobweb": "Erinium Cobweb",
       "item.erinium.gem_teleport": "§l§oGem §l§o§1Teleportation",
@@ -9869,6 +10159,14 @@
               },
               {
                 "name": "MaxPlayer",
+                "children": []
+              },
+              {
+                "name": "Gui",
+                "children": []
+              },
+              {
+                "name": "PlayerManage",
                 "children": []
               }
             ]
@@ -10144,6 +10442,10 @@
         "children": [
           {
             "name": "Icy Forest",
+            "children": []
+          },
+          {
+            "name": "Red Jungle",
             "children": []
           }
         ]

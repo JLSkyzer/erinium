@@ -50,6 +50,9 @@
       },
       {
         "value": "CUSTOM:IcyForest"
+      },
+      {
+        "value": "CUSTOM:RedJungleBiome"
       }
     ],
     "worldGenType": "Normal world gen",
@@ -60,7 +63,7 @@
       "value": "Blocks.FLOWING_WATER"
     },
     "canRespawnHere": true,
-    "hasFog": true,
+    "hasFog": false,
     "isDark": false,
     "doesWaterVaporize": false,
     "sleepResult": "ALLOW",

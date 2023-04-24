@@ -50,6 +50,7 @@ public class CreateFileProcedure {
 		com.google.gson.JsonObject MainJsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject SecJsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject ThirdJsonObject = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject GemmeJsonObject = new com.google.gson.JsonObject();
 		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/players/"),
 				File.separator + (entity.getDisplayName().getString() + ".json"));
 		if (!file.exists()) {
@@ -115,6 +116,27 @@ public class CreateFileProcedure {
 				try {
 					FileWriter fileWriter = new FileWriter(file);
 					fileWriter.write(mainGSONBuilderVariable.toJson(ThirdJsonObject));
+					fileWriter.close();
+				} catch (IOException exception) {
+					exception.printStackTrace();
+				}
+			}
+		}
+		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/gemme/"),
+				File.separator + (entity.getUniqueID().toString() + ".json"));
+		if (!file.exists()) {
+			try {
+				file.getParentFile().mkdirs();
+				file.createNewFile();
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+			GemmeJsonObject.addProperty("gemme", Math.round(0));
+			{
+				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				try {
+					FileWriter fileWriter = new FileWriter(file);
+					fileWriter.write(mainGSONBuilderVariable.toJson(GemmeJsonObject));
 					fileWriter.close();
 				} catch (IOException exception) {
 					exception.printStackTrace();

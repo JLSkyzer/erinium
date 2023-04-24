@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/warning"
+    "layer0": "erinium:items/icy_mushroom"
   }
 }

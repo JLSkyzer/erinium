@@ -1,0 +1,60 @@
+{
+  "_fv": 34,
+  "_type": "fluid",
+  "definition": {
+    "name": "§3Hot Water",
+    "bucketName": "Hot Water Bucket",
+    "textureStill": "hot_water_still",
+    "textureFlowing": "hot_water_flow",
+    "tintType": "Water",
+    "canMultiply": false,
+    "flowRate": 5,
+    "levelDecrease": 1,
+    "slopeFindDistance": 4,
+    "spawnParticles": true,
+    "dripParticle": {
+      "value": "WATER_BUBBLE"
+    },
+    "flowStrength": 1.0,
+    "luminosity": 0,
+    "density": 1000,
+    "viscosity": 1000,
+    "temperature": 300,
+    "type": "WATER",
+    "generateBucket": true,
+    "textureBucket": "",
+    "creativeTab": {
+      "value": "CUSTOM:EriniumItems"
+    },
+    "emptySound": {
+      "value": ""
+    },
+    "rarity": "RARE",
+    "specialInfo": [],
+    "resistance": 50.0,
+    "luminance": 1,
+    "lightOpacity": 1,
+    "emissiveRendering": false,
+    "tickRate": 10,
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "colorOnMap": "CYAN",
+    "frequencyOnChunks": 100,
+    "spawnWorldTypes": [
+      "CUSTOM:FactionAlpha",
+      "CUSTOM:FactionBeta",
+      "CUSTOM:FactionCharlie",
+      "CUSTOM:Minage01",
+      "CUSTOM:Minage02",
+      "CUSTOM:Minage03"
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:RedJungleBiome"
+      }
+    ],
+    "onEntityCollides": {
+      "name": "HotWaterMobplayerCollidesBlock"
+    }
+  }
+}

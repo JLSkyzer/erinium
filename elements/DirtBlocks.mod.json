@@ -10,10 +10,17 @@
       },
       {
         "value": "CUSTOM:CandyGrass"
+      },
+      {
+        "value": "CUSTOM:RedJungleDirt"
+      },
+      {
+        "value": "CUSTOM:RedJungleGrass"
       }
     ],
     "functions": [],
     "entities": [],
+    "biomes": [],
     "name": "dirt",
     "namespace": "minecraft"
   }

@@ -59,6 +59,10 @@ public class FactionAlphaDimension extends EriniumModElements.ModElement {
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:amenine_biome")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:red_jungle_biome")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:red_jungle_biome")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:magical_forest")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:magical_forest")).getGenerationSettings()
@@ -128,7 +132,7 @@ public class FactionAlphaDimension extends EriniumModElements.ModElement {
 
 			@Override
 			public boolean func_230493_a_(int x, int y) {
-				return true;
+				return false;
 			}
 		};
 		DeferredWorkQueue.runLater(() -> {

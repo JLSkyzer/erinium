@@ -137,7 +137,7 @@ public class LanternPlantBlock extends EriniumModElements.ModElement {
 	public static class BlockCustomFlower extends FlowerBlock {
 		public BlockCustomFlower() {
 			super(Effects.NIGHT_VISION, 100, Block.Properties.create(Material.PLANTS, MaterialColor.CYAN).doesNotBlockMovement()
-					.sound(SoundType.PLANT).hardnessAndResistance(0f, 0f).setLightLevel(s -> 0));
+					.sound(SoundType.PLANT).hardnessAndResistance(0f, 0f).setLightLevel(s -> 5));
 			setRegistryName("lantern_plant");
 		}
 

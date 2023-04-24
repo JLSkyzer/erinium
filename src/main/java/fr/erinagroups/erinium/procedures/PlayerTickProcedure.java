@@ -75,6 +75,17 @@ public class PlayerTickProcedure {
 							(false), (false)));
 			}
 		}
+		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).list_player_cooldown > 0) {
+			{
+				double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new EriniumModVariables.PlayerVariables())).list_player_cooldown - 1);
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.list_player_cooldown = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
 		if ((entity.world.getDimensionKey()) == (World.OVERWORLD)) {
 			{
 				String _setval = "Lobby";

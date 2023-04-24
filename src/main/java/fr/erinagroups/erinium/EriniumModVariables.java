@@ -155,7 +155,31 @@ public class EriniumModVariables {
 		public double PlayerCountMinage01 = 0;
 		public double PlayerCountMinage02 = 0;
 		public double PlayerCountMinage03 = 0;
-		public double MaxPlayerPerServer = 0.0;
+		public double MaxPlayerPerServer = 100.0;
+		public double alpha_x = 0;
+		public double alpha_y = 120.0;
+		public double alpha_z = 0;
+		public double beta_x = 0;
+		public double beta_y = 120.0;
+		public double beta_z = 0;
+		public double charlie_x = 0;
+		public double charlie_y = 120.0;
+		public double charlie_z = 0;
+		public double minage01_x = 0;
+		public double minage01_y = 120.0;
+		public double minage01_z = 0;
+		public double minage02_x = 0;
+		public double minage02_y = 120.0;
+		public double minage02_z = 0;
+		public double minage03_x = 0;
+		public double minage03_y = 120.0;
+		public double minage03_z = 0;
+		public boolean maintenanceMinage01 = false;
+		public boolean maintenanceMinage02 = false;
+		public boolean maintenanceMinage03 = false;
+		public boolean maintenanceAlpha = false;
+		public boolean maintenanceBeta = false;
+		public boolean maintenanceCharlie = false;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -175,6 +199,30 @@ public class EriniumModVariables {
 			PlayerCountMinage02 = nbt.getDouble("PlayerCountMinage02");
 			PlayerCountMinage03 = nbt.getDouble("PlayerCountMinage03");
 			MaxPlayerPerServer = nbt.getDouble("MaxPlayerPerServer");
+			alpha_x = nbt.getDouble("alpha_x");
+			alpha_y = nbt.getDouble("alpha_y");
+			alpha_z = nbt.getDouble("alpha_z");
+			beta_x = nbt.getDouble("beta_x");
+			beta_y = nbt.getDouble("beta_y");
+			beta_z = nbt.getDouble("beta_z");
+			charlie_x = nbt.getDouble("charlie_x");
+			charlie_y = nbt.getDouble("charlie_y");
+			charlie_z = nbt.getDouble("charlie_z");
+			minage01_x = nbt.getDouble("minage01_x");
+			minage01_y = nbt.getDouble("minage01_y");
+			minage01_z = nbt.getDouble("minage01_z");
+			minage02_x = nbt.getDouble("minage02_x");
+			minage02_y = nbt.getDouble("minage02_y");
+			minage02_z = nbt.getDouble("minage02_z");
+			minage03_x = nbt.getDouble("minage03_x");
+			minage03_y = nbt.getDouble("minage03_y");
+			minage03_z = nbt.getDouble("minage03_z");
+			maintenanceMinage01 = nbt.getBoolean("maintenanceMinage01");
+			maintenanceMinage02 = nbt.getBoolean("maintenanceMinage02");
+			maintenanceMinage03 = nbt.getBoolean("maintenanceMinage03");
+			maintenanceAlpha = nbt.getBoolean("maintenanceAlpha");
+			maintenanceBeta = nbt.getBoolean("maintenanceBeta");
+			maintenanceCharlie = nbt.getBoolean("maintenanceCharlie");
 		}
 
 		@Override
@@ -187,6 +235,30 @@ public class EriniumModVariables {
 			nbt.putDouble("PlayerCountMinage02", PlayerCountMinage02);
 			nbt.putDouble("PlayerCountMinage03", PlayerCountMinage03);
 			nbt.putDouble("MaxPlayerPerServer", MaxPlayerPerServer);
+			nbt.putDouble("alpha_x", alpha_x);
+			nbt.putDouble("alpha_y", alpha_y);
+			nbt.putDouble("alpha_z", alpha_z);
+			nbt.putDouble("beta_x", beta_x);
+			nbt.putDouble("beta_y", beta_y);
+			nbt.putDouble("beta_z", beta_z);
+			nbt.putDouble("charlie_x", charlie_x);
+			nbt.putDouble("charlie_y", charlie_y);
+			nbt.putDouble("charlie_z", charlie_z);
+			nbt.putDouble("minage01_x", minage01_x);
+			nbt.putDouble("minage01_y", minage01_y);
+			nbt.putDouble("minage01_z", minage01_z);
+			nbt.putDouble("minage02_x", minage02_x);
+			nbt.putDouble("minage02_y", minage02_y);
+			nbt.putDouble("minage02_z", minage02_z);
+			nbt.putDouble("minage03_x", minage03_x);
+			nbt.putDouble("minage03_y", minage03_y);
+			nbt.putDouble("minage03_z", minage03_z);
+			nbt.putBoolean("maintenanceMinage01", maintenanceMinage01);
+			nbt.putBoolean("maintenanceMinage02", maintenanceMinage02);
+			nbt.putBoolean("maintenanceMinage03", maintenanceMinage03);
+			nbt.putBoolean("maintenanceAlpha", maintenanceAlpha);
+			nbt.putBoolean("maintenanceBeta", maintenanceBeta);
+			nbt.putBoolean("maintenanceCharlie", maintenanceCharlie);
 			return nbt;
 		}
 
@@ -312,6 +384,9 @@ public class EriniumModVariables {
 			nbt.putDouble("GetCurrentServerPlayerCount", instance.GetCurrentServerPlayerCount);
 			nbt.putString("mcpath", instance.mcpath);
 			nbt.putString("playerUUID", instance.playerUUID);
+			nbt.putDouble("list_player_cooldown", instance.list_player_cooldown);
+			nbt.putDouble("servermap_cooldown", instance.servermap_cooldown);
+			nbt.putBoolean("vip", instance.vip);
 			return nbt;
 		}
 
@@ -354,6 +429,9 @@ public class EriniumModVariables {
 			instance.GetCurrentServerPlayerCount = nbt.getDouble("GetCurrentServerPlayerCount");
 			instance.mcpath = nbt.getString("mcpath");
 			instance.playerUUID = nbt.getString("playerUUID");
+			instance.list_player_cooldown = nbt.getDouble("list_player_cooldown");
+			instance.servermap_cooldown = nbt.getDouble("servermap_cooldown");
+			instance.vip = nbt.getBoolean("vip");
 		}
 	}
 
@@ -394,6 +472,9 @@ public class EriniumModVariables {
 		public double GetCurrentServerPlayerCount = 0;
 		public String mcpath = "\"\"";
 		public String playerUUID = "\"\"";
+		public double list_player_cooldown = 0.0;
+		public double servermap_cooldown = 0;
+		public boolean vip = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -458,6 +539,9 @@ public class EriniumModVariables {
 		clone.GetCurrentServer = original.GetCurrentServer;
 		clone.mcpath = original.mcpath;
 		clone.playerUUID = original.playerUUID;
+		clone.list_player_cooldown = original.list_player_cooldown;
+		clone.servermap_cooldown = original.servermap_cooldown;
+		clone.vip = original.vip;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
@@ -526,6 +610,9 @@ public class EriniumModVariables {
 					variables.GetCurrentServerPlayerCount = message.data.GetCurrentServerPlayerCount;
 					variables.mcpath = message.data.mcpath;
 					variables.playerUUID = message.data.playerUUID;
+					variables.list_player_cooldown = message.data.list_player_cooldown;
+					variables.servermap_cooldown = message.data.servermap_cooldown;
+					variables.vip = message.data.vip;
 				}
 			});
 			context.setPacketHandled(true);
