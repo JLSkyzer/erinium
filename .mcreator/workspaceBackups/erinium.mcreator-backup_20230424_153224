@@ -9185,6 +9185,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -9202,6 +9206,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -9219,69 +9227,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/Server side/Serveur map/Gui"
     },
     {
-      "name": "GoFactionAlpha",
+      "name": "GoAlpha",
       "type": "procedure",
       "sortid": 693,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "go_faction_alpha",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Server side/Serveur map/Gui"
-    },
-    {
-      "name": "GoFactionBeta",
-      "type": "procedure",
-      "sortid": 694,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "go_faction_beta",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Server side/Serveur map/Gui"
-    },
-    {
-      "name": "GoFactionCharlie",
-      "type": "procedure",
-      "sortid": 695,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "go_faction_charlie",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Server side/Serveur map/Gui"
-    },
-    {
-      "name": "PlayerLeaveDim",
-      "type": "procedure",
-      "sortid": 696,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "player_leave_dim",
+      "registry_name": "go_alpha",
       "metadata": {
         "dependencies": [
           {
@@ -9294,7 +9255,274 @@
           }
         ]
       },
-      "path": "~/Server side/Serveur map/PlayerManage"
+      "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "GoBeta",
+      "type": "procedure",
+      "sortid": 694,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_beta",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "GoCharlie",
+      "type": "procedure",
+      "sortid": 695,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_charlie",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "ConditionMaintenanceOffMinage01",
+      "type": "procedure",
+      "sortid": 696,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_off_minage_01",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/Off"
+    },
+    {
+      "name": "ConditionMaintenanceOffMinage02",
+      "type": "procedure",
+      "sortid": 697,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_off_minage_02",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/Off"
+    },
+    {
+      "name": "ConditionMaintenanceOffMinage03",
+      "type": "procedure",
+      "sortid": 698,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_off_minage_03",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/Off"
+    },
+    {
+      "name": "ConditionMaintenanceOffAlpha",
+      "type": "procedure",
+      "sortid": 699,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_off_alpha",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/Off"
+    },
+    {
+      "name": "ConditionMaintenanceOffBeta",
+      "type": "procedure",
+      "sortid": 700,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_off_beta",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/Off"
+    },
+    {
+      "name": "ConditionMaintenanceOffCharlie",
+      "type": "procedure",
+      "sortid": 701,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_off_charlie",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/Off"
+    },
+    {
+      "name": "ConditionMaintenanceOnMinage01",
+      "type": "procedure",
+      "sortid": 702,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_on_minage_01",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/On"
+    },
+    {
+      "name": "ConditionMaintenanceOnMinage02",
+      "type": "procedure",
+      "sortid": 703,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_on_minage_02",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/On"
+    },
+    {
+      "name": "ConditionMaintenanceOnMinage03",
+      "type": "procedure",
+      "sortid": 704,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_on_minage_03",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/On"
+    },
+    {
+      "name": "ConditionMaintenanceOnAlpha",
+      "type": "procedure",
+      "sortid": 705,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_on_alpha",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/On"
+    },
+    {
+      "name": "ConditionMaintenanceOnBeta",
+      "type": "procedure",
+      "sortid": 706,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_on_beta",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/On"
+    },
+    {
+      "name": "ConditionMaintenanceOnCharlie",
+      "type": "procedure",
+      "sortid": 707,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_on_charlie",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance/Conditions/On"
+    },
+    {
+      "name": "Maintenance",
+      "type": "gui",
+      "sortid": 708,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "maintenance",
+      "path": "~/Server side/Serveur map/maintenance"
     }
   ],
   "variable_elements": [
@@ -9741,6 +9969,54 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
+    },
+    {
+      "name": "maintenanceMinage01",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceMinage02",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceMinage03",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceAlpha",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceBeta",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceCharlie",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "servermap_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "vip",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -10189,6 +10465,24 @@
               {
                 "name": "PlayerManage",
                 "children": []
+              },
+              {
+                "name": "maintenance",
+                "children": [
+                  {
+                    "name": "Conditions",
+                    "children": [
+                      {
+                        "name": "On",
+                        "children": []
+                      },
+                      {
+                        "name": "Off",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }

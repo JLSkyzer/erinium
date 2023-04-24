@@ -180,6 +180,12 @@ public class EriniumModVariables {
 		public boolean maintenanceAlpha = false;
 		public boolean maintenanceBeta = false;
 		public boolean maintenanceCharlie = false;
+		public String maintenanceTextMinage01 = "\u00A7aMinage 01";
+		public String maintenanceTextMinage02 = "\u00A7aMinage 02";
+		public String maintenanceTextMinage03 = "\u00A7aMinage 03";
+		public String maintenanceTextAlpha = "\u00A7aAlpha";
+		public String maintenanceTextBeta = "\u00A7aBeta";
+		public String maintenanceTextCharlie = "\u00A7aCharlie";
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -223,6 +229,12 @@ public class EriniumModVariables {
 			maintenanceAlpha = nbt.getBoolean("maintenanceAlpha");
 			maintenanceBeta = nbt.getBoolean("maintenanceBeta");
 			maintenanceCharlie = nbt.getBoolean("maintenanceCharlie");
+			maintenanceTextMinage01 = nbt.getString("maintenanceTextMinage01");
+			maintenanceTextMinage02 = nbt.getString("maintenanceTextMinage02");
+			maintenanceTextMinage03 = nbt.getString("maintenanceTextMinage03");
+			maintenanceTextAlpha = nbt.getString("maintenanceTextAlpha");
+			maintenanceTextBeta = nbt.getString("maintenanceTextBeta");
+			maintenanceTextCharlie = nbt.getString("maintenanceTextCharlie");
 		}
 
 		@Override
@@ -259,6 +271,12 @@ public class EriniumModVariables {
 			nbt.putBoolean("maintenanceAlpha", maintenanceAlpha);
 			nbt.putBoolean("maintenanceBeta", maintenanceBeta);
 			nbt.putBoolean("maintenanceCharlie", maintenanceCharlie);
+			nbt.putString("maintenanceTextMinage01", maintenanceTextMinage01);
+			nbt.putString("maintenanceTextMinage02", maintenanceTextMinage02);
+			nbt.putString("maintenanceTextMinage03", maintenanceTextMinage03);
+			nbt.putString("maintenanceTextAlpha", maintenanceTextAlpha);
+			nbt.putString("maintenanceTextBeta", maintenanceTextBeta);
+			nbt.putString("maintenanceTextCharlie", maintenanceTextCharlie);
 			return nbt;
 		}
 
@@ -473,7 +491,7 @@ public class EriniumModVariables {
 		public String mcpath = "\"\"";
 		public String playerUUID = "\"\"";
 		public double list_player_cooldown = 0.0;
-		public double servermap_cooldown = 0;
+		public double servermap_cooldown = 0.0;
 		public boolean vip = false;
 
 		public void syncPlayerVariables(Entity entity) {

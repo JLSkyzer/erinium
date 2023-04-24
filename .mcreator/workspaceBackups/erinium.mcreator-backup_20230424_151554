@@ -9185,6 +9185,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -9202,6 +9206,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -9219,61 +9227,95 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/Server side/Serveur map/Gui"
     },
     {
-      "name": "GoFactionAlpha",
+      "name": "GoAlpha",
       "type": "procedure",
       "sortid": 693,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "go_faction_alpha",
+      "registry_name": "go_alpha",
       "metadata": {
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/Server side/Serveur map/Gui"
     },
     {
-      "name": "GoFactionBeta",
+      "name": "GoBeta",
       "type": "procedure",
       "sortid": 694,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "go_faction_beta",
+      "registry_name": "go_beta",
       "metadata": {
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/Server side/Serveur map/Gui"
     },
     {
-      "name": "GoFactionCharlie",
+      "name": "GoCharlie",
       "type": "procedure",
       "sortid": 695,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "go_faction_charlie",
+      "registry_name": "go_charlie",
       "metadata": {
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/Server side/Serveur map/Gui"
+    },
+    {
+      "name": "ConditionMaintenanceOffMinage01",
+      "type": "procedure",
+      "sortid": 696,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "condition_maintenance_off_minage_01",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance"
     }
   ],
   "variable_elements": [
@@ -9593,7 +9635,7 @@
       "name": "MaxPlayerPerServer",
       "type": "number",
       "scope": "map",
-      "value": "0.0"
+      "value": "100.0"
     },
     {
       "name": "mcpath",
@@ -9720,6 +9762,54 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
+    },
+    {
+      "name": "maintenanceMinage01",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceMinage02",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceMinage03",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceAlpha",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceBeta",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "maintenanceCharlie",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "servermap_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "vip",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -9807,14 +9897,14 @@
       "biome.erinium.red_jungle_biome": "Red Jungle Biome",
       "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
       "block.erinium.red_jungle_grass": "Red Jungle Grass",
-      "block.erinium.xp_bush_layer_1": "Xp bush",
       "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
+      "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
@@ -10163,6 +10253,14 @@
               },
               {
                 "name": "Gui",
+                "children": []
+              },
+              {
+                "name": "PlayerManage",
+                "children": []
+              },
+              {
+                "name": "maintenance",
                 "children": []
               }
             ]
