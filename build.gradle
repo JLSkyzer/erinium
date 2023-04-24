@@ -1,14 +1,20 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
+        maven {
+	      url "https://plugins.gradle.org/m2/"
+	    }
+	    gradlePluginPortal()
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath "com.github.jengelman.gradle.plugins:shadow:6.1.0"
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
+apply plugin: "com.github.johnrengelman.shadow"
 
 version = '1.0'
 group = 'com.yourname.modid'
@@ -81,6 +87,9 @@ repositories {
     	name = "ModMaven"
     	url = "https://modmaven.dev"
   	}
+  	maven {
+    	url = "https://repo.essential.gg/repository/maven-public"
+	}
 }
 
 dependencies {
@@ -91,6 +100,8 @@ dependencies {
     implementation fg.deobf("curse.maven:mrcrayfishs-gun-mod-289479:3553336")
     implementation fg.deobf("curse.maven:mekanism-268560:3659389")
     implementation fg.deobf("curse.maven:construction-wand-399558:3562328")
+
+    implementation("gg.essential:elementa-1.16.2-forge:581")
 
     implementation fg.deobf("curse.maven:structure-expansion-398430:3356703")
 

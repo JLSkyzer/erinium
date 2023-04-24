@@ -9514,6 +9514,117 @@
         ]
       },
       "path": "~/Server side/Serveur map/maintenance/Conditions/On"
+    },
+    {
+      "name": "Maintenance",
+      "type": "gui",
+      "sortid": 708,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "maintenance",
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "BtnMinage01",
+      "type": "procedure",
+      "sortid": 709,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "btn_minage_01",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "BtnMinage02",
+      "type": "procedure",
+      "sortid": 710,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "btn_minage_02",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "BtnMinage03",
+      "type": "procedure",
+      "sortid": 711,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "btn_minage_03",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "BtnAlpha",
+      "type": "procedure",
+      "sortid": 712,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "btn_alpha",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "BtnBeta",
+      "type": "procedure",
+      "sortid": 713,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "btn_beta",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "BtnCharlie",
+      "type": "procedure",
+      "sortid": 714,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "btn_charlie",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance"
     }
   ],
   "variable_elements": [
@@ -10001,13 +10112,49 @@
       "name": "servermap_cooldown",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "vip",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "maintenanceTextMinage01",
+      "type": "string",
+      "scope": "map",
+      "value": "§aMinage 01"
+    },
+    {
+      "name": "maintenanceTextMinage02",
+      "type": "string",
+      "scope": "map",
+      "value": "§aMinage 02"
+    },
+    {
+      "name": "maintenanceTextMinage03",
+      "type": "string",
+      "scope": "map",
+      "value": "§aMinage 03"
+    },
+    {
+      "name": "maintenanceTextAlpha",
+      "type": "string",
+      "scope": "map",
+      "value": "§aAlpha"
+    },
+    {
+      "name": "maintenanceTextBeta",
+      "type": "string",
+      "scope": "map",
+      "value": "§aBeta"
+    },
+    {
+      "name": "maintenanceTextCharlie",
+      "type": "string",
+      "scope": "map",
+      "value": "§aCharlie"
     }
   ],
   "sound_elements": [
@@ -10095,14 +10242,14 @@
       "biome.erinium.red_jungle_biome": "Red Jungle Biome",
       "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "key.categories.eriniumcontrols": "§1Erinium",
-      "item.erinium.op_tool": "Op Tool",
       "item.erinium_armorbody.name": "Erinium Body",
+      "item.erinium.op_tool": "Op Tool",
+      "key.categories.eriniumcontrols": "§1Erinium",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
       "block.erinium.red_jungle_grass": "Red Jungle Grass",
-      "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
       "block.erinium.xp_bush_layer_1": "Xp bush",
+      "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
