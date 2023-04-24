@@ -11,6 +11,16 @@
     "doesPauseGame": false,
     "components": [
       {
+        "type": "image",
+        "data": {
+          "image": "maintenance_screen.png",
+          "use1Xscale": false,
+          "name": "maintenance_screen.png",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
         "type": "button",
         "data": {
           "text": "X",
@@ -22,6 +32,76 @@
           "name": "X",
           "x": 27,
           "y": 27
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "X",
+          "onClick": {
+            "name": "BtnMinage02"
+          },
+          "width": 18,
+          "height": 20,
+          "name": "X",
+          "x": 27,
+          "y": 45
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "X",
+          "onClick": {
+            "name": "BtnMinage03"
+          },
+          "width": 18,
+          "height": 20,
+          "name": "X",
+          "x": 27,
+          "y": 63
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "X",
+          "onClick": {
+            "name": "BtnAlpha"
+          },
+          "width": 18,
+          "height": 20,
+          "name": "X",
+          "x": 63,
+          "y": 27
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "X",
+          "onClick": {
+            "name": "BtnBeta"
+          },
+          "width": 18,
+          "height": 20,
+          "name": "X",
+          "x": 63,
+          "y": 45
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "X",
+          "onClick": {
+            "name": "BtnCharlie"
+          },
+          "width": 18,
+          "height": 20,
+          "name": "X",
+          "x": 63,
+          "y": 63
         }
       }
     ],

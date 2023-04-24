@@ -104,6 +104,7 @@ dependencies {
     implementation("gg.essential:elementa-1.16.2-forge:581")
 
     implementation fg.deobf("curse.maven:structure-expansion-398430:3356703")
+    implementation fg.deobf("curse.maven:shutup-experimental-settings-407174:3188120")
 
     implementation fg.deobf("curse.maven:journeymap-32274:4012858")
 

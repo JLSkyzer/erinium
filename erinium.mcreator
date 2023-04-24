@@ -9520,7 +9520,7 @@
       "type": "gui",
       "sortid": 708,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "maintenance",
       "path": "~/Server side/Serveur map/maintenance"
     },
@@ -9624,6 +9624,57 @@
           }
         ]
       },
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "Temp",
+      "type": "gui",
+      "sortid": 715,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "temp",
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "OpenMaintenanceMod",
+      "type": "procedure",
+      "sortid": 716,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_maintenance_mod",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Serveur map/maintenance"
+    },
+    {
+      "name": "CmdMaintenance",
+      "type": "command",
+      "sortid": 717,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_maintenance",
       "path": "~/Server side/Serveur map/maintenance"
     }
   ],

@@ -28,7 +28,12 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
+import fr.erinagroups.erinium.procedures.BtnMinage03Procedure;
+import fr.erinagroups.erinium.procedures.BtnMinage02Procedure;
 import fr.erinagroups.erinium.procedures.BtnMinage01Procedure;
+import fr.erinagroups.erinium.procedures.BtnCharlieProcedure;
+import fr.erinagroups.erinium.procedures.BtnBetaProcedure;
+import fr.erinagroups.erinium.procedures.BtnAlphaProcedure;
 import fr.erinagroups.erinium.EriniumModElements;
 
 import com.github.hexomod.worldeditcuife3.z;
@@ -196,7 +201,27 @@ public class MaintenanceGui extends EriniumModElements.ModElement {
 		}
 		if (buttonID == 1) {
 
-			BtnMinage01Procedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world)).collect(HashMap::new,
+			BtnMinage02Procedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+		if (buttonID == 2) {
+
+			BtnMinage03Procedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+		if (buttonID == 3) {
+
+			BtnAlphaProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+		if (buttonID == 4) {
+
+			BtnBetaProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+		if (buttonID == 5) {
+
+			BtnCharlieProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
