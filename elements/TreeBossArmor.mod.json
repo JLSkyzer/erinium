@@ -11,16 +11,7 @@
     "enableBoots": true,
     "textureBoots": "tree_boss_armor_boots",
     "onHelmetTick": {
-      "name": "TreeBossHelmet"
-    },
-    "onBodyTick": {
-      "name": "TreeBossBody"
-    },
-    "onLeggingsTick": {
-      "name": "TreeBossLeggings"
-    },
-    "onBootsTick": {
-      "name": "TreeBossBoots"
+      "name": "GlobalArmorHelmet"
     },
     "creativeTab": {
       "value": "CUSTOM:EriniumArmors"
@@ -54,20 +45,20 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 42,
-    "damageValueHelmet": 6,
-    "damageValueBody": 10,
-    "damageValueLeggings": 10,
-    "damageValueBoots": 6,
+    "maxDamage": 33,
+    "damageValueHelmet": 4,
+    "damageValueBody": 8,
+    "damageValueLeggings": 6,
+    "damageValueBoots": 4,
     "enchantability": 25,
-    "toughness": 3.5,
-    "knockbackResistance": 0.30000000000000004,
+    "toughness": 2.0,
+    "knockbackResistance": 0.1,
     "equipSound": {
       "value": ""
     },
     "repairItems": [
       {
-        "value": "CUSTOM:SetanumIngot"
+        "value": "CUSTOM:TreeBossShard"
       }
     ]
   }

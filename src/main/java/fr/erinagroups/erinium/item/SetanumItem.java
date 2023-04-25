@@ -22,10 +22,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import fr.erinagroups.erinium.procedures.SetanumLeggingsTickEventProcedure;
-import fr.erinagroups.erinium.procedures.SetanumHelmetTickEventProcedure;
-import fr.erinagroups.erinium.procedures.SetanumBootsTickEventProcedure;
-import fr.erinagroups.erinium.procedures.SetanumBodyTickEventProcedure;
+import fr.erinagroups.erinium.procedures.GlobalArmorHelmetProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
@@ -53,12 +50,12 @@ public class SetanumItem extends EriniumModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 39;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 33;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{8, 10, 12, 8}[slot.getIndex()];
+				return new int[]{4, 6, 8, 4}[slot.getIndex()];
 			}
 
 			@Override
@@ -84,12 +81,12 @@ public class SetanumItem extends EriniumModElements.ModElement {
 
 			@Override
 			public float getToughness() {
-				return 3f;
+				return 1.7f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.2f;
+				return 0.1f;
 			}
 		};
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
@@ -105,7 +102,7 @@ public class SetanumItem extends EriniumModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				SetanumHelmetTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+				GlobalArmorHelmetProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("setanum_helmet"));
@@ -114,47 +111,17 @@ public class SetanumItem extends EriniumModElements.ModElement {
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/setanum__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				SetanumBodyTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
 		}.setRegistryName("setanum_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/setanum__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				SetanumLeggingsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
 		}.setRegistryName("setanum_leggings"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/setanum__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				SetanumBootsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("setanum_boots"));
 	}

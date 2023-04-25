@@ -5,7 +5,6 @@ import net.minecraftforge.registries.ObjectHolder;
 
 import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.Explosion;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
@@ -27,7 +26,6 @@ import java.util.Collections;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.EriniumBossSpawnerOnBlockRightClickedProcedure;
-import fr.erinagroups.erinium.procedures.EriniumArmorBodyTickEventProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
@@ -35,7 +33,6 @@ import com.github.hexomod.worldeditcuife3.z;
 import com.github.hexomod.worldeditcuife3.y;
 import com.github.hexomod.worldeditcuife3.x;
 import com.github.hexomod.worldeditcuife3.s;
-import com.github.hexomod.worldeditcuife3.e;
 
 @EriniumModElements.ModElement.Tag
 public class EriniumBossSpawnerBlock extends EriniumModElements.ModElement {
@@ -84,16 +81,6 @@ public class EriniumBossSpawnerBlock extends EriniumModElements.ModElement {
 							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
-		}
-
-		@Override
-		public void onExplosionDestroy(World world, BlockPos pos, Explosion e) {
-			super.onExplosionDestroy(world, pos, e);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-
-			EriniumArmorBodyTickEventProcedure.executeProcedure(Collections.emptyMap());
 		}
 
 		@Override

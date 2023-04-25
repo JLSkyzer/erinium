@@ -11,16 +11,7 @@
     "enableBoots": true,
     "textureBoots": "erinium_armor_boots",
     "onHelmetTick": {
-      "name": "EriniumArmorHelmetTickEvent"
-    },
-    "onBodyTick": {
-      "name": "EriniumArmorBodyTickEvent"
-    },
-    "onLeggingsTick": {
-      "name": "EriniumArmorLeggingsTickEvent"
-    },
-    "onBootsTick": {
-      "name": "EriniumArmorBootsTickEvent"
+      "name": "GlobalArmorHelmet"
     },
     "creativeTab": {
       "value": "CUSTOM:EriniumArmors"
@@ -54,14 +45,14 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 38,
-    "damageValueHelmet": 5,
-    "damageValueBody": 10,
-    "damageValueLeggings": 8,
-    "damageValueBoots": 5,
+    "maxDamage": 15,
+    "damageValueHelmet": 3,
+    "damageValueBody": 8,
+    "damageValueLeggings": 6,
+    "damageValueBoots": 3,
     "enchantability": 18,
-    "toughness": 3.0,
-    "knockbackResistance": 0.1,
+    "toughness": 1.5,
+    "knockbackResistance": 0.0,
     "equipSound": {
       "value": ""
     },

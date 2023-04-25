@@ -80,7 +80,7 @@ public class UltimateLootboxBlockDestroyedByPlayerProcedure {
 		double random2 = 0;
 		double multiple = 0;
 		if (!Screen.hasControlDown()) {
-			random = Math.round(MathHelper.nextInt(new Random(), 0, 100));
+			random = Math.round(Math.random() * 100);
 			world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 			if (random <= 1) {
 				random2 = Math.round(Math.random() * 3);

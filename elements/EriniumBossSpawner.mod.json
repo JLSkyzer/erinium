@@ -126,9 +126,6 @@
     "onDestroyedByPlayer": {
       "name": "EriniumBossSpawnerOnBlockRightClicked"
     },
-    "onDestroyedByExplosion": {
-      "name": "EriniumArmorBodyTickEvent"
-    },
     "onStartToDestroy": {
       "name": "EriniumBossSpawnerOnBlockRightClicked"
     },

@@ -19,6 +19,7 @@ import net.minecraft.entity.Entity;
 
 import java.util.Map;
 import java.util.List;
+import java.util.Collections;
 import java.util.ArrayList;
 
 import fr.erinagroups.erinium.EriniumModVariables;
@@ -84,6 +85,17 @@ public class GoAlphaProcedure {
 										}
 									}
 								}
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate(EriniumModVariables.MapVariables.get(world).alpha_x,
+											EriniumModVariables.MapVariables.get(world).alpha_y, EriniumModVariables.MapVariables.get(world).alpha_z);
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation(EriniumModVariables.MapVariables.get(world).alpha_x,
+												EriniumModVariables.MapVariables.get(world).alpha_y,
+												EriniumModVariables.MapVariables.get(world).alpha_z, _ent.rotationYaw, _ent.rotationPitch,
+												Collections.emptySet());
+									}
+								}
 							} else {
 								if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 									((PlayerEntity) entity).sendStatusMessage(
@@ -116,6 +128,16 @@ public class GoAlphaProcedure {
 										}
 										((ServerPlayerEntity) _ent).connection.sendPacket(new SPlaySoundEventPacket(1032, BlockPos.ZERO, 0, false));
 									}
+								}
+							}
+							{
+								Entity _ent = entity;
+								_ent.setPositionAndUpdate(EriniumModVariables.MapVariables.get(world).alpha_x,
+										EriniumModVariables.MapVariables.get(world).alpha_y, EriniumModVariables.MapVariables.get(world).alpha_z);
+								if (_ent instanceof ServerPlayerEntity) {
+									((ServerPlayerEntity) _ent).connection.setPlayerLocation(EriniumModVariables.MapVariables.get(world).alpha_x,
+											EriniumModVariables.MapVariables.get(world).alpha_y, EriniumModVariables.MapVariables.get(world).alpha_z,
+											_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
 								}
 							}
 						}

@@ -11,16 +11,7 @@
     "enableBoots": true,
     "textureBoots": "erinium_matrix_boots",
     "onHelmetTick": {
-      "name": "ArmorHelmetHighEnd"
-    },
-    "onBodyTick": {
-      "name": "ArmorChestplateHighEnd"
-    },
-    "onLeggingsTick": {
-      "name": "ArmorLeggingsHighEnd"
-    },
-    "onBootsTick": {
-      "name": "ArmorBootsHighEnd"
+      "name": "GlobalArmorHelmet"
     },
     "creativeTab": {
       "value": "CUSTOM:EriniumArmors"
@@ -30,10 +21,22 @@
     "bodyName": "§2§k|| §r§1Erinium Matrix Chestplate §2§k||",
     "leggingsName": "§2§k|| §r§1Erinium Matrix Leggings §2§k||",
     "bootsName": "§2§k|| §r§1Erinium Matrix Boots §2§k||",
-    "helmetSpecialInfo": [],
-    "bodySpecialInfo": [],
-    "leggingsSpecialInfo": [],
-    "bootsSpecialInfo": [],
+    "helmetSpecialInfo": [
+      "§eEffet full armure : §bVitesse 2",
+      "§eFull armor effect : §bSpeed 2"
+    ],
+    "bodySpecialInfo": [
+      "§eEffet full armure : §bVitesse 2",
+      "§eFull armor effect : §bSpeed 2"
+    ],
+    "leggingsSpecialInfo": [
+      "§eEffet full armure : §bVitesse 2",
+      "§eFull armor effect : §bSpeed 2"
+    ],
+    "bootsSpecialInfo": [
+      "§eEffet full armure : §bVitesse 2",
+      "§eFull armor effect : §bSpeed 2"
+    ],
     "helmetModelName": "Default",
     "helmetModelPart": "Helmet",
     "helmetModelTexture": "From armor",
@@ -54,14 +57,14 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 40,
-    "damageValueHelmet": 10,
-    "damageValueBody": 14,
-    "damageValueLeggings": 12,
-    "damageValueBoots": 10,
+    "maxDamage": 37,
+    "damageValueHelmet": 6,
+    "damageValueBody": 8,
+    "damageValueLeggings": 6,
+    "damageValueBoots": 6,
     "enchantability": 28,
-    "toughness": 3.4,
-    "knockbackResistance": 0.22,
+    "toughness": 2.2,
+    "knockbackResistance": 0.15,
     "equipSound": {
       "value": ""
     },

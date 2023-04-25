@@ -22,10 +22,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import fr.erinagroups.erinium.procedures.SpectiumArmorLeggingsTickEventProcedure;
-import fr.erinagroups.erinium.procedures.SpectiumArmorHelmetTickEventProcedure;
-import fr.erinagroups.erinium.procedures.SpectiumArmorBootsTickEventProcedure;
-import fr.erinagroups.erinium.procedures.SpectiumArmorBodyTickEventProcedure;
+import fr.erinagroups.erinium.procedures.GlobalArmorHelmetProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
@@ -53,12 +50,12 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 40;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 35;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{9, 11, 13, 9}[slot.getIndex()];
+				return new int[]{5, 6, 8, 5}[slot.getIndex()];
 			}
 
 			@Override
@@ -84,12 +81,12 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 
 			@Override
 			public float getToughness() {
-				return 3.2f;
+				return 2.1f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.2f;
+				return 0.1f;
 			}
 		};
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
@@ -105,8 +102,8 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				SpectiumArmorHelmetTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				GlobalArmorHelmetProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("spectium_armor_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
@@ -114,47 +111,17 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				SpectiumArmorBodyTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
 		}.setRegistryName("spectium_armor_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				SpectiumArmorLeggingsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
 		}.setRegistryName("spectium_armor_leggings"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				SpectiumArmorBootsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("spectium_armor_boots"));
 	}
