@@ -13,6 +13,9 @@
     "onHelmetTick": {
       "name": "GlobalArmorHelmet"
     },
+    "onBootsTick": {
+      "name": "GlobalArmorBoots"
+    },
     "creativeTab": {
       "value": "CUSTOM:EriniumArmors"
     },
@@ -58,13 +61,13 @@
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
     "maxDamage": 37,
-    "damageValueHelmet": 6,
+    "damageValueHelmet": 5,
     "damageValueBody": 8,
     "damageValueLeggings": 6,
-    "damageValueBoots": 6,
+    "damageValueBoots": 5,
     "enchantability": 28,
     "toughness": 2.2,
-    "knockbackResistance": 0.15,
+    "knockbackResistance": 0.1,
     "equipSound": {
       "value": ""
     },

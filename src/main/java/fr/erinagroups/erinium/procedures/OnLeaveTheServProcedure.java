@@ -88,8 +88,8 @@ public class OnLeaveTheServProcedure {
 				MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
 				if (mcserv != null)
 					mcserv.getPlayerList()
-							.func_232641_a_(new StringTextComponent(("\uFFFD4[\uFFFDcPvp Mode\uFFFD4] \uFFFDe" + entity.getDisplayName().getString()
-									+ " s'est d\uFFFDconnect\uFFFD en plein combat et a \uFFFDt\uFFFD punni ! \uFFFDb(Alors ne le faite pas)")),
+							.func_232641_a_(new StringTextComponent(("\u00A74[\u00A7cPvp Mode\u00A74] \u00A7e" + entity.getDisplayName().getString()
+									+ " s'est d\u00E9connect\u00E9 en plein combat et a \u00E9t\u00E9 punni ! \u00A7b(Alors ne le faite pas !)")),
 									ChatType.SYSTEM, Util.DUMMY_UUID);
 			}
 		}

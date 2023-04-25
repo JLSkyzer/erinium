@@ -91,7 +91,7 @@ public class CheckPvpModeProcedure {
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity)
-						.sendStatusMessage(new StringTextComponent("\uFFFDc\uFFFDlMode combat: \uFFFDaVous n'\uFFFDtes plus en combat"), (false));
+						.sendStatusMessage(new StringTextComponent("\u00A7c\u00A7lMode combat: \u00A7aVous n'\u00EAtes plus en combat"), (false));
 			}
 		}
 	}

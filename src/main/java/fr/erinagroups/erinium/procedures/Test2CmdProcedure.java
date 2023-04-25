@@ -1,12 +1,12 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Calendar;
 
 import fr.erinagroups.erinium.EriniumMod;
 
@@ -20,9 +20,7 @@ public class Test2CmdProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		Map<String, String> temp_map = new HashMap<>();
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity)
-					.sendStatusMessage(new StringTextComponent(("Demain : " + (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + 1))), (false));
-		}
+		if (entity instanceof LivingEntity)
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 600, (int) 0, (false), (false)));
 	}
 }

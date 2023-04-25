@@ -6,6 +6,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
@@ -61,19 +62,20 @@ public class EnablePvpModeProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity immediatesourceentity = (Entity) dependencies.get("immediatesourceentity");
-		if (entity instanceof PlayerEntity && immediatesourceentity instanceof PlayerEntity) {
+		if (entity instanceof PlayerEntity && immediatesourceentity instanceof PlayerEntity
+				|| entity instanceof ServerPlayerEntity && immediatesourceentity instanceof ServerPlayerEntity) {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 					((PlayerEntity) entity).sendStatusMessage(
-							new StringTextComponent("\uFFFDc\uFFFDlVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
+							new StringTextComponent("\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
 							(false));
 				}
 			} else if ((immediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
 				if (immediatesourceentity instanceof PlayerEntity && !immediatesourceentity.world.isRemote()) {
 					((PlayerEntity) immediatesourceentity).sendStatusMessage(
-							new StringTextComponent("\uFFFDc\uFFFDlVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
+							new StringTextComponent("\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
 							(false));
 				}
 			}

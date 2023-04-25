@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.GlobalArmorHelmetProcedure;
+import fr.erinagroups.erinium.procedures.GlobalArmorBootsProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
@@ -59,7 +60,7 @@ public class EriniumMatrixArmorItem extends EriniumModElements.ModElement {
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{6, 6, 8, 6}[slot.getIndex()];
+				return new int[]{5, 6, 8, 5}[slot.getIndex()];
 			}
 
 			@Override
@@ -90,7 +91,7 @@ public class EriniumMatrixArmorItem extends EriniumModElements.ModElement {
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.15f;
+				return 0.1f;
 			}
 		};
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
@@ -154,6 +155,16 @@ public class EriniumMatrixArmorItem extends EriniumModElements.ModElement {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "erinium:textures/models/armor/erinium_matrix_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+			}
+
+			@Override
+			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
+				double x = entity.getPosX();
+				double y = entity.getPosY();
+				double z = entity.getPosZ();
+
+				GlobalArmorBootsProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("erinium_matrix_armor_boots"));
 	}

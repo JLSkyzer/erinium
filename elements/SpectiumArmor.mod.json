@@ -13,6 +13,9 @@
     "onHelmetTick": {
       "name": "GlobalArmorHelmet"
     },
+    "onBootsTick": {
+      "name": "GlobalArmorBoots"
+    },
     "creativeTab": {
       "value": "CUSTOM:EriniumArmors"
     },
@@ -48,7 +51,7 @@
     "maxDamage": 35,
     "damageValueHelmet": 5,
     "damageValueBody": 8,
-    "damageValueLeggings": 6,
+    "damageValueLeggings": 5,
     "damageValueBoots": 5,
     "enchantability": 25,
     "toughness": 2.1,
