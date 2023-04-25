@@ -9522,7 +9522,7 @@
     {
       "name": "GlobalArmorHelmet",
       "type": "procedure",
-      "sortid": 721,
+      "sortid": 723,
       "compiles": true,
       "locked_code": false,
       "registry_name": "global_armor_helmet",
@@ -9537,12 +9537,12 @@
       "path": "~/Armors proced"
     },
     {
-      "name": "CheckArmorForEffect",
+      "name": "GlobalArmorBoots",
       "type": "procedure",
-      "sortid": 722,
+      "sortid": 724,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "check_armor_for_effect",
+      "registry_name": "global_armor_boots",
       "metadata": {
         "dependencies": [
           {
