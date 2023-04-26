@@ -8806,23 +8806,6 @@
       "path": "~/Server side/Profile "
     },
     {
-      "name": "DownloadFile",
-      "type": "procedure",
-      "sortid": 678,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "download_file",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Server side"
-    },
-    {
       "name": "IcyMushroom",
       "type": "plant",
       "sortid": 679,
@@ -9552,6 +9535,192 @@
         ]
       },
       "path": "~/Armors proced"
+    },
+    {
+      "name": "LeftClickOnBlock",
+      "type": "procedure",
+      "sortid": 725,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "left_click_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/LootBox"
+    },
+    {
+      "name": "UuidProcedure",
+      "type": "procedure",
+      "sortid": 726,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uuid_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/AdminTool"
+    },
+    {
+      "name": "Uuid",
+      "type": "command",
+      "sortid": 726,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uuid",
+      "path": "~/Server side/AdminTool"
+    },
+    {
+      "name": "EriniumNether",
+      "type": "dimension",
+      "sortid": 727,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_nether",
+      "metadata": {
+        "ep": false
+      },
+      "path": "~/Nether"
+    },
+    {
+      "name": "GoNether",
+      "type": "command",
+      "sortid": 728,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_nether",
+      "path": "~/Nether"
+    },
+    {
+      "name": "GoNetherCommand",
+      "type": "procedure",
+      "sortid": 729,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "go_nether_command",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Nether"
+    },
+    {
+      "name": "SetNetherSpawn",
+      "type": "procedure",
+      "sortid": 730,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_nether_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Nether"
+    },
+    {
+      "name": "NetherMaintenanceProcedure",
+      "type": "procedure",
+      "sortid": 731,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nether_maintenance_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Nether"
+    },
+    {
+      "name": "CmdSetNetherSpawn",
+      "type": "command",
+      "sortid": 732,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_set_nether_spawn",
+      "path": "~/Nether"
+    },
+    {
+      "name": "CmdNetherMaintenance",
+      "type": "command",
+      "sortid": 733,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_nether_maintenance",
+      "path": "~/Nether"
+    },
+    {
+      "name": "WikiGui",
+      "type": "gui",
+      "sortid": 734,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wiki_gui",
+      "path": "~/Wiki"
     }
   ],
   "variable_elements": [
@@ -10082,6 +10251,30 @@
       "type": "string",
       "scope": "map",
       "value": "§aCharlie"
+    },
+    {
+      "name": "nether_x",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "nether_y",
+      "type": "number",
+      "scope": "map",
+      "value": "120.0"
+    },
+    {
+      "name": "nether_z",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "maintenanceNether",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -10169,14 +10362,14 @@
       "biome.erinium.red_jungle_biome": "Red Jungle Biome",
       "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
       "block.erinium.red_jungle_grass": "Red Jungle Grass",
-      "block.erinium.xp_bush_layer_1": "Xp bush",
       "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
+      "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
@@ -10308,6 +10501,7 @@
       "block.erinium.house_1_block": "House 1 Block",
       "item.erinium.erinium_ingot": "Erinium Ingot",
       "block.erinium.amenine_fence": "§5§lAmenine Fence",
+      "item.erinium.erinium_nether": "Erinium Nether Igniter",
       "item.erinium.spectium_armor_leggings": "Spectium Leggings",
       "item.erinium.soul_bottle": "§9Soul Bottle",
       "block.erinium.alpha_marqued": "Alpha Marqued",
@@ -11019,23 +11213,31 @@
       {
         "name": "Armors proced",
         "children": []
+      },
+      {
+        "name": "Nether",
+        "children": []
+      },
+      {
+        "name": "Wiki",
+        "children": []
       }
     ]
   },
   "workspaceSettings": {
     "modid": "erinium",
     "modName": "Erinium",
-    "version": "1.0.6",
+    "version": "4.0.1",
     "description": "Mod créer par JLSkyzer",
     "author": "JLSkyzer",
     "websiteURL": "https://discord.gg/26DzRJCTQs",
     "license": "Copyright � 2021 - 2022 Erinium - All Rights Reserved.",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
-    "requiredMods": [
+    "requiredMods": [],
+    "dependencies": [
       "mekanism"
     ],
-    "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.16.5",

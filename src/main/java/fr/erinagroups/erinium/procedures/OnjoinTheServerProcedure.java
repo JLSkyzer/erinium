@@ -117,7 +117,7 @@ public class OnjoinTheServerProcedure {
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
-						"\u00A74[\u00A7bErinium\u00A74] \u00A7eAstuce, \u00A7aRester appuyer sur \"CTRL\" en cassant une lootbox pour la r\u00E9cuperer"),
+						"\u00A74[\u00A7bErinium\u00A74] \u00A7eAstuce, \u00A7afaite \"CLIQUE DROIT\" sur une loot box pour la r\u00E9cup\u00E9r\u00E9e !"),
 						(false));
 			}
 		} else if (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -150,8 +150,7 @@ public class OnjoinTheServerProcedure {
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity).sendStatusMessage(
-						new StringTextComponent(
-								"\u00A74[\u00A7bErinium\u00A74] \u00A7eTip, \u00A7aKeep pressing \"CTRL\" when breaking a lootbox to recover it"),
+						new StringTextComponent(" \u00A74[\u00A7bErinium\u00A74] \u00A7eTip, \u00A7a\"RIGHT CLICK\" on a loot box to retrieve it!"),
 						(false));
 			}
 		}

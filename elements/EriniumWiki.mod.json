@@ -4,6 +4,6 @@
   "definition": {
     "commandName": "eriniumwiki",
     "permissionLevel": "No requirement",
-    "argsxml": "<xml><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"old_command\"><field name=\"procedure\">EriniumWikiCommandExecuted</field></block></next></block></xml>"
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"call_procedure\"><field name=\"procedure\">EriniumWikiCommandExecuted</field></block></next></block><block type=\"old_command\" x=\"420\" y=\"97\"><field name=\"procedure\">EriniumWikiCommandExecuted</field></block></xml>"
   }
 }

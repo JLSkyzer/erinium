@@ -186,6 +186,10 @@ public class EriniumModVariables {
 		public String maintenanceTextAlpha = "\u00A7aAlpha";
 		public String maintenanceTextBeta = "\u00A7aBeta";
 		public String maintenanceTextCharlie = "\u00A7aCharlie";
+		public double nether_x = 0;
+		public double nether_y = 120.0;
+		public double nether_z = 0;
+		public boolean maintenanceNether = false;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -235,6 +239,10 @@ public class EriniumModVariables {
 			maintenanceTextAlpha = nbt.getString("maintenanceTextAlpha");
 			maintenanceTextBeta = nbt.getString("maintenanceTextBeta");
 			maintenanceTextCharlie = nbt.getString("maintenanceTextCharlie");
+			nether_x = nbt.getDouble("nether_x");
+			nether_y = nbt.getDouble("nether_y");
+			nether_z = nbt.getDouble("nether_z");
+			maintenanceNether = nbt.getBoolean("maintenanceNether");
 		}
 
 		@Override
@@ -277,6 +285,10 @@ public class EriniumModVariables {
 			nbt.putString("maintenanceTextAlpha", maintenanceTextAlpha);
 			nbt.putString("maintenanceTextBeta", maintenanceTextBeta);
 			nbt.putString("maintenanceTextCharlie", maintenanceTextCharlie);
+			nbt.putDouble("nether_x", nether_x);
+			nbt.putDouble("nether_y", nether_y);
+			nbt.putDouble("nether_z", nether_z);
+			nbt.putBoolean("maintenanceNether", maintenanceNether);
 			return nbt;
 		}
 

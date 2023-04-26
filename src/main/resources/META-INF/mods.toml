@@ -4,7 +4,7 @@ license="Copyright � 2021 - 2022 Erinium - All Rights Reserved."
 
 [[mods]]
 modId="erinium"
-version="1.0.6"
+version="4.0.1"
 displayName="Erinium"
 credits="pas de crédit"
 displayURL="https://discord.gg/26DzRJCTQs"
@@ -21,11 +21,11 @@ Mod créer par JLSkyzer
     side="BOTH"
 
 
+
 [[dependencies.erinium]]
     modId="mekanism"
-    mandatory=true
+    mandatory=false
     versionRange="[0,)"
     ordering="NONE"
     side="BOTH"
-
 

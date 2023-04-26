@@ -9,7 +9,6 @@ import net.minecraftforge.common.util.FakePlayerFactory;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.util.Direction;
 import net.minecraft.entity.Entity;
-import net.minecraft.command.Commands;
 import net.minecraft.command.CommandSource;
 
 import java.util.stream.Stream;
@@ -20,7 +19,6 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.procedures.EriniumWikiCommandExecutedProcedure;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import com.mojang.brigadier.arguments.StringArgumentType;
 
 import com.github.hexomod.worldeditcuife3.z;
 import com.github.hexomod.worldeditcuife3.y;
@@ -32,7 +30,7 @@ public class EriniumWikiCommand {
 	public static void registerCommands(RegisterCommandsEvent event) {
 		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("eriniumwiki")
 
-				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(arguments -> {
+				.executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();
 					double x = arguments.getSource().getPos().getX();
 					double y = arguments.getSource().getPos().getY();
@@ -41,36 +39,6 @@ public class EriniumWikiCommand {
 					if (entity == null)
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getHorizontalFacing();
-					HashMap<String, String> cmdparams = new HashMap<>();
-					int index = -1;
-					for (String param : arguments.getInput().split("\\s+")) {
-						if (index >= 0)
-							cmdparams.put(Integer.toString(index), param);
-						index++;
-					}
-
-					EriniumWikiCommandExecutedProcedure.executeProcedure(Stream
-							.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-									new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-									new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-					return 0;
-				})).executes(arguments -> {
-					ServerWorld world = arguments.getSource().getWorld();
-					double x = arguments.getSource().getPos().getX();
-					double y = arguments.getSource().getPos().getY();
-					double z = arguments.getSource().getPos().getZ();
-					Entity entity = arguments.getSource().getEntity();
-					if (entity == null)
-						entity = FakePlayerFactory.getMinecraft(world);
-					Direction direction = entity.getHorizontalFacing();
-					HashMap<String, String> cmdparams = new HashMap<>();
-					int index = -1;
-					for (String param : arguments.getInput().split("\\s+")) {
-						if (index >= 0)
-							cmdparams.put(Integer.toString(index), param);
-						index++;
-					}
 
 					EriniumWikiCommandExecutedProcedure.executeProcedure(Stream
 							.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
