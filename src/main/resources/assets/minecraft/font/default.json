@@ -55,6 +55,13 @@
             "ascent": 8,
             "height": 10,
             "chars": ["\uE006"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/erinium_gemmes.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": ["\uE007"]
         }
     ]
 }

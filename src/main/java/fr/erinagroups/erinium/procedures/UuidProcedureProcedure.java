@@ -62,13 +62,21 @@ public class UuidProcedureProcedure {
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		CommandContext<CommandSource> arguments = (CommandContext<CommandSource>) dependencies.get("arguments");
 		Entity entity = (Entity) dependencies.get("entity");
-		try {
-			for (Entity entityiterator : EntityArgument.getEntitiesAllowingNone(arguments, "playerName")) {
-				if (world instanceof ServerWorld) {
-					((World) world).getServer().getCommandManager().handleCommand(
-							new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-									new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-							("/tellraw " + entity.getDisplayName().getString() + "[\"\",{\"text\":\"\u00A7cUuid de : \u00A7e" + new Object() {
+		if (world instanceof ServerWorld) {
+			((World) world).getServer().getCommandManager().handleCommand(
+					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
+							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					("/tellraw " + entity.getDisplayName().getString() + " [\"\",{\"text\":\"\u00A7cUuid de : \u00A7e" + new Object() {
+						public Entity getEntity() {
+							try {
+								return EntityArgument.getEntity(arguments, "playerName");
+							} catch (CommandSyntaxException e) {
+								e.printStackTrace();
+								return null;
+							}
+						}
+					}.getEntity() + "\u00A7c: \u00A7a\"},{\"text\":\"UUID\",\"underlined\":true,\"clickEvent\":"
+							+ "{\"action\":\"copy_to_clipboard\",\"value\":\"" + (new Object() {
 								public Entity getEntity() {
 									try {
 										return EntityArgument.getEntity(arguments, "playerName");
@@ -77,12 +85,7 @@ public class UuidProcedureProcedure {
 										return null;
 									}
 								}
-							}.getEntity() + "\u00A7c: \u00A7a\"},{\"text\":\"UUID\",\"underlined\":true,\"clickEvent\":"
-									+ "{\"action\":\"copy_to_clipboard\",\"value\":\"" + entityiterator.getUniqueID().toString() + "\"}}]"));
-				}
-			}
-		} catch (CommandSyntaxException e) {
-			e.printStackTrace();
+							}.getEntity()).getUniqueID().toString() + "\"}}]"));
 		}
 	}
 }

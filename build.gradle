@@ -10,6 +10,7 @@ buildscript {
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath "com.github.jengelman.gradle.plugins:shadow:6.1.0"
+
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -94,8 +95,6 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.26'
-
-    implementation 'org.openjfx:javafx-web:16'
 
     // curse.maven:<descriptor>-<projectid>:<fileid>
     implementation fg.deobf("curse.maven:obfuscate-289380:3336021")

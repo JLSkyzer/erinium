@@ -32,7 +32,7 @@ public class TestCommand {
 	@SubscribeEvent
 	public static void registerCommands(RegisterCommandsEvent event) {
 		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("test").requires(s -> s.hasPermissionLevel(3))
-				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(arguments -> {
+				.then(Commands.argument("uuid", StringArgumentType.word()).executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();
 					double x = arguments.getSource().getPos().getX();
 					double y = arguments.getSource().getPos().getY();
@@ -41,37 +41,11 @@ public class TestCommand {
 					if (entity == null)
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getHorizontalFacing();
-					HashMap<String, String> cmdparams = new HashMap<>();
-					int index = -1;
-					for (String param : arguments.getInput().split("\\s+")) {
-						if (index >= 0)
-							cmdparams.put(Integer.toString(index), param);
-						index++;
-					}
 
-					TestCommandExecutedProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					TestCommandExecutedProcedure.executeProcedure(
+							Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
+									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					return 0;
-				})).executes(arguments -> {
-					ServerWorld world = arguments.getSource().getWorld();
-					double x = arguments.getSource().getPos().getX();
-					double y = arguments.getSource().getPos().getY();
-					double z = arguments.getSource().getPos().getZ();
-					Entity entity = arguments.getSource().getEntity();
-					if (entity == null)
-						entity = FakePlayerFactory.getMinecraft(world);
-					Direction direction = entity.getHorizontalFacing();
-					HashMap<String, String> cmdparams = new HashMap<>();
-					int index = -1;
-					for (String param : arguments.getInput().split("\\s+")) {
-						if (index >= 0)
-							cmdparams.put(Integer.toString(index), param);
-						index++;
-					}
-
-					TestCommandExecutedProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-					return 0;
-				}));
+				})));
 	}
 }

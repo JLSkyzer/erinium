@@ -230,6 +230,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -9714,13 +9718,291 @@
       "path": "~/Nether"
     },
     {
-      "name": "WikiGui",
-      "type": "gui",
+      "name": "CmdToggleEssential",
+      "type": "command",
       "sortid": 734,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "wiki_gui",
-      "path": "~/Wiki"
+      "registry_name": "cmd_toggle_essential",
+      "path": "~/Server side/AdminTool"
+    },
+    {
+      "name": "ToggleEssentialProced",
+      "type": "procedure",
+      "sortid": 735,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toggle_essential_proced",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/AdminTool"
+    },
+    {
+      "name": "CreditToMoney",
+      "type": "command",
+      "sortid": 736,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "credit_to_money",
+      "path": "~/Server side/Credit"
+    },
+    {
+      "name": "CreditToMoneyProced",
+      "type": "procedure",
+      "sortid": 737,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "credit_to_money_proced",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side/Credit"
+    },
+    {
+      "name": "EriniumGemme",
+      "type": "command",
+      "sortid": 738,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_gemme",
+      "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "PasencoreEtablie",
+      "type": "procedure",
+      "sortid": 739,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pasencore_etablie",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "GemmeGet",
+      "type": "procedure",
+      "sortid": 740,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gemme_get",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "GemmeReset",
+      "type": "procedure",
+      "sortid": 741,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gemme_reset",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "GemmeSet",
+      "type": "procedure",
+      "sortid": 742,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gemme_set",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "GemmeGive",
+      "type": "procedure",
+      "sortid": 743,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gemme_give",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "GemmeTake",
+      "type": "procedure",
+      "sortid": 744,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gemme_take",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Gemmes/commandes admins"
     }
   ],
   "variable_elements": [
@@ -10275,6 +10557,12 @@
       "type": "logic",
       "scope": "map",
       "value": "false"
+    },
+    {
+      "name": "essentialPluginEnabled",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -10362,14 +10650,14 @@
       "biome.erinium.red_jungle_biome": "Red Jungle Biome",
       "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "key.categories.eriniumcontrols": "§1Erinium",
-      "item.erinium.op_tool": "Op Tool",
       "item.erinium_armorbody.name": "Erinium Body",
+      "item.erinium.op_tool": "Op Tool",
+      "key.categories.eriniumcontrols": "§1Erinium",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
       "block.erinium.red_jungle_grass": "Red Jungle Grass",
-      "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
       "block.erinium.xp_bush_layer_1": "Xp bush",
+      "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
@@ -11219,8 +11507,17 @@
         "children": []
       },
       {
-        "name": "Wiki",
+        "name": "wiki",
         "children": []
+      },
+      {
+        "name": "Gemmes",
+        "children": [
+          {
+            "name": "commandes admins",
+            "children": []
+          }
+        ]
       }
     ]
   },

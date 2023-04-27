@@ -61,6 +61,7 @@ public class CreateFileProcedure {
 				exception.printStackTrace();
 			}
 			MainJsonObject.addProperty("staff.erinium.command", (false));
+			MainJsonObject.addProperty("erinium.economy.gemmes", (false));
 			MainJsonObject.addProperty("item.use.blockreplacer", (false));
 			{
 				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();

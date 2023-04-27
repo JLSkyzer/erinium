@@ -190,6 +190,7 @@ public class EriniumModVariables {
 		public double nether_y = 120.0;
 		public double nether_z = 0;
 		public boolean maintenanceNether = false;
+		public boolean essentialPluginEnabled = false;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -243,6 +244,7 @@ public class EriniumModVariables {
 			nether_y = nbt.getDouble("nether_y");
 			nether_z = nbt.getDouble("nether_z");
 			maintenanceNether = nbt.getBoolean("maintenanceNether");
+			essentialPluginEnabled = nbt.getBoolean("essentialPluginEnabled");
 		}
 
 		@Override
@@ -289,6 +291,7 @@ public class EriniumModVariables {
 			nbt.putDouble("nether_y", nether_y);
 			nbt.putDouble("nether_z", nether_z);
 			nbt.putBoolean("maintenanceNether", maintenanceNether);
+			nbt.putBoolean("essentialPluginEnabled", essentialPluginEnabled);
 			return nbt;
 		}
 

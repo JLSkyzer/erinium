@@ -1,0 +1,9 @@
+{
+  "_fv": 34,
+  "_type": "command",
+  "definition": {
+    "commandName": "eriniumgemme",
+    "permissionLevel": "3",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"14\" y=\"12\"><next><block type=\"string\"><field name=\"type\">word</field><field name=\"name\">uuid</field><statement name=\"args\"><block type=\"literal\"><field name=\"name\">set</field><statement name=\"args\"><block type=\"number_default\"><field name=\"name\">amount</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">GemmeSet</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">give</field><statement name=\"args\"><block type=\"number_min\"><field name=\"name\">amount</field><field name=\"min\">1</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">GemmeGive</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">take</field><statement name=\"args\"><block type=\"number_min\"><field name=\"name\">amount</field><field name=\"min\">1</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">GemmeTake</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">reset</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">GemmeReset</field></block></statement><next><block type=\"literal\"><field name=\"name\">get</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">GemmeGet</field></block></statement></block></next></block></next></block></next></block></next></block></statement></block></next></block><block type=\"old_command\" x=\"527\" y=\"44\"><field name=\"procedure\">ProcedureDeTest</field></block></xml>"
+  }
+}
