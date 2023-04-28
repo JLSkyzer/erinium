@@ -1,5 +1,5 @@
 {
-  "parent": "erinium:block/volcano_rock",
+  "parent": "erinium:block/rock_volcano",
   "display": {
     "thirdperson": {
       "rotation": [

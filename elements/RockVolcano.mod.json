@@ -9,7 +9,7 @@
     "textureRight": "volcano_rock",
     "textureBack": "volcano_rock",
     "renderType": 2,
-    "customModelName": "volcano_rock:default",
+    "customModelName": "rock_volcano:default",
     "rotationMode": 1,
     "enablePitch": false,
     "emissiveRendering": false,
@@ -24,19 +24,19 @@
     "disableOffset": false,
     "boundingBoxes": [
       {
-        "mx": 3.0,
+        "mx": 0.0,
         "my": 0.0,
-        "mz": 3.0,
-        "Mx": 12.0,
-        "My": 9.0,
-        "Mz": 12.0,
+        "mz": 0.0,
+        "Mx": 16.0,
+        "My": 16.0,
+        "Mz": 16.0,
         "subtract": false
       }
     ],
-    "name": "Volcano Rock",
+    "name": "Rock Volcano",
     "specialInfo": [],
-    "hardness": 3.0,
-    "resistance": 3.0,
+    "hardness": 1.0,
+    "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
@@ -44,7 +44,7 @@
     },
     "destroyTool": "Not specified",
     "customDrop": {
-      "value": "CUSTOM:AlmonieGem"
+      "value": "Blocks.AIR"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -63,7 +63,7 @@
     "emittedRedstonePower": {
       "fixedValue": 15.0
     },
-    "colorOnMap": "RED",
+    "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
     },
@@ -129,13 +129,22 @@
     "onDestroyedByExplosion": {
       "name": "VolcanoRocksBreak"
     },
-    "spawnWorldTypes": [],
+    "spawnWorldTypes": [
+      "CUSTOM:Moon"
+    ],
     "restrictionBiomes": [],
-    "blocksToReplace": [],
+    "blocksToReplace": [
+      {
+        "value": "Blocks.AIR"
+      }
+    ],
     "generationShape": "UNIFORM",
-    "frequencyPerChunks": 1,
-    "frequencyOnChunk": 1,
+    "frequencyPerChunks": 10,
+    "frequencyOnChunk": 2,
     "minGenerateHeight": 55,
-    "maxGenerateHeight": 120
+    "maxGenerateHeight": 100,
+    "generateCondition": {
+      "name": "RockVolcanoAdditionalGenerationCondition"
+    }
   }
 }

@@ -7966,24 +7966,6 @@
       "path": "~/Space update/Blocks/condition"
     },
     {
-      "name": "VolcanoRock",
-      "type": "block",
-      "sortid": 610,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "volcano_rock",
-      "path": "~/Space update/Blocks"
-    },
-    {
-      "name": "VolcanoRocksGen0",
-      "type": "structure",
-      "sortid": 611,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "volcano_rocks_gen_0",
-      "path": "~/Space update/Blocks/generation/volcano_rock"
-    },
-    {
       "name": "VolcanoRocksGen0OnStructureInstanceGenerated",
       "type": "procedure",
       "sortid": 612,
@@ -10003,6 +9985,45 @@
         ]
       },
       "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "RockVolcanoAdditionalGenerationCondition",
+      "type": "procedure",
+      "sortid": 745,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_volcano_additional_generation_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Space update/Blocks/condition"
+    },
+    {
+      "name": "RockVolcano",
+      "type": "block",
+      "sortid": 745,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_volcano",
+      "path": "~/Space update/Blocks"
     }
   ],
   "variable_elements": [
@@ -10695,6 +10716,7 @@
       "subtitles.magazine_reload": "The sound when you reload magazine",
       "item.erinium.erinium_skeleton_boss_spawn_egg": "Erinium Skeleton Boss Spawn Egg",
       "item.erinium.setanum_shovel": "Setanum Shovel",
+      "block.erinium.rock_volcano": "Rock Volcano",
       "block.erinium.amenine_stairs": "§5§lAmenine Stairs",
       "item.erinium.xp_essence": "Xp Essence",
       "item.erinium.silver_ingot": "§7Silver Ingot",
@@ -10756,7 +10778,6 @@
       "block.erinium.amenine_slab": "§5§lAmenine Slab",
       "item.erinium.magical_wand": "Magical Wand",
       "block.erinium.candy_planks": "§5Candy Planks",
-      "block.erinium.volcano_rock": "Volcano Rock",
       "block.erinium.amenine_leaves": "§5Amenine Leaves",
       "block.erinium.candy_stairs": "§5Candy Stairs",
       "item.erinium.cardboard_roll": "Cardboard Roll",

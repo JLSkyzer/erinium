@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=north": {
-      "model": "erinium:block/volcano_rock"
+      "model": "erinium:block/rock_volcano"
     },
     "facing=east": {
-      "model": "erinium:block/volcano_rock",
+      "model": "erinium:block/rock_volcano",
       "y": 90
     },
     "facing=south": {
-      "model": "erinium:block/volcano_rock",
+      "model": "erinium:block/rock_volcano",
       "y": 180
     },
     "facing=west": {
-      "model": "erinium:block/volcano_rock",
+      "model": "erinium:block/rock_volcano",
       "y": 270
     }
   }
