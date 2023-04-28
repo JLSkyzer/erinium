@@ -25,10 +25,6 @@ import fr.erinagroups.erinium.EriniumModElements;
 
 import com.google.common.collect.ImmutableSet;
 
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.e;
-
 @EriniumModElements.ModElement.Tag
 public class Minage01Dimension extends EriniumModElements.ModElement {
 	public Minage01Dimension(EriniumModElements instance) {

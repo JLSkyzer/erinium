@@ -42,12 +42,6 @@ import fr.erinagroups.erinium.procedures.MagicWandCobwebProjectileHitsPlayerProc
 import fr.erinagroups.erinium.entity.renderer.MagicWandCobwebRenderer;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.i;
-import com.github.hexomod.worldeditcuife3.e;
-
 @EriniumModElements.ModElement.Tag
 public class MagicWandCobwebItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:magic_wand_cobweb")

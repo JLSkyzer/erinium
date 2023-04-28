@@ -9,8 +9,6 @@ import java.util.Map;
 
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.p;
-
 public class CobbleVoidItemInInventoryTickProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

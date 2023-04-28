@@ -53,11 +53,6 @@ import fr.erinagroups.erinium.item.TreeBossShardItem;
 import fr.erinagroups.erinium.entity.renderer.TreeBossRenderer;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.ds;
-
 @EriniumModElements.ModElement.Tag
 public class TreeBossEntity extends EriniumModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)

@@ -28,11 +28,6 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.google.gson.GsonBuilder;
 import com.google.gson.Gson;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.e;
-
 public class GemmeResetProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -24,12 +24,6 @@ import fr.erinagroups.erinium.EriniumModVariables;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.w;
-import com.github.hexomod.worldeditcuife3.h;
-
 @Mod.EventBusSubscriber
 public class OverlayChestFinderOverlay {
 	@OnlyIn(Dist.CLIENT)

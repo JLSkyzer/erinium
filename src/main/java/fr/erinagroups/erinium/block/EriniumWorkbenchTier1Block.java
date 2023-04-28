@@ -43,14 +43,6 @@ import fr.erinagroups.erinium.procedures.OpenTier1WorkbenchProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.s;
-import com.github.hexomod.worldeditcuife3.bs;
-import com.github.hexomod.worldeditcuife3.br;
-import com.github.hexomod.worldeditcuife3.bp;
-
 @EriniumModElements.ModElement.Tag
 public class EriniumWorkbenchTier1Block extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:erinium_workbench_tier_1")

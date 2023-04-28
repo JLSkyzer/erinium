@@ -32,16 +32,6 @@ import net.minecraft.block.BlockState;
 
 import java.util.Random;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.k;
-import com.github.hexomod.worldeditcuife3.j;
-import com.github.hexomod.worldeditcuife3.i;
-import com.github.hexomod.worldeditcuife3.ck;
-import com.github.hexomod.worldeditcuife3.ci;
-import com.github.hexomod.worldeditcuife3.a;
-
 @Mod.EventBusSubscriber
 public class JungleLongTree1Structure {
 	private static Feature<NoFeatureConfig> feature = null;
@@ -58,7 +48,17 @@ public class JungleLongTree1Structure {
 					int ck = (pos.getZ() >> 4) << 4;
 					RegistryKey<World> dimensionType = world.getWorld().getDimensionKey();
 					boolean dimensionCriteria = false;
-					if (dimensionType == World.OVERWORLD)
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_alpha")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_beta")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_charlie")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_01")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_02")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_03")))
 						dimensionCriteria = true;
 					if (!dimensionCriteria)
 						return false;

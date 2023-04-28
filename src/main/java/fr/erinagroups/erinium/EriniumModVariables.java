@@ -36,9 +36,6 @@ import java.util.function.Supplier;
 
 import java.io.File;
 
-import com.github.hexomod.worldeditcuife3.s;
-import com.github.hexomod.worldeditcuife3.T;
-
 public class EriniumModVariables {
 	public EriniumModVariables(EriniumModElements elements) {
 		elements.addNetworkMessage(WorldSavedDataSyncMessage.class, WorldSavedDataSyncMessage::buffer, WorldSavedDataSyncMessage::new,

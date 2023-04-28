@@ -31,11 +31,6 @@ import fr.erinagroups.erinium.procedures.Line1BlockOnBlockRightClickedProcedure;
 import fr.erinagroups.erinium.itemgroup.AdminZoneItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.s;
-
 @EriniumModElements.ModElement.Tag
 public class Line1BlockBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:line_1_block")

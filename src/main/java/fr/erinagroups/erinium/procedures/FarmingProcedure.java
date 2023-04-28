@@ -21,10 +21,6 @@ import fr.erinagroups.erinium.block.SetanumStage3Block;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 public class FarmingProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

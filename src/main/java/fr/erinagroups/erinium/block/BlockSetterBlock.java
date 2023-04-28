@@ -25,8 +25,6 @@ import java.util.Collections;
 import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.s;
-
 @EriniumModElements.ModElement.Tag
 public class BlockSetterBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:block_setter")

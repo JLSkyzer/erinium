@@ -29,11 +29,6 @@ import java.util.Collections;
 import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.s;
-import com.github.hexomod.worldeditcuife3.bs;
-import com.github.hexomod.worldeditcuife3.br;
-import com.github.hexomod.worldeditcuife3.bp;
-
 @EriniumModElements.ModElement.Tag
 public class FusionStationBetaBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:fusion_station_beta")

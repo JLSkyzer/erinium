@@ -35,11 +35,6 @@ import java.util.Random;
 import fr.erinagroups.erinium.entity.renderer.TreeBossProjectileRenderer;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.e;
-
 @EriniumModElements.ModElement.Tag
 public class TreeBossProjectileItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:tree_boss_projectile")

@@ -33,12 +33,6 @@ import fr.erinagroups.erinium.particle.CandyLeavesParticleParticle;
 import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.s;
-import com.github.hexomod.worldeditcuife3.l;
-
 @EriniumModElements.ModElement.Tag
 public class CandyLeavesBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:candy_leaves")

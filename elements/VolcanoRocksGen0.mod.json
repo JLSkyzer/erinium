@@ -17,9 +17,6 @@
     ],
     "restrictionBlocks": [],
     "restrictionBiomes": [],
-    "ignoreBlocks": "STRUCTURE_BLOCK",
-    "onStructureGenerated": {
-      "name": "VolcanoRocksGen0OnStructureInstanceGenerated"
-    }
+    "ignoreBlocks": "STRUCTURE_BLOCK"
   }
 }

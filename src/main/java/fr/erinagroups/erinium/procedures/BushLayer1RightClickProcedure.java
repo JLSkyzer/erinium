@@ -20,11 +20,6 @@ import fr.erinagroups.erinium.block.BloodBushLayer1Block;
 import fr.erinagroups.erinium.block.BloodBushLayer0Block;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.e;
-
 public class BushLayer1RightClickProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

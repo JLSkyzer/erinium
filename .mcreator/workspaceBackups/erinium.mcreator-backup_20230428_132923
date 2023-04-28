@@ -5307,7 +5307,7 @@
       "name": "DuplicatePickaxe",
       "type": "tool",
       "sortid": 15,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "duplicate_pickaxe",
       "path": "~/Misc System/DuplicatePickaxe"
@@ -6690,7 +6690,7 @@
       "name": "GoCandy",
       "type": "procedure",
       "sortid": 535,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "go_candy",
       "metadata": {
@@ -7031,7 +7031,7 @@
       "name": "ProcedEriniumReloadVariables",
       "type": "procedure",
       "sortid": 557,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "proced_erinium_reload_variables",
       "metadata": {
@@ -7078,7 +7078,7 @@
       "name": "MagicStonesDebug",
       "type": "item",
       "sortid": 156,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "magic_stones_debug",
       "path": "~/Server side/TestSide"
@@ -7477,7 +7477,7 @@
       "name": "MagicStonesHeal",
       "type": "item",
       "sortid": 70,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "magic_stones_heal",
       "path": "~/Misc System/Magic Stones"
@@ -7495,7 +7495,7 @@
       "name": "MagicStonesDamage",
       "type": "item",
       "sortid": 72,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "magic_stones_damage",
       "path": "~/Misc System/Magic Stones"
@@ -7513,7 +7513,7 @@
       "name": "MagicStonesCredit",
       "type": "item",
       "sortid": 74,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "magic_stones_credit",
       "path": "~/Misc System/Magic Stones"
@@ -8457,7 +8457,7 @@
       "name": "ProfileMenuMain",
       "type": "gui",
       "sortid": 655,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "profile_menu_main",
       "path": "~/Server side/Profile "
@@ -8466,7 +8466,7 @@
       "name": "ProfileMenuRank",
       "type": "gui",
       "sortid": 656,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "profile_menu_rank",
       "path": "~/Server side/Profile "
@@ -9297,7 +9297,7 @@
       "name": "Maintenance",
       "type": "gui",
       "sortid": 708,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "maintenance",
       "path": "~/Server side/Serveur map/maintenance"
@@ -9459,7 +9459,7 @@
       "name": "ServerMap",
       "type": "gui",
       "sortid": 718,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "server_map",
       "path": "~/Server side/Serveur map/Gui"
@@ -9900,6 +9900,80 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "gemme_set",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "GemmeGive",
+      "type": "procedure",
+      "sortid": 743,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gemme_give",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Gemmes/commandes admins"
+    },
+    {
+      "name": "GemmeTake",
+      "type": "procedure",
+      "sortid": 744,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gemme_take",
       "metadata": {
         "dependencies": [
           {

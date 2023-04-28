@@ -19,10 +19,6 @@ import java.util.HashMap;
 
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.k;
-import com.github.hexomod.worldeditcuife3.j;
-import com.github.hexomod.worldeditcuife3.i;
-
 public class DesenchantBookProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

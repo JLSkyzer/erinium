@@ -28,10 +28,6 @@ import java.util.HashMap;
 
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 @EriniumModElements.ModElement.Tag
 public class ProfileMenuStatsGui extends EriniumModElements.ModElement {
 	public static HashMap guistate = new HashMap();

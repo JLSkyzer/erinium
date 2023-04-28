@@ -48,11 +48,6 @@ import fr.erinagroups.erinium.item.EriniumArmorItem;
 import fr.erinagroups.erinium.entity.renderer.EriniumSkeletonBossRenderer;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.ds;
-
 @EriniumModElements.ModElement.Tag
 public class EriniumSkeletonBossEntity extends EriniumModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)

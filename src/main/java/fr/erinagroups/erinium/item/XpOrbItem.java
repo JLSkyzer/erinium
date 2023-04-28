@@ -28,11 +28,6 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.procedures.XpOrbRightClickedInAirProcedure;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.ar;
-
 @EriniumModElements.ModElement.Tag
 public class XpOrbItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:xp_orb")

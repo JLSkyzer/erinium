@@ -19,10 +19,6 @@ import fr.erinagroups.erinium.EriniumMod;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 public class CreditToFtbMoneyProceduresProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

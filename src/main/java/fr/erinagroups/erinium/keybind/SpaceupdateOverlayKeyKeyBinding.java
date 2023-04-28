@@ -28,10 +28,6 @@ import fr.erinagroups.erinium.procedures.SpaceupdateOverlayKeyOnKeyPressedProced
 import fr.erinagroups.erinium.EriniumModElements;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 @EriniumModElements.ModElement.Tag
 public class SpaceupdateOverlayKeyKeyBinding extends EriniumModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)

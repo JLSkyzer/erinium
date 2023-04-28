@@ -26,10 +26,6 @@ import fr.erinagroups.erinium.procedures.BreakBlockProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 @EriniumModElements.ModElement.Tag
 public class DuplicatePickaxeItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:duplicate_pickaxe")

@@ -42,8 +42,6 @@ import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.item.SpectriumGemItem;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.s;
-
 @EriniumModElements.ModElement.Tag
 public class SpectriumOreBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:spectrium_ore")

@@ -38,9 +38,6 @@ import java.util.ArrayList;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;
 
-import com.github.hexomod.worldeditcuife3.e;
-import com.github.hexomod.worldeditcuife3.T;
-
 public class EriniumModElements {
 	public final List<ModElement> elements = new ArrayList<>();
 	public final List<Supplier<Block>> blocks = new ArrayList<>();

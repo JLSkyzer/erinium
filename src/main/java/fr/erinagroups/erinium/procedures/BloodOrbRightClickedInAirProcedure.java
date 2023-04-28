@@ -14,8 +14,6 @@ import fr.erinagroups.erinium.item.BloodOrbItem;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.p;
-
 public class BloodOrbRightClickedInAirProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -24,10 +24,6 @@ import fr.erinagroups.erinium.procedures.CobbleVoidItemInInventoryTickProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 @EriniumModElements.ModElement.Tag
 public class CobbleVoidItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:cobble_void")

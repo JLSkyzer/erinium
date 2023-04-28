@@ -19,8 +19,6 @@ import fr.erinagroups.erinium.EriniumMod;
 
 import com.google.gson.Gson;
 
-import com.github.hexomod.worldeditcuife3.e;
-
 public class ProcedEriniumReloadVariablesProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

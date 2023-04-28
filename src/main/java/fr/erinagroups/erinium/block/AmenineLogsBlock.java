@@ -50,9 +50,6 @@ import java.util.Collections;
 import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.s;
-import com.github.hexomod.worldeditcuife3.T;
-
 @EriniumModElements.ModElement.Tag
 public class AmenineLogsBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:amenine_logs")

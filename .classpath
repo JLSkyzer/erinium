@@ -30,42 +30,7 @@
 	</classpathentry>
 	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
-	<classpathentry kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/deobf_dependencies/curse/maven/obfuscate-289380/3336021_mapped_snapshot_20201028-1.16.3/obfuscate-289380-3336021_mapped_snapshot_20201028-1.16.3.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/deobf_dependencies/curse/maven/mrcrayfishs-gun-mod-289479/3553336_mapped_snapshot_20201028-1.16.3/mrcrayfishs-gun-mod-289479-3553336_mapped_snapshot_20201028-1.16.3.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/deobf_dependencies/curse/maven/jei-238222/3681294_mapped_snapshot_20201028-1.16.3/jei-238222-3681294_mapped_snapshot_20201028-1.16.3.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/deobf_dependencies/curse/maven/mekanism-268560/3659389_mapped_snapshot_20201028-1.16.3/mekanism-268560-3659389_mapped_snapshot_20201028-1.16.3.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/deobf_dependencies/curse/maven/structure-expansion-398430/3356703_mapped_snapshot_20201028-1.16.3/structure-expansion-398430-3356703_mapped_snapshot_20201028-1.16.3.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/deobf_dependencies/curse/maven/worldedit-225608/3283693_mapped_snapshot_20201028-1.16.3/worldedit-225608-3283693_mapped_snapshot_20201028-1.16.3.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/deobf_dependencies/curse/maven/worldedit-380401/3191632_mapped_snapshot_20201028-1.16.3/worldedit-380401-3191632_mapped_snapshot_20201028-1.16.3.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.2.26_mapped_snapshot_20201028-1.16.3/forge-1.16.5-36.2.26_mapped_snapshot_20201028-1.16.3-sources.jar" kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.2.26_mapped_snapshot_20201028-1.16.3/forge-1.16.5-36.2.26_mapped_snapshot_20201028-1.16.3.jar">
+	<classpathentry sourcepath="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.2.26_mapped_snapshot_20201028-1.16.3/forge-1.16.5-36.2.26_mapped_snapshot_20201028-1.16.3-sources.jar" kind="lib" path="C:/Users/killi/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.2.26_mapped_snapshot_20201028-1.16.3/forge-1.16.5-36.2.26_mapped_snapshot_20201028-1.16.3-recomp.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>

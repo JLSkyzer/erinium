@@ -11,7 +11,7 @@
     "renderType": 2,
     "customModelName": "volcano_rock:default",
     "rotationMode": 1,
-    "enablePitch": true,
+    "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
@@ -44,7 +44,7 @@
     },
     "destroyTool": "Not specified",
     "customDrop": {
-      "value": "Blocks.AIR"
+      "value": "CUSTOM:AlmonieGem"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -136,9 +136,6 @@
     "frequencyPerChunks": 1,
     "frequencyOnChunk": 1,
     "minGenerateHeight": 55,
-    "maxGenerateHeight": 120,
-    "generateCondition": {
-      "name": "VolcanoRockAdditionalGenerationCondition"
-    }
+    "maxGenerateHeight": 120
   }
 }

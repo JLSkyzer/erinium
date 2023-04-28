@@ -24,10 +24,6 @@ import fr.erinagroups.erinium.procedures.SetanumSeedsRightclickedOnBlockProcedur
 import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 @EriniumModElements.ModElement.Tag
 public class SetanumSeedsItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:setanum_seeds")

@@ -18,11 +18,6 @@ import fr.erinagroups.erinium.EriniumMod;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.e;
-
 public class UuidProcedureProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

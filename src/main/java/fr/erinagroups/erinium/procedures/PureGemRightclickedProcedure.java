@@ -28,10 +28,6 @@ import fr.erinagroups.erinium.item.GemDamageItem;
 import fr.erinagroups.erinium.item.GemCreditItem;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.k;
-import com.github.hexomod.worldeditcuife3.j;
-import com.github.hexomod.worldeditcuife3.i;
-
 public class PureGemRightclickedProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

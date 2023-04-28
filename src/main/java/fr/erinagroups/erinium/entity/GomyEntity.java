@@ -48,8 +48,6 @@ import net.minecraft.block.Blocks;
 import fr.erinagroups.erinium.entity.renderer.GomyRenderer;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.ds;
-
 @EriniumModElements.ModElement.Tag
 public class GomyEntity extends EriniumModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE)

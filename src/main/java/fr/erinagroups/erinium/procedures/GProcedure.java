@@ -11,9 +11,6 @@ import fr.erinagroups.erinium.block.NetherStarGenBlock;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.x;
-
 public class GProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

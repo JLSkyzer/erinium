@@ -28,10 +28,6 @@ import fr.erinagroups.erinium.block.LeadOreBlock;
 import fr.erinagroups.erinium.block.CopperOreBlock;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 public class UnifycationBlockBreakProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {

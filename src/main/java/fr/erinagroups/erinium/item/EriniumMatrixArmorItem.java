@@ -31,10 +31,6 @@ import fr.erinagroups.erinium.procedures.GlobalArmorBootsProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 @EriniumModElements.ModElement.Tag
 public class EriniumMatrixArmorItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:erinium_matrix_armor_helmet")

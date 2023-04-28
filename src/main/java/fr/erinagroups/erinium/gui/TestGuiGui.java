@@ -39,12 +39,6 @@ import fr.erinagroups.erinium.procedures.Slot0takenProcedure;
 import fr.erinagroups.erinium.EriniumModElements;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.j;
-import com.github.hexomod.worldeditcuife3.i;
-
 @EriniumModElements.ModElement.Tag
 public class TestGuiGui extends EriniumModElements.ModElement {
 	public static HashMap guistate = new HashMap();

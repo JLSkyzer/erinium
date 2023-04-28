@@ -25,8 +25,6 @@ import java.util.Collections;
 import fr.erinagroups.erinium.itemgroup.AdminZoneItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.s;
-
 @EriniumModElements.ModElement.Tag
 public class CutoutblockBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:cutoutblock")

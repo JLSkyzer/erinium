@@ -13,7 +13,12 @@
     "spawnXOffset": 0,
     "spawnZOffset": 0,
     "spawnWorldTypes": [
-      "Surface"
+      "CUSTOM:FactionAlpha",
+      "CUSTOM:FactionBeta",
+      "CUSTOM:FactionCharlie",
+      "CUSTOM:Minage01",
+      "CUSTOM:Minage02",
+      "CUSTOM:Minage03"
     ],
     "restrictionBlocks": [
       {

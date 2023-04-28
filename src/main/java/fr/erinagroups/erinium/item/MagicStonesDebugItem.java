@@ -36,11 +36,6 @@ import fr.erinagroups.erinium.procedures.MagicStonesDebugItemInInventoryTickProc
 import fr.erinagroups.erinium.itemgroup.AdminZoneItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.ar;
-
 @EriniumModElements.ModElement.Tag
 public class MagicStonesDebugItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:magic_stones_debug")

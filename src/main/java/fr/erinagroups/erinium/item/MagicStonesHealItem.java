@@ -35,11 +35,6 @@ import fr.erinagroups.erinium.procedures.MagicStonesGlowingProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.ar;
-
 @EriniumModElements.ModElement.Tag
 public class MagicStonesHealItem extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:magic_stones_heal")

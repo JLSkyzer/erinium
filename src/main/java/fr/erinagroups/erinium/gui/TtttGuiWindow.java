@@ -19,14 +19,6 @@ import java.util.HashMap;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.l;
-import com.github.hexomod.worldeditcuife3.k;
-import com.github.hexomod.worldeditcuife3.c;
-import com.github.hexomod.worldeditcuife3.b;
-
 @OnlyIn(Dist.CLIENT)
 public class TtttGuiWindow extends ContainerScreen<TtttGui.GuiContainerMod> {
 	private World world;

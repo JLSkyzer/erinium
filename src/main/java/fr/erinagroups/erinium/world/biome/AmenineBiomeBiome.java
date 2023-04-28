@@ -54,9 +54,6 @@ import fr.erinagroups.erinium.EriniumModElements;
 
 import com.google.common.collect.ImmutableList;
 
-import com.github.hexomod.worldeditcuife3.i;
-import com.github.hexomod.worldeditcuife3.bp;
-
 @EriniumModElements.ModElement.Tag
 public class AmenineBiomeBiome extends EriniumModElements.ModElement {
 	public static Biome biome;

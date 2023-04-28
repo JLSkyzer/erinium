@@ -66,12 +66,6 @@ import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.gui.NetherStarGenGuiGui;
 import fr.erinagroups.erinium.EriniumModElements;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.s;
-import com.github.hexomod.worldeditcuife3.T;
-
 @EriniumModElements.ModElement.Tag
 public class NetherStarGenBlock extends EriniumModElements.ModElement {
 	@ObjectHolder("erinium:nether_star_gen")

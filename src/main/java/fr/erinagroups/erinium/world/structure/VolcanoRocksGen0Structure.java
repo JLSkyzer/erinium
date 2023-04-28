@@ -28,23 +28,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.Mirror;
 
-import java.util.stream.Stream;
 import java.util.Random;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
-
-import fr.erinagroups.erinium.procedures.VolcanoRocksGen0OnStructureInstanceGeneratedProcedure;
-
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-import com.github.hexomod.worldeditcuife3.k;
-import com.github.hexomod.worldeditcuife3.j;
-import com.github.hexomod.worldeditcuife3.i;
-import com.github.hexomod.worldeditcuife3.ck;
-import com.github.hexomod.worldeditcuife3.ci;
-import com.github.hexomod.worldeditcuife3.a;
 
 @Mod.EventBusSubscriber
 public class VolcanoRocksGen0Structure {
@@ -87,11 +71,6 @@ public class VolcanoRocksGen0Structure {
 									new PlacementSettings().setRotation(rotation).setRandom(random).setMirror(mirror)
 											.addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_BLOCK).setChunk(null).setIgnoreEntities(false),
 									random);
-
-							VolcanoRocksGen0OnStructureInstanceGeneratedProcedure.executeProcedure(Stream
-									.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-											new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
-									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						}
 					}
 					return true;

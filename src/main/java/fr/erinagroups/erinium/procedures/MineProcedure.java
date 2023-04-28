@@ -18,10 +18,6 @@ import fr.erinagroups.erinium.block.DraniteOreBlock;
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
 
-import com.github.hexomod.worldeditcuife3.z;
-import com.github.hexomod.worldeditcuife3.y;
-import com.github.hexomod.worldeditcuife3.x;
-
 public class MineProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
