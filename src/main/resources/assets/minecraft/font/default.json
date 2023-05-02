@@ -62,6 +62,41 @@
             "ascent": 10,
             "height": 10,
             "chars": ["\uE007"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/rank/owner/1.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": ["\uE008"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/rank/owner/2.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": ["\uE009"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/rank/owner/3.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": ["\uE010"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/rank/owner/4.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": ["\uE011"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/rank/owner/5.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": ["\uE012"]
         }
     ]
 }
