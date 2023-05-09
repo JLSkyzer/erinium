@@ -1,15 +1,10 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
-        maven {
-	      url "https://plugins.gradle.org/m2/"
-	    }
-	    gradlePluginPortal()
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -28,14 +23,8 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
-            property "ofdev.mcjar", "C:/Users/killi/AppData/Roaming/.minecraft/versions/1.16.5/1.16.5.jar"
-
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-
-            property 'forge.logging.markers', 'SCAN'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             jvmArgs = [
                     "--add-exports=java.base/sun.security.util=ALL-UNNAMED",
@@ -69,48 +58,8 @@ minecraft {
     }
 }
 
-repositories {
-	maven {
-	    url "https://cursemaven.com"
-	    content {
-	        includeGroup "curse.maven"
-	        }
-		}
-    maven {
-    	// location of the maven that hosts JEI files
-    	name = "Progwml6 maven"
-    	url = "https://dvs1.progwml6.com/files/maven/"
-  	}
-  	maven {
-    	// location of a maven mirror for JEI files, as a fallback
-    	name = "ModMaven"
-    	url = "https://modmaven.dev"
-  	}
-}
-
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.26'
-
-    // curse.maven:<descriptor>-<projectid>:<fileid>
-    implementation fg.deobf("curse.maven:obfuscate-289380:3336021")
-    implementation fg.deobf("curse.maven:mrcrayfishs-gun-mod-289479:3553336")
-    implementation fg.deobf("curse.maven:mekanism-268560:3659389")
-    implementation fg.deobf("curse.maven:construction-wand-399558:3562328")
-
-    implementation fg.deobf("curse.maven:structure-expansion-398430:3356703")
-    implementation fg.deobf("curse.maven:shutup-experimental-settings-407174:3188120")
-
-    implementation fg.deobf("curse.maven:journeymap-32274:4012858")
-
-    /*implementation fg.deobf("curse.maven:jei-238222:4060770")*/
-    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153")
-
-    implementation fg.deobf("curse.maven:ftb-library-forge-404465:3553840")
-    implementation fg.deobf("curse.maven:architectury-api-419699:3857643")
-
-    implementation fg.deobf("curse.maven:worldedit-225608:3283693")
-
 }
 
 apply from: 'mcreator.gradle'

@@ -9994,6 +9994,23 @@
       "locked_code": false,
       "registry_name": "rock_volcano",
       "path": "~/Space update/Blocks"
+    },
+    {
+      "name": "CommandExecuted",
+      "type": "procedure",
+      "sortid": 746,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side"
     }
   ],
   "variable_elements": [
