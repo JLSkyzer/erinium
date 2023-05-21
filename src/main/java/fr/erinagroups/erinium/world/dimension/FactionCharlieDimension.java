@@ -39,6 +39,10 @@ public class FactionCharlieDimension extends EriniumModElements.ModElement {
 				.getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("snowy_tundra")).getGenerationSettings().getSurfaceBuilder().get()
 				.getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("warm_ocean")).getGenerationSettings().getSurfaceBuilder().get()
+				.getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("warm_ocean")).getGenerationSettings().getSurfaceBuilder().get()
+				.getConfig().getUnder().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("bamboo_jungle_hills")).getGenerationSettings().getSurfaceBuilder()
 				.get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("bamboo_jungle_hills")).getGenerationSettings().getSurfaceBuilder()
@@ -55,10 +59,22 @@ public class FactionCharlieDimension extends EriniumModElements.ModElement {
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:amenine_biome")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("cold_ocean")).getGenerationSettings().getSurfaceBuilder().get()
+				.getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("cold_ocean")).getGenerationSettings().getSurfaceBuilder().get()
+				.getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("deep_ocean")).getGenerationSettings().getSurfaceBuilder().get()
+				.getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("deep_ocean")).getGenerationSettings().getSurfaceBuilder().get()
+				.getConfig().getUnder().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:red_jungle_biome")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:red_jungle_biome")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("deep_frozen_ocean")).getGenerationSettings().getSurfaceBuilder()
+				.get().getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("deep_frozen_ocean")).getGenerationSettings().getSurfaceBuilder()
+				.get().getConfig().getUnder().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:magical_forest")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:magical_forest")).getGenerationSettings()
@@ -75,6 +91,10 @@ public class FactionCharlieDimension extends EriniumModElements.ModElement {
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("erinium:scining_biome")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("ocean")).getGenerationSettings().getSurfaceBuilder().get()
+				.getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("ocean")).getGenerationSettings().getSurfaceBuilder().get()
+				.getConfig().getUnder().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("dark_forest")).getGenerationSettings().getSurfaceBuilder().get()
 				.getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("dark_forest")).getGenerationSettings().getSurfaceBuilder().get()

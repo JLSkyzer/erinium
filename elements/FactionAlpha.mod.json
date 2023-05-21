@@ -53,6 +53,21 @@
       },
       {
         "value": "CUSTOM:RedJungleBiome"
+      },
+      {
+        "value": "cold_ocean"
+      },
+      {
+        "value": "deep_frozen_ocean"
+      },
+      {
+        "value": "deep_ocean"
+      },
+      {
+        "value": "ocean"
+      },
+      {
+        "value": "warm_ocean"
       }
     ],
     "worldGenType": "Normal world gen",

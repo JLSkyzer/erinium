@@ -83,64 +83,127 @@ public class PlayerTickProcedure {
 			}
 		}
 		if ((entity.world.getDimensionKey()) == (World.OVERWORLD)) {
-			{
-				String _setval = "Lobby";
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.GetCurrentServer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).GetCurrentServer).equals("Lobby")) {
+				{
+					String _setval = "Lobby";
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.GetCurrentServer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
 				new ResourceLocation("erinium:faction_alpha")))) {
-			{
-				String _setval = "Alpha";
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.GetCurrentServer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).GetCurrentServer).equals("Alpha")) {
+				{
+					String _setval = "Alpha";
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.GetCurrentServer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
 				new ResourceLocation("erinium:faction_beta")))) {
-			{
-				String _setval = "Beta";
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.GetCurrentServer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).GetCurrentServer).equals("Beta")) {
+				{
+					String _setval = "Beta";
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.GetCurrentServer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
 				new ResourceLocation("erinium:faction_charlie")))) {
-			{
-				String _setval = "Charlie";
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.GetCurrentServer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).GetCurrentServer).equals("Charlie")) {
+				{
+					String _setval = "Charlie";
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.GetCurrentServer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_01")))) {
-			{
-				String _setval = "Minage01";
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.GetCurrentServer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).GetCurrentServer).equals("Minage01")) {
+				{
+					String _setval = "Minage01";
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.GetCurrentServer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 40, (int) 9, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 40, (int) 2, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 40, (int) 1, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 200, (int) 1, (true), (true)));
 		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_02")))) {
-			{
-				String _setval = "Minage02";
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.GetCurrentServer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).GetCurrentServer).equals("Minage02")) {
+				{
+					String _setval = "Minage02";
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.GetCurrentServer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 40, (int) 9, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 40, (int) 2, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 40, (int) 1, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 200, (int) 1, (true), (true)));
 		} else if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_03")))) {
-			{
-				String _setval = "Minage03";
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.GetCurrentServer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new EriniumModVariables.PlayerVariables())).GetCurrentServer).equals("Minage03")) {
+				{
+					String _setval = "Minage03";
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.GetCurrentServer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, (int) 40, (int) 4, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 40, (int) 9, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 40, (int) 2, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 40, (int) 1, (true), (true)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 200, (int) 1, (true), (true)));
 		}
 	}
 }

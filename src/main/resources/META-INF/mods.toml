@@ -1,10 +1,10 @@
 modLoader="javafml"
 loaderVersion="[36,)"
-license="Copyright � 2021 - 2022 Erinium - All Rights Reserved."
+license="Copyright c 2021 - 2022 Erinium - All Rights Reserved."
 
 [[mods]]
 modId="erinium"
-version="4.0.1"
+version="4.5.0"
 displayName="Erinium"
 credits="pas de crédit"
 displayURL="https://discord.gg/26DzRJCTQs"
