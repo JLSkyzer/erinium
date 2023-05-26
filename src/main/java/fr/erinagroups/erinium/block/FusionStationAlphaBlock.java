@@ -54,8 +54,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import javax.annotation.Nullable;
-
 import java.util.stream.Stream;
 import java.util.stream.IntStream;
 import java.util.Random;
@@ -72,6 +70,8 @@ import fr.erinagroups.erinium.procedures.FusionStationAlphaOnBlockRightClickedPr
 import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.gui.GuiFusionStationAlphaGui;
 import fr.erinagroups.erinium.EriniumModElements;
+import javax.annotation.Nullable;
+
 
 @EriniumModElements.ModElement.Tag
 public class FusionStationAlphaBlock extends EriniumModElements.ModElement {

@@ -41,14 +41,13 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import javax.annotation.Nullable;
-
 import java.util.stream.IntStream;
 import java.util.List;
 import java.util.Collections;
 
 import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
+import javax.annotation.Nullable;
 
 @EriniumModElements.ModElement.Tag
 public class AmenineLogsBlock extends EriniumModElements.ModElement {

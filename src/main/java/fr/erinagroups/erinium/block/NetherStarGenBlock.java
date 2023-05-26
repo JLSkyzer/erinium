@@ -146,7 +146,7 @@ public class NetherStarGenBlock extends EriniumModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("�2Nether Star Gen");
+						return new StringTextComponent("§2Nether Star Gen");
 					}
 
 					@Override
@@ -280,7 +280,7 @@ public class NetherStarGenBlock extends EriniumModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("�2Nether Star Gen");
+			return new StringTextComponent("§2Nether Star Gen");
 		}
 
 		@Override

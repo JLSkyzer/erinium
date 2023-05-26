@@ -8,6 +8,12 @@
         "value": "CUSTOM:EriniumIngot"
       },
       {
+        "value": "CUSTOM:SiliconeFragment"
+      },
+      {
+        "value": "CUSTOM:DraniteGem"
+      },
+      {
         "value": "CUSTOM:CopperIngot"
       },
       {
@@ -20,18 +26,16 @@
         "value": "CUSTOM:SetanumIngot"
       },
       {
-        "value": "Items.IRON_INGOT"
+        "value": "CUSTOM:AlmonieGem"
       },
       {
-        "value": "Items.GOLD_INGOT"
-      },
-      {
-        "value": "Items.NETHERITE_INGOT"
+        "value": "CUSTOM:EriniumMatrixIngot"
       }
     ],
     "blocks": [],
     "functions": [],
     "entities": [],
+    "biomes": [],
     "name": "ingots",
     "namespace": "forge"
   }

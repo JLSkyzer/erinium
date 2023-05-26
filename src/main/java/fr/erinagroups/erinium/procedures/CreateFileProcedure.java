@@ -84,9 +84,10 @@ public class CreateFileProcedure {
 			}
 			SecJsonObject.addProperty("server.maxplayer", 100);
 			SecJsonObject.addProperty("toggle.tpdim", (false));
-			SecJsonObject.addProperty("block.egg_factory.ranklvl", Math.round(15));
+			SecJsonObject.addProperty("block.egg_factory.ranklvl", Math.round(20));
 			SecJsonObject.addProperty("use.planetspawn", (false));
 			SecJsonObject.addProperty("duplication_pickaxe.maxfortune", Math.round(3));
+			SecJsonObject.addProperty("moddedfeatures.enabled", (false));
 			{
 				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 				try {

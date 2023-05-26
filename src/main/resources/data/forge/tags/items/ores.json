@@ -1,13 +1,25 @@
 {
   "replace": false,
   "values": [
-    "erinium:lead_ore",
+    "erinium:candy_lead_ore",
     "erinium:silicone_ore",
     "erinium:erinium_ore",
+    "erinium:candy_coal_ore",
+    "erinium:spectrium_ore",
+    "erinium:candy_lapis_ore",
+    "erinium:candy_emeral_ore",
+    "erinium:candy_diamond_ore",
+    "erinium:rock_volcano",
+    "erinium:candy_redstone_ore",
+    "erinium:erinium_ore_moon",
+    "erinium:lead_ore",
+    "erinium:candy_iron_ore",
+    "erinium:candy_copper_ore",
+    "erinium:candy_gold_ore",
     "erinium:copper_ore",
     "erinium:silver_ore",
     "erinium:dranite_ore",
-    "erinium:spectrium_ore",
-    "erinium:erinium_ore_moon"
+    "erinium:candy_silver_ore",
+    "erinium:candy_erinium_ore"
   ]
 }

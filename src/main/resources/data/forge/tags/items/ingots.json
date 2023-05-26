@@ -2,10 +2,11 @@
   "replace": false,
   "values": [
     "erinium:copper_ingot",
-    "minecraft:gold_ingot",
     "erinium:setanum_ingot",
-    "minecraft:netherite_ingot",
-    "minecraft:iron_ingot",
+    "erinium:almonie_gem",
+    "erinium:silicone_fragment",
+    "erinium:erinium_matrix_ingot",
+    "erinium:dranite_gem",
     "erinium:lead_ingot",
     "erinium:silver_ingot",
     "erinium:erinium_ingot"

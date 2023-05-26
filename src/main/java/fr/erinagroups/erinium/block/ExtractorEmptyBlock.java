@@ -55,8 +55,6 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import javax.annotation.Nullable;
-
 import java.util.stream.Stream;
 import java.util.stream.IntStream;
 import java.util.Map;
@@ -68,6 +66,8 @@ import java.util.AbstractMap;
 import fr.erinagroups.erinium.procedures.ExtractorEmptyOnBlockRightClickedProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumMachinesItemGroup;
 import fr.erinagroups.erinium.EriniumModElements;
+import javax.annotation.Nullable;
+
 
 @EriniumModElements.ModElement.Tag
 public class ExtractorEmptyBlock extends EriniumModElements.ModElement {

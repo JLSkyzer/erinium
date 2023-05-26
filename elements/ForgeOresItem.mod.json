@@ -27,11 +27,48 @@
       },
       {
         "value": "CUSTOM:SpectriumOre"
+      },
+      {
+        "value": "CUSTOM:CandyCoalOre"
+      },
+      {
+        "value": "CUSTOM:CandyIronOre"
+      },
+      {
+        "value": "CUSTOM:CandyGoldOre"
+      },
+      {
+        "value": "CUSTOM:CandyRedstoneOre"
+      },
+      {
+        "value": "CUSTOM:CandyDiamondOre"
+      },
+      {
+        "value": "CUSTOM:CandyLapisOre"
+      },
+      {
+        "value": "CUSTOM:CandyEmeralOre"
+      },
+      {
+        "value": "CUSTOM:CandyEriniumOre"
+      },
+      {
+        "value": "CUSTOM:CandyCopperOre"
+      },
+      {
+        "value": "CUSTOM:CandySilverOre"
+      },
+      {
+        "value": "CUSTOM:CandyLeadOre"
+      },
+      {
+        "value": "CUSTOM:RockVolcano"
       }
     ],
     "blocks": [],
     "functions": [],
     "entities": [],
+    "biomes": [],
     "name": "ores",
     "namespace": "forge"
   }

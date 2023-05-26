@@ -188,6 +188,7 @@ public class EriniumModVariables {
 		public double nether_z = 0;
 		public boolean maintenanceNether = false;
 		public boolean essentialPluginEnabled = false;
+		public boolean enablemoddedfeatures = false;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -242,6 +243,7 @@ public class EriniumModVariables {
 			nether_z = nbt.getDouble("nether_z");
 			maintenanceNether = nbt.getBoolean("maintenanceNether");
 			essentialPluginEnabled = nbt.getBoolean("essentialPluginEnabled");
+			enablemoddedfeatures = nbt.getBoolean("enablemoddedfeatures");
 		}
 
 		@Override
@@ -289,6 +291,7 @@ public class EriniumModVariables {
 			nbt.putDouble("nether_z", nether_z);
 			nbt.putBoolean("maintenanceNether", maintenanceNether);
 			nbt.putBoolean("essentialPluginEnabled", essentialPluginEnabled);
+			nbt.putBoolean("enablemoddedfeatures", enablemoddedfeatures);
 			return nbt;
 		}
 
@@ -418,6 +421,7 @@ public class EriniumModVariables {
 			nbt.putDouble("servermap_cooldown", instance.servermap_cooldown);
 			nbt.putBoolean("vip", instance.vip);
 			nbt.putDouble("timer_earnmoney", instance.timer_earnmoney);
+			nbt.putDouble("commanddelay", instance.commanddelay);
 			return nbt;
 		}
 
@@ -464,6 +468,7 @@ public class EriniumModVariables {
 			instance.servermap_cooldown = nbt.getDouble("servermap_cooldown");
 			instance.vip = nbt.getBoolean("vip");
 			instance.timer_earnmoney = nbt.getDouble("timer_earnmoney");
+			instance.commanddelay = nbt.getDouble("commanddelay");
 		}
 	}
 
@@ -508,6 +513,7 @@ public class EriniumModVariables {
 		public double servermap_cooldown = 0.0;
 		public boolean vip = false;
 		public double timer_earnmoney = 1200.0;
+		public double commanddelay = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -576,6 +582,7 @@ public class EriniumModVariables {
 		clone.servermap_cooldown = original.servermap_cooldown;
 		clone.vip = original.vip;
 		clone.timer_earnmoney = original.timer_earnmoney;
+		clone.commanddelay = original.commanddelay;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
@@ -648,6 +655,7 @@ public class EriniumModVariables {
 					variables.servermap_cooldown = message.data.servermap_cooldown;
 					variables.vip = message.data.vip;
 					variables.timer_earnmoney = message.data.timer_earnmoney;
+					variables.commanddelay = message.data.commanddelay;
 				}
 			});
 			context.setPacketHandled(true);
