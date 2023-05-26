@@ -10,31 +10,31 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:LeadIngot"
+        "value": "TAG:ingots/lead"
       },
       {
-        "value": "CUSTOM:LeadIngot"
+        "value": "TAG:ingots/lead"
       },
       {
-        "value": "CUSTOM:LeadIngot"
+        "value": "TAG:ingots/lead"
       },
       {
-        "value": "CUSTOM:LeadIngot"
+        "value": "TAG:ingots/lead"
       },
       {
         "value": "Blocks.GOLD_BLOCK"
       },
       {
-        "value": "CUSTOM:LeadIngot"
+        "value": "TAG:ingots/lead"
       },
       {
-        "value": "CUSTOM:LeadIngot"
+        "value": "TAG:ingots/lead"
       },
       {
         "value": "Items.EMERALD"
       },
       {
-        "value": "CUSTOM:LeadIngot"
+        "value": "TAG:ingots/lead"
       }
     ],
     "recipeReturnStack": {

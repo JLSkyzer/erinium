@@ -16,13 +16,13 @@
       "item": "erinium:rubber"
     },
     "3": {
-      "item": "erinium:silver_ingot"
+      "tag": "ingots/silver"
     },
     "4": {
-      "item": "erinium:copper_ingot"
+      "tag": "ingots/copper"
     },
     "5": {
-      "item": "erinium:silver_ingot"
+      "tag": "ingots/silver"
     },
     "6": {
       "item": "erinium:rubber"

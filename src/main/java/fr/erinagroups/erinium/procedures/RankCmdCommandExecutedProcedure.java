@@ -18,7 +18,7 @@ import java.util.Map;
 
 import io.netty.buffer.Unpooled;
 
-import fr.erinagroups.erinium.gui.RankGui;
+import fr.erinagroups.erinium.gui.ProfileMenuRankGui;
 import fr.erinagroups.erinium.EriniumMod;
 
 public class RankCmdCommandExecutedProcedure {
@@ -61,12 +61,12 @@ public class RankCmdCommandExecutedProcedure {
 				NetworkHooks.openGui((ServerPlayerEntity) _ent, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Rank");
+						return new StringTextComponent("ProfileMenuRank");
 					}
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new RankGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
+						return new ProfileMenuRankGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
 				}, _bpos);
 			}

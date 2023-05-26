@@ -10571,6 +10571,12 @@
       "type": "logic",
       "scope": "map",
       "value": "false"
+    },
+    {
+      "name": "timer_earnmoney",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1200.0"
     }
   ],
   "sound_elements": [
@@ -10658,14 +10664,14 @@
       "biome.erinium.red_jungle_biome": "Red Jungle Biome",
       "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
       "block.erinium.red_jungle_grass": "Red Jungle Grass",
-      "block.erinium.xp_bush_layer_1": "Xp bush",
       "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
+      "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
@@ -11532,11 +11538,11 @@
   "workspaceSettings": {
     "modid": "erinium",
     "modName": "Erinium",
-    "version": "4.0.1",
+    "version": "4.5.0",
     "description": "Mod créer par JLSkyzer",
     "author": "JLSkyzer",
     "websiteURL": "https://discord.gg/26DzRJCTQs",
-    "license": "Copyright � 2021 - 2022 Erinium - All Rights Reserved.",
+    "license": "Copyright c 2021 - 2022 Erinium - All Rights Reserved.",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],

@@ -10571,6 +10571,12 @@
       "type": "logic",
       "scope": "map",
       "value": "false"
+    },
+    {
+      "name": "timer_earnmoney",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1200.0"
     }
   ],
   "sound_elements": [
@@ -11532,11 +11538,11 @@
   "workspaceSettings": {
     "modid": "erinium",
     "modName": "Erinium",
-    "version": "4.0.1",
+    "version": "4.5.0",
     "description": "Mod créer par JLSkyzer",
     "author": "JLSkyzer",
     "websiteURL": "https://discord.gg/26DzRJCTQs",
-    "license": "Copyright � 2021 - 2022 Erinium - All Rights Reserved.",
+    "license": "Copyright c 2021 - 2022 Erinium - All Rights Reserved.",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],

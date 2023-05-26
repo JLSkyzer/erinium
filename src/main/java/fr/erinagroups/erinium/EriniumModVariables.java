@@ -417,6 +417,7 @@ public class EriniumModVariables {
 			nbt.putDouble("list_player_cooldown", instance.list_player_cooldown);
 			nbt.putDouble("servermap_cooldown", instance.servermap_cooldown);
 			nbt.putBoolean("vip", instance.vip);
+			nbt.putDouble("timer_earnmoney", instance.timer_earnmoney);
 			return nbt;
 		}
 
@@ -462,6 +463,7 @@ public class EriniumModVariables {
 			instance.list_player_cooldown = nbt.getDouble("list_player_cooldown");
 			instance.servermap_cooldown = nbt.getDouble("servermap_cooldown");
 			instance.vip = nbt.getBoolean("vip");
+			instance.timer_earnmoney = nbt.getDouble("timer_earnmoney");
 		}
 	}
 
@@ -505,6 +507,7 @@ public class EriniumModVariables {
 		public double list_player_cooldown = 0.0;
 		public double servermap_cooldown = 0.0;
 		public boolean vip = false;
+		public double timer_earnmoney = 1200.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -572,6 +575,7 @@ public class EriniumModVariables {
 		clone.list_player_cooldown = original.list_player_cooldown;
 		clone.servermap_cooldown = original.servermap_cooldown;
 		clone.vip = original.vip;
+		clone.timer_earnmoney = original.timer_earnmoney;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
@@ -643,6 +647,7 @@ public class EriniumModVariables {
 					variables.list_player_cooldown = message.data.list_player_cooldown;
 					variables.servermap_cooldown = message.data.servermap_cooldown;
 					variables.vip = message.data.vip;
+					variables.timer_earnmoney = message.data.timer_earnmoney;
 				}
 			});
 			context.setPacketHandled(true);

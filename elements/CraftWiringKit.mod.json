@@ -19,13 +19,13 @@
         "value": "CUSTOM:Rubber"
       },
       {
-        "value": "CUSTOM:SilverIngot"
+        "value": "TAG:ingots/silver"
       },
       {
-        "value": "CUSTOM:CopperIngot"
+        "value": "TAG:ingots/copper"
       },
       {
-        "value": "CUSTOM:SilverIngot"
+        "value": "TAG:ingots/silver"
       },
       {
         "value": "CUSTOM:Rubber"

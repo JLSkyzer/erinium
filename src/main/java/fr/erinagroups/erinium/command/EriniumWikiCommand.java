@@ -24,7 +24,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 public class EriniumWikiCommand {
 	@SubscribeEvent
 	public static void registerCommands(RegisterCommandsEvent event) {
-		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("eriniumwiki")
+		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("wiki")
 
 				.executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();

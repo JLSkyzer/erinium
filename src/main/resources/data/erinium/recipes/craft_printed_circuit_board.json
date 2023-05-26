@@ -6,7 +6,7 @@
   ],
   "key": {
     "0": {
-      "item": "erinium:copper_ingot"
+      "tag": "ingots/copper"
     },
     "1": {
       "item": "erinium:empty_board"

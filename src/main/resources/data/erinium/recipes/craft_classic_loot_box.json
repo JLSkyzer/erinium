@@ -7,31 +7,31 @@
   ],
   "key": {
     "0": {
-      "item": "erinium:lead_ingot"
+      "tag": "ingots/lead"
     },
     "1": {
-      "item": "erinium:lead_ingot"
+      "tag": "ingots/lead"
     },
     "2": {
-      "item": "erinium:lead_ingot"
+      "tag": "ingots/lead"
     },
     "3": {
-      "item": "erinium:lead_ingot"
+      "tag": "ingots/lead"
     },
     "4": {
       "item": "minecraft:gold_block"
     },
     "5": {
-      "item": "erinium:lead_ingot"
+      "tag": "ingots/lead"
     },
     "6": {
-      "item": "erinium:lead_ingot"
+      "tag": "ingots/lead"
     },
     "7": {
       "item": "minecraft:emerald"
     },
     "8": {
-      "item": "erinium:lead_ingot"
+      "tag": "ingots/lead"
     }
   },
   "result": {
