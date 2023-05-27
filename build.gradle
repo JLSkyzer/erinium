@@ -102,8 +102,6 @@ dependencies {
 
     implementation fg.deobf("curse.maven:journeymap-32274:4012858")
 
-    implementation fg.deobf("curse.maven:nbt-tool-451553:3220914")
-
     /*implementation fg.deobf("curse.maven:jei-238222:4060770")*/
     compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api")
     runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153")

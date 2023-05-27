@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "laser_module",
     "customModelName": "Normal",
-    "name": "§c§lLaser Drill",
+    "name": "§c§lLaser",
     "rarity": "EPIC",
     "creativeTab": {
       "value": "CUSTOM:EriniumItems"

@@ -8135,40 +8135,6 @@
       "path": "~/Misc System/EriniumWorkbench/Procedures"
     },
     {
-      "name": "Tier1Ticks",
-      "type": "procedure",
-      "sortid": 627,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tier_1_ticks",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Misc System/EriniumWorkbench/Procedures/Tier 1"
-    },
-    {
-      "name": "Tier1TakeItem",
-      "type": "procedure",
-      "sortid": 628,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tier_1_take_item",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Misc System/EriniumWorkbench/Procedures/Tier 1"
-    },
-    {
       "name": "EriniumMatrixIngot",
       "type": "item",
       "sortid": 629,
@@ -10058,6 +10024,230 @@
       "locked_code": false,
       "registry_name": "toggle_modded_features",
       "path": "~/Server side"
+    },
+    {
+      "name": "LaserDrill",
+      "type": "item",
+      "sortid": 750,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laser_drill",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "CraftLaserDrill",
+      "type": "recipe",
+      "sortid": 751,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_laser_drill",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "Tier1CraftBtn",
+      "type": "procedure",
+      "sortid": 752,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tier_1_craft_btn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/EriniumWorkbench/Procedures/Tier 1"
+    },
+    {
+      "name": "Tier1CraftMAX",
+      "type": "procedure",
+      "sortid": 753,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tier_1_craft_max",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/EriniumWorkbench/Procedures/Tier 1"
+    },
+    {
+      "name": "WorkbenchTier1WikiPage1ThisGUIIsOpened",
+      "type": "procedure",
+      "sortid": 754,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "workbench_tier_1_wiki_page_1_this_gui_is_opened",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/EriniumWorkbench/Gui/wiki"
+    },
+    {
+      "name": "WorkbenchTier1WikiPage1",
+      "type": "gui",
+      "sortid": 754,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "workbench_tier_1_wiki_page_1",
+      "path": "~/Misc System/EriniumWorkbench/Gui/wiki"
+    },
+    {
+      "name": "Tier1OpenWiki",
+      "type": "procedure",
+      "sortid": 755,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tier_1_open_wiki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/EriniumWorkbench/Gui"
+    },
+    {
+      "name": "CraftMatrixIngot",
+      "type": "gui",
+      "sortid": 756,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_ingot",
+      "path": "~/Misc System/EriniumWorkbench/Gui/wiki/page 1/Matrix Ingot"
+    },
+    {
+      "name": "SlotMatrixIngot",
+      "type": "procedure",
+      "sortid": 757,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_matrix_ingot",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/EriniumWorkbench/Gui/wiki/page 1"
+    },
+    {
+      "name": "CraftMatrixIngotWhileThisGUIIsOpenTick",
+      "type": "procedure",
+      "sortid": 758,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_matrix_ingot_while_this_gui_is_open_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/EriniumWorkbench/Gui/wiki/page 1/Matrix Ingot"
+    },
+    {
+      "name": "AstralMinerFoot",
+      "type": "item",
+      "sortid": 759,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_miner_foot",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "CraftAstralMinerFoot",
+      "type": "recipe",
+      "sortid": 760,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_astral_miner_foot",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "AstralMinerLaserModule",
+      "type": "item",
+      "sortid": 761,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_miner_laser_module",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "CraftLaserModule",
+      "type": "recipe",
+      "sortid": 762,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_laser_module",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "AstralMiner",
+      "type": "block",
+      "sortid": 763,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_miner",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "AstralMinerGui",
+      "type": "gui",
+      "sortid": 764,
+      "compiles": false,
+      "locked_code": true,
+      "registry_name": "astral_miner_gui",
+      "path": "~/Misc System/Astral Miner"
     }
   ],
   "variable_elements": [
@@ -10723,16 +10913,17 @@
       "biome.erinium.red_jungle_biome": "Red Jungle Biome",
       "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
       "block.erinium.red_jungle_grass": "Red Jungle Grass",
-      "block.erinium.xp_bush_layer_1": "Xp bush",
       "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
+      "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
+      "item.erinium.astral_miner_foot": "Astral Miner Foot",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
       "item.erinium_armorhelmet.name": "Erinium Helmet",
       "item.erinium.bedrock_stick": "Bedrock Stick",
@@ -10834,6 +11025,7 @@
       "block.erinium.candy_stairs": "§5Candy Stairs",
       "item.erinium.cardboard_roll": "Cardboard Roll",
       "item.erinium.candy_dimension": "Candy Dimension Portal Igniter",
+      "block.erinium.astral_miner": "§c§lAstral Miner",
       "block.erinium.erinium_obsidian": "Erinium Obsidian",
       "item.erinium.rainbow_shovel": "Rainbow Shovel",
       "block.erinium.erinium_ore_moon": "Erinium Ore Moon",
@@ -10927,6 +11119,7 @@
       "item.erinium.faction_charlie": "Faction Alpha Portal Igniter",
       "block.erinium.fusion_station_delta": "§8Fusion Station §eDelta",
       "item.erinium.setanum_axe": "Setanum Axe",
+      "item.erinium.astral_miner_laser_module": "Astral Miner §4Laser Module",
       "item.erinium.silicone_fragment": "§9Silicone Fragment",
       "item.erinium.magic_stones_credit": "§l§oMagic Stones §b§l§oXp",
       "biome.erinium.scining_biome": "Scining Biome",
@@ -10971,6 +11164,7 @@
       "item.erinium.amenine_liquid_4": "§b§lLiquid Bottle",
       "block.erinium.spatial_teleporter_block": "Spatial Teleporter Block",
       "block.erinium.amenine_planks": "§5§lAmenine Planks",
+      "item.erinium.laser_drill": "§c§lLaser",
       "item.erinium.amenine_liquid_3": "§b§lLiquid Bottle",
       "item.erinium.spectium_armor_chestplate": "Spectium Body",
       "item.erinium.erinium_matrix_armor_boots": "§2§k|| §r§1Erinium Matrix Boots §2§k||",
@@ -11353,7 +11547,22 @@
             "children": [
               {
                 "name": "Gui",
-                "children": []
+                "children": [
+                  {
+                    "name": "wiki",
+                    "children": [
+                      {
+                        "name": "page 1",
+                        "children": [
+                          {
+                            "name": "Matrix Ingot",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "name": "Procedures",

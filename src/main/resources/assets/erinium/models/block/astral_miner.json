@@ -1,0 +1,12 @@
+{
+  "parent": "erinium:custom/astral_miner",
+  "textures": {
+    "all": "erinium:blocks/metalhiny1_copy",
+    "particle": "erinium:blocks/metalhiny1_copy",
+    "light red": "erinium:blocks/light_red",
+    "dark green": "erinium:blocks/dark_green",
+    "dark metal": "erinium:blocks/metalhiny1_copy",
+    "dark_gray": "erinium:blocks/dark_gray",
+    "light gray": "erinium:blocks/light_gray"
+  }
+}

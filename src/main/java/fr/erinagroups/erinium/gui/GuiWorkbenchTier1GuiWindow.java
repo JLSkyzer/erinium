@@ -5,14 +5,18 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.Minecraft;
 
 import java.util.HashMap;
+
+import fr.erinagroups.erinium.EriniumMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -89,5 +93,23 @@ public class GuiWorkbenchTier1GuiWindow extends ContainerScreen<GuiWorkbenchTier
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
+		this.addButton(new Button(this.guiLeft + 123, this.guiTop + 31, 36, 20, new StringTextComponent("X1"), e -> {
+			if (true) {
+				EriniumMod.PACKET_HANDLER.sendToServer(new GuiWorkbenchTier1Gui.ButtonPressedMessage(0, x, y, z));
+				GuiWorkbenchTier1Gui.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 123, this.guiTop + 58, 36, 20, new StringTextComponent("MAX"), e -> {
+			if (true) {
+				EriniumMod.PACKET_HANDLER.sendToServer(new GuiWorkbenchTier1Gui.ButtonPressedMessage(1, x, y, z));
+				GuiWorkbenchTier1Gui.handleButtonAction(entity, 1, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 153, this.guiTop + 2, 20, 20, new StringTextComponent("?"), e -> {
+			if (true) {
+				EriniumMod.PACKET_HANDLER.sendToServer(new GuiWorkbenchTier1Gui.ButtonPressedMessage(2, x, y, z));
+				GuiWorkbenchTier1Gui.handleButtonAction(entity, 2, x, y, z);
+			}
+		}));
 	}
 }

@@ -1,0 +1,46 @@
+{
+  "_fv": 34,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BlackMetal"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.IRON_BLOCK"
+      },
+      {
+        "value": "CUSTOM:BlackMetal"
+      },
+      {
+        "value": "Blocks.IRON_BLOCK"
+      },
+      {
+        "value": "CUSTOM:BlackMetal"
+      },
+      {
+        "value": "CUSTOM:BlackMetal"
+      },
+      {
+        "value": "CUSTOM:BlackMetal"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AstralMinerFoot"
+    },
+    "name": "craft_astral_miner_foot",
+    "namespace": "mod"
+  }
+}

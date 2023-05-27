@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "erinium:black_metal"
+    },
+    "3": {
+      "item": "minecraft:iron_block"
+    },
+    "4": {
+      "item": "erinium:black_metal"
+    },
+    "5": {
+      "item": "minecraft:iron_block"
+    },
+    "6": {
+      "item": "erinium:black_metal"
+    },
+    "7": {
+      "item": "erinium:black_metal"
+    },
+    "8": {
+      "item": "erinium:black_metal"
+    }
+  },
+  "result": {
+    "item": "erinium:astral_miner_foot",
+    "count": 1
+  }
+}

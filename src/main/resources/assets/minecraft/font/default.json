@@ -98,5 +98,12 @@
             "height": 8,
             "chars": ["\uE012"]
         }
+        {
+            "type": "bitmap",
+            "file": "minecraft:custom/tier1.png",
+            "ascent": 16,
+            "height": 16,
+            "chars": ["\uE013"]
+        }
     ]
 }

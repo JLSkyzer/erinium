@@ -173,21 +173,11 @@
         }
       },
       {
-        "type": "inputslot",
+        "type": "outputslot",
         "data": {
-          "inputLimit": {
-            "value": ""
-          },
-          "color": {
-            "value": -12842436,
-            "falpha": 0.0
-          },
           "id": 9,
           "disableStackInteraction": false,
-          "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "Tier1TakeItem"
-          },
+          "dropItemsWhenNotBound": true,
           "name": "Slot #9",
           "x": 222,
           "y": 75
@@ -215,11 +205,50 @@
           "x": 125,
           "y": 26
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "X1",
+          "onClick": {
+            "name": "Tier1CraftBtn"
+          },
+          "width": 36,
+          "height": 20,
+          "name": "X1",
+          "x": 249,
+          "y": 57
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "MAX",
+          "onClick": {
+            "name": "Tier1CraftMAX"
+          },
+          "width": 36,
+          "height": 20,
+          "name": "MAX",
+          "x": 249,
+          "y": 84
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "?",
+          "onClick": {
+            "name": "Tier1OpenWiki"
+          },
+          "width": 20,
+          "height": 20,
+          "name": "?",
+          "x": 279,
+          "y": 28
+        }
       }
     ],
-    "onTick": {
-      "name": "Tier1Ticks"
-    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,
