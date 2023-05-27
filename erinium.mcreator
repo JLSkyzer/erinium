@@ -10058,6 +10058,24 @@
       "locked_code": false,
       "registry_name": "toggle_modded_features",
       "path": "~/Server side"
+    },
+    {
+      "name": "LaserDrill",
+      "type": "item",
+      "sortid": 750,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laser_drill",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "CraftLaserDrill",
+      "type": "recipe",
+      "sortid": 751,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_laser_drill",
+      "path": "~/Misc System/Astral Miner"
     }
   ],
   "variable_elements": [
@@ -10971,6 +10989,7 @@
       "item.erinium.amenine_liquid_4": "§b§lLiquid Bottle",
       "block.erinium.spatial_teleporter_block": "Spatial Teleporter Block",
       "block.erinium.amenine_planks": "§5§lAmenine Planks",
+      "item.erinium.laser_drill": "§c§lLaser Drill",
       "item.erinium.amenine_liquid_3": "§b§lLiquid Bottle",
       "item.erinium.spectium_armor_chestplate": "Spectium Body",
       "item.erinium.erinium_matrix_armor_boots": "§2§k|| §r§1Erinium Matrix Boots §2§k||",
