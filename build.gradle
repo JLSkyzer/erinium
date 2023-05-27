@@ -89,7 +89,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.26'
+    minecraft 'net.minecraftforge:forge:1.16.5-36.2.34'
 
     // curse.maven:<descriptor>-<projectid>:<fileid>
     implementation fg.deobf("curse.maven:obfuscate-289380:3336021")

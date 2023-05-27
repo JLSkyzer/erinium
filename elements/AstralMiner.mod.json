@@ -56,7 +56,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 600,
+    "tickRate": 1,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -120,11 +120,14 @@
     "hasEnergyStorage": true,
     "energyInitial": 0,
     "energyCapacity": 500000,
-    "energyMaxReceive": 250,
-    "energyMaxExtract": 0,
+    "energyMaxReceive": 5000,
+    "energyMaxExtract": 1000,
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "AstralMinerUpdateTick"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [],

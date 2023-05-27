@@ -17,6 +17,8 @@ import net.minecraft.client.Minecraft;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.HashMap;
+import net.minecraft.util.text.StringTextComponent;
+import java.text.DecimalFormat;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -27,6 +29,7 @@ public class AstralMinerGuiGuiWindow extends ContainerScreen<AstralMinerGuiGui.G
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = AstralMinerGuiGui.guistate;
+	private String tooltipText = "";
 
 	public AstralMinerGuiGuiWindow(AstralMinerGuiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
@@ -46,7 +49,26 @@ public class AstralMinerGuiGuiWindow extends ContainerScreen<AstralMinerGuiGui.G
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderHoveredTooltip(ms, mouseX, mouseY);
+		AtomicInteger _retval = new AtomicInteger(0);
+		TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+		_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
+		// Définir le format souhaité
+		DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
+		// Formater le nombre avec le format spécifié
+		String formattedNumber = decimalFormat.format(_retval.get());
+		
+		if (isMouseOverEnergy(mouseX, mouseY)) {
+            tooltipText = "§a" + formattedNumber + " / 500,000";
+        } else {
+            tooltipText = "";
+            }
+        if (!tooltipText.isEmpty()) {
+            renderTooltip(ms, new StringTextComponent(tooltipText), mouseX, mouseY);
+        }
 	}
+	private boolean isMouseOverEnergy(int mouseX, int mouseY) {
+        return mouseX >= this.guiLeft + 132 && mouseY >= this.guiTop + 7 && mouseX < this.guiLeft + 132 + 32 && mouseY < this.guiTop + 7 + 64;
+    }
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(MatrixStack ms, float partialTicks, int gx, int gy) {
@@ -60,13 +82,15 @@ public class AstralMinerGuiGuiWindow extends ContainerScreen<AstralMinerGuiGui.G
 		AtomicInteger _retval = new AtomicInteger(0);
 		TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 		_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
-		double barre = 0.000256 * _retval.get();
+		double barre = 0.000128 * _retval.get();
+		int posY = this.guiTop + 7 + (64 - (int) barre); // Calculer la position en inversant la croissance
+
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/energy_bar_empty.png"));
 		this.blit(ms, this.guiLeft + 132, this.guiTop + 7, 0, 0, 32, 64, 32, 64);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/energy_bar_fill.png"));
-		this.blit(ms, this.guiLeft + 132, this.guiTop + 7, 0, 0, 32, (int) barre, 32, 64);
+		this.blit(ms, this.guiLeft + 132, posY, 0, 0, 32, (int) barre, 32, 64);
 
 		RenderSystem.disableBlend();
 	}
@@ -87,15 +111,13 @@ public class AstralMinerGuiGuiWindow extends ContainerScreen<AstralMinerGuiGui.G
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
+		TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+		double percent = tileEntity.getTileData().getDouble("percent");
+		DecimalFormat percentFormat = new DecimalFormat("###.##");
+		String percentString = percentFormat.format(percent);
+		
 		this.font.drawString(ms, "Astral Miner", 2, 3, -16777216);
-		this.font.drawString(ms, "" + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity != null)
-					return tileEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "percent")) + "", 78, 43, -12829636);
+		this.font.drawString(ms, "§2" + percentString + "%", 78, 43, -12829636);
 	}
 
 	@Override
