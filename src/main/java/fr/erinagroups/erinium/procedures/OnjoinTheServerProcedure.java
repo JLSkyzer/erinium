@@ -146,7 +146,7 @@ public class OnjoinTheServerProcedure {
 			}
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity).sendStatusMessage(
-						new StringTextComponent(" \u00A74[\u00A7bErinium\u00A74] \u00A7eTip, \u00A7a\"RIGHT CLICK\" on a loot box to retrieve it!"),
+						new StringTextComponent("\u00A74[\u00A7bErinium\u00A74] \u00A7eTip, \u00A7a\"RIGHT CLICK\" on a loot box to retrieve it!"),
 						(false));
 			}
 		}
@@ -169,6 +169,11 @@ public class OnjoinTheServerProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+		}
+		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+					"\u00A74\u00A7l[\u00A7bErinium\u00A74] \u00A7cDo the command \u00A7e/eriniumhelp <1,2,..> \u00A7cto see others commands !"),
+					(false));
 		}
 	}
 }

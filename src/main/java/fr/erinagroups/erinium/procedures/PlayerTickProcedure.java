@@ -5,13 +5,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
@@ -120,9 +118,6 @@ public class PlayerTickProcedure {
 					capability.timer_earnmoney = _setval;
 					capability.syncPlayerVariables(entity);
 				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cYou won \u00A7e2$ \u00A7cfor play 1 minute !"), (true));
 			}
 		}
 		if ((entity.world.getDimensionKey()) == (World.OVERWORLD)) {

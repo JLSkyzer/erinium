@@ -14,6 +14,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.screen.Screen;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.HashMap;
@@ -30,6 +32,7 @@ public class AstralMinerGuiGuiWindow extends ContainerScreen<AstralMinerGuiGui.G
 	private PlayerEntity entity;
 	private final static HashMap guistate = AstralMinerGuiGui.guistate;
 	private String tooltipText = "";
+	private FontRenderer fontRenderer;
 
 	public AstralMinerGuiGuiWindow(AstralMinerGuiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
@@ -85,6 +88,8 @@ public class AstralMinerGuiGuiWindow extends ContainerScreen<AstralMinerGuiGui.G
 		double barre = 0.000128 * _retval.get();
 		int posY = this.guiTop + 7 + (64 - (int) barre); // Calculer la position en inversant la croissance
 
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/astral_miner_bg.png"));
+		this.blit(ms, this.guiLeft + 0, this.guiTop + 0, 0, 0, 176, 166, 176, 166);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/energy_bar_empty.png"));
 		this.blit(ms, this.guiLeft + 132, this.guiTop + 7, 0, 0, 32, 64, 32, 64);
@@ -111,12 +116,17 @@ public class AstralMinerGuiGuiWindow extends ContainerScreen<AstralMinerGuiGui.G
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
+		this.fontRenderer = Minecraft.getInstance().fontRenderer;
+		String text1 = "§fAstral Miner";
+		int textWidth = fontRenderer.getStringWidth(text1);
+		int x1 = (130 - textWidth) / 2;
 		TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 		double percent = tileEntity.getTileData().getDouble("percent");
 		DecimalFormat percentFormat = new DecimalFormat("###.##");
 		String percentString = percentFormat.format(percent);
 		
-		this.font.drawString(ms, "Astral Miner", 2, 3, -16777216);
+		//this.font.drawString(ms, "Astral Miner", 2, 3, -16777216);
+		fontRenderer.drawStringWithShadow(ms, text1, 2 + x1, 3, 0xFFFFFF);
 		this.font.drawString(ms, "§2" + percentString + "%", 78, 43, -12829636);
 	}
 

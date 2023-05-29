@@ -67,8 +67,8 @@ public class MobDeathProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		double temp = 0;
-		temp = (Math.random() * 10);
-		if (temp <= 2) {
+		temp = (Math.random() * 100);
+		if (temp <= 5) {
 			if (world instanceof World && !world.isRemote()) {
 				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(XpEssenceItem.block));
 				entityToSpawn.setPickupDelay((int) 10);

@@ -1,0 +1,92 @@
+{
+  "_fv": 34,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Dimensions Navigation",
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "name": "Dimensions Navigation",
+          "x": 159,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Rank Level : ",
+          "color": {
+            "value": -16751104,
+            "falpha": 0.0
+          },
+          "name": "Rank Level : ",
+          "x": 177,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "0 - 5",
+          "width": 90,
+          "height": 20,
+          "name": "0 - 5",
+          "x": 168,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "6 - 10",
+          "width": 90,
+          "height": 20,
+          "name": "6 - 10",
+          "x": 168,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "11 - 15",
+          "width": 90,
+          "height": 20,
+          "name": "11 - 15",
+          "x": 168,
+          "y": 134
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "16 - 20",
+          "width": 90,
+          "height": 20,
+          "name": "16 - 20",
+          "x": 168,
+          "y": 161
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

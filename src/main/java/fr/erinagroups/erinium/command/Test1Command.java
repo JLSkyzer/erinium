@@ -26,8 +26,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class Test1Command {
 	@SubscribeEvent
 	public static void registerCommands(RegisterCommandsEvent event) {
-		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("test1")
-
+		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("test1").requires(s -> s.hasPermissionLevel(2))
 				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();
 					double x = arguments.getSource().getPos().getX();

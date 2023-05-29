@@ -2601,6 +2601,14 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -6288,7 +6296,7 @@
       "name": "RankXpOverlay",
       "type": "overlay",
       "sortid": 508,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "rank_xp_overlay",
       "path": "~/Misc System/Rank System/Won Xp"
@@ -10277,6 +10285,105 @@
         ]
       },
       "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "CraftAstralMiner",
+      "type": "recipe",
+      "sortid": 766,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_astral_miner",
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "CobbleVoidMakeItemGlow",
+      "type": "procedure",
+      "sortid": 767,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cobble_void_make_item_glow",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Misc System/CobbleVoid"
+    },
+    {
+      "name": "CobbleVoidRightclicked",
+      "type": "procedure",
+      "sortid": 768,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cobble_void_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Misc System/CobbleVoid"
+    },
+    {
+      "name": "NavDimension",
+      "type": "gui",
+      "sortid": 769,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nav_dimension",
+      "path": "~/Dimensions/Gui"
+    },
+    {
+      "name": "EriniumHelp",
+      "type": "command",
+      "sortid": 770,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_help",
+      "path": "~/Server side"
+    },
+    {
+      "name": "CmdEriniumHelp",
+      "type": "procedure",
+      "sortid": 771,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_erinium_help",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Server side"
     }
   ],
   "variable_elements": [
@@ -11182,7 +11289,7 @@
       "item.erinium.amenine_liquid_5": "§b§lLiquid Bottle",
       "block.erinium.erinium_cobweb": "Erinium Cobweb",
       "item.erinium.gem_teleport": "§l§oGem §l§o§1Teleportation",
-      "item.erinium.cobble_void": "Cobble Void",
+      "item.erinium.cobble_void": "§bCobble Void §a§l0 §bblock(s)",
       "item.erinium.erinium_armor_leggings": "Erinium Leggings",
       "item.erinium.admin_stick": "Admin Stick",
       "item.erinium.test_dim": "Test Dim Portal Igniter",
@@ -11830,6 +11937,15 @@
         "children": [
           {
             "name": "commandes admins",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Dimensions",
+        "children": [
+          {
+            "name": "Gui",
             "children": []
           }
         ]

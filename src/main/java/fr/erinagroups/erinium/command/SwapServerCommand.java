@@ -26,7 +26,8 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class SwapServerCommand {
 	@SubscribeEvent
 	public static void registerCommands(RegisterCommandsEvent event) {
-		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("swapserver").requires(s -> s.hasPermissionLevel(3))
+		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("swapserver")
+
 				.then(Commands.argument("serverid", StringArgumentType.word()).executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();
 					double x = arguments.getSource().getPos().getX();
@@ -41,6 +42,20 @@ public class SwapServerCommand {
 							Stream.of(new AbstractMap.SimpleEntry<>("arguments", arguments), new AbstractMap.SimpleEntry<>("entity", entity))
 									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					return 0;
-				})));
+				})).executes(arguments -> {
+					ServerWorld world = arguments.getSource().getWorld();
+					double x = arguments.getSource().getPos().getX();
+					double y = arguments.getSource().getPos().getY();
+					double z = arguments.getSource().getPos().getZ();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getHorizontalFacing();
+
+					CmdSwapServerProcedure.executeProcedure(
+							Stream.of(new AbstractMap.SimpleEntry<>("arguments", arguments), new AbstractMap.SimpleEntry<>("entity", entity))
+									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					return 0;
+				}));
 	}
 }

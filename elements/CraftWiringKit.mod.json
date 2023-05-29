@@ -19,13 +19,13 @@
         "value": "CUSTOM:Rubber"
       },
       {
-        "value": "TAG:ingots/silver"
+        "value": "TAG:forge:ingots/silver"
       },
       {
-        "value": "TAG:ingots/copper"
+        "value": "TAG:forge:ingots/copper"
       },
       {
-        "value": "TAG:ingots/silver"
+        "value": "TAG:forge:ingots/silver"
       },
       {
         "value": "CUSTOM:Rubber"

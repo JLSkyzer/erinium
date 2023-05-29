@@ -26,7 +26,8 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class SetServerSpawnCommand {
 	@SubscribeEvent
 	public static void registerCommands(RegisterCommandsEvent event) {
-		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("setserverspawn").requires(s -> s.hasPermissionLevel(2))
+		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("setserverspawn")
+
 				.then(Commands.argument("server", StringArgumentType.word()).executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();
 					double x = arguments.getSource().getPos().getX();
@@ -42,6 +43,21 @@ public class SetServerSpawnCommand {
 									new AbstractMap.SimpleEntry<>("entity", entity))
 							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					return 0;
-				})));
+				})).executes(arguments -> {
+					ServerWorld world = arguments.getSource().getWorld();
+					double x = arguments.getSource().getPos().getX();
+					double y = arguments.getSource().getPos().getY();
+					double z = arguments.getSource().getPos().getZ();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getHorizontalFacing();
+
+					SetServerSpawnProcedureProcedure.executeProcedure(Stream
+							.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("arguments", arguments),
+									new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					return 0;
+				}));
 	}
 }

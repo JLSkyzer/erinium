@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "cobble_void",
     "customModelName": "Normal",
-    "name": "Cobble Void",
+    "name": "§bCobble Void §a§l0 §bblock(s)",
     "rarity": "RARE",
     "creativeTab": {
       "value": "CUSTOM:EriniumTools"
@@ -25,12 +25,21 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "�aDelete automaticaly the cobblestone"
+      "§aDelete automaticaly the cobblestone"
     ],
-    "hasGlow": false,
+    "hasGlow": true,
+    "glowCondition": {
+      "name": "CobbleVoidMakeItemGlow"
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "CobbleVoidRightclicked"
+    },
+    "onRightClickedOnBlock": {
+      "name": "CobbleVoidRightclicked"
+    },
     "onItemInInventoryTick": {
       "name": "CobbleVoidItemInInventoryTick"
     },

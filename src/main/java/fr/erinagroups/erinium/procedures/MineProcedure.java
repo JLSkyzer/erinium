@@ -95,10 +95,10 @@ public class MineProcedure {
 				});
 			}
 			{
-				String _setval = (new java.text.DecimalFormat("### ###")
+				String _setval = (new java.text.DecimalFormat("###,###")
 						.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-						+ " / \u00A74100 000");
+						+ " / \u00A74100,000");
 				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.won_xp_message_2 = _setval;
 					capability.syncPlayerVariables(entity);
@@ -141,10 +141,10 @@ public class MineProcedure {
 						});
 					}
 					{
-						String _setval = (new java.text.DecimalFormat("### ###")
+						String _setval = (new java.text.DecimalFormat("###,###")
 								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74100 000");
+								+ " / \u00A74100,000");
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.won_xp_message_2 = _setval;
 							capability.syncPlayerVariables(entity);
@@ -184,10 +184,10 @@ public class MineProcedure {
 						});
 					}
 					{
-						String _setval = (new java.text.DecimalFormat("### ###")
+						String _setval = (new java.text.DecimalFormat("###,###")
 								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74100 000");
+								+ " / \u00A74100,000");
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.won_xp_message_2 = _setval;
 							capability.syncPlayerVariables(entity);
@@ -231,10 +231,10 @@ public class MineProcedure {
 							});
 						}
 						{
-							String _setval = (new java.text.DecimalFormat("### ###")
+							String _setval = (new java.text.DecimalFormat("###,###")
 									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74100 000");
+									+ " / \u00A74100,000");
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.won_xp_message_2 = _setval;
 								capability.syncPlayerVariables(entity);
@@ -274,10 +274,10 @@ public class MineProcedure {
 							});
 						}
 						{
-							String _setval = (new java.text.DecimalFormat("### ###")
+							String _setval = (new java.text.DecimalFormat("###,###")
 									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74100 000");
+									+ " / \u00A74100,000");
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.won_xp_message_2 = _setval;
 								capability.syncPlayerVariables(entity);
@@ -317,10 +317,10 @@ public class MineProcedure {
 							});
 						}
 						{
-							String _setval = (new java.text.DecimalFormat("### ###")
+							String _setval = (new java.text.DecimalFormat("###,###")
 									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74100 000");
+									+ " / \u00A74100,000");
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.won_xp_message_2 = _setval;
 								capability.syncPlayerVariables(entity);
@@ -363,10 +363,10 @@ public class MineProcedure {
 								});
 							}
 							{
-								String _setval = (new java.text.DecimalFormat("### ###")
+								String _setval = (new java.text.DecimalFormat("###,###")
 										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-										+ " / \u00A74100 000");
+										+ " / \u00A74100,000");
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.won_xp_message_2 = _setval;
 									capability.syncPlayerVariables(entity);
@@ -405,10 +405,10 @@ public class MineProcedure {
 								});
 							}
 							{
-								String _setval = (new java.text.DecimalFormat("### ###")
+								String _setval = (new java.text.DecimalFormat("###,###")
 										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-										+ " / \u00A74100 000");
+										+ " / \u00A74100,000");
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.won_xp_message_2 = _setval;
 									capability.syncPlayerVariables(entity);
@@ -451,10 +451,10 @@ public class MineProcedure {
 									});
 								}
 								{
-									String _setval = (new java.text.DecimalFormat("### ###")
+									String _setval = (new java.text.DecimalFormat("###,###")
 											.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 													.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-											+ " / \u00A74100 000");
+											+ " / \u00A74100,000");
 									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 										capability.won_xp_message_2 = _setval;
 										capability.syncPlayerVariables(entity);

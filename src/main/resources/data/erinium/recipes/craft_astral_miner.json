@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium:erinium_matrix_block"
+    },
+    "1": {
+      "item": "minecraft:chest"
+    },
+    "2": {
+      "item": "erinium:erinium_matrix_block"
+    },
+    "3": {
+      "item": "erinium:erinium_matrix_block"
+    },
+    "4": {
+      "item": "erinium:spectrium_battery"
+    },
+    "5": {
+      "item": "erinium:erinium_matrix_block"
+    },
+    "6": {
+      "item": "erinium:astral_miner_foot"
+    },
+    "7": {
+      "item": "erinium:astral_miner_laser_module"
+    },
+    "8": {
+      "item": "erinium:astral_miner_foot"
+    }
+  },
+  "result": {
+    "item": "erinium:astral_miner",
+    "count": 1
+  }
+}

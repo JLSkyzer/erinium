@@ -75,8 +75,8 @@ public class OnKillWitherSkeletonProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		double random = 0;
 		if (entity instanceof WitherSkeletonEntity) {
-			random = Math.round(Math.random() * 10);
-			if (random <= 1) {
+			random = Math.round(Math.random() * 100);
+			if (random <= 5) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.WITHER_SKELETON_SKULL));
 					entityToSpawn.setPickupDelay((int) 10);

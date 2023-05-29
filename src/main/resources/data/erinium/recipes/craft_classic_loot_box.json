@@ -7,31 +7,31 @@
   ],
   "key": {
     "0": {
-      "tag": "ingots/lead"
+      "tag": "forge:ingots/lead"
     },
     "1": {
-      "tag": "ingots/lead"
+      "tag": "forge:ingots/lead"
     },
     "2": {
-      "tag": "ingots/lead"
+      "tag": "forge:ingots/lead"
     },
     "3": {
-      "tag": "ingots/lead"
+      "tag": "forge:ingots/lead"
     },
     "4": {
       "item": "minecraft:gold_block"
     },
     "5": {
-      "tag": "ingots/lead"
+      "tag": "forge:ingots/lead"
     },
     "6": {
-      "tag": "ingots/lead"
+      "tag": "forge:ingots/lead"
     },
     "7": {
       "item": "minecraft:emerald"
     },
     "8": {
-      "tag": "ingots/lead"
+      "tag": "forge:ingots/lead"
     }
   },
   "result": {
