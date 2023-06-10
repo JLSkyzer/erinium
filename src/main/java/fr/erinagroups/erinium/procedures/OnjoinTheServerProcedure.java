@@ -175,5 +175,35 @@ public class OnjoinTheServerProcedure {
 					"\u00A74\u00A7l[\u00A7bErinium\u00A74] \u00A7cDo the command \u00A7e/eriniumhelp <1,2,..> \u00A7cto see others commands !"),
 					(false));
 		}
+		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).cap_xp == 0) {
+			{
+				double _setval = 150000;
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.cap_xp = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
+		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).old_cap_xp == 0) {
+			{
+				double _setval = 150000;
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.old_cap_xp = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
+		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl == 0) {
+			{
+				double _setval = 1;
+				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.playerLvl = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
 	}
 }

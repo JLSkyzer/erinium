@@ -31,6 +31,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.CobbleVoidRightclickedProcedure;
+import fr.erinagroups.erinium.procedures.CobbleVoidRightclickedOnBlockProcedure;
 import fr.erinagroups.erinium.procedures.CobbleVoidMakeItemGlowProcedure;
 import fr.erinagroups.erinium.procedures.CobbleVoidItemInInventoryTickProcedure;
 import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
@@ -118,8 +119,11 @@ public class CobbleVoidItem extends EriniumModElements.ModElement {
 			int z = pos.getZ();
 			ItemStack itemstack = context.getItem();
 
-			CobbleVoidRightclickedProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("itemstack", itemstack)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			CobbleVoidRightclickedOnBlockProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity),
+							new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 

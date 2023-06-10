@@ -66,20 +66,20 @@ public class CreditToFtbMoneyProceduresProcedure {
 							new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
 									new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 							("ftbmoney add " + entity.getDisplayName().getString() + " "
-									+ new java.text.DecimalFormat("##").format(DoubleArgumentType.getDouble(arguments, "money"))));
+									+ new java.text.DecimalFormat("##").format(Math.floor(DoubleArgumentType.getDouble(arguments, "money")))));
 				}
 				{
 					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new EriniumModVariables.PlayerVariables())).Credit - DoubleArgumentType.getDouble(arguments, "money"));
+							.orElse(new EriniumModVariables.PlayerVariables())).Credit
+							- Math.floor(DoubleArgumentType.getDouble(arguments, "money")));
 					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Credit = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(
-							new StringTextComponent(
-									("+" + new java.text.DecimalFormat("##").format(DoubleArgumentType.getDouble(arguments, "money")) + " $")),
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A74[\u00A7eFTB Quest\u00A74]\u00A7a+"
+							+ new java.text.DecimalFormat("###,###").format(Math.floor(DoubleArgumentType.getDouble(arguments, "money"))) + " $")),
 							(false));
 				}
 			} else {

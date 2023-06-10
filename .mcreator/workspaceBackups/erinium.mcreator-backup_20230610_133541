@@ -10384,6 +10384,267 @@
         ]
       },
       "path": "~/Server side"
+    },
+    {
+      "name": "CobbleVoidStation",
+      "type": "block",
+      "sortid": 772,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cobble_void_station",
+      "path": "~/Misc System/CobbleVoid"
+    },
+    {
+      "name": "CobbleVoidStationGui",
+      "type": "gui",
+      "sortid": 773,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cobble_void_station_gui",
+      "path": "~/Misc System/CobbleVoid"
+    },
+    {
+      "name": "WhenTryToBreakBlock",
+      "type": "procedure",
+      "sortid": 774,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "when_try_to_break_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Global trigger"
+    },
+    {
+      "name": "CobbleVoidStationUpdateTick",
+      "type": "procedure",
+      "sortid": 775,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cobble_void_station_update_tick",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/Misc System/CobbleVoid"
+    },
+    {
+      "name": "CobbleVoidBtnSendDollard",
+      "type": "procedure",
+      "sortid": 776,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cobble_void_btn_send_dollard",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/CobbleVoid"
+    },
+    {
+      "name": "CraftCobbleVoidStation",
+      "type": "recipe",
+      "sortid": 777,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_cobble_void_station",
+      "path": "~/Misc System/CobbleVoid"
+    },
+    {
+      "name": "VolcanoRockGen",
+      "type": "structure",
+      "sortid": 778,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "volcano_rock_gen",
+      "path": "~/Space update/Structures"
+    },
+    {
+      "name": "CobbleVoidRightclickedOnBlock",
+      "type": "procedure",
+      "sortid": 779,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cobble_void_rightclicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/CobbleVoid"
+    },
+    {
+      "name": "BlockSellerGui",
+      "type": "gui",
+      "sortid": 780,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "block_seller_gui",
+      "path": "~/Misc System/EnergySeller"
+    },
+    {
+      "name": "SetEnergyCost",
+      "type": "procedure",
+      "sortid": 781,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_energy_cost",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Misc System/EnergySeller"
+    },
+    {
+      "name": "CmdSetEnergyCost",
+      "type": "command",
+      "sortid": 782,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_set_energy_cost",
+      "path": "~/Misc System/EnergySeller"
+    },
+    {
+      "name": "EnergySellerUpdateTick",
+      "type": "procedure",
+      "sortid": 783,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "energy_seller_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/EnergySeller"
+    },
+    {
+      "name": "EnergySeller",
+      "type": "block",
+      "sortid": 783,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "energy_seller",
+      "path": "~/Misc System/EnergySeller"
+    },
+    {
+      "name": "EnergySellerBtn",
+      "type": "procedure",
+      "sortid": 784,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "energy_seller_btn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/EnergySeller"
     }
   ],
   "variable_elements": [
@@ -10487,7 +10748,7 @@
       "name": "playerLvl",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "1.0"
     },
     {
       "name": "playerXp",
@@ -10962,6 +11223,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "cap_xp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "150000.0"
+    },
+    {
+      "name": "old_cap_xp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "150000.0"
+    },
+    {
+      "name": "energysellercost",
+      "type": "number",
+      "scope": "map",
+      "value": "0.0"
     }
   ],
   "sound_elements": [
@@ -11049,19 +11328,20 @@
       "biome.erinium.red_jungle_biome": "Red Jungle Biome",
       "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
       "block.erinium.red_jungle_grass": "Red Jungle Grass",
-      "block.erinium.xp_bush_layer_1": "Xp bush",
       "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
+      "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "item.erinium.astral_miner_foot": "Astral Miner Foot",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
       "item.erinium_armorhelmet.name": "Erinium Helmet",
+      "block.erinium.energy_seller": "Energy Seller",
       "item.erinium.bedrock_stick": "Bedrock Stick",
       "item.erinium.hacked_usb_key": "§2§k|| §r§aHacked Usb Key §2§k||",
       "item.erinium.rainbow_axe": "Rainbow Axe",
@@ -11100,6 +11380,7 @@
       "item.erinium.xp_essence": "Xp Essence",
       "item.erinium.silver_ingot": "§7Silver Ingot",
       "item.erinium.tree_boss_projectile": "Tree Boss Projectile",
+      "block.erinium.cobble_void_station": "Cobble Void Station",
       "subtitles.hitmarker": "",
       "item.erinium.duplicate_pickaxe": "§4Smelting Pickaxe",
       "item.erinium.magic_orb": "Magic Orb",
@@ -11713,6 +11994,10 @@
           },
           {
             "name": "Astral Miner",
+            "children": []
+          },
+          {
+            "name": "EnergySeller",
             "children": []
           }
         ]

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium:blocks/cobblevoirstation",
+    "up": "erinium:blocks/cobblevoirstation",
+    "north": "erinium:blocks/cobblevoirstation",
+    "east": "erinium:blocks/cobblevoirstation",
+    "south": "erinium:blocks/cobblevoirstation",
+    "west": "erinium:blocks/cobblevoirstation",
+    "particle": "erinium:blocks/cobblevoirstation"
+  }
+}

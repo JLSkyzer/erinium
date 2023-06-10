@@ -189,6 +189,7 @@ public class EriniumModVariables {
 		public boolean maintenanceNether = false;
 		public boolean essentialPluginEnabled = false;
 		public boolean enablemoddedfeatures = false;
+		public double energysellercost = 0.0;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -244,6 +245,7 @@ public class EriniumModVariables {
 			maintenanceNether = nbt.getBoolean("maintenanceNether");
 			essentialPluginEnabled = nbt.getBoolean("essentialPluginEnabled");
 			enablemoddedfeatures = nbt.getBoolean("enablemoddedfeatures");
+			energysellercost = nbt.getDouble("energysellercost");
 		}
 
 		@Override
@@ -292,6 +294,7 @@ public class EriniumModVariables {
 			nbt.putBoolean("maintenanceNether", maintenanceNether);
 			nbt.putBoolean("essentialPluginEnabled", essentialPluginEnabled);
 			nbt.putBoolean("enablemoddedfeatures", enablemoddedfeatures);
+			nbt.putDouble("energysellercost", energysellercost);
 			return nbt;
 		}
 
@@ -422,6 +425,8 @@ public class EriniumModVariables {
 			nbt.putBoolean("vip", instance.vip);
 			nbt.putDouble("timer_earnmoney", instance.timer_earnmoney);
 			nbt.putDouble("commanddelay", instance.commanddelay);
+			nbt.putDouble("cap_xp", instance.cap_xp);
+			nbt.putDouble("old_cap_xp", instance.old_cap_xp);
 			return nbt;
 		}
 
@@ -469,6 +474,8 @@ public class EriniumModVariables {
 			instance.vip = nbt.getBoolean("vip");
 			instance.timer_earnmoney = nbt.getDouble("timer_earnmoney");
 			instance.commanddelay = nbt.getDouble("commanddelay");
+			instance.cap_xp = nbt.getDouble("cap_xp");
+			instance.old_cap_xp = nbt.getDouble("old_cap_xp");
 		}
 	}
 
@@ -489,7 +496,7 @@ public class EriniumModVariables {
 		public double HomeCmdCooldown = 0;
 		public boolean inPvpMode = false;
 		public double pvpModeTimer = 0;
-		public double playerLvl = 0;
+		public double playerLvl = 1.0;
 		public double playerXp = 0;
 		public double wonXp = 0;
 		public boolean toggle_wonxp_overlay = true;
@@ -514,6 +521,8 @@ public class EriniumModVariables {
 		public boolean vip = false;
 		public double timer_earnmoney = 1200.0;
 		public double commanddelay = 0;
+		public double cap_xp = 150000.0;
+		public double old_cap_xp = 150000.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -583,6 +592,8 @@ public class EriniumModVariables {
 		clone.vip = original.vip;
 		clone.timer_earnmoney = original.timer_earnmoney;
 		clone.commanddelay = original.commanddelay;
+		clone.cap_xp = original.cap_xp;
+		clone.old_cap_xp = original.old_cap_xp;
 		if (!event.isWasDeath()) {
 			clone.PlayerHealth = original.PlayerHealth;
 			clone.PresentationToggle = original.PresentationToggle;
@@ -656,6 +667,8 @@ public class EriniumModVariables {
 					variables.vip = message.data.vip;
 					variables.timer_earnmoney = message.data.timer_earnmoney;
 					variables.commanddelay = message.data.commanddelay;
+					variables.cap_xp = message.data.cap_xp;
+					variables.old_cap_xp = message.data.old_cap_xp;
 				}
 			});
 			context.setPacketHandled(true);
