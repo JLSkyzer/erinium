@@ -22,13 +22,13 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class NavDimensionGuiWindow extends ContainerScreen<NavDimensionGui.GuiContainerMod> {
+public class Level0GuiGuiWindow extends ContainerScreen<Level0GuiGui.GuiContainerMod> {
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	private final static HashMap guistate = NavDimensionGui.guistate;
+	private final static HashMap guistate = Level0GuiGui.guistate;
 
-	public NavDimensionGuiWindow(NavDimensionGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
+	public Level0GuiGuiWindow(Level0GuiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -36,10 +36,10 @@ public class NavDimensionGuiWindow extends ContainerScreen<NavDimensionGui.GuiCo
 		this.z = container.z;
 		this.entity = container.entity;
 		this.xSize = 176;
-		this.ySize = 186;
+		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/screens/nav_dimension.png");
+	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/screens/level_0_gui.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -76,8 +76,6 @@ public class NavDimensionGuiWindow extends ContainerScreen<NavDimensionGui.GuiCo
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Dimensions Navigation", 33, 8, -16777216);
-		this.font.drawString(ms, "Rank Level : ", 51, 17, -16751104);
 	}
 
 	@Override
@@ -90,34 +88,16 @@ public class NavDimensionGuiWindow extends ContainerScreen<NavDimensionGui.GuiCo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 35, 90, 20, new StringTextComponent("0"), e -> {
+		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 7, 54, 20, new StringTextComponent("Plains"), e -> {
 			if (true) {
-				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(0, x, y, z));
-				NavDimensionGui.handleButtonAction(entity, 0, x, y, z);
+				EriniumMod.PACKET_HANDLER.sendToServer(new Level0GuiGui.ButtonPressedMessage(0, x, y, z));
+				Level0GuiGui.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 62, 90, 20, new StringTextComponent("5"), e -> {
+		this.addButton(new Button(this.guiLeft + 6, this.guiTop + 34, 54, 20, new StringTextComponent("Ocean"), e -> {
 			if (true) {
-				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(1, x, y, z));
-				NavDimensionGui.handleButtonAction(entity, 1, x, y, z);
-			}
-		}));
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 89, 90, 20, new StringTextComponent("10"), e -> {
-			if (true) {
-				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(2, x, y, z));
-				NavDimensionGui.handleButtonAction(entity, 2, x, y, z);
-			}
-		}));
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 116, 90, 20, new StringTextComponent("15"), e -> {
-			if (true) {
-				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(3, x, y, z));
-				NavDimensionGui.handleButtonAction(entity, 3, x, y, z);
-			}
-		}));
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 143, 90, 20, new StringTextComponent("20"), e -> {
-			if (true) {
-				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(4, x, y, z));
-				NavDimensionGui.handleButtonAction(entity, 4, x, y, z);
+				EriniumMod.PACKET_HANDLER.sendToServer(new Level0GuiGui.ButtonPressedMessage(1, x, y, z));
+				Level0GuiGui.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
 	}

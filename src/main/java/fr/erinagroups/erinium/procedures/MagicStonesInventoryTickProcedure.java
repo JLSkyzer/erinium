@@ -23,7 +23,7 @@ public class MagicStonesInventoryTickProcedure {
 				if (Calendar.getInstance().get(Calendar.MONTH) > itemstack.getOrCreateTag().getDouble("month")) {
 					itemstack.getOrCreateTag().putBoolean("used", (false));
 				} else {
-					if (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= itemstack.getOrCreateTag().getDouble("day")) {
+					if (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) == itemstack.getOrCreateTag().getDouble("day") + 1) {
 						if (Calendar.getInstance().get(Calendar.HOUR_OF_DAY) >= itemstack.getOrCreateTag().getDouble("hour")) {
 							if (Calendar.getInstance().get(Calendar.MINUTE) >= itemstack.getOrCreateTag().getDouble("minute")) {
 								itemstack.getOrCreateTag().putBoolean("used", (false));
@@ -41,6 +41,8 @@ public class MagicStonesInventoryTickProcedure {
 													itemstack.getOrCreateTag().getDouble("hour") - Calendar.getInstance().get(Calendar.HOUR_OF_DAY))
 											+ "h" + Math.round(60 - Calendar.getInstance().get(Calendar.MINUTE))));
 						}
+					} else if (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) > itemstack.getOrCreateTag().getDouble("day") + 1) {
+						itemstack.getOrCreateTag().putBoolean("used", (false));
 					} else {
 						if (24 - Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + itemstack.getOrCreateTag().getDouble("hour") >= 24) {
 							itemstack.getOrCreateTag().putString("lore",

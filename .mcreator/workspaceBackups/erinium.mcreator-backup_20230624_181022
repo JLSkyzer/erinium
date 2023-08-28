@@ -10649,6 +10649,15 @@
         ]
       },
       "path": "~/Misc System/EnergySeller"
+    },
+    {
+      "name": "CraftEnergySeller",
+      "type": "recipe",
+      "sortid": 785,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_energy_seller",
+      "path": "~/Misc System/EnergySeller"
     }
   ],
   "variable_elements": [
