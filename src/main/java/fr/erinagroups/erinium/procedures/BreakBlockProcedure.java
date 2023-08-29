@@ -2,15 +2,15 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Block;
 
 import java.util.Map;
 
@@ -94,36 +94,18 @@ public class BreakBlockProcedure {
 				{
 					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-							+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 30);
+							+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 110);
 					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.playerXp = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				{
-					String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 30 + " xp ");
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					String _setval = (new java.text.DecimalFormat("###,###")
-							.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-							+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message_2 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = 60;
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_overlay_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity)
+							.sendStatusMessage(new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 110
+									+ " xp " + "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+									+ " / 100.000")), (true));
 				}
 			} else if (((world instanceof World && ((World) world).getRecipeManager()
 					.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -156,36 +138,18 @@ public class BreakBlockProcedure {
 				{
 					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-							+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 90);
+							+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 200);
 					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.playerXp = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				{
-					String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 90 + " xp ");
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					String _setval = (new java.text.DecimalFormat("###,###")
-							.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-							+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message_2 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = 60;
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_overlay_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity)
+							.sendStatusMessage(new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 200
+									+ " xp " + "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+									+ " / 100.000")), (true));
 				}
 			} else if (((world instanceof World && ((World) world).getRecipeManager()
 					.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -224,30 +188,12 @@ public class BreakBlockProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				{
-					String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 30 + " xp ");
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					String _setval = (new java.text.DecimalFormat("###,###")
-							.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-							+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message_2 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = 60;
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_overlay_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity)
+							.sendStatusMessage(new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 30
+									+ " xp " + "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+									+ " / 100.000")), (true));
 				}
 			} else if (((world instanceof World && ((World) world).getRecipeManager()
 					.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -280,73 +226,38 @@ public class BreakBlockProcedure {
 				{
 					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-							+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 110);
+							+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 320);
 					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.playerXp = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				{
-					String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 110 + " xp ");
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					String _setval = (new java.text.DecimalFormat("###,###")
-							.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-							+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_message_2 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = 60;
-					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.won_xp_overlay_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity)
+							.sendStatusMessage(new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 320
+									+ " xp " + "\u00A7f| " + "\u00A72" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+									+ " / 100.000")), (true));
 				}
 			} else {
-				if (!(((world instanceof World && ((World) world).getRecipeManager()
-						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-								((World) world))
-						.isPresent())
-								? ((World) world).getRecipeManager()
-										.getRecipe(IRecipeType.SMELTING,
-												new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-												(World) world)
-										.get().getRecipeOutput().copy()
-								: ItemStack.EMPTY)
-						.getItem() == Blocks.AIR.asItem())) {
-					for (int index4 = 0; index4 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index4++) {
-						if (world instanceof World && !world.isRemote()) {
-							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
-									.getRecipeManager()
-									.getRecipe(IRecipeType.SMELTING,
-											new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
-									.isPresent())
-											? ((World) world).getRecipeManager()
-													.getRecipe(IRecipeType.SMELTING,
-															new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-															(World) world)
-													.get().getRecipeOutput().copy()
-											: ItemStack.EMPTY));
-							entityToSpawn.setPickupDelay((int) 10);
-							world.addEntity(entityToSpawn);
-						}
-					}
-					world.destroyBlock(new BlockPos(x, y, z), false);
-				} else {
-					if (world instanceof World) {
-						Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
-						world.destroyBlock(new BlockPos(x, y, z), false);
+				for (int index4 = 0; index4 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index4++) {
+					if (world instanceof World && !world.isRemote()) {
+						ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
+								.getRecipeManager()
+								.getRecipe(IRecipeType.SMELTING,
+										new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
+								.isPresent())
+										? ((World) world).getRecipeManager()
+												.getRecipe(IRecipeType.SMELTING,
+														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+														(World) world)
+												.get().getRecipeOutput().copy()
+										: ItemStack.EMPTY));
+						entityToSpawn.setPickupDelay((int) 10);
+						world.addEntity(entityToSpawn);
 					}
 				}
+				world.destroyBlock(new BlockPos(x, y, z), false);
 			}
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -389,30 +300,16 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 60 + " xp ");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = (new java.text.DecimalFormat("###,###")
-								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_overlay_cooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 60 + " xp " + "\u00A7f| "
+														+ "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -446,36 +343,22 @@ public class BreakBlockProcedure {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 120);
+								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 170);
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.playerXp = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 120 + " xp ");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = (new java.text.DecimalFormat("###,###")
-								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_overlay_cooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 170 + " xp " + "\u00A7f| "
+														+ "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -515,30 +398,16 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125 + " xp ");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = (new java.text.DecimalFormat("###,###")
-								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_overlay_cooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125 + " xp " + "\u00A7f| "
+														+ "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -578,30 +447,16 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125 + " xp ");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = (new java.text.DecimalFormat("###,###")
-								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_overlay_cooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125 + " xp " + "\u00A7f| "
+														+ "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -635,36 +490,22 @@ public class BreakBlockProcedure {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 38);
+								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 8);
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.playerXp = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 38 + " xp ");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = (new java.text.DecimalFormat("###,###")
-								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_overlay_cooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 8 + " xp " + "\u00A7f| "
+														+ "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -698,36 +539,22 @@ public class BreakBlockProcedure {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 150);
+								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 170);
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.playerXp = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 150 + " xp ");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = (new java.text.DecimalFormat("###,###")
-								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_overlay_cooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 170 + " xp " + "\u00A7f| "
+														+ "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -761,74 +588,42 @@ public class BreakBlockProcedure {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 160);
+								+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 240);
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.playerXp = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					{
-						String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 160 + " xp ");
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						String _setval = (new java.text.DecimalFormat("###,###")
-								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-								+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 60;
-						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_overlay_cooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity)
+								.sendStatusMessage(
+										new StringTextComponent(
+												("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 240 + " xp " + "\u00A7f| "
+														+ "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+										(true));
 					}
 				} else {
-					if (!(((world instanceof World && ((World) world).getRecipeManager()
-							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-									((World) world))
-							.isPresent())
-									? ((World) world).getRecipeManager()
-											.getRecipe(IRecipeType.SMELTING,
-													new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-													(World) world)
-											.get().getRecipeOutput().copy()
-									: ItemStack.EMPTY)
-							.getItem() == Blocks.AIR.asItem())) {
-						for (int index12 = 0; index12 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index12++) {
-							if (world instanceof World && !world.isRemote()) {
-								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
-										((world instanceof World && ((World) world).getRecipeManager()
-												.getRecipe(IRecipeType.SMELTING,
-														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-														((World) world))
-												.isPresent())
-														? ((World) world).getRecipeManager()
-																.getRecipe(IRecipeType.SMELTING, new Inventory(
-																		(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-																		(World) world)
-																.get().getRecipeOutput().copy()
-														: ItemStack.EMPTY));
-								entityToSpawn.setPickupDelay((int) 10);
-								world.addEntity(entityToSpawn);
-							}
-						}
-						world.destroyBlock(new BlockPos(x, y, z), false);
-					} else {
-						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
-							world.destroyBlock(new BlockPos(x, y, z), false);
+					for (int index12 = 0; index12 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index12++) {
+						if (world instanceof World && !world.isRemote()) {
+							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, ((world instanceof World && ((World) world)
+									.getRecipeManager()
+									.getRecipe(IRecipeType.SMELTING,
+											new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
+									.isPresent())
+											? ((World) world).getRecipeManager()
+													.getRecipe(IRecipeType.SMELTING,
+															new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+															(World) world)
+													.get().getRecipeOutput().copy()
+											: ItemStack.EMPTY));
+							entityToSpawn.setPickupDelay((int) 10);
+							world.addEntity(entityToSpawn);
 						}
 					}
+					world.destroyBlock(new BlockPos(x, y, z), false);
 				}
 			} else {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -866,36 +661,22 @@ public class BreakBlockProcedure {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 95);
+									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 15);
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.playerXp = _setval;
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 95 + " xp ");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = (new java.text.DecimalFormat("###,###")
-									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_overlay_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 15 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -930,36 +711,22 @@ public class BreakBlockProcedure {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 150);
+									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 95);
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.playerXp = _setval;
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 150 + " xp ");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = (new java.text.DecimalFormat("###,###")
-									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_overlay_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 95 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -1000,30 +767,16 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp ");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = (new java.text.DecimalFormat("###,###")
-									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_overlay_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -1058,36 +811,22 @@ public class BreakBlockProcedure {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 130);
+									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105);
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.playerXp = _setval;
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 130 + " xp ");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = (new java.text.DecimalFormat("###,###")
-									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_overlay_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -1128,30 +867,16 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp ");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = (new java.text.DecimalFormat("###,###")
-									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_overlay_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 105 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -1186,36 +911,22 @@ public class BreakBlockProcedure {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 195);
+									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 65);
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.playerXp = _setval;
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 195 + " xp ");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = (new java.text.DecimalFormat("###,###")
-									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_overlay_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 65 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -1250,74 +961,43 @@ public class BreakBlockProcedure {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 180);
+									+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 120);
 							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.playerXp = _setval;
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						{
-							String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 180 + " xp ");
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							String _setval = (new java.text.DecimalFormat("###,###")
-									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-									+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_message_2 = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							double _setval = 60;
-							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.won_xp_overlay_cooldown = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+							((PlayerEntity) entity)
+									.sendStatusMessage(
+											new StringTextComponent(
+													("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 120 + " xp " + "\u00A7f| "
+															+ "\u00A72"
+															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+															+ " / 100.000")),
+											(true));
 						}
 					} else {
-						if (!(((world instanceof World && ((World) world).getRecipeManager()
-								.getRecipe(IRecipeType.SMELTING,
-										new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
-								.isPresent())
-										? ((World) world).getRecipeManager()
+						for (int index20 = 0; index20 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index20++) {
+							if (world instanceof World && !world.isRemote()) {
+								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+										((world instanceof World && ((World) world).getRecipeManager()
 												.getRecipe(IRecipeType.SMELTING,
 														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-														(World) world)
-												.get().getRecipeOutput().copy()
-										: ItemStack.EMPTY)
-								.getItem() == Blocks.AIR.asItem())) {
-							for (int index20 = 0; index20 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index20++) {
-								if (world instanceof World && !world.isRemote()) {
-									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
-											((world instanceof World && ((World) world).getRecipeManager()
-													.getRecipe(IRecipeType.SMELTING,
-															new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-															((World) world))
-													.isPresent())
-															? ((World) world).getRecipeManager()
-																	.getRecipe(IRecipeType.SMELTING, new Inventory(
-																			(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-																			(World) world)
-																	.get().getRecipeOutput().copy()
-															: ItemStack.EMPTY));
-									entityToSpawn.setPickupDelay((int) 10);
-									world.addEntity(entityToSpawn);
-								}
-							}
-							world.destroyBlock(new BlockPos(x, y, z), false);
-						} else {
-							if (world instanceof World) {
-								Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
-								world.destroyBlock(new BlockPos(x, y, z), false);
+														((World) world))
+												.isPresent())
+														? ((World) world).getRecipeManager()
+																.getRecipe(IRecipeType.SMELTING, new Inventory(
+																		(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+																		(World) world)
+																.get().getRecipeOutput().copy()
+														: ItemStack.EMPTY));
+								entityToSpawn.setPickupDelay((int) 10);
+								world.addEntity(entityToSpawn);
 							}
 						}
+						world.destroyBlock(new BlockPos(x, y, z), false);
 					}
 				} else {
 					if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -1355,36 +1035,21 @@ public class BreakBlockProcedure {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 150);
+										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 38);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							{
-								String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 150 + " xp ");
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = (new java.text.DecimalFormat("###,###")
-										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-										+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message_2 = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								double _setval = 60;
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_overlay_cooldown = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 38
+														+ " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
 							}
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
@@ -1419,36 +1084,21 @@ public class BreakBlockProcedure {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125);
+										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 28);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							{
-								String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 125 + " xp ");
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = (new java.text.DecimalFormat("###,###")
-										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-										+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message_2 = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								double _setval = 60;
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_overlay_cooldown = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 28
+														+ " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
 							}
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
@@ -1483,36 +1133,21 @@ public class BreakBlockProcedure {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 145);
+										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 45);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							{
-								String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 145 + " xp ");
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = (new java.text.DecimalFormat("###,###")
-										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-										+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message_2 = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								double _setval = 60;
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_overlay_cooldown = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 28
+														+ " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
 							}
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
@@ -1547,36 +1182,21 @@ public class BreakBlockProcedure {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 135);
+										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 26);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							{
-								String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 135 + " xp ");
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = (new java.text.DecimalFormat("###,###")
-										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-										+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message_2 = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								double _setval = 60;
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_overlay_cooldown = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 28
+														+ " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
 							}
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
@@ -1611,36 +1231,21 @@ public class BreakBlockProcedure {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 150);
+										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 26);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							{
-								String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 150 + " xp ");
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = (new java.text.DecimalFormat("###,###")
-										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-										+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message_2 = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								double _setval = 60;
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_overlay_cooldown = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 28
+														+ " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
 							}
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
@@ -1675,70 +1280,42 @@ public class BreakBlockProcedure {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 250);
+										+ (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 45);
 								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.playerXp = _setval;
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							{
-								String _setval = ("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 250 + " xp ");
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								String _setval = (new java.text.DecimalFormat("###,###")
-										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
-										+ " / \u00A74" + (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_message_2 = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								double _setval = 60;
-								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.won_xp_overlay_cooldown = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+								((PlayerEntity) entity)
+										.sendStatusMessage(
+												new StringTextComponent(("\u00A7a+" + (2 + itemstack.getOrCreateTag().getDouble("fortune")) * 45
+														+ " xp " + "\u00A7f| " + "\u00A72"
+														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
+														+ " / 100.000")),
+												(true));
 							}
 						} else {
-							if (!(((world instanceof World && ((World) world).getRecipeManager()
-									.getRecipe(IRecipeType.SMELTING,
-											new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
-									.isPresent())
-											? ((World) world).getRecipeManager()
+							for (int index27 = 0; index27 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index27++) {
+								if (world instanceof World && !world.isRemote()) {
+									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
+											((world instanceof World && ((World) world).getRecipeManager()
 													.getRecipe(IRecipeType.SMELTING,
 															new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-															(World) world)
-													.get().getRecipeOutput().copy()
-											: ItemStack.EMPTY)
-									.getItem() == Blocks.AIR.asItem())) {
-								for (int index27 = 0; index27 < (int) (2 + itemstack.getOrCreateTag().getDouble("fortune")); index27++) {
-									if (world instanceof World && !world.isRemote()) {
-										ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
-												((world instanceof World && ((World) world).getRecipeManager().getRecipe(IRecipeType.SMELTING,
-														new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-														((World) world)).isPresent())
-																? ((World) world).getRecipeManager().getRecipe(IRecipeType.SMELTING, new Inventory(
-																		(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
-																		(World) world).get().getRecipeOutput().copy()
-																: ItemStack.EMPTY));
-										entityToSpawn.setPickupDelay((int) 10);
-										world.addEntity(entityToSpawn);
-									}
-								}
-								world.destroyBlock(new BlockPos(x, y, z), false);
-							} else {
-								if (world instanceof World) {
-									Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
-									world.destroyBlock(new BlockPos(x, y, z), false);
+															((World) world))
+													.isPresent())
+															? ((World) world).getRecipeManager()
+																	.getRecipe(IRecipeType.SMELTING, new Inventory(
+																			(new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
+																			(World) world)
+																	.get().getRecipeOutput().copy()
+															: ItemStack.EMPTY));
+									entityToSpawn.setPickupDelay((int) 10);
+									world.addEntity(entityToSpawn);
 								}
 							}
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
 				}

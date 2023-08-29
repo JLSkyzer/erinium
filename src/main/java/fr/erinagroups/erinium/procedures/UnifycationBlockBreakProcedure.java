@@ -15,7 +15,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
@@ -25,7 +24,6 @@ import net.minecraft.block.Blocks;
 import java.util.Map;
 import java.util.HashMap;
 
-import fr.erinagroups.erinium.item.DuplicatePickaxeItem;
 import fr.erinagroups.erinium.block.LeadOreBlock;
 import fr.erinagroups.erinium.block.CopperOreBlock;
 import fr.erinagroups.erinium.EriniumMod;
@@ -96,42 +94,39 @@ public class UnifycationBlockBreakProcedure {
 				return false;
 			}
 		}.checkGamemode(entity)) {
-			if (!(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getItem() == DuplicatePickaxeItem.block)) {
-				if (BlockTags.getCollection().getTagByID(new ResourceLocation("forge:ores/copper"))
-						.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())
-						&& !((world.getBlockState(new BlockPos(x, y, z))).getBlock() == CopperOreBlock.block)) {
-					if (dependencies.get("event") != null) {
-						Object _obj = dependencies.get("event");
-						if (_obj instanceof Event) {
-							Event _evt = (Event) _obj;
-							if (_evt.isCancelable())
-								_evt.setCanceled(true);
-						}
+			if (BlockTags.getCollection().getTagByID(new ResourceLocation("forge:ores/copper"))
+					.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())
+					&& !((world.getBlockState(new BlockPos(x, y, z))).getBlock() == CopperOreBlock.block)) {
+				if (dependencies.get("event") != null) {
+					Object _obj = dependencies.get("event");
+					if (_obj instanceof Event) {
+						Event _evt = (Event) _obj;
+						if (_evt.isCancelable())
+							_evt.setCanceled(true);
 					}
-					world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
-					if (world instanceof World && !world.isRemote()) {
-						ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(CopperOreBlock.block));
-						entityToSpawn.setPickupDelay((int) 10);
-						world.addEntity(entityToSpawn);
+				}
+				world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
+				if (world instanceof World && !world.isRemote()) {
+					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(CopperOreBlock.block));
+					entityToSpawn.setPickupDelay((int) 10);
+					world.addEntity(entityToSpawn);
+				}
+			} else if (BlockTags.getCollection().getTagByID(new ResourceLocation("forge:ores/lead"))
+					.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())
+					&& !((world.getBlockState(new BlockPos(x, y, z))).getBlock() == LeadOreBlock.block)) {
+				if (dependencies.get("event") != null) {
+					Object _obj = dependencies.get("event");
+					if (_obj instanceof Event) {
+						Event _evt = (Event) _obj;
+						if (_evt.isCancelable())
+							_evt.setCanceled(true);
 					}
-				} else if (BlockTags.getCollection().getTagByID(new ResourceLocation("forge:ores/lead"))
-						.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())
-						&& !((world.getBlockState(new BlockPos(x, y, z))).getBlock() == LeadOreBlock.block)) {
-					if (dependencies.get("event") != null) {
-						Object _obj = dependencies.get("event");
-						if (_obj instanceof Event) {
-							Event _evt = (Event) _obj;
-							if (_evt.isCancelable())
-								_evt.setCanceled(true);
-						}
-					}
-					world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
-					if (world instanceof World && !world.isRemote()) {
-						ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(LeadOreBlock.block));
-						entityToSpawn.setPickupDelay((int) 10);
-						world.addEntity(entityToSpawn);
-					}
+				}
+				world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
+				if (world instanceof World && !world.isRemote()) {
+					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(LeadOreBlock.block));
+					entityToSpawn.setPickupDelay((int) 10);
+					world.addEntity(entityToSpawn);
 				}
 			}
 		}

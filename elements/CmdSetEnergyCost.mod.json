@@ -1,9 +1,0 @@
-{
-  "_fv": 34,
-  "_type": "command",
-  "definition": {
-    "commandName": "cmdsetenergycost",
-    "permissionLevel": "No requirement",
-    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"number_default\"><field name=\"name\">cost</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">SetEnergyCost</field></block></statement></block></next></block></xml>"
-  }
-}

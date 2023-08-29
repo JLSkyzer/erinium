@@ -59,13 +59,5 @@ public class RankUpdateProcedure {
 				capability.syncPlayerVariables(entity);
 			});
 		}
-		{
-			double _setval = Math.round((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
-			entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.cap_xp = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
 	}
 }

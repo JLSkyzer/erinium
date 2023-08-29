@@ -33,7 +33,7 @@ graphicsMode:0
 ao:0
 biomeBlendRadius:1
 renderClouds:false
-resourcePacks:["vanilla","mod_resources"]
+resourcePacks:[]
 incompatibleResourcePacks:[]
 lastServer:localhost:25463
 lang:en_us

@@ -20,7 +20,7 @@ public class CreditCommandExecutedProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A74[\u00A7cErinium\u00A74] \u00A7eCredit : \u00A7a"
-					+ new java.text.DecimalFormat("###,###.##").format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					+ new java.text.DecimalFormat("##").format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).Credit)
 					+ " $")), (false));
 		}

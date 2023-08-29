@@ -24,9 +24,6 @@ import fr.erinagroups.erinium.EriniumMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
-import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.screen.Screen;
-import java.text.DecimalFormat;
 
 @OnlyIn(Dist.CLIENT)
 public class ProfileMenuRankGuiWindow extends ContainerScreen<ProfileMenuRankGui.GuiContainerMod> {
@@ -50,7 +47,6 @@ public class ProfileMenuRankGuiWindow extends ContainerScreen<ProfileMenuRankGui
 	private static final ResourceLocation HOMEBTN = new ResourceLocation("erinium:textures/screens/home_button.png");
 	private static final ResourceLocation RANKBTN = new ResourceLocation("erinium:textures/screens/rank_button.png");
 	private static final ResourceLocation STATSBTN = new ResourceLocation("erinium:textures/screens/stats_button.png");
-	private FontRenderer fontRenderer;
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -70,7 +66,7 @@ public class ProfileMenuRankGuiWindow extends ContainerScreen<ProfileMenuRankGui
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
 		TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-		double barre = (248 / ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).cap_xp)) * ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).playerXp);
+		double barre = 0.00248 * ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).playerXp);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("erinium:textures/screens/rank_background.png"));
 		this.blit(ms, this.guiLeft + 0, this.guiTop + 0, 0, 0, 427, 240, 427, 240);
@@ -100,25 +96,10 @@ public class ProfileMenuRankGuiWindow extends ContainerScreen<ProfileMenuRankGui
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.fontRenderer = Minecraft.getInstance().fontRenderer;
-		DecimalFormat decimalFormat = new DecimalFormat("#,###");
-		String textlevel = "Level : \u00A7a" + decimalFormat.format((int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl)) + "";
-		String textxp = "Xp : \u00A7a" + decimalFormat.format((int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new EriniumModVariables.PlayerVariables())).playerXp)) + " \u00A7r/ \u00A7e" + decimalFormat.format((int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new EriniumModVariables.PlayerVariables())).cap_xp));
-		int levelwidth = fontRenderer.getStringWidth(textlevel);
-		int x1 = (250 - levelwidth) / 2;
-		int xpwidth = fontRenderer.getStringWidth(textxp);
-		int x2 = (250 - xpwidth) / 2;
-	
-		fontRenderer.drawStringWithShadow(ms, textlevel, 88 + x1, 112, 0xFFFFFF);
-		fontRenderer.drawStringWithShadow(ms, textxp, 88 + x2, 127, 0xFFFFFF);
-		/*this.font.drawString(ms, "Level : \u00A7a" + (int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+		this.font.drawString(ms, "Level : \u00A7a" + (int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new EriniumModVariables.PlayerVariables())).playerLvl) + "", 180, 112, -1);
 		this.font.drawString(ms, "Xp : \u00A7a" + (int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new EriniumModVariables.PlayerVariables())).playerXp) + " \u00A7r/ \u00A7e" + (int) ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new EriniumModVariables.PlayerVariables())).cap_xp), 179, 127, -1);*/
+				.orElse(new EriniumModVariables.PlayerVariables())).playerXp) + " \u00A7r/ \u00A7e100.000", 179, 127, -1);
 		this.font.drawString(ms, "Rank", 198, 0, -1);
 	}
 

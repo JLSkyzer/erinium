@@ -80,10 +80,10 @@ public class OnBreakGrassProcedure {
 				|| (world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.TALL_GRASS
 				|| (world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.LARGE_FERN
 				|| (world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.FERN) {
-			random = (MathHelper.nextInt(new Random(), 0, 100));
+			random = (MathHelper.nextInt(new Random(), 1, 100));
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 3) {
-				if (random <= 20) {
+				if (random <= 40) {
 					if (world instanceof World && !world.isRemote()) {
 						ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(SetanumSeedsItem.block));
 						entityToSpawn.setPickupDelay((int) 10);
