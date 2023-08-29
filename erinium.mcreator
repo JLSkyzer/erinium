@@ -10384,7 +10384,6 @@
         ]
       },
       "path": "~/Server side"
-<<<<<<< HEAD
     },
     {
       "name": "CobbleVoidStation",
@@ -10659,150 +10658,6 @@
       "locked_code": false,
       "registry_name": "craft_energy_seller",
       "path": "~/Misc System/EnergySeller"
-    },
-    {
-      "name": "OakDimension",
-      "type": "dimension",
-      "sortid": 786,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "oak_dimension",
-      "metadata": {
-        "ep": false
-      },
-      "path": "~/Dimensions/Gui/0"
-    },
-    {
-      "name": "OceanDimension",
-      "type": "dimension",
-      "sortid": 787,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ocean_dimension",
-      "metadata": {
-        "ep": false
-      },
-      "path": "~/Dimensions/Gui/0"
-    },
-    {
-      "name": "Nav",
-      "type": "command",
-      "sortid": 788,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nav",
-      "path": "~/Dimensions/Gui"
-    },
-    {
-      "name": "OpenNav",
-      "type": "procedure",
-      "sortid": 789,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "open_nav",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Dimensions/Gui"
-    },
-    {
-      "name": "Level0Gui",
-      "type": "gui",
-      "sortid": 790,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "level_0_gui",
-      "path": "~/Dimensions/Gui/0/gui"
-    },
-    {
-      "name": "BtnLevel0",
-      "type": "procedure",
-      "sortid": 791,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "btn_level_0",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Dimensions/Gui"
-    },
-    {
-      "name": "BtnPlainsDimension",
-      "type": "procedure",
-      "sortid": 792,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "btn_plains_dimension",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Dimensions/Gui/0/gui"
-    },
-    {
-      "name": "BtnOceanDimension",
-      "type": "procedure",
-      "sortid": 793,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "btn_ocean_dimension",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Dimensions/Gui/0/gui"
-=======
->>>>>>> parent of cdbd7e44 (Energy Seller update)
     }
   ],
   "variable_elements": [
@@ -10906,7 +10761,7 @@
       "name": "playerLvl",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "1.0"
     },
     {
       "name": "playerXp",
@@ -11381,6 +11236,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "cap_xp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "150000.0"
+    },
+    {
+      "name": "old_cap_xp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "150000.0"
+    },
+    {
+      "name": "energysellercost",
+      "type": "number",
+      "scope": "map",
+      "value": "0.0"
     }
   ],
   "sound_elements": [
@@ -11468,27 +11341,20 @@
       "biome.erinium.red_jungle_biome": "Red Jungle Biome",
       "item.erinium.hot_water_bucket": "Hot Water Bucket",
       "block.erinium.fusion_station_alpha": "§8Fusion Station §9Alpha",
-<<<<<<< HEAD
-      "item.erinium.oak_dimension": "Oak Dimension Portal Igniter",
-=======
->>>>>>> parent of cdbd7e44 (Energy Seller update)
-      "item.erinium_armorbody.name": "Erinium Body",
-      "item.erinium.op_tool": "Op Tool",
       "key.categories.eriniumcontrols": "§1Erinium",
+      "item.erinium.op_tool": "Op Tool",
+      "item.erinium_armorbody.name": "Erinium Body",
       "block.erinium.spectrium_ore": "Spectrium Ore",
       "item.erinium.erinium_matrix_armor_helmet": "§2§k|| §r§1Erinium Matrix Helmet §2§k||",
       "block.erinium.red_jungle_grass": "Red Jungle Grass",
-      "block.erinium.xp_bush_layer_1": "Xp bush",
       "item.erinium.erinium_matrix_pickaxe": "§2§k|| §r§1Erinium Matrix Pickaxe §2§k||",
-<<<<<<< HEAD
-      "item.erinium.ocean_dimension": "Oak Dimension Portal Igniter",
-=======
->>>>>>> parent of cdbd7e44 (Energy Seller update)
+      "block.erinium.xp_bush_layer_1": "Xp bush",
       "block.erinium.xp_bush_layer_0": "Xp bush",
       "entity.erinium.wizard": "Wizard",
       "item.erinium.astral_miner_foot": "Astral Miner Foot",
       "item.erinium.pure_gem": "§l§o§6Pure Gem",
       "item.erinium_armorhelmet.name": "Erinium Helmet",
+      "block.erinium.energy_seller": "Energy Seller",
       "item.erinium.bedrock_stick": "Bedrock Stick",
       "item.erinium.hacked_usb_key": "§2§k|| §r§aHacked Usb Key §2§k||",
       "item.erinium.rainbow_axe": "Rainbow Axe",
@@ -11527,6 +11393,7 @@
       "item.erinium.xp_essence": "Xp Essence",
       "item.erinium.silver_ingot": "§7Silver Ingot",
       "item.erinium.tree_boss_projectile": "Tree Boss Projectile",
+      "block.erinium.cobble_void_station": "Cobble Void Station",
       "subtitles.hitmarker": "",
       "item.erinium.duplicate_pickaxe": "§4Smelting Pickaxe",
       "item.erinium.magic_orb": "Magic Orb",
@@ -12141,6 +12008,10 @@
           {
             "name": "Astral Miner",
             "children": []
+          },
+          {
+            "name": "EnergySeller",
+            "children": []
           }
         ]
       },
@@ -12373,33 +12244,7 @@
         "children": [
           {
             "name": "Gui",
-            "children": [
-              {
-                "name": "0",
-                "children": [
-                  {
-                    "name": "gui",
-                    "children": []
-                  }
-                ]
-              },
-              {
-                "name": "5",
-                "children": []
-              },
-              {
-                "name": "10",
-                "children": []
-              },
-              {
-                "name": "15",
-                "children": []
-              },
-              {
-                "name": "20",
-                "children": []
-              }
-            ]
+            "children": []
           }
         ]
       }

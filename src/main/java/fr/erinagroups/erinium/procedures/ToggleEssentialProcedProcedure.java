@@ -26,24 +26,14 @@ public class ToggleEssentialProcedProcedure {
 		IWorld world = (IWorld) dependencies.get("world");
 		Entity entity = (Entity) dependencies.get("entity");
 		if (EriniumModVariables.MapVariables.get(world).essentialPluginEnabled == false) {
-			{
-				boolean _setval = (true);
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.PresentationToggle = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			EriniumModVariables.MapVariables.get(world).essentialPluginEnabled = (true);
+			EriniumModVariables.MapVariables.get(world).syncData(world);
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cSet to true"), (false));
 			}
 		} else {
-			{
-				boolean _setval = (false);
-				entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.PresentationToggle = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			EriniumModVariables.MapVariables.get(world).essentialPluginEnabled = (false);
+			EriniumModVariables.MapVariables.get(world).syncData(world);
 			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cSet to false"), (false));
 			}

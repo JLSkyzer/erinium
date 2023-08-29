@@ -48,9 +48,17 @@ public class StoneHealRightClickProcedure {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.ABSORPTION, (int) 1800, (int) 4, (false), (false)));
 			itemstack.getOrCreateTag().putBoolean("used", (true));
-			itemstack.getOrCreateTag().putDouble("year", Calendar.getInstance().get(Calendar.YEAR));
-			itemstack.getOrCreateTag().putDouble("month", Calendar.getInstance().get(Calendar.MONTH));
-			itemstack.getOrCreateTag().putDouble("day", Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+			if (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + 1 == 1) {
+				itemstack.getOrCreateTag().putDouble("month", (Calendar.getInstance().get(Calendar.MONTH) + 1));
+			} else {
+				itemstack.getOrCreateTag().putDouble("month", Calendar.getInstance().get(Calendar.MONTH));
+			}
+			if (itemstack.getOrCreateTag().getDouble("month") == 1) {
+				itemstack.getOrCreateTag().putDouble("year", (Calendar.getInstance().get(Calendar.YEAR) + 1));
+			} else {
+				itemstack.getOrCreateTag().putDouble("year", Calendar.getInstance().get(Calendar.YEAR));
+			}
+			itemstack.getOrCreateTag().putDouble("day", (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + 1));
 			itemstack.getOrCreateTag().putDouble("hour", Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
 			itemstack.getOrCreateTag().putDouble("minute", Calendar.getInstance().get(Calendar.MINUTE));
 		} else {

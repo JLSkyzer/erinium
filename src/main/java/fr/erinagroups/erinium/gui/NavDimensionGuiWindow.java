@@ -36,7 +36,7 @@ public class NavDimensionGuiWindow extends ContainerScreen<NavDimensionGui.GuiCo
 		this.z = container.z;
 		this.entity = container.entity;
 		this.xSize = 176;
-		this.ySize = 186;
+		this.ySize = 166;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/screens/nav_dimension.png");
@@ -76,8 +76,8 @@ public class NavDimensionGuiWindow extends ContainerScreen<NavDimensionGui.GuiCo
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Dimensions Navigation", 33, 8, -16777216);
-		this.font.drawString(ms, "Rank Level : ", 51, 17, -16751104);
+		this.font.drawString(ms, "Dimensions Navigation", 33, 7, -16777216);
+		this.font.drawString(ms, "Rank Level : ", 51, 25, -16751104);
 	}
 
 	@Override
@@ -90,34 +90,28 @@ public class NavDimensionGuiWindow extends ContainerScreen<NavDimensionGui.GuiCo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 35, 90, 20, new StringTextComponent("0"), e -> {
+		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 43, 90, 20, new StringTextComponent("0 - 5"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(0, x, y, z));
 				NavDimensionGui.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 62, 90, 20, new StringTextComponent("5"), e -> {
+		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 70, 90, 20, new StringTextComponent("6 - 10"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(1, x, y, z));
 				NavDimensionGui.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 89, 90, 20, new StringTextComponent("10"), e -> {
+		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 97, 90, 20, new StringTextComponent("11 - 15"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(2, x, y, z));
 				NavDimensionGui.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 116, 90, 20, new StringTextComponent("15"), e -> {
+		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 124, 90, 20, new StringTextComponent("16 - 20"), e -> {
 			if (true) {
 				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(3, x, y, z));
 				NavDimensionGui.handleButtonAction(entity, 3, x, y, z);
-			}
-		}));
-		this.addButton(new Button(this.guiLeft + 42, this.guiTop + 143, 90, 20, new StringTextComponent("20"), e -> {
-			if (true) {
-				EriniumMod.PACKET_HANDLER.sendToServer(new NavDimensionGui.ButtonPressedMessage(4, x, y, z));
-				NavDimensionGui.handleButtonAction(entity, 4, x, y, z);
 			}
 		}));
 	}

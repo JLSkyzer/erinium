@@ -51,7 +51,7 @@ public class AlchemistSellCommandExecutedProcedure {
 						}
 					}
 				}
-				random = (MathHelper.nextInt(new Random(), 375, 750));
+				random = (MathHelper.nextInt(new Random(), 120, 200));
 				{
 					double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).playerXp + count * random);
@@ -62,14 +62,46 @@ public class AlchemistSellCommandExecutedProcedure {
 				}
 				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
-							+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-							+ " / 100.000")), (true));
+							+ new java.text.DecimalFormat("###,###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+							+ " / "
+							+ new java.text.DecimalFormat("###,###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp))),
+							(true));
 				}
 				if (entity instanceof PlayerEntity) {
 					ItemStack _stktoremove = new ItemStack(AmenineLiquid5Item.block);
 					((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) count,
 							((PlayerEntity) entity).container.func_234641_j_());
+				}
+				{
+					String _setval = ("\u00A7a+" + new java.text.DecimalFormat("###,###").format(count * random) + " xp ");
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_message = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					String _setval = (new java.text.DecimalFormat("###,###")
+							.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+							+ " / \u00A74"
+							+ new java.text.DecimalFormat("###,###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).cap_xp));
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_message_2 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = 60;
+					entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.won_xp_overlay_cooldown = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		} else {
@@ -91,7 +123,7 @@ public class AlchemistSellCommandExecutedProcedure {
 							}
 						}
 					}
-					random = (MathHelper.nextInt(new Random(), 120, 515));
+					random = (MathHelper.nextInt(new Random(), 120, 350));
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new EriniumModVariables.PlayerVariables())).playerXp + count * random);
@@ -102,18 +134,47 @@ public class AlchemistSellCommandExecutedProcedure {
 					}
 					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 						((PlayerEntity) entity)
-								.sendStatusMessage(
-										new StringTextComponent(
-												("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
-														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-														+ " / 100.000")),
+								.sendStatusMessage(new StringTextComponent(("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
+										+ new java.text.DecimalFormat("###,###")
+												.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+														.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / "
+										+ new java.text.DecimalFormat("###,###")
+												.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+														.orElse(new EriniumModVariables.PlayerVariables())).cap_xp))),
 										(true));
 					}
 					if (entity instanceof PlayerEntity) {
 						ItemStack _stktoremove = new ItemStack(AmenineLiquid5Item.block);
 						((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) count,
 								((PlayerEntity) entity).container.func_234641_j_());
+					}
+					{
+						String _setval = ("\u00A7a+" + new java.text.DecimalFormat("###,###").format(count * random) + " xp ");
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						String _setval = (new java.text.DecimalFormat("###,###")
+								.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+								+ " / \u00A74"
+								+ new java.text.DecimalFormat("###,###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).cap_xp));
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_message_2 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 60;
+						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.won_xp_overlay_cooldown = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 			} else {
@@ -135,7 +196,7 @@ public class AlchemistSellCommandExecutedProcedure {
 								}
 							}
 						}
-						random = (MathHelper.nextInt(new Random(), 120, 375));
+						random = (MathHelper.nextInt(new Random(), 180, 400));
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new EriniumModVariables.PlayerVariables())).playerXp + count * random);
@@ -146,18 +207,47 @@ public class AlchemistSellCommandExecutedProcedure {
 						}
 						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 							((PlayerEntity) entity)
-									.sendStatusMessage(
-											new StringTextComponent(
-													("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
-															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-															+ " / 100.000")),
+									.sendStatusMessage(new StringTextComponent(("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
+											+ new java.text.DecimalFormat("###,###")
+													.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+															.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+											+ " / "
+											+ new java.text.DecimalFormat("###,###")
+													.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+															.orElse(new EriniumModVariables.PlayerVariables())).cap_xp))),
 											(true));
 						}
 						if (entity instanceof PlayerEntity) {
 							ItemStack _stktoremove = new ItemStack(AmenineLiquid5Item.block);
 							((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) count,
 									((PlayerEntity) entity).container.func_234641_j_());
+						}
+						{
+							String _setval = ("\u00A7a+" + new java.text.DecimalFormat("###,###").format(count * random) + " xp ");
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							String _setval = (new java.text.DecimalFormat("###,###")
+									.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+									+ " / \u00A74"
+									+ new java.text.DecimalFormat("###,###")
+											.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.orElse(new EriniumModVariables.PlayerVariables())).cap_xp));
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_message_2 = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 60;
+							entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.won_xp_overlay_cooldown = _setval;
+								capability.syncPlayerVariables(entity);
+							});
 						}
 					}
 				} else {
@@ -179,7 +269,7 @@ public class AlchemistSellCommandExecutedProcedure {
 									}
 								}
 							}
-							random = (MathHelper.nextInt(new Random(), 120, 200));
+							random = (MathHelper.nextInt(new Random(), 200, 550));
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new EriniumModVariables.PlayerVariables())).playerXp + count * random);
@@ -190,12 +280,47 @@ public class AlchemistSellCommandExecutedProcedure {
 							}
 							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 								((PlayerEntity) entity)
-										.sendStatusMessage(
-												new StringTextComponent(("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
-														+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-														+ " / 100.000")),
+										.sendStatusMessage(new StringTextComponent(("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
+												+ new java.text.DecimalFormat("###,###")
+														.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+												+ " / "
+												+ new java.text.DecimalFormat("###,###")
+														.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																.orElse(new EriniumModVariables.PlayerVariables())).cap_xp))),
 												(true));
+							}
+							if (entity instanceof PlayerEntity) {
+								ItemStack _stktoremove = new ItemStack(AmenineLiquid5Item.block);
+								((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) count,
+										((PlayerEntity) entity).container.func_234641_j_());
+							}
+							{
+								String _setval = ("\u00A7a+" + new java.text.DecimalFormat("###,###").format(count * random) + " xp ");
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								String _setval = (new java.text.DecimalFormat("###,###")
+										.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+												.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+										+ " / \u00A74"
+										+ new java.text.DecimalFormat("###,###")
+												.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+														.orElse(new EriniumModVariables.PlayerVariables())).cap_xp));
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_message_2 = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+							{
+								double _setval = 60;
+								entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.won_xp_overlay_cooldown = _setval;
+									capability.syncPlayerVariables(entity);
+								});
 							}
 						}
 					} else {
@@ -217,7 +342,7 @@ public class AlchemistSellCommandExecutedProcedure {
 										}
 									}
 								}
-								random = (MathHelper.nextInt(new Random(), 10, 90));
+								random = (MathHelper.nextInt(new Random(), 250, 750));
 								{
 									double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new EriniumModVariables.PlayerVariables())).playerXp + count * random);
@@ -229,10 +354,15 @@ public class AlchemistSellCommandExecutedProcedure {
 								if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 									((PlayerEntity) entity)
 											.sendStatusMessage(
-													new StringTextComponent(("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
-															+ (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-																	.orElse(new EriniumModVariables.PlayerVariables())).playerXp
-															+ " / 100.000")),
+													new StringTextComponent(
+															("\u00A7a+" + count * random + " xp " + "\u00A7f| " + "\u00A72"
+																	+ new java.text.DecimalFormat("###,###").format((entity
+																			.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																			.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+																	+ " / "
+																	+ new java.text.DecimalFormat("###,###").format((entity
+																			.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																			.orElse(new EriniumModVariables.PlayerVariables())).cap_xp))),
 													(true));
 								}
 								if (entity instanceof PlayerEntity) {
@@ -240,11 +370,33 @@ public class AlchemistSellCommandExecutedProcedure {
 									((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) count,
 											((PlayerEntity) entity).container.func_234641_j_());
 								}
-							}
-							if (entity instanceof PlayerEntity) {
-								ItemStack _stktoremove = new ItemStack(AmenineLiquid5Item.block);
-								((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) count,
-										((PlayerEntity) entity).container.func_234641_j_());
+								{
+									String _setval = ("\u00A7a+" + new java.text.DecimalFormat("###,###").format(count * random) + " xp ");
+									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.won_xp_message = _setval;
+										capability.syncPlayerVariables(entity);
+									});
+								}
+								{
+									String _setval = (new java.text.DecimalFormat("###,###")
+											.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.orElse(new EriniumModVariables.PlayerVariables())).playerXp)
+											+ " / \u00A74"
+											+ new java.text.DecimalFormat("###,###")
+													.format((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+															.orElse(new EriniumModVariables.PlayerVariables())).cap_xp));
+									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.won_xp_message_2 = _setval;
+										capability.syncPlayerVariables(entity);
+									});
+								}
+								{
+									double _setval = 60;
+									entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.won_xp_overlay_cooldown = _setval;
+										capability.syncPlayerVariables(entity);
+									});
+								}
 							}
 						}
 					}

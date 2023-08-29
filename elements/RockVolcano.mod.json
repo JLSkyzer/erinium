@@ -129,15 +129,9 @@
     "onDestroyedByExplosion": {
       "name": "VolcanoRocksBreak"
     },
-    "spawnWorldTypes": [
-      "CUSTOM:Moon"
-    ],
+    "spawnWorldTypes": [],
     "restrictionBiomes": [],
-    "blocksToReplace": [
-      {
-        "value": "Blocks.AIR"
-      }
-    ],
+    "blocksToReplace": [],
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 10,
     "frequencyOnChunk": 2,

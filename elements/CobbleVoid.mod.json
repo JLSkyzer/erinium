@@ -38,7 +38,7 @@
       "name": "CobbleVoidRightclicked"
     },
     "onRightClickedOnBlock": {
-      "name": "CobbleVoidRightclicked"
+      "name": "CobbleVoidRightclickedOnBlock"
     },
     "onItemInInventoryTick": {
       "name": "CobbleVoidItemInInventoryTick"
