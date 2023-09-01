@@ -26,7 +26,7 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 public class CmdSetEnergyCostCommand {
 	@SubscribeEvent
 	public static void registerCommands(RegisterCommandsEvent event) {
-		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("cmdsetenergycost")
+		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("setenergycost")
 
 				.then(Commands.argument("cost", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();

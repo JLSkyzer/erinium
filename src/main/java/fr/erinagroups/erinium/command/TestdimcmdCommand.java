@@ -26,7 +26,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class TestdimcmdCommand {
 	@SubscribeEvent
 	public static void registerCommands(RegisterCommandsEvent event) {
-		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("testdim").requires(s -> s.hasPermissionLevel(4))
+		event.getDispatcher().register(LiteralArgumentBuilder.<CommandSource>literal("event").requires(s -> s.hasPermissionLevel(3))
 				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();
 					double x = arguments.getSource().getPos().getX();

@@ -12,7 +12,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Block;
 
+import java.util.stream.Stream;
 import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.item.SilverIngotItem;
 import fr.erinagroups.erinium.item.SiliconeFragmentItem;
@@ -125,6 +128,8 @@ public class BreakBlockProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			} else if (((world instanceof World && ((World) world).getRecipeManager()
 					.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 							((World) world))
@@ -187,6 +192,8 @@ public class BreakBlockProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			} else if (((world instanceof World && ((World) world).getRecipeManager()
 					.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 							((World) world))
@@ -249,6 +256,8 @@ public class BreakBlockProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			} else if (((world instanceof World && ((World) world).getRecipeManager()
 					.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 							((World) world))
@@ -311,6 +320,8 @@ public class BreakBlockProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			} else {
 				if (!(((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -414,6 +425,8 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 								((World) world))
@@ -477,6 +490,8 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 								((World) world))
@@ -540,6 +555,8 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 								((World) world))
@@ -603,6 +620,8 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 								((World) world))
@@ -666,6 +685,8 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 								((World) world))
@@ -729,6 +750,8 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if (((world instanceof World && ((World) world).getRecipeManager()
 						.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 								((World) world))
@@ -792,6 +815,8 @@ public class BreakBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else {
 					if (!(((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
@@ -897,6 +922,8 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 									((World) world))
@@ -961,6 +988,8 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 									((World) world))
@@ -1025,6 +1054,8 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 									((World) world))
@@ -1089,6 +1120,8 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 									((World) world))
@@ -1153,6 +1186,8 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 									((World) world))
@@ -1217,6 +1252,8 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if (((world instanceof World && ((World) world).getRecipeManager()
 							.getRecipe(IRecipeType.SMELTING, new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))),
 									((World) world))
@@ -1281,6 +1318,8 @@ public class BreakBlockProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else {
 						if (!(((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
@@ -1386,6 +1425,8 @@ public class BreakBlockProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
 										new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
@@ -1450,6 +1491,8 @@ public class BreakBlockProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
 										new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
@@ -1514,6 +1557,8 @@ public class BreakBlockProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
 										new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
@@ -1578,6 +1623,8 @@ public class BreakBlockProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
 										new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
@@ -1642,6 +1689,8 @@ public class BreakBlockProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if (((world instanceof World && ((World) world).getRecipeManager()
 								.getRecipe(IRecipeType.SMELTING,
 										new Inventory((new ItemStack((world.getBlockState(new BlockPos(x, y, z))).getBlock()))), ((World) world))
@@ -1706,6 +1755,8 @@ public class BreakBlockProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else {
 							if (!(((world instanceof World && ((World) world).getRecipeManager()
 									.getRecipe(IRecipeType.SMELTING,

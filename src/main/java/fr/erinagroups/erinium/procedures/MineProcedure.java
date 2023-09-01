@@ -9,8 +9,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.block.DraniteOreBlock;
 import fr.erinagroups.erinium.EriniumModVariables;
@@ -105,6 +107,8 @@ public class MineProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl < 5) {
@@ -144,6 +148,8 @@ public class MineProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -180,6 +186,8 @@ public class MineProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				}
 			} else {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -220,6 +228,8 @@ public class MineProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -256,6 +266,8 @@ public class MineProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == DraniteOreBlock.block) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -292,6 +304,8 @@ public class MineProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				} else {
 					if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -332,6 +346,8 @@ public class MineProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == DraniteOreBlock.block) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -368,6 +384,8 @@ public class MineProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						}
 					} else {
 						if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -408,6 +426,8 @@ public class MineProcedure {
 										capability.syncPlayerVariables(entity);
 									});
 								}
+								RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+										(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 							}
 						}
 					}

@@ -307,6 +307,84 @@ public class EriniumRankCommandProcedure {
 														}.getEntity()));
 													});
 										}
+										{
+											double _setval = (150000 * 1.065 * DoubleArgumentType.getDouble(arguments, "amount"));
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.cap_xp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
+										{
+											double _setval = (150000 * 1.065 * (DoubleArgumentType.getDouble(arguments, "amount") - 1));
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.old_cap_xp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
+										{
+											double _setval = 0;
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.playerXp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
 										if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 											((PlayerEntity) entity).sendStatusMessage(
 													new StringTextComponent(("\u00A7c[\u00A74LVL\u00A7c] \u00A72set the \u00A7e" + (new Object() {
@@ -366,6 +444,104 @@ public class EriniumRankCommandProcedure {
 														}.getEntity()));
 													});
 										}
+										{
+											double _setval = (((new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.orElse(new EriniumModVariables.PlayerVariables())).cap_xp);
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.old_cap_xp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
+										{
+											double _setval = (((new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.orElse(new EriniumModVariables.PlayerVariables())).old_cap_xp * 1.065);
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.cap_xp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
+										{
+											double _setval = 0;
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.playerXp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
 										if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 											((PlayerEntity) entity)
 													.sendStatusMessage(new StringTextComponent(("\u00A7c[\u00A74LVL\u00A7c] \u00A72Send \u00A7a"
@@ -388,6 +564,80 @@ public class EriniumRankCommandProcedure {
 									}
 								} else if ((StringArgumentType.getString(arguments, "action")).equals("take")) {
 									if (DoubleArgumentType.getDouble(arguments, "amount") >= 1) {
+										{
+											double _setval = (150000 * 1.065 * (((new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.orElse(new EriniumModVariables.PlayerVariables())).playerLvl
+													- (DoubleArgumentType.getDouble(arguments, "amount") - 1)));
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.old_cap_xp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
+										{
+											double _setval = (150000 * 1.065 * (((new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.orElse(new EriniumModVariables.PlayerVariables())).playerLvl
+													- DoubleArgumentType.getDouble(arguments, "amount")));
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.cap_xp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
 										{
 											double _setval = (((new Object() {
 												public Entity getEntity() {
@@ -425,6 +675,32 @@ public class EriniumRankCommandProcedure {
 														}.getEntity()));
 													});
 										}
+										{
+											double _setval = 0;
+											(new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+													.ifPresent(capability -> {
+														capability.playerXp = _setval;
+														capability.syncPlayerVariables((new Object() {
+															public Entity getEntity() {
+																try {
+																	return EntityArgument.getEntity(arguments, "player");
+																} catch (CommandSyntaxException e) {
+																	e.printStackTrace();
+																	return null;
+																}
+															}
+														}.getEntity()));
+													});
+										}
 										if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 											((PlayerEntity) entity)
 													.sendStatusMessage(new StringTextComponent(("\u00A7c[\u00A74LVL\u00A7c] \u00A72Take \u00A7a"
@@ -447,7 +723,7 @@ public class EriniumRankCommandProcedure {
 									}
 								} else if ((StringArgumentType.getString(arguments, "action")).equals("reset")) {
 									{
-										double _setval = 0;
+										double _setval = 1;
 										(new Object() {
 											public Entity getEntity() {
 												try {
@@ -459,6 +735,56 @@ public class EriniumRankCommandProcedure {
 											}
 										}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 											capability.playerLvl = _setval;
+											capability.syncPlayerVariables((new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()));
+										});
+									}
+									{
+										double _setval = 150000;
+										(new Object() {
+											public Entity getEntity() {
+												try {
+													return EntityArgument.getEntity(arguments, "player");
+												} catch (CommandSyntaxException e) {
+													e.printStackTrace();
+													return null;
+												}
+											}
+										}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+											capability.cap_xp = _setval;
+											capability.syncPlayerVariables((new Object() {
+												public Entity getEntity() {
+													try {
+														return EntityArgument.getEntity(arguments, "player");
+													} catch (CommandSyntaxException e) {
+														e.printStackTrace();
+														return null;
+													}
+												}
+											}.getEntity()));
+										});
+									}
+									{
+										double _setval = 0;
+										(new Object() {
+											public Entity getEntity() {
+												try {
+													return EntityArgument.getEntity(arguments, "player");
+												} catch (CommandSyntaxException e) {
+													e.printStackTrace();
+													return null;
+												}
+											}
+										}.getEntity()).getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+											capability.playerXp = _setval;
 											capability.syncPlayerVariables((new Object() {
 												public Entity getEntity() {
 													try {

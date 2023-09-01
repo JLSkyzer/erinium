@@ -9,8 +9,10 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.Entity;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.EriniumModVariables;
 import fr.erinagroups.erinium.EriniumMod;
@@ -88,6 +90,8 @@ public class CraftingProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -126,6 +130,8 @@ public class CraftingProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				}
 			} else {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -164,6 +170,8 @@ public class CraftingProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}
 			}

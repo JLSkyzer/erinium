@@ -80,10 +80,10 @@ public class MinageDisableDamageProcedure {
 							_evt.setCanceled(true);
 					}
 				}
-			}
-			if (immediatesourceentity instanceof PlayerEntity || immediatesourceentity instanceof ServerPlayerEntity) {
-				if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-					((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("\u00A7cYou can't pvp here"), (false));
+				if (immediatesourceentity instanceof PlayerEntity || immediatesourceentity instanceof ServerPlayerEntity) {
+					if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
+						((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("\u00A7cYou can't pvp here"), (false));
+					}
 				}
 			}
 		}

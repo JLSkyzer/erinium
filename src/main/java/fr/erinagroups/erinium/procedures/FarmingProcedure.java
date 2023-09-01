@@ -12,8 +12,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.block.SetanumStage3Block;
 import fr.erinagroups.erinium.EriniumModVariables;
@@ -122,6 +124,8 @@ public class FarmingProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block
 					&& (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 3) {
@@ -160,6 +164,8 @@ public class FarmingProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		} else {
 			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -205,6 +211,8 @@ public class FarmingProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS && (new Object() {
 					public int get(BlockState _bs, String property) {
 						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
@@ -246,6 +254,8 @@ public class FarmingProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
 					public int get(BlockState _bs, String property) {
 						Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
@@ -287,6 +297,8 @@ public class FarmingProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
 					{
 						double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -323,6 +335,8 @@ public class FarmingProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				}
 			} else {
 				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -368,6 +382,8 @@ public class FarmingProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
 						public int get(BlockState _bs, String property) {
 							Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
@@ -409,6 +425,8 @@ public class FarmingProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.MELON) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -445,6 +463,8 @@ public class FarmingProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
 						{
 							double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -481,6 +501,8 @@ public class FarmingProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				} else {
 					if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -526,6 +548,8 @@ public class FarmingProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES && (new Object() {
 							public int get(BlockState _bs, String property) {
 								Property<?> _prop = _bs.getBlock().getStateContainer().getProperty(property);
@@ -567,6 +591,8 @@ public class FarmingProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.MELON) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -603,6 +629,8 @@ public class FarmingProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == SetanumStage3Block.block) {
 							{
 								double _setval = ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -639,6 +667,8 @@ public class FarmingProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
+							RankLevelUpProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						}
 					}
 				}

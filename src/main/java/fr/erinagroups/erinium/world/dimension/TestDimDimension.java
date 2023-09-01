@@ -23,12 +23,9 @@ import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Block;
 
-import java.util.stream.Stream;
 import java.util.Set;
-import java.util.Map;
 import java.util.HashSet;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import java.util.Collections;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 
@@ -47,7 +44,7 @@ public class TestDimDimension extends EriniumModElements.ModElement {
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		Set<Block> replaceableBlocks = new HashSet<>();
-		replaceableBlocks.add(Blocks.DIAMOND_BLOCK);
+		replaceableBlocks.add(Blocks.STONE);
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("plains")).getGenerationSettings().getSurfaceBuilder().get()
 				.getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("plains")).getGenerationSettings().getSurfaceBuilder().get()
@@ -100,10 +97,7 @@ public class TestDimDimension extends EriniumModElements.ModElement {
 		double z = entity.getPosZ();
 		if (event.getTo() == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:test_dim"))) {
 
-			TestDimPlayerEntersDimensionProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			TestDimPlayerEntersDimensionProcedure.executeProcedure(Collections.emptyMap());
 		}
 	}
 }

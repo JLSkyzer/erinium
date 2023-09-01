@@ -12,7 +12,6 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.client.gui.screen.Screen;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -51,14 +50,12 @@ public class DesenchantBookProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == Items.ENCHANTED_BOOK) {
-			if (Screen.hasShiftDown()) {
-				if (entity instanceof LivingEntity) {
-					ItemStack _setstack = new ItemStack(Items.BOOK);
-					_setstack.setCount((int) 1);
-					((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
-					if (entity instanceof ServerPlayerEntity)
-						((ServerPlayerEntity) entity).inventory.markDirty();
-				}
+			if (entity instanceof LivingEntity) {
+				ItemStack _setstack = new ItemStack(Items.BOOK);
+				_setstack.setCount((int) 1);
+				((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+				if (entity instanceof ServerPlayerEntity)
+					((ServerPlayerEntity) entity).inventory.markDirty();
 			}
 		}
 	}

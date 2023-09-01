@@ -628,12 +628,6 @@
     },
     "done": true
   },
-  "cgm:recipes/cgm/mini_gun": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/magenta_stained_glass_pane_from_glass_pane": {
     "criteria": {
       "has_glass_pane": "2022-06-30 12:20:33 +0200"
@@ -745,12 +739,6 @@
   "minecraft:recipes/building_blocks/bookshelf": {
     "criteria": {
       "has_book": "2022-04-02 17:44:47 +0200"
-    },
-    "done": true
-  },
-  "cgm:recipes/cgm/assault_rifle": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
     },
     "done": true
   },
@@ -956,12 +944,6 @@
     },
     "done": true
   },
-  "cgm:recipes/cgm/grenade_launcher": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/tools/stone_pickaxe": {
     "criteria": {
       "has_cobblestone": "2021-12-19 19:01:33 +0100"
@@ -1031,12 +1013,6 @@
   "minecraft:recipes/building_blocks/diamond_block": {
     "criteria": {
       "has_diamond": "2022-04-01 12:14:45 +0200"
-    },
-    "done": true
-  },
-  "cgm:recipes/cgm/heavy_rifle": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
     },
     "done": true
   },
@@ -1196,12 +1172,6 @@
   "minecraft:nether/root": {
     "criteria": {
       "entered_nether": "2022-03-09 21:25:38 +0100"
-    },
-    "done": true
-  },
-  "constructionwand:recipes/tools/iron_wand": {
-    "criteria": {
-      "has_item": "2023-05-27 12:42:55 +0200"
     },
     "done": true
   },
@@ -1417,12 +1387,6 @@
     },
     "done": true
   },
-  "constructionwand:recipes/tools/stone_wand": {
-    "criteria": {
-      "has_item": "2023-05-26 20:04:26 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/white_banner": {
     "criteria": {
       "has_white_wool": "2022-03-09 17:53:02 +0100"
@@ -1444,12 +1408,6 @@
   "minecraft:recipes/decorations/mossy_cobblestone_wall": {
     "criteria": {
       "has_mossy_cobblestone": "2022-03-27 19:19:26 +0200"
-    },
-    "done": true
-  },
-  "cgm:recipes/cgm/machine_pistol": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
     },
     "done": true
   },
@@ -1891,12 +1849,6 @@
     },
     "done": true
   },
-  "cgm:recipes/cgm/rifle": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/cyan_concrete_powder": {
     "criteria": {
       "has_gravel": "2022-07-07 21:04:08 +0200"
@@ -2107,12 +2059,6 @@
     },
     "done": true
   },
-  "cgm:recipes/cgm/workbench": {
-    "criteria": {
-      "has_iron": "2023-05-27 12:42:55 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/golden_helmet": {
     "criteria": {
       "has_gold_ingot": "2022-03-17 18:36:23 +0100"
@@ -2125,21 +2071,9 @@
     },
     "done": true
   },
-  "cgm:recipes/cgm/bazooka": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/white_stained_glass_pane_from_glass_pane": {
     "criteria": {
       "has_glass_pane": "2022-06-30 12:20:33 +0200"
-    },
-    "done": true
-  },
-  "cgm:recipes/cgm/shotgun": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
     },
     "done": true
   },
@@ -2248,12 +2182,6 @@
   "minecraft:recipes/transportation/jungle_boat": {
     "criteria": {
       "in_water": "2022-01-22 16:38:16 +0100"
-    },
-    "done": true
-  },
-  "cgm:recipes/cgm/pistol": {
-    "criteria": {
-      "has_iron_ingot": "2023-05-27 12:42:55 +0200"
     },
     "done": true
   },

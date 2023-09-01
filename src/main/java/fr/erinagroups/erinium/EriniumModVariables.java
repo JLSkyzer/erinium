@@ -190,6 +190,7 @@ public class EriniumModVariables {
 		public boolean essentialPluginEnabled = false;
 		public boolean enablemoddedfeatures = false;
 		public double energysellercost = 0.0;
+		public boolean toggle_pvp = true;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -246,6 +247,7 @@ public class EriniumModVariables {
 			essentialPluginEnabled = nbt.getBoolean("essentialPluginEnabled");
 			enablemoddedfeatures = nbt.getBoolean("enablemoddedfeatures");
 			energysellercost = nbt.getDouble("energysellercost");
+			toggle_pvp = nbt.getBoolean("toggle_pvp");
 		}
 
 		@Override
@@ -295,6 +297,7 @@ public class EriniumModVariables {
 			nbt.putBoolean("essentialPluginEnabled", essentialPluginEnabled);
 			nbt.putBoolean("enablemoddedfeatures", enablemoddedfeatures);
 			nbt.putDouble("energysellercost", energysellercost);
+			nbt.putBoolean("toggle_pvp", toggle_pvp);
 			return nbt;
 		}
 

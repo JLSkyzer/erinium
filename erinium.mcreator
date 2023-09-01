@@ -387,24 +387,7 @@
       "locked_code": false,
       "registry_name": "test_dim_player_enters_dimension",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Server side/TestSide"
     },
@@ -1345,16 +1328,7 @@
       "locked_code": false,
       "registry_name": "test_gravity",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Server side/TestSide"
     },
@@ -1927,6 +1901,10 @@
           {
             "name": "immediatesourceentity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -10658,6 +10636,63 @@
       "locked_code": false,
       "registry_name": "craft_energy_seller",
       "path": "~/Misc System/EnergySeller"
+    },
+    {
+      "name": "TogglePvp",
+      "type": "command",
+      "sortid": 786,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toggle_pvp",
+      "path": "~/Misc System/Pvp mode"
+    },
+    {
+      "name": "PlayerIsAdmin",
+      "type": "procedure",
+      "sortid": 787,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_is_admin",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Server side"
+    },
+    {
+      "name": "CmdTogglePvp",
+      "type": "procedure",
+      "sortid": 787,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_toggle_pvp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Pvp mode"
+    },
+    {
+      "name": "Disenchant",
+      "type": "command",
+      "sortid": 788,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disenchant",
+      "path": "~/Misc System/BetterVanilla"
     }
   ],
   "variable_elements": [
@@ -11254,6 +11289,12 @@
       "type": "number",
       "scope": "map",
       "value": "0.0"
+    },
+    {
+      "name": "toggle_pvp",
+      "type": "logic",
+      "scope": "map",
+      "value": "true"
     }
   ],
   "sound_elements": [

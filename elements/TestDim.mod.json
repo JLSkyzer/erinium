@@ -9,17 +9,17 @@
     ],
     "worldGenType": "Normal world gen",
     "mainFillerBlock": {
-      "value": "Blocks.DIAMOND_BLOCK"
+      "value": "Blocks.STONE#0"
     },
     "fluidBlock": {
       "value": "Blocks.FLOWING_WATER"
     },
-    "canRespawnHere": false,
+    "canRespawnHere": true,
     "hasFog": false,
     "isDark": false,
     "doesWaterVaporize": false,
     "sleepResult": "ALLOW",
-    "hasSkyLight": false,
+    "hasSkyLight": true,
     "imitateOverworldBehaviour": false,
     "onPlayerEntersDimension": {
       "name": "TestDimPlayerEntersDimension"
