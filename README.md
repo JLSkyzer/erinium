@@ -1,6 +1,7 @@
 <h2 style="text-align: left;"><strong>Erinium mods</strong></h2>
 <hr />
 <p>Mod create by&nbsp;<span style="color: #ff0000;"><a style="color: #ff0000;" href="https://www.curseforge.com/members/jlskyzer/projects">@JLSkyzer</a></span></p>
+<p>Ce mod est privée, il est donc interdit de copier le code ou de l'utiliser dans vos projets sans mon autorisation ou sans ma présence</p>
 <p>&nbsp;Wiki : <a title="Erinium Wiki" href="https://erinium-wiki.netlify.app" target="_blank" rel="noopener noreferrer">Erinium Wiki</a></p>
 <hr />
 <p style="text-align: left;"><a href="https://img.shields.io/github/downloads/jlskyzer/erinium/1.16.5/total?color=red&amp;logo=download%201.16.5&amp;logoColor=blue&amp;style=flat-square"><br /><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img.shields.io/github/last-commit/JLSkyzer/erinium?color=lightgrey&amp;label=Last%20update" width="175" height="24" /><br /></a></p>
