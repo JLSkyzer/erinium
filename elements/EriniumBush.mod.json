@@ -16,7 +16,7 @@
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "leaves_custom",
-    "tintType": "Grass",
+    "tintType": "Foliage",
     "isItemTinted": true,
     "hasTransparency": true,
     "connectedSides": false,
@@ -124,7 +124,12 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "spawnWorldTypes": [
-      "Surface"
+      "CUSTOM:FactionAlpha",
+      "CUSTOM:FactionBeta",
+      "CUSTOM:FactionCharlie",
+      "CUSTOM:Minage01",
+      "CUSTOM:Minage02",
+      "CUSTOM:Minage03"
     ],
     "restrictionBiomes": [
       {

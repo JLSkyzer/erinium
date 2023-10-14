@@ -24,7 +24,7 @@ import net.minecraft.world.biome.BiomeColors;
 import net.minecraft.world.World;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.GrassColors;
+import net.minecraft.world.FoliageColors;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.math.BlockPos;
@@ -85,7 +85,7 @@ public class EriniumBushBlock extends EriniumModElements.ModElement {
 		@SubscribeEvent
 		public void blockColorLoad(ColorHandlerEvent.Block event) {
 			event.getBlockColors().register((bs, world, pos, index) -> {
-				return world != null && pos != null ? BiomeColors.getGrassColor(world, pos) : GrassColors.get(0.5D, 1.0D);
+				return world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.getDefault();
 			}, block);
 		}
 	}
@@ -95,7 +95,7 @@ public class EriniumBushBlock extends EriniumModElements.ModElement {
 		@SubscribeEvent
 		public void itemColorLoad(ColorHandlerEvent.Item event) {
 			event.getItemColors().register((stack, index) -> {
-				return GrassColors.get(0.5D, 1.0D);
+				return FoliageColors.getDefault();
 			}, block);
 		}
 	}
@@ -155,7 +155,17 @@ public class EriniumBushBlock extends EriniumModElements.ModElement {
 				public boolean generate(ISeedReader world, ChunkGenerator generator, Random rand, BlockPos pos, OreFeatureConfig config) {
 					RegistryKey<World> dimensionType = world.getWorld().getDimensionKey();
 					boolean dimensionCriteria = false;
-					if (dimensionType == World.OVERWORLD)
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_alpha")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_beta")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:faction_charlie")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_01")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_02")))
+						dimensionCriteria = true;
+					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("erinium:minage_03")))
 						dimensionCriteria = true;
 					if (!dimensionCriteria)
 						return false;
