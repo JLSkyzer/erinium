@@ -13962,6 +13962,72 @@
         ]
       },
       "path": "~/Misc System/Rank System/Won Xp/Text"
+    },
+    {
+      "name": "ReturnEnergy",
+      "type": "procedure",
+      "sortid": 808,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_energy",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/erinagroups/erinium/procedures/ReturnEnergyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "ReturnMaxEnergy",
+      "type": "procedure",
+      "sortid": 809,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_max_energy",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/erinagroups/erinium/procedures/ReturnMaxEnergyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Astral Miner"
     }
   ],
   "variable_elements": [
