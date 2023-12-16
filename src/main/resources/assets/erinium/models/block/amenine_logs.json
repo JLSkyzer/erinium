@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/amenine_logs",
-    "up": "erinium:blocks/amenine_logs",
-    "north": "erinium:blocks/amenine_logs",
-    "east": "erinium:blocks/amenine_logs",
-    "south": "erinium:blocks/amenine_logs",
-    "west": "erinium:blocks/amenine_logs",
-    "particle": "erinium:blocks/amenine_logs"
-  }
+    "down": "erinium:block/amenine_logs",
+    "up": "erinium:block/amenine_logs",
+    "north": "erinium:block/amenine_logs",
+    "east": "erinium:block/amenine_logs",
+    "south": "erinium:block/amenine_logs",
+    "west": "erinium:block/amenine_logs",
+    "particle": "erinium:block/amenine_logs"
+  },
+  "render_type": "solid"
 }

@@ -1,54 +1,22 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
 
-import java.util.Map;
-
-import fr.erinagroups.erinium.block.BlockSetterBlock;
-import fr.erinagroups.erinium.EriniumModVariables;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.network.EriniumModVariables;
+import fr.erinagroups.erinium.init.EriniumModBlocks;
 
 public class HomeTeleporterClickOnBlockProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure HomeTeleporterClickOnBlock!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure HomeTeleporterClickOnBlock!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure HomeTeleporterClickOnBlock!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure HomeTeleporterClickOnBlock!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure HomeTeleporterClickOnBlock!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == BlockSetterBlock.block) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EriniumModBlocks.BLOCK_SETTER.get()) {
 			if (x != 0 && y != 0 && z != 0) {
-				if ((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (World.OVERWORLD)) {
+				if ((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == Level.OVERWORLD) {
 					{
 						String _setval = "Overworld";
 						entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -77,19 +45,15 @@ public class HomeTeleporterClickOnBlockProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aHome is set, do \u00A7e/gohome"), (false));
-					}
+					if (entity instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7aHome is set, do \u00A7e/gohome"), false);
 				} else {
-					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cError : Dimension interdite"), (false));
-					}
+					if (entity instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7cError : Dimension interdite"), false);
 				}
 			} else {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity)
-							.sendStatusMessage(new StringTextComponent("\u00A7c Error : you cannot set a home setter in x 0 / y 0 / z 0"), (false));
-				}
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7c Error : you cannot set a home setter in x 0 / y 0 / z 0"), false);
 			}
 		}
 	}

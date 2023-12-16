@@ -1,7 +1,8 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "erinium:blocks/lantern_plant",
-    "particle": "erinium:blocks/lantern_plant"
-  }
+    "cross": "erinium:block/lantern_plant",
+    "particle": "erinium:block/lantern_plant"
+  },
+  "render_type": "cutout"
 }

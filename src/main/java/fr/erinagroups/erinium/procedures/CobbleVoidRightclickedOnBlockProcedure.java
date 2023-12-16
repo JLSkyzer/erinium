@@ -1,84 +1,45 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
 
-import java.util.Map;
-
-import fr.erinagroups.erinium.block.CobbleVoidStationBlock;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModBlocks;
 
 public class CobbleVoidRightclickedOnBlockProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure CobbleVoidRightclickedOnBlock!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure CobbleVoidRightclickedOnBlock!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure CobbleVoidRightclickedOnBlock!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure CobbleVoidRightclickedOnBlock!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure CobbleVoidRightclickedOnBlock!");
-			return;
-		}
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				EriniumMod.LOGGER.warn("Failed to load dependency itemstack for procedure CobbleVoidRightclickedOnBlock!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == CobbleVoidStationBlock.block) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EriniumModBlocks.COBBLE_VOID_STATION.get()) {
 			if (itemstack.getOrCreateTag().getDouble("count") >= 100) {
 				while (itemstack.getOrCreateTag().getDouble("count") >= 100) {
 					itemstack.getOrCreateTag().putDouble("count", (itemstack.getOrCreateTag().getDouble("count") - 100));
-					if (!world.isRemote()) {
-						BlockPos _bp = new BlockPos(x, y, z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putDouble("dollars", (new Object() {
-								public double getValue(IWorld world, BlockPos pos, String tag) {
-									TileEntity tileEntity = world.getTileEntity(pos);
-									if (tileEntity != null)
-										return tileEntity.getTileData().getDouble(tag);
+						if (_blockEntity != null)
+							_blockEntity.getPersistentData().putDouble("dollars", (new Object() {
+								public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+									BlockEntity blockEntity = world.getBlockEntity(pos);
+									if (blockEntity != null)
+										return blockEntity.getPersistentData().getDouble(tag);
 									return -1;
 								}
-							}.getValue(world, new BlockPos(x, y, z), "dollars") + 5));
-						if (world instanceof World)
-							((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
+							}.getValue(world, BlockPos.containing(x, y, z), "dollars") + 5));
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 					}
 				}
 			} else {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cYou don't have enough blocks ! (100 mini)"), (false));
-				}
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7cYou don't have enough blocks ! (100 mini)"), false);
 			}
 		}
 	}

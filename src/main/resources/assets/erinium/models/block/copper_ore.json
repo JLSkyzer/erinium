@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/copper_ore",
-    "up": "erinium:blocks/copper_ore",
-    "north": "erinium:blocks/copper_ore",
-    "east": "erinium:blocks/copper_ore",
-    "south": "erinium:blocks/copper_ore",
-    "west": "erinium:blocks/copper_ore",
-    "particle": "erinium:blocks/copper_ore"
-  }
+    "down": "erinium:block/copper_ore",
+    "up": "erinium:block/copper_ore",
+    "north": "erinium:block/copper_ore",
+    "east": "erinium:block/copper_ore",
+    "south": "erinium:block/copper_ore",
+    "west": "erinium:block/copper_ore",
+    "particle": "erinium:block/copper_ore"
+  },
+  "render_type": "solid"
 }

@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "biome",
   "definition": {
     "name": "Icy Forest",
@@ -52,21 +52,29 @@
     "particlesProbability": 0.5,
     "rainingPossibility": 0.6,
     "temperature": 0.1,
-    "baseHeight": 0.1,
-    "heightVariation": 0.4,
-    "spawnBiome": false,
-    "spawnBiomeNether": false,
+    "spawnBiome": true,
     "spawnInCaves": false,
-    "biomeWeight": 10,
-    "grassPerChunk": 4,
-    "seagrassPerChunk": 0,
-    "flowersPerChunk": 2,
-    "mushroomsPerChunk": 4,
-    "bigMushroomsChunk": 1,
-    "sandPatchesPerChunk": 0,
-    "gravelPatchesPerChunk": 0,
-    "reedsPerChunk": 0,
-    "cactiPerChunk": 0,
+    "spawnBiomeNether": false,
+    "genTemperature": {
+      "min": -0.4666666666666666,
+      "max": -0.0666666666666666
+    },
+    "genHumidity": {
+      "min": -5.551115123125783E-17,
+      "max": 0.39999999999999997
+    },
+    "genContinentalness": {
+      "min": 0.31,
+      "max": 0.71
+    },
+    "genErosion": {
+      "min": 0.4000000000000001,
+      "max": 0.8
+    },
+    "genWeirdness": {
+      "min": -0.049917074822372565,
+      "max": 0.35008292517762746
+    },
     "treesPerChunk": 15,
     "vanillaTreeType": "Mega spruce trees",
     "treeType": 1,
@@ -83,6 +91,19 @@
     "treeFruits": {
       "value": "Blocks.AIR"
     },
+    "defaultFeatures": [
+      "Caves",
+      "Ores",
+      "FrozenTopLayer",
+      "JungleTreeForest",
+      "JungleGrass",
+      "Lakes",
+      "OceanCaves",
+      "ExtraEmeraldOre",
+      "TaigaRocks",
+      "ForestGrass",
+      "DefaultFlowers"
+    ],
     "spawnStronghold": true,
     "spawnMineshaft": true,
     "spawnMineshaftMesa": false,
@@ -103,17 +124,6 @@
     "spawnBastionRemnant": false,
     "spawnEndCity": false,
     "spawnRuinedPortal": "NONE",
-    "defaultFeatures": [
-      "Caves",
-      "Ores",
-      "FrozenTopLayer",
-      "JungleTreeForest",
-      "JungleGrass",
-      "Lakes",
-      "OceanCaves",
-      "ExtraEmeraldOre",
-      "TaigaRocks"
-    ],
     "spawnEntries": []
   }
 }

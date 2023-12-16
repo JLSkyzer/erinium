@@ -2,65 +2,31 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.fml.loading.FMLPaths;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.vector.Vector2f;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.command.ICommandSource;
-import net.minecraft.command.CommandSource;
-
-import java.util.Map;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 
-import fr.erinagroups.erinium.EriniumMod;
-
 import com.google.gson.Gson;
 
 public class RtpdimCommandExecutedProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure RtpdimCommandExecuted!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure RtpdimCommandExecuted!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure RtpdimCommandExecuted!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure RtpdimCommandExecuted!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure RtpdimCommandExecuted!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
 		File file = new File("");
 		boolean Toggled = false;
 		com.google.gson.JsonObject MainJsonObject = new com.google.gson.JsonObject();
-		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "config.json");
+		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/"), File.separator + "config.json");
 		if (file.exists()) {
 			{
 				try {
@@ -73,19 +39,13 @@ public class RtpdimCommandExecutedProcedure {
 					bufferedReader.close();
 					MainJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					if (MainJsonObject.get("toggle.tpdim").getAsBoolean() == true) {
-						if (world instanceof ServerWorld) {
-							((World) world).getServer().getCommandManager().handleCommand(
-									new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-											new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 									("spreadplayers " + x + " " + z + " 1000 10000 false " + entity.getDisplayName().getString()));
-						}
 					} else {
-						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cCommande d\u00E9sactiver (Disabled) !"),
-									(false));
-						}
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cCommande d\u00E9sactiver (Disabled) !"), false);
 					}
-
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

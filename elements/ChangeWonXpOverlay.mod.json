@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,12 +13,15 @@
       {
         "type": "label",
         "data": {
-          "text": "x : <VAR:integer:rank_overlay_x>",
+          "name": "label_x_varintegerrank_overlay_x",
+          "text": {
+            "fixedValue": "x : <VAR:integer:rank_overlay_x>",
+            "name": "RankOverlayXString"
+          },
           "color": {
             "value": -3407872,
             "falpha": 0.0
           },
-          "name": "x : <VAR:integer:rank_overlay_x>",
           "x": 132,
           "y": 53
         }
@@ -27,9 +30,9 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
+          "name": "inputX",
           "width": 90,
           "height": 20,
-          "name": "inputX",
           "x": 132,
           "y": 71
         }
@@ -37,12 +40,15 @@
       {
         "type": "label",
         "data": {
-          "text": "y : <VAR:integer:rank_overlay_y>",
+          "name": "label_y_varintegerrank_overlay_y",
+          "text": {
+            "fixedValue": "y : <VAR:integer:rank_overlay_y>",
+            "name": "RankOverlayYString"
+          },
           "color": {
             "value": -3407872,
             "falpha": 0.0
           },
-          "name": "y : <VAR:integer:rank_overlay_y>",
           "x": 132,
           "y": 98
         }
@@ -51,9 +57,9 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
+          "name": "inputY",
           "width": 90,
           "height": 20,
-          "name": "inputY",
           "x": 132,
           "y": 116
         }
@@ -61,13 +67,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_set_x",
           "text": "Set X",
           "onClick": {
             "name": "SetXProcedures"
           },
           "width": 45,
           "height": 20,
-          "name": "Set X",
           "x": 231,
           "y": 71
         }
@@ -75,13 +81,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_set_y",
           "text": "Set Y",
           "onClick": {
             "name": "SetYProcedures"
           },
           "width": 45,
           "height": 20,
-          "name": "Set Y",
           "x": 231,
           "y": 116
         }
@@ -89,13 +95,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_test",
           "text": "Test",
           "onClick": {
             "name": "RankWonXpOverlayTestBtn"
           },
           "width": 54,
           "height": 20,
-          "name": "Test",
           "x": 186,
           "y": 170
         }

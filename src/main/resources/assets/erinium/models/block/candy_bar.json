@@ -1,8 +1,9 @@
 {
   "parent": "erinium:custom/candy_bar",
   "textures": {
-    "all": "erinium:blocks/candy_bar_text",
-    "particle": "erinium:blocks/candy_bar_text",
-    "0": "erinium:blocks/candy_bar_text"
-  }
+    "all": "erinium:block/candy_bar_text",
+    "particle": "erinium:block/candy_bar_text",
+    "0": "erinium:block/candy_bar_text"
+  },
+  "render_type": "cutout"
 }

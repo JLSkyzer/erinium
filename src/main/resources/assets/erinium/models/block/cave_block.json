@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/cave_block",
-    "up": "erinium:blocks/cave_block",
-    "north": "erinium:blocks/cave_block",
-    "east": "erinium:blocks/cave_block",
-    "south": "erinium:blocks/cave_block",
-    "west": "erinium:blocks/cave_block",
-    "particle": "erinium:blocks/cave_block"
-  }
+    "down": "erinium:block/cave_block",
+    "up": "erinium:block/cave_block",
+    "north": "erinium:block/cave_block",
+    "east": "erinium:block/cave_block",
+    "south": "erinium:block/cave_block",
+    "west": "erinium:block/cave_block",
+    "particle": "erinium:block/cave_block"
+  },
+  "render_type": "cutout_mipped"
 }

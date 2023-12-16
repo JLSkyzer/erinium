@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "livingentity",
   "definition": {
     "mobName": "Tree Boss",
@@ -50,6 +50,7 @@
     "attackKnockback": 0.1,
     "knockbackResistance": 0.1,
     "movementSpeed": 0.5,
+    "stepHeight": 0.6,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
@@ -92,13 +93,6 @@
     "stepSound": {
       "value": ""
     },
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
     "whenMobIsHurt": {
       "name": "TreeBossEntityIsHurt"
     },
@@ -116,6 +110,8 @@
       "value": ""
     },
     "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
     "spawningCondition": {

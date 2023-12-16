@@ -1,64 +1,32 @@
 
 package fr.erinagroups.erinium.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.block.BlockState;
-
-import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
-
-@EriniumModElements.ModElement.Tag
-public class HackedUsbKeyItem extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:hacked_usb_key")
-	public static final Item block = null;
-
-	public HackedUsbKeyItem(EriniumModElements instance) {
-		super(instance, 635);
+public class HackedUsbKeyItem extends Item {
+	public HackedUsbKeyItem() {
+		super(new Item.Properties().durability(100).fireResistant().rarity(Rarity.RARE));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
+	public boolean hasCraftingRemainingItem() {
+		return true;
 	}
 
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxDamage(100).isImmuneToFire().rarity(Rarity.RARE));
-			setRegistryName("hacked_usb_key");
+	@Override
+	public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
+		ItemStack retval = new ItemStack(this);
+		retval.setDamageValue(itemstack.getDamageValue() + 1);
+		if (retval.getDamageValue() >= retval.getMaxDamage()) {
+			return ItemStack.EMPTY;
 		}
+		return retval;
+	}
 
-		@Override
-		public boolean hasContainerItem() {
-			return true;
-		}
-
-		@Override
-		public ItemStack getContainerItem(ItemStack itemstack) {
-			ItemStack retval = new ItemStack(this);
-			retval.setDamage(itemstack.getDamage() + 1);
-			if (retval.getDamage() >= retval.getMaxDamage()) {
-				return ItemStack.EMPTY;
-			}
-			return retval;
-		}
-
-		@Override
-		public boolean isRepairable(ItemStack itemstack) {
-			return false;
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 1F;
-		}
+	@Override
+	public boolean isRepairable(ItemStack itemstack) {
+		return false;
 	}
 }

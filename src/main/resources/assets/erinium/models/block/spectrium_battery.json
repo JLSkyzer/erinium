@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/spectrium_block",
-    "up": "erinium:blocks/spectrium_block",
-    "north": "erinium:blocks/spectrium_battery",
-    "east": "erinium:blocks/spectrium_battery",
-    "south": "erinium:blocks/spectrium_battery",
-    "west": "erinium:blocks/spectrium_battery",
-    "particle": "erinium:blocks/spectrium_block"
-  }
+    "down": "erinium:block/spectrium_block",
+    "up": "erinium:block/spectrium_block",
+    "north": "erinium:block/spectrium_battery",
+    "east": "erinium:block/spectrium_battery",
+    "south": "erinium:block/spectrium_battery",
+    "west": "erinium:block/spectrium_battery",
+    "particle": "erinium:block/spectrium_block"
+  },
+  "render_type": "solid"
 }

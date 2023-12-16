@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/hacked_usb_key"
+    "layer0": "erinium:item/hacked_usb_key"
   }
 }

@@ -2,49 +2,33 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.World;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.Entity;
 
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
-import fr.erinagroups.erinium.EriniumModVariables;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.network.EriniumModVariables;
 
+@Mod.EventBusSubscriber
 public class PlanetVarUpdateProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-			if (event.phase == TickEvent.Phase.END) {
-				Entity entity = event.player;
-				World world = entity.world;
-				double i = entity.getPosX();
-				double j = entity.getPosY();
-				double k = entity.getPosZ();
-				Map<String, Object> dependencies = new HashMap<>();
-				dependencies.put("x", i);
-				dependencies.put("y", j);
-				dependencies.put("z", k);
-				dependencies.put("world", world);
-				dependencies.put("entity", entity);
-				dependencies.put("event", event);
-				executeProcedure(dependencies);
-			}
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player);
 		}
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure PlanetVarUpdate!");
+	public static void execute(Entity entity) {
+		execute(null, entity);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
 		{
-			String _setval = ("" + entity.world.getDimensionKey());
+			String _setval = "" + entity.level().dimension();
 			entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.planete = _setval;
 				capability.syncPlayerVariables(entity);

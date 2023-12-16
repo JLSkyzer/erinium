@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "overlay",
   "definition": {
     "priority": "HIGHEST",
@@ -9,7 +9,6 @@
         "data": {
           "image": "chest_finder.png",
           "use1Xscale": true,
-          "name": "chest_finder.png",
           "x": 2,
           "y": 2
         }
@@ -17,12 +16,14 @@
       {
         "type": "label",
         "data": {
-          "text": "§c§l<VAR:percent> %",
+          "name": "label_sscsslvarpercent",
+          "text": {
+            "fixedValue": "§c§l<VAR:percent> %"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "§c§l<VAR:percent> %",
           "x": 21,
           "y": 63
         }

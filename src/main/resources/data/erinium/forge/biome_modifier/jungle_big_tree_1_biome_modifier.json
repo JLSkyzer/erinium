@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "erinium:magical_forest",
+  "features": "erinium:jungle_big_tree_1",
+  "step": "surface_structures"
+}

@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/setanum_block",
-    "up": "erinium:blocks/setanum_block",
-    "north": "erinium:blocks/setanum_block",
-    "east": "erinium:blocks/setanum_block",
-    "south": "erinium:blocks/setanum_block",
-    "west": "erinium:blocks/setanum_block",
-    "particle": "erinium:blocks/setanum_block"
-  }
+    "down": "erinium:block/setanum_block",
+    "up": "erinium:block/setanum_block",
+    "north": "erinium:block/setanum_block",
+    "east": "erinium:block/setanum_block",
+    "south": "erinium:block/setanum_block",
+    "west": "erinium:block/setanum_block",
+    "particle": "erinium:block/setanum_block"
+  },
+  "render_type": "solid"
 }

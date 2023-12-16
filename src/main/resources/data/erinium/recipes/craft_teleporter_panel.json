@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
     "0",
     "1",
@@ -17,7 +18,7 @@
     }
   },
   "result": {
-    "item": "erinium:spatial_teleporter_panel",
+    "item": "erinium:deleted_mod_element",
     "count": 1
   }
 }

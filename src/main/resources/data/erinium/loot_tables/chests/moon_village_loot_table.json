@@ -147,5 +147,6 @@
         }
       ]
     }
-  ]
+  ],
+  "random_sequence": "erinium:chests/moon_village_loot_table"
 }

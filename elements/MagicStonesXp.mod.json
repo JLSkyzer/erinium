@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "magic_stones_xp",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "§l§oMagic Stones §2§l§oXp",
     "rarity": "EPIC",
     "creativeTab": {

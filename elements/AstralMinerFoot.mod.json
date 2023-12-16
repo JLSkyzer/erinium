@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "astral_miner_foot",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Astral Miner Foot",
     "rarity": "COMMON",
     "creativeTab": {

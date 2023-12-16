@@ -1,34 +1,24 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
 
-import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 
-import fr.erinagroups.erinium.EriniumMod;
-
 public class TestListCommandExecutedProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure TestListCommandExecuted!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
 		List<Object> test = new ArrayList<>();
 		test.clear();
 		test.add("Alpha");
 		test.add("Beta");
 		test.add("Charlie");
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("" + test)), (false));
-		}
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(("The size : " + test.size())), (false));
-		}
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal(("" + test)), false);
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal(("The size : " + test.size())), false);
 	}
 }

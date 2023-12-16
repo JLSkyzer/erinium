@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/bomb"
+    "layer0": "erinium:item/bomb"
   },
   "display": {
     "thirdperson_righthand": {

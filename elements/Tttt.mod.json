@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<BNBT:number:process>",
+          "name": "label_bnbtnumberprocess",
+          "text": {
+            "fixedValue": "<BNBT:number:process>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<BNBT:number:process>",
           "x": 153,
           "y": 56
         }

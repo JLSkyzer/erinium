@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Label text",
+          "name": "label_label_text",
+          "text": {
+            "fixedValue": "Label text"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Label text",
           "x": 176,
           "y": 50
         }
@@ -29,13 +31,17 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": true
+          },
           "id": 0,
-          "disableStackInteraction": true,
+          "disablePickup": {
+            "fixedValue": true
+          },
           "dropItemsWhenNotBound": false,
           "onTakenFromSlot": {
             "name": "Slot0taken"
           },
-          "name": "Slot #0",
           "x": 181,
           "y": 71
         }
@@ -45,7 +51,6 @@
         "data": {
           "image": "preset_gui.png",
           "use1Xscale": false,
-          "name": "preset_gui.png",
           "x": 0,
           "y": 0
         }

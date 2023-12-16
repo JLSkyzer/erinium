@@ -1,9 +1,0 @@
-{
-  "_fv": 34,
-  "_type": "command",
-  "definition": {
-    "commandName": "uuid",
-    "permissionLevel": "No requirement",
-    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"entity\"><field name=\"name\">playerName</field><field name=\"type\">player</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">UuidProcedure</field></block></statement></block></next></block></xml>"
-  }
-}

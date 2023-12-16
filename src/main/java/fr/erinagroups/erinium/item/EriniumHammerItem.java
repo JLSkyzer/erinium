@@ -1,75 +1,52 @@
 
 package fr.erinagroups.erinium.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.block.BlockState;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.core.BlockPos;
 
 import fr.erinagroups.erinium.procedures.BasicHammerProcedure;
-import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
+import fr.erinagroups.erinium.init.EriniumModItems;
 
-@EriniumModElements.ModElement.Tag
-public class EriniumHammerItem extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:erinium_hammer")
-	public static final Item block = null;
-
-	public EriniumHammerItem(EriniumModElements instance) {
-		super(instance, 9);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new PickaxeItem(new IItemTier() {
-			public int getMaxUses() {
+public class EriniumHammerItem extends PickaxeItem {
+	public EriniumHammerItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 2600;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 14f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 2f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 5;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 30;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(EriniumIngotItem.block));
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EriniumModItems.ERINIUM_INGOT.get()));
 			}
-		}, 1, -3f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
-			@Override
-			public boolean onBlockDestroyed(ItemStack itemstack, World world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
-				boolean retval = super.onBlockDestroyed(itemstack, world, blockstate, pos, entity);
-				int x = pos.getX();
-				int y = pos.getY();
-				int z = pos.getZ();
+		}, 1, -3f, new Item.Properties());
+	}
 
-				BasicHammerProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-						new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-				return retval;
-			}
-		}.setRegistryName("erinium_hammer"));
+	@Override
+	public boolean mineBlock(ItemStack itemstack, Level world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
+		boolean retval = super.mineBlock(itemstack, world, blockstate, pos, entity);
+		BasicHammerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		return retval;
 	}
 }

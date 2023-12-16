@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Cobble Void Station",
+          "name": "label_cobble_void_station",
+          "text": {
+            "fixedValue": "Cobble Void Station"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Cobble Void Station",
           "x": 128,
           "y": 40
         }
@@ -26,12 +28,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Dollars : §e<BNBT:number:dollars>$",
+          "name": "label_dollars_ssebnbtnumberdollars",
+          "text": {
+            "fixedValue": "Dollars : §e<BNBT:number:dollars>$"
+          },
           "color": {
             "value": -14108411,
             "falpha": 0.0
           },
-          "name": "Dollars : §e<BNBT:number:dollars>$",
           "x": 129,
           "y": 88
         }
@@ -39,13 +43,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_send_dollars",
           "text": "Send dollars",
           "onClick": {
             "name": "CobbleVoidBtnSendDollard"
           },
           "width": 93,
           "height": 20,
-          "name": "Send dollars",
           "x": 129,
           "y": 98
         }
@@ -53,12 +57,14 @@
       {
         "type": "label",
         "data": {
-          "text": "100 blocks = 5$",
+          "name": "label_100_blocks_5",
+          "text": {
+            "fixedValue": "100 blocks = 5$"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "100 blocks = 5$",
           "x": 128,
           "y": 48
         }

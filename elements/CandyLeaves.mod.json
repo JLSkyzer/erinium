@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "block",
   "definition": {
     "texture": "candy_leaves",
@@ -100,16 +100,7 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": -1,
-    "spawnParticles": true,
-    "particleToSpawn": {
-      "value": "CUSTOM:CandyLeavesParticle"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 1,
-    "particleCondition": {
-      "name": "CandyLeavesParticleSpawningCondition"
-    },
+    "isBonemealable": false,
     "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,

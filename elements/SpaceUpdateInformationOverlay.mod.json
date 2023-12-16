@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "overlay",
   "definition": {
     "priority": "HIGHEST",
@@ -9,7 +9,6 @@
         "data": {
           "image": "planet_overlay_background.png",
           "use1Xscale": true,
-          "name": "planet_overlay_background.png",
           "x": 0,
           "y": 0
         }
@@ -17,12 +16,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Planete : ",
+          "name": "label_planete",
+          "text": {
+            "fixedValue": "Planete : "
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Planete : ",
           "x": 1,
           "y": 1
         }
@@ -30,12 +31,14 @@
       {
         "type": "label",
         "data": {
-          "text": "�a<VAR:planete>",
+          "name": "label_avarplanete",
+          "text": {
+            "fixedValue": "�a<VAR:planete>"
+          },
           "color": {
             "value": -13641472,
             "falpha": 0.0
           },
-          "name": "�a<VAR:planete>",
           "x": 1,
           "y": 10
         }

@@ -1,187 +1,136 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.state.Property;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.core.BlockPos;
 
 import java.util.Map;
 
-import fr.erinagroups.erinium.item.EmptyBottleItem;
-import fr.erinagroups.erinium.item.AmenineLiquid5Item;
-import fr.erinagroups.erinium.item.AmenineLiquid4Item;
-import fr.erinagroups.erinium.item.AmenineLiquid3Item;
-import fr.erinagroups.erinium.item.AmenineLiquid2Item;
-import fr.erinagroups.erinium.item.AmenineLiquid1Item;
-import fr.erinagroups.erinium.block.ExtractorBottleEmptyBlock;
-import fr.erinagroups.erinium.block.ExtractorAmenine5Block;
-import fr.erinagroups.erinium.block.ExtractorAmenine4Block;
-import fr.erinagroups.erinium.block.ExtractorAmenine3Block;
-import fr.erinagroups.erinium.block.ExtractorAmenine2Block;
-import fr.erinagroups.erinium.block.ExtractorAmenine1Block;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModItems;
+import fr.erinagroups.erinium.init.EriniumModBlocks;
 
 public class ExtractorEmptyOnBlockRightClickedProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure ExtractorEmptyOnBlockRightClicked!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure ExtractorEmptyOnBlockRightClicked!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure ExtractorEmptyOnBlockRightClicked!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure ExtractorEmptyOnBlockRightClicked!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure ExtractorEmptyOnBlockRightClicked!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == EmptyBottleItem.block) {
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EriniumModItems.EMPTY_BOTTLE.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorBottleEmptyBlock.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_BOTTLE_EMPTY.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(EmptyBottleItem.block);
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+			if (entity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(EriniumModItems.EMPTY_BOTTLE.get());
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 			}
-		} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == AmenineLiquid1Item.block) {
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EriniumModItems.AMENINE_LIQUID_1.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorAmenine1Block.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_AMENINE_1.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(AmenineLiquid1Item.block);
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+			if (entity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(EriniumModItems.AMENINE_LIQUID_1.get());
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 			}
-		} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == AmenineLiquid2Item.block) {
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EriniumModItems.AMENINE_LIQUID_2.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorAmenine2Block.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_AMENINE_2.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(AmenineLiquid2Item.block);
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+			if (entity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(EriniumModItems.AMENINE_LIQUID_2.get());
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 			}
-		} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == AmenineLiquid3Item.block) {
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EriniumModItems.AMENINE_LIQUID_3.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorAmenine3Block.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_AMENINE_3.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(AmenineLiquid3Item.block);
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+			if (entity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(EriniumModItems.AMENINE_LIQUID_3.get());
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 			}
-		} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == AmenineLiquid4Item.block) {
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EriniumModItems.AMENINE_LIQUID_4.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorAmenine4Block.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_AMENINE_4.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(AmenineLiquid4Item.block);
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+			if (entity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(EriniumModItems.AMENINE_LIQUID_4.get());
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 			}
-		} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == AmenineLiquid5Item.block) {
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EriniumModItems.AMENINE_LIQUID_5.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorAmenine5Block.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_AMENINE_5.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(AmenineLiquid5Item.block);
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+			if (entity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(EriniumModItems.AMENINE_LIQUID_5.get());
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 			}
 		}
 	}

@@ -2,60 +2,41 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.Hand;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionHand;
 
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
-import fr.erinagroups.erinium.EriniumMod;
-
+@Mod.EventBusSubscriber
 public class DesenchantBookProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
-			PlayerEntity entity = event.getPlayer();
-			if (event.getHand() != entity.getActiveHand()) {
-				return;
-			}
-			double i = event.getPos().getX();
-			double j = event.getPos().getY();
-			double k = event.getPos().getZ();
-			IWorld world = event.getWorld();
-			Map<String, Object> dependencies = new HashMap<>();
-			dependencies.put("x", i);
-			dependencies.put("y", j);
-			dependencies.put("z", k);
-			dependencies.put("world", world);
-			dependencies.put("entity", entity);
-			dependencies.put("event", event);
-			executeProcedure(dependencies);
-		}
+	@SubscribeEvent
+	public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
+		if (event.getHand() != event.getEntity().getUsedItemHand())
+			return;
+		execute(event, event.getEntity());
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure DesenchantBook!");
+	public static void execute(Entity entity) {
+		execute(null, entity);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == Items.ENCHANTED_BOOK) {
-			if (entity instanceof LivingEntity) {
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.ENCHANTED_BOOK) {
+			if (entity instanceof LivingEntity _entity) {
 				ItemStack _setstack = new ItemStack(Items.BOOK);
-				_setstack.setCount((int) 1);
-				((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
-				if (entity instanceof ServerPlayerEntity)
-					((ServerPlayerEntity) entity).inventory.markDirty();
+				_setstack.setCount(1);
+				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+				if (_entity instanceof Player _player)
+					_player.getInventory().setChanged();
 			}
 		}
 	}

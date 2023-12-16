@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "setanum_nugget",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Setanum Nuggets",
     "rarity": "COMMON",
     "creativeTab": {

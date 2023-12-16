@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "dimension",
   "definition": {
     "biomesInDimension": [
@@ -31,7 +31,9 @@
     "portalSound": {
       "value": "block.portal.ambient"
     },
+    "enableIgniter": true,
     "igniterName": "Candy Dimension Portal Igniter",
+    "specialInfo": [],
     "igniterTab": {
       "value": "TOOLS"
     },

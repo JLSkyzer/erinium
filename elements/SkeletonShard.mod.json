@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "skeleton_shard",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Skeleton Shard",
     "rarity": "COMMON",
     "creativeTab": {

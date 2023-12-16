@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/magic_wand_cobweb"
+    "layer0": "erinium:item/magic_wand_cobweb"
   },
   "display": {
     "thirdperson_righthand": {

@@ -1,61 +1,29 @@
 
 package fr.erinagroups.erinium.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.item.UseAction;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-import fr.erinagroups.erinium.EriniumModElements;
-
-@EriniumModElements.ModElement.Tag
-public class WarningLogoItem extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:warning_logo")
-	public static final Item block = null;
-
-	public WarningLogoItem(EriniumModElements instance) {
-		super(instance, 196);
+public class WarningLogoItem extends Item {
+	public WarningLogoItem() {
+		super(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
+	public UseAnim getUseAnimation(ItemStack itemstack) {
+		return UseAnim.EAT;
 	}
 
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(null).maxStackSize(1).rarity(Rarity.EPIC));
-			setRegistryName("warning_logo");
-		}
-
-		@Override
-		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.EAT;
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 1F;
-		}
-
-		@Override
-		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Pour le gui \"Admin\""));
-		}
+	@Override
+	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, world, list, flag);
+		list.add(Component.literal("Pour le gui \"Admin\""));
 	}
 }

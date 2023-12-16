@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/laser_module"
+    "layer0": "erinium:item/laser_module"
   }
 }

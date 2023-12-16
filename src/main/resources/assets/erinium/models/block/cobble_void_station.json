@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/cobblevoirstation",
-    "up": "erinium:blocks/cobblevoirstation",
-    "north": "erinium:blocks/cobblevoirstation",
-    "east": "erinium:blocks/cobblevoirstation",
-    "south": "erinium:blocks/cobblevoirstation",
-    "west": "erinium:blocks/cobblevoirstation",
-    "particle": "erinium:blocks/cobblevoirstation"
-  }
+    "down": "erinium:block/cobblevoirstation",
+    "up": "erinium:block/cobblevoirstation",
+    "north": "erinium:block/cobblevoirstation",
+    "east": "erinium:block/cobblevoirstation",
+    "south": "erinium:block/cobblevoirstation",
+    "west": "erinium:block/cobblevoirstation",
+    "particle": "erinium:block/cobblevoirstation"
+  },
+  "render_type": "solid"
 }

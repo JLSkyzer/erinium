@@ -1,148 +1,103 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.Explosion;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.vector.Vector2f;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.state.Property;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.monster.ZombieEntity;
-import net.minecraft.entity.monster.SkeletonEntity;
-import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.Entity;
-import net.minecraft.command.ICommandSource;
-import net.minecraft.command.CommandSource;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
-import java.util.Random;
 import java.util.Map;
 
-import fr.erinagroups.erinium.item.XpOrbItem;
-import fr.erinagroups.erinium.item.SilverIngotItem;
-import fr.erinagroups.erinium.item.FakeEriniumIngotItem;
-import fr.erinagroups.erinium.item.FabricRollItem;
-import fr.erinagroups.erinium.item.EriniumArmorItem;
-import fr.erinagroups.erinium.item.CardboardItem;
-import fr.erinagroups.erinium.block.ClassicLootboxBlock;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModItems;
+import fr.erinagroups.erinium.init.EriniumModBlocks;
 
 public class ClassicLootboxBlockDestroyedByPlayerProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure ClassicLootboxBlockDestroyedByPlayer!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure ClassicLootboxBlockDestroyedByPlayer!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure ClassicLootboxBlockDestroyedByPlayer!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure ClassicLootboxBlockDestroyedByPlayer!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure ClassicLootboxBlockDestroyedByPlayer!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack tempItem = ItemStack.EMPTY;
 		double random = 0;
 		double random2 = 0;
 		double random3 = 0;
 		random = Math.round(Math.random() * 100);
-		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
+		world.setBlock(BlockPos.containing(x, y, z), Blocks.AIR.defaultBlockState(), 3);
 		if (random <= 1) {
-			random2 = (MathHelper.nextInt(new Random(), 1, 2));
+			random2 = Mth.nextInt(RandomSource.create(), 1, 2);
 			if (random2 <= 1) {
-				if (world instanceof World && !world.isRemote()) {
-					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(ClassicLootboxBlock.block));
-					entityToSpawn.setPickupDelay((int) 10);
-					world.addEntity(entityToSpawn);
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumModBlocks.CLASSIC_LOOTBOX.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
 				}
 			} else {
-				if (world instanceof ServerWorld) {
-					((World) world).getServer().getCommandManager().handleCommand(
-							new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-									new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+				if (world instanceof ServerLevel _level)
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							"summon minecraft:sheep ~ ~ ~ {CustomName:'{\"text\":\"jeb_\"}'}");
-				}
 			}
 		} else {
 			if (random <= 4) {
-				random2 = (MathHelper.nextInt(new Random(), 1, 2));
+				random2 = Mth.nextInt(RandomSource.create(), 1, 2);
 				if (random2 <= 1) {
-					if (world instanceof World && !world.isRemote()) {
-						ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.NETHER_STAR));
-						entityToSpawn.setPickupDelay((int) 10);
-						world.addEntity(entityToSpawn);
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.NETHER_STAR));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
 					}
 				} else {
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 1800, (int) 9));
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 1800, 9));
 				}
 			} else {
 				if (random <= 10) {
-					random2 = (MathHelper.nextInt(new Random(), 1, 3));
+					random2 = Mth.nextInt(RandomSource.create(), 1, 3);
 					if (random2 <= 1) {
-						if (world instanceof World && !world.isRemote()) {
-							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(EriniumArmorItem.helmet));
-							entityToSpawn.setPickupDelay((int) 10);
-							world.addEntity(entityToSpawn);
+						if (world instanceof ServerLevel _level) {
+							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumModItems.ERINIUM_ARMOR_HELMET.get()));
+							entityToSpawn.setPickUpDelay(10);
+							_level.addFreshEntity(entityToSpawn);
 						}
-						if (world instanceof World && !world.isRemote()) {
-							ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(EriniumArmorItem.legs));
-							entityToSpawn.setPickupDelay((int) 10);
-							world.addEntity(entityToSpawn);
+						if (world instanceof ServerLevel _level) {
+							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumModItems.ERINIUM_ARMOR_LEGGINGS.get()));
+							entityToSpawn.setPickUpDelay(10);
+							_level.addFreshEntity(entityToSpawn);
 						}
 					} else {
 						if (random2 <= 2) {
-							if (world instanceof World && !((World) world).isRemote) {
-								((World) world).createExplosion(null, (int) x, (int) y, (int) z, (float) 1, Explosion.Mode.BREAK);
-							}
+							if (world instanceof Level _level && !_level.isClientSide())
+								_level.explode(null, x, y, z, 1, Level.ExplosionInteraction.TNT);
 						} else {
 							{
-								BlockPos _bp = new BlockPos(x, y, z);
-								BlockState _bs = Blocks.DIRT.getDefaultState();
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockState _bs = Blocks.DIRT.defaultBlockState();
 								BlockState _bso = world.getBlockState(_bp);
 								for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-									Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-									if (_property != null && _bs.get(_property) != null)
+									Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+									if (_property != null && _bs.getValue(_property) != null)
 										try {
-											_bs = _bs.with(_property, (Comparable) entry.getValue());
+											_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 										} catch (Exception e) {
 										}
 								}
-								world.setBlockState(_bp, _bs, 3);
+								world.setBlock(_bp, _bs, 3);
 							}
 						}
 					}
@@ -152,186 +107,166 @@ public class ClassicLootboxBlockDestroyedByPlayerProcedure {
 					} else {
 						if (random <= 18) {
 							random2 = Math.round(Math.random() * 10);
-							if (world instanceof World && !world.isRemote()) {
-								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(EriniumArmorItem.boots));
-								entityToSpawn.setPickupDelay((int) 10);
-								world.addEntity(entityToSpawn);
+							if (world instanceof ServerLevel _level) {
+								ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumModItems.ERINIUM_ARMOR_BOOTS.get()));
+								entityToSpawn.setPickUpDelay(10);
+								_level.addFreshEntity(entityToSpawn);
 							}
-							for (int index0 = 0; index0 < (int) (random2); index0++) {
-								if (world instanceof World && !world.isRemote()) {
-									ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.DIAMOND));
-									entityToSpawn.setPickupDelay((int) 10);
-									world.addEntity(entityToSpawn);
+							for (int index0 = 0; index0 < (int) random2; index0++) {
+								if (world instanceof ServerLevel _level) {
+									ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.DIAMOND));
+									entityToSpawn.setPickUpDelay(10);
+									_level.addFreshEntity(entityToSpawn);
 								}
 							}
-							if (world instanceof World && !world.isRemote()) {
-								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(SilverIngotItem.block));
-								entityToSpawn.setPickupDelay((int) 10);
-								world.addEntity(entityToSpawn);
+							if (world instanceof ServerLevel _level) {
+								ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumModItems.SILVER_INGOT.get()));
+								entityToSpawn.setPickUpDelay(10);
+								_level.addFreshEntity(entityToSpawn);
 							}
-							if (world instanceof World && !world.isRemote()) {
-								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(XpOrbItem.block));
-								entityToSpawn.setPickupDelay((int) 10);
-								world.addEntity(entityToSpawn);
-							}
-							if (world instanceof World && !world.isRemote()) {
-								ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
-								entityToSpawn.setPickupDelay((int) 10);
-								world.addEntity(entityToSpawn);
+							if (world instanceof ServerLevel _level) {
+								ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
+								entityToSpawn.setPickUpDelay(10);
+								_level.addFreshEntity(entityToSpawn);
 							}
 						} else {
 							if (random <= 40) {
-								random3 = (MathHelper.nextInt(new Random(), 1, 2));
+								random3 = Mth.nextInt(RandomSource.create(), 1, 2);
 								if (random3 <= 1) {
 									random2 = Math.round(Math.random() * 20);
-									for (int index1 = 0; index1 < (int) (random2); index1++) {
-										if (world instanceof World && !world.isRemote()) {
-											ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.OAK_LOG));
-											entityToSpawn.setPickupDelay((int) 10);
-											world.addEntity(entityToSpawn);
+									for (int index1 = 0; index1 < (int) random2; index1++) {
+										if (world instanceof ServerLevel _level) {
+											ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.OAK_LOG));
+											entityToSpawn.setPickUpDelay(10);
+											_level.addFreshEntity(entityToSpawn);
 										}
-										if (world instanceof World && !world.isRemote()) {
-											ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.OAK_FENCE));
-											entityToSpawn.setPickupDelay((int) 10);
-											world.addEntity(entityToSpawn);
+										if (world instanceof ServerLevel _level) {
+											ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.OAK_FENCE));
+											entityToSpawn.setPickUpDelay(10);
+											_level.addFreshEntity(entityToSpawn);
 										}
-										if (world instanceof World && !world.isRemote()) {
-											ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.OAK_SLAB));
-											entityToSpawn.setPickupDelay((int) 10);
-											world.addEntity(entityToSpawn);
+										if (world instanceof ServerLevel _level) {
+											ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.OAK_SLAB));
+											entityToSpawn.setPickUpDelay(10);
+											_level.addFreshEntity(entityToSpawn);
 										}
-										if (world instanceof World && !world.isRemote()) {
-											ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.GLASS));
-											entityToSpawn.setPickupDelay((int) 10);
-											world.addEntity(entityToSpawn);
+										if (world instanceof ServerLevel _level) {
+											ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.GLASS));
+											entityToSpawn.setPickUpDelay(10);
+											_level.addFreshEntity(entityToSpawn);
 										}
 									}
-									if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-										((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cMr Decorator !"), (false));
-									}
+									if (entity instanceof Player _player && !_player.level().isClientSide())
+										_player.displayClientMessage(Component.literal("\u00A7cMr Decorator !"), false);
 								} else {
-									if (world instanceof World && !world.isRemote()) {
-										ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(FakeEriniumIngotItem.block));
-										entityToSpawn.setPickupDelay((int) 10);
-										world.addEntity(entityToSpawn);
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumModItems.FAKE_ERINIUM_INGOT.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
 								}
 							} else {
 								if (random <= 55) {
-									random2 = (MathHelper.nextInt(new Random(), 1, 3));
+									random2 = Mth.nextInt(RandomSource.create(), 1, 3);
 									if (random2 <= 1) {
-										for (int index2 = 0; index2 < (int) (16); index2++) {
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.COAL));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+										for (int index2 = 0; index2 < 16; index2++) {
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COAL));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
 										}
-										if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-											((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cFurnace !"), (false));
-										}
+										if (entity instanceof Player _player && !_player.level().isClientSide())
+											_player.displayClientMessage(Component.literal("\u00A7cFurnace !"), false);
 									} else {
 										if (random2 <= 2) {
-											if (world instanceof ServerWorld) {
-												Entity entityToSpawn = new ZombieEntity(EntityType.ZOMBIE, (World) world);
-												entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-												if (entityToSpawn instanceof MobEntity)
-													((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world,
-															world.getDifficultyForLocation(entityToSpawn.getPosition()), SpawnReason.MOB_SUMMONED,
-															(ILivingEntityData) null, (CompoundNBT) null);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												Entity entityToSpawn = EntityType.ZOMBIE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+												if (entityToSpawn != null) {
+													entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+												}
 											}
-											if (world instanceof ServerWorld) {
-												Entity entityToSpawn = new ZombieEntity(EntityType.ZOMBIE, (World) world);
-												entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-												if (entityToSpawn instanceof MobEntity)
-													((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world,
-															world.getDifficultyForLocation(entityToSpawn.getPosition()), SpawnReason.MOB_SUMMONED,
-															(ILivingEntityData) null, (CompoundNBT) null);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												Entity entityToSpawn = EntityType.ZOMBIE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+												if (entityToSpawn != null) {
+													entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+												}
 											}
-											if (world instanceof ServerWorld) {
-												Entity entityToSpawn = new SkeletonEntity(EntityType.SKELETON, (World) world);
-												entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-												if (entityToSpawn instanceof MobEntity)
-													((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world,
-															world.getDifficultyForLocation(entityToSpawn.getPosition()), SpawnReason.MOB_SUMMONED,
-															(ILivingEntityData) null, (CompoundNBT) null);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												Entity entityToSpawn = EntityType.SKELETON.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+												if (entityToSpawn != null) {
+													entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+												}
 											}
 										} else {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.BLINDNESS, (int) 1200, (int) 1));
+											if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+												_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1200, 1));
 										}
 									}
 								} else {
 									if (random <= 65) {
 										random2 = Math.round(Math.random() * 12);
-										for (int index3 = 0; index3 < (int) (random2); index3++) {
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.CHICKEN));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+										for (int index3 = 0; index3 < (int) random2; index3++) {
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.CHICKEN));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
 										}
-										if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-											((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cKFC"), (false));
-										}
+										if (entity instanceof Player _player && !_player.level().isClientSide())
+											_player.displayClientMessage(Component.literal("\u00A7cKFC"), false);
 									} else {
 										if (random <= 85) {
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
-														new ItemStack(Items.EXPERIENCE_BOTTLE));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.EXPERIENCE_BOTTLE));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
-														new ItemStack(Items.EXPERIENCE_BOTTLE));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.EXPERIENCE_BOTTLE));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z,
-														new ItemStack(FabricRollItem.block));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumModItems.FABRIC_ROLL.get()));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(CardboardItem.block));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumModItems.CARDBOARD.get()));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
 										} else {
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.IRON_INGOT));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.IRON_INGOT));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.IRON_INGOT));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.IRON_INGOT));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.EMERALD));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.EMERALD));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
-											if (world instanceof World && !world.isRemote()) {
-												ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.EMERALD));
-												entityToSpawn.setPickupDelay((int) 10);
-												world.addEntity(entityToSpawn);
+											if (world instanceof ServerLevel _level) {
+												ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.EMERALD));
+												entityToSpawn.setPickUpDelay(10);
+												_level.addFreshEntity(entityToSpawn);
 											}
 										}
 									}

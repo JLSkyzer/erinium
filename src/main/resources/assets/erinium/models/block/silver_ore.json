@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/silver_ore",
-    "up": "erinium:blocks/silver_ore",
-    "north": "erinium:blocks/silver_ore",
-    "east": "erinium:blocks/silver_ore",
-    "south": "erinium:blocks/silver_ore",
-    "west": "erinium:blocks/silver_ore",
-    "particle": "erinium:blocks/silver_ore"
-  }
+    "down": "erinium:block/silver_ore",
+    "up": "erinium:block/silver_ore",
+    "north": "erinium:block/silver_ore",
+    "east": "erinium:block/silver_ore",
+    "south": "erinium:block/silver_ore",
+    "west": "erinium:block/silver_ore",
+    "particle": "erinium:block/silver_ore"
+  },
+  "render_type": "solid"
 }

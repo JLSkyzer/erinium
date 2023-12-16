@@ -1,62 +1,26 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.Explosion;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.entity.monster.ZombieEntity;
-import net.minecraft.entity.monster.SkeletonEntity;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.BlockPos;
 
-import java.util.Random;
-import java.util.Map;
-
-import fr.erinagroups.erinium.item.TreeBossProjectileItem;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModEntities;
+import fr.erinagroups.erinium.entity.TreeBossProjectileEntity;
 
 public class TreeBossOnEntityTickUpdateProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure TreeBossOnEntityTickUpdate!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure TreeBossOnEntityTickUpdate!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure TreeBossOnEntityTickUpdate!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure TreeBossOnEntityTickUpdate!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure TreeBossOnEntityTickUpdate!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
 		double random = 0;
-		random = Math.round(MathHelper.nextInt(new Random(), 1, 10));
+		random = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 		if (entity.getPersistentData().getDouble("attacked") > 0) {
 			entity.getPersistentData().putDouble("attacked", (entity.getPersistentData().getDouble("attacked") - 1));
 		}
@@ -65,54 +29,43 @@ public class TreeBossOnEntityTickUpdateProcedure {
 		} else {
 			if (entity.getPersistentData().getDouble("attacked") > 0) {
 				if (random == 1) {
-					if (world instanceof World && !((World) world).isRemote) {
-						((World) world).createExplosion(null, (int) (x + MathHelper.nextInt(new Random(), -5, 5)), (int) y,
-								(int) (z + MathHelper.nextInt(new Random(), -5, 5)), (float) 2, Explosion.Mode.NONE);
-					}
+					if (world instanceof Level _level && !_level.isClientSide())
+						_level.explode(null, (x + Mth.nextInt(RandomSource.create(), -5, 5)), y, (z + Mth.nextInt(RandomSource.create(), -5, 5)), 2, Level.ExplosionInteraction.NONE);
 					entity.getPersistentData().putDouble("cooldown", 140);
 				} else if (random == 5) {
-					if (world instanceof ServerWorld) {
-						Entity entityToSpawn = new ZombieEntity(EntityType.ZOMBIE, (World) world);
-						entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof MobEntity)
-							((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world,
-									world.getDifficultyForLocation(entityToSpawn.getPosition()), SpawnReason.MOB_SUMMONED, (ILivingEntityData) null,
-									(CompoundNBT) null);
-						world.addEntity(entityToSpawn);
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.ZOMBIE.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
-					if (world instanceof ServerWorld) {
-						Entity entityToSpawn = new SkeletonEntity(EntityType.SKELETON, (World) world);
-						entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof MobEntity)
-							((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world,
-									world.getDifficultyForLocation(entityToSpawn.getPosition()), SpawnReason.MOB_SUMMONED, (ILivingEntityData) null,
-									(CompoundNBT) null);
-						world.addEntity(entityToSpawn);
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = EntityType.SKELETON.spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						if (entityToSpawn != null) {
+							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+						}
 					}
 					entity.getPersistentData().putDouble("cooldown", 140);
 				} else if (random == 10) {
 					{
 						Entity _shootFrom = entity;
-						World projectileLevel = _shootFrom.world;
-						if (!projectileLevel.isRemote()) {
-							ProjectileEntity _entityToSpawn = new Object() {
-								public ProjectileEntity getArrow(World world, Entity shooter, float damage, int knockback, byte piercing) {
-									AbstractArrowEntity entityToSpawn = new TreeBossProjectileItem.ArrowCustomEntity(TreeBossProjectileItem.arrow,
-											world);
-									entityToSpawn.setShooter(shooter);
-									entityToSpawn.setDamage(damage);
-									entityToSpawn.setKnockbackStrength(knockback);
+						Level projectileLevel = _shootFrom.level();
+						if (!projectileLevel.isClientSide()) {
+							Projectile _entityToSpawn = new Object() {
+								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
+									AbstractArrow entityToSpawn = new TreeBossProjectileEntity(EriniumModEntities.TREE_BOSS_PROJECTILE.get(), level);
+									entityToSpawn.setOwner(shooter);
+									entityToSpawn.setBaseDamage(damage);
+									entityToSpawn.setKnockback(knockback);
 									entityToSpawn.setSilent(true);
 									entityToSpawn.setPierceLevel(piercing);
-
-									entityToSpawn.setIsCritical(true);
-
+									entityToSpawn.setCritArrow(true);
 									return entityToSpawn;
 								}
 							}.getArrow(projectileLevel, entity, 4, 0, (byte) 1);
-							_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1, _shootFrom.getPosZ());
-							_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y, _shootFrom.getLookVec().z, 1, 0);
-							projectileLevel.addEntity(_entityToSpawn);
+							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
+							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
 					entity.getPersistentData().putDouble("cooldown", 140);

@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -15,7 +15,6 @@
         "data": {
           "image": "preset_gui_transparent.png",
           "use1Xscale": false,
-          "name": "preset_gui_transparent.png",
           "x": 0,
           "y": 0
         }
@@ -26,14 +25,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -10066330,
             "falpha": 0.0
           },
           "id": 0,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
           "x": 99,
           "y": 135
         }
@@ -44,14 +47,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -16724992,
             "falpha": 0.0
           },
           "id": 1,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #1",
           "x": 153,
           "y": 81
         }
@@ -61,7 +68,6 @@
         "data": {
           "image": "arrow_right.png",
           "use1Xscale": false,
-          "name": "arrow_right.png",
           "x": 189,
           "y": 81
         }
@@ -74,9 +80,10 @@
             "falpha": 0.0
           },
           "id": 2,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #2",
           "x": 225,
           "y": 81
         }
@@ -84,10 +91,10 @@
       {
         "type": "button",
         "data": {
+          "name": "button_ssacraft",
           "text": "§aCraft",
           "width": 90,
           "height": 20,
-          "name": "§aCraft",
           "x": 153,
           "y": 108
         }

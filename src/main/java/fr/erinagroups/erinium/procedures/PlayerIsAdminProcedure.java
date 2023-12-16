@@ -2,36 +2,26 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.fml.loading.FMLPaths;
 
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import java.util.Map;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
 
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 
-import fr.erinagroups.erinium.EriniumMod;
-
 import com.google.gson.Gson;
 
 public class PlayerIsAdminProcedure {
-
-	public static boolean executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure PlayerIsAdmin!");
+	public static boolean execute(Entity entity) {
+		if (entity == null)
 			return false;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
 		File file = new File("");
 		com.google.gson.JsonObject jsonObject = new com.google.gson.JsonObject();
 		boolean can = false;
-		can = (false);
-		file = (File) new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/players/"),
-				File.separator + (entity.getDisplayName().getString() + ".json"));
+		can = false;
+		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/erinium/players/"), File.separator + (entity.getDisplayName().getString() + ".json"));
 		if (file.exists()) {
 			{
 				try {
@@ -44,14 +34,12 @@ public class PlayerIsAdminProcedure {
 					bufferedReader.close();
 					jsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					if (jsonObject.get("staff.erinium.command").getAsBoolean() == true) {
-						can = (false);
+						can = false;
 					} else {
-						if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-							((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cVous n'avez pas la permission !"), (false));
-						}
-						can = (false);
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cVous n'avez pas la permission !"), false);
+						can = false;
 					}
-
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

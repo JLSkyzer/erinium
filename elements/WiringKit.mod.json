@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "kit_de_cablage",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Wiring Kit",
     "rarity": "COMMON",
     "creativeTab": {

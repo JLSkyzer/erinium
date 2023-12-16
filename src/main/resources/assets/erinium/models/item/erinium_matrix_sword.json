@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "erinium:items/erinium_matrix_sword"
+    "layer0": "erinium:item/erinium_matrix_sword"
   }
 }

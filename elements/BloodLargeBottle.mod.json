@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "blood_large_bottle",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Blood Large Bottle",
     "rarity": "COMMON",
     "creativeTab": {

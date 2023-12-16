@@ -1,91 +1,65 @@
 
 package fr.erinagroups.erinium.block;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.common.ToolType;
-
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Rotation;
-import net.minecraft.util.Direction;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.EnumProperty;
-import net.minecraft.loot.LootContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.BlockItem;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
 
 import java.util.List;
 import java.util.Collections;
 
-import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
+public class CandyPlanksBlock extends Block {
+	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 
-@EriniumModElements.ModElement.Tag
-public class CandyPlanksBlock extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:candy_planks")
-	public static final Block block = null;
-
-	public CandyPlanksBlock(EriniumModElements instance) {
-		super(instance, 142);
+	public CandyPlanksBlock() {
+		super(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f));
+		this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y));
 	}
 
 	@Override
-	public void initElements() {
-		elements.blocks.add(() -> new CustomBlock());
-		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
+		return 15;
 	}
 
-	public static class CustomBlock extends Block {
-		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(AXIS);
+	}
 
-		public CustomBlock() {
-			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2f, 2f).setLightLevel(s -> 0).harvestLevel(-1)
-					.harvestTool(ToolType.AXE));
-			this.setDefaultState(this.stateContainer.getBaseState().with(AXIS, Direction.Axis.Y));
-			setRegistryName("candy_planks");
-		}
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return this.defaultBlockState().setValue(AXIS, context.getClickedFace().getAxis());
+	}
 
-		@Override
-		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 15;
-		}
-
-		@Override
-		protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-			builder.add(AXIS);
-		}
-
-		@Override
-		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			return this.getDefaultState().with(AXIS, context.getFace().getAxis());
-		}
-
-		@Override
-		public BlockState rotate(BlockState state, Rotation rot) {
-			if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
-				if ((Direction.Axis) state.get(AXIS) == Direction.Axis.X) {
-					return state.with(AXIS, Direction.Axis.Z);
-				} else if ((Direction.Axis) state.get(AXIS) == Direction.Axis.Z) {
-					return state.with(AXIS, Direction.Axis.X);
-				}
+	@Override
+	public BlockState rotate(BlockState state, Rotation rot) {
+		if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
+			if (state.getValue(AXIS) == Direction.Axis.X) {
+				return state.setValue(AXIS, Direction.Axis.Z);
+			} else if (state.getValue(AXIS) == Direction.Axis.Z) {
+				return state.setValue(AXIS, Direction.Axis.X);
 			}
-			return state;
 		}
+		return state;
+	}
 
-		@Override
-		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
-			if (!dropsOriginal.isEmpty())
-				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(this, 1));
-		}
+	@Override
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
+		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
+		if (!dropsOriginal.isEmpty())
+			return dropsOriginal;
+		return Collections.singletonList(new ItemStack(this, 1));
 	}
 }

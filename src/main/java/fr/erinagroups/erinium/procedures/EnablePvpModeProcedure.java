@@ -2,104 +2,53 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.RegistryKey;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.Registries;
 
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
-import fr.erinagroups.erinium.EriniumModVariables;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.network.EriniumModVariables;
 
+@Mod.EventBusSubscriber
 public class EnablePvpModeProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onEntityAttacked(LivingAttackEvent event) {
-			if (event != null && event.getEntity() != null) {
-				Entity entity = event.getEntity();
-				Entity sourceentity = event.getSource().getTrueSource();
-				Entity immediatesourceentity = event.getSource().getImmediateSource();
-				double i = entity.getPosX();
-				double j = entity.getPosY();
-				double k = entity.getPosZ();
-				double amount = event.getAmount();
-				World world = entity.world;
-				Map<String, Object> dependencies = new HashMap<>();
-				dependencies.put("x", i);
-				dependencies.put("y", j);
-				dependencies.put("z", k);
-				dependencies.put("amount", amount);
-				dependencies.put("world", world);
-				dependencies.put("entity", entity);
-				dependencies.put("sourceentity", sourceentity);
-				dependencies.put("immediatesourceentity", immediatesourceentity);
-				dependencies.put("event", event);
-				executeProcedure(dependencies);
-			}
+	@SubscribeEvent
+	public static void onEntityAttacked(LivingAttackEvent event) {
+		if (event != null && event.getEntity() != null) {
+			execute(event, event.getEntity().level(), event.getEntity(), event.getSource().getDirectEntity());
 		}
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure EnablePvpMode!");
+	public static void execute(LevelAccessor world, Entity entity, Entity immediatesourceentity) {
+		execute(null, world, entity, immediatesourceentity);
+	}
+
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity immediatesourceentity) {
+		if (entity == null || immediatesourceentity == null)
 			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure EnablePvpMode!");
-			return;
-		}
-		if (dependencies.get("immediatesourceentity") == null) {
-			if (!dependencies.containsKey("immediatesourceentity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency immediatesourceentity for procedure EnablePvpMode!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		Entity entity = (Entity) dependencies.get("entity");
-		Entity immediatesourceentity = (Entity) dependencies.get("immediatesourceentity");
 		if (EriniumModVariables.MapVariables.get(world).toggle_pvp) {
-			if (entity instanceof PlayerEntity && immediatesourceentity instanceof PlayerEntity
-					|| entity instanceof ServerPlayerEntity && immediatesourceentity instanceof ServerPlayerEntity) {
-				if (!((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).abilities.isCreativeMode : false)) {
-					if (!((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-							new ResourceLocation("erinium:minage_01")))
-							&& (immediatesourceentity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-									new ResourceLocation("erinium:minage_01")))
-							|| (entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-									new ResourceLocation("erinium:minage_02")))
-									&& (immediatesourceentity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-											new ResourceLocation("erinium:minage_02")))
-							|| (entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-									new ResourceLocation("erinium:minage_03")))
-									&& (immediatesourceentity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-											new ResourceLocation("erinium:minage_03"))))) {
-						if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
-							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-								((PlayerEntity) entity).sendStatusMessage(
-										new StringTextComponent(
-												"\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
-										(false));
-							}
-						} else if ((immediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
-							if (immediatesourceentity instanceof PlayerEntity && !immediatesourceentity.world.isRemote()) {
-								((PlayerEntity) immediatesourceentity).sendStatusMessage(
-										new StringTextComponent(
-												"\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"),
-										(false));
-							}
+			if (entity instanceof Player && immediatesourceentity instanceof Player || entity instanceof ServerPlayer && immediatesourceentity instanceof ServerPlayer) {
+				if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+					if (!((entity.level().dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("erinium:deleted_mod_element")))
+							&& (immediatesourceentity.level().dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("erinium:deleted_mod_element")))
+							|| (entity.level().dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("erinium:deleted_mod_element")))
+									&& (immediatesourceentity.level().dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("erinium:deleted_mod_element")))
+							|| (entity.level().dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("erinium:deleted_mod_element")))
+									&& (immediatesourceentity.level().dimension()) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("erinium:deleted_mod_element"))))) {
+						if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
+							if (entity instanceof Player _player && !_player.level().isClientSide())
+								_player.displayClientMessage(Component.literal("\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"), false);
+						} else if ((immediatesourceentity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
+							if (immediatesourceentity instanceof Player _player && !_player.level().isClientSide())
+								_player.displayClientMessage(Component.literal("\u00A7c\u00A7lVous entrez en mode pvp, si vous vous deconnecter, vous perdrez votre stuff !"), false);
 						}
 						{
 							double _setval = 400;

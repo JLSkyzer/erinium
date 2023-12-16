@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/skeleton_shard"
+    "layer0": "erinium:item/skeleton_shard"
   }
 }

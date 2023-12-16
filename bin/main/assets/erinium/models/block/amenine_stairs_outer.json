@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "erinium:blocks/amenine_planks",
-    "top": "erinium:blocks/amenine_planks",
-    "side": "erinium:blocks/amenine_planks"
-  }
-}

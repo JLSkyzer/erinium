@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "overlay",
   "definition": {
     "priority": "NORMAL",
@@ -7,12 +7,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:integer:testBarre>",
+          "name": "label_varintegertestbarre",
+          "text": {
+            "fixedValue": "<VAR:integer:testBarre>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:integer:testBarre>",
           "x": 10,
           "y": 13
         }
@@ -22,7 +24,6 @@
         "data": {
           "image": "test_barre.png",
           "use1Xscale": false,
-          "name": "test_barre.png",
           "x": 168,
           "y": 45
         }

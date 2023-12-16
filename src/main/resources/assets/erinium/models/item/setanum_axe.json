@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "erinium:items/setanum_axe"
+    "layer0": "erinium:item/setanum_axe"
   }
 }

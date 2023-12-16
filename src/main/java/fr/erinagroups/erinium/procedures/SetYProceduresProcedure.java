@@ -1,29 +1,18 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.client.gui.widget.TextFieldWidget;
+import org.checkerframework.checker.units.qual.s;
 
-import java.util.Map;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.client.gui.components.EditBox;
+
 import java.util.HashMap;
 
-import fr.erinagroups.erinium.EriniumModVariables;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.network.EriniumModVariables;
 
 public class SetYProceduresProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure SetYProcedures!");
+	public static void execute(Entity entity, HashMap guistate) {
+		if (entity == null || guistate == null)
 			return;
-		}
-		if (dependencies.get("guistate") == null) {
-			if (!dependencies.containsKey("guistate"))
-				EriniumMod.LOGGER.warn("Failed to load dependency guistate for procedure SetYProcedures!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		HashMap guistate = (HashMap) dependencies.get("guistate");
 		{
 			double _setval = Math.round(new Object() {
 				double convert(String s) {
@@ -33,15 +22,7 @@ public class SetYProceduresProcedure {
 					}
 					return 0;
 				}
-			}.convert(new Object() {
-				public String getText() {
-					TextFieldWidget _tf = (TextFieldWidget) guistate.get("text:inputY");
-					if (_tf != null) {
-						return _tf.getText();
-					}
-					return "";
-				}
-			}.getText()));
+			}.convert(guistate.containsKey("text:inputY") ? ((EditBox) guistate.get("text:inputY")).getValue() : ""));
 			entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.rank_overlay_y = _setval;
 				capability.syncPlayerVariables(entity);

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/admin_tool"
+    "layer0": "erinium:item/admin_tool"
   }
 }

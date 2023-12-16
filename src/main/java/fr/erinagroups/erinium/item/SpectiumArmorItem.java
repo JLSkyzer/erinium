@@ -1,76 +1,50 @@
 
 package fr.erinagroups.erinium.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
 
 import fr.erinagroups.erinium.procedures.GlobalArmorHelmetProcedure;
 import fr.erinagroups.erinium.procedures.GlobalArmorBootsProcedure;
-import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
+import fr.erinagroups.erinium.init.EriniumModItems;
 
-@EriniumModElements.ModElement.Tag
-public class SpectiumArmorItem extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:spectium_armor_helmet")
-	public static final Item helmet = null;
-	@ObjectHolder("erinium:spectium_armor_chestplate")
-	public static final Item body = null;
-	@ObjectHolder("erinium:spectium_armor_leggings")
-	public static final Item legs = null;
-	@ObjectHolder("erinium:spectium_armor_boots")
-	public static final Item boots = null;
-
-	public SpectiumArmorItem(EriniumModElements instance) {
-		super(instance, 5);
-	}
-
-	@Override
-	public void initElements() {
-		IArmorMaterial armormaterial = new IArmorMaterial() {
+public abstract class SpectiumArmorItem extends ArmorItem {
+	public SpectiumArmorItem(ArmorItem.Type type, Item.Properties properties) {
+		super(new ArmorMaterial() {
 			@Override
-			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 35;
+			public int getDurabilityForType(ArmorItem.Type type) {
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 35;
 			}
 
 			@Override
-			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{5, 5, 8, 5}[slot.getIndex()];
+			public int getDefenseForType(ArmorItem.Type type) {
+				return new int[]{5, 5, 8, 5}[type.getSlot().getIndex()];
 			}
 
 			@Override
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 25;
 			}
 
 			@Override
-			public net.minecraft.util.SoundEvent getSoundEvent() {
-				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+			public SoundEvent getEquipSound() {
+				return SoundEvents.EMPTY;
 			}
 
 			@Override
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(SpectriumGemItem.block));
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EriniumModItems.SPECTRIUM_GEM.get()));
 			}
 
-			@OnlyIn(Dist.CLIENT)
 			@Override
 			public String getName() {
 				return "spectium_armor";
@@ -85,52 +59,60 @@ public class SpectiumArmorItem extends EriniumModElements.ModElement {
 			public float getKnockbackResistance() {
 				return 0.1f;
 			}
-		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				super.onArmorTick(itemstack, world, entity);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				GlobalArmorHelmetProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		}.setRegistryName("spectium_armor_helmet"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("spectium_armor_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("spectium_armor_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/models/armor/spectrium__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				GlobalArmorBootsProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		}.setRegistryName("spectium_armor_boots"));
+		}, type, properties);
 	}
 
+	public static class Helmet extends SpectiumArmorItem {
+		public Helmet() {
+			super(ArmorItem.Type.HELMET, new Item.Properties());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "erinium:textures/models/armor/spectrium__layer_1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			GlobalArmorHelmetProcedure.execute(entity);
+		}
+	}
+
+	public static class Chestplate extends SpectiumArmorItem {
+		public Chestplate() {
+			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "erinium:textures/models/armor/spectrium__layer_1.png";
+		}
+	}
+
+	public static class Leggings extends SpectiumArmorItem {
+		public Leggings() {
+			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "erinium:textures/models/armor/spectrium__layer_2.png";
+		}
+	}
+
+	public static class Boots extends SpectiumArmorItem {
+		public Boots() {
+			super(ArmorItem.Type.BOOTS, new Item.Properties());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "erinium:textures/models/armor/spectrium__layer_1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			GlobalArmorBootsProcedure.execute(entity);
+		}
+	}
 }

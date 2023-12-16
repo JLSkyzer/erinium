@@ -125,7 +125,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "erinium:xp_bush_layer_0",
+          "name": "erinium:deleted_mod_element",
           "weight": 1,
           "functions": [
             {
@@ -181,7 +181,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:oak_log",
+          "name": "minecraft:air",
           "weight": 1,
           "functions": [
             {
@@ -237,5 +237,6 @@
         }
       ]
     }
-  ]
+  ],
+  "random_sequence": "erinium:blocks/magical_tower_loot_table"
 }

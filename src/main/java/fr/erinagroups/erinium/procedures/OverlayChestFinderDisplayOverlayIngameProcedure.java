@@ -1,24 +1,15 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 
-import java.util.Map;
-
-import fr.erinagroups.erinium.item.ChestFinderItem;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModItems;
 
 public class OverlayChestFinderDisplayOverlayIngameProcedure {
-
-	public static boolean executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure OverlayChestFinderDisplayOverlayIngame!");
+	public static boolean execute(Entity entity) {
+		if (entity == null)
 			return false;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		return ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == ChestFinderItem.block;
+		return (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EriniumModItems.CHEST_FINDER.get();
 	}
 }

@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:maintenanceTextMinage01>",
+          "name": "label_varmaintenancetextminage01",
+          "text": {
+            "fixedValue": "<VAR:maintenanceTextMinage01>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:maintenanceTextMinage01>",
           "x": 138,
           "y": 98
         }

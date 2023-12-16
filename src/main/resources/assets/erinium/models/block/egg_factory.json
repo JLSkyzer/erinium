@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/egg_factory_bottom",
-    "up": "erinium:blocks/egg_factory_top",
-    "north": "erinium:blocks/egg_factory_side",
-    "east": "erinium:blocks/egg_factory_side",
-    "south": "erinium:blocks/egg_factory_side",
-    "west": "erinium:blocks/egg_factory_side",
-    "particle": "erinium:blocks/egg_factory_bottom"
-  }
+    "down": "erinium:block/egg_factory_bottom",
+    "up": "erinium:block/egg_factory_top",
+    "north": "erinium:block/egg_factory_side",
+    "east": "erinium:block/egg_factory_side",
+    "south": "erinium:block/egg_factory_side",
+    "west": "erinium:block/egg_factory_side",
+    "particle": "erinium:block/egg_factory_bottom"
+  },
+  "render_type": "solid"
 }

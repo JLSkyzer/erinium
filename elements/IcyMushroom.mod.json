@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "plant",
   "definition": {
     "renderType": 2,
@@ -11,12 +11,10 @@
     "tintType": "No tint",
     "isItemTinted": false,
     "plantType": "normal",
-    "staticPlantGenerationType": "Flower",
     "suspiciousStewEffect": "HASTE",
     "suspiciousStewDuration": 100,
     "growapableSpawnType": "Plains",
     "growapableMaxHeight": 3,
-    "doublePlantGenerationType": "Flower",
     "customBoundingBox": true,
     "disableOffset": true,
     "boundingBoxes": [
@@ -79,20 +77,17 @@
     "jumpFactor": 1.0,
     "speedFactor": 1.0,
     "canBePlacedOn": [],
+    "isBonemealable": false,
     "frequencyOnChunks": 2,
     "spawnWorldTypes": [
-      "CUSTOM:FactionAlpha",
-      "CUSTOM:FactionBeta",
-      "CUSTOM:FactionCharlie",
-      "CUSTOM:Minage01",
-      "CUSTOM:Minage02",
-      "CUSTOM:Minage03"
+      "Surface"
     ],
     "restrictionBiomes": [
       {
         "value": "CUSTOM:IcyForest"
       }
     ],
+    "generationType": "Flower",
     "patchSize": 2,
     "generateAtAnyHeight": false
   }

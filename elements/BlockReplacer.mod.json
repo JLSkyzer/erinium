@@ -1,7 +1,8 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "tool",
   "definition": {
+    "toolType": "Special",
     "renderType": 0,
     "texture": "block_replacer",
     "customModelName": "Normal",
@@ -15,7 +16,6 @@
     "creativeTab": {
       "value": "CUSTOM:EriniumTools"
     },
-    "toolType": "Special",
     "harvestLevel": 1,
     "efficiency": 0.0,
     "attackSpeed": 100.0,
@@ -28,9 +28,6 @@
     "immuneToFire": true,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
-    "onRightClickedOnBlock": {
-      "name": "BlockReplacerRightclickedOnBlock"
-    },
     "onCrafted": {
       "name": "BlockReplacerItemIsCraftedsmelted"
     },

@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/chocolate",
-    "up": "erinium:blocks/candy_grass_top",
-    "north": "erinium:blocks/candy_grass",
-    "east": "erinium:blocks/candy_grass",
-    "south": "erinium:blocks/candy_grass",
-    "west": "erinium:blocks/candy_grass",
-    "particle": "erinium:blocks/chocolate"
-  }
+    "down": "erinium:block/chocolate",
+    "up": "erinium:block/candy_grass_top",
+    "north": "erinium:block/candy_grass",
+    "east": "erinium:block/candy_grass",
+    "south": "erinium:block/candy_grass",
+    "west": "erinium:block/candy_grass",
+    "particle": "erinium:block/chocolate"
+  },
+  "render_type": "solid"
 }

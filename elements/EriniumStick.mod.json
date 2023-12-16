@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "erinium_stick",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "§1Erinium Stick",
     "rarity": "COMMON",
     "creativeTab": {

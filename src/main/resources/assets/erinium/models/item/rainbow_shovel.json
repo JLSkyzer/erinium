@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "erinium:items/rainbow_shovel"
+    "layer0": "erinium:item/rainbow_shovel"
   }
 }

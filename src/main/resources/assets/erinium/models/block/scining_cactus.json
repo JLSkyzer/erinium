@@ -1,10 +1,11 @@
 {
   "parent": "erinium:custom/scining_cactus",
   "textures": {
-    "all": "erinium:blocks/scining_cactus_bottom",
-    "particle": "erinium:blocks/scining_cactus_bottom",
-    "scining cactus_side": "erinium:blocks/scining_cactus_side",
-    "scining cactus_top": "erinium:blocks/scining_cactus_top",
-    "scining cactus_bottom": "erinium:blocks/scining_cactus_bottom"
-  }
+    "all": "erinium:block/scining_cactus_bottom",
+    "particle": "erinium:block/scining_cactus_bottom",
+    "scining cactus_side": "erinium:block/scining_cactus_side",
+    "scining cactus_top": "erinium:block/scining_cactus_top",
+    "scining cactus_bottom": "erinium:block/scining_cactus_bottom"
+  },
+  "render_type": "solid"
 }

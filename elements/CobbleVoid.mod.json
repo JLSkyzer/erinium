@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "cobble_void",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "§bCobble Void §a§l0 §bblock(s)",
     "rarity": "RARE",
     "creativeTab": {

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/kit_de_cablage"
+    "layer0": "erinium:item/kit_de_cablage"
   }
 }

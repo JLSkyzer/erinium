@@ -1,9 +1,10 @@
 {
   "parent": "erinium:custom/square_painting",
   "textures": {
-    "all": "erinium:blocks/512_x_512",
-    "particle": "erinium:blocks/512_x_512",
-    "image": "erinium:blocks/erinium_logo",
-    "bois": "erinium:blocks/bois"
-  }
+    "all": "erinium:block/512_x_512",
+    "particle": "erinium:block/512_x_512",
+    "image": "erinium:block/erinium_logo",
+    "bois": "erinium:block/bois"
+  },
+  "render_type": "solid"
 }

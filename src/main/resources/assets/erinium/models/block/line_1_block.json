@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/light_green_3",
-    "up": "erinium:blocks/light_green_3",
-    "north": "erinium:blocks/light_green_3",
-    "east": "erinium:blocks/light_green_3",
-    "south": "erinium:blocks/light_green_3",
-    "west": "erinium:blocks/light_green_3",
-    "particle": "erinium:blocks/light_green_3"
-  }
+    "down": "erinium:block/light_green_3",
+    "up": "erinium:block/light_green_3",
+    "north": "erinium:block/light_green_3",
+    "east": "erinium:block/light_green_3",
+    "south": "erinium:block/light_green_3",
+    "west": "erinium:block/light_green_3",
+    "particle": "erinium:block/light_green_3"
+  },
+  "render_type": "solid"
 }

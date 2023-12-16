@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/ingot_copper"
+    "layer0": "erinium:item/ingot_copper"
   }
 }

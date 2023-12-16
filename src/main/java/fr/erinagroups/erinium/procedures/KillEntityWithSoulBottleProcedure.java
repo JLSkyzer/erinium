@@ -2,101 +2,62 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.passive.CowEntity;
-import net.minecraft.entity.monster.SkeletonEntity;
-import net.minecraft.entity.monster.EndermanEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.monster.Skeleton;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.animal.Cow;
+import net.minecraft.world.entity.Entity;
+
+import javax.annotation.Nullable;
 
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.Map;
-import java.util.HashMap;
 
-import fr.erinagroups.erinium.item.SoulBottleItem;
-import fr.erinagroups.erinium.item.SoulBottle5Item;
-import fr.erinagroups.erinium.item.SoulBottle4Item;
-import fr.erinagroups.erinium.item.SoulBottle3Item;
-import fr.erinagroups.erinium.item.SoulBottle2Item;
-import fr.erinagroups.erinium.item.SoulBottle1Item;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModItems;
 
+@Mod.EventBusSubscriber
 public class KillEntityWithSoulBottleProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onEntityDeath(LivingDeathEvent event) {
-			if (event != null && event.getEntity() != null) {
-				Entity entity = event.getEntity();
-				Entity sourceentity = event.getSource().getTrueSource();
-				double i = entity.getPosX();
-				double j = entity.getPosY();
-				double k = entity.getPosZ();
-				World world = entity.world;
-				Map<String, Object> dependencies = new HashMap<>();
-				dependencies.put("x", i);
-				dependencies.put("y", j);
-				dependencies.put("z", k);
-				dependencies.put("world", world);
-				dependencies.put("entity", entity);
-				dependencies.put("sourceentity", sourceentity);
-				dependencies.put("event", event);
-				executeProcedure(dependencies);
-			}
+	@SubscribeEvent
+	public static void onEntityDeath(LivingDeathEvent event) {
+		if (event != null && event.getEntity() != null) {
+			execute(event, event.getEntity().level(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure KillEntityWithSoulBottle!");
+	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity) {
+		execute(null, world, entity, sourceentity);
+	}
+
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure KillEntityWithSoulBottle!");
-			return;
-		}
-		if (dependencies.get("sourceentity") == null) {
-			if (!dependencies.containsKey("sourceentity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency sourceentity for procedure KillEntityWithSoulBottle!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		Entity entity = (Entity) dependencies.get("entity");
-		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		ItemStack temp = ItemStack.EMPTY;
-		if (entity instanceof CowEntity) {
-			if ((sourceentity instanceof PlayerEntity)
-					? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle4Item.block))
-					: false) {
+		if (entity instanceof Cow) {
+			if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_4.get())) : false) {
 				{
 					AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-					sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-							.ifPresent(capability -> _iitemhandlerref.set(capability));
+					sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 					if (_iitemhandlerref.get() != null) {
 						for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 							ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-							if (itemstackiterator.getItem() == SoulBottle4Item.block
-									&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
-								if (sourceentity instanceof PlayerEntity) {
+							if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_4.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
+								if (sourceentity instanceof Player _player) {
 									ItemStack _stktoremove = itemstackiterator;
-									((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-											((PlayerEntity) sourceentity).container.func_234641_j_());
+									_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 								}
-								temp = new ItemStack(SoulBottle5Item.block);
-								(temp).getOrCreateTag().putString("type", "Cow");
-								if (sourceentity instanceof PlayerEntity) {
-									ItemStack _setstack = (temp);
-									_setstack.setCount((int) 1);
-									ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+								temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_5.get());
+								temp.getOrCreateTag().putString("type", "Cow");
+								if (sourceentity instanceof Player _player) {
+									ItemStack _setstack = temp;
+									_setstack.setCount(1);
+									ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 								}
 								break;
 							}
@@ -104,29 +65,24 @@ public class KillEntityWithSoulBottleProcedure {
 					}
 				}
 			} else {
-				if ((sourceentity instanceof PlayerEntity)
-						? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle3Item.block))
-						: false) {
+				if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_3.get())) : false) {
 					{
 						AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-						sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-								.ifPresent(capability -> _iitemhandlerref.set(capability));
+						sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 						if (_iitemhandlerref.get() != null) {
 							for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 								ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-								if (itemstackiterator.getItem() == SoulBottle3Item.block
-										&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
-									if (sourceentity instanceof PlayerEntity) {
+								if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_3.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
+									if (sourceentity instanceof Player _player) {
 										ItemStack _stktoremove = itemstackiterator;
-										((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-												((PlayerEntity) sourceentity).container.func_234641_j_());
+										_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 									}
-									temp = new ItemStack(SoulBottle4Item.block);
-									(temp).getOrCreateTag().putString("type", "Cow");
-									if (sourceentity instanceof PlayerEntity) {
-										ItemStack _setstack = (temp);
-										_setstack.setCount((int) 1);
-										ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+									temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_4.get());
+									temp.getOrCreateTag().putString("type", "Cow");
+									if (sourceentity instanceof Player _player) {
+										ItemStack _setstack = temp;
+										_setstack.setCount(1);
+										ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 									}
 									break;
 								}
@@ -134,29 +90,24 @@ public class KillEntityWithSoulBottleProcedure {
 						}
 					}
 				} else {
-					if ((sourceentity instanceof PlayerEntity)
-							? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle2Item.block))
-							: false) {
+					if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_2.get())) : false) {
 						{
 							AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-							sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-									.ifPresent(capability -> _iitemhandlerref.set(capability));
+							sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 							if (_iitemhandlerref.get() != null) {
 								for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-									if (itemstackiterator.getItem() == SoulBottle2Item.block
-											&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
-										if (sourceentity instanceof PlayerEntity) {
+									if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_2.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
+										if (sourceentity instanceof Player _player) {
 											ItemStack _stktoremove = itemstackiterator;
-											((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-													(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+											_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 										}
-										temp = new ItemStack(SoulBottle3Item.block);
-										(temp).getOrCreateTag().putString("type", "Cow");
-										if (sourceentity instanceof PlayerEntity) {
-											ItemStack _setstack = (temp);
-											_setstack.setCount((int) 1);
-											ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+										temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_3.get());
+										temp.getOrCreateTag().putString("type", "Cow");
+										if (sourceentity instanceof Player _player) {
+											ItemStack _setstack = temp;
+											_setstack.setCount(1);
+											ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 										}
 										break;
 									}
@@ -164,29 +115,24 @@ public class KillEntityWithSoulBottleProcedure {
 							}
 						}
 					} else {
-						if ((sourceentity instanceof PlayerEntity)
-								? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle1Item.block))
-								: false) {
+						if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_1.get())) : false) {
 							{
 								AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-								sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-										.ifPresent(capability -> _iitemhandlerref.set(capability));
+								sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 								if (_iitemhandlerref.get() != null) {
 									for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 										ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-										if (itemstackiterator.getItem() == SoulBottle1Item.block
-												&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
-											if (sourceentity instanceof PlayerEntity) {
+										if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_1.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Cow")) {
+											if (sourceentity instanceof Player _player) {
 												ItemStack _stktoremove = itemstackiterator;
-												((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-														(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+												_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 											}
-											temp = new ItemStack(SoulBottle2Item.block);
-											(temp).getOrCreateTag().putString("type", "Cow");
-											if (sourceentity instanceof PlayerEntity) {
-												ItemStack _setstack = (temp);
-												_setstack.setCount((int) 1);
-												ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+											temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_2.get());
+											temp.getOrCreateTag().putString("type", "Cow");
+											if (sourceentity instanceof Player _player) {
+												ItemStack _setstack = temp;
+												_setstack.setCount(1);
+												ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 											}
 											break;
 										}
@@ -194,28 +140,24 @@ public class KillEntityWithSoulBottleProcedure {
 								}
 							}
 						} else {
-							if ((sourceentity instanceof PlayerEntity)
-									? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottleItem.block))
-									: false) {
+							if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE.get())) : false) {
 								{
 									AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-									sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-											.ifPresent(capability -> _iitemhandlerref.set(capability));
+									sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 									if (_iitemhandlerref.get() != null) {
 										for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 											ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-											if (itemstackiterator.getItem() == SoulBottleItem.block) {
-												if (sourceentity instanceof PlayerEntity) {
+											if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE.get()) {
+												if (sourceentity instanceof Player _player) {
 													ItemStack _stktoremove = itemstackiterator;
-													((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-															(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+													_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 												}
-												temp = new ItemStack(SoulBottle1Item.block);
-												(temp).getOrCreateTag().putString("type", "Cow");
-												if (sourceentity instanceof PlayerEntity) {
-													ItemStack _setstack = (temp);
-													_setstack.setCount((int) 1);
-													ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+												temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_1.get());
+												temp.getOrCreateTag().putString("type", "Cow");
+												if (sourceentity instanceof Player _player) {
+													ItemStack _setstack = temp;
+													_setstack.setCount(1);
+													ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 												}
 												break;
 											}
@@ -227,30 +169,25 @@ public class KillEntityWithSoulBottleProcedure {
 					}
 				}
 			}
-		} else if (entity instanceof EndermanEntity) {
-			if ((sourceentity instanceof PlayerEntity)
-					? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle4Item.block))
-					: false) {
+		} else if (entity instanceof EnderMan) {
+			if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_4.get())) : false) {
 				{
 					AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-					sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-							.ifPresent(capability -> _iitemhandlerref.set(capability));
+					sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 					if (_iitemhandlerref.get() != null) {
 						for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 							ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-							if (itemstackiterator.getItem() == SoulBottle4Item.block
-									&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
-								if (sourceentity instanceof PlayerEntity) {
+							if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_4.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
+								if (sourceentity instanceof Player _player) {
 									ItemStack _stktoremove = itemstackiterator;
-									((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-											((PlayerEntity) sourceentity).container.func_234641_j_());
+									_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 								}
-								temp = new ItemStack(SoulBottle5Item.block);
-								(temp).getOrCreateTag().putString("type", "Enderman");
-								if (sourceentity instanceof PlayerEntity) {
-									ItemStack _setstack = (temp);
-									_setstack.setCount((int) 1);
-									ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+								temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_5.get());
+								temp.getOrCreateTag().putString("type", "Enderman");
+								if (sourceentity instanceof Player _player) {
+									ItemStack _setstack = temp;
+									_setstack.setCount(1);
+									ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 								}
 								break;
 							}
@@ -258,29 +195,24 @@ public class KillEntityWithSoulBottleProcedure {
 					}
 				}
 			} else {
-				if ((sourceentity instanceof PlayerEntity)
-						? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle3Item.block))
-						: false) {
+				if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_3.get())) : false) {
 					{
 						AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-						sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-								.ifPresent(capability -> _iitemhandlerref.set(capability));
+						sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 						if (_iitemhandlerref.get() != null) {
 							for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 								ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-								if (itemstackiterator.getItem() == SoulBottle3Item.block
-										&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
-									if (sourceentity instanceof PlayerEntity) {
+								if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_3.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
+									if (sourceentity instanceof Player _player) {
 										ItemStack _stktoremove = itemstackiterator;
-										((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-												((PlayerEntity) sourceentity).container.func_234641_j_());
+										_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 									}
-									temp = new ItemStack(SoulBottle4Item.block);
-									(temp).getOrCreateTag().putString("type", "Enderman");
-									if (sourceentity instanceof PlayerEntity) {
-										ItemStack _setstack = (temp);
-										_setstack.setCount((int) 1);
-										ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+									temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_4.get());
+									temp.getOrCreateTag().putString("type", "Enderman");
+									if (sourceentity instanceof Player _player) {
+										ItemStack _setstack = temp;
+										_setstack.setCount(1);
+										ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 									}
 									break;
 								}
@@ -288,29 +220,24 @@ public class KillEntityWithSoulBottleProcedure {
 						}
 					}
 				} else {
-					if ((sourceentity instanceof PlayerEntity)
-							? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle2Item.block))
-							: false) {
+					if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_2.get())) : false) {
 						{
 							AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-							sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-									.ifPresent(capability -> _iitemhandlerref.set(capability));
+							sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 							if (_iitemhandlerref.get() != null) {
 								for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-									if (itemstackiterator.getItem() == SoulBottle2Item.block
-											&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
-										if (sourceentity instanceof PlayerEntity) {
+									if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_2.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
+										if (sourceentity instanceof Player _player) {
 											ItemStack _stktoremove = itemstackiterator;
-											((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-													(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+											_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 										}
-										temp = new ItemStack(SoulBottle3Item.block);
-										(temp).getOrCreateTag().putString("type", "Enderman");
-										if (sourceentity instanceof PlayerEntity) {
-											ItemStack _setstack = (temp);
-											_setstack.setCount((int) 1);
-											ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+										temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_3.get());
+										temp.getOrCreateTag().putString("type", "Enderman");
+										if (sourceentity instanceof Player _player) {
+											ItemStack _setstack = temp;
+											_setstack.setCount(1);
+											ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 										}
 										break;
 									}
@@ -318,29 +245,24 @@ public class KillEntityWithSoulBottleProcedure {
 							}
 						}
 					} else {
-						if ((sourceentity instanceof PlayerEntity)
-								? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle1Item.block))
-								: false) {
+						if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_1.get())) : false) {
 							{
 								AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-								sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-										.ifPresent(capability -> _iitemhandlerref.set(capability));
+								sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 								if (_iitemhandlerref.get() != null) {
 									for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 										ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-										if (itemstackiterator.getItem() == SoulBottle1Item.block
-												&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
-											if (sourceentity instanceof PlayerEntity) {
+										if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_1.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Enderman")) {
+											if (sourceentity instanceof Player _player) {
 												ItemStack _stktoremove = itemstackiterator;
-												((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-														(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+												_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 											}
-											temp = new ItemStack(SoulBottle2Item.block);
-											(temp).getOrCreateTag().putString("type", "Enderman");
-											if (sourceentity instanceof PlayerEntity) {
-												ItemStack _setstack = (temp);
-												_setstack.setCount((int) 1);
-												ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+											temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_2.get());
+											temp.getOrCreateTag().putString("type", "Enderman");
+											if (sourceentity instanceof Player _player) {
+												ItemStack _setstack = temp;
+												_setstack.setCount(1);
+												ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 											}
 											break;
 										}
@@ -348,28 +270,24 @@ public class KillEntityWithSoulBottleProcedure {
 								}
 							}
 						} else {
-							if ((sourceentity instanceof PlayerEntity)
-									? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottleItem.block))
-									: false) {
+							if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE.get())) : false) {
 								{
 									AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-									sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-											.ifPresent(capability -> _iitemhandlerref.set(capability));
+									sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 									if (_iitemhandlerref.get() != null) {
 										for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 											ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-											if (itemstackiterator.getItem() == SoulBottleItem.block) {
-												if (sourceentity instanceof PlayerEntity) {
+											if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE.get()) {
+												if (sourceentity instanceof Player _player) {
 													ItemStack _stktoremove = itemstackiterator;
-													((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-															(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+													_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 												}
-												temp = new ItemStack(SoulBottle1Item.block);
-												(temp).getOrCreateTag().putString("type", "Enderman");
-												if (sourceentity instanceof PlayerEntity) {
-													ItemStack _setstack = (temp);
-													_setstack.setCount((int) 1);
-													ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+												temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_1.get());
+												temp.getOrCreateTag().putString("type", "Enderman");
+												if (sourceentity instanceof Player _player) {
+													ItemStack _setstack = temp;
+													_setstack.setCount(1);
+													ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 												}
 												break;
 											}
@@ -381,30 +299,25 @@ public class KillEntityWithSoulBottleProcedure {
 					}
 				}
 			}
-		} else if (entity instanceof SkeletonEntity) {
-			if ((sourceentity instanceof PlayerEntity)
-					? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle4Item.block))
-					: false) {
+		} else if (entity instanceof Skeleton) {
+			if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_4.get())) : false) {
 				{
 					AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-					sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-							.ifPresent(capability -> _iitemhandlerref.set(capability));
+					sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 					if (_iitemhandlerref.get() != null) {
 						for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 							ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-							if (itemstackiterator.getItem() == SoulBottle4Item.block
-									&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
-								if (sourceentity instanceof PlayerEntity) {
+							if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_4.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
+								if (sourceentity instanceof Player _player) {
 									ItemStack _stktoremove = itemstackiterator;
-									((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-											((PlayerEntity) sourceentity).container.func_234641_j_());
+									_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 								}
-								temp = new ItemStack(SoulBottle5Item.block);
-								(temp).getOrCreateTag().putString("type", "Skeleton");
-								if (sourceentity instanceof PlayerEntity) {
-									ItemStack _setstack = (temp);
-									_setstack.setCount((int) 1);
-									ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+								temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_5.get());
+								temp.getOrCreateTag().putString("type", "Skeleton");
+								if (sourceentity instanceof Player _player) {
+									ItemStack _setstack = temp;
+									_setstack.setCount(1);
+									ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 								}
 								break;
 							}
@@ -412,29 +325,24 @@ public class KillEntityWithSoulBottleProcedure {
 					}
 				}
 			} else {
-				if ((sourceentity instanceof PlayerEntity)
-						? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle3Item.block))
-						: false) {
+				if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_3.get())) : false) {
 					{
 						AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-						sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-								.ifPresent(capability -> _iitemhandlerref.set(capability));
+						sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 						if (_iitemhandlerref.get() != null) {
 							for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 								ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-								if (itemstackiterator.getItem() == SoulBottle3Item.block
-										&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
-									if (sourceentity instanceof PlayerEntity) {
+								if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_3.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
+									if (sourceentity instanceof Player _player) {
 										ItemStack _stktoremove = itemstackiterator;
-										((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-												((PlayerEntity) sourceentity).container.func_234641_j_());
+										_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 									}
-									temp = new ItemStack(SoulBottle4Item.block);
-									(temp).getOrCreateTag().putString("type", "Skeleton");
-									if (sourceentity instanceof PlayerEntity) {
-										ItemStack _setstack = (temp);
-										_setstack.setCount((int) 1);
-										ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+									temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_4.get());
+									temp.getOrCreateTag().putString("type", "Skeleton");
+									if (sourceentity instanceof Player _player) {
+										ItemStack _setstack = temp;
+										_setstack.setCount(1);
+										ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 									}
 									break;
 								}
@@ -442,29 +350,24 @@ public class KillEntityWithSoulBottleProcedure {
 						}
 					}
 				} else {
-					if ((sourceentity instanceof PlayerEntity)
-							? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle2Item.block))
-							: false) {
+					if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_2.get())) : false) {
 						{
 							AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-							sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-									.ifPresent(capability -> _iitemhandlerref.set(capability));
+							sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 							if (_iitemhandlerref.get() != null) {
 								for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 									ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-									if (itemstackiterator.getItem() == SoulBottle2Item.block
-											&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
-										if (sourceentity instanceof PlayerEntity) {
+									if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_2.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
+										if (sourceentity instanceof Player _player) {
 											ItemStack _stktoremove = itemstackiterator;
-											((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-													(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+											_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 										}
-										temp = new ItemStack(SoulBottle3Item.block);
-										(temp).getOrCreateTag().putString("type", "Skeleton");
-										if (sourceentity instanceof PlayerEntity) {
-											ItemStack _setstack = (temp);
-											_setstack.setCount((int) 1);
-											ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+										temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_3.get());
+										temp.getOrCreateTag().putString("type", "Skeleton");
+										if (sourceentity instanceof Player _player) {
+											ItemStack _setstack = temp;
+											_setstack.setCount(1);
+											ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 										}
 										break;
 									}
@@ -472,29 +375,24 @@ public class KillEntityWithSoulBottleProcedure {
 							}
 						}
 					} else {
-						if ((sourceentity instanceof PlayerEntity)
-								? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottle1Item.block))
-								: false) {
+						if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE_1.get())) : false) {
 							{
 								AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-								sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-										.ifPresent(capability -> _iitemhandlerref.set(capability));
+								sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 								if (_iitemhandlerref.get() != null) {
 									for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 										ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-										if (itemstackiterator.getItem() == SoulBottle1Item.block
-												&& (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
-											if (sourceentity instanceof PlayerEntity) {
+										if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE_1.get() && (itemstackiterator.getOrCreateTag().getString("type")).equals("Skeleton")) {
+											if (sourceentity instanceof Player _player) {
 												ItemStack _stktoremove = itemstackiterator;
-												((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-														(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+												_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 											}
-											temp = new ItemStack(SoulBottle2Item.block);
-											(temp).getOrCreateTag().putString("type", "Skeleton");
-											if (sourceentity instanceof PlayerEntity) {
-												ItemStack _setstack = (temp);
-												_setstack.setCount((int) 1);
-												ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+											temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_2.get());
+											temp.getOrCreateTag().putString("type", "Skeleton");
+											if (sourceentity instanceof Player _player) {
+												ItemStack _setstack = temp;
+												_setstack.setCount(1);
+												ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 											}
 											break;
 										}
@@ -502,28 +400,24 @@ public class KillEntityWithSoulBottleProcedure {
 								}
 							}
 						} else {
-							if ((sourceentity instanceof PlayerEntity)
-									? ((PlayerEntity) sourceentity).inventory.hasItemStack(new ItemStack(SoulBottleItem.block))
-									: false) {
+							if (sourceentity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.SOUL_BOTTLE.get())) : false) {
 								{
 									AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-									sourceentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-											.ifPresent(capability -> _iitemhandlerref.set(capability));
+									sourceentity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(_iitemhandlerref::set);
 									if (_iitemhandlerref.get() != null) {
 										for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 											ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-											if (itemstackiterator.getItem() == SoulBottleItem.block) {
-												if (sourceentity instanceof PlayerEntity) {
+											if (itemstackiterator.getItem() == EriniumModItems.SOUL_BOTTLE.get()) {
+												if (sourceentity instanceof Player _player) {
 													ItemStack _stktoremove = itemstackiterator;
-													((PlayerEntity) sourceentity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(),
-															(int) 1, ((PlayerEntity) sourceentity).container.func_234641_j_());
+													_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 												}
-												temp = new ItemStack(SoulBottle1Item.block);
-												(temp).getOrCreateTag().putString("type", "Skeleton");
-												if (sourceentity instanceof PlayerEntity) {
-													ItemStack _setstack = (temp);
-													_setstack.setCount((int) 1);
-													ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+												temp = new ItemStack(EriniumModItems.SOUL_BOTTLE_1.get());
+												temp.getOrCreateTag().putString("type", "Skeleton");
+												if (sourceentity instanceof Player _player) {
+													ItemStack _setstack = temp;
+													_setstack.setCount(1);
+													ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 												}
 												break;
 											}

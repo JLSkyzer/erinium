@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "almonie_paper",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "§4Almonie §6Paper",
     "rarity": "COMMON",
     "creativeTab": {

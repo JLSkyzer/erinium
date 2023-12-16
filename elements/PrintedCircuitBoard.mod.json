@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "printed_circuit_board",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Printed Circuit Board",
     "rarity": "COMMON",
     "creativeTab": {

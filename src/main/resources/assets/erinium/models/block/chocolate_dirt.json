@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/chocolate",
-    "up": "erinium:blocks/chocolate",
-    "north": "erinium:blocks/chocolate",
-    "east": "erinium:blocks/chocolate",
-    "south": "erinium:blocks/chocolate",
-    "west": "erinium:blocks/chocolate",
-    "particle": "erinium:blocks/chocolate"
-  }
+    "down": "erinium:block/chocolate",
+    "up": "erinium:block/chocolate",
+    "north": "erinium:block/chocolate",
+    "east": "erinium:block/chocolate",
+    "south": "erinium:block/chocolate",
+    "west": "erinium:block/chocolate",
+    "particle": "erinium:block/chocolate"
+  },
+  "render_type": "solid"
 }

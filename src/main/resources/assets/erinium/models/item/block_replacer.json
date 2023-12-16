@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "erinium:items/block_replacer"
+    "layer0": "erinium:item/block_replacer"
   }
 }

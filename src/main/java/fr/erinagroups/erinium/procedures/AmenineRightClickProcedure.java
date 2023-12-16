@@ -2,238 +2,199 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.items.ItemHandlerHelper;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.state.Property;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.BlockPos;
 
 import java.util.Map;
 
-import fr.erinagroups.erinium.item.AmenineLiquid5Item;
-import fr.erinagroups.erinium.item.AmenineLiquid4Item;
-import fr.erinagroups.erinium.item.AmenineLiquid3Item;
-import fr.erinagroups.erinium.item.AmenineLiquid2Item;
-import fr.erinagroups.erinium.item.AmenineLiquid1Item;
-import fr.erinagroups.erinium.block.ExtractorEmptyBlock;
-import fr.erinagroups.erinium.block.ExtractorAmenine5Block;
-import fr.erinagroups.erinium.block.ExtractorAmenine4Block;
-import fr.erinagroups.erinium.block.ExtractorAmenine3Block;
-import fr.erinagroups.erinium.block.ExtractorAmenine2Block;
-import fr.erinagroups.erinium.block.ExtractorAmenine1Block;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModItems;
+import fr.erinagroups.erinium.init.EriniumModBlocks;
 
 public class AmenineRightClickProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure AmenineRightClick!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure AmenineRightClick!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure AmenineRightClick!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure AmenineRightClick!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure AmenineRightClick!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == ExtractorAmenine1Block.block) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EriniumModBlocks.EXTRACTOR_AMENINE_1.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorEmptyBlock.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_EMPTY.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				TileEntity _te = world.getTileEntity(_bp);
-				CompoundNBT _bnbt = null;
-				if (_te != null) {
-					_bnbt = _te.write(new CompoundNBT());
-					_te.remove();
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 				if (_bnbt != null) {
-					_te = world.getTileEntity(_bp);
-					if (_te != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
 						try {
-							_te.read(_bso, _bnbt);
+							_be.load(_bnbt);
 						} catch (Exception ignored) {
 						}
 					}
 				}
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(AmenineLiquid1Item.block);
-				_setstack.setCount((int) 1);
-				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			if (entity instanceof Player _player) {
+				ItemStack _setstack = new ItemStack(EriniumModItems.AMENINE_LIQUID_1.get());
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
-		} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == ExtractorAmenine2Block.block) {
+		} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EriniumModBlocks.EXTRACTOR_AMENINE_2.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorEmptyBlock.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_EMPTY.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				TileEntity _te = world.getTileEntity(_bp);
-				CompoundNBT _bnbt = null;
-				if (_te != null) {
-					_bnbt = _te.write(new CompoundNBT());
-					_te.remove();
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 				if (_bnbt != null) {
-					_te = world.getTileEntity(_bp);
-					if (_te != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
 						try {
-							_te.read(_bso, _bnbt);
+							_be.load(_bnbt);
 						} catch (Exception ignored) {
 						}
 					}
 				}
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(AmenineLiquid2Item.block);
-				_setstack.setCount((int) 1);
-				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			if (entity instanceof Player _player) {
+				ItemStack _setstack = new ItemStack(EriniumModItems.AMENINE_LIQUID_2.get());
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
-		} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == ExtractorAmenine3Block.block) {
+		} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EriniumModBlocks.EXTRACTOR_AMENINE_3.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorEmptyBlock.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_EMPTY.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				TileEntity _te = world.getTileEntity(_bp);
-				CompoundNBT _bnbt = null;
-				if (_te != null) {
-					_bnbt = _te.write(new CompoundNBT());
-					_te.remove();
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 				if (_bnbt != null) {
-					_te = world.getTileEntity(_bp);
-					if (_te != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
 						try {
-							_te.read(_bso, _bnbt);
+							_be.load(_bnbt);
 						} catch (Exception ignored) {
 						}
 					}
 				}
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(AmenineLiquid3Item.block);
-				_setstack.setCount((int) 1);
-				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			if (entity instanceof Player _player) {
+				ItemStack _setstack = new ItemStack(EriniumModItems.AMENINE_LIQUID_3.get());
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
-		} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == ExtractorAmenine4Block.block) {
+		} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EriniumModBlocks.EXTRACTOR_AMENINE_4.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorEmptyBlock.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_EMPTY.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				TileEntity _te = world.getTileEntity(_bp);
-				CompoundNBT _bnbt = null;
-				if (_te != null) {
-					_bnbt = _te.write(new CompoundNBT());
-					_te.remove();
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 				if (_bnbt != null) {
-					_te = world.getTileEntity(_bp);
-					if (_te != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
 						try {
-							_te.read(_bso, _bnbt);
+							_be.load(_bnbt);
 						} catch (Exception ignored) {
 						}
 					}
 				}
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(AmenineLiquid4Item.block);
-				_setstack.setCount((int) 1);
-				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			if (entity instanceof Player _player) {
+				ItemStack _setstack = new ItemStack(EriniumModItems.AMENINE_LIQUID_4.get());
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
-		} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == ExtractorAmenine5Block.block) {
+		} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EriniumModBlocks.EXTRACTOR_AMENINE_5.get()) {
 			{
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = ExtractorEmptyBlock.block.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockState _bs = EriniumModBlocks.EXTRACTOR_EMPTY.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.get(_property) != null)
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				TileEntity _te = world.getTileEntity(_bp);
-				CompoundNBT _bnbt = null;
-				if (_te != null) {
-					_bnbt = _te.write(new CompoundNBT());
-					_te.remove();
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 				if (_bnbt != null) {
-					_te = world.getTileEntity(_bp);
-					if (_te != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
 						try {
-							_te.read(_bso, _bnbt);
+							_be.load(_bnbt);
 						} catch (Exception ignored) {
 						}
 					}
 				}
 			}
-			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(AmenineLiquid5Item.block);
-				_setstack.setCount((int) 1);
-				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			if (entity instanceof Player _player) {
+				ItemStack _setstack = new ItemStack(EriniumModItems.AMENINE_LIQUID_5.get());
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
 		}
 	}

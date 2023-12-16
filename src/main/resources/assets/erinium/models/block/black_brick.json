@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/brickmooth2",
-    "up": "erinium:blocks/brickmooth2",
-    "north": "erinium:blocks/brickmooth2",
-    "east": "erinium:blocks/brickmooth2",
-    "south": "erinium:blocks/brickmooth2",
-    "west": "erinium:blocks/brickmooth2",
-    "particle": "erinium:blocks/brickmooth2"
-  }
+    "down": "erinium:block/brickmooth2",
+    "up": "erinium:block/brickmooth2",
+    "north": "erinium:block/brickmooth2",
+    "east": "erinium:block/brickmooth2",
+    "south": "erinium:block/brickmooth2",
+    "west": "erinium:block/brickmooth2",
+    "particle": "erinium:block/brickmooth2"
+  },
+  "render_type": "solid"
 }

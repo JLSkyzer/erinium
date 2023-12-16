@@ -1,12 +1,13 @@
 {
   "parent": "erinium:custom/extractor_bottle_empty",
   "textures": {
-    "all": "erinium:blocks/gradient_gray",
-    "particle": "erinium:blocks/gradient_gray",
-    "light_bleu-green.png": "erinium:blocks/light_bleu-green",
-    "White": "erinium:blocks/white",
-    "light_gray.png": "erinium:blocks/light_gray",
-    "dark_gray": "erinium:blocks/dark_gray",
-    "gradient_gray": "erinium:blocks/gradient_gray"
-  }
+    "all": "erinium:block/gradient_gray",
+    "particle": "erinium:block/gradient_gray",
+    "light_bleu-green.png": "erinium:block/light_bleu-green",
+    "White": "erinium:block/white",
+    "light_gray.png": "erinium:block/light_gray",
+    "dark_gray": "erinium:block/dark_gray",
+    "gradient_gray": "erinium:block/gradient_gray"
+  },
+  "render_type": "solid"
 }

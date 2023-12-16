@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/astral_miner_foot"
+    "layer0": "erinium:item/astral_miner_foot"
   }
 }

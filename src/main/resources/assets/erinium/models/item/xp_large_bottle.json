@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/xp_large_bottle"
+    "layer0": "erinium:item/xp_large_bottle"
   }
 }

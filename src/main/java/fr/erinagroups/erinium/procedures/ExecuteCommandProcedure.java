@@ -2,42 +2,27 @@ package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.CommandEvent;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.command.CommandSource;
+import net.minecraft.world.entity.Entity;
 
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
-import com.mojang.brigadier.context.CommandContext;
-
+@Mod.EventBusSubscriber
 public class ExecuteCommandProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onCommand(CommandEvent event) {
-			Entity entity = event.getParseResults().getContext().getSource().getEntity();
-			if (entity != null) {
-				double i = entity.getPosX();
-				double j = entity.getPosY();
-				double k = entity.getPosZ();
-				CommandContext<CommandSource> ctx = event.getParseResults().getContext().build(event.getParseResults().getReader().getString());
-				Map<String, Object> dependencies = new HashMap<>();
-				dependencies.put("x", i);
-				dependencies.put("y", j);
-				dependencies.put("z", k);
-				dependencies.put("world", entity.world);
-				dependencies.put("entity", entity);
-				dependencies.put("command", event.getParseResults().getReader().getString());
-				dependencies.put("arguments", ctx);
-				dependencies.put("event", event);
-				executeProcedure(dependencies);
-			}
+	@SubscribeEvent
+	public static void onCommand(CommandEvent event) {
+		Entity entity = event.getParseResults().getContext().getSource().getEntity();
+		if (entity != null) {
+			execute(event);
 		}
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
+	public static void execute() {
+		execute(null);
+	}
 
+	private static void execute(@Nullable Event event) {
 	}
 }

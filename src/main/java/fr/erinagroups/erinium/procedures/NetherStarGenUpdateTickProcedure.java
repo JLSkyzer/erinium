@@ -1,81 +1,47 @@
 package fr.erinagroups.erinium.procedures;
 
 import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.core.BlockPos;
 
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.Map;
 
-import fr.erinagroups.erinium.EriniumModVariables;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.network.EriniumModVariables;
 
 public class NetherStarGenUpdateTickProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure NetherStarGenUpdateTick!");
-			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure NetherStarGenUpdateTick!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure NetherStarGenUpdateTick!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure NetherStarGenUpdateTick!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
+	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (EriniumModVariables.MapVariables.get(world).enablemoddedfeatures) {
 			if (new Object() {
-				public int getAmount(IWorld world, BlockPos pos, int sltid) {
+				public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
 					AtomicInteger _retval = new AtomicInteger(0);
-					TileEntity _ent = world.getTileEntity(pos);
-					if (_ent != null) {
-						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-							_retval.set(capability.getStackInSlot(sltid).getCount());
-						});
-					}
+					BlockEntity _ent = world.getBlockEntity(pos);
+					if (_ent != null)
+						_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
 					return _retval.get();
 				}
-			}.getAmount(world, new BlockPos(x, y, z), (int) (0)) < 64) {
+			}.getAmount(world, BlockPos.containing(x, y, z), 0) < 64) {
 				{
-					TileEntity _ent = world.getTileEntity(new BlockPos(x, y, z));
+					BlockEntity _ent = world.getBlockEntity(BlockPos.containing(x, y, z));
 					if (_ent != null) {
-						final int _sltid = (int) (0);
+						final int _slotid = 0;
 						final ItemStack _setstack = new ItemStack(Items.NETHER_STAR);
 						_setstack.setCount((int) (new Object() {
-							public int getAmount(IWorld world, BlockPos pos, int sltid) {
+							public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
 								AtomicInteger _retval = new AtomicInteger(0);
-								TileEntity _ent = world.getTileEntity(pos);
-								if (_ent != null) {
-									_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-										_retval.set(capability.getStackInSlot(sltid).getCount());
-									});
-								}
+								BlockEntity _ent = world.getBlockEntity(pos);
+								if (_ent != null)
+									_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
 								return _retval.get();
 							}
-						}.getAmount(world, new BlockPos(x, y, z), (int) (0)) + 1));
-						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-							if (capability instanceof IItemHandlerModifiable) {
-								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-							}
+						}.getAmount(world, BlockPos.containing(x, y, z), 0) + 1));
+						_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+							if (capability instanceof IItemHandlerModifiable)
+								((IItemHandlerModifiable) capability).setStackInSlot(_slotid, _setstack);
 						});
 					}
 				}

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/almonie_card"
+    "layer0": "erinium:item/almonie_card"
   }
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
     " 1 ",
     "345",
@@ -23,7 +24,7 @@
     }
   },
   "result": {
-    "item": "erinium:xp_bush_layer_0",
+    "item": "erinium:deleted_mod_element",
     "count": 1
   }
 }

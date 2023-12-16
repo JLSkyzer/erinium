@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/usinage"
-  }
+    "layer0": "erinium:item/usinage"
+  },
+  "render_type": "translucent"
 }

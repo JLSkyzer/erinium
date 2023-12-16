@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "lead_ingot",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "§9§lLead Ingot",
     "rarity": "UNCOMMON",
     "creativeTab": {

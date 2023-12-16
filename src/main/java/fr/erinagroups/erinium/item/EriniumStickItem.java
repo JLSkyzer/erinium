@@ -1,50 +1,18 @@
 
 package fr.erinagroups.erinium.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.item.UseAction;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.block.BlockState;
-
-import fr.erinagroups.erinium.itemgroup.EriniumItemsItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
-
-@EriniumModElements.ModElement.Tag
-public class EriniumStickItem extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:erinium_stick")
-	public static final Item block = null;
-
-	public EriniumStickItem(EriniumModElements instance) {
-		super(instance, 57);
+public class EriniumStickItem extends Item {
+	public EriniumStickItem() {
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
-	}
-
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(EriniumItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
-			setRegistryName("erinium_stick");
-		}
-
-		@Override
-		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.EAT;
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 1F;
-		}
+	public UseAnim getUseAnimation(ItemStack itemstack) {
+		return UseAnim.EAT;
 	}
 }

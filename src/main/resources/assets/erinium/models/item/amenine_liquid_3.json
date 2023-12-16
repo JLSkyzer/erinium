@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/amenine_liquid_3"
+    "layer0": "erinium:item/amenine_liquid_3"
   }
 }

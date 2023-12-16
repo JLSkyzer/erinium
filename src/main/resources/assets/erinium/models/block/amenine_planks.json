@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/amenine_planks",
-    "up": "erinium:blocks/amenine_planks",
-    "north": "erinium:blocks/amenine_planks",
-    "east": "erinium:blocks/amenine_planks",
-    "south": "erinium:blocks/amenine_planks",
-    "west": "erinium:blocks/amenine_planks",
-    "particle": "erinium:blocks/amenine_planks"
-  }
+    "down": "erinium:block/amenine_planks",
+    "up": "erinium:block/amenine_planks",
+    "north": "erinium:block/amenine_planks",
+    "east": "erinium:block/amenine_planks",
+    "south": "erinium:block/amenine_planks",
+    "west": "erinium:block/amenine_planks",
+    "particle": "erinium:block/amenine_planks"
+  },
+  "render_type": "solid"
 }

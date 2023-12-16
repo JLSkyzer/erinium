@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/candy_stones_iron_ore",
-    "up": "erinium:blocks/candy_stones_iron_ore",
-    "north": "erinium:blocks/candy_stones_iron_ore",
-    "east": "erinium:blocks/candy_stones_iron_ore",
-    "south": "erinium:blocks/candy_stones_iron_ore",
-    "west": "erinium:blocks/candy_stones_iron_ore",
-    "particle": "erinium:blocks/candy_stones_iron_ore"
-  }
+    "down": "erinium:block/candy_stones_iron_ore",
+    "up": "erinium:block/candy_stones_iron_ore",
+    "north": "erinium:block/candy_stones_iron_ore",
+    "east": "erinium:block/candy_stones_iron_ore",
+    "south": "erinium:block/candy_stones_iron_ore",
+    "west": "erinium:block/candy_stones_iron_ore",
+    "particle": "erinium:block/candy_stones_iron_ore"
+  },
+  "render_type": "solid"
 }

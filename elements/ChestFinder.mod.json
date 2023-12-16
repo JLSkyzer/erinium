@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "chest_finder",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Chest Finder",
     "rarity": "RARE",
     "creativeTab": {

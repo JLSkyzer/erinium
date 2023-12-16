@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
     "012",
     "345",
@@ -29,7 +30,7 @@
     }
   },
   "result": {
-    "item": "erinium:duplicate_pickaxe",
+    "item": "erinium:deleted_mod_element",
     "count": 1
   }
 }

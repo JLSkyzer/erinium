@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/leather_block",
-    "up": "erinium:blocks/leather_block",
-    "north": "erinium:blocks/leather_block",
-    "east": "erinium:blocks/leather_block",
-    "south": "erinium:blocks/leather_block",
-    "west": "erinium:blocks/leather_block",
-    "particle": "erinium:blocks/leather_block"
-  }
+    "down": "erinium:block/leather_block",
+    "up": "erinium:block/leather_block",
+    "north": "erinium:block/leather_block",
+    "east": "erinium:block/leather_block",
+    "south": "erinium:block/leather_block",
+    "west": "erinium:block/leather_block",
+    "particle": "erinium:block/leather_block"
+  },
+  "render_type": "solid"
 }

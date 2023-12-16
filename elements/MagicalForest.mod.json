@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "biome",
   "definition": {
     "name": "Magical Forest",
@@ -52,21 +52,29 @@
     "particlesProbability": 0.5,
     "rainingPossibility": 0.7000000000000001,
     "temperature": 0.5,
-    "baseHeight": 0.19999999999999998,
-    "heightVariation": 0.30000000000000004,
     "spawnBiome": true,
-    "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 8,
-    "grassPerChunk": 10,
-    "seagrassPerChunk": 5,
-    "flowersPerChunk": 3,
-    "mushroomsPerChunk": 4,
-    "bigMushroomsChunk": 4,
-    "sandPatchesPerChunk": 0,
-    "gravelPatchesPerChunk": 0,
-    "reedsPerChunk": 2,
-    "cactiPerChunk": 0,
+    "spawnBiomeNether": false,
+    "genTemperature": {
+      "min": -0.16,
+      "max": 0.16
+    },
+    "genHumidity": {
+      "min": 0.24000000000000013,
+      "max": 0.5600000000000002
+    },
+    "genContinentalness": {
+      "min": 0.36,
+      "max": 0.68
+    },
+    "genErosion": {
+      "min": 0.5399999999999999,
+      "max": 0.86
+    },
+    "genWeirdness": {
+      "min": -0.1577683555964898,
+      "max": 0.1622316444035102
+    },
     "treesPerChunk": 20,
     "vanillaTreeType": "Big trees",
     "treeType": 1,
@@ -83,6 +91,16 @@
     "treeFruits": {
       "value": "Blocks.AIR"
     },
+    "defaultFeatures": [
+      "Caves",
+      "Ores",
+      "ExtraEmeraldOre",
+      "ExtraGoldOre",
+      "JungleTreeForest",
+      "ForestGrass",
+      "DefaultFlowers",
+      "DesertFeatures"
+    ],
     "spawnStronghold": true,
     "spawnMineshaft": true,
     "spawnMineshaftMesa": false,
@@ -103,13 +121,6 @@
     "spawnBastionRemnant": false,
     "spawnEndCity": false,
     "spawnRuinedPortal": "JUNGLE",
-    "defaultFeatures": [
-      "Caves",
-      "Ores",
-      "ExtraEmeraldOre",
-      "ExtraGoldOre",
-      "JungleTreeForest"
-    ],
     "spawnEntries": []
   }
 }

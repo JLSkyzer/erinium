@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/amenine_leaves",
-    "up": "erinium:blocks/amenine_leaves",
-    "north": "erinium:blocks/amenine_leaves",
-    "east": "erinium:blocks/amenine_leaves",
-    "south": "erinium:blocks/amenine_leaves",
-    "west": "erinium:blocks/amenine_leaves",
-    "particle": "erinium:blocks/amenine_leaves"
-  }
+    "down": "erinium:block/amenine_leaves",
+    "up": "erinium:block/amenine_leaves",
+    "north": "erinium:block/amenine_leaves",
+    "east": "erinium:block/amenine_leaves",
+    "south": "erinium:block/amenine_leaves",
+    "west": "erinium:block/amenine_leaves",
+    "particle": "erinium:block/amenine_leaves"
+  },
+  "render_type": "translucent"
 }

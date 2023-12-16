@@ -1,73 +1,48 @@
 
 package fr.erinagroups.erinium.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-import net.minecraft.entity.LivingEntity;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.LivingEntity;
 
 import fr.erinagroups.erinium.procedures.KnifeLivingEntityIsHitWithToolProcedure;
-import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
 
-@EriniumModElements.ModElement.Tag
-public class KnifeItem extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:knife")
-	public static final Item block = null;
-
-	public KnifeItem(EriniumModElements instance) {
-		super(instance, 17);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new SwordItem(new IItemTier() {
-			public int getMaxUses() {
+public class KnifeItem extends SwordItem {
+	public KnifeItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 500;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 4f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 4f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 1;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 2;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.EMPTY;
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
 			}
-		}, 3, 96f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
-			@Override
-			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-				boolean retval = super.hitEntity(itemstack, entity, sourceentity);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				World world = entity.world;
+		}, 3, 96f, new Item.Properties());
+	}
 
-				KnifeLivingEntityIsHitWithToolProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-				return retval;
-			}
-		}.setRegistryName("knife"));
+	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
+		KnifeLivingEntityIsHitWithToolProcedure.execute(sourceentity);
+		return retval;
 	}
 }

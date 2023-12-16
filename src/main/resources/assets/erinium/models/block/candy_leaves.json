@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "erinium:blocks/candy_leaves",
-    "particle": "erinium:blocks/candy_leaves"
+    "all": "erinium:block/candy_leaves",
+    "particle": "erinium:block/candy_leaves"
   }
 }

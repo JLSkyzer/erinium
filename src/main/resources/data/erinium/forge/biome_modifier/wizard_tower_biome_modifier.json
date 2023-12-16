@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "features": "erinium:wizard_tower",
+  "step": "surface_structures"
+}

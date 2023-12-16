@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/fraisage"
+    "layer0": "erinium:item/fraisage"
   }
 }

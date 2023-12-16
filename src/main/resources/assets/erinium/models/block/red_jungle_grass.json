@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/redjungle_dirt",
-    "up": "erinium:blocks/redjungle_grass_top",
-    "north": "erinium:blocks/redjungle_grass_side",
-    "east": "erinium:blocks/redjungle_grass_side",
-    "south": "erinium:blocks/redjungle_grass_side",
-    "west": "erinium:blocks/redjungle_grass_side",
-    "particle": "erinium:blocks/redjungle_dirt"
-  }
+    "down": "erinium:block/redjungle_dirt",
+    "up": "erinium:block/redjungle_grass_top",
+    "north": "erinium:block/redjungle_grass_side",
+    "east": "erinium:block/redjungle_grass_side",
+    "south": "erinium:block/redjungle_grass_side",
+    "west": "erinium:block/redjungle_grass_side",
+    "particle": "erinium:block/redjungle_dirt"
+  },
+  "render_type": "solid"
 }

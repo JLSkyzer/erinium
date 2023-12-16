@@ -1,8 +1,0 @@
-{
-  "parent": "erinium:custom/spatial_teleporter_panel",
-  "textures": {
-    "all": "erinium:blocks/panel_structure",
-    "particle": "erinium:blocks/panel_structure",
-    "panel_structure.png": "erinium:blocks/panel_structure"
-  }
-}

@@ -1,13 +1,14 @@
 {
   "parent": "erinium:custom/printer",
   "textures": {
-    "all": "erinium:blocks/printer_top_animated",
-    "particle": "erinium:blocks/printer_top_animated",
-    "light gray.png": "erinium:blocks/light_gray",
-    "light semi-dark blue.png": "erinium:blocks/light_semi-dark_blue",
-    "erinium.png": "erinium:blocks/erinium",
-    "red_to_green.png": "erinium:blocks/red_to_green",
-    "printer_top_animated.png": "erinium:blocks/printer_top_animated",
-    "yellow.png": "erinium:blocks/yellow"
-  }
+    "all": "erinium:block/printer_top_animated",
+    "particle": "erinium:block/printer_top_animated",
+    "light gray.png": "erinium:block/light_gray",
+    "light semi-dark blue.png": "erinium:block/light_semi-dark_blue",
+    "erinium.png": "erinium:block/erinium",
+    "red_to_green.png": "erinium:block/red_to_green",
+    "printer_top_animated.png": "erinium:block/printer_top_animated",
+    "yellow.png": "erinium:block/yellow"
+  },
+  "render_type": "solid"
 }

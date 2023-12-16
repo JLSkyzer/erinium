@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/candy_stones",
-    "up": "erinium:blocks/candy_stones",
-    "north": "erinium:blocks/candy_stones",
-    "east": "erinium:blocks/candy_stones",
-    "south": "erinium:blocks/candy_stones",
-    "west": "erinium:blocks/candy_stones",
-    "particle": "erinium:blocks/candy_stones"
-  }
+    "down": "erinium:block/candy_stones",
+    "up": "erinium:block/candy_stones",
+    "north": "erinium:block/candy_stones",
+    "east": "erinium:block/candy_stones",
+    "south": "erinium:block/candy_stones",
+    "west": "erinium:block/candy_stones",
+    "particle": "erinium:block/candy_stones"
+  },
+  "render_type": "solid"
 }

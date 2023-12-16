@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Nether star gen",
+          "name": "label_nether_star_gen",
+          "text": {
+            "fixedValue": "Nether star gen"
+          },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "name": "Nether star gen",
           "x": 174,
           "y": 42
         }
@@ -29,14 +31,18 @@
           "inputLimit": {
             "value": "Items.NETHER_STAR"
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -4210815,
             "falpha": 0.0
           },
           "id": 0,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
           "x": 204,
           "y": 77
         }

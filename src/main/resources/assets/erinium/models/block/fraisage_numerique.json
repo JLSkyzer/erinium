@@ -1,17 +1,18 @@
 {
   "parent": "erinium:custom/fraiseurs",
   "textures": {
-    "all": "erinium:blocks/moon_sand",
-    "particle": "erinium:blocks/moon_sand",
-    "glass_32.png": "erinium:blocks/glass_32",
-    "black.png": "erinium:blocks/black",
-    "white metal.png": "erinium:blocks/white_metal",
-    "white.png": "erinium:blocks/white",
-    "dark_gray.png": "erinium:blocks/dark_gray",
-    "cnc panel.png": "erinium:blocks/cnc_panel",
-    "métal.png": "erinium:blocks/metal",
-    "black metal.png": "erinium:blocks/black_metal",
-    "dark metal.png": "erinium:blocks/dark_metal",
-    "inox.png": "erinium:blocks/inox"
-  }
+    "all": "erinium:block/moon_sand",
+    "particle": "erinium:block/moon_sand",
+    "glass_32.png": "erinium:block/glass_32",
+    "black.png": "erinium:block/black",
+    "white metal.png": "erinium:block/white_metal",
+    "white.png": "erinium:block/white",
+    "dark_gray.png": "erinium:block/dark_gray",
+    "cnc panel.png": "erinium:block/cnc_panel",
+    "métal.png": "erinium:block/metal",
+    "black metal.png": "erinium:block/black_metal",
+    "dark metal.png": "erinium:block/dark_metal",
+    "inox.png": "erinium:block/inox"
+  },
+  "render_type": "solid"
 }

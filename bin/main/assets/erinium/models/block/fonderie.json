@@ -1,9 +1,0 @@
-{
-  "parent": "erinium:custom/fonderie",
-  "textures": {
-    "all": "erinium:blocks/custom_lava",
-    "particle": "erinium:blocks/dark_metal",
-    "custom_lava.png": "erinium:blocks/custom_lava",
-    "dark metal.png": "erinium:blocks/dark_metal"
-  }
-}

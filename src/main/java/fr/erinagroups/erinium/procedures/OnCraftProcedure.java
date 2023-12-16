@@ -3,130 +3,76 @@ package fr.erinagroups.erinium.procedures;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.World;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import javax.annotation.Nullable;
 
-import fr.erinagroups.erinium.item.WiringKitItem;
-import fr.erinagroups.erinium.item.ScreenItem;
-import fr.erinagroups.erinium.item.PrintedCircuitBoardItem;
-import fr.erinagroups.erinium.item.DraniteGemItem;
-import fr.erinagroups.erinium.item.CobbleVoidItem;
-import fr.erinagroups.erinium.block.SpatialTeleporterPanelBlock;
-import fr.erinagroups.erinium.block.SpatialTeleporterBlockBlock;
-import fr.erinagroups.erinium.EriniumModVariables;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.network.EriniumModVariables;
+import fr.erinagroups.erinium.init.EriniumModItems;
+import fr.erinagroups.erinium.init.EriniumModBlocks;
 
+@Mod.EventBusSubscriber
 public class OnCraftProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-			if (event.phase == TickEvent.Phase.END) {
-				Entity entity = event.player;
-				World world = entity.world;
-				double i = entity.getPosX();
-				double j = entity.getPosY();
-				double k = entity.getPosZ();
-				Map<String, Object> dependencies = new HashMap<>();
-				dependencies.put("x", i);
-				dependencies.put("y", j);
-				dependencies.put("z", k);
-				dependencies.put("world", world);
-				dependencies.put("entity", entity);
-				dependencies.put("event", event);
-				executeProcedure(dependencies);
-			}
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player);
 		}
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure OnCraft!");
+	public static void execute(Entity entity) {
+		execute(null, entity);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity instanceof PlayerEntity)
-				? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(SpatialTeleporterPanelBlock.block))
-				: false) {
-			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 5)) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(SpatialTeleporterPanelBlock.block);
-					((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-							((PlayerEntity) entity).container.func_234641_j_());
+		if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModBlocks.SPATIAL_TELEPORTER_BLOCK.get())) : false) {
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 5)) {
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(EriniumModBlocks.SPATIAL_TELEPORTER_BLOCK.get());
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 				}
-				if (entity instanceof PlayerEntity) {
-					ItemStack _setstack = new ItemStack(ScreenItem.block);
-					_setstack.setCount((int) 1);
-					ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EriniumModItems.PRINTED_CIRCUIT_BOARD.get());
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 				}
-				if (entity instanceof PlayerEntity) {
-					ItemStack _setstack = new ItemStack(SpatialTeleporterBlockBlock.block);
-					_setstack.setCount((int) 2);
-					ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EriniumModItems.DRANITE_GEM.get());
+					_setstack.setCount(4);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 				}
-				ErrorDonthaveLevelProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EriniumModItems.WIRING_KIT.get());
+					_setstack.setCount(4);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				ErrorDonthaveLevelProcedure.execute(entity);
 			}
-		} else if ((entity instanceof PlayerEntity)
-				? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(SpatialTeleporterBlockBlock.block))
-				: false) {
-			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 5)) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(SpatialTeleporterBlockBlock.block);
-					((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-							((PlayerEntity) entity).container.func_234641_j_());
+		} else if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(EriniumModItems.COBBLE_VOID.get())) : false) {
+			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 3)) {
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(EriniumModItems.COBBLE_VOID.get());
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 				}
-				if (entity instanceof PlayerEntity) {
-					ItemStack _setstack = new ItemStack(PrintedCircuitBoardItem.block);
-					_setstack.setCount((int) 1);
-					ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
-				}
-				if (entity instanceof PlayerEntity) {
-					ItemStack _setstack = new ItemStack(DraniteGemItem.block);
-					_setstack.setCount((int) 4);
-					ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
-				}
-				if (entity instanceof PlayerEntity) {
-					ItemStack _setstack = new ItemStack(WiringKitItem.block);
-					_setstack.setCount((int) 4);
-					ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
-				}
-				ErrorDonthaveLevelProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		} else if ((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(CobbleVoidItem.block)) : false) {
-			if (!((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new EriniumModVariables.PlayerVariables())).playerLvl >= 3)) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(CobbleVoidItem.block);
-					((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-							((PlayerEntity) entity).container.func_234641_j_());
-				}
-				if (entity instanceof PlayerEntity) {
+				if (entity instanceof Player _player) {
 					ItemStack _setstack = new ItemStack(Items.ENDER_EYE);
-					_setstack.setCount((int) 1);
-					ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 				}
-				if (entity instanceof PlayerEntity) {
+				if (entity instanceof Player _player) {
 					ItemStack _setstack = new ItemStack(Items.LEATHER);
-					_setstack.setCount((int) 4);
-					ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+					_setstack.setCount(4);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 				}
-				ErrorDonthaveLevelProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				ErrorDonthaveLevelProcedure.execute(entity);
 			}
 		}
 	}

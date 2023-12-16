@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "biome",
   "definition": {
     "name": "Scining Biome",
@@ -8,6 +8,9 @@
     },
     "undergroundBlock": {
       "value": "CUSTOM:SciningSandstone"
+    },
+    "underwaterBlock": {
+      "value": ""
     },
     "airColor": {
       "value": -8212020,
@@ -49,21 +52,29 @@
     "particlesProbability": 0.5,
     "rainingPossibility": 0.01,
     "temperature": 1.25,
-    "baseHeight": 0.1,
-    "heightVariation": 0.2,
     "spawnBiome": true,
-    "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 16,
-    "grassPerChunk": 0,
-    "seagrassPerChunk": 0,
-    "flowersPerChunk": 0,
-    "mushroomsPerChunk": 0,
-    "bigMushroomsChunk": 0,
-    "sandPatchesPerChunk": 0,
-    "gravelPatchesPerChunk": 0,
-    "reedsPerChunk": 0,
-    "cactiPerChunk": 0,
+    "spawnBiomeNether": false,
+    "genTemperature": {
+      "min": 0.18,
+      "max": 0.8200000000000001
+    },
+    "genHumidity": {
+      "min": -1.3,
+      "max": -0.6599999999999999
+    },
+    "genContinentalness": {
+      "min": 0.19,
+      "max": 0.8300000000000001
+    },
+    "genErosion": {
+      "min": 0.48000000000000004,
+      "max": 1.12
+    },
+    "genWeirdness": {
+      "min": 0.35077775741746003,
+      "max": 0.9907777574174601
+    },
     "treesPerChunk": 4,
     "vanillaTreeType": "Default",
     "treeType": 1,
@@ -80,6 +91,11 @@
     "treeFruits": {
       "value": "Blocks.AIR"
     },
+    "defaultFeatures": [
+      "Caves",
+      "Ores",
+      "FrozenTopLayer"
+    ],
     "spawnStronghold": false,
     "spawnMineshaft": false,
     "spawnMineshaftMesa": false,
@@ -100,11 +116,6 @@
     "spawnBastionRemnant": false,
     "spawnEndCity": false,
     "spawnRuinedPortal": "NONE",
-    "defaultFeatures": [
-      "Caves",
-      "Ores",
-      "FrozenTopLayer"
-    ],
     "spawnEntries": []
   }
 }

@@ -1,11 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
     "01"
   ],
   "key": {
     "0": {
-      "item": "minecraft:oak_log"
+      "tag": "minecraft:logs"
     },
     "1": {
       "item": "erinium:knife_tool"

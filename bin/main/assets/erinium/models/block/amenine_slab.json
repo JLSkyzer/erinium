@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "erinium:blocks/amenine_planks",
-    "top": "erinium:blocks/amenine_planks",
-    "side": "erinium:blocks/amenine_planks"
-  }
-}

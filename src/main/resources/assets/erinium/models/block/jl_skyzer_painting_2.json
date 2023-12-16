@@ -1,9 +1,10 @@
 {
   "parent": "erinium:custom/rectangular_painting",
   "textures": {
-    "all": "erinium:blocks/2022-07-19_23.17.56",
-    "particle": "erinium:blocks/2022-07-19_23.17.56",
-    "image": "erinium:blocks/jlskyzer",
-    "bois": "erinium:blocks/bois"
-  }
+    "all": "erinium:block/2022-07-19_23.17.56",
+    "particle": "erinium:block/2022-07-19_23.17.56",
+    "image": "erinium:block/jlskyzer",
+    "bois": "erinium:block/bois"
+  },
+  "render_type": "solid"
 }

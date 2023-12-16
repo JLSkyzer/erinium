@@ -1,11 +1,13 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "magic_stones_credit",
     "customModelName": "Normal",
-    "name": "§l§oMagic Stones §b§l§oXp",
+    "customProperties": {},
+    "states": [],
+    "name": "§l§oMagic Stones §b§l§oCredit",
     "rarity": "EPIC",
     "creativeTab": {
       "value": "CUSTOM:EriniumItems"

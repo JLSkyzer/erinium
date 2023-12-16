@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "empty_custom_bottle",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Empty Bottle",
     "rarity": "COMMON",
     "creativeTab": {

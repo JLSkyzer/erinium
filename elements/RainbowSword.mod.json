@@ -1,7 +1,8 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "tool",
   "definition": {
+    "toolType": "Sword",
     "renderType": 0,
     "texture": "rainbow_sword",
     "customModelName": "Normal",
@@ -10,7 +11,6 @@
     "creativeTab": {
       "value": "CUSTOM:EriniumTools"
     },
-    "toolType": "Sword",
     "harvestLevel": 4,
     "efficiency": 13.0,
     "attackSpeed": 100.0,

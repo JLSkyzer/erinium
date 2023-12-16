@@ -1,23 +1,12 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.network.chat.Component;
 
-import java.util.Map;
-
-import fr.erinagroups.erinium.item.BlockReplacerItem;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModItems;
 
 public class BlockReplacerToolInInventoryTickProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				EriniumMod.LOGGER.warn("Failed to load dependency itemstack for procedure BlockReplacerToolInInventoryTick!");
-			return;
-		}
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-		(itemstack).setDisplayName(new StringTextComponent((new ItemStack(BlockReplacerItem.block).getDisplayName().getString() + " \u00A7a("
-				+ itemstack.getOrCreateTag().getString("selectedName") + ")")));
+	public static void execute(ItemStack itemstack) {
+		itemstack.setHoverName(Component.literal((new ItemStack(EriniumModItems.BLOCK_REPLACER.get()).getDisplayName().getString() + " \u00A7a(" + itemstack.getOrCreateTag().getString("selectedName") + ")")));
 	}
 }

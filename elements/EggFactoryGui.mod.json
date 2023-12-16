@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -16,14 +16,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -16711885,
             "falpha": 0.0
           },
           "id": 0,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
           "x": 198,
           "y": 99
         }
@@ -34,14 +38,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -13434880,
             "falpha": 0.0
           },
           "id": 1,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #1",
           "x": 198,
           "y": 63
         }
@@ -52,14 +60,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -13434880,
             "falpha": 0.0
           },
           "id": 2,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #2",
           "x": 234,
           "y": 99
         }
@@ -70,14 +82,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -13434880,
             "falpha": 0.0
           },
           "id": 3,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #3",
           "x": 198,
           "y": 135
         }
@@ -88,14 +104,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -13434880,
             "falpha": 0.0
           },
           "id": 4,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #4",
           "x": 162,
           "y": 99
         }
@@ -106,14 +126,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -3381760,
             "falpha": 0.0
           },
           "id": 5,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #5",
           "x": 171,
           "y": 72
         }
@@ -124,14 +148,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -3381760,
             "falpha": 0.0
           },
           "id": 6,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #6",
           "x": 225,
           "y": 72
         }
@@ -142,14 +170,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -3381760,
             "falpha": 0.0
           },
           "id": 7,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #7",
           "x": 225,
           "y": 126
         }
@@ -160,14 +192,18 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "color": {
             "value": -3381760,
             "falpha": 0.0
           },
           "id": 8,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #8",
           "x": 171,
           "y": 126
         }
@@ -180,9 +216,10 @@
             "falpha": 0.0
           },
           "id": 9,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #9",
           "x": 324,
           "y": 99
         }
@@ -190,13 +227,10 @@
       {
         "type": "button",
         "data": {
+          "name": "button_fusion",
           "text": "Fusion",
-          "onClick": {
-            "name": "EggFactoryFusionBtn"
-          },
           "width": 54,
           "height": 20,
-          "name": "Fusion",
           "x": 261,
           "y": 99
         }
@@ -206,7 +240,6 @@
         "data": {
           "image": "egg_factory.png",
           "use1Xscale": false,
-          "name": "egg_factory.png",
           "x": 0,
           "y": 0
         }
@@ -214,12 +247,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<BNBT:text:error>",
+          "name": "label_bnbttexterror",
+          "text": {
+            "fixedValue": "<BNBT:text:error>"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "<BNBT:text:error>",
           "x": 27,
           "y": 63
         }
@@ -227,13 +262,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_wiki",
           "text": "Wiki",
           "onClick": {
             "name": "EggFactoryWikiBtn"
           },
           "width": 36,
           "height": 20,
-          "name": "Wiki",
           "x": 45,
           "y": 99
         }

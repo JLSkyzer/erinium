@@ -1,99 +1,54 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.container.Slot;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 
 import java.util.function.Supplier;
 import java.util.Map;
 
-import fr.erinagroups.erinium.item.SpectriumGemItem;
-import fr.erinagroups.erinium.item.HackedUsbKeyItem;
-import fr.erinagroups.erinium.item.EriniumMatrixIngotItem;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModItems;
 
 public class CraftMatrixIngotWhileThisGUIIsOpenTickProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure CraftMatrixIngotWhileThisGUIIsOpenTick!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
+		if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			ItemStack _setstack = new ItemStack(EriniumModItems.SPECTRIUM_GEM.get());
+			_setstack.setCount(1);
+			((Slot) _slots.get(1)).set(_setstack);
+			_player.containerMenu.broadcastChanges();
 		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if (entity instanceof PlayerEntity) {
-			Container _current = ((PlayerEntity) entity).openContainer;
-			if (_current instanceof Supplier) {
-				Object invobj = ((Supplier) _current).get();
-				if (invobj instanceof Map) {
-					ItemStack _setstack = new ItemStack(SpectriumGemItem.block);
-					_setstack.setCount((int) 1);
-					((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
-					_current.detectAndSendChanges();
-				}
-			}
+		if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			ItemStack _setstack = new ItemStack(EriniumModItems.SPECTRIUM_GEM.get());
+			_setstack.setCount(1);
+			((Slot) _slots.get(3)).set(_setstack);
+			_player.containerMenu.broadcastChanges();
 		}
-		if (entity instanceof PlayerEntity) {
-			Container _current = ((PlayerEntity) entity).openContainer;
-			if (_current instanceof Supplier) {
-				Object invobj = ((Supplier) _current).get();
-				if (invobj instanceof Map) {
-					ItemStack _setstack = new ItemStack(SpectriumGemItem.block);
-					_setstack.setCount((int) 1);
-					((Slot) ((Map) invobj).get((int) (3))).putStack(_setstack);
-					_current.detectAndSendChanges();
-				}
-			}
+		if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			ItemStack _setstack = new ItemStack(EriniumModItems.HACKED_USB_KEY.get());
+			_setstack.setCount(1);
+			((Slot) _slots.get(4)).set(_setstack);
+			_player.containerMenu.broadcastChanges();
 		}
-		if (entity instanceof PlayerEntity) {
-			Container _current = ((PlayerEntity) entity).openContainer;
-			if (_current instanceof Supplier) {
-				Object invobj = ((Supplier) _current).get();
-				if (invobj instanceof Map) {
-					ItemStack _setstack = new ItemStack(HackedUsbKeyItem.block);
-					_setstack.setCount((int) 1);
-					((Slot) ((Map) invobj).get((int) (4))).putStack(_setstack);
-					_current.detectAndSendChanges();
-				}
-			}
+		if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			ItemStack _setstack = new ItemStack(EriniumModItems.SPECTRIUM_GEM.get());
+			_setstack.setCount(1);
+			((Slot) _slots.get(5)).set(_setstack);
+			_player.containerMenu.broadcastChanges();
 		}
-		if (entity instanceof PlayerEntity) {
-			Container _current = ((PlayerEntity) entity).openContainer;
-			if (_current instanceof Supplier) {
-				Object invobj = ((Supplier) _current).get();
-				if (invobj instanceof Map) {
-					ItemStack _setstack = new ItemStack(SpectriumGemItem.block);
-					_setstack.setCount((int) 1);
-					((Slot) ((Map) invobj).get((int) (5))).putStack(_setstack);
-					_current.detectAndSendChanges();
-				}
-			}
+		if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			ItemStack _setstack = new ItemStack(EriniumModItems.SPECTRIUM_GEM.get());
+			_setstack.setCount(1);
+			((Slot) _slots.get(7)).set(_setstack);
+			_player.containerMenu.broadcastChanges();
 		}
-		if (entity instanceof PlayerEntity) {
-			Container _current = ((PlayerEntity) entity).openContainer;
-			if (_current instanceof Supplier) {
-				Object invobj = ((Supplier) _current).get();
-				if (invobj instanceof Map) {
-					ItemStack _setstack = new ItemStack(SpectriumGemItem.block);
-					_setstack.setCount((int) 1);
-					((Slot) ((Map) invobj).get((int) (7))).putStack(_setstack);
-					_current.detectAndSendChanges();
-				}
-			}
-		}
-		if (entity instanceof PlayerEntity) {
-			Container _current = ((PlayerEntity) entity).openContainer;
-			if (_current instanceof Supplier) {
-				Object invobj = ((Supplier) _current).get();
-				if (invobj instanceof Map) {
-					ItemStack _setstack = new ItemStack(EriniumMatrixIngotItem.block);
-					_setstack.setCount((int) 1);
-					((Slot) ((Map) invobj).get((int) (9))).putStack(_setstack);
-					_current.detectAndSendChanges();
-				}
-			}
+		if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			ItemStack _setstack = new ItemStack(EriniumModItems.ERINIUM_MATRIX_INGOT.get());
+			_setstack.setCount(1);
+			((Slot) _slots.get(9)).set(_setstack);
+			_player.containerMenu.broadcastChanges();
 		}
 	}
 }

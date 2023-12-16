@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/spectrium_ore",
-    "up": "erinium:blocks/spectrium_ore",
-    "north": "erinium:blocks/spectrium_ore",
-    "east": "erinium:blocks/spectrium_ore",
-    "south": "erinium:blocks/spectrium_ore",
-    "west": "erinium:blocks/spectrium_ore",
-    "particle": "erinium:blocks/spectrium_ore"
-  }
+    "down": "erinium:block/spectrium_ore",
+    "up": "erinium:block/spectrium_ore",
+    "north": "erinium:block/spectrium_ore",
+    "east": "erinium:block/spectrium_ore",
+    "south": "erinium:block/spectrium_ore",
+    "west": "erinium:block/spectrium_ore",
+    "particle": "erinium:block/spectrium_ore"
+  },
+  "render_type": "solid"
 }

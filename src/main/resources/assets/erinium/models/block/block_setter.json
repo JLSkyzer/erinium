@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/home_seter",
-    "up": "erinium:blocks/home_seter",
-    "north": "erinium:blocks/home_seter",
-    "east": "erinium:blocks/home_seter",
-    "south": "erinium:blocks/home_seter",
-    "west": "erinium:blocks/home_seter",
-    "particle": "erinium:blocks/home_seter"
-  }
+    "down": "erinium:block/home_seter",
+    "up": "erinium:block/home_seter",
+    "north": "erinium:block/home_seter",
+    "east": "erinium:block/home_seter",
+    "south": "erinium:block/home_seter",
+    "west": "erinium:block/home_seter",
+    "particle": "erinium:block/home_seter"
+  },
+  "render_type": "solid"
 }

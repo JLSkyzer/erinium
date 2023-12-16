@@ -1,0 +1,20 @@
+{
+  "type": "erinium:erinium_ore_moon",
+  "config": {
+    "size": 6,
+    "discard_chance_on_air_exposure": 0,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "blockstate_match",
+          "block_state": {
+            "Name": "erinium:moon_stone"
+          }
+        },
+        "state": {
+          "Name": "erinium:erinium_ore_moon"
+        }
+      }
+    ]
+  }
+}

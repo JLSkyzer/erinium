@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/chest_finder"
+    "layer0": "erinium:item/chest_finder"
   }
 }

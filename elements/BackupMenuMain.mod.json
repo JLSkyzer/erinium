@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -15,7 +15,6 @@
         "data": {
           "image": "main_menu_background.png",
           "use1Xscale": false,
-          "name": "main_menu_background.png",
           "x": 0,
           "y": 0
         }
@@ -23,12 +22,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Bienvenue : §e<VAR:PlayerName>",
+          "name": "label_bienvenue_ssevarplayername",
+          "text": {
+            "fixedValue": "Bienvenue : §e<VAR:PlayerName>"
+          },
           "color": {
             "value": -13382656,
             "falpha": 0.0
           },
-          "name": "Bienvenue : §e<VAR:PlayerName>",
           "x": 69,
           "y": 4
         }
@@ -36,12 +37,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Serveur : §e<VAR:GetCurrentServer>",
+          "name": "label_serveur_ssevargetcurrentserve",
+          "text": {
+            "fixedValue": "Serveur : §e<VAR:GetCurrentServer>"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Serveur : §e<VAR:GetCurrentServer>",
           "x": 69,
           "y": 20
         }
@@ -49,12 +52,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Joueurs Connecté : §e<VAR:integer:GetCurrentServerPlayerCount> / <VAR:integer:MaxPlayerPerServer>",
+          "name": "label_joueurs_connecte_ssevarintege",
+          "text": {
+            "fixedValue": "Joueurs Connecté : §e<VAR:integer:GetCurrentServerPlayerCount> / <VAR:integer:MaxPlayerPerServer>"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Joueurs Connecté : §e<VAR:integer:GetCurrentServerPlayerCount> / <VAR:integer:MaxPlayerPerServer>",
           "x": 69,
           "y": 35
         }
@@ -62,13 +67,10 @@
       {
         "type": "button",
         "data": {
+          "name": "button_main",
           "text": "Main",
-          "onClick": {
-            "name": "OpenMain"
-          },
           "width": 108,
           "height": 20,
-          "name": "Main",
           "x": 2,
           "y": 72
         }
@@ -76,13 +78,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_rank",
           "text": "Rank",
           "onClick": {
             "name": "OpenRank"
           },
           "width": 108,
           "height": 20,
-          "name": "Rank",
           "x": 2,
           "y": 94
         }
@@ -90,13 +92,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_stats",
           "text": "Stats",
           "onClick": {
             "name": "OpenStats"
           },
           "width": 108,
           "height": 20,
-          "name": "Stats",
           "x": 2,
           "y": 116
         }
@@ -104,12 +106,14 @@
       {
         "type": "label",
         "data": {
-          "text": "",
+          "name": "label_empty",
+          "text": {
+            "fixedValue": ""
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "",
           "x": 202,
           "y": 79
         }

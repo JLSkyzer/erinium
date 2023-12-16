@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/erinium_boss_spawner",
-    "up": "erinium:blocks/erinium_boss_spawner",
-    "north": "erinium:blocks/erinium_boss_spawner",
-    "east": "erinium:blocks/erinium_boss_spawner",
-    "south": "erinium:blocks/erinium_boss_spawner",
-    "west": "erinium:blocks/erinium_boss_spawner",
-    "particle": "erinium:blocks/erinium_boss_spawner"
-  }
+    "down": "erinium:block/erinium_boss_spawner",
+    "up": "erinium:block/erinium_boss_spawner",
+    "north": "erinium:block/erinium_boss_spawner",
+    "east": "erinium:block/erinium_boss_spawner",
+    "south": "erinium:block/erinium_boss_spawner",
+    "west": "erinium:block/erinium_boss_spawner",
+    "particle": "erinium:block/erinium_boss_spawner"
+  },
+  "render_type": "solid"
 }

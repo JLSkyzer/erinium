@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Level : ",
+          "name": "label_level",
+          "text": {
+            "fixedValue": "Level : "
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Level : ",
           "x": 171,
           "y": 63
         }
@@ -26,12 +28,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:integer:playerLvl>",
+          "name": "label_varintegerplayerlvl",
+          "text": {
+            "fixedValue": "<VAR:integer:playerLvl>"
+          },
           "color": {
             "value": -16724941,
             "falpha": 0.0
           },
-          "name": "<VAR:integer:playerLvl>",
           "x": 171,
           "y": 81
         }
@@ -39,12 +43,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Xp :",
+          "name": "label_xp",
+          "text": {
+            "fixedValue": "Xp :"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Xp :",
           "x": 171,
           "y": 99
         }
@@ -52,12 +58,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:integer:playerXp> / 100.000",
+          "name": "label_varintegerplayerxp_100000",
+          "text": {
+            "fixedValue": "<VAR:integer:playerXp> / 100.000"
+          },
           "color": {
             "value": -6750208,
             "falpha": 0.0
           },
-          "name": "<VAR:integer:playerXp> / 100.000",
           "x": 171,
           "y": 117
         }
@@ -65,13 +73,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_ssbwiki",
           "text": "§bWiki",
           "onClick": {
             "name": "WikiBtnClick"
           },
           "width": 45,
           "height": 20,
-          "name": "§bWiki",
           "x": 171,
           "y": 135
         }
@@ -81,7 +89,6 @@
         "data": {
           "image": "gui_rank.png",
           "use1Xscale": false,
-          "name": "gui_rank.png",
           "x": 0,
           "y": 0
         }

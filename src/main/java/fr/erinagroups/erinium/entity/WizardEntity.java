@@ -2,211 +2,174 @@
 package fr.erinagroups.erinium.entity;
 
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.server.ServerBossInfo;
-import net.minecraft.world.World;
-import net.minecraft.world.BossInfo;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.DamageSource;
-import net.minecraft.network.IPacket;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.RangedAttackGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.IRangedAttackMob;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureAttribute;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerBossEvent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.Packet;
 
 import fr.erinagroups.erinium.procedures.WizardEntityDiesProcedure;
-import fr.erinagroups.erinium.item.MagicalWandItem;
-import fr.erinagroups.erinium.entity.renderer.WizardRenderer;
-import fr.erinagroups.erinium.block.ClassicLootboxBlock;
-import fr.erinagroups.erinium.EriniumModElements;
+import fr.erinagroups.erinium.init.EriniumModItems;
+import fr.erinagroups.erinium.init.EriniumModEntities;
+import fr.erinagroups.erinium.init.EriniumModBlocks;
 
-@EriniumModElements.ModElement.Tag
-public class WizardEntity extends EriniumModElements.ModElement {
-	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
-			.size(0.6f, 1.8f)).build("wizard").setRegistryName("wizard");
+public class WizardEntity extends Monster implements RangedAttackMob {
+	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.BLUE, ServerBossEvent.BossBarOverlay.PROGRESS);
 
-	public WizardEntity(EriniumModElements instance) {
-		super(instance, 161);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new WizardRenderer.ModelRegisterHandler());
-		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
+	public WizardEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EriniumModEntities.WIZARD.get(), world);
+	}
+
+	public WizardEntity(EntityType<WizardEntity> type, Level world) {
+		super(type, world);
+		setMaxUpStep(0.6f);
+		xpReward = 100;
+		setNoAi(false);
+		setPersistenceRequired();
+		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(EriniumModItems.MAGICAL_WAND.get()));
 	}
 
 	@Override
-	public void initElements() {
-		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -16737793, -16763956, new Item.Properties().group(ItemGroup.MISC))
-				.setRegistryName("wizard_spawn_egg"));
+	public Packet<ClientGamePacketListener> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
-	public void init(FMLCommonSetupEvent event) {
+	protected void registerGoals() {
+		super.registerGoals();
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, ServerPlayer.class, false, false));
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
+		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 0.25, false) {
+			@Override
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
+			}
+		});
+		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(7, new FloatGoal(this));
+		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10f) {
+			@Override
+			public boolean canContinueToUse() {
+				return this.canUse();
+			}
+		});
 	}
 
-	private static class EntityAttributesRegisterHandler {
-		@SubscribeEvent
-		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
-			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
-			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25);
-			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 40);
-			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0);
-			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 3);
-			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
-			ammma = ammma.createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 0.2);
-			event.put(entity, ammma.create());
-		}
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
 	}
 
-	public static class CustomEntity extends MonsterEntity implements IRangedAttackMob {
-		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
-			this(entity, world);
-		}
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
+	}
 
-		public CustomEntity(EntityType<CustomEntity> type, World world) {
-			super(type, world);
-			experienceValue = 100;
-			setNoAI(false);
-			enablePersistence();
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(MagicalWandItem.block));
-		}
+	@Override
+	public double getMyRidingOffset() {
+		return -0.35D;
+	}
 
-		@Override
-		public IPacket<?> createSpawnPacket() {
-			return NetworkHooks.getEntitySpawningPacket(this);
-		}
+	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
+		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
+		this.spawnAtLocation(new ItemStack(EriniumModBlocks.CLASSIC_LOOTBOX.get()));
+	}
 
-		@Override
-		protected void registerGoals() {
-			super.registerGoals();
-			this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));
-			this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, ServerPlayerEntity.class, false, false));
-			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp());
-			this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 0.25, false) {
-				@Override
-				protected double getAttackReachSqr(LivingEntity entity) {
-					return (double) (4.0 + entity.getWidth() * entity.getWidth());
-				}
-			});
-			this.goalSelector.addGoal(5, new RandomWalkingGoal(this, 1));
-			this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(7, new SwimGoal(this));
-			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
-				@Override
-				public boolean shouldContinueExecuting() {
-					return this.shouldExecute();
-				}
-			});
-		}
+	@Override
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
+	}
 
-		@Override
-		public CreatureAttribute getCreatureAttribute() {
-			return CreatureAttribute.UNDEFINED;
-		}
+	@Override
+	public SoundEvent getDeathSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	}
 
-		@Override
-		public boolean canDespawn(double distanceToClosestPlayer) {
+	@Override
+	public boolean hurt(DamageSource source, float amount) {
+		if (source.is(DamageTypes.IN_FIRE))
 			return false;
-		}
-
-		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
-			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(ClassicLootboxBlock.block));
-		}
-
-		@Override
-		public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
-		}
-
-		@Override
-		public net.minecraft.util.SoundEvent getDeathSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
-		}
-
-		@Override
-		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source == DamageSource.FALL)
-				return false;
-			if (source == DamageSource.LIGHTNING_BOLT)
-				return false;
-			if (source.isExplosion())
-				return false;
-			return super.attackEntityFrom(source, amount);
-		}
-
-		@Override
-		public void onDeath(DamageSource source) {
-			super.onDeath(source);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity sourceentity = source.getTrueSource();
-			Entity entity = this;
-
-			WizardEntityDiesProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-		}
-
-		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {
-			MagicalWandItem.shoot(this, target);
-		}
-
-		@Override
-		public boolean isNonBoss() {
+		if (source.is(DamageTypes.FALL))
 			return false;
-		}
+		if (source.is(DamageTypes.LIGHTNING_BOLT))
+			return false;
+		if (source.is(DamageTypes.EXPLOSION))
+			return false;
+		return super.hurt(source, amount);
+	}
 
-		private final ServerBossInfo bossInfo = new ServerBossInfo(this.getDisplayName(), BossInfo.Color.BLUE, BossInfo.Overlay.PROGRESS);
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		WizardEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+	}
 
-		@Override
-		public void addTrackingPlayer(ServerPlayerEntity player) {
-			super.addTrackingPlayer(player);
-			this.bossInfo.addPlayer(player);
-		}
+	@Override
+	public void performRangedAttack(LivingEntity target, float flval) {
+		MagicalWandEntity.shoot(this, target);
+	}
 
-		@Override
-		public void removeTrackingPlayer(ServerPlayerEntity player) {
-			super.removeTrackingPlayer(player);
-			this.bossInfo.removePlayer(player);
-		}
+	@Override
+	public boolean canChangeDimensions() {
+		return false;
+	}
 
-		@Override
-		public void updateAITasks() {
-			super.updateAITasks();
-			this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
-		}
+	@Override
+	public void startSeenByPlayer(ServerPlayer player) {
+		super.startSeenByPlayer(player);
+		this.bossInfo.addPlayer(player);
+	}
+
+	@Override
+	public void stopSeenByPlayer(ServerPlayer player) {
+		super.stopSeenByPlayer(player);
+		this.bossInfo.removePlayer(player);
+	}
+
+	@Override
+	public void customServerAiStep() {
+		super.customServerAiStep();
+		this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());
+	}
+
+	public static void init() {
+	}
+
+	public static AttributeSupplier.Builder createAttributes() {
+		AttributeSupplier.Builder builder = Mob.createMobAttributes();
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.25);
+		builder = builder.add(Attributes.MAX_HEALTH, 40);
+		builder = builder.add(Attributes.ARMOR, 0);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.2);
+		return builder;
 	}
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/magic_stone_debug"
+    "layer0": "erinium:item/magic_stone_debug"
   }
 }

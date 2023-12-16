@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/moon_sand",
-    "up": "erinium:blocks/moon_sand",
-    "north": "erinium:blocks/moon_sand",
-    "east": "erinium:blocks/moon_sand",
-    "south": "erinium:blocks/moon_sand",
-    "west": "erinium:blocks/moon_sand",
-    "particle": "erinium:blocks/moon_sand"
-  }
+    "down": "erinium:block/moon_sand",
+    "up": "erinium:block/moon_sand",
+    "north": "erinium:block/moon_sand",
+    "east": "erinium:block/moon_sand",
+    "south": "erinium:block/moon_sand",
+    "west": "erinium:block/moon_sand",
+    "particle": "erinium:block/moon_sand"
+  },
+  "render_type": "solid"
 }

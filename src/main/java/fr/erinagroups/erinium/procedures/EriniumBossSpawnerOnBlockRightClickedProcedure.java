@@ -1,101 +1,57 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.effect.LightningBoltEntity;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
 
-import java.util.Map;
-
-import fr.erinagroups.erinium.entity.EriniumSkeletonBossEntity;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.init.EriniumModEntities;
 
 public class EriniumBossSpawnerOnBlockRightClickedProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure EriniumBossSpawnerOnBlockRightClicked!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure EriniumBossSpawnerOnBlockRightClicked!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure EriniumBossSpawnerOnBlockRightClicked!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure EriniumBossSpawnerOnBlockRightClicked!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure EriniumBossSpawnerOnBlockRightClicked!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		if (!((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).abilities.isCreativeMode : false)) {
-			world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
-			if (world instanceof ServerWorld) {
-				Entity entityToSpawn = new EriniumSkeletonBossEntity.CustomEntity(EriniumSkeletonBossEntity.entity, (World) world);
-				entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-				if (entityToSpawn instanceof MobEntity)
-					((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world, world.getDifficultyForLocation(entityToSpawn.getPosition()),
-							SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
-				world.addEntity(entityToSpawn);
+		if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+			world.setBlock(BlockPos.containing(x, y, z), Blocks.AIR.defaultBlockState(), 3);
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = EriniumModEntities.ERINIUM_SKELETON_BOSS.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
 			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\uFFFDcHeuuuuu warn warn warn warn waaaaaarn !"), (false));
+			if (entity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal("\uFFFDcHeuuuuu warn warn warn warn waaaaaarn !"), false);
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x, y, z)));;
+				_level.addFreshEntity(entityToSpawn);
 			}
-			if (world instanceof ServerWorld) {
-				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x, y, z)));
-				_ent.setEffectOnly(false);
-				((World) world).addEntity(_ent);
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x + 1, y, z + 1)));;
+				_level.addFreshEntity(entityToSpawn);
 			}
-			if (world instanceof ServerWorld) {
-				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x + 1, y, z + 1)));
-				_ent.setEffectOnly(false);
-				((World) world).addEntity(_ent);
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x + 1, y, z - 1)));;
+				_level.addFreshEntity(entityToSpawn);
 			}
-			if (world instanceof ServerWorld) {
-				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x + 1, y, z - 1)));
-				_ent.setEffectOnly(false);
-				((World) world).addEntity(_ent);
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x - 1, y, z + 1)));;
+				_level.addFreshEntity(entityToSpawn);
 			}
-			if (world instanceof ServerWorld) {
-				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x - 1, y, z + 1)));
-				_ent.setEffectOnly(false);
-				((World) world).addEntity(_ent);
-			}
-			if (world instanceof ServerWorld) {
-				LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
-				_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(x - 1, y, z - 1)));
-				_ent.setEffectOnly(false);
-				((World) world).addEntity(_ent);
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x - 1, y, z - 1)));;
+				_level.addFreshEntity(entityToSpawn);
 			}
 		}
 	}

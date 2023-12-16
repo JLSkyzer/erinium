@@ -69,7 +69,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "erinium:xp_bush_layer_0",
+          "name": "erinium:deleted_mod_element",
           "weight": 1,
           "functions": [
             {
@@ -83,7 +83,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "erinium:blood_bush_layer_0",
+          "name": "erinium:deleted_mod_element",
           "weight": 1,
           "functions": [
             {
@@ -237,5 +237,6 @@
         }
       ]
     }
-  ]
+  ],
+  "random_sequence": "erinium:chests/wizard_loot_table"
 }

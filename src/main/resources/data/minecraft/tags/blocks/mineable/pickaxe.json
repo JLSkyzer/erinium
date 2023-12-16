@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "erinium:silicone_ore",
+    "erinium:dranite_ore",
+    "erinium:copper_ore",
+    "erinium:lead_ore",
+    "erinium:silver_ore",
+    "erinium:erinium_ore_moon",
+    "erinium:spectrium_ore",
+    "erinium:erinium_obsidian",
+    "erinium:scining_sandstone",
+    "erinium:moon_sand",
+    "erinium:moon_stone",
+    "erinium:classic_lootbox",
+    "erinium:ultimate_lootbox",
+    "erinium:candy_cobblestone",
+    "erinium:candy_stone",
+    "erinium:tour_tradi",
+    "erinium:fraisage_numerique",
+    "erinium:nether_star_gen",
+    "erinium:spectrium_battery",
+    "erinium:erinium_workbench_tier_1",
+    "erinium:erinium_matrix_block"
+  ]
+}

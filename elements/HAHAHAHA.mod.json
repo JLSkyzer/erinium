@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,13 +13,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_heheha",
           "text": "HEHEHA",
           "onClick": {
             "name": "Hehe"
           },
           "width": 56,
           "height": 20,
-          "name": "HEHEHA",
           "x": 184,
           "y": 108
         }

@@ -1,77 +1,35 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.DamageSource;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.core.registries.Registries;
 
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
 import fr.erinagroups.erinium.entity.TreeBossEntity;
-import fr.erinagroups.erinium.EriniumMod;
 
 public class TreeBossEntityIsHurtProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure TreeBossEntityIsHurt!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				EriniumMod.LOGGER.warn("Failed to load dependency x for procedure TreeBossEntityIsHurt!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				EriniumMod.LOGGER.warn("Failed to load dependency y for procedure TreeBossEntityIsHurt!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				EriniumMod.LOGGER.warn("Failed to load dependency z for procedure TreeBossEntityIsHurt!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure TreeBossEntityIsHurt!");
-			return;
-		}
-		if (dependencies.get("sourceentity") == null) {
-			if (!dependencies.containsKey("sourceentity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency sourceentity for procedure TreeBossEntityIsHurt!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		double damage = 0;
 		String entity_type = "";
 		String entity_type_2 = "";
 		entity.getPersistentData().putDouble("attacked", 200);
-		if (sourceentity instanceof PlayerEntity || sourceentity instanceof ServerPlayerEntity) {
+		if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 			{
-				List<Entity> _entfound = world
-						.getEntitiesWithinAABB(Entity.class,
-								new AxisAlignedBB(x - (16 / 2d), y - (16 / 2d), z - (16 / 2d), x + (16 / 2d), y + (16 / 2d), z + (16 / 2d)), null)
-						.stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-							}
-						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(16 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof TreeBossEntity.CustomEntity) {
-						entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 2);
+					if (entityiterator instanceof TreeBossEntity) {
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 2);
 						entityiterator.getPersistentData().putDouble("attacked", 200);
 					}
 				}

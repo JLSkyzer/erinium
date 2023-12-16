@@ -1,7 +1,7 @@
 {
   "parent": "erinium:custom/knife",
   "textures": {
-    "0": "erinium:blocks/knife",
-    "particle": "erinium:items/knife"
+    "0": "erinium:block/knife",
+    "particle": "erinium:item/knife"
   }
 }

@@ -1,21 +1,11 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.IWorld;
+import net.minecraft.world.level.LevelAccessor;
 
-import java.util.Map;
-
-import fr.erinagroups.erinium.EriniumModVariables;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.network.EriniumModVariables;
 
 public class ConditionMaintenanceOffMinage01Procedure {
-
-	public static boolean executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure ConditionMaintenanceOffMinage01!");
-			return false;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
+	public static boolean execute(LevelAccessor world) {
 		if (!EriniumModVariables.MapVariables.get(world).maintenanceMinage01) {
 			return true;
 		}

@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "fluid",
   "definition": {
     "name": "§3Hot Water",
@@ -39,20 +39,6 @@
     "flammability": 0,
     "fireSpreadSpeed": 0,
     "colorOnMap": "CYAN",
-    "frequencyOnChunks": 100,
-    "spawnWorldTypes": [
-      "CUSTOM:FactionAlpha",
-      "CUSTOM:FactionBeta",
-      "CUSTOM:FactionCharlie",
-      "CUSTOM:Minage01",
-      "CUSTOM:Minage02",
-      "CUSTOM:Minage03"
-    ],
-    "restrictionBiomes": [
-      {
-        "value": "CUSTOM:RedJungleBiome"
-      }
-    ],
     "onEntityCollides": {
       "name": "HotWaterMobplayerCollidesBlock"
     }

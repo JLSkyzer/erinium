@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/fortune_upgrade"
+    "layer0": "erinium:item/fortune_upgrade"
   }
 }

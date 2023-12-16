@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/metalhiny1_copy",
-    "up": "erinium:blocks/metalhiny1_copy",
-    "north": "erinium:blocks/metalhiny1_copy",
-    "east": "erinium:blocks/metalhiny1_copy",
-    "south": "erinium:blocks/metalhiny1_copy",
-    "west": "erinium:blocks/metalhiny1_copy",
-    "particle": "erinium:blocks/metalhiny1_copy"
-  }
+    "down": "erinium:block/metalhiny1_copy",
+    "up": "erinium:block/metalhiny1_copy",
+    "north": "erinium:block/metalhiny1_copy",
+    "east": "erinium:block/metalhiny1_copy",
+    "south": "erinium:block/metalhiny1_copy",
+    "west": "erinium:block/metalhiny1_copy",
+    "particle": "erinium:block/metalhiny1_copy"
+  },
+  "render_type": "solid"
 }

@@ -1,6 +1,7 @@
 {
   "parent": "block/button_inventory",
   "textures": {
-    "texture": "erinium:blocks/amenine_planks"
-  }
+    "texture": "erinium:block/amenine_planks"
+  },
+  "render_type": "solid"
 }

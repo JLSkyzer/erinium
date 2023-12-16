@@ -1,80 +1,54 @@
 
 package fr.erinagroups.erinium.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.network.chat.Component;
 
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.client.util.ITooltipFlag;
-
-import java.util.stream.Stream;
-import java.util.Map;
 import java.util.List;
-import java.util.HashMap;
-import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.GlobalArmorHelmetProcedure;
 import fr.erinagroups.erinium.procedures.GlobalArmorBootsProcedure;
-import fr.erinagroups.erinium.itemgroup.EriniumArmorsItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
+import fr.erinagroups.erinium.init.EriniumModItems;
 
-@EriniumModElements.ModElement.Tag
-public class EriniumMatrixArmorItem extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:erinium_matrix_armor_helmet")
-	public static final Item helmet = null;
-	@ObjectHolder("erinium:erinium_matrix_armor_chestplate")
-	public static final Item body = null;
-	@ObjectHolder("erinium:erinium_matrix_armor_leggings")
-	public static final Item legs = null;
-	@ObjectHolder("erinium:erinium_matrix_armor_boots")
-	public static final Item boots = null;
-
-	public EriniumMatrixArmorItem(EriniumModElements instance) {
-		super(instance, 630);
-	}
-
-	@Override
-	public void initElements() {
-		IArmorMaterial armormaterial = new IArmorMaterial() {
+public abstract class EriniumMatrixArmorItem extends ArmorItem {
+	public EriniumMatrixArmorItem(ArmorItem.Type type, Item.Properties properties) {
+		super(new ArmorMaterial() {
 			@Override
-			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 37;
+			public int getDurabilityForType(ArmorItem.Type type) {
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 37;
 			}
 
 			@Override
-			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{5, 6, 8, 5}[slot.getIndex()];
+			public int getDefenseForType(ArmorItem.Type type) {
+				return new int[]{5, 6, 8, 5}[type.getSlot().getIndex()];
 			}
 
 			@Override
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 28;
 			}
 
 			@Override
-			public net.minecraft.util.SoundEvent getSoundEvent() {
-				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+			public SoundEvent getEquipSound() {
+				return SoundEvents.EMPTY;
 			}
 
 			@Override
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(EriniumMatrixIngotItem.block));
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EriniumModItems.ERINIUM_MATRIX_INGOT.get()));
 			}
 
-			@OnlyIn(Dist.CLIENT)
 			@Override
 			public String getName() {
 				return "erinium_matrix_armor";
@@ -89,80 +63,88 @@ public class EriniumMatrixArmorItem extends EriniumModElements.ModElement {
 			public float getKnockbackResistance() {
 				return 0.1f;
 			}
-		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
-			@Override
-			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-				super.addInformation(itemstack, world, list, flag);
-				list.add(new StringTextComponent("\u00A7eEffet full armure : \u00A7bVitesse 2"));
-				list.add(new StringTextComponent("\u00A7eFull armor effect : \u00A7bSpeed 2"));
-			}
-
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/models/armor/erinium_matrix_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				super.onArmorTick(itemstack, world, entity);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				GlobalArmorHelmetProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		}.setRegistryName("erinium_matrix_armor_helmet"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
-			@Override
-			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-				super.addInformation(itemstack, world, list, flag);
-				list.add(new StringTextComponent("\u00A7eEffet full armure : \u00A7bVitesse 2"));
-				list.add(new StringTextComponent("\u00A7eFull armor effect : \u00A7bSpeed 2"));
-			}
-
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/models/armor/erinium_matrix_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("erinium_matrix_armor_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
-			@Override
-			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-				super.addInformation(itemstack, world, list, flag);
-				list.add(new StringTextComponent("\u00A7eEffet full armure : \u00A7bVitesse 2"));
-				list.add(new StringTextComponent("\u00A7eFull armor effect : \u00A7bSpeed 2"));
-			}
-
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/models/armor/erinium_matrix_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("erinium_matrix_armor_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EriniumArmorsItemGroup.tab)) {
-			@Override
-			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-				super.addInformation(itemstack, world, list, flag);
-				list.add(new StringTextComponent("\u00A7eEffet full armure : \u00A7bVitesse 2"));
-				list.add(new StringTextComponent("\u00A7eFull armor effect : \u00A7bSpeed 2"));
-			}
-
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "erinium:textures/models/armor/erinium_matrix_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				GlobalArmorBootsProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		}.setRegistryName("erinium_matrix_armor_boots"));
+		}, type, properties);
 	}
 
+	public static class Helmet extends EriniumMatrixArmorItem {
+		public Helmet() {
+			super(ArmorItem.Type.HELMET, new Item.Properties());
+		}
+
+		@Override
+		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, world, list, flag);
+			list.add(Component.literal("\u00A7eEffet full armure : \u00A7bVitesse 2"));
+			list.add(Component.literal("\u00A7eFull armor effect : \u00A7bSpeed 2"));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "erinium:textures/models/armor/erinium_matrix_armor__layer_1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			GlobalArmorHelmetProcedure.execute(entity);
+		}
+	}
+
+	public static class Chestplate extends EriniumMatrixArmorItem {
+		public Chestplate() {
+			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
+		}
+
+		@Override
+		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, world, list, flag);
+			list.add(Component.literal("\u00A7eEffet full armure : \u00A7bVitesse 2"));
+			list.add(Component.literal("\u00A7eFull armor effect : \u00A7bSpeed 2"));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "erinium:textures/models/armor/erinium_matrix_armor__layer_1.png";
+		}
+	}
+
+	public static class Leggings extends EriniumMatrixArmorItem {
+		public Leggings() {
+			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
+		}
+
+		@Override
+		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, world, list, flag);
+			list.add(Component.literal("\u00A7eEffet full armure : \u00A7bVitesse 2"));
+			list.add(Component.literal("\u00A7eFull armor effect : \u00A7bSpeed 2"));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "erinium:textures/models/armor/erinium_matrix_armor__layer_2.png";
+		}
+	}
+
+	public static class Boots extends EriniumMatrixArmorItem {
+		public Boots() {
+			super(ArmorItem.Type.BOOTS, new Item.Properties());
+		}
+
+		@Override
+		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, world, list, flag);
+			list.add(Component.literal("\u00A7eEffet full armure : \u00A7bVitesse 2"));
+			list.add(Component.literal("\u00A7eFull armor effect : \u00A7bSpeed 2"));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "erinium:textures/models/armor/erinium_matrix_armor__layer_1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			GlobalArmorBootsProcedure.execute(entity);
+		}
+	}
 }

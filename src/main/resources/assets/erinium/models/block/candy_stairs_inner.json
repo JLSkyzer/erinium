@@ -1,8 +1,9 @@
 {
   "parent": "block/inner_stairs",
   "textures": {
-    "bottom": "erinium:blocks/candy_planks",
-    "top": "erinium:blocks/candy_planks",
-    "side": "erinium:blocks/candy_planks"
-  }
+    "bottom": "erinium:block/candy_planks",
+    "top": "erinium:block/candy_planks",
+    "side": "erinium:block/candy_planks"
+  },
+  "render_type": "solid"
 }

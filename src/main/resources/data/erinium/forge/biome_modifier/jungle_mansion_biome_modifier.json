@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "erinium:magical_forest",
+  "features": "erinium:jungle_mansion",
+  "step": "surface_structures"
+}

@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/erinium_matrix_block",
-    "up": "erinium:blocks/erinium_matrix_block",
-    "north": "erinium:blocks/erinium_matrix_block",
-    "east": "erinium:blocks/erinium_matrix_block",
-    "south": "erinium:blocks/erinium_matrix_block",
-    "west": "erinium:blocks/erinium_matrix_block",
-    "particle": "erinium:blocks/erinium_matrix_block"
-  }
+    "down": "erinium:block/erinium_matrix_block",
+    "up": "erinium:block/erinium_matrix_block",
+    "north": "erinium:block/erinium_matrix_block",
+    "east": "erinium:block/erinium_matrix_block",
+    "south": "erinium:block/erinium_matrix_block",
+    "west": "erinium:block/erinium_matrix_block",
+    "particle": "erinium:block/erinium_matrix_block"
+  },
+  "render_type": "solid"
 }

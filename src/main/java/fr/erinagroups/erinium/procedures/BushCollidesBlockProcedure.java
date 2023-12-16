@@ -1,21 +1,15 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.util.DamageSource;
-import net.minecraft.entity.Entity;
-
-import java.util.Map;
-
-import fr.erinagroups.erinium.EriniumMod;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.core.registries.Registries;
 
 public class BushCollidesBlockProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure BushCollidesBlock!");
+	public static void execute(LevelAccessor world, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		entity.attackEntityFrom(DamageSource.GENERIC, (float) 1);
+		entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 1);
 	}
 }

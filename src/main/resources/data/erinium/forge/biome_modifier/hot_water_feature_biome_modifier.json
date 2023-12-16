@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "erinium:red_jungle_biome",
+  "features": "erinium:hot_water_feature",
+  "step": "lakes"
+}

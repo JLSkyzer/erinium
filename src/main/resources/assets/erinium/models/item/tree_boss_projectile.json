@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/magic_orb"
+    "layer0": "erinium:item/magic_orb"
   },
   "display": {
     "thirdperson_righthand": {

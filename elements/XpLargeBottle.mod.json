@@ -1,10 +1,12 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "xp_large_bottle",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Xp Large Bottle",
     "rarity": "COMMON",
     "creativeTab": {

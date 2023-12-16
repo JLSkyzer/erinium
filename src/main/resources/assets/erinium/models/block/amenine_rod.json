@@ -38,8 +38,8 @@
   },
   "ambientocclusion": false,
   "textures": {
-    "end_rod": "erinium:blocks/amenine_planks",
-    "particle": "erinium:blocks/amenine_planks"
+    "end_rod": "erinium:block/amenine_planks",
+    "particle": "erinium:block/amenine_planks"
   },
   "elements": [
     {
@@ -171,5 +171,6 @@
         }
       }
     }
-  ]
+  ],
+  "render_type": "solid"
 }

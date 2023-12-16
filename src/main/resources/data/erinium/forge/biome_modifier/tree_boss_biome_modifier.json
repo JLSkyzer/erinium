@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "erinium:magical_forest",
+  "spawners": {
+    "type": "erinium:tree_boss",
+    "weight": 5,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "block/fence_post",
-  "textures": {
-    "texture": "erinium:blocks/amenine_planks",
-    "particle": "erinium:blocks/amenine_planks"
-  }
-}

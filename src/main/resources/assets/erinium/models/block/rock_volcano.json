@@ -1,8 +1,9 @@
 {
   "parent": "erinium:custom/rock_volcano",
   "textures": {
-    "all": "erinium:blocks/volcano_rock",
-    "particle": "erinium:blocks/volcano_rock",
-    "0": "erinium:blocks/volcano_rock"
-  }
+    "all": "erinium:block/volcano_rock",
+    "particle": "erinium:block/volcano_rock",
+    "0": "erinium:block/volcano_rock"
+  },
+  "render_type": "solid"
 }

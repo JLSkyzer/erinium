@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/scining_sand",
-    "up": "erinium:blocks/scining_sand",
-    "north": "erinium:blocks/scining_sand",
-    "east": "erinium:blocks/scining_sand",
-    "south": "erinium:blocks/scining_sand",
-    "west": "erinium:blocks/scining_sand",
-    "particle": "erinium:blocks/scining_sand"
-  }
+    "down": "erinium:block/scining_sand",
+    "up": "erinium:block/scining_sand",
+    "north": "erinium:block/scining_sand",
+    "east": "erinium:block/scining_sand",
+    "south": "erinium:block/scining_sand",
+    "west": "erinium:block/scining_sand",
+    "particle": "erinium:block/scining_sand"
+  },
+  "render_type": "solid"
 }

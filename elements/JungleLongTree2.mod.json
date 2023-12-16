@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "structure",
   "definition": {
     "structure": "jungle_long_tree_2",
@@ -13,12 +13,7 @@
     "spawnXOffset": 0,
     "spawnZOffset": 0,
     "spawnWorldTypes": [
-      "CUSTOM:FactionAlpha",
-      "CUSTOM:FactionBeta",
-      "CUSTOM:FactionCharlie",
-      "CUSTOM:Minage01",
-      "CUSTOM:Minage02",
-      "CUSTOM:Minage03"
+      "Surface"
     ],
     "restrictionBlocks": [
       {

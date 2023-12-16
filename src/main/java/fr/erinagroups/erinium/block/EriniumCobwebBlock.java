@@ -1,119 +1,75 @@
 
 package fr.erinagroups.erinium.block;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.BlockPos;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.loot.LootContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItem;
-import net.minecraft.entity.Entity;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
-
-import java.util.stream.Stream;
-import java.util.Random;
-import java.util.Map;
 import java.util.List;
-import java.util.HashMap;
 import java.util.Collections;
-import java.util.AbstractMap;
 
 import fr.erinagroups.erinium.procedures.EriniumCobwebUpdateTickProcedure;
 import fr.erinagroups.erinium.procedures.EriniumCobwebEntityCollidesInTheBlockProcedure;
-import fr.erinagroups.erinium.itemgroup.EriniumBlocksItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
 
-@EriniumModElements.ModElement.Tag
-public class EriniumCobwebBlock extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:erinium_cobweb")
-	public static final Block block = null;
-
-	public EriniumCobwebBlock(EriniumModElements instance) {
-		super(instance, 147);
+public class EriniumCobwebBlock extends Block {
+	public EriniumCobwebBlock() {
+		super(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.SNOW).strength(1f, 10f).noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
-	public void initElements() {
-		elements.blocks.add(() -> new CustomBlock());
-		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(EriniumBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+		return true;
 	}
 
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void clientLoad(FMLClientSetupEvent event) {
-		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
+		return 0;
 	}
 
-	public static class CustomBlock extends Block {
-		public CustomBlock() {
-			super(Block.Properties.create(Material.CARPET).sound(SoundType.SNOW).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0)
-					.doesNotBlockMovement().notSolid().setOpaque((bs, br, bp) -> false));
-			setRegistryName("erinium_cobweb");
-		}
+	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
 
-		@Override
-		public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
-			return true;
-		}
+	@Override
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
+		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
+		if (!dropsOriginal.isEmpty())
+			return dropsOriginal;
+		return Collections.singletonList(new ItemStack(this, 1));
+	}
 
-		@Override
-		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 0;
-		}
+	@Override
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		world.scheduleTick(pos, this, 60);
+	}
 
-		@Override
-		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
-			if (!dropsOriginal.isEmpty())
-				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(this, 1));
-		}
+	@Override
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+		super.tick(blockstate, world, pos, random);
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		EriniumCobwebUpdateTickProcedure.execute(world, x, y, z);
+		world.scheduleTick(pos, this, 60);
+	}
 
-		@Override
-		public void onBlockAdded(BlockState blockstate, World world, BlockPos pos, BlockState oldState, boolean moving) {
-			super.onBlockAdded(blockstate, world, pos, oldState, moving);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(pos, this, 60);
-		}
-
-		@Override
-		public void tick(BlockState blockstate, ServerWorld world, BlockPos pos, Random random) {
-			super.tick(blockstate, world, pos, random);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-
-			EriniumCobwebUpdateTickProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			world.getPendingBlockTicks().scheduleTick(pos, this, 60);
-		}
-
-		@Override
-		public void onEntityCollision(BlockState blockstate, World world, BlockPos pos, Entity entity) {
-			super.onEntityCollision(blockstate, world, pos, entity);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-
-			EriniumCobwebEntityCollidesInTheBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-		}
+	@Override
+	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
+		super.entityInside(blockstate, world, pos, entity);
+		EriniumCobwebEntityCollidesInTheBlockProcedure.execute(entity);
 	}
 }

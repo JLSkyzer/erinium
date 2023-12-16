@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -15,7 +15,6 @@
         "data": {
           "image": "main_menu_cale.png",
           "use1Xscale": false,
-          "name": "main_menu_cale.png",
           "x": 0,
           "y": 0
         }
@@ -23,12 +22,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Bienvenue : §e@p",
+          "name": "label_bienvenue_ssep",
+          "text": {
+            "fixedValue": "Bienvenue : §e@p"
+          },
           "color": {
             "value": -13382656,
             "falpha": 0.0
           },
-          "name": "Bienvenue : §e@p",
           "x": 69,
           "y": 4
         }
@@ -36,12 +37,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Serveur : §eMinage01",
+          "name": "label_serveur_sseminage01",
+          "text": {
+            "fixedValue": "Serveur : §eMinage01"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Serveur : §eMinage01",
           "x": 69,
           "y": 20
         }
@@ -49,12 +52,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Joueurs Connecté : §e100 / 100",
+          "name": "label_joueurs_connecte_sse100_100",
+          "text": {
+            "fixedValue": "Joueurs Connecté : §e100 / 100"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Joueurs Connecté : §e100 / 100",
           "x": 69,
           "y": 35
         }

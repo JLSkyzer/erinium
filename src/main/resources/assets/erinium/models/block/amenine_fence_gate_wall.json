@@ -1,6 +1,7 @@
 {
   "parent": "block/template_fence_gate_wall",
   "textures": {
-    "texture": "erinium:blocks/amenine_planks"
-  }
+    "texture": "erinium:block/amenine_planks"
+  },
+  "render_type": "solid"
 }

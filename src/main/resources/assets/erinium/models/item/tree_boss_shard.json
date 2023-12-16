@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/tree_boss_shard"
+    "layer0": "erinium:item/tree_boss_shard"
   }
 }

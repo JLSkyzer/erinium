@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "overlay",
   "definition": {
     "priority": "HIGHEST",
@@ -9,7 +9,6 @@
         "data": {
           "image": "won_xp_overlay_screen.png",
           "use1Xscale": false,
-          "name": "won_xp_overlay_screen.png",
           "x": 285,
           "y": 22
         }
@@ -19,7 +18,6 @@
         "data": {
           "image": "barre_3_seconds.png",
           "use1Xscale": false,
-          "name": "barre_3_seconds.png",
           "x": 285,
           "y": 62
         }
@@ -27,25 +25,30 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:won_xp_message>",
+          "name": "label_varwon_xp_message",
+          "text": {
+            "fixedValue": "<VAR:won_xp_message>",
+            "name": "WonXpMessage"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "<VAR:won_xp_message>",
-          "x": 287,
-          "y": 35
+          "x": 285,
+          "y": 28
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<VAR:rank_overlay_x>",
+          "name": "label_varrank_overlay_x",
+          "text": {
+            "fixedValue": "<VAR:rank_overlay_x>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:rank_overlay_x>",
           "x": 30,
           "y": 38
         }
@@ -53,12 +56,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:rank_overlay_y>",
+          "name": "label_varrank_overlay_y",
+          "text": {
+            "fixedValue": "<VAR:rank_overlay_y>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:rank_overlay_y>",
           "x": 31,
           "y": 53
         }
@@ -66,14 +71,32 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:won_xp_overlay_cooldown>",
+          "name": "label_varwon_xp_overlay_cooldown",
+          "text": {
+            "fixedValue": "<VAR:won_xp_overlay_cooldown>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:won_xp_overlay_cooldown>",
           "x": 31,
           "y": 67
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_reste",
+          "text": {
+            "fixedValue": "reste",
+            "name": "WonXpMessage2"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 285,
+          "y": 46
         }
       }
     ],

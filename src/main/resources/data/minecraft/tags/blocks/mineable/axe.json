@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "erinium:amenine_logs",
+    "erinium:amenine_planks",
+    "erinium:amenine_fence",
+    "erinium:amenine_fence_gate",
+    "erinium:amenine_stairs",
+    "erinium:amenine_slab",
+    "erinium:amenine_trapdoor",
+    "erinium:amenine_pressure_plate",
+    "erinium:amenine_button",
+    "erinium:amenine_rod",
+    "erinium:candy_logs",
+    "erinium:candy_planks",
+    "erinium:candy_slab",
+    "erinium:candy_stairs",
+    "erinium:jl_skyzer_painting",
+    "erinium:jl_skyzer_painting_2",
+    "erinium:erinium_background",
+    "erinium:erinium_logo"
+  ]
+}

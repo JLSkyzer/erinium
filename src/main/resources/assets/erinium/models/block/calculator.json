@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/calculator_pos",
-    "up": "erinium:blocks/calculator_pos",
-    "north": "erinium:blocks/calculator_pos",
-    "east": "erinium:blocks/calculator_pos",
-    "south": "erinium:blocks/calculator_pos",
-    "west": "erinium:blocks/calculator_pos",
-    "particle": "erinium:blocks/calculator_pos"
-  }
+    "down": "erinium:block/calculator_pos",
+    "up": "erinium:block/calculator_pos",
+    "north": "erinium:block/calculator_pos",
+    "east": "erinium:block/calculator_pos",
+    "south": "erinium:block/calculator_pos",
+    "west": "erinium:block/calculator_pos",
+    "particle": "erinium:block/calculator_pos"
+  },
+  "render_type": "solid"
 }

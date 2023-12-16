@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[47,)"
 license="Copyright c 2021 - 2022 Erinium - All Rights Reserved."
 
 [[mods]]
@@ -9,17 +9,21 @@ displayName="Erinium"
 credits="pas de crédit"
 displayURL="https://discord.gg/26DzRJCTQs"
 authors="JLSkyzer"
-description='''
-Mod créer par JLSkyzer
-'''
+description="Mod créer par JLSkyzer"
 
 [[dependencies.erinium]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5]"
+    versionRange="[1.20.1]"
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.erinium]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47.1.0]"
+    ordering="NONE"
+    side="BOTH"
 
 
 [[dependencies.erinium]]

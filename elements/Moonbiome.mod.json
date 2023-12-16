@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "biome",
   "definition": {
     "name": "Moon Biome",
@@ -52,21 +52,29 @@
     "particlesProbability": 0.5,
     "rainingPossibility": 0.5,
     "temperature": 0.5,
-    "baseHeight": 0.0,
-    "heightVariation": 0.1,
     "spawnBiome": false,
-    "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 10,
-    "grassPerChunk": 0,
-    "seagrassPerChunk": 0,
-    "flowersPerChunk": 0,
-    "mushroomsPerChunk": 0,
-    "bigMushroomsChunk": 0,
-    "sandPatchesPerChunk": 0,
-    "gravelPatchesPerChunk": 1,
-    "reedsPerChunk": 0,
-    "cactiPerChunk": 0,
+    "spawnBiomeNether": false,
+    "genTemperature": {
+      "min": -0.2,
+      "max": 0.2
+    },
+    "genHumidity": {
+      "min": -0.2,
+      "max": 0.2
+    },
+    "genContinentalness": {
+      "min": 0.3,
+      "max": 0.7
+    },
+    "genErosion": {
+      "min": 0.7,
+      "max": 1.0999999999999999
+    },
+    "genWeirdness": {
+      "min": 0.5571856225756622,
+      "max": 0.9571856225756621
+    },
     "treesPerChunk": 0,
     "vanillaTreeType": "Default",
     "treeType": 1,
@@ -83,6 +91,11 @@
     "treeFruits": {
       "value": "Blocks.AIR"
     },
+    "defaultFeatures": [
+      "Caves",
+      "Ores",
+      "FrozenTopLayer"
+    ],
     "spawnStronghold": false,
     "spawnMineshaft": false,
     "spawnMineshaftMesa": false,
@@ -103,11 +116,6 @@
     "spawnBastionRemnant": false,
     "spawnEndCity": false,
     "spawnRuinedPortal": "NONE",
-    "defaultFeatures": [
-      "Caves",
-      "Ores",
-      "FrozenTopLayer"
-    ],
     "spawnEntries": []
   }
 }

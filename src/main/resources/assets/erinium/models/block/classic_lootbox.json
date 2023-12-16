@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/classic_lootbox",
-    "up": "erinium:blocks/classic_lootbox",
-    "north": "erinium:blocks/classic_lootbox",
-    "east": "erinium:blocks/classic_lootbox",
-    "south": "erinium:blocks/classic_lootbox",
-    "west": "erinium:blocks/classic_lootbox",
-    "particle": "erinium:blocks/classic_lootbox"
-  }
+    "down": "erinium:block/classic_lootbox",
+    "up": "erinium:block/classic_lootbox",
+    "north": "erinium:block/classic_lootbox",
+    "east": "erinium:block/classic_lootbox",
+    "south": "erinium:block/classic_lootbox",
+    "west": "erinium:block/classic_lootbox",
+    "particle": "erinium:block/classic_lootbox"
+  },
+  "render_type": "solid"
 }

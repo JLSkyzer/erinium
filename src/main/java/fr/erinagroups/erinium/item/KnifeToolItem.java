@@ -1,72 +1,58 @@
 
 package fr.erinagroups.erinium.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-
-import fr.erinagroups.erinium.itemgroup.EriniumToolsItemGroup;
-import fr.erinagroups.erinium.EriniumModElements;
-
-@EriniumModElements.ModElement.Tag
-public class KnifeToolItem extends EriniumModElements.ModElement {
-	@ObjectHolder("erinium:knife_tool")
-	public static final Item block = null;
-
-	public KnifeToolItem(EriniumModElements instance) {
-		super(instance, 18);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new SwordItem(new IItemTier() {
-			public int getMaxUses() {
+public class KnifeToolItem extends SwordItem {
+	public KnifeToolItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 120;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 1f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 3f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 1;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 0;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.EMPTY;
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
 			}
-		}, 3, 1f, new Item.Properties().group(EriniumToolsItemGroup.tab)) {
-			@Override
-			public boolean hasContainerItem() {
-				return true;
-			}
+		}, 3, 1f, new Item.Properties());
+	}
 
-			@Override
-			public ItemStack getContainerItem(ItemStack itemstack) {
-				ItemStack retval = new ItemStack(this);
-				retval.setDamage(itemstack.getDamage() + 1);
-				if (retval.getDamage() >= retval.getMaxDamage()) {
-					return ItemStack.EMPTY;
-				}
-				return retval;
-			}
+	@Override
+	public boolean hasCraftingRemainingItem(ItemStack stack) {
+		return true;
+	}
 
-			@Override
-			public boolean isRepairable(ItemStack itemstack) {
-				return false;
-			}
-		}.setRegistryName("knife_tool"));
+	@Override
+	public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
+		ItemStack retval = new ItemStack(this);
+		retval.setDamageValue(itemstack.getDamageValue() + 1);
+		if (retval.getDamageValue() >= retval.getMaxDamage()) {
+			return ItemStack.EMPTY;
+		}
+		return retval;
+	}
+
+	@Override
+	public boolean isRepairable(ItemStack itemstack) {
+		return false;
 	}
 }

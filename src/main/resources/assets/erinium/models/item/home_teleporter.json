@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "erinium:items/home_teleporter"
+    "layer0": "erinium:item/home_teleporter"
   }
 }

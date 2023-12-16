@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/beta_marqued",
-    "up": "erinium:blocks/beta_marqued",
-    "north": "erinium:blocks/beta_marqued",
-    "east": "erinium:blocks/beta_marqued",
-    "south": "erinium:blocks/beta_marqued",
-    "west": "erinium:blocks/beta_marqued",
-    "particle": "erinium:blocks/beta_marqued"
-  }
+    "down": "erinium:block/beta_marqued",
+    "up": "erinium:block/beta_marqued",
+    "north": "erinium:block/beta_marqued",
+    "east": "erinium:block/beta_marqued",
+    "south": "erinium:block/beta_marqued",
+    "west": "erinium:block/beta_marqued",
+    "particle": "erinium:block/beta_marqued"
+  },
+  "render_type": "translucent"
 }

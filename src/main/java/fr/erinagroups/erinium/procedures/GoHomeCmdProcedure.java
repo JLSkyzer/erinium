@@ -1,167 +1,102 @@
 package fr.erinagroups.erinium.procedures;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.RegistryKey;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.network.play.server.SPlayerAbilitiesPacket;
-import net.minecraft.network.play.server.SPlaySoundEventPacket;
-import net.minecraft.network.play.server.SPlayEntityEffectPacket;
-import net.minecraft.network.play.server.SChangeGameStatePacket;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket;
+import net.minecraft.network.protocol.game.ClientboundPlayerAbilitiesPacket;
+import net.minecraft.network.protocol.game.ClientboundLevelEventPacket;
+import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
 
-import java.util.Map;
-import java.util.Collections;
-
-import fr.erinagroups.erinium.EriniumModVariables;
-import fr.erinagroups.erinium.EriniumMod;
+import fr.erinagroups.erinium.network.EriniumModVariables;
 
 public class GoHomeCmdProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				EriniumMod.LOGGER.warn("Failed to load dependency world for procedure GoHomeCmd!");
+	public static void execute(LevelAccessor world, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				EriniumMod.LOGGER.warn("Failed to load dependency entity for procedure GoHomeCmd!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
-			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new EriniumModVariables.PlayerVariables())).HomeCmdCooldown == 0) {
-				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new EriniumModVariables.PlayerVariables())).h_x != 0
-						&& (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).h_y != 0
-						&& (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new EriniumModVariables.PlayerVariables())).h_z != 0) {
-					if (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new EriniumModVariables.PlayerVariables())).Home_dim).equals("Overworld")) {
-						if (!((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (World.OVERWORLD))) {
-							{
-								Entity _ent = entity;
-								if (!_ent.world.isRemote && _ent instanceof ServerPlayerEntity) {
-									RegistryKey<World> destinationType = World.OVERWORLD;
-									ServerWorld nextWorld = _ent.getServer().getWorld(destinationType);
-									if (nextWorld != null) {
-										((ServerPlayerEntity) _ent).connection
-												.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field_241768_e_, 0));
-										((ServerPlayerEntity) _ent).teleport(nextWorld, nextWorld.getSpawnPoint().getX(),
-												nextWorld.getSpawnPoint().getY() + 1, nextWorld.getSpawnPoint().getZ(), _ent.rotationYaw,
-												_ent.rotationPitch);
-										((ServerPlayerEntity) _ent).connection
-												.sendPacket(new SPlayerAbilitiesPacket(((ServerPlayerEntity) _ent).abilities));
-										for (EffectInstance effectinstance : ((ServerPlayerEntity) _ent).getActivePotionEffects()) {
-											((ServerPlayerEntity) _ent).connection
-													.sendPacket(new SPlayEntityEffectPacket(_ent.getEntityId(), effectinstance));
-										}
-										((ServerPlayerEntity) _ent).connection.sendPacket(new SPlaySoundEventPacket(1032, BlockPos.ZERO, 0, false));
-									}
+		if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).inPvpMode == false) {
+			if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).HomeCmdCooldown == 0) {
+				if ((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_x != 0
+						&& (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_y != 0
+						&& (entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_z != 0) {
+					if (((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).Home_dim).equals("Overworld")) {
+						if (!((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == Level.OVERWORLD)) {
+							if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
+								ResourceKey<Level> destinationType = Level.OVERWORLD;
+								if (_player.level().dimension() == destinationType)
+									return;
+								ServerLevel nextLevel = _player.server.getLevel(destinationType);
+								if (nextLevel != null) {
+									_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
+									_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
+									_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
+									for (MobEffectInstance _effectinstance : _player.getActiveEffects())
+										_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
+									_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
 								}
 							}
 							{
 								Entity _ent = entity;
-								_ent.setPositionAndUpdate(
-										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).h_x),
-										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).h_y),
-										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).h_z));
-								if (_ent instanceof ServerPlayerEntity) {
-									((ServerPlayerEntity) _ent).connection.setPlayerLocation(
-											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new EriniumModVariables.PlayerVariables())).h_x),
-											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new EriniumModVariables.PlayerVariables())).h_y),
-											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new EriniumModVariables.PlayerVariables())).h_z),
-											_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
-								}
+								_ent.teleportTo(((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_x),
+										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_y),
+										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_z));
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_x),
+											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_y),
+											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_z), _ent.getYRot(), _ent.getXRot());
 							}
-							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aWelcome house !"), (false));
-							}
+							if (entity instanceof Player _player && !_player.level().isClientSide())
+								_player.displayClientMessage(Component.literal("\u00A7aWelcome house !"), false);
 						} else {
 							{
 								Entity _ent = entity;
-								_ent.setPositionAndUpdate(
-										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).h_x),
-										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).h_y),
-										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new EriniumModVariables.PlayerVariables())).h_z));
-								if (_ent instanceof ServerPlayerEntity) {
-									((ServerPlayerEntity) _ent).connection.setPlayerLocation(
-											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new EriniumModVariables.PlayerVariables())).h_x),
-											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new EriniumModVariables.PlayerVariables())).h_y),
-											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new EriniumModVariables.PlayerVariables())).h_z),
-											_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
-								}
+								_ent.teleportTo(((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_x),
+										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_y),
+										((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_z));
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_x),
+											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_y),
+											((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).h_z), _ent.getYRot(), _ent.getXRot());
 							}
-							if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7aWelcome house !"), (false));
-							}
+							if (entity instanceof Player _player && !_player.level().isClientSide())
+								_player.displayClientMessage(Component.literal("\u00A7aWelcome house !"), false);
 						}
 					}
 				} else {
-					if (!((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (World.OVERWORLD))) {
-						{
-							Entity _ent = entity;
-							if (!_ent.world.isRemote && _ent instanceof ServerPlayerEntity) {
-								RegistryKey<World> destinationType = World.OVERWORLD;
-								ServerWorld nextWorld = _ent.getServer().getWorld(destinationType);
-								if (nextWorld != null) {
-									((ServerPlayerEntity) _ent).connection
-											.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field_241768_e_, 0));
-									((ServerPlayerEntity) _ent).teleport(nextWorld, nextWorld.getSpawnPoint().getX(),
-											nextWorld.getSpawnPoint().getY() + 1, nextWorld.getSpawnPoint().getZ(), _ent.rotationYaw,
-											_ent.rotationPitch);
-									((ServerPlayerEntity) _ent).connection
-											.sendPacket(new SPlayerAbilitiesPacket(((ServerPlayerEntity) _ent).abilities));
-									for (EffectInstance effectinstance : ((ServerPlayerEntity) _ent).getActivePotionEffects()) {
-										((ServerPlayerEntity) _ent).connection
-												.sendPacket(new SPlayEntityEffectPacket(_ent.getEntityId(), effectinstance));
-									}
-									((ServerPlayerEntity) _ent).connection.sendPacket(new SPlaySoundEventPacket(1032, BlockPos.ZERO, 0, false));
-								}
+					if (!((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == Level.OVERWORLD)) {
+						if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
+							ResourceKey<Level> destinationType = Level.OVERWORLD;
+							if (_player.level().dimension() == destinationType)
+								return;
+							ServerLevel nextLevel = _player.server.getLevel(destinationType);
+							if (nextLevel != null) {
+								_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
+								_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
+								_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
+								for (MobEffectInstance _effectinstance : _player.getActiveEffects())
+									_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
+								_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
 							}
 						}
 						{
 							Entity _ent = entity;
-							_ent.setPositionAndUpdate((world.getWorldInfo().getSpawnX()), (world.getWorldInfo().getSpawnY()),
-									(world.getWorldInfo().getSpawnZ()));
-							if (_ent instanceof ServerPlayerEntity) {
-								((ServerPlayerEntity) _ent).connection.setPlayerLocation((world.getWorldInfo().getSpawnX()),
-										(world.getWorldInfo().getSpawnY()), (world.getWorldInfo().getSpawnZ()), _ent.rotationYaw, _ent.rotationPitch,
-										Collections.emptySet());
-							}
+							_ent.teleportTo((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn()));
+							if (_ent instanceof ServerPlayer _serverPlayer)
+								_serverPlayer.connection.teleport((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn()), _ent.getYRot(), _ent.getXRot());
 						}
 					} else {
 						{
 							Entity _ent = entity;
-							_ent.setPositionAndUpdate((world.getWorldInfo().getSpawnX()), (world.getWorldInfo().getSpawnY()),
-									(world.getWorldInfo().getSpawnZ()));
-							if (_ent instanceof ServerPlayerEntity) {
-								((ServerPlayerEntity) _ent).connection.setPlayerLocation((world.getWorldInfo().getSpawnX()),
-										(world.getWorldInfo().getSpawnY()), (world.getWorldInfo().getSpawnZ()), _ent.rotationYaw, _ent.rotationPitch,
-										Collections.emptySet());
-							}
+							_ent.teleportTo((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn()));
+							if (_ent instanceof ServerPlayer _serverPlayer)
+								_serverPlayer.connection.teleport((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn()), _ent.getYRot(), _ent.getXRot());
 						}
 					}
 				}
@@ -173,22 +108,13 @@ public class GoHomeCmdProcedure {
 					});
 				}
 			} else {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity)
-							.sendStatusMessage(
-									new StringTextComponent(
-											("\u00A7cWait "
-													+ Math.round((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-															.orElse(new EriniumModVariables.PlayerVariables())).HomeCmdCooldown / 20)
-													+ " seconds !")),
-									(false));
-				}
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(
+							Component.literal(("\u00A7cWait " + Math.round((entity.getCapability(EriniumModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumModVariables.PlayerVariables())).HomeCmdCooldown / 20) + " seconds !")), false);
 			}
 		} else {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(
-						new StringTextComponent("\u00A7cError: Vous ne pouvez pas faire cela car vous \u00EAtes en mode &acombat."), (false));
-			}
+			if (entity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal("\u00A7cError: Vous ne pouvez pas faire cela car vous \u00EAtes en mode &acombat."), false);
 		}
 	}
 }

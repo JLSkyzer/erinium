@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -15,7 +15,6 @@
         "data": {
           "image": "rank_background.png",
           "use1Xscale": false,
-          "name": "rank_background.png",
           "x": 0,
           "y": 0
         }
@@ -25,7 +24,6 @@
         "data": {
           "image": "rank_bar_empty.png",
           "use1Xscale": false,
-          "name": "rank_bar_empty.png",
           "x": 88,
           "y": 140
         }
@@ -35,7 +33,6 @@
         "data": {
           "image": "rank_bar_fill.png",
           "use1Xscale": false,
-          "name": "rank_bar_fill.png",
           "x": 89,
           "y": 141
         }
@@ -43,12 +40,15 @@
       {
         "type": "label",
         "data": {
-          "text": "Level : §a<VAR:integer:playerLvl>",
+          "name": "label_level_ssavarintegerplayerlvl",
+          "text": {
+            "fixedValue": "Level : §a<VAR:integer:playerLvl>",
+            "name": "MenuRankLevelString"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Level : §a<VAR:integer:playerLvl>",
           "x": 180,
           "y": 112
         }
@@ -56,12 +56,15 @@
       {
         "type": "label",
         "data": {
-          "text": "Xp : §a<VAR:integer:playerXp> §r/ §e100.000",
+          "name": "label_xp_ssavarintegerplayerxp_ssr",
+          "text": {
+            "fixedValue": "Xp : §a<VAR:integer:playerXp> §r/ §e100.000",
+            "name": "MenuRankXpString"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Xp : §a<VAR:integer:playerXp> §r/ §e100.000",
           "x": 179,
           "y": 127
         }
@@ -69,13 +72,10 @@
       {
         "type": "button",
         "data": {
+          "name": "button_main",
           "text": "Main",
-          "onClick": {
-            "name": "OpenMain"
-          },
           "width": 108,
           "height": 20,
-          "name": "Main",
           "x": 2,
           "y": 175
         }
@@ -83,13 +83,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_rank",
           "text": "Rank",
           "onClick": {
             "name": "OpenRank"
           },
           "width": 108,
           "height": 20,
-          "name": "Rank",
           "x": 2,
           "y": 197
         }
@@ -97,13 +97,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_stats",
           "text": "Stats",
           "onClick": {
             "name": "OpenStats"
           },
           "width": 108,
           "height": 20,
-          "name": "Stats",
           "x": 2,
           "y": 219
         }
@@ -111,12 +111,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Rank",
+          "name": "label_rank",
+          "text": {
+            "fixedValue": "Rank"
+          },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "Rank",
           "x": 198,
           "y": 0
         }

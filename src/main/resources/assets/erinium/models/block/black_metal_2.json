@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "erinium:blocks/metalorrugatedrayk_copy",
-    "up": "erinium:blocks/metalorrugatedrayk_copy",
-    "north": "erinium:blocks/metalorrugatedrayk_copy",
-    "east": "erinium:blocks/metalorrugatedrayk_copy",
-    "south": "erinium:blocks/metalorrugatedrayk_copy",
-    "west": "erinium:blocks/metalorrugatedrayk_copy",
-    "particle": "erinium:blocks/metalorrugatedrayk_copy"
-  }
+    "down": "erinium:block/metalorrugatedrayk_copy",
+    "up": "erinium:block/metalorrugatedrayk_copy",
+    "north": "erinium:block/metalorrugatedrayk_copy",
+    "east": "erinium:block/metalorrugatedrayk_copy",
+    "south": "erinium:block/metalorrugatedrayk_copy",
+    "west": "erinium:block/metalorrugatedrayk_copy",
+    "particle": "erinium:block/metalorrugatedrayk_copy"
+  },
+  "render_type": "solid"
 }

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "erinium:icy_forest",
+  "features": "erinium:icy_mushroom",
+  "step": "vegetal_decoration"
+}
