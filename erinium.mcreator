@@ -12932,7 +12932,7 @@
       "type": "gui",
       "sortid": 764,
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "astral_miner_gui",
       "metadata": {
         "files": [

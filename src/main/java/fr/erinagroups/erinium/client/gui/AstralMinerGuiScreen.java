@@ -1,7 +1,5 @@
 package fr.erinagroups.erinium.client.gui;
 
-import fr.erinagroups.erinium.procedures.ReturnEnergyProcedure;
-import fr.erinagroups.erinium.procedures.ReturnMaxEnergyProcedure;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -35,7 +33,7 @@ public class AstralMinerGuiScreen extends AbstractContainerScreen<AstralMinerGui
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/screens/astral_miner_bg.png");
+	private static final ResourceLocation texture = new ResourceLocation("erinium:textures/screens/astral_miner_gui.png");
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
@@ -51,14 +49,11 @@ public class AstralMinerGuiScreen extends AbstractContainerScreen<AstralMinerGui
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-
-		double bar = (500000 / ReturnMaxEnergyProcedure.execute(world, x, y, z)) * ReturnEnergyProcedure.execute(world, x, y, z);
-
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
 		guiGraphics.blit(new ResourceLocation("erinium:textures/screens/energy_bar_empty.png"), this.leftPos + 132, this.topPos + 7, 0, 0, 32, 64, 32, 64);
 
-		guiGraphics.blit(new ResourceLocation("erinium:textures/screens/energy_bar_fill.png"), this.leftPos + 132, this.topPos + 7, 0, 0, 32, (int) bar, 32, 64);
+		guiGraphics.blit(new ResourceLocation("erinium:textures/screens/energy_bar_fill.png"), this.leftPos + 132, this.topPos + 7, 0, 0, 32, 64, 32, 64);
 
 		RenderSystem.disableBlend();
 	}

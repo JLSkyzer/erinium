@@ -12932,7 +12932,7 @@
       "type": "gui",
       "sortid": 764,
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "astral_miner_gui",
       "metadata": {
         "files": [
@@ -13966,13 +13966,47 @@
     {
       "name": "ReturnEnergy",
       "type": "procedure",
+      "sortid": 808,
       "compiles": true,
       "locked_code": false,
       "registry_name": "return_energy",
       "metadata": {
-        "return_type": "string",
+        "return_type": "number",
         "files": [
           "src/main/java/fr/erinagroups/erinium/procedures/ReturnEnergyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Misc System/Astral Miner"
+    },
+    {
+      "name": "ReturnMaxEnergy",
+      "type": "procedure",
+      "sortid": 809,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_max_energy",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/erinagroups/erinium/procedures/ReturnMaxEnergyProcedure.java"
         ],
         "dependencies": [
           {
@@ -14663,8 +14697,8 @@
       "block.erinium.line_1_block": "Line 1 Block",
       "block.erinium.silicone_ore": "§9Silicone Ore",
       "block.erinium.jl_skyzer_painting": "JLSkyzer Painting 1",
-      "gui.erinium.presentation_gui.label_varpresentationgui": "\u003cVAR:presentationGui\u003e",
       "block.erinium.candy_logs": "§5Candy Logs",
+      "gui.erinium.presentation_gui.label_varpresentationgui": "\u003cVAR:presentationGui\u003e",
       "block.erinium.dranite_ore": "§6Dranite Ore",
       "item.erinium.fraisage": "Fraisage",
       "gui.erinium.hahahaha.button_heheha": "HEHEHA",
@@ -14679,9 +14713,9 @@
       "subtitles.printer": "Printer en marche",
       "item.erinium.amenine_stick": "Amenine Stick",
       "gui.erinium.craft_matrix_ingot.button_back": "Back",
-      "item.erinium.block_replacer": "Block Replacer",
-      "block.erinium.scining_cactus": "Scining Cactus",
       "gui.erinium.rank_xp_overlay.label_varwon_xp_message": "\u003cVAR:won_xp_message\u003e",
+      "block.erinium.scining_cactus": "Scining Cactus",
+      "item.erinium.block_replacer": "Block Replacer",
       "block.erinium.fraisage_numerique": "Fraisage Numérique",
       "block.erinium.charlie_marqued": "Charlie Marqued",
       "item.erinium.magic_stones_invisibility": "§l§oMagic Stones §3§l§oInvisibility",
